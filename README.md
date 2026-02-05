@@ -15,10 +15,14 @@ uv pip install -e .[all]
 Скачать модель для локального запуска можно по [ссылке](http://https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке`model`
 
 ### Работа с системой
+
 `mineru_compact.py` -- содержит в себе необходимые функции для инференса модели, возвращает *content_list*
+
 `extractor.py` -- содержит класс ArticleExtractor, который реализуют основную логику извлечения данных
+
 `demo.py` -- пример работы (см. ниже):
-````commandline
+
+````python
 from extractor import ArticleExtractor
 
 path_to_file = 'articles/demo1.pdf' # путь к pdf-файлу (статье)
@@ -30,7 +34,7 @@ extractor.extract_from_article(path_to_file, output_dir, path_to_model) # изв
 extractor.dump_to_json(output_dir) # сохранение результатов в формате json
 ````
 Выходной файл имеет следующую структуру (**output/demo1.json**):
-````commandline
+````javascript
 {
 	title : str,
 	authors: [
@@ -63,7 +67,7 @@ extractor.dump_to_json(output_dir) # сохранение результатов
 	],
 	figures: [ # визуальные элементы (иллюстрации, таблицы)
 		{
-			id : int,
+			id : str,
 			type : str,
 			caption : [str,],
 			img_path : [str,],
