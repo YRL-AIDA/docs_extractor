@@ -12,7 +12,7 @@ git clone https://github.com/opendatalab/MinerU.git
 cd MinerU
 uv pip install -e .[all]
 ````
-Скачать модель для локального запуска можно по [ссылке](http://https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке`model`
+Скачать модель для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке`model`
 
 ### Работа с системой
 
