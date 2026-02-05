@@ -1,0 +1,1233 @@
+[
+    {
+        "type": "text",
+        "text": "CNN Is All You Need ",
+        "text_level": 1,
+        "bbox": [
+            361,
+            90,
+            635,
+            114
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Qiming Chen, Ren Wu {qchen,renw}@novumind.com ",
+        "bbox": [
+            387,
+            151,
+            609,
+            191
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NovuMind Inc, USA ",
+        "bbox": [
+            419,
+            203,
+            576,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract ",
+        "text_level": 1,
+        "bbox": [
+            462,
+            267,
+            540,
+            282
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The Convolution Neural Network (CNN) has demonstrated the unique advantage in audio, image and text learning; recently it has also challenged Recurrent Neural Networks (RNNs) with long short-term memory cells (LSTM) in sequence-tosequence learning, since the computations involved in CNN are easily parallelizable whereas those involved in RNN are mostly sequential, leading to a performance bottleneck. However, unlike RNN, the native CNN lacks the history sensitivity required for sequence transformation; therefore enhancing the sequential order awareness, or position-sensitivity, becomes the key to make CNN the general deep learning model. In this work we introduce an extended CNN model with strengthen position-sensitivity, called PoseNet. A notable feature of PoseNet is the asymmetric treatment of position information in the encoder and the decoder. Experiments shows that PoseNet allows us to improve the accuracy of CNN based sequence-to-sequence learning significantly, achieving around 33-36 BLEU scores on the WMT 2014 English-to-German translation task, and around 44-46 BLEU scores on the English-to-French translation task. ",
+        "bbox": [
+            212,
+            291,
+            792,
+            508
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction ",
+        "text_level": 1,
+        "bbox": [
+            174,
+            556,
+            313,
+            571
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CNNs have been successfully used in audio, image and text classification, analysis and generation [12,17,18], whereas the RNNs with LSTM cells [5,6] have been widely adopted for solving sequence transduction problems such as language modeling and machine translation [19,3,5]. The RNN models typically align the element positions of the input and output sequences to steps in computation time for generating the sequenced hidden states, with each depending on the current element and the previous hidden state. Such operations are inherently sequential which precludes parallelization and becomes the performance bottleneck. This situation has motivated researchers to extend the easily parallelizable CNN models for more efficient sequence-to-sequence mapping. Once such efforts can deliver satisfactory quality, the usage of CNN in deep learning would be significantly broadened. ",
+        "bbox": [
+            174,
+            587,
+            823,
+            733
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Compared to the history-sensitive recurrent models, in sequence-to-sequence learning, convolution models provide the means for efficient non-local referencing across time steps without fully sequential processing, allowing the computations over the whole sequence to be concurrent rather than one element at a time, and further maximizing GPU’s capability for orders of magnitude performance gain. ",
+        "bbox": [
+            174,
+            739,
+            823,
+            813
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Convolution is generally conducted by the matrix operations on batches of records. To capture the element-wise sequential context in the record-level processing, several mechanisms have been proposed recently such as position encoding, kernel dilation, attention, etc, in ConvS2S [7], Xception [6], ByteNet [12], WaveNet [17] and SliceNet [11]. To reduce the number of parameters, and hence the computation cost, some additional optimizations such as depth-wise convolution [11] and multi-head attention [19], have been introduced, which is commonly characterized by dividing ",
+        "bbox": [
+            174,
+            820,
+            828,
+            909
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "elements along the channel dimension, parallelizing the sub-processing and then concatenating the partial results. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            119
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this work we focus on further enhancing the position-sensitivity in the CNN based sequence-tosequence learning framework, we explore how to distinguish various operational phases to apply the right mechanisms in the right contexts, for maximizing the expected benefits and minimizing the unwanted side-effects. Specifically we encapsulate a group of neurons for convolutions in a convolution box whose activity vector represents the instantiation parameters – a similar treatment found in [7,11], as the basic building blocks of our architecture. When using such convolution boxes in the encoder and the decoder, we customize their internal structures depending on where they are used, with different sub-layers for dealing with the sequential position information in the corresponding context. A notable feature of our approach is the asymmetric treatment of position information in the encoder and the decoder. According to the difference of how sequential information is presented and used in the encoding and the decoding processes, we repeat positionencoding (or timing signal) along multiple layers only in the encoder; apply dilation convolution for encoding and regular convolutions for decoding, and organize self-attention, cross-attention, position-wise feed-forward with customized residual links [8], selectively in both the encoder and the decoder. ",
+        "bbox": [
+            169,
+            126,
+            826,
+            345
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We implement the above context-sensitive position-sensitive mechanisms in an extended CNN model, PoseNet, for improving the accuracy of convolution based sequence-to-sequence learning. Experiments show that using PoseNet allows us to achieve around 33-36 approximate BLEU scores on the WMT 2014 English-to-German translation task with batch-size 2048 and 250K-500K training steps, as well as to get superior performance in English-to-French translation, achieving 44-46 approximate BLEU scores with batch-size 2048 and 1000K training steps. ",
+        "bbox": [
+            169,
+            351,
+            823,
+            441
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In the similar way we also enhanced the accuracy of the “attention-only” approach [19] by an extended model that actually outperforms the PoseNet described here in the same tasks; however, as we believe that in certain areas such as image recognition, the CNN can provide higher generality, in this work we focus on exploring the universal use of the CNN, particularly in sequence-to-sequence learning, and have the other efforts reported separately. ",
+        "bbox": [
+            169,
+            446,
+            823,
+            521
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2 History-Sensitivity and Position-Sensitivity ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            542,
+            565,
+            559
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Sequence-to-sequence learning is typically based on the encoder-decoder architectures [10,11,13,19,21] where the encoder processes an input sequence $x = ( x _ { I } , \\ldots , x _ { n } )$ of $n$ elements and returns the internal representations $h = ( h _ { I } . \\ . \\ . \\ , \\ h _ { n } )$ , and the decoder takes $h$ to generate the output sequence $y = ( y _ { I } , \\ldots , y _ { m } )$ left to right, one element at a time. ",
+        "bbox": [
+            169,
+            575,
+            823,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In the RNN based sequence-to-sequence learning [5,9], the above $h$ is computed sequentially and kept as the revisable, long or short, history. To generate output $y _ { i + I }$ , the decoder computes a new hidden state $h _ { i + I }$ based on the previous state $h _ { i } ,$ the previous output $y _ { i } ,$ , as well as a conditional input $c _ { i }$ derived from the encoder output $h$ . The models without attention consider only the final encoder state $h _ { n } .$ either by ignoring $c _ { i }$ or by setting $c _ { i } = h _ { n }$ for all position i. Architectures with attention compute $c _ { i }$ as a weighted sum of $( h _ { I } . . . . , h _ { n } )$ at each time-step as the corresponding attention scores, focusing on different parts of the input sequence. Attention scores are computed by comparing each encoder state to a combination of the previous decoder state and the last prediction element; the result is normalized to be a distribution over input elements [1]. ",
+        "bbox": [
+            169,
+            646,
+            826,
+            787
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The CNN based sequence-to-sequence transformation follows this high-level scenario in general, but with the intermediate encoder and decoder representations calculated by convolutions in parallel for all input and output positions. Usually both encoder and decoder networks are stacked with a kind of convolution layer that computes intermediate representations based on a fixed number of input elements. Stacking several layers on top of each other increases the range of input elements represented. Further, convolutions are often followed by non-linearities, allowing the networks to focus on wider input field. Padding is employed in both encoding and decoding to ",
+        "bbox": [
+            169,
+            794,
+            823,
+            905
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ensure the match of the input length, and to ensure that at a step, no future information is available to the decoder. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            119
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In summary, in sequence-to-sequence learning, RNN relies on history sensitive sequential computation, but CNN relies on position-sensitive parallel computation. ",
+        "bbox": [
+            169,
+            128,
+            825,
+            160
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3 Strengthen Position-Sensitivity in Convolutional Sequence Learning ",
+        "text_level": 1,
+        "bbox": [
+            169,
+            186,
+            777,
+            204
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To optimize CNN for sequence-to-sequence learning, let us first understand how the concept of \"sequence\" is caught in a CNN framework. ",
+        "bbox": [
+            169,
+            220,
+            826,
+            250
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In sequence transduction tasks, the sense of “sequence” is represented by long-range dependencies. One important factor affecting the ability to learn such dependencies is the length of the paths between any combination of positions in the input and output sequences, which the signals have to traverse forward and backward in the network; the shorter these paths the easier to learn longrange dependencies. ",
+        "bbox": [
+            169,
+            256,
+            826,
+            330
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "From this point of view convolution provides a key advantage for sequence-to-sequence learning, since a multi-layer convolution stack can create multi-level representations over the input sequence where nearby input elements interact at lower levels and distant elements interact at higher levels [7]. This way, the hierarchical structure modeled by CNN provides shorter paths compared to the chain structure modeled by RNN. In the CNN with kernels of width $k _ { - }$ , a feature representation capturing relationships within a window of n elements (such as words) can be accessed by applying only $O ( n / k )$ convolution operation, compared to a linear number $O ( n )$ in an RNN. ",
+        "bbox": [
+            169,
+            335,
+            825,
+            454
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Further, the CNN based sequence mapping can be naturally parallelized since inputs are fed through a constant number of kernels and non-linearities, whereas the number of operations and non-linearities applied in an RNN varies from position to position. ",
+        "bbox": [
+            169,
+            460,
+            825,
+            506
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3.1 How Position Relationships Captured ",
+        "text_level": 1,
+        "bbox": [
+            169,
+            529,
+            477,
+            545
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Convolution, like other deep learning operations, is essentially a tensor-to-tensor mapping. In sequence transformations, the positional relationships between the elements are handled along with the matrix manipulation of tensors. ",
+        "bbox": [
+            169,
+            560,
+            825,
+            604
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Position Encoding ",
+        "text_level": 1,
+        "bbox": [
+            169,
+            619,
+            305,
+            635
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In sequence-to-sequence learning, an input or target record consists of a sequence of elements along time-steps. A common way for a deep learning model to make use of the order of the elements is to inject some information about the relative or absolute position of the elements in the sequence [7]. Typically the input elements $x = ( x _ { I } , \\ . \\ . \\ . \\ , x _ { m } )$ are first embedded in distributional space $w = ( w _ { I } , \\dots , w _ { m } )$ with depth d. To equip the model with a sense of the absolute position of input elements, $p = ( p _ { I } , \\ldots , p _ { m } )$ is encoded, forming the combined input element representation $e$ $= ( w _ { I } + p _ { I } , \\ . \\ . \\ . \\ , \\ w _ { m } + p _ { m } )$ $w _ { m } { + p _ { m } } )$ . The target elements are processed similarly in their encoding phase. Note that the positional encodings form a tensor with the same depth $d$ as the input embeddings, so that the two can be summed. Usually positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks. ",
+        "bbox": [
+            169,
+            641,
+            826,
+            787
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "There exist various choices of positional encodings; the following position encoding function $f _ { p e }$ uses sine and cosine functions of different frequencies: ",
+        "bbox": [
+            169,
+            794,
+            825,
+            825
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nf _ {p e} (p o s, 2 i) = \\sin (p o s / 1 0 0 0 0 ^ {2 i / d})\n$$",
+        "text_format": "latex",
+        "bbox": [
+            225,
+            832,
+            442,
+            853
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nf _ {p e} (p o s, 2 i + 1) = c o s (p o s / 1 0 0 0 0 ^ {2 i / d})\n$$",
+        "text_format": "latex",
+        "bbox": [
+            225,
+            857,
+            465,
+            878
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "where pos is the position, $i$ the dimension and $d$ the depth. ",
+        "bbox": [
+            169,
+            886,
+            558,
+            902
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Since position encoding gives the model a sense of order of the input or target sequence it is currently dealing with, we explored the way to repeat it at the appropriate layers of the model graph to strengthen the position sensitivity at multiple layers, but without introducing unexpected noises. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            151
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Position-wise Feed-Forward Networks (ffn) ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            176,
+            480,
+            191
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Encoding/decoding in sequence-to-sequence mapping essentially consists in determining the positional correlation between the input/target pairs, this is why the position-wise feed-forward networks $( f \\mathscr { f } n )$ come to the picture. An ffn is similar to a convolution with kernel size 1 that is applied to each position separately and identically. An $n$ -layer $f \\mathscr { f } n ^ { n }$ performs $n$ linear transformations with a ReLU activation in between, which can be intuitively described as below. ",
+        "bbox": [
+            169,
+            199,
+            823,
+            277
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} f f n ^ {l} (x) = x W _ {l} + b _ {l} \\\\ f f n ^ {2} (x) = \\max  (0, x W _ {1} + b _ {1}) W _ {2} + b _ {2} \\\\ f f n ^ {n} (x) = \\max  (0, f f n ^ {n - 1} (x)) W _ {n} + b _ {n} \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            230,
+            287,
+            459,
+            353
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Although such linear transformations are the same across different positions, it is position awareness due to that the transformations use different parameters from layer to layer. Therefore adding $f \\mathscr { f } n$ to the appropriate points in the model graph provides a way to enhance position sensitivity. ",
+        "bbox": [
+            169,
+            364,
+            823,
+            426
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Filter Dilation ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            450,
+            277,
+            465
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Filter dilation is a mechanism for correlating distant elements in convolutional sequence-tosequence autoregressive approach. Essentially, filter dilation increases the receptive field of the convolution operation by enlarging the spatial extent from which feature information can be gathered. In the other words, the dilated convolution operators can use the same filter at different ranges using different dilation factors. ",
+        "bbox": [
+            169,
+            473,
+            823,
+            551
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Compared to using larger convolution windows, using filter dilation has the pros of lower computation cost, and the cons of unequal convolutional coverage of the input space. Our observation indicates that for boosting position awareness, the dilation mechanism has stronger effect in encoder than in decoder. ",
+        "bbox": [
+            169,
+            560,
+            823,
+            621
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Cross-Attention and Self-Attention ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            646,
+            421,
+            661
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The simple inner-product attention correlates two tensors position-wise. Given two tensors $S [ n , d ]$ and $\\pi m , d ]$ , where $d$ stands for depth, according to [11,19], the attention mechanism computes the feature vector similarities at each position and re-scales according to the depth: ",
+        "bbox": [
+            169,
+            667,
+            823,
+            715
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname {a t t e n t i o n} (S, T) = 1 / \\sqrt {d}. \\operatorname {S o f t m a x} \\left(T \\cdot S ^ {T}\\right) \\cdot S\n$$",
+        "text_format": "latex",
+        "bbox": [
+            228,
+            724,
+            522,
+            742
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "where $S$ and $T$ can be two different tensors or the same tensor; we refer to the attention in the former case cross-attention, and in the latter case self-attention. ",
+        "bbox": [
+            169,
+            751,
+            823,
+            781
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Cross-attention is often used in the \"encoder-decoder attention\" layers, where $T$ comes from the previous decoder layer, and $S$ from the encoded input, i.e. output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence. Self-attention is used in input encoding and target encoding where S and $T$ come from the same place – the output of the previous layer in the encoder or in the decoder. A self-attention layer in the encoder allows each position to attend to all positions in the previous layer of the encoder; similarly, a self attention layer in the decoder allow each position to attend to all positions in the decoder up to and ",
+        "bbox": [
+            169,
+            790,
+            825,
+            900
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "including that position. To prevent leftward information flow in the decoder to preserve the autoregressive property [11,12,17], masking out the values in the input of the softmax which correspond to illegal positions, is necessary. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            137
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "One way to strengthen the positional relationship in convolution based sequence-to-sequence learning is to apply the cross-attention and self-attention multiple times. We have experienced this with certain accuracy gain. ",
+        "bbox": [
+            169,
+            143,
+            823,
+            191
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3.2 Design Consideration ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            217,
+            364,
+            233
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In order to capture richer sequential position information and position-wise relationships between inputs and targets for improved accuracy of CNN based sequence-to-sequence learning, we follow these design considerations: the impact of position-sensitivity on the accuracy of sequence-tosequence learning varies in the encoding process and decoding process; as a result, context specific convolution boxes are needed for applying the above position-sensitive mechanisms. ",
+        "bbox": [
+            169,
+            243,
+            823,
+            321
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Intuitively, when inputs are encoded, the sequences dealt with are to be completely populated thus sensitive to enhanced (e.g. repeated) position encoding. However, during decoding, in the partially generated targets with pads as space-fillers, some of the above mechanisms, such as repeated position encoding, would be ineffective or even noisy. The context sensitivity of other mechanisms for capturing position information can be explained similarly. ",
+        "bbox": [
+            169,
+            329,
+            825,
+            407
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "4 PoseNet Architecture ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            439,
+            385,
+            455
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Our PoseNet architecture is built using the tensor2tensor library [23] and extending the Slicenet [11] model. We follow the conceptual encoder-decoder structure [10,11,13,19,21], where the encoder maps an input sequence representations $( x _ { I } , . . . , x _ { n } )$ to a sequence of continuous hidden representations $h = ( h _ { I } , . . . , h _ { n } )$ ; from there, the decoder then generates an output sequence $( \\boldsymbol { y } _ { I } , . . . ,$ $y _ { m } )$ one element at a time. At each step the model is auto-regressive, consuming the previously generated elements as additional input when generating the next. Our architecture realizes this overall encoder-decoder structure using stacked convolution boxes and point-wise, fully connected layers, shown in the left and right halves of Figure 1, respectively. However, these convolution boxes are customized differently for the encoder and the decoder. ",
+        "bbox": [
+            169,
+            465,
+            826,
+            608
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Encoder ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            633,
+            236,
+            648
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The encoder is composed of a stack of $\\mathrm { L } = 6$ layers. Each layer has two convolution boxes with residual links and a simple, position-wise fully connected feed-forward net. For each sub-layer with function $f ,$ we employ a residual connection followed by layer normalization [1], i.e. produce norm $( x + f ( x ) )$ . In addition, each layer begins with a position encoding, and ends with a positionwise feed-forward net, both of these allow us to strengthen the position-sensitivity of our model as they are repeated in all the $\\mathrm { ~ L ~ } = \\mathrm { ~ 6 ~ }$ layers. We also choose to invoke the dilation convolutions provided in the tensor2tensor library for encoding, to position-wise correlate distant elements. It is worth noting that we repeat position-encoding and use dilation convolution only for encoding, but not for decoding, for the reasons explained. ",
+        "bbox": [
+            169,
+            656,
+            826,
+            797
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Decoder ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            821,
+            236,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Our model follows the convolutional autoregressive structure introduced in Slicenet[11], ByteNet [12], WaveNet [17] and PixelCNN [18]. Inputs are embedded and encoded before being fed into a decoder that auto-regressively generates each element of the output. At every step, the autoregressive decoder produces a new output prediction given the encoded inputs and the ",
+        "bbox": [
+            169,
+            844,
+            823,
+            907
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "encoding of the existing predicted outputs. The outputs. The basic modules are the convolution boxion boxes stacked, and the attention modules for for the decoder to get information from the encoder. As we reuse theget information encoder. As corresponding functions from the tensorflow library and the tensor2tensor library, we skip the skip their details here. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            151
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We use a stack of $\\mathrm { ~ L ~ } = 5$ decoder layers. T  layers. The cross-attention, that allows each decoding step tocoding to attend the encoded-inputs, is repeatedly applied in each layer. inputs, applied layer. In the same way as the encoder, as encoder, each decoder layer ends with a position with a position-wise feed-forward net. Each decoder layer also has twoforward net. convolution boxes with residual links and residual a simple, position-wise fully connected feed wise feed-forward network. Masking is used to prevent positions from attending to subsequent positions. The maskasking used prevent attending subsequent asking and the offset of output embeddings ensure set  that the prediction for each position to depend only onto only the known outputs at positions less than that position. ",
+        "bbox": [
+            169,
+            160,
+            826,
+            270
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/f8b80ee8a1d800f5f7bd20617cd7703bd66c8dd461ff839554d49707164a42bb.jpg",
+        "image_caption": [
+            "Figure 1: The encoder (left) and decoder (right) stacks and stacks: "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            189,
+            290,
+            808,
+            858
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "In summary, in capturing the sequential position information and the position-wise relationships between inputs and targets, the PoseNet treats the convolution boxes for the encoder and those for the decoder differently; in the other words, the encoder and the decoder employ context specific convolution boxes which involve the position-sensitive mechanisms in different ways. In the encoder stack, the position encoding and the position-wise feed-forward net are applied to the beginning and the ending of each layer, repeatedly, and the convolutions are dilated to be more sensitivity to the distant positions. In the decoder stacks, the cross-attention is used at each layer repeatedly, but the position encoding is optionally applied only once. ",
+        "bbox": [
+            169,
+            107,
+            826,
+            233
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We chose not to use dilated convolution for decoder as in the step-by-step decoding process, outputs and pads shift thus less sensitive to dilation. For the same reason, we do not apply, or optionally apply only once without repeating in every layer, the position encoding, because in this case it has less effect or even adds noise. Please also note that in each layer the cross-attention is place before the convolution boxes. ",
+        "bbox": [
+            169,
+            239,
+            826,
+            319
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For enhanced parallelism and/or reduced parameters, the mechanisms of multi-head attention [19] and depth-wise convolution [11] are introduced, which are in common characterized by splitting the channels of an input into several non-overlapping segments, performing a regular attention or spatial convolution over each segment independently and then concatenating the resulting feature maps along the channel axis. The details of these mechanisms can be found in [19], [11] and the tensorflow API specifications. In this work we take advantage of them. ",
+        "bbox": [
+            169,
+            328,
+            826,
+            424
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "5 Experiments ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            446,
+            313,
+            465
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We carry out our experiments on x86_64 GNU/Linux with 4.4.0-96-generic #119-Ubuntu with 8G memory, using one NVIDIA GeForce GTX 1070 with CUDA V8.0.61, python3.5.2, tensorflow-1.3.0, tensor2tensor-1.2.2. In this study we focus on the follows issues: ",
+        "bbox": [
+            169,
+            479,
+            823,
+            525
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "How to improve the position sensitivity in the CNN-based, non-recurrent sequence-tosequence learning for enhanced accuracy, and ",
+            "How to apply the position-sensitivity strengthen mechanisms differently in the encoder and in the decoder. "
+        ],
+        "bbox": [
+            200,
+            532,
+            823,
+            590
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our model is trained and evaluated for the WMT English-to-German (EN-DE) and English-to-French (EN-FR) translation tasks using the benchmark data translate_ende_wmt $3 2 k$ and translate_enfr_wmt32k. The sizes of the sample data, measured on disk, are about 689M for EN-DE and 11G for EN-FR. All of our experiments are implemented using the tensorflow framework and the tensor2tensor library [23]. We also leveraged the convolution and attention mechanisms described in the related work [4, 11, 12,17, 19]. ",
+        "bbox": [
+            169,
+            599,
+            825,
+            688
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our experiments reveal that ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            700,
+            359,
+            715
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "the convolution based sequence-to-sequence learning can be benefited by the combination of several position sensitivity strengthen mechanisms such as repeatedly imposing timing signal, selectively apply dilation, appropriate mix parameterized and convolution-based self-attention, etc; ",
+            "certain position sensitivity strengthen mechanisms are more effective for accuracy enhancement if applied to encoding, including input encoding and target encoding, rather than to decoding. "
+        ],
+        "bbox": [
+            200,
+            715,
+            823,
+            819
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The intermediate training states are checkpointed by the tensorflow framework; along with each checkpoint (e.g. 2000 steps) the corresponding evaluation results are logged. We attached the partial evaluation results at the last 10 checkpoints on training the EN-DE translation model in Appendix 8.1; and on training the EN-FR translation model in Appendix 8.2. The average of these BLEU scores are approximately consistent with those measured at the 10 additional checkpoints ",
+        "bbox": [
+            169,
+            827,
+            825,
+            902
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "after the given train steps. We did not average the BLEU scores measured at the previous checkpoints where the model is still under-trained. ",
+        "bbox": [
+            169,
+            89,
+            823,
+            119
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Using our model, with batch-size 2048 and using 1 GPU, for the EN-DE translation task we achieved 33-36 approximate BLEU scores in 250K-500K training steps; for the EN-FR translation task we achieved 44-46 approximate BLEU scores in 1000K training steps (on a multiple GPU machine we see slightly higher accuracy but lower BLEU scores). ",
+        "bbox": [
+            169,
+            133,
+            823,
+            191
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To justify the significance of our approach, we have the BLEU scores on the EN-DE and the EN-FR translations compared with the related work (given in [11,19]), as listed in table 1 below. ",
+        "bbox": [
+            169,
+            205,
+            823,
+            236
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/2b9d189f7c029c0e47649251d3e0fa9748ff841f60fce539133130f73109d24a.jpg",
+        "table_caption": [
+            "WMT 2014 En-De Translation Task "
+        ],
+        "table_footnote": [
+            "Table 1: Performance of our models in EN-DE and EN-FR translation tasks with benchmark data translate_ende_wmt $3 2 k$ and translate_enfr_wmt $3 2 k$ compared to the latest published results; the “avg BLEU” averages the scores measured at the last 10 checkpoints "
+        ],
+        "table_body": "<table><tr><td>Model</td><td>EN-DE</td><td>BLEU</td><td>EN-FR</td><td>BLEU</td></tr><tr><td>Bytenet [12]</td><td>23.75</td><td></td><td></td><td></td></tr><tr><td>GNMT + RL [20]</td><td>24.6</td><td></td><td>39.92</td><td></td></tr><tr><td>ConvS2S [7]</td><td>25.16</td><td></td><td>40.46</td><td></td></tr><tr><td>MoE [14]</td><td>26.03</td><td></td><td>40.56</td><td></td></tr><tr><td>GNMT + RL Ensemble [22]</td><td>26.30</td><td></td><td>41.16</td><td></td></tr><tr><td>ConvS2S Ensemble [7]</td><td>26.36</td><td></td><td>41.29</td><td></td></tr><tr><td>Transformer (base) [19]</td><td>27.3</td><td></td><td>38.1</td><td></td></tr><tr><td>Transformer (big) [19]</td><td>28.4</td><td></td><td>41.0</td><td></td></tr><tr><td>SliceNet (Full, 2048) [11]</td><td>25.5</td><td></td><td></td><td></td></tr><tr><td>SliceNet (Super 2/3, 3072) [11]</td><td>26.1</td><td></td><td></td><td></td></tr><tr><td>PoseNet (2048)</td><td colspan=\"2\">33-36 (avg 34.92)</td><td colspan=\"2\">44-46 (avg 45.54)</td></tr><tr><td></td><td colspan=\"2\">(250K-500K steps)</td><td colspan=\"2\">(1000K steps)</td></tr></table>",
+        "bbox": [
+            171,
+            268,
+            785,
+            488
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "6 Conclusions ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            558,
+            308,
+            574
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The goal of providing a generalized and efficient deep-learning framework has motivated us to explore the possibility of using CNN as the universal building blocks. As CNN already has the superior track-record in audio, image and text learning, we particularly focus on its potential in sequence-to-sequence learning. Compared to the computations involved in RNN, the computations involved in CNN are easily parallelizable, but less history sensitive. Therefore enhancing the sequential order awareness, or position-sensitivity, is the key for CNN to support sequence transformation. In this work we introduce a CNN architecture, PoseNet, which is characterized by applying the position-sensitive mechanisms - position encoding (or timing signal), self-attention and cross-attention, dilation convolution, position-wise feed-forward net, residual net, etc, selectively in the encoder and the decoder for maximizing their effects. A notable feature of PoseNet is the asymmetric treatment of position information in the encoder and the decoder. For this we turn the common convolution boxes into specific ones depending on where they are used, with different sub-layers for capturing the context specific sequence oriented information. Experiments show that with strengthen position-sensitivity, PoseNet is capable of improving the accuracy of convolutional sequence-to-sequence learning - achieving around 33-36 approximate BLEU scores, and 44-46 approximate BLEU scores, on the WMT 2014 English-to-German and English-to-French translation tasks respectively. ",
+        "bbox": [
+            169,
+            590,
+            826,
+            840
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "7 References ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            90,
+            297,
+            107
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "1. Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016. ",
+            "2. Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473, 2014. URL http://arxiv.org/abs/1409.0473. ",
+            "3. Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using rnn encoder-decoder for statistical machine translation. CoRR, abs/1406.1078, 2014. ",
+            "4. François Chollet. Xception: Deep learning with depthwise separable convolutions. arXiv preprint arXiv:1610.02357, 2016. ",
+            "5. Junyoung Chung, Çaglar Gülçehre, Kyunghyun Cho, and Yoshua Bengio. Empirical evaluation of gated recurrent neural networks on sequence modeling. CoRR, abs/1412.3555, 2014. ",
+            "6. Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith. Recurrent neural network grammars. In Proc. of NAACL, 2016. ",
+            "7. Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. Convolutional sequence to sequence learning. arXiv preprint arXiv:1705.03122, 2017. ",
+            "8. Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 770–778, 2016. ",
+            "9. Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. Neural computation, 9(8): 1735– 1780, 1997. ",
+            "10. Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. Exploring the limits of language modeling. arXiv preprint arXiv:1602.02410, 2016. ",
+            "11. Lukasz Kaiser, N. Gomez, François Cholle, “Depthwise Separable Convolutions for Neural Machine Translation $^ { \\circ } ,$ https://arxiv.org/pdf/1706.03059, 2017. ",
+            "12. Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu. Neural machine translation in linear time. arXiv preprint arXiv:1610.10099, 2016. ",
+            "13. Minh-Thang Luong, Hieu Pham, and Christopher D Manning. Effective approaches to attention based neural machine translation. arXiv preprint arXiv:1508.04025, 2015. ",
+            "14. Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton and Jeff Dean. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint arXiv:1701.06538, 2017. ",
+            "15. Ilya Sutskever, Oriol Vinyals, and Quoc VV Le. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104–3112, 2014. ",
+            "16. Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and Zbigniew Wojna. Rethinking the inception architecture for computer vision. CoRR, abs/1512.00567, 2015.. ",
+            "17. Aäron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, and Koray Kavukcuoglu. Wavenet: A generative model for raw audio. CoRR abs/1609.03499, 2016. ",
+            "18. Aaron van den Oord, Nal Kalchbrenner, Lasse Espeholt, Oriol Vinyals, Alex Graves, et al. Conditional image generation with pixelcnn decoders. In Advances in Neural Information Processing Systems, pages 4790–4798, 2016. ",
+            "19. Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit,Llio Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin, “Attention Is All You Need”, https://arxiv.org/pdf/1706.03762.pdf, 2017, ",
+            "20. Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser, Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean. Google’s neural machine translation system: Bridging the gap between human and machine translation. CoRR, abs/1609.08144, 2016. ",
+            "21. Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. Google’s neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144, 2016. ",
+            "22. Jie Zhou, Ying Cao, Xuguang Wang, Peng Li, and Wei Xu. Deep recurrent models with fast-forward connections for neural machine translation. CoRR, abs/1606.04199, 2016. ",
+            "23. T2T: Tensor2Tensor Transformers, https://github.com/tensorflow/tensor2tensor "
+        ],
+        "bbox": [
+            173,
+            125,
+            826,
+            862
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "8 Appendices ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            90,
+            303,
+            108
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [
+            "8.1 PoseNet on translate_ende_wmt32k: Evaluation at last 10 checkpoints of 500K steps "
+        ],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-11:57:14  \nINFO:tensorflow:Validation (step 482000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -2.01664,  \nloss = 1.82994, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.41238,  \nmetrics-translate_ende_wmt32k/accuracy = 0.631383,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.606513,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.336328,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.811289 ",
+        "guess_lang": "python",
+        "bbox": [
+            169,
+            152,
+            689,
+            250
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-12:25:11  \nINFO:tensorflow:Validation (step 484000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.95574,  \nloss = 1.73249, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.421828,  \nmetrics-translate_ende_wmt32k/accuracy = 0.639055,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.617276,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.342415,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.820492 ",
+        "guess_lang": "txt",
+        "bbox": [
+            169,
+            258,
+            692,
+            354
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-12:53:18  \nINFO:tensorflow:Validation (step 486000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.96284,  \nloss = 1.75151, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.422178,  \nmetrics-translate_ende_wmt32k/accuracy = 0.635866,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.618148,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.350611,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.821233 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            364,
+            692,
+            460
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-13:24:14  \nINFO:tensorflow:Validation (step 488000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.93029,  \nloss = 1.75333, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.417444,  \nmetrics-translate_ende_wmt32k/accuracy = 0.643301,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.611268,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.34653,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.825383 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            470,
+            692,
+            568
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-13:52:15  \nINFO:tensorflow:Validation (step 490000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.93131,  \nloss = 1.73386, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.426887,  \nmetrics-translate_ende_wmt32k/accuracy = 0.643821,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.61464,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.353239,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.825245 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            578,
+            692,
+            674
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-14:20:07  \nINFO:tensorflow:Validation (step 492000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.96154,  \nloss = 1.83409, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.4132,  \nmetrics-translate_ende_wmt32k/accuracy = 0.641521,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.608894,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.338278,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.821384 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            685,
+            679,
+            780
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-14:48:09  \nINFO:tensorflow:Validation (step 494000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.97756,  \nloss = 1.82451, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.413808,  \nmetrics-translate_ende_wmt32k/accuracy = 0.635957,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.606894,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.344889,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.816165 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            791,
+            692,
+            887
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-15:15:54   \nINFO:tensorflow:Validation (step 496000):   \nmetrics-translate_ende_wmt32k/neg_log_perplexity $= -1$ .90634,   \nloss $= 1$ .68212, metrics-translate_ende_wmt32k/rouge_2_fscore $= 0$ .44237,   \nmetrics-translate_ende_wmt32k/accuracy $= 0$ .652367,   \nmetrics-translate_ende_wmt32k/rouge_L_fscore $= 0$ .631862,   \nmetrics-translate_ende_wmt32k/approx_bleu_score $= 0$ .367319,   \nmetrics-translate_ende_wmt32k/accuracy_top5 $= 0$ .827552 ",
+        "bbox": [
+            169,
+            88,
+            686,
+            186
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-15:44:03  \nINFO:tensorflow:Validation (step 498000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.94244,  \nloss = 1.73411, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.423232,  \nmetrics-translate_ende_wmt32k/accuracy = 0.639047,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.61918,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.350548,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.822101 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            196,
+            694,
+            292
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-10-21-16:12:16  \nINFO:tensorflow:Validation (step 500000):  \nmetrics-translate_ende_wmt32k/neg_log_perplexity = -1.89206,  \nloss = 1.72012, metrics-translate_ende_wmt32k/rouge_2_fscore = 0.431239,  \nmetrics-translate_ende_wmt32k/accuracy = 0.647935,  \nmetrics-translate_ende_wmt32k/rouge_L_fscore = 0.625391,  \nmetrics-translate_ende_wmt32k/approx_bleu_score = 0.361499,  \nmetrics-translate_ende_wmt32k/accuracy_top5 = 0.828574 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            301,
+            692,
+            398
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "8.2 PoseNet on translate_enfr_wmt32k: Evaluation at last 10 checkpoints of 1000K steps ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            425,
+            799,
+            440
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-15:04:30   \nINFO:tensorflow:Validation (step 982000):   \nmetrics-translate_enfr_wmt32k/accuracy $= 0.675681$ metrics-translate_enfr_wmt32k/aprox_bleu_score $= 0.450538$ metrics-translate_enfr_wmt32k/accuracy_top5 $= 0.850825$ metrics-translate_enfr_wmt32k/rouge_L_fscore $= 0.66145$ metrics-translate_enfr_wmt32k/neg_log_perplexity $= -1.66226$ metrics-translate_enfr_wmt32k/rouge_2_fscore $= 0.50523$ ,loss $= 1.37471$ ",
+        "bbox": [
+            171,
+            449,
+            681,
+            547
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-15:31:52  \nINFO:tensorflow:Validation (step 984000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.705628,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.46891,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.871277,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.678612,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.50277,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.523873, loss = 1.28076 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            556,
+            687,
+            652
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-15:59:32  \nINFO:tensorflow:Validation (step 986000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.678946,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.44124,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.845314,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.650633,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.66341,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.495654, loss = 1.44104 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            662,
+            687,
+            760
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-16:27:01  \nINFO:tensorflow:Validation (step 988000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.690276,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.458958,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.860904,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.668237,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.58758  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.514411, loss = 1.32547 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            768,
+            687,
+            866
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-16:54:23 INFO:tensorflow:Validation (step 990000): ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            876,
+            594,
+            901
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "metricsTranslate_enfr_wmt32k/accuracy = 0.679814,  \nmetricsTranslate_enfr_wmt32k/approx_bleu_score = 0.444471,  \nmetricsTranslate_enfr_wmt32k/accuracy_top5 = 0.847369,  \nmetricsTranslate_enfr_wmt32k/rouge_L_fscore = 0.646489,  \nmetricsTranslate_enfr_wmt32k/neg_log_perplexity = -1.66079,  \nmetricsTranslate_enfr_wmt32k/rouge_2_fscore = 0.4958, loss = 1.44457 ",
+        "guess_lang": "txt",
+        "bbox": [
+            169,
+            89,
+            678,
+            164
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-17:21:41  \nINFO:tensorflow:Validation (step 992000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.686088,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.44928,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.856638,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.661313,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.60854,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.507824, loss = 1.37166 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            172,
+            689,
+            268
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-17:49:07  \nINFO:tensorflow:Validation (step 994000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.677961,  \nmetrics-translate_enfr_wmt32k/aprox_bleu_score = 0.450756,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.853979,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.664942,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.63439,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.501011, loss = 1.35754 ",
+        "guess_lang": "python",
+        "bbox": [
+            171,
+            279,
+            689,
+            375
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-18:16:43  \nINFO:tensorflow:Validation (step 996000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.698592,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.465756,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.863186,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.675051,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.54489,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.521121, loss = 1.31394 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            385,
+            689,
+            481
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-18:44:19  \nINFO:tensorflow:Validation (step 998000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.692221,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.463122,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.858793,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.668282,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.59228,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.519492, loss = 1.30747 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            491,
+            689,
+            587
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "INFO:tensorflow:Finished evaluation at 2017-12-10-19:11:39  \nINFO:tensorflow:Validation (step 1000000):  \nmetrics-translate_enfr_wmt32k/accuracy = 0.698182,  \nmetrics-translate_enfr_wmt32k/approx_bleu_score = 0.46112,  \nmetrics-translate_enfr_wmt32k/accuracy_top5 = 0.865655,  \nmetrics-translate_enfr_wmt32k/rouge_L_fscore = 0.664928,  \nmetrics-translate_enfr_wmt32k/neg_log_perplexity = -1.51432,  \nmetrics-translate_enfr_wmt32k/rouge_2_fscore = 0.521016, loss = 1.31765 ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            598,
+            689,
+            694
+        ],
+        "page_idx": 11
+    }
+]

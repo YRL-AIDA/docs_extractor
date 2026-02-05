@@ -1,0 +1,2319 @@
+[
+    {
+        "type": "text",
+        "text": "STRUCTURED NEURAL SUMMARIZATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            99,
+            671,
+            122
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Patrick Fernandes∗ ",
+        "bbox": [
+            181,
+            143,
+            323,
+            157
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Carnegie Mellon University & IT ",
+        "bbox": [
+            181,
+            159,
+            405,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lisbon, Portugal ",
+        "bbox": [
+            181,
+            174,
+            295,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "pfernand@cs.cmu.edu ",
+        "bbox": [
+            181,
+            188,
+            372,
+            200
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Miltiadis Allamanis & Marc Brockschmidt ",
+        "bbox": [
+            454,
+            143,
+            758,
+            157
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Microsoft Research ",
+        "bbox": [
+            455,
+            159,
+            586,
+            172
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Cambridge, United Kingdom ",
+        "bbox": [
+            455,
+            172,
+            651,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "{miallama,mabrocks}@microsoft.com ",
+        "bbox": [
+            455,
+            186,
+            779,
+            200
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT ",
+        "text_level": 1,
+        "bbox": [
+            450,
+            237,
+            545,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Summarization of long sequences into a concise statement is a core problem in natural language processing, requiring non-trivial understanding of the input. Based on the promising results of graph neural networks on highly structured data, we develop a framework to extend existing sequence encoders with a graph component that can reason about long-distance relationships in weakly structured data such as text. In an extensive evaluation, we show that the resulting hybrid sequence-graph models outperform both pure sequence models as well as pure graph models on a range of summarization tasks. ",
+        "bbox": [
+            228,
+            270,
+            769,
+            383
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 INTRODUCTION ",
+        "text_level": 1,
+        "bbox": [
+            173,
+            412,
+            336,
+            428
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Summarization, the task of condensing a large and complex input into a smaller representation that retains the core semantics of the input, is a classical task for natural language processing systems. Automatic summarization requires a machine learning component to identify important entities and relationships between them, while ignoring redundancies and common concepts. ",
+        "bbox": [
+            169,
+            445,
+            826,
+            503
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Current approaches to summarization are based on the sequence-to-sequence paradigm over the words of some text, with a sequence encoder — typically a recurrent neural network, but sometimes a 1D-CNN (Narayan et al., 2018) or using self-attention (McCann et al., 2018) — processing the input and a sequence decoder generating the output. Recent successful implementations of this paradigm have substantially improved performance by focusing on the decoder, extending it with an attention mechanism over the input sequence and copying facilities (See et al., 2017; McCann et al., 2018). However, while standard encoders (e.g. bidirectional LSTMs) theoretically have the ability to handle arbitrary long-distance relationships, in practice they often fail to correctly handle long texts and are easily distracted by simple noise (Jia & Liang, 2017). ",
+        "bbox": [
+            169,
+            508,
+            828,
+            635
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this work, we focus on an improvement of sequence encoders that is compatible with a wide range of decoder choices. To mitigate the long-distance relationship problem, we draw inspiration from recent work on highly-structured objects (Li et al., 2015; Kipf & Welling, 2017; Gilmer et al., 2017; Allamanis et al., 2018; Cvitkovic et al., 2018). In this line of work, highly-structured data such as entity relationships, molecules and programs is modelled using graphs. Graph neural networks are then successfully applied to directly learn from these graph representations. Here, we propose to extend this idea to weakly-structured data such as natural language. Using existing tools, we can annotate (accepting some noise) such data with additional relationships (e.g. co-references) to obtain a graph. However, the sequential aspect of the input data is still rich in meaning, and thus we propose a hybrid model in which a standard sequence encoder generates rich input for a graph neural network. In our experiments, the resulting combination outperforms baselines that use pure sequence or pure graph-based representations. ",
+        "bbox": [
+            169,
+            640,
+            828,
+            808
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Briefly, the contributions of our work are: 1. A framework that extends standard sequence encoder models with a graph component that leverages additional structure in sequence data. 2. Application of this extension to a range of existing sequence models and an extensive evaluation on three summarization tasks from the literature. 3. We release all used code and most data at https://github.com/CoderPat/structured-neural-summarization. The C# data is not available but is derived from Allamanis et al. (2018) ",
+        "bbox": [
+            169,
+            813,
+            828,
+            898
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            480,
+            47
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "∗Work done while working at Microsoft Research Cambridge ",
+        "bbox": [
+            191,
+            909,
+            560,
+            924
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "arXiv:1811.01824v4 [cs.LG] 3 Feb 2021 ",
+        "bbox": [
+            22,
+            250,
+            60,
+            676
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1 ",
+        "bbox": [
+            493,
+            948,
+            503,
+            959
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "public void Add(string name, object value = null, DbType? dbType = null, ParameterDirection? direction = null, int? size = null, byte? precision = null, byte? scale = null) { parameters[Clean(name)] = new ParamInfo{ Name = name, Value = value, ParameterDirection = direction ?? ParameterDirection.Input, DbType = dbType, Size = size, Precision = precision, Scale = scale }; } Ground truth: add a parameter to this dynamic parameter list BILSTM $\\rightarrow$ LSTM: adds a new parameter to the specified parameter BILSTM+GNN $\\rightarrow$ LSTM: creates a new instance of the dynamic type specified BILSTM+GNN $\\rightarrow$ LSTM+Pointer: add a parameter to a list of parameters ",
+        "bbox": [
+            171,
+            108,
+            807,
+            277
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Figure 1: An example from the dataset for the METHODDOC source code summarization task along with the outputs of a baseline and our models. In the METHODNAMING dataset, this method appears as a sample requiring to predict the name Add as a subtoken sequence of length 1. ",
+        "bbox": [
+            169,
+            281,
+            823,
+            324
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2 STRUCTURED SUMMARIZATION TASKS ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            359,
+            532,
+            376
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this work, we consider three summarization tasks with different properties. All tasks follow the common pattern of translating a long (structured) sequence into a shorter sequence while trying to preserve as much meaning as possible. The first two tasks are related to the summarization of source code (Figure 1), which is highly structured and thus can profit most from models that can take advantage of this structure; the final task is a classical natural language task illustrating that hybrid sequence-graph models are applicable for less structured inputs as well. ",
+        "bbox": [
+            169,
+            397,
+            826,
+            482
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "METHODNAMING The aim of this task is to infer the name of a function (or method in objectoriented languages, such as Java, Python and C#) given its source code (Allamanis et al., 2016). Although method names are a single token, they are usually composed of one or more subtokens (split using snake case or camelCase) and thus, the method naming task can be cast as predicting a sequence of subtokens. Consequently, method names represent an “extreme” summary of the functionality of a given function (on average, the names in the Java dataset have only 2.9 subtokens). Notably, the vocabulary of tokens used in names is very large (due to abbreviations and domainspecific jargon), but this is mitigated by the fact that $33 \\%$ of subtokens in names can be copied directly from subtokens in the method’s source code. Finally, source code is highly structured input data with known semantics, which can be exploited to support name prediction. ",
+        "bbox": [
+            169,
+            508,
+            828,
+            648
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "METHODDOC Similar to the first task, the aim of this task is to predict a succinct description of the functionality of a method given its source code (Barone & Sennrich, 2017). Such descriptions usually appear as documentation of methods (e.g. “docstrings” in Python or “JavaDocs” in Java). While the task shares many characteristics with the METHODNAMING task, the target sequence is substantially longer (on average 19.1 tokens in our C# dataset) and only $1 9 . 4 \\%$ of tokens in the documentation can be copied from the code. While method documentation is nearer to standard natural language than method names, it mixes project-specific jargon, code segments and often describes non-functional aspects of the code, such as performance characteristics and design considerations. ",
+        "bbox": [
+            169,
+            674,
+            826,
+            787
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "NLSUMMARIZATION Finally, we consider the classic summarization of natural language as widely studied in NLP research. Specifically, we are interested in abstractive summarization, where given some text input (e.g. a news article) a machine learning model produces a novel natural language summary. Traditionally, NLP summarization methods treat text as a sequence of sentences and each one of them as a sequence of words (tokens). The input data has less explicitly defined structure than our first two tasks. However, we recast the task as a structured summarization problem by considering additional linguistic structure, including named entities and entity coreferences as inferred by existing NLP tools. ",
+        "bbox": [
+            169,
+            811,
+            828,
+            925
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            493,
+            948,
+            503,
+            959
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3 MODEL ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            102,
+            272,
+            118
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "As discussed above, standard neural approaches to summarization follow the sequence-to-sequence framework. In this setting, most decoders only require a representation $^ { h }$ of the complete input sequence (e.g. the final state of an RNN) and per-token representations $h _ { t _ { i } }$ for each input token $t _ { i }$ . These token representations are then used as the “memories” of an attention mechanism (Bahdanau et al., 2014; Luong et al., 2015) or a pointer network (Vinyals et al., 2015a). ",
+        "bbox": [
+            169,
+            133,
+            826,
+            205
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In this work, we propose an extension of sequence encoders that allows us to leverage known (or inferred) relationships among elements in the input data. To achieve that, we combine sequence encoders with graph neural networks (GNNs) (Li et al., 2015; Gilmer et al., 2017; Kipf & Welling, 2017). For this, we first use a standard sequential encoder (e.g. bidirectional RNNs) to obtain a pertoken representation $h _ { t _ { i } }$ , which we then feed into a GNN as the initial node representations. The resulting per-node (i.e. per-token) representations $\\boldsymbol { h } _ { t _ { i } } ^ { \\prime }$ can then be used by an unmodified decoder. Experimentally, we found this to surpass models that use either only the sequential structure or only the graph structure (see Sect. 4). We now discuss the different parts of our model in detail. ",
+        "bbox": [
+            169,
+            210,
+            828,
+            323
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Gated Graph Neural Networks To process graphs, we follow Li et al. (2015) and briefly summarize the core concepts of GGNNs here. A graph $\\mathcal { G } = ( \\nu , \\pmb { \\mathscr { E } } , \\pmb { X } )$ is composed of a set of nodes $\\nu$ , node features $\\boldsymbol { X }$ , and a list of directed edge sets ${ \\pmb { \\mathcal { E } } } = ( { \\mathcal { E } } _ { 1 } , \\dots , { \\mathcal { E } } _ { K } )$ where $K$ is the number of edge types. Each $v \\in \\mathcal V$ is associated with a real-valued vector $\\scriptstyle { \\mathbf { { \\mathit { x } } } } _ { \\mathit { v } }$ representing the features of the node (e.g., the embedding of a string label of that node), which is used for the initial state ${ h } _ { v } ^ { ( 0 ) }$ of a node. ",
+        "bbox": [
+            169,
+            339,
+            826,
+            412
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Information is propagated through the graph using neural message passing (Gilmer et al., 2017). For this, every node $v$ sends messages to its neighbors by transforming its current representation $\\boldsymbol { h } _ { v } ^ { ( i ) }$ using an edge-type dependent function $f _ { k }$ . Here, $f _ { k }$ can be an arbitrary function; we use a simple linear layer. By computing all messages at the same time, all states can be updated simultaneously. In particular, a new state for a node $v$ is computed by aggregating all incoming messages as $m _ { v } ^ { ( i ) } \\stackrel {  } { = } g ( \\{ f _ { k } ( \\pmb { h } _ { u } ^ { ( i ) } ) \\} )$ there is an edge of type $k$ from $u$ to $v \\}$ ). $g$ is an aggregation function; we use elementwise summation for $g$ . Given the aggregated message $\\mathbf { \\it { m } } _ { v } ^ { ( i ) }$ and the current state vector $\\boldsymbol { h } _ { v } ^ { ( i ) }$ of node $v$ , we can compute the new state $\\pmb { h } _ { v } ^ { ( i + 1 ) } = \\mathrm { G R U } ( \\pmb { m } _ { v } ^ { ( i ) } , \\pmb { h } _ { v } ^ { ( i ) } )$ , where GRU is the recurrent cell function of a gated recurrent unit. These dynamics are rolled out for a fixed number of timesteps $T$ , and the state vectors resulting from the final step are used as output node representations, i.e., $\\mathrm { G N N } ( ( \\mathcal { V } , \\pmb { \\mathcal { E } } , X ) ) = \\{ \\pmb { h } _ { v } ^ { ( T ) } \\} _ { v \\in \\mathcal { V } }$ . ",
+        "bbox": [
+            169,
+            417,
+            828,
+            589
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sequence GNNs We now explain our novel combination of GGNNs and standard sequence encoders. As input, we take a sequence $\\boldsymbol { S } = \\left[ s _ { 1 } \\ldots s _ { N } \\right]$ and $K$ binary relationships $R _ { 1 } \\ldots R _ { K } \\in S \\times S$ between elements of the sequence. For example, $R _ { = }$ could be the equality relationship $\\left\\{ \\left( s _ { i } , s _ { j } \\right) \\right. \\mid$ $s _ { i } = s _ { j } \\}$ . The choice and construction of relationships is dataset-dependent, and will be discussed in detail in Sect. 4. Given any sequence encoder $\\boldsymbol { \\mathcal { S } } \\boldsymbol { \\mathcal { E } }$ that maps $S$ to per-element representations $\\left[ \\mathbf { e } _ { 1 } \\ldots \\mathbf { e } _ { N } \\right]$ and a sequence representation e (e.g. a bidirectional RNN), we can construct the sequence GNN $\\mathcal { S } \\mathcal { E } _ { G N N }$ by simply computing ${ \\bf e } _ { 1 } ^ { \\prime } \\dots { \\bf e } _ { N } ^ { \\prime } ] = \\mathbf { G N N } ( ( S , [ R _ { 1 } \\dots R _ { K } ] , [ \\mathbf { e } _ { 1 } \\dots { \\bf e } _ { N } ] ) )$ . To obtain a graph-level representation, we use the weighted averaging mechanism from Gilmer et al. (2017). Concretely, for each node $v$ in the graph, we compute a weight $\\sigma ( w ( \\pmb { h } _ { v } ^ { ( T ) } ) ) \\in [ 0 , 1 ]$ using a learnable function $w$ and the logistic sigmoid $\\sigma$ and compute a graph-level representation as $\\begin{array} { r } { \\hat { \\mathbf { e } } \\equiv \\sum _ { 1 \\leq i \\leq N } \\sigma ( w ( \\mathbf { e } _ { i } ^ { \\prime } ) ) \\cdot \\mathbb { N } ( \\mathbf { e } _ { i } ^ { \\prime } ) } \\end{array}$ , where $\\aleph$ is another learnable projection function. We found that best results were achieved by computing the final $\\mathbf { e ^ { \\prime } }$ as $W \\cdot ( \\mathbf { e } \\hat { \\mathbf { e } } )$ for some learnable matrix $W$ . ",
+        "bbox": [
+            169,
+            603,
+            828,
+            776
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This method can easily be extended to support additional nodes not present in the original sequence $S$ after running $\\mathcal { S E }$ (e.g., to accommodate meta-nodes representing sentences, or non-terminal nodes from a syntax tree). The initial node representation for these additional nodes can come from other sources, such as a simple embedding of their label. ",
+        "bbox": [
+            169,
+            781,
+            826,
+            838
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Implementation Details. Processing large graphs of different shapes efficiently requires to overcome some engineering challenges. For example, the CNN/DM corpus has (on average) about 900 nodes per graph. To allow efficient computation, we use the trick of Allamanis et al. (2018) where all graphs in a minibatch are “flattened” into a single graph with multiple disconnected components. The varying graph sizes also represent a problem for the attention and copying mechanisms in the ",
+        "bbox": [
+            169,
+            854,
+            828,
+            925
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            493,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "decoder, as they require to compute a softmax over a variable-sized list of memories. To handle this efficiently without padding, we associate each node in the (flattened) “batch” graph with the index of the sample in the minibatch from which the node originated. Then, using TensorFlow’s unsorted segment * operations, we can perform an efficient and numerically stable softmax over the variable number of representations of the nodes of each graph. ",
+        "bbox": [
+            169,
+            103,
+            826,
+            176
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4 EVALUATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            195,
+            316,
+            210
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1 QUANTITATIVE EVALUATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            227,
+            416,
+            242
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We evaluate Sequence GNNs on our three tasks by comparing them to models that use only sequence or graph information, as well as by comparing them to task-specific baselines. We discuss the three tasks, their respective baselines and how we present the data to the models (including the relationships considered in the graph component) next before analyzing the results. ",
+        "bbox": [
+            169,
+            253,
+            826,
+            310
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1.1 SETUP FOR METHODNAMING ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            325,
+            434,
+            340
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Datasets, Metrics, and Models. We consider two datasets for the METHODNAMING task. First, we consider the “Java (small)” dataset of Alon et al. (2019), re-using the train-validation-test splits they have picked. We additionally generated a new dataset from 23 open-source C# projects mined from GitHub (see below for the reasons for this second dataset), removing any duplicates. More information about these datasets can be found in Appendix C. We follow earlier work on METHOD-NAMING (Allamanis et al., 2016; Alon et al., 2019) and measure performance using the F1 score over the generated subtokens. However, since the task can be viewed as a form of (extreme) summarization, we also report ROUGE-2 and ROUGE-L scores (Lin, 2004), which we believe to be additional useful indicators for the quality of results. ROUGE-1 is omitted since it is equivalent to F1 score. We note that there is no widely accepted metric for this task and further work identifying the most appropriate metric is required. ",
+        "bbox": [
+            169,
+            349,
+            828,
+            503
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We compare to the current state of the art (Alon et al., 2019), as well as a sequence-to-sequence implementation from the OpenNMT project (Klein et al.). Concretely, we combine two encoders (a bidirectional LSTM encoder with 1 layer and 256 hidden units, and its sequence GNN extension with 128 hidden units unrolled over 8 timesteps) with two decoders (an LSTM decoder with 1 layer and 256 hidden units with attention over the input sequence, and an extension using a pointer network-style copying mechanism (Vinyals et al., 2015a)). Additionally, we consider selfattention as an alternative to RNN-based sequence encoding architectures. For this, we use the Transformer (Vaswani et al., 2017) implementation in OpenNMT (i.e., using self-attention both for the decoder and the encoder) as a baseline and compare it to a version whose encoder is extended with a GNN component. ",
+        "bbox": [
+            169,
+            510,
+            828,
+            650
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Data Representation Following the work of Allamanis et al. (2016); Alon et al. (2019), we break up all identifier tokens (i.e. variables, methods, classes, etc.) in the source code into subtokens by splitting them according to camelCase and pascal case heuristics. This allows the models to extract information from the information-rich subtoken structure, and ensures that a copying mechanism in the decoder can directly copy relevant subtokens, something that we found to be very effective for this task. All models are provided with all (sub)tokens belonging to the source code of a method, including its declaration, with the actual method name replaced by a placeholder symbol. ",
+        "bbox": [
+            169,
+            666,
+            828,
+            765
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To construct a graph from the (sub)tokens, we implement a simplified form of the work of Allamanis et al. (2018). First, we introduce additional nodes for each (full) identifier token, and connect the constituent subtokens appearing in the input sequence using a INTOKEN edge; we additionally connect these nodes using a NEXTTOKEN edge. We also add nodes for the parse tree and use edges to indicate that one node is a CHILD of another. Finally, we add LASTLEXICALUSE edges to connect identifiers to their most (lexically) recent use in the source code. ",
+        "bbox": [
+            169,
+            770,
+            828,
+            854
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1.2 SETUP FOR METHODDOC ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            869,
+            408,
+            883
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Datasets, Metrics, and Models. We tried to evaluate on the Python dataset of Barone & Sennrich (2017) that contains pairs of method declarations and their documentation (“docstring”). However, ",
+        "bbox": [
+            169,
+            895,
+            828,
+            926
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            491,
+            948,
+            504,
+            959
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/3e3da587bc37e6c4439d300522ec1a50d0f118387c55d8464938255a30840303.jpg",
+        "image_caption": [
+            "Figure 2: (Partial) graph of an example input from the CNN/DM corpus. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            173,
+            99,
+            823,
+            265
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "following the work of Lopes et al. (2017), we found extensive duplication between different folds of the dataset and were only able to reach comparable results by substantially overfitting to the training data that overlapped with the test set. We have documented details in subsection C.3 and in Allamanis (2018), and decided to instead evaluate on our new dataset of 23 open-source C# projects from above, again removing duplicates and methods without documentation. Following Barone & Sennrich (2017), we measure the BLEU score for all models. However, we also report F1, ROUGE-2 and ROUGE-L scores, which should better reflect the summarization aspect of the task. We consider the same models as for the METHODNAMING task, using the same configuration, and use the same data representation. ",
+        "bbox": [
+            169,
+            329,
+            826,
+            455
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "4.1.3 SETUP FOR NLSUMMARIZATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            486,
+            455,
+            500
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Datasets, Metrics, and Models. We use the CNN/DM dataset (Hermann et al., 2015) using the exact data and split provided by See et al. (2017). The data is constructed from CNN and Daily Mail news articles along with a few sentences that summarize each article. To measure performance, we use the standard ROUGE metrics. We compare our model with the near-to-state-of-the-art work of See et al. (2017), who use a sequence-to-sequence model with attention and copying as basis, but have additionally substantially improved the decoder component. As our contribution is entirely on the encoder side and our model uses a standard sequence decoder, we are not expecting to outperform more recent models that introduce substantial novelty in the structure or training objective of the decoder (Chen & Bansal, 2018; Narayan et al., 2018). Again, we evaluate our contribution using an OpenNMT-based encoder/decoder combination. Concretely, we use a bidirectional LSTM encoder with 1 layer and 256 hidden units, and its sequence GNN extension with 128 hidden units unrolled over 8 timesteps. As decoder, we use an LSTM with 1 layer and 256 hidden units with attention over the input sequence, and an extension using a pointer network-style copying mechanism. ",
+        "bbox": [
+            169,
+            517,
+            826,
+            699
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Data Representation We use Stanford CoreNLP (Manning et al., 2014) (version 3.9.1) to tokenize the text and provide the resulting tokens to the encoder. For the graph construction (Figure 2), we extract the named entities and run coreference resolution using CoreNLP. We connect tokens using a NEXT edge and introduce additional super-nodes for each sentence, connecting each token to the corresponding sentence-node using a IN edge. We also connect subsequent sentence-nodes using a NEXT edge. Then, for each multi-token named entity we create a new node, labeling it with the type of the entity and connecting it with all tokens referring to that entity using an IN edge. Finally, coreferences of entities are connected with a special REF edge. Figure 2 shows a partial graph for an article in the CNN/DM dataset. The goal of this graph construction process is to explicitly annotate important relationships that can be useful for summarization. We note that (a) in early efforts we experimented with adding dependency parse edges, but found that they do not provide significant benefits and (b) that since we retrieve the annotations from CoreNLP, they can contain errors and thus, the performance of the our method is influenced by the accuracy of the upstream annotators of named entities and coreferences. ",
+        "bbox": [
+            169,
+            729,
+            828,
+            924
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            173,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            493,
+            948,
+            503,
+            959
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/ca6f8251c14aa6e6e9962644ac1f23c32b4d3993eb68019b6822922a22a88730.jpg",
+        "table_caption": [
+            "Table 1: Evaluation results for all models and tasks. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>METHODNAMING</td><td>F1</td><td>ROUGE-2</td><td>ROUGE-L</td><td></td></tr><tr><td>Java</td><td></td><td></td><td></td><td></td></tr><tr><td>Alon et al. (2019)</td><td>43.0</td><td>-</td><td>-</td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>24.9</td><td>8.3</td><td>27.4</td><td></td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>44.5</td><td>20.9</td><td>43.4</td><td></td></tr><tr><td>BILSTM → LSTM</td><td>35.8</td><td>17.9</td><td>39.7</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>44.7</td><td>21.1</td><td>43.1</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>42.5</td><td>22.4</td><td>45.6</td><td></td></tr><tr><td>GNN → LSTM+Pointer</td><td>50.5</td><td>24.8</td><td>48.9</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>51.4</td><td>25.0</td><td>50.0</td><td></td></tr><tr><td>C#</td><td></td><td></td><td></td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>41.3</td><td>25.2</td><td>43.2</td><td></td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>62.1</td><td>31.0</td><td>61.1</td><td></td></tr><tr><td>BILSTM → LSTM</td><td>48.8</td><td>32.8</td><td>51.8</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>62.6</td><td>31.0</td><td>61.3</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>57.2</td><td>29.7</td><td>60.4</td><td></td></tr><tr><td>GNN → LSTM+Pointer</td><td>63.0</td><td>31.5</td><td>61.3</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>63.4</td><td>31.9</td><td>62.4</td><td></td></tr><tr><td>METHODDOC</td><td>F1</td><td>ROUGE-2</td><td>ROUGE-L</td><td>BLEU</td></tr><tr><td>C#</td><td></td><td></td><td></td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>40.0</td><td>27.8</td><td>41.1</td><td>13.9</td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>37.6</td><td>25.6</td><td>37.9</td><td>21.4</td></tr><tr><td>BILSTM → LSTM</td><td>35.2</td><td>15.3</td><td>30.8</td><td>10.0</td></tr><tr><td>BILSTM+GNN → LSTM</td><td>41.1</td><td>28.9</td><td>41.0</td><td>22.5</td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>35.2</td><td>20.8</td><td>36.7</td><td>14.7</td></tr><tr><td>GNN → LSTM+Pointer</td><td>38.9</td><td>25.6</td><td>37.1</td><td>17.7</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer (average pooling)</td><td>43.2</td><td>29.0</td><td>41.0</td><td>21.3</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>45.4</td><td>28.3</td><td>41.1</td><td>22.2</td></tr><tr><td>NLSUMMARIZATION</td><td>ROUGE-1</td><td>ROUGE-2</td><td>ROUGE-L</td><td></td></tr><tr><td>CNN/DM</td><td></td><td></td><td></td><td></td></tr><tr><td>BILSTM → LSTM</td><td>33.6</td><td>11.4</td><td>27.9</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>33.0</td><td>13.3</td><td>28.3</td><td></td></tr><tr><td>See et al. (2017) (+ Pointer)</td><td>36.4</td><td>15.7</td><td>33.4</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>35.9</td><td>13.9</td><td>30.3</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>38.1</td><td>16.1</td><td>33.2</td><td></td></tr><tr><td>See et al. (2017) (+ Pointer + Coverage)</td><td>39.5</td><td>17.3</td><td>36.4</td><td></td></tr></table>",
+        "bbox": [
+            171,
+            119,
+            834,
+            616
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4.1.4 RESULTS & ANALYSIS ",
+        "text_level": 1,
+        "bbox": [
+            174,
+            646,
+            383,
+            657
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We show all results in Tab. 1. Results for models from the literature are taken from the respective papers and repeated here. Across all tasks, the results show the advantage of our hybrid sequence GNN encoders over pure sequence encoders. ",
+        "bbox": [
+            174,
+            672,
+            823,
+            714
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "On METHODNAMING, we can see that all GNN-augmented models are able to outperform the current specialized state of the art, requiring only simple graph structure that can easily be obtained using existing parsers for a programming language. The results in performance between the different encoder and decoder configurations nicely show that their effects are largely orthogonal. ",
+        "bbox": [
+            174,
+            722,
+            825,
+            777
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "On METHODDOC, the unmodified SELFATT SELFATT model already performs quite well, and the augmentation with graph data only improves the BLEU score and worsens the results on ROUGE. Inspection of the results shows that this is due to the length of predictions. Whereas the ground truth data has on average 19 tokens in each result, SELFATT $ s$ ELFATT predicts on average 11 tokens, and SELFATT+GNN SELFATT 16 tokens. Additionally, we experimented with an ablation in which a model is only using graph information, e.g., a setting comparable to a simplification of the architecture of Allamanis et al. (2018). For this, we configured the GNN to use 128-dimensional representations and unrolled it for 10 timesteps, keeping the decoder configuration as for the other models. The results indicate that this configuration performs less well than a pure sequenced model. We speculate that this is mainly due to the fact that 10 timesteps are insufficient to propagate infor-",
+        "bbox": [
+            174,
+            784,
+            825,
+            922
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            173,
+            32,
+            478,
+            46
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            493,
+            949,
+            503,
+            959
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/dcb8aead1b59ac4bd0b0107574b293b3e8aa510abab0c751fe1390219159d585.jpg",
+        "table_caption": [
+            "Table 2: Ablations on CNN/DM Corpus "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">NLSUMMARIZATION (CNN/DM)</td><td>ROUGE-1</td><td>ROUGE-2</td><td>ROUGE-L</td></tr><tr><td colspan=\"2\">See et al. (2017) (base)</td><td>31.3</td><td>11.8</td><td>28.8</td></tr><tr><td colspan=\"2\">See et al. (2017) (+ Pointer)</td><td>36.4</td><td>15.7</td><td>33.4</td></tr><tr><td colspan=\"2\">See et al. (2017) (+ Pointer + Coverage)</td><td>39.5</td><td>17.3</td><td>36.4</td></tr><tr><td>BILSTM</td><td>→ LSTM</td><td>33.6</td><td>11.4</td><td>27.9</td></tr><tr><td>BILSTM</td><td>→ LSTM+Pointer</td><td>35.9</td><td>13.9</td><td>30.3</td></tr><tr><td>BILSTM</td><td>→ LSTM+Pointer (+ coref/entity annotations)</td><td>36.2</td><td>14.2</td><td>30.5</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM</td><td>33.0</td><td>13.3</td><td>28.3</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer (only sentence nodes)</td><td>36.0</td><td>15.2</td><td>29.6</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer (sentence nodes + eq edges)</td><td>36.1</td><td>15.4</td><td>30.3</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer</td><td>38.1</td><td>16.1</td><td>33.2</td></tr></table>",
+        "bbox": [
+            173,
+            119,
+            823,
+            282
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public static bool TryFormat(float value, Span<byte> destination, out int bytesWritten, StandardFormat format = default) { return TryFormatFloatingPoint(float>(value, destination, out bytesWritten, format); } ",
+        "guess_lang": "dart",
+        "bbox": [
+            173,
+            309,
+            771,
+            362
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "Ground truth formats a single as a utf8 string  \nBiLSTM $\\rightarrow$ LSTM formats a number of bytes in a utf8 string  \nBiLSTM+GNN $\\rightarrow$ LSTM formats a timespan as a utf8 string  \nBiLSTM+GNN $\\rightarrow$ LSTM+Pointer formats a float as a utf8 string ",
+        "bbox": [
+            181,
+            375,
+            687,
+            426
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Figure 3: An example from the dataset for the METHODDOC source code summarization task along with the outputs of a baseline and our models. ",
+        "bbox": [
+            169,
+            433,
+            823,
+            462
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "mation across the whole graph, especially in combination with summation as aggregation function for messages in graph information propagation. ",
+        "bbox": [
+            169,
+            500,
+            823,
+            529
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Finally, on NLSUMMARIZATION, our experiments show that the same model suitable for tasks on highly structured code is competitive with specialized models for natural language tasks. While there is still a gap to the best configuration of See et al. (2017) (and an even larger one to more recent work in the area), we believe that this is entirely due to our simplistic decoder and training objective, and that our contribution can be combined with these advances. ",
+        "bbox": [
+            169,
+            535,
+            826,
+            604
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In Table 2 we show some ablations for NLSUMMARIZATION. As we use the same hyperparameters across all datasets and tasks, we additionally perform an experiment with the model of See et al. (2017) (as implemented in OpenNMT) but using our settings. The results achieved by these baselines trend to be a bit worse than the results reported in the original paper, which we believe is due to a lack of hyperparameter optimization for this task. We then evaluated how much the additional linguistic structure provided by CoreNLP helps. First, we add the coreference and entity annotations to the baseline BILSTM → LSTM + POINTER model (by extending the embedding of tokens with an embedding of the entity information, and inserting fresh $\\mathsf { \\Omega } ^ { \\bullet \\bullet } ; \\mathsf { R E F } 1 \\boldsymbol { \\dot { \\omega } }$ , . . . tokens at the sources/targets of co-references) and observe only minimal improvements. This suggests that our graph-based encoder is better-suited to exploit additional structured information compared to a biLSTM encoder. We then drop all linguistic structure information from our model, keeping only the sentence edges/nodes. This still improves on the baseline BILSTM → LSTM+POINTER model (in the ROUGE-2 score), suggesting that the GNN still yields improvements in the absence of linguistic structure. Finally, we add long-range dependency edges by connecting tokens with equivalent string representations of their stems and observe further minor improvements, indicating that even using only purely syntactical information, without a semantic parse, can already provide gains. ",
+        "bbox": [
+            169,
+            612,
+            826,
+            835
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.2 QUALITATIVE EVALUATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            864,
+            406,
+            878
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We look at a few sample suggestions in our dataset across the tasks. Here we highlight some observations we make that point out interesting aspects and failure cases of our model. ",
+        "bbox": [
+            169,
+            895,
+            826,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            493,
+            948,
+            503,
+            959
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/e5ce698356b910cf932077b962a606e2691c078e104ea53349b78faddb785376.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Input: Arsenal, Newcastle United and Southampton have checked on Caen midfielder N’golo Kante. Paris-born Kante is a defensive minded player who has impressed for Caen this season and they are willing to sell for around £ 5million. Marseille have been in constant contact with Caen over signing the 24-year-old who has similarities with Lassana Diarra and Claude Makelele in terms of stature and style. N’Golo Kante is attracting interest from a host of Premier League clubs including Arsenal. Caen would be willing to sell Kante for around £ 5million.</td></tr><tr><td>Reference: n’golo kante is wanted by arsenal, newcastle and southampton. marseille are also keen on the £ 5m rated midfielder. kante has been compared to lassana diarra and claude makelele. click here for the latest premier league news.</td></tr><tr><td>See et al. (2017) (+ Pointer): arsenal, newcastle united and southampton have checked on caen midfielder n’golo kante. paris-born kante is attracting interest from a host of premier league clubs including arsenal. paris-born kante is attracting interest from a host of premier league clubs including arsenal</td></tr><tr><td>See et al. (2017) (+ Pointer + Coverage): arsenal, newcastle united and southampton have checked on caen midfielder n’golo kante. paris-born kante is a defensive minded player who has impressed for caen this season. marseille have been in constant contact with caen over signing the 24-year-old.</td></tr><tr><td>BILSTM+GNN → LSTM: marseille have been linked with caen midfielder %UNK% %UNK%. marseille have been interested from a host of premier league clubs including arsenal. caen have been interested from a host of premier league clubs including arsenal.</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer n’golo kante is attracting interest from a host of premier league clubs. marseille have been in constant contact with caen over signing the 24-year-old. the 24-year-old has similarities with lassana diarra and claude makelele in terms of stature.</td></tr></table>",
+        "bbox": [
+            169,
+            102,
+            841,
+            406
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Figure 4: Sample natural language translations from the CNN-DM dataset. ",
+        "bbox": [
+            251,
+            417,
+            743,
+            431
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "METHODDOC Figures 1 and 3 illustrate typical results of baselines and our model on the METHODDOC task (see Appendix A for more examples). The hardness of the task stems from the large number of distractors and the need to identify the most relevant parts of the input. In Figure 1, the token “parameter” and variations appears many times, and identifying the correct relationship is non-trivial, but is evidently eased by graph edges explicitly denoting these relationships. Similarly, in Figure 3, many variables are passed around, and the semantics of the method require understanding how information flows between them. ",
+        "bbox": [
+            169,
+            464,
+            826,
+            561
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "NLSUMMARIZATION Figure 4 shows one sample summarization. More samples for this task can be found in Appendix B. First, we notice that the model produces natural-looking summaries with no noticeable negative impact on the fluency of the language over existing methods. Furthermore, the GNN-based model seems to capture the central named entity in the article and creates a summary centered around that entity. We hypothesize that the GNN component that links longdistance relationships helps capture and maintain a better “global” view of the article, allowing for better identification of central entities. Our model still suffers from repetition of information (see Appendix B), and so we believe that our model would also profit from advances such as taking coverage into account (See et al., 2017) or optimizing for ROUGE-L scores directly via reinforcement learning (Chen & Bansal, 2018; Narayan et al., 2018). ",
+        "bbox": [
+            169,
+            583,
+            828,
+            723
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "5 RELATED WORK ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            750,
+            344,
+            763
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Natural language processing research has studied summarization for a long time. Most related is work on abstractive summarization, in which the core content of a given text (usually a news article) is summarized in a novel and concise sentence. Chopra et al. (2016) and Nallapati et al. (2016) use deep learning models with attention on the input text to guide a decoder that generates a summary. See et al. (2017) and McCann et al. (2018) extend this idea with pointer networks (Vinyals et al., 2015a) to allow for copying tokens from the input text to the output summary. These approaches treat text as a simple token sequences, not explicitly exposing additional structure. In principle, deep sequence networks are known to be able to learn the inherent structure of natural language (e.g. in parsing (Vinyals et al., 2015b) and entity recognition (Lample et al., 2016)), but our experiments indicate that explicitly exposing this structure by separating concerns improves performance. ",
+        "bbox": [
+            169,
+            784,
+            828,
+            924
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            173,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8 ",
+        "bbox": [
+            493,
+            948,
+            503,
+            959
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Recent work in summarization has proposed improved training objectives for summarization, such as tracking coverage of the input document (See et al., 2017) or using reinforcement learning to directly identify actions in the decoder that improve target measures such as ROUGE-L (Chen & Bansal, 2018; Narayan et al., 2018). These objectives are orthogonal to the graph-augmented encoder discussed in this work, and we are interested in combining these efforts in future work. ",
+        "bbox": [
+            169,
+            103,
+            826,
+            174
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Exposing more language structure explicitly has been studied over the last years, with a focus on treebased models (Tai et al., 2015). Very recently, first uses of graphs in natural language processing have been explored. Marcheggiani & Titov (2017) use graph convolutional networks to encode single sentences and assist machine translation. De Cao et al. (2018) create a graph over named entities over a set of documents to assist question answering. Closer to our work is the work of Liu et al. (2018), who use abstract meaning representation (AMR), in which the source document is first parsed into AMR graphs, before a summary graph is created, which is finally rendered in natural language. In contrast to that work we do not use AMRs but directly encode relatively simple relationships directly on the tokenized text, and do not treat summarization as a graph rewrite problem. Combining our encoder with AMRs to use richer graph structures may be a promising future direction. ",
+        "bbox": [
+            169,
+            180,
+            826,
+            321
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Finally, summarization in source code has also been studied in the forms of method naming, comment and documentation prediction. Method naming has been tackled with a series of models. For example, Allamanis et al. (2015) use a log-bilinear network to predict method names from features, and later extend this idea to use a convolutional attention network over the tokens of a method to predict the subtokens of names (Allamanis et al., 2016). Raychev et al. (2015) and Bichsel et al. (2016) use CRFs for a range of tasks on source code, including the inference of names for variables and methods. Recently, Alon et al. (2018; 2019) extract and encode paths from the syntax tree of a program, setting the state of the art in accuracy on method naming. ",
+        "bbox": [
+            169,
+            325,
+            826,
+            439
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Linking text to code can have useful applications, such as code search (Gu et al., 2018), traceability (Guo et al., 2017), and detection of redundant method comments (Louis et al., 2018). Most approaches on source code either treat it as natural language (i.e., a token sequence), or use a language parser to explicitly expose its tree structure. For example, Barone & Sennrich (2017) use a simple sequence-to-sequence baseline, whereas Hu et al. (2017) summarize source code by linearizing the abstract syntax tree of the code and using a sequence-to-sequence model. Wan et al. (2018) instead directly operate on the tree structure using tree recurrent neural networks (Tai et al., 2015). The use of additional structure on related tasks on source code has been studied recently, for example in models that are conditioned on learned traversals of the syntax tree (Bielik et al., 2016) and in graphbased approaches (Allamanis et al., 2018; Cvitkovic et al., 2018). However, as noted by Liao et al. (2018), GNN-based approaches suffer from a tension between the ability to propagate information across large distances in a graph and the computational expense of the propagation function, which is linear in the number of graph edges per propagation step. ",
+        "bbox": [
+            169,
+            444,
+            828,
+            626
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "6 DISCUSSION & CONCLUSIONS ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            646,
+            459,
+            662
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We presented a framework for extending sequence encoders with a graph component that can leverage rich additional structure. In an evaluation on three different summarization tasks, we have shown that this augmentation improves the performance of a range of different sequence models across all tasks. We are excited about this initial progress and look forward to deeper integration of mixed sequence-graph modeling in a wide range of tasks across both formal and natural languages. The key insight, which we believe to be widely applicable, is that inductive biases induced by explicit relationship modeling are a simple way to boost the practical performance of existing deep learning systems. ",
+        "bbox": [
+            169,
+            676,
+            826,
+            789
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9 ",
+        "bbox": [
+            493,
+            946,
+            504,
+            959
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES ",
+        "text_level": 1,
+        "bbox": [
+            174,
+            102,
+            285,
+            117
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "Miltiadis Allamanis. The adverse effects of code duplication in machine learning models of code. arXiv preprint arXiv:1812.06469, 2018. ",
+            "Miltiadis Allamanis, Earl T Barr, Christian Bird, and Charles Sutton. Suggesting accurate method and class names. In Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering, pp. 38–49. ACM, 2015. ",
+            "Miltiadis Allamanis, Hao Peng, and Charles Sutton. A convolutional attention network for extreme summarization of source code. In International Conference on Machine Learning, pp. 2091–2100, 2016. ",
+            "Miltiadis Allamanis, Marc Brockschmidt, and Mahmoud Khademi. Learning to represent programs with graphs. In International Conference on Learning Representations, 2018. ",
+            "Uri Alon, Meital Zilberstein, Omer Levy, and Eran Yahav. A general path-based representation for predicting program properties. In Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation, pp. 404–419. ACM, 2018. ",
+            "Uri Alon, Omer Levy, and Eran Yahav. code2seq: Generating sequences from structured representations of code. In International Conference on Learning Representations, 2019. ",
+            "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473, 2014. ",
+            "Antonio Valerio Miceli Barone and Rico Sennrich. A parallel corpus of Python functions and documentation strings for automated code documentation and code generation. In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 2: Short Papers), volume 2, pp. 314–319, 2017. ",
+            "Benjamin Bichsel, Veselin Raychev, Petar Tsankov, and Martin Vechev. Statistical deobfuscation of android applications. In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, pp. 343–355. ACM, 2016. ",
+            "Pavol Bielik, Veselin Raychev, and Martin Vechev. PHOG: probabilistic model for code. In International Conference on Machine Learning (ICML), 2016. ",
+            "Yen-Chun Chen and Mohit Bansal. Fast abstractive summarization with reinforce-selected sentence rewriting. arXiv preprint arXiv:1805.11080, 2018. ",
+            "Sumit Chopra, Michael Auli, and Alexander M Rush. Abstractive sentence summarization with attentive recurrent neural networks. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 93–98, 2016. ",
+            "Milan Cvitkovic, Badal Singh, and Anima Anandkumar. Deep learning on code with an unbounded vocabulary. In Machine Learning 4 Programming, 2018. ",
+            "Nicola De Cao, Wilker Aziz, and Ivan Titov. Question answering by reasoning across documents with graph convolutional networks. arXiv preprint arXiv:1808.09920, 2018. ",
+            "Justin Gilmer, Samuel S Schoenholz, Patrick F Riley, Oriol Vinyals, and George E Dahl. Neural message passing for quantum chemistry. In International Conference on Machine Learning, pp. 1263–1272, 2017. ",
+            "Xiaodong Gu, Hongyu Zhang, and Sunghun Kim. Deep code search. In Proceedings of the 40th International Conference on Software Engineering, pp. 933–944. ACM, 2018. ",
+            "Jin Guo, Jinghui Cheng, and Jane Cleland-Huang. Semantically enhanced software traceability using deep learning techniques. In Software Engineering (ICSE), 2017 IEEE/ACM 39th International Conference on, pp. 3–14. IEEE, 2017. "
+        ],
+        "bbox": [
+            171,
+            125,
+            828,
+            924
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            490,
+            948,
+            506,
+            959
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems, pp. 1693–1701, 2015. ",
+            "Xing Hu, Yuhan Wei, Ge Li, and Zhi Jin. CodeSum: Translate program language to natural language. arXiv preprint arXiv:1708.01837, 2017. ",
+            "Robin Jia and Percy Liang. Adversarial examples for evaluating reading comprehension systems. In Empirical Methods in Natural Language Processing (EMNLP), 2017. ",
+            "Thomas N. Kipf and Max Welling. Semi-supervised classification with graph convolutional networks. In International Conference on Learning Representations, 2017. ",
+            "G. Klein, Y. Kim, Y. Deng, J. Senellart, and A. M. Rush. OpenNMT: Open-Source Toolkit for Neural Machine Translation. ArXiv e-prints. ",
+            "Guillaume Lample, Miguel Ballesteros, Sandeep Subramanian, Kazuya Kawakami, and Chris Dyer. Neural architectures for named entity recognition. In Proceedings the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2016. ",
+            "Yujia Li, Daniel Tarlow, Marc Brockschmidt, and Richard Zemel. Gated graph sequence neural networks. arXiv preprint arXiv:1511.05493, 2015. ",
+            "Renjie Liao, Marc Brockschmidt, Daniel Tarlow, Alexander Gaunt, Raquel Urtasun, and Richard S. Zemel. Graph partition neural networks for semi-supervised classification. In International Conference on Learning Representations (ICLR) [Workshop Track], 2018. ",
+            "Chin-Yew Lin. ROUGE: A package for automatic evaluation of summaries. Text Summarization Branches Out, 2004. ",
+            "Fei Liu, Jeffrey Flanigan, Sam Thomson, Norman Sadeh, and Noah A Smith. Toward abstractive summarization using semantic representations. arXiv preprint arXiv:1805.10399, 2018. ",
+            "Cristina V Lopes, Petr Maj, Pedro Martins, Vaibhav Saini, Di Yang, Jakub Zitny, Hitesh Sajnani, and Jan Vitek. D´ej`avu: a map of code duplicates on github. Proceedings of the ACM on Programming Languages, 1(OOPSLA):84, 2017. ",
+            "Annie Louis, Santanu Kumar Dash, Earl T Barr, and Charles Sutton. Deep learning to detect redundant method comments. arXiv preprint arXiv:1806.04616, 2018. ",
+            "Minh-Thang Luong, Hieu Pham, and Christopher D Manning. Effective approaches to attentionbased neural machine translation. arXiv preprint arXiv:1508.04025, 2015. ",
+            "Christopher Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven Bethard, and David Mc-Closky. The stanford corenlp natural language processing toolkit. In Proceedings of 52nd annual meeting of the association for computational linguistics: system demonstrations, pp. 55–60, 2014. ",
+            "Diego Marcheggiani and Ivan Titov. Encoding sentences with graph convolutional networks for semantic role labeling. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pp. 1506–1515, 2017. ",
+            "Bryan McCann, Nitish Shirish Keskar, Caiming Xiong, and Richard Socher. The natural language decathlon: Multitask learning as question answering. arXiv preprint arXiv:1806.08730, 2018. ",
+            "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang. Abstractive text summarization using sequence-to-sequence rnns and beyond. In Proceedings of The 20th SIGNLL Conference on Computational Natural Language Learning, pp. 280–290, 2016. ",
+            "Shashi Narayan, Shay B Cohen, and Mirella Lapata. Ranking sentences for extractive summarization with reinforcement learning. arXiv preprint arXiv:1802.08636, 2018. ",
+            "Veselin Raychev, Martin Vechev, and Andreas Krause. Predicting program properties from Big Code. In Principles of Programming Languages (POPL), 2015. "
+        ],
+        "bbox": [
+            171,
+            102,
+            828,
+            924
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11 ",
+        "bbox": [
+            488,
+            946,
+            506,
+            959
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "Abigail See, Peter J Liu, and Christopher D Manning. Get to the point: Summarization with pointergenerator networks. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, pp. 1073–1083, 2017. ",
+            "Kai Sheng Tai, Richard Socher, and Christopher D Manning. Improved semantic representations from tree-structured long short-term memory networks. 2015. ",
+            "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems, pp. 5998–6008, 2017. ",
+            "Oriol Vinyals, Meire Fortunato, and Navdeep Jaitly. Pointer networks. In Advances in Neural Information Processing Systems, pp. 2692–2700, 2015a. ",
+            "Oriol Vinyals, Lukasz Kaiser, Terry Koo, Slav Petrov, Ilya Sutskever, and Geoffrey Hinton. Grammar as a foreign language. In Advances in Neural Information Processing Systems, 2015b. ",
+            "Yao Wan, Zhou Zhao, Min Yang, Guandong Xu, Haochao Ying, Jian Wu, and Philip S Yu. Improving automatic source code summarization via deep reinforcement learning. In Proceedings of the 33rd ACM/IEEE International Conference on Automated Software Engineering, pp. 397–407. ACM, 2018. "
+        ],
+        "bbox": [
+            171,
+            102,
+            828,
+            375
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12 ",
+        "bbox": [
+            488,
+            946,
+            508,
+            959
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A CODE SUMMARIZATION SAMPLES",
+        "text_level": 1,
+        "bbox": [
+            171,
+            102,
+            493,
+            118
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A.1 METHODDOC ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            133,
+            316,
+            147
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 1 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            159,
+            264,
+            174
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "public static bool TryConvertTo(object valueToConvert, Type resultType, IFormatProvider formatProvider, out object result){ result $=$ null; try{ result $=$ ConvertTo(valueToConvert, resultType, formatProvider); } catch (InvalidcastException){ return false; } catch (ArgumentException){ return false; } return true; } ",
+        "bbox": [
+            171,
+            181,
+            834,
+            334
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ground truth ",
+        "text_level": 1,
+        "bbox": [
+            181,
+            348,
+            272,
+            361
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "sets result to valuetoconvert converted to resulttype considering formatprovider for custom conversions calling the parse method and calling convert . changetype . ",
+        "bbox": [
+            437,
+            348,
+            816,
+            387
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM ",
+        "bbox": [
+            183,
+            387,
+            354,
+            398
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "converts the specified type to a primitive type . ",
+        "bbox": [
+            439,
+            388,
+            714,
+            400
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM ",
+        "bbox": [
+            184,
+            400,
+            354,
+            411
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "sets result to resulttype ",
+        "bbox": [
+            439,
+            401,
+            576,
+            412
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER ",
+        "bbox": [
+            183,
+            412,
+            423,
+            422
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "sets result to valuetoconvert converted to resulttype. ",
+        "bbox": [
+            439,
+            412,
+            745,
+            426
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 2 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            436,
+            264,
+            452
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public virtual Task Init(string name, IProviderRuntime providerRuntime, IProviderConfiguration config) { Log = providerRuntime GetLogger(this.Type()._FULLName); this~- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ",
+        "guess_lang": "java",
+        "bbox": [
+            171,
+            460,
+            895,
+            535
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ground truth ",
+        "text_level": 1,
+        "bbox": [
+            181,
+            551,
+            271,
+            561
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "initializes the storage provider ",
+        "bbox": [
+            439,
+            551,
+            620,
+            564
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM ",
+        "bbox": [
+            183,
+            564,
+            354,
+            575
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "creates a grain object ",
+        "bbox": [
+            439,
+            565,
+            565,
+            577
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM ",
+        "bbox": [
+            184,
+            577,
+            354,
+            588
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "initializes the provider provider ",
+        "bbox": [
+            439,
+            578,
+            627,
+            589
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER ",
+        "bbox": [
+            183,
+            589,
+            423,
+            601
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "initialization function to initialize the specified provider. ",
+        "bbox": [
+            439,
+            590,
+            771,
+            603
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 3 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            609,
+            264,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public void NullParameter(){ TaskParameter t = new TaskParameter(null); Assert(NULL(t.WrappedParameter); AssertEqual( TaskParameterType Null, t.ParametersType); ((INodePacketTranslatable) t).Translate( TranslationHelperss.GetWriteTranslator()); TaskParameter t2 = TaskParameter.FactoryForDeserialization( TranslationHelperss.GetReadTranslator()); Assert(NULL(t2.WrappedParameter); AssertEqual( TaskParameterType Null, t2.ParametersType); } ",
+        "guess_lang": "java",
+        "bbox": [
+            171,
+            633,
+            745,
+            772
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ground truth ",
+        "text_level": 1,
+        "bbox": [
+            181,
+            787,
+            272,
+            797
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM ",
+        "bbox": [
+            183,
+            800,
+            354,
+            811
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "verifies that construction and serialization with a null parameter is ok tests that the value is a value that is a value to the specified type ",
+        "bbox": [
+            439,
+            787,
+            849,
+            814
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM ",
+        "bbox": [
+            184,
+            811,
+            354,
+            823
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "verifies that construction with an parameter parameter ",
+        "bbox": [
+            439,
+            814,
+            759,
+            825
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER ",
+        "bbox": [
+            183,
+            825,
+            423,
+            835
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "verifies that construction and serialization with a parameter that is null ",
+        "bbox": [
+            439,
+            825,
+            854,
+            838
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 4 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            849,
+            264,
+            864
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public override DbGeometryWellKnownValue CreateWellKnownValue DbGeometry geometryValue) { geometryValue.Checked(\"geometryValue\"); var spatialValue = geometryValue.AsSpatialValue(); DbGeometryWellKnownValue result = CreateWellKnownValue(spatialValue, ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            872,
+            950,
+            925
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13 ",
+        "bbox": [
+            488,
+            946,
+            506,
+            959
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "() $\\coloneqq$ >SpatialExceptions.CouldNotCreateWellKnownGeometryValueNoSrid(\"geometryValue\"), () $\\coloneqq$ >SpatialExceptions.CouldNotCreateWellKnownGeometryValueNoWkbOrWkt(\"geometryValue\"), (srid, wkb, wkt) $\\Rightarrow$ new DbGeometryWellKnownValue() { CoordinateSystemId $\\equiv$ srid, WellKnownBinary $\\equiv$ wkb, WellKnownText $\\equiv$ wkt }); return result; } ",
+        "bbox": [
+            169,
+            103,
+            955,
+            194
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ground truth ",
+        "text_level": 1,
+        "bbox": [
+            181,
+            207,
+            272,
+            220
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM ",
+        "bbox": [
+            181,
+            232,
+            354,
+            244
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM ",
+        "bbox": [
+            181,
+            257,
+            354,
+            270
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER ",
+        "bbox": [
+            181,
+            282,
+            423,
+            295
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "creates an instance of t:system.data.spatial.dbgeometry value using one or both of the standard well known spatial formats. ",
+        "bbox": [
+            436,
+            207,
+            834,
+            233
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "creates a t:system.data.spatial.dbgeography value based on the specified well known binary value . ",
+        "bbox": [
+            436,
+            233,
+            807,
+            258
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "creates a new t:system.data.spatial.dbgeography instance using the specified well known spatial formats . ",
+        "bbox": [
+            436,
+            258,
+            831,
+            282
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "creates a new instance of the t:system.data.spatial.dbgeometry value based on the provided geometry value and returns the resulting well as known spatial formats . ",
+        "bbox": [
+            436,
+            282,
+            841,
+            321
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "A.2 METHODNAMING ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            343,
+            341,
+            357
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 1 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            369,
+            264,
+            385
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "public bool $\\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ d$ return d != null && d.Val $= =$ Val; ",
+        "bbox": [
+            171,
+            391,
+            500,
+            430
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ground truth equals ",
+        "bbox": [
+            181,
+            444,
+            493,
+            457
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM foo ",
+        "bbox": [
+            183,
+            457,
+            468,
+            469
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM equals ",
+        "bbox": [
+            183,
+            469,
+            493,
+            482
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER equals ",
+        "bbox": [
+            183,
+            482,
+            493,
+            494
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 2 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            503,
+            264,
+            517
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "internal void __(string switchName,.Hashtable bag, string parameterName){ object obj $=$ bag[parameterName]; if(obj $! =$ null){ int value $=$ (int) obj; AppendSwitchIfNotNull(switchName, value.ToString(CultureInfo.InvariantCulture)); } } ",
+        "bbox": [
+            171,
+            525,
+            816,
+            627
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ground truth append switch with integer ",
+        "bbox": [
+            181,
+            641,
+            671,
+            654
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM LSTM set string ",
+        "bbox": [
+            183,
+            654,
+            531,
+            666
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN → LSTM append switch ",
+        "bbox": [
+            183,
+            666,
+            555,
+            678
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BILSTM+GNN LSTM+POINTER append switch if not null ",
+        "bbox": [
+            183,
+            678,
+            661,
+            691
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 3 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            699,
+            264,
+            713
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "internal static string __() {\n    var currentPlatformString = string.empty;\n    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {\n        currentPlatformString = \"WINDOWS\";\n    }\n    else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {\n        currentPlatformString = \"LINUX\";\n    }\n    else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) {\n        currentPlatformString = \"OSX\";\n    }\n    else {\n        Assert.True(false, \"unrecognized current platform\");\n    }\n    return currentPlatformString;\n} ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            720,
+            756,
+            922
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14 ",
+        "bbox": [
+            488,
+            946,
+            508,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "Ground truth get os platform as string  \nBiLSTM $\\rightarrow$ LSTM get name  \nBiLSTM+GNN $\\rightarrow$ LSTM get platform  \nBiLSTM+GNN $\\rightarrow$ LSTM+Pointer get current platform string ",
+        "bbox": [
+            181,
+            101,
+            681,
+            152
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "C# Sample 4 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            159,
+            264,
+            174
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public override DbGeometryWellKnownValue CreateWellKnownValue DbGeometry geometryValue) { geometryValue.Checked(\"geometryValue\"); var spatialValue = geometryValue.AsSpatialValue(); DbGeometryWellKnownValue result = CreateWellKnownValue(spatialValue, (   )=>SpatialExceptions.CouldNotCreateWellKnownGeometryValueNoSrid(\"geometryValue\"), (   )=>SpatialExceptions.CouldNotCreateWellKnownGeometryValueNoWkbOrWkt(\"geometryValue\"), (srid, wkb, wkt) => new DbGeometryWellKnownValue (   ) { CoordinateSystemId = srid, WellKnownBinary = wkb, WellKnownText = wkt }); return result; } ",
+        "guess_lang": "javascript",
+        "bbox": [
+            169,
+            181,
+            955,
+            324
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "Ground truth create well known value  \nBILSTM $\\rightarrow$ LSTM spatial geometry from xml  \nBILSTM+GNN $\\rightarrow$ LSTM geometry point  \nBILSTM+GNN $\\rightarrow$ LSTM+Pointer get well known value ",
+        "bbox": [
+            181,
+            337,
+            661,
+            388
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Java Sample 1 ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            396,
+            276,
+            411
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "public static void _ (String name, int expected, MetricsRecordBuilder rb) \\{\n\tAssert.assertEquals(\"Bad value for metric \" + name,\n\t\texpected,\n\tgetIntCounter(name, rb));\n\\} ",
+        "guess_lang": "txt",
+        "bbox": [
+            171,
+            419,
+            826,
+            483
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "algorithm",
+        "code_caption": [],
+        "code_body": "Ground truth assert counter  \nBILSTM $\\rightarrow$ LSTM assert email value  \nBILSTM+GNN $\\rightarrow$ LSTM assert header  \nBILSTM+GNN $\\rightarrow$ LSTM+Pointer assert int counter ",
+        "bbox": [
+            181,
+            498,
+            602,
+            550
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15 ",
+        "bbox": [
+            488,
+            946,
+            506,
+            959
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "B NATURAL LANGUAGE SUMMARIZATION SAMPLES",
+        "text_level": 1,
+        "bbox": [
+            171,
+            102,
+            627,
+            118
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "Input: -LRB- CNN -RRB- Gunshots were fired at rapper Lil Wayne ’s tour bus early Sunday in Atlanta . No one was injured in the shooting , and no arrests have been made , Atlanta Police spokeswoman Elizabeth Espy said . Police are still looking for suspects . Officers were called to a parking lot in Atlanta ’s Buckhead neighborhood , Espy said . They arrived at $3 { : } 2 5 { \\mathrm { ~ a . m } }$ . and located two tour buses that had been shot multiple times . The drivers of the buses said the incident occurred on Interstate 285 near Interstate 75 , Espy said . Witnesses provided a limited description of the two vehicles suspected to be involved : a “ Corvette style vehicle ” and an SUV . Lil Wayne was in Atlanta for a performance at Compound nightclub Saturday night . CNN ’s Carma Hassan contributed to this report . ",
+            "Reference: rapper lil wayne not injured after shots fired at his tour bus on an atlanta interstate , police say . no one has been arrested in the shooting ",
+            "See et al. (2017) ( $\\mathbf { + }$ Pointer): police are still looking for suspects . the incident occurred on interstate 285 near interstate 75 , police say . witnesses provided a limited description of the two vehicles suspected to be involved : a “ corvette style vehicle ” and an suv . ",
+            "See et al. (2017) (+ Pointer $^ +$ Coverage): lil wayne ’s tour bus was shot multiple times , police say . police are still looking for suspects . they arrived at $3 { : } 2 5 \\ \\mathrm { a . m }$ . and located two tour buses that had been shot . ",
+            "$\\mathbf { B I L S T M + G N N } \\to \\mathbf { L S T M }$ : the incident occurred on interstate $\\% \\mathrm { U N K } \\%$ near interstate 75 . no one was injured in the shooting , and no arrests have been made , atlanta police spokeswoman says . ",
+            "BILSTM+GNN → LSTM+POINTER gunshots fired at rapper lil wayne ’s tour bus early sunday in atlanta , police say . no one was injured in the shooting , and no arrests have been made , police say . "
+        ],
+        "bbox": [
+            171,
+            132,
+            841,
+            473
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "Input: Tottenham have held further discussions with Marseille over a potential deal for midfielder Florian Thauvin . The 22-year-old has been left out of the squad for this weekend ’s game with Metz as Marseille push for a £ 15m sale . The winger , who can also play behind the striker , was the subject of enquiries from Spurs earlier in the year and has also been watched by Chelsea and Valencia . Tottenham have held further talks with Ligue 1 side Marseille over a possible deal for Florian Thauvin . Marseille are already resigned to losing Andre Ayew and Andre-Pierre Gignac with English sides keen on both . Everton , Newcastle and Swansea , have all shown an interest in Ayew , who is a free agent in the summer . ",
+            "Reference: florian thauvin has been left out of marseille ’s squad with metz . marseille are pushing for a £ 15m sale and tottenham are interested . the winger has also been watched by chelsea and la liga side valencia . ",
+            "See et al. (2017) (+ Pointer): tottenham have held further discussions with marseille over a potential deal for midfielder florian thauvin . the 22-year-old has been left out of the squad for this weekend ’s game with metz as marseille push for a $\\pounds 1 5 \\mathrm { m }$ sale . ",
+            "See et al. (2017) (+ Pointer $^ +$ Coverage): florian thauvin has been left out of the squad for this weekend ’s game with metz as marseille push for a $\\pounds 1 5 \\mathrm { m }$ sale . the 22-year-old was the subject of enquiries from spurs earlier in the year . ",
+            "BILSTM+GNN → LSTM: the 22-year-old has been left out of the squad for this weekend ’s game with metz . the 22-year-old has been left out of the squad for this weekend ’s game with metz . the winger has been left out of the squad for this weekend ’s game with metz . ",
+            "BILSTM+GNN → LSTM+POINTER tottenham have held further discussions with marseille over a potential deal . the winger has been left out of the squad for this weekend ’s game . tottenham have held further talks with marseille over a potential deal . "
+        ],
+        "bbox": [
+            171,
+            511,
+            841,
+            864
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16 ",
+        "bbox": [
+            488,
+            946,
+            509,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "C CODE DATASETS INFORMATION ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            102,
+            473,
+            118
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "C.1 C# DATASET ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            133,
+            307,
+            148
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We extract the C# dataset from open-source projects on GitHub. Overall, our dataset contains 460,905 methods, 55,635 of which have a documentation comment. The dataset is split $8 5 - 5 - 1 0 \\%$ . The projects and exact state of the repositories used is listed in Table 3 ",
+        "bbox": [
+            169,
+            160,
+            826,
+            203
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/97212ffd45c47389899b16e875d51f6d4934234e6361a696c55a6d42f48c7dca.jpg",
+        "table_caption": [
+            "Table 3: Projects in our C# dataset. Ordered alphabetically. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Name</td><td>Git SHA</td><td>Description</td></tr><tr><td>Akka.NET</td><td>6f32f6a7</td><td>Actor-based Concurrent &amp; Distributed Framework</td></tr><tr><td>AutoMapper</td><td>19d6f7fc</td><td>Object-to-Object Mapping Library</td></tr><tr><td>BenchmarkDotNet</td><td>57005f05</td><td>Benchmarking Library</td></tr><tr><td>CommonMark.NET</td><td>f3d54530</td><td>Markdown Parser</td></tr><tr><td>CoreCLR</td><td>cc5dcbd6</td><td>.NET Core Runtime</td></tr><tr><td>CoreFx</td><td>ec1671fd</td><td>.NET Foundational Libraries</td></tr><tr><td>Dapper</td><td>3c7cde28</td><td>Object Mapper Library</td></tr><tr><td>EntityFramework</td><td>c4d9a269</td><td>Object-Relational Mapper</td></tr><tr><td>Humanizer</td><td>2b1c94c4</td><td>String Manipulation and Formatting</td></tr><tr><td>Lean</td><td>90ee6aaae</td><td>Algorithms Trading Engine</td></tr><tr><td>Mono</td><td>9b9e4f4b</td><td>.NET Implementation</td></tr><tr><td>MsBuild</td><td>7f95dc15</td><td>Build Engine</td></tr><tr><td>Nancy</td><td>de458a9b</td><td>HTTP Service Framework</td></tr><tr><td>NLog</td><td>49fdd08e</td><td>Logging Library</td></tr><tr><td>Opserver</td><td>9e4d3a40</td><td>Monitoring System</td></tr><tr><td>orleans</td><td>f89c5866</td><td>Distributed Virtual Actor Model</td></tr><tr><td>Polly</td><td>f3d2973d</td><td>Resilience &amp; Transient Fault Handling Library</td></tr><tr><td>Powershell</td><td>9ac701db</td><td>Command-line Shell</td></tr><tr><td>ravendb</td><td>6437de30</td><td>Document Database</td></tr><tr><td>roslyn</td><td>8ca0a542</td><td>Compiler &amp; Code Analysis &amp; Compilation</td></tr><tr><td>ServiceStack</td><td>17f081b9</td><td>Real-time web library</td></tr><tr><td>SignalR</td><td>9b05bcb0</td><td>Push Notification Framework</td></tr><tr><td>Wox</td><td>13e6c5ee</td><td>Application Launcher</td></tr></table>",
+        "bbox": [
+            173,
+            243,
+            823,
+            619
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "C.2 JAVA METHOD NAMING DATASETS ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            643,
+            460,
+            657
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We use the datasets and splits of Alon et al. (2019) provided by their website. Upon scanning all methods in the dataset, the size of the corpora can be seen in Table 4. More information can be found at Alon et al. (2019). ",
+        "bbox": [
+            169,
+            670,
+            826,
+            713
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "C.3 PYTHON METHOD DOCUMENTATION DATASET ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            729,
+            542,
+            744
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We use the dataset as split of Barone & Sennrich (2017) provided by their GitHub repository. Upon parsing the dataset, we get 106,065 training samples, 1,943 validation samples and 1,937 test samples. We note that $1 6 . 9 \\%$ of the documentation samples in the validation set and $1 5 . 3 \\%$ of the samples in test set have a sample with the identical natural language documentation on the training ",
+        "bbox": [
+            169,
+            757,
+            826,
+            814
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/e9efcf7faf2760fc56146a69b0da4a5a1502edde1b1326f165f62475b9534919.jpg",
+        "table_caption": [
+            "Table 4: The statistics of the extracted graphs from the Java method naming dataset of Alon et al. (2019). "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dataset</td><td>Train Size</td><td>Valid Size</td><td>Test Size</td></tr><tr><td>Java – Small</td><td>691,505</td><td>23,837</td><td>56,952</td></tr></table>",
+        "bbox": [
+            318,
+            877,
+            678,
+            922
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17 ",
+        "bbox": [
+            488,
+            946,
+            506,
+            959
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "set. This eludes to a potential issue, described by Lopes et al. (2017). See Allamanis (2018) for a lengthier discussion of this issue. ",
+        "bbox": [
+            169,
+            103,
+            823,
+            132
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "C.4 GRAPH DATA STATISTICS ",
+        "text_level": 1,
+        "bbox": [
+            171,
+            148,
+            397,
+            162
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Below we present the data characteristics of the graphs we use across the datasets. ",
+        "bbox": [
+            171,
+            175,
+            712,
+            191
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/a8c7c58fe23c5fce051cc8a542e363b13732ee78d1c025fd2843ed8b6b3938d8.jpg",
+        "table_caption": [
+            "Table 5: Graph Statistics For Datasets. "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dataset</td><td>Avg Num Nodes</td><td>Avg Num Edges</td></tr><tr><td>CNN/DM</td><td>903.2</td><td>2532.9</td></tr><tr><td>C# Method Names</td><td>125.2</td><td>239.3</td></tr><tr><td>C# Documentation</td><td>133.5</td><td>265.9</td></tr><tr><td>Java-Small Method Names</td><td>144.4</td><td>251.6</td></tr></table>",
+        "bbox": [
+            271,
+            227,
+            727,
+            316
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Published as a conference paper at ICLR 2019 ",
+        "bbox": [
+            171,
+            32,
+            478,
+            47
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18 ",
+        "bbox": [
+            490,
+            946,
+            506,
+            959
+        ],
+        "page_idx": 17
+    }
+]

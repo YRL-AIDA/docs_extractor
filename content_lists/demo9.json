@@ -1,0 +1,4142 @@
+[
+    {
+        "type": "text",
+        "text": "REVIEW ",
+        "text_level": 1,
+        "bbox": [
+            97,
+            113,
+            189,
+            129
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Open Access ",
+        "text_level": 1,
+        "bbox": [
+            774,
+            112,
+            900,
+            130
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Vision transformer architecture and applications in digital health: a tutorial and survey ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            148,
+            813,
+            246
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/3761dceec3be13c1a6214fbc20dd84b0f913035f3c8c601382ae0ec8d0fc524e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            853,
+            136,
+            904,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Khalid Al‑hammuri1* , Fayez Gebali1 , Awos Kanan2 and Ilamparithi Thirumarai Chelvan1 ",
+        "bbox": [
+            89,
+            256,
+            737,
+            274
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract ",
+        "text_level": 1,
+        "bbox": [
+            100,
+            318,
+            174,
+            332
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for $9 0 \\%$ of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classifcation, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges. ",
+        "bbox": [
+            97,
+            337,
+            885,
+            430
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords Vision transformer, Digital health, Telehealth, Artifcial intelligence, Medical imaging ",
+        "bbox": [
+            100,
+            432,
+            739,
+            450
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Introduction ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            475,
+            193,
+            489
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Te coronavirus disease 2019 (COVID-19) pandemic demonstrated how artifcial intelligence (AI) can help scale a system during emergencies with limited medical staf or existing safety concerns. AI algorithms are widely used in digital medicine solutions, mainly in image and text recognition tasks, to analyze medical data stored in clinical information systems and generate medical reports, and to assist in other technical operations such as robotic surgery. Among the various AI-assisted tools for analyzing medical images, the vision transformer (ViT) has emerged as a state-of-the-art algorithm that replaces or combines traditional techniques such as convolutional neural networks (CNNs). Tis article discusses the foundations and applications of the ViT in digital health. ",
+        "bbox": [
+            87,
+            491,
+            489,
+            718
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Te ViT [1, 2] is a type of neural network for image processing in computer vision tasks [3]. Te backbone of the ViT is a self-attention mechanism typically used in natural language processing (NLP). Te ViT was introduced to deal with the image processing limitations of common machine learning architectures such as CNNs [4], recurrent neural networks (RNNs) [5], and even the traditional transformers for language models [1, 6]. Te ViT provides a strong representation of image features and trains data using fewer computational resources compared with CNNs [1]. ",
+        "bbox": [
+            505,
+            475,
+            907,
+            641
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CNNs are widely used in the machine learning feld and are suitable for feature extraction in specifc local regions. However, they are unable to capture the contextual relationship between image features in the global context. In contrast, the ViT applies an attention mechanism to understand the global relationships among features. ",
+        "bbox": [
+            505,
+            643,
+            907,
+            748
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RNNs are used to obtain inferences about sequenceto-sequence relationships and memorizes some past data. However, they require a large memory and are unsuitable for extracting image features compared with the ViT or CNNs. Bidirectional encoder representations from transformers (BERT) was developed by ",
+        "bbox": [
+            505,
+            749,
+            910,
+            841
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. ",
+        "bbox": [
+            90,
+            39,
+            189,
+            50
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            92,
+            51,
+            460,
+            64
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "https://doi.org/10.1186/s42492-023-00140-9 ",
+        "bbox": [
+            92,
+            65,
+            344,
+            77
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Visual Computing for Industry, ",
+        "bbox": [
+            636,
+            39,
+            907,
+            56
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Biomedicine, and Art ",
+        "bbox": [
+            719,
+            59,
+            905,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "*Correspondence: ",
+        "bbox": [
+            89,
+            751,
+            188,
+            764
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "Khalid Al‑hammuri ",
+        "bbox": [
+            92,
+            765,
+            189,
+            775
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "khalidalhammuri@uvic.ca ",
+        "bbox": [
+            92,
+            777,
+            223,
+            787
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 Electrical and Computer Engineering, University of Victoria, Victoria V8W 2Y2, Canada ",
+        "bbox": [
+            92,
+            788,
+            460,
+            808
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 Computer Engineering, Princess Sumaya University for Technology, Amman 11941, Jordan ",
+        "bbox": [
+            92,
+            810,
+            436,
+            832
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            92,
+            865,
+            124,
+            894
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Springer Open ",
+        "bbox": [
+            127,
+            870,
+            277,
+            894
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "© The Author(s) 2023. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. ",
+        "bbox": [
+            297,
+            865,
+            895,
+            939
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Google to process language models [7] based on attention mechanisms [8]. BERT can efficiently process sequence-to-sequence models but requires a larger memory compared with an RNN or a long short-term memory (LSTM) [9]. ",
+        "bbox": [
+            87,
+            107,
+            487,
+            184
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "BERT has limitations in processing imaging data and is effective only for flattened data in a sequential shape. To deal with this issue, the ViT splits images into patches then and fattens them for analysis as linear sequences [1] in a parallel processing mechanism. ",
+        "bbox": [
+            87,
+            184,
+            487,
+            260
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The applications of the ViT in medical imaging include segmentation, classification, reconstruction, prognosis prediction, and telehealth (e.g., report generation and security). ",
+        "bbox": [
+            87,
+            260,
+            487,
+            320
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The remainder of this paper is organized as follows. ViT architecture section describes the foundations of the ViT architecture. Applications of the ViT in digital health section presents an overview of the important applications of the ViT in medical imaging. Roadmap for implementing ViT section presents a roadmap for the end-to-end implementation of the ViT. Limitations and challenges of ViT in digital health section discusses the limitations and challenges of using the ViT, and Conclusions section concludes the paper. ",
+        "bbox": [
+            87,
+            321,
+            489,
+            488
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ViT architecture ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            108,
+            635,
+            122
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Tis section discusses the core principles and foundations of the ViT based on the attention mechanism. Te ViT architecture consists of a hierarchy of diferent functional blocks, which will be explained in the following subsections. Figure  1 shows the typical transformer architecture proposed by ref. [8] based on the attention mechanism. ",
+        "bbox": [
+            504,
+            124,
+            905,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Researchers have proposed various modifcations for typical transformer designs [8] (Fig. 18 for a typical transformer architecture in Appendix) for applications other than NLP tasks. Te changes focus on the design framework of encoder-decoder blocks in the transformer architecture. In vision tasks, the transformer splits the image into patches and fattens them into sequential forms to be processed like time-series data, which is more suited to the nature of transformers (Fig.  19 in Appendix). To ensure that an image can be reconstructed without any data loss, positional encoding was utilized for the embedded features in a vector shape. Te embedded features were fed into the encoder for image classifcation and then classifed by multilayer perception [1]. However, in the segmentation task, the transformer is combined with the CNN either in the encoder stage, similar to the TransUNet architecture (Fig. 20 in Appendix) [10], or in both ",
+        "bbox": [
+            504,
+            230,
+            905,
+            489
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/8f1062e03e943e78de76ef064eede5a1e4a23d863de468982f1b4d38b5c61e13.jpg",
+        "image_caption": [
+            "Fig. 1 Transformer architecture [1] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            255,
+            518,
+            742,
+            883
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "Page 2 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "the encoder and decoder stages, such as the Ds-TransU-Net [11] (Fig. 21 in Appendix). ",
+        "bbox": [
+            87,
+            107,
+            487,
+            140
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Encoder architecture ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            159,
+            233,
+            170
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure  2 shows a typical encoder architecture [8] that consists of a stack of $N$ identical layers, with each layer containing two sublayers. Te frst sublayer performs the multihead self-attention (MSA), while the second sublayer normalizes the output of the frst sublayer and feeds it into the multilayer perceptron (MLP), which is a type of feedforward network. See Appendix A.1 for an example of the transformer architecture in ref. [1]. ",
+        "bbox": [
+            87,
+            173,
+            487,
+            294
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Image patches embedding ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            315,
+            273,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Owing to computer memory limitations, the simultaneous processing of an entire image is difcult. Terefore, the image is divided into diferent patches and processed sequentially. To conduct a detailed analysis of each image patch, each one was embedded into a set of feature values in the form of a vector. ",
+        "bbox": [
+            87,
+            330,
+            487,
+            418
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Te concept of image patch embedding in the ViT was inspired by the term ‘embedding’ in ref. [12]. Te feature vectors were then graphically visualized in an embedding space. Visualizing the features in the embedding space is benefcial to identify the image patches with similar features [13]. Te distance between each feature can be measured in the features map to determine the degree of similarity [14]. ",
+        "bbox": [
+            87,
+            420,
+            487,
+            526
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure  3 shows the feature embedding process, which begins by creating an embedding layer from the embedding vectors of each input feature. Random embedding values are initially assigned and updated during training inside the embedding layer. During training, similar features become closer to each other in the embedding or ",
+        "bbox": [
+            87,
+            527,
+            489,
+            618
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "latent space. Tis is important to classify or extract similar features. However, not knowing the position of each feature makes it difcult to determine the relationship between them. In medical imaging applications, positional encoding and feature embedding enable accurate feature selection in a specifc-use case. ",
+        "bbox": [
+            504,
+            107,
+            905,
+            200
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Positional encoding ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            215,
+            643,
+            229
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Te transformer model has the advantage of simultaneously processing inputs in parallel, unlike the well-known LSTM algorithm [15, 16]. However, parallel processing is difcult because of the risk of information loss due to the inability to reconstruct the processed sequences in their original positions. ",
+        "bbox": [
+            504,
+            230,
+            905,
+            320
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 4 shows the positional encoding process for feature representation. Positional encoding was proposed to solve this problem and encode each feature vector to its accurate position [8, 17]. Te feature vector and positional encoding values were added to form a new vector in the embedding space. In this study, sine and cosine functions were used as examples to derive the positional encoding values at diferent frequencies, expressed as Eqs.(1) and (2) [8], respectively. ",
+        "bbox": [
+            504,
+            321,
+            905,
+            458
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nP (x, 2 i) = \\sin \\left(\\frac {x}{1 0 0 0 0 ^ {\\frac {2 i}{d}}}\\right) \\tag {1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            539,
+            465,
+            905,
+            502
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nP (x, 2 i + 1) = \\cos \\left(\\frac {x}{1 0 0 0 0 ^ {\\frac {2 i}{d}}}\\right) \\tag {2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            539,
+            520,
+            904,
+            556
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "where $P$ is the positional encoding, $d$ is the vector dimension, $_ x$ is the position, and $i$ is the index dimension. Te sinusoidal function is benefcial for encoding the feature ",
+        "bbox": [
+            505,
+            570,
+            907,
+            617
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Symbols ",
+        "text_level": 1,
+        "bbox": [
+            112,
+            645,
+            176,
+            660
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/dbf345b64db533c83b980298d86ba7878cf61709a51890693ab60b2507627588.jpg",
+        "image_caption": [
+            "Fig. 2 Encoder block in the transformer architecture [1] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            660,
+            890,
+            894
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "Page 3 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/7299bcfad522008a1290d9b5362045966de24b62246ecbf209ca18dc7a4807e3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            108,
+            480,
+            256
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/df57790b831619c96402f99ce767eba434fb8bd2b930cf5bc37e7639f46bb982.jpg",
+        "image_caption": [
+            "(a) "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            256,
+            480,
+            413
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/311aaacb97f88f51986ddb777841c750e39635511ed952b9d22f25388a47b2e8.jpg",
+        "image_caption": [
+            "(b) "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            487,
+            108,
+            665,
+            413
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/843a122ca34e1f2d4520a27162560bca4f268be21bd5f54e7d7f0bbbd24855c5.jpg",
+        "image_caption": [
+            "(c) ",
+            "Fig. 3 a Illustration of splitting ultrasound images into patches and fattening them in a linear sequence; b Image patch vectorization and linear projection; c Patch embedding in multidimensional space "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            673,
+            108,
+            895,
+            413
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "position in the embedding space using frequencies ranging from $2 \\pi$ to 10000. In Eqs. (1) and (2), the frequencies resembled the index dimension i [8]. ",
+        "bbox": [
+            87,
+            487,
+            489,
+            532
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "MSA ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            564,
+            126,
+            575
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 5 shows the MSA process, which calculates the weighted average of feature representations based on the similarity scores between pairs of representations. Given the input sequence $X$ of $L$ tokens or entries with the dimension d, $X \\in R ^ { L \\times d }$ was projected using three matrices: $W _ { K } \\in R ^ { d \\times d k }$ , $W _ { Q } \\in R ^ { d \\times d q }$ , and $W _ { V } \\in R ^ { d \\times } { d \\nu }$ with the same dimensions to derive the representation of the features. Equation (3) presents the formulas used to derive the Key $( K )$ , Query $( Q )$ , and Value $( V )$ . ",
+        "bbox": [
+            87,
+            578,
+            489,
+            715
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nK = X W _ {K}, Q = X W _ {Q}, V = X W _ {V} \\tag {3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            122,
+            722,
+            487,
+            741
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Te fnal embedding layer that includes the position encoding was copied into the three linear layers $K , Q ,$ , and V. To derive the similarity between the input features, matrix multiplication between $K$ and $Q$ was performed using self-attention. Te output was then scaled and normalized using SoftMax. Te self-attention [3] process is explained in the following steps: ",
+        "bbox": [
+            87,
+            749,
+            489,
+            856
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Calculate the score from the input of Q and $K .$ . ",
+        "bbox": [
+            102,
+            870,
+            440,
+            887
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nS = Q K ^ {T} \\tag {4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            573,
+            489,
+            905,
+            508
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Normalize the score to stabilize the training. ",
+        "bbox": [
+            519,
+            517,
+            845,
+            534
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nN _ {s} = S \\sqrt {d} \\tag {5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            574,
+            541,
+            905,
+            560
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Calculate the probabilities of the normalized score using SoftMax. ",
+        "bbox": [
+            519,
+            569,
+            905,
+            600
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\nP = \\text {S o f t M a x} (N s) \\tag {6}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            574,
+            608,
+            904,
+            626
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. Compute the self-attention flter by multiplying P and V. ",
+        "bbox": [
+            519,
+            634,
+            905,
+            663
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\text {S e l f} - \\text {a t t e n t i o n} = P V \\tag {7}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            573,
+            673,
+            904,
+            691
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Te multiplication of the outputs of $K$ and $Q$ were scaled by the square root of the input vector dimension, and then normalized by the SoftMax function to generate the probabilities. Equation (8) presents the SoftMax function, where $_ x$ is the input data point. Equation (9) computes the attention flter. ",
+        "bbox": [
+            505,
+            698,
+            905,
+            789
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\operatorname {S o f t M a x} \\left(x _ {i}\\right) = \\frac {\\exp \\left(x _ {i}\\right)}{\\sum_ {j} \\exp \\left(x _ {j}\\right)} \\tag {8}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            539,
+            800,
+            904,
+            834
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\text {S e l f} = \\text {a t t e n t i o n} (Q, K, V) = \\text {S o f t M a x} \\left(\\frac {Q \\cdot K ^ {T}}{\\sqrt {d}}\\right). V \\tag {9}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            539,
+            853,
+            904,
+            908
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "Page 4 of 28 ",
+        "bbox": [
+            833,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/8569bf9314ce31cc394b361d914801bf569407361323092c87ab051317dadb66.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            208,
+            107,
+            786,
+            360
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/89b00bce80581209d01e8b535e4d49b33d4ab5501131a15de9a288628a1ce4a9.jpg",
+        "image_caption": [
+            "Fig. 4 Positional encoding for the feature representations. Top: Sinusoidal representation for the positional encoding (P0-P3) at diferent indices and dimensions. Bottom: Vector representation for the positional encoding and feature embedding; P is the position encoding and E is the embedding vector "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            240,
+            365,
+            783,
+            545
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Te output probabilities from SoftMax and the value layer were multiplied to obtain the desired output with emphasis on the desired features to flter out unnecessary data. Te principle behind a multihead is to concatenate the results of diferent attention flters, with each one focusing on the desired features. Te selfattention process is repeated multiple times to form the MSA. Te fnal output of the concatenated MSA was passed through a linear layer and resized to a single head. Equation (10) presents the MSA formula. ",
+        "bbox": [
+            87,
+            613,
+            489,
+            765
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\nM S A (Q, K, V) = C \\left(h _ {1}, \\dots , h _ {n}\\right) W _ {0} \\tag {10}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            122,
+            774,
+            489,
+            791
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "where $C$ is the concatenation of the multiheads; $W _ { 0 }$ is the projection weight; $Q , K$ and $V$ denote the Query, Key and Value, respectively; and $h$ resembles each head in the self-attention process and was replicated $_ n$ times. Te number of replications was dependent on the amount of attention or the desired features needed to extract the required information. Figure 5 shows the MSA process in ",
+        "bbox": [
+            87,
+            800,
+            492,
+            906
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "the ViT architecture. Detailed information on the scaled dot products between K, Q, and $V$ are also presented. ",
+        "bbox": [
+            505,
+            613,
+            905,
+            643
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Layer normalization and residual connections ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            675,
+            816,
+            688
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A residual connection is required to directly feed the output from the position encoding layer into the normalization layer by bypassing the MSA layer [18]. Te residual connection is essential for knowledge preservation and to avoid vanishing gradient problems [19, 20]. Te MSA layer is vital for extracting useful features from the input. However, it could also lead to the disregard of helpful information of lesser weight in the attention flter. Minimizing the value of the feature weight may cause a vanishing gradient during the model training stage. A vanishing gradient occurs when the gradient of the loss function is depleted and becomes almost or equal to zero while optimizing the weight in the backpropagation algorithm. Te residual connection directly feeds information from the initial layers into the ",
+        "bbox": [
+            504,
+            689,
+            907,
+            918
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "Page 5 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/16f5698074151af7cf11366d5b55ae5b929a1c61578e3dd75dee034aedb54e05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            208,
+            107,
+            552,
+            408
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/8aada2287143d94bb6690607b993db87be1c0162dc9cd3536e2272f5d868e531.jpg",
+        "image_caption": [
+            "(B) ",
+            "Fig. 5 MSA process. a MSA process with several attention layers in parallel; b Scaled dot product [8]. The diagram fows upwards from the bottom according to the direction of the arrow "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            571,
+            105,
+            791,
+            377
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "layers at the end of the neural network to preserve features and retain important information. ",
+        "bbox": [
+            87,
+            470,
+            487,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Te add and normalize layer [21] combine the input from the position encoding and MSA layers, and then normalize them. Te normalization layer is essential during training to speed up and stabilize the loss convergence. Normalization can be achieved by standardizing the activation of neurons along the axis of the features. Equations  (11) and (12) are the statistical components of layer normalization over all the hidden units in the same layer [21]. ",
+        "bbox": [
+            87,
+            501,
+            489,
+            639
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mu^ {l} = \\frac {1}{H} \\left(\\sum_ {i = 1} ^ {H} a _ {i} ^ {l}\\right) \\tag {11}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            122,
+            646,
+            487,
+            675
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sigma^ {l} = \\sqrt {\\frac {1}{H} \\sum_ {i = 1} ^ {H} \\left(a _ {i} ^ {l} - \\mu^ {l}\\right) ^ {2}} \\tag {12}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            122,
+            694,
+            487,
+            730
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "where $a _ { i } ^ { l }$ is the normalized value of the sum of the input features along the $i ^ { t h }$ hidden units in the $l ^ { t h }$ layers. $H$ is the total number of hidden units in the layer. $\\mu$ is the mean or average values of features along the axis in the normalization layer, $\\sigma$ is the standard deviation of the values of the features along the axis. ",
+        "bbox": [
+            89,
+            737,
+            489,
+            829
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "MLP ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            846,
+            124,
+            856
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Figure  6 shows the MLP diagram, which is part of the ViT architecture. Te MLP is a feedforward artifcial ",
+        "bbox": [
+            89,
+            860,
+            489,
+            889
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "neural network that combines a series of fully connected layers including the input, one or more hidden layers in the middle, and the output [22]. ",
+        "bbox": [
+            504,
+            470,
+            905,
+            516
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Fully connected layers are a type of layer in which the output of each neuron is connected to all the neurons in the next hidden layer. Te diagram shows that each neuron from the layer in the feedforward neural network is connected to all the neurons in the next layer through an activation function. Te residual connection preserves the knowledge from the initial layers and minimizes the vanishing gradient problem. Typical MLP layers include the input, output, and hidden layers. ",
+        "bbox": [
+            504,
+            516,
+            907,
+            654
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Decoder and mask MSA ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            684,
+            670,
+            697
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Figure  7 shows the decoder and mask MSA in the ViT architecture used to extract the fnal image. Te decoder was stacked for $N$ layers, the same as the number of encoder layers. Te decoder includes the same sublayers as the encoder and mask MSA stacked on them. Te mask MSA works similarly as the MSA, but focuses on the desired features in position i and ignores the undesirable features from the embedding layer by using the mask-only features before i. Tis is important to obtain an inference from the relationship between diferent features in the embedding space and a prediction from the features relevant to the desired position. ",
+        "bbox": [
+            504,
+            700,
+            907,
+            882
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "Page 6 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/417f13b19f4bb34b3939d18440d419adfd13f412eaf4081a0cd067b455852bc2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            255,
+            105,
+            742,
+            403
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/074fe15da70ff369cc6c4b8fbd30f2c568a6bb1f53ec1ff2e4ee5ed0845d20b6.jpg",
+        "image_caption": [
+            "Fig. 6 MLP ",
+            "Fig. 7 Decoder and mask multihead attention block to produce the fnal image "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            453,
+            897,
+            712
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The decoder obtains the $V , Q$ , and $K$ as inputs. The $V$ was obtained from the previous embedding space, while $Q$ and $K$ were obtained from the encoder output. There are other MSA and normalization layers inside the decoder, which is common in ViT designs. Despite modifications to the decoder-encoder design, the core principle remains the same. The different architectures for different applications are ",
+        "bbox": [
+            87,
+            755,
+            492,
+            879
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "explained in Applications of the ViT in digital health section. ",
+        "bbox": [
+            505,
+            755,
+            905,
+            784
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In the image recognition task, the decoder output was fattened as a linear or dense layer. Ten, SoftMax was used to derive the probability of the weight of each neuron in the dense layer. Te fnal probability was used to classify or segment the features based on the training data to detect the fnal object or image. ",
+        "bbox": [
+            504,
+            786,
+            910,
+            879
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "Page 7 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Applications of the ViT in digital health ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            107,
+            393,
+            122
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Computer vision and machine learning algorithms have been employed in recent medical studies on brain and breast tumors [23, 24], histopathology [25], speech recognition [26, 27], rheumatology [28], automatic captioning [29], endoscopy [30], fundus imaging [31], and telemedicine [32]. Te ViT has emerged as the state-ofthe-art in AI-based algorithms that use computer vision and machine learning for digital health solutions. ",
+        "bbox": [
+            92,
+            124,
+            485,
+            244
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Figure  8 shows the distribution of ViT applications in the medical feld. Tese include medical segmentation, detection, classifcation, report generation, registration, prognosis prediction, and telehealth. ",
+        "bbox": [
+            92,
+            245,
+            485,
+            305
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in medical image segmentation ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            321,
+            431,
+            336
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "TransUNet [10] is one of the earliest attempts to apply the ViT in medical imaging segmentation by combining it with the UNet [34] architecture. UNet is well known in the area of biomedical image segmentation. It is efcient in object segmentation tasks and can preserve the quality of fne image details after reconstruction. Te UNet inherited the localization ability of a CNN for feature extraction. Although localization is essential in a segmentation task, it has limitations in processing sequence-to-sequence image frames or extracting global features within the same image outside a specifc region. In contrast, the ViT has the advantages of processing sequence-to-sequence features and extracting the global relationships between them. However, the ViT has limitations in feature localization compared with ",
+        "bbox": [
+            92,
+            337,
+            485,
+            562
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "CNNs. TransUNet proposed a robust architecture that combined the capabilities of the ViT and UNet in a single model. ",
+        "bbox": [
+            510,
+            107,
+            904,
+            151
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "TransUNet is a powerful tool for multiorgan segmentation. Segmenting diferent objects is essential to analyze complex structures in magnetic resonance imaging (MRI) and computed tomography (CT) images. Figure 9 shows an example of image segmentation of the abdomen in a CT scan using TransUNet, which was compared with ground truth (GT) images to validate the results. ",
+        "bbox": [
+            510,
+            154,
+            904,
+            258
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To further improve the TransUNet architecture, a Dual-TransUNet was implemented in ref. [11]. Te main diference is that the Dual-TransUNet used the transformer in the encoder to extract features and the decoder to reconstruct the desired image, while the TransUNet only used the transformer in the encoder stage. Te Swin transformer [35] is another architecture for implementing the ViT in combination with Unet [34, 36] in medical imaging. ",
+        "bbox": [
+            510,
+            260,
+            904,
+            394
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Te ViT was also used in iSegFormer [37], which was proposed for the interactive segmentation of threedimensional (3D) MRI images of the knee. Te 3D UXnet [38] could segment brain tissues from the entire body in an MRI scan. UNesT [39] developed a hierarchical transformer using local spatial representation for brain, kidney, and abdominal multiorgan image segmentation. Similarly, the NestedFormer [40] was proposed to segment brain tumors in MRI images. ",
+        "bbox": [
+            510,
+            396,
+            904,
+            531
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RECIST [41] used the ViT to automatically segment brain tumors to measure the size of the lesions in CT ",
+        "bbox": [
+            510,
+            532,
+            904,
+            562
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/73847c34080268243a27c2358436798e3931d1e9aa8c9244a90603052d42311d.jpg",
+        "image_caption": [
+            "Fig. 8 Distribution of medical imaging applications of the ViT according to the survey [33] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            257,
+            589,
+            739,
+            887
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "Page 8 of 28 ",
+        "bbox": [
+            831,
+            40,
+            907,
+            53
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/22e7835bb9c88996c95861f6b21354ee7ebf37bea0c232d335fef3146a40539f.jpg",
+        "image_caption": [
+            "(a) ",
+            "Fig. 9 Comparison of TransUNet and GT using output segmentation results of diferent organs: a GT (expert reference) and b TransUNet [10] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            243,
+            107,
+            786,
+            365
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "images. GT U-Net [42] was used for tooth therapy by segmenting the root canal in X-ray images. Colorectal cancer (CRC) images were segmented by the fully convolutional network (FCN) transformer [43] during a colonoscopy. Te ViT was also used in the TraSeTR [44] to assist in robotic surgery by segmenting the image and generating instructions based on previous knowledge. Table  1 lists examples of ViT applications in medical image segmentation. ",
+        "bbox": [
+            87,
+            407,
+            489,
+            545
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in medical image detection ",
+        "text_level": 1,
+        "bbox": [
+            87,
+            560,
+            405,
+            574
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Image detection plays a key role in digital health and imaging analysis to identify objects in complex structures and share that information within the healthcare information system for further analysis. Tis is important to ",
+        "bbox": [
+            87,
+            574,
+            489,
+            636
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "measure the cell size and count the number of suspicious objects or malignant tissues. ",
+        "bbox": [
+            505,
+            408,
+            905,
+            437
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Object detection is essential in cancer screening when cell labeling or classifcation is difcult, and a careful analysis is required to identify cancers. Te detection transformer (DETR) was proposed to detect lymphoproliferative diseases in MRI T2 images [48]. In MRI scans, the metastatic lymph nodes are small and difcult to identify. Te application of the DETR can reduce false positives as well as improve the precision and sensitivity by $6 5 . 4 1 \\%$ and $9 1 . 6 6 \\%$ , respectively. ",
+        "bbox": [
+            504,
+            437,
+            907,
+            574
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Te convolutional transformer (COTR) [49] detects polyp lesions in colonoscopy images to diagnose CRC, which has the second highest cancer-related mortality risk worldwide. Te COTR architecture employs a CNN ",
+        "bbox": [
+            505,
+            574,
+            907,
+            636
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
+        "table_caption": [
+            "Table 1 Examples of ViT applications in medical image segmentation "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransUnet [10]</td><td>MRI, CT</td><td>CT and MRI cardiac segmentation</td></tr><tr><td>Dual-TransUnet [11]</td><td>Microscopy</td><td>Skin lesion analysis [45]; gland segmentation in histology [46]; nuclei in divergent images [47]</td></tr><tr><td>Swin-Unet [35]</td><td>CT</td><td>Abdominal multiorgan segmentation</td></tr><tr><td>iSegFormer [37]</td><td>3D MRI</td><td>Knee image segmentation</td></tr><tr><td>3D UX-net [38]</td><td>3D MRI</td><td>Brain tissue segmentation</td></tr><tr><td>UNesT [39]</td><td>MRI, CT</td><td>Abdominal multiorgan segmentation + kidney segmenta-tion + whole brain segmentation</td></tr><tr><td>NestedFormer [40]</td><td>MRI</td><td>Brain tumor segmentation</td></tr><tr><td>RECIST [41]</td><td>CT</td><td>Automatic tumor segmentation and diameter size prediction</td></tr><tr><td>GT U-Net [42]</td><td>X-ray</td><td>Tooth therapy: root canal segmentation</td></tr><tr><td>FCN-transformer [43]</td><td>Colonoscopy</td><td>CRC segmentation</td></tr><tr><td>TraSeTR [44]</td><td>Endoscopy</td><td>Robot-assisted surgery</td></tr></table>",
+        "bbox": [
+            89,
+            679,
+            907,
+            902
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "Page 9 of 28 ",
+        "bbox": [
+            831,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
+        "table_caption": [
+            "Table 2 Examples of ViT applications in medical image detection "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>DETR [48]</td><td>MRI</td><td>Lymphoproliferative diseases detection</td></tr><tr><td>COTR [49]</td><td>Colonoscopy</td><td>CRC detection</td></tr><tr><td>SATr [50]</td><td>CT</td><td>Universal lesion detection</td></tr><tr><td>UCLT [51]</td><td>CT</td><td>Lung nodule detection</td></tr><tr><td>IHD [52]</td><td>CT</td><td>Brain injury hemorrhage detection</td></tr></table>",
+        "bbox": [
+            89,
+            124,
+            489,
+            232
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "for feature extraction and convergence acceleration. A transformer encoder is used to encode and recalibrate the features, a transformer decoder for object querying, and a feedforward network for object detection. ",
+        "bbox": [
+            87,
+            265,
+            487,
+            326
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Global lesion detection in CT scans was performed using a slice attention transformer (SATr) [50]. Te backbone of the SATr is a combination of convolution and transformer attention that detects log-distance feature dependencies while preserving the local features. ",
+        "bbox": [
+            87,
+            326,
+            487,
+            402
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Lung nodule detection was investigated using an unsupervised contrastive learning-based transformer (UCLT) [51]. Lung nodules are small cancerous masses that are difficult to detect in complex lung structures because of their size. This study harnessed contrastive learning (CL) and the ViT to break down the volume of CT images into small patches of nonoverlapping cubes, and extract the embedded features for processing using the transformer attention mechanism. ",
+        "bbox": [
+            87,
+            402,
+            487,
+            551
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To predict the hemorrhage category of brain injuries in CT scans, a transformer-based architecture was used for intracranial hemorrhage detection (IHD) [52]. Table  2 lists examples of ViT applications in image classifcation. ",
+        "bbox": [
+            87,
+            553,
+            489,
+            629
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in medical image classifcation",
+        "text_level": 1,
+        "bbox": [
+            505,
+            107,
+            842,
+            122
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Classifcation is an important digital health solution in medical imaging analysis that helps medical practitioners identify objects within a complex structure to immediately categorize medical cases. Utilizing AI while working in remote areas and using telehealth systems with limited medical resources ensures the accuracy of fnal clinical decisions. Te importance of AI emerged during the pandemic when the pressure on healthcare systems exceeded the capacity of the healthcare infrastructure. Te ViT has diferent applications in medical imaging classifcation. ",
+        "bbox": [
+            504,
+            122,
+            905,
+            274
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "TransMed [53] uses a combination of the ViT and a CNN to classify multimodal data for medical analysis. Te classifcation system includes disease and lesion identifcation. Figure 10 shows an example of the application of TransMed in image classifcation. ",
+        "bbox": [
+            504,
+            274,
+            905,
+            349
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Shoulder implant manufacturers [54] use a transformer in orthopedic applications to assist in shoulder replacement surgery with artifcial implants and joints. Before surgery, shoulder X-ray images were used to detect and classify the shoulder implant manufacturer vendor to determine the required accessories. Te GasHistransformer [55] is a multiscale visual transformer for detecting and classifying gastric cancer images using histopathological images of hematoxylin and eosin obtained by a microscope. Table  3 lists examples of ViT applications in image classifcation. ",
+        "bbox": [
+            504,
+            350,
+            905,
+            517
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A comparative analysis of cervical cancer classifcations using various deep learning (DL) algorithms, including the ViT, was conducted using cytopathological images [56]. A transformer-based model was used in brain metastases classifcation [57] from an MRI of the brain. Brain metastases are among the main causes of malignant tumors in the central nervous system [61]. ScoreNet [58] ",
+        "bbox": [
+            505,
+            517,
+            905,
+            622
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/86906be63a758b938e4ea87a544d40dbae232d09276620f1abbcf97b942ea643.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            260,
+            660,
+            495,
+            859
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/f42be55a3d896ac44dd3bd57d1b78a19f68d1fc779e49df35b33f4804196886f.jpg",
+        "image_caption": [
+            "Fig. 10 Example of using the ViT for tumor classifcation in MRI images using TransMed [53]. The tumor is enclosed by the dashed circle indicated by the yellow arrow "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            500,
+            660,
+            737,
+            860
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "Page 10 of 28 ",
+        "bbox": [
+            825,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
+        "table_caption": [
+            "Table 3 Examples of ViT applications in medical image classifcation "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransMed [53]</td><td>MRI</td><td>Multi-modal classification: disease classification, lesion identification</td></tr><tr><td>Shoulder implant manufacture [54]</td><td>X-ray</td><td>Orthopedics: Shoulder implant manufacture classification</td></tr><tr><td>GasHis-transformer [55]</td><td>Histopathology microscopic images</td><td>Gastric cancer classification and detection</td></tr><tr><td>Multi-scale cytopathology [56]</td><td>Cytopathological images</td><td>Cervical cancer classification</td></tr><tr><td>Brain metastases classification [57]</td><td>MRI</td><td>Classification of the brain tumor of central nervous system</td></tr><tr><td>ScoreNet [58]</td><td>Histology Datasets of haematoxylin +eosin</td><td>Breast cancer classification</td></tr><tr><td>RadioTransformer [59]</td><td>X-ray</td><td>COVID-19 classification using chest X-ray images</td></tr><tr><td>TractoFormer [60]</td><td>Diffusion MRI</td><td>Nerve tracts modelling and 3D fiber representation</td></tr></table>",
+        "bbox": [
+            89,
+            125,
+            907,
+            312
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "is a transformer-based model that classifes breast cancer using histopathology images. RadioTransformer [59] classifes COVID-19 cases based on chest X-rays. TractoFormer [60] classifes brain images based on tractography, which is a 3D model of the brain nerve tracts using difusion MRI. TractoFormer discriminates between 3D fber spatial relationships. It has proven to be accurate in classifying patients with schizophrenia vs controls. ",
+        "bbox": [
+            87,
+            344,
+            489,
+            467
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in medical imaging prognosis predication ",
+        "text_level": 1,
+        "bbox": [
+            87,
+            481,
+            421,
+            508
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Te ability of the ViT to analyze time-series sequence data and obtain insights from previous data allows the prediction of future behaviors or patterns. In medical imaging, it is important to help healthcare practitioners predict the efects of diseases or cancers to treat them before they spread. Figure 11 shows the use of the ",
+        "bbox": [
+            87,
+            511,
+            489,
+            602
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "transformer for surgical instructions, which are also implemented in Surgical Instruction Generation Transformer (SIGT) algorithm for surgical robots [62]. Te algorithm used the ViT to analyze the visual scene during surgery and update the reinforcement learning (RL), reward, and status to predict the instructions for the robot. ",
+        "bbox": [
+            504,
+            344,
+            905,
+            449
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Te Sig-Former [63] can predict surgical instructions during an operation using the transformer attention mechanism to analyze the input image. Te dataset includes images acquired during surgeries such as laparoscopic sleeve gastrectomy and laparoscopic ventral hernia repair. ",
+        "bbox": [
+            504,
+            450,
+            907,
+            541
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Te 3D Shufe Mixer [64] analyzes 3D volumetric images from CT and MRI using context-aware dense predictions for diferent diseases, such as hemorrhagic stroke, abdominal CT images, and brain tumors. ",
+        "bbox": [
+            504,
+            541,
+            907,
+            603
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/f4c682f1b4350c18f4727e667fef3b273808e8ce796e9a7986c18cee82346713.jpg",
+        "image_caption": [
+            "Transformer Prediction: Retract peritoneum incise with scissors and electrocautery. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            105,
+            627,
+            356,
+            760
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/78c25c9476bc1fd3d035821d6b94f29c89888aaf2fd10e3fdb432723a2f08ba3.jpg",
+        "image_caption": [
+            "Transformer Prediction: Continue tying. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            357,
+            627,
+            638,
+            759
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/0c8678098022cd95268747d0f207c640f1a53589b00fddd95f691754ad96bf62.jpg",
+        "image_caption": [
+            "Transformer Prediction: Process completed at first horizontal axis position. ",
+            "Ground Truth: While retracting peritoneum, identify correct plane by thin areolar. ",
+            "Ground Truth: Tie knots in each suture with tails. ",
+            "Ground Truth: Repeat process at horizontal axis positions. ",
+            "Fig. 11 Examples of using ViT for surgical instruction prediction. Transformer prediction is based on the SIGT method [62]. GT is used as a reference for comparison and validation "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            638,
+            627,
+            892,
+            760
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "Page 11 of 28 ",
+        "bbox": [
+            825,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
+        "table_caption": [
+            "Table 4 Examples of ViT applications in medical image prediction "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>3D-SMx [64]</td><td>3D (MRI, CT)</td><td>Context-aware dense prediction for different diseases that includes hemorrhagic stroke, abdominal CT images, brain tumor</td></tr><tr><td>GBT [65]</td><td>Cancer genome (TCGA)</td><td>Computation pathology: genetic alteration</td></tr><tr><td>RTM [66]</td><td>Ultrasound</td><td>Fetal weigh at birth prediction</td></tr><tr><td>CLIMAT [67]</td><td>X-ray</td><td>Forecasts knee osteoarthritis trajectory</td></tr><tr><td>Sig-Former [63]</td><td>Laparoscopy</td><td>Surgical instructions prediction</td></tr><tr><td>SIGT [62]</td><td>Robot camera</td><td>Surgical instruction prediction and image captioning</td></tr></table>",
+        "bbox": [
+            89,
+            125,
+            905,
+            272
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Graph-based transformer models [65] predict genetic alteration. Ultrasound recordings are used for fetal weight prediction by the residual transformer model [66]. CLIMAT [67] forecasts the trajectory of knee osteoarthritis based on X-ray images from specialized radiologists. Table  4 lists examples of ViT applications in medical image prediction. ",
+        "bbox": [
+            87,
+            297,
+            489,
+            403
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in image reconstruction and synthesis ",
+        "text_level": 1,
+        "bbox": [
+            87,
+            418,
+            477,
+            432
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "After acquiring data from medical imaging modalities such as MRI, CT, and digital X-ray, the images are stored as raw data in an unstructured format. To make this raw data readable, a reconstruction process is applied to retrieve images without any loss. However, this process is computationally expensive because of the size and complexity of reconstruction algorithms. Te use of DL signifcantly improves the reconstruction performance by enhancing the preservation of fne image details within a reconstruction time of a few seconds. In contrast, traditional techniques such as image reconstruction using compressed sensing require more time [68]. ",
+        "bbox": [
+            87,
+            434,
+            489,
+            617
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Reconstructing magnetic resonance images is a challenge because of the size, complexity, and sparsity of the K-space matrix, in which the raw images are stored in the frequency domain. ",
+        "bbox": [
+            504,
+            297,
+            905,
+            356
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "SLATER [69] is a zero-shot adversarial transformer that performs the unsupervised reconstruction MRI images. SLATER maps the noise and latent representation to the MR coil-combined images. To maximize the consistency of the images, the operator input and maximum optimized prior information were combined using a zero-shot reconstruction algorithm. Figure  12 shows diferent methods for reconstructing fast MRI and the reconstruction error map using SLATER (ViTbased method) from $T _ { 1 }$ weighted images. Tese were then compared with other techniques based on non-ViT methods. ",
+        "bbox": [
+            504,
+            356,
+            907,
+            537
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Te Task Transformer $\\left( T ^ { 2 } N e t \\right)$ [77] proposed an architecture to simultaneously reconstruct and enhance images using a super-resolution method for MRI. Te $T ^ { \\ 2 } N e t$ process can be divided into two parts. First, two CNN subtasks were used to extract ",
+        "bbox": [
+            504,
+            539,
+            907,
+            616
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ebb859a23e307e159831ed704682d87305e1108c6839f11bc16037ac18942b8.jpg",
+        "image_caption": [
+            "Fig. 12 Top: Diferent reconstruction methods from $T _ { \\tau }$ weighted acquisition of the fast MRI using diferent methods. ZF is a traditional Fourier method [70]. LORKAS [71, 72], $\\mathsf { G A N } _ { s u b }$ [73], SSDU [74], $\\mathsf { G A N } _ { p r i o r }$ [75], and SAGAN [76] are generative adversarial network (GAN) reconstruction-based methods. SLATER is a ViT-based method [69]. Bottom: Reconstruction error map [69] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            639,
+            892,
+            860
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "Page 12 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "domain-specifc features. Second, $T ~ ^ { 2 } N e t$ was embedded and the relationship between the two subtasks was synthesized. ReconFormer addresses the problem of under sampled K-space data by utilizing recurrent pyramid transformer layers to rapidly and efciently retrieve the data [78]. Transformer-based methods for fast MRI reconstruction were evaluated in ref. [79]. Te results showed that the combination of GANs and ViT achieved the best performance, i.e., a $3 0 \\%$ improvement over standard methods such as the Swin transformer. Table  5 lists examples of ViT applications in image reconstruction. ",
+        "bbox": [
+            87,
+            107,
+            489,
+            288
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A ViT-based (stereo transformer) was utilized in efcient dynamic surgical scene reconstruction [80] to reconstruct a robotic surgery scene acquired by an endoscope. Tis application is essential for surgical education, robotic guidance, and context-aware representation. ",
+        "bbox": [
+            87,
+            289,
+            489,
+            381
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "DuTrans adopted a Swin transformer as the core of their architectural design to reconstruct the sinograms of CT scans from the attenuation coefcient of the Hounsfeld unit [81, 83]. Te accurate reconstruction of CT scans is essential to obtain high-quality images, reduce radiation doses, and distinguish fne details to facilitate the early detection of cancers. ",
+        "bbox": [
+            87,
+            381,
+            490,
+            487
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MIST-net proposed a multidomain transformer model to reconstruct CT scans [82]. MIST-net can reduce radiation doses without compromising image quality. MIST-net incorporates the Swin transformer architecture, residual features, and an edge enhancement flter to reconstruct the desired CT image. ",
+        "bbox": [
+            87,
+            487,
+            490,
+            579
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in telehealth ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            594,
+            307,
+            607
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Tere is an increasing need for efcient techniques to process all medical information within the healthcare ecosystem. Tis is because of the complex nature of the unstructured format of medical data, such as images, clinical reports, and laboratory results. Te ViT provides a comprehensive solution as it can process medical data in diferent formats and automatically generate reports or instructions. Figure 13 shows the main components of a ",
+        "bbox": [
+            87,
+            608,
+            489,
+            730
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "telehealth ecosystem: the data source, ingestion, machine learning, and data analysis. ",
+        "bbox": [
+            504,
+            107,
+            905,
+            137
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Te hospital information system (HIS) and radiology information system register the patient and store data in electronic health records (EHRs) and picture archiving and communication systems (PACS) to be shared within the telehealth ecosystem. Te HIS relies on standards such as Health Level 7 and Fast Healthcare Interoperability Resources for the exchange of patient metadata or EHRs [84, 85]. PACS is used to store and transfer medical images, mainly in the Digital Imaging [86] and Communications in Medicine [87] format, which are available to medical staf for further clinical analysis. ",
+        "bbox": [
+            504,
+            137,
+            907,
+            318
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Patient data are shared in a cloud or server, either in real-time streaming or in batches from a data storage warehouse or data lake. Te ViT or any other machine learning model is used to train the system on the ingested data. Once the model has been deployed, the ViT can be used to analyze medical data, approximately $9 0 \\%$ of which are in an image format. Once the data have been analyzed, the results are sent to update patient records in the EHR or other storage systems. ",
+        "bbox": [
+            504,
+            320,
+            910,
+            456
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in report generation ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            472,
+            764,
+            486
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Te ViT provides a unifed solution that processes text along with unstructured data, such as images. Te advantage of using the ViT is that it can process and generate radiology reports, surgical instructions, and other clinical reports in a global context by retrieving huge amounts of information stored in health information systems. ",
+        "bbox": [
+            504,
+            487,
+            907,
+            578
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Figure 14 shows the image capture, report consistency, completeness, and report generation by the Real Time Measurement, Instrumentation & Control (RTMIC) [88] and International Federation of Clinical Chemistry (IFCC) algorithms [89] from an input of medical images. Te RTMIC is a ViT-based algorithm used for medical image captioning [88]. Te GT is a manual reference written by an expert. Att2in is an attention-based method used for comparison [90]. Te quality standards for health information systems state that the transferred data ",
+        "bbox": [
+            504,
+            578,
+            910,
+            730
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
+        "table_caption": [
+            "Table 5 Examples of ViT applications in medical image reconstruction "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>SLATER [69]</td><td>MRI</td><td>MRI unsupervised reconstruction</td></tr><tr><td>T2Net [77]</td><td>MRI</td><td>Image reconstruction and super-resolution enhancement</td></tr><tr><td>ReconFormer[78], FastMRIRecon [79]</td><td>MRI</td><td>Accelerated MRI reconstruction</td></tr><tr><td>E-DSSR [80]</td><td>Endoscopy</td><td>Surgical robot scene reconstruction</td></tr><tr><td>DuTrans [81], MIST-net [82]</td><td>CT</td><td>CT sinograms reconstruction</td></tr></table>",
+        "bbox": [
+            89,
+            773,
+            910,
+            893
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "Page 13 of 28 ",
+        "bbox": [
+            825,
+            40,
+            905,
+            53
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/b8e8f879ba1c7ff86c6c6cd3d2afa14a30fc2b9f1a0d68e4aa7c7f0dcb9a81a1.jpg",
+        "image_caption": [
+            "Fig. 13 Schematic of the components of the ViT in a telehealth ecosystem "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            105,
+            897,
+            708
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "should be consistent and complete. Te IFCC algorithm [89] improves the factual completeness and consistency in image-to-text radiology report generation. Te algorithm uses a combination of transformers to extract features and RL to optimize the results. ",
+        "bbox": [
+            87,
+            754,
+            487,
+            830
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Te transformer efciently addresses the challenges of handling biased medical data and long and inconsistent paragraphs. Te AlignTransformer can produce a long descriptive and coherent paragraph based on the analysis ",
+        "bbox": [
+            87,
+            830,
+            489,
+            892
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "of medical images [91]. It mainly operates in two stages. First, it aligns the medical tags with the related medical images to extract the features. Second, the extracted features are used to generate a long report based on the training data for each medical tag. ",
+        "bbox": [
+            505,
+            754,
+            905,
+            831
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Te transformer is also used to generate surgical reports during robot-assisted surgery by learning domain adaptation in the Learning Domain Adaption Surgical Robot (LDASR) [92]. Te LDASR uses a ",
+        "bbox": [
+            505,
+            831,
+            905,
+            892
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "Page 14 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/802cb5ff46e995b345c29c19788a65222e504bdf7d2ffe33432d52c9a37d1aaa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            111,
+            499,
+            465
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa95c978940d3f34bfb5f3f72d8a7f1c61cd2a5ea76944f4b7200e6a7947aedd.jpg",
+        "image_caption": [
+            "(B) ",
+            "Fig. 14 Examples of report generation from the input image using the ViT. a Sample of results by the IFCC algorithm [89] for report completeness and consistency; b Example of report generation results by the RTMIC algorithm [88] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            512,
+            122,
+            894,
+            345
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "transformer to learn the relationships between the desired region of interest, surgical instruments, and images to generate image captions and reports during surgery. Table  6 lists examples of ViT applications in image generation. ",
+        "bbox": [
+            87,
+            534,
+            489,
+            612
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Applications of ViT in telehealth security ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            625,
+            352,
+            640
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Telehealth security is receiving significant attention from healthcare providers owing to the emerging risks associated with leveraging advanced technologies such as machine learning. In healthcare, there is a serious risk of misdiagnosing a patient with the wrong disease or even diagnosing a healthy person with a disease. ",
+        "bbox": [
+            87,
+            641,
+            489,
+            746
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "An adversarial attack refers to a malicious attack against the machine learning algorithm or data vulnerability. Tese attacks may include modifying the data or algorithm code, resulting in incorrect outputs [93, 94]. Te accuracy of the algorithm may also be afected by the manipulation of the code or labeled data. Cybercriminals attempt to extort money from healthcare providers by threatening to publish patient information and encrypt the database. Figure  15 shows the efects of data poisoning by adversarial attacks on medical images that attempt to disrupt the behavior of the trained machine learning model. ",
+        "bbox": [
+            505,
+            534,
+            905,
+            716
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Researchers have developed the following countermeasures against cybercrime: ",
+        "bbox": [
+            505,
+            716,
+            905,
+            748
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
+        "table_caption": [
+            "Table 6 Examples of ViT applications in medical report generation "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>RTMIC [88]</td><td>Medical images general</td><td>Report generation from medical images (e.g., MRI, CT, PET and X-ray)</td></tr><tr><td>IFCC [89]</td><td>Medical images general</td><td>Medical report completeness and consistency</td></tr><tr><td>AlignTransformer [91]</td><td>Medical images general</td><td>Long report generation from medical images tags</td></tr><tr><td>LDASR [92]</td><td>Surgical robot camera</td><td>Surgical report generation</td></tr></table>",
+        "bbox": [
+            89,
+            789,
+            907,
+            894
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "Page 15 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/5b70d585cba65c0f63173dd16441f4fbe576fe129ec3fce16b272d5014718c00.jpg",
+        "image_caption": [
+            "Fig. 15 Illustration of data poisoning by an adversarial attack that fools learning-based models trained on medical image datasets "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            105,
+            897,
+            429
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Implement a context-aware system to ensure that the code is safe and not jeopardized. ",
+            "2. Store data in an encrypted cloud environment and ensure that these are backed up. ",
+            "3. Federated learning is another measure that uses a distributed computing engine to process data in geographically distributed environments that maintain data in diferent locations, making them difcult to hack. ",
+            "4. Embrace a zero-trust policy when managing access control systems in digital health applications. Tis provides an additional authentication measure by considering diferent attributes before granting access instead of just relying on a role-based access system. "
+        ],
+        "bbox": [
+            102,
+            487,
+            489,
+            715
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Unlike the ViT, traditional CNN-based algorithms are not robust against adversarial attacks because of the simplicity of their architecture [95]. Te complexity of the ViT algorithm and its ability to extract features in a global context are solid grounds for detecting irregularities in data entry. Te ViT has been used for data encryption [96], anomaly detection [97], network intrusion system detection [98], anti-spoofng [99], and patch processing [100]. Table  7 lists examples of the applications use of ViT in information system security. ",
+        "bbox": [
+            89,
+            730,
+            492,
+            883
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
+        "table_caption": [
+            "Table 7 Examples of ViT applications in security "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Method</td><td>Application</td></tr><tr><td>Jigsaw block-based encryption [96]</td><td>Data encryption</td></tr><tr><td>MFVT [97]</td><td>Anomaly detection</td></tr><tr><td>Image conversion from network data-flow [98]</td><td>Network intrusion system detection</td></tr><tr><td>Zero-shot face [99]</td><td>Anti-spoofing</td></tr><tr><td>Backdoor defender [100]</td><td>Patch processing</td></tr></table>",
+        "bbox": [
+            505,
+            505,
+            907,
+            624
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Roadmap for implementing ViT ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            660,
+            754,
+            675
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Figure 16 shows the four stages in the end-to-end implementation of the ViT model pipeline. Tese are problem formulation, data processing; model implementation, training, and validation; and model deployment and quality assurance, respectively. ",
+        "bbox": [
+            505,
+            677,
+            907,
+            753
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Problem formulation ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            770,
+            653,
+            783
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Before implementing a machine learning model, the problem must be understood and formulated to ft the context of the desired product-use case. ",
+        "bbox": [
+            505,
+            784,
+            907,
+            832
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Data preparation ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            850,
+            626,
+            863
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Once the problem is understood, high-quality data must be prepared for the AI algorithm. Te data must be relevant, accurate, statistically balanced, and sufcient for ",
+        "bbox": [
+            505,
+            864,
+            907,
+            910
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "Page 16 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/bce9f16c8c6565cd896d035c9512bb1c5d538c903b113b991fa4014e1b939032.jpg",
+        "image_caption": [
+            "Fig. 16 Roadmap for ViT implementation "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            255,
+            107,
+            742,
+            351
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "training. Te data should also be verifed by diferent qualitative and qualitative measures to ensure their validity. Tis helps stabilize the model during training and speeds up convergence to obtain the optimal solution. ",
+        "bbox": [
+            87,
+            408,
+            489,
+            470
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Model and code implementation",
+        "text_level": 1,
+        "bbox": [
+            89,
+            487,
+            314,
+            500
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Tere is no master algorithm that fts everything; each has its own advantages and disadvantages. Te suitable ViT model or architecture is selected based on the available data and application to achieve the desired success metrics. Te model hyperparameters are fne-tuned during the training stage to achieve the desired accuracy and prevent overftting or underftting. Te model should also be validated and tested on datasets other than those used for training. ",
+        "bbox": [
+            87,
+            501,
+            489,
+            639
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Model deployment and testing ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            656,
+            302,
+            670
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Finally, once the model passes all the end-to-end testing and verifcation processes, it should be ready for deployment. Diferent environments can be used to deploy the fnal product in diferent cloud or on-premise applications. Te recommended environment is a cloud-based system because it can automatically generate a model on a scale that fits the computational resources for different applications. Te deployed model should undergo diferent quality assurance and monitoring processes to ensure that the target performance of the system is met during tests outside the laboratory or development environment. Any bugs found in the code should be fxed. If the performance of the trained model is insuffcient, then a new dataset should be used for training. ",
+        "bbox": [
+            87,
+            670,
+            489,
+            884
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Limitations and challenges of ViT in digital health ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            408,
+            890,
+            422
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Transformer-based algorithms are emerging as the state-of-art in vision tasks to replace traditional standalone CNN architectures. However, transformerbased models have disadvantages in terms of technical or regulatory compliance requirements. Tese include data size and labeling, the need for a hybrid model, data bias and model fairness, and ethical and privacy challenges. ",
+        "bbox": [
+            504,
+            424,
+            907,
+            546
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Dataset size and labeling challenges ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            573,
+            754,
+            587
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Similar to other attention-based mechanisms, transformers inherently require a huge amount of data to train the model. Te transformer achieved the best performance compared with the well-known ResNet architecture when trained on the JFT dataset [101], which contains 300 million images and 18000 classes. However, when trained on the ImageNet-21  k dataset [102], which contains approximately 14 million images and 21000 classes, the transformer performance did not surpass that of the ResNet architecture trained on the same dataset ImageNet-1 k [103, 104] with 1.28 million images and 1000 classes. Figure  17 shows the performance of the ViT and ResNet architectures with respect to the data size. ",
+        "bbox": [
+            504,
+            588,
+            907,
+            798
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The results show that ResNet performed better when the dataset was small. ResNet and ViT exhibited almost the same performance when the trained on approximately 100 million samples. However, the ViT achieved superior performance compared with ",
+        "bbox": [
+            505,
+            800,
+            910,
+            878
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "Page 17 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/d37b0b949e4a6613aa2f948398a3474b533bf1e07cc8d612632ad6c452475e1a.jpg",
+        "image_caption": [
+            "Fig. 17 Comparison between ViT and ResNet (BiT) architecture accuracies on diferent sizes of training data. The y-axis is the size of pretraining data in the ImageNet dataset. The x-axis is the accuracy selected from the top $1 \\%$ of the selected fve-shots of ImageNet. Results according to the study in ref. [1] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            211,
+            106,
+            788,
+            355
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "ResNet when the dataset size was larger than 100 million images [1]. ",
+        "bbox": [
+            87,
+            439,
+            487,
+            469
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Te limited dataset size is challenging in medical applications because it is difcult to obtain a clean and high-quality dataset that is feasible for clinical application standards. Moreover, fnding qualifed specialists to annotate millions of images is difcult, expensive, and time-consuming. ",
+        "bbox": [
+            87,
+            469,
+            489,
+            560
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Transfer learning, data augmentation, adversarial imaging synthesis, and automatic data labeling are among the best practices to deal with the problem of insufficient dataset size. The researchers in ref. [105] suggested that the ViT model outperformed ResNet when trained from scratch on the large ImageNet dataset without using data augmentation or a large pretrained model. Thus, there is a tradeoff between dataset size limitations and performance because having a large dataset but sufficient computational resources for training remains a challenge. The use of cloud-based data training could be a solution to limited resources. However, this is an expensive option for academia and more suitable for industrial applications. Similarly, ref. [106] proposed an effective weight initialization scheme to fine-tune the ViT using self-supervised inductive biases learned directly from small-scale datasets. This reduced the need for huge datasets for training, and hence required less computational resources. ",
+        "bbox": [
+            92,
+            560,
+            489,
+            863
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "CL is benefcial in medical image applications because it can minimize the diference between similar object representations in the latent space, while maximizing the ",
+        "bbox": [
+            87,
+            864,
+            489,
+            910
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "diference between dissimilar objects [107]. CL has been used with ViT in medical histopathology to classify large images (in gigapixels) and obtain inferences to distinguish between multilabel cancer cells for classifcation [108]. ",
+        "bbox": [
+            505,
+            439,
+            907,
+            503
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The need for hybrid model with transformer ",
+        "text_level": 1,
+        "bbox": [
+            505,
+            531,
+            806,
+            545
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The transformer was initially designed to process language models in a sequential format. Since then, it has been modified to process vision tasks by splitting the image into small patches and processing them sequentially as a text-like model. The transformer can obtain inferences about the information in a global context to capture a wide range of dependencies between objects; however, it has a limited feature localization capacity. While the standalone transformer model is sufficient for most classification tasks, in the case of image segmentation for critical medical applications that require a high-quality image, the transformer performance is insufficient and must be combined with a hybrid model. ",
+        "bbox": [
+            504,
+            546,
+            907,
+            758
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Unet or ResNet architectures are widely used as standard models for medical image segmentation that can preserve image details owing to the nature of the encoder-decoder architecture with residual connections. However, Unet and ResNet have inherited the limitation of CNNs in failing to capture a wide range of dependencies by having only local feature extraction capabilities. TransUNet was the frst architecture proposed for medical imaging segmentation that combined the transformer ",
+        "bbox": [
+            505,
+            758,
+            910,
+            896
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "Page 18 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "[10] and Unet architectures for local and global feature extraction. ",
+        "bbox": [
+            92,
+            108,
+            485,
+            137
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Te transformer was also combined with RL to generate instructions for surgical robots [62, 63]. Te transformer can capture features to update the state-reward status in the RL to automate robot tasks. Te RL-transformer combination has also been used in medical image captioning [88] to automatically generate medical reports within the hospital system. ",
+        "bbox": [
+            92,
+            139,
+            485,
+            245
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Data bias and fairness ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            269,
+            240,
+            282
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Training machine learning models using huge datasets (in millions or billions of examples) requires resources with sufcient computational power and storage. Terefore, many algorithms tend to apply dimensionality reduction to minimize model parameters, which reduces the extracted features. Tis allows model training with reduced computational and memory requirements. However, there is a possibility of losing information with less representation in the feature map or dataset. Consequently, the model may be biased toward labels or classes with the largest amount of training data. Te bias in the results could be signifcant, particularly when label balancing was not performed before training. In medical applications, rare diseases and outliers could be disregarded from the model prediction. ",
+        "bbox": [
+            92,
+            284,
+            485,
+            510
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "In ref. [109], the fairness and interpretability of DL models were evaluated using the largest publicly available dataset, the Medical Information Mart for Intensive Care, version IV. Te study found that some DL models lacked fairness when relying on demographics and ethnicity to predict mortality rates. In contrast, DL models that used proper and balanced critical features for training were not biased and tended to be fair. In many models, racial attributes were used unequally across subgroups. Tis resulted in inconsistent recommendations on the use of mechanical ventilators for treatments or in intensive care units when relying on demographic and racial categories such as gender, marital status, age, insurance type, and ethnicity. Figure  22 in Appendix A.5 shows examples of the global features importance scores used to predict mortality rates using diferent machine learning methods. Te fgure shows the bias of the importance score toward certain features when machine learning algorithms were changed. ",
+        "bbox": [
+            92,
+            511,
+            485,
+            800
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Ethical and privacy challenges ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            820,
+            295,
+            835
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Information-sharing in healthcare information systems is regulated, although privacy and ethical regulations ",
+        "bbox": [
+            92,
+            836,
+            485,
+            865
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "may difer across jurisdictions. For example, the Health Insurance Portability and Accountability Act (HIPAA) of the United States regulates healthcare information systems to protect sensitive patient information. Te HIPAA states that such information cannot be disclosed without patient consent. Patients also have the right to access their data, ask for modifcations, and know who accesses them. While such regulations help preserve patient privacy, collecting health-related datasets or making them available to the public is a challenge. Tis is a critical issue in the case of the ViT as millions of examples are required to train the model and obtain accurate results. Using the ViT or any other machine learning model trained on a large dataset has a higher risk of errors, and the results are subject to ethical concerns. Many large datasets are obtained from the Internet; hence, the sources may be unknown or untrustworthy, and there is no previous consent to collect these data. Training the ViT from untrusted sources could generate false results, which could lead to errors or ofensive content in generated patient reports. Te consequences may be worse in the case of data breaches or cyberattacks on the healthcare information system as these could alter patient records, images, or the data streaming performance of the telehealth system. Although the ViT is more robust against adversarial attacks, there is no guarantee that the ViTbased model will not generate inappropriate content. Tis raises concerns regarding the need to regulate the current AI industry as well as applications in healthcare to ensure that the input and output of the systems are clean and valid for clinical applications. Federated learning from diferent healthcare facilities and edge devices or servers can help maintain a high level of data privacy. However, the research in ref. [110] reported vulnerabilities in retrieving original data from the shared model weights. ",
+        "bbox": [
+            509,
+            107,
+            904,
+            669
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Conclusions ",
+        "text_level": 1,
+        "bbox": [
+            509,
+            684,
+            603,
+            698
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Te ViT has emerged as the state-of-the-art in image recognition tasks, replacing traditional standalone machine learning algorithms such as CNN-based models. Te ViT can extract information in a global context using an attention-based mechanism and analyze images, texts, patterns, and instructions. ",
+        "bbox": [
+            509,
+            700,
+            904,
+            789
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The superior performance of the ViT makes it practical for various digital medicine applications such as segmentation, classifcation, image reconstruction, image enhancement, data prognosis prediction, and telehealth security. ",
+        "bbox": [
+            509,
+            789,
+            904,
+            865
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "Page 19 of 28 ",
+        "bbox": [
+            825,
+            40,
+            905,
+            53
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Appendix ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            108,
+            171,
+            124
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "ViT common architectures ",
+        "bbox": [
+            90,
+            125,
+            268,
+            137
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "A.1 Typical transformer architecture ",
+        "bbox": [
+            90,
+            140,
+            326,
+            154
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/4bf45c0d3b7a9e3746511313ce3a06d595d98aa6e768cdec5d2df6bdf5d8d849.jpg",
+        "image_caption": [
+            "Fig. 18 Transformer typical "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            243,
+            160,
+            754,
+            918
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "Page 20 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "A.2 Architecture example of using transformer in image recognition ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            107,
+            527,
+            122
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/e432c8f6bd917e9d25e9b2ee9e8627e06ab241344e356e67d13a6e9125e0b145.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            177,
+            648,
+            479
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7fec3b745c093b7fb784a250d3661a4d2361929f3d91be9fc1163482e6d8f6e.jpg",
+        "image_caption": [
+            "Fig. 19 Example of using Transformer architecture for image recognition [1] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            714,
+            175,
+            894,
+            496
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "Page 21 of 28 ",
+        "bbox": [
+            825,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "A.3 TransUnet architecture diagram ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            107,
+            324,
+            122
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/d7e9142e2fd11e440901ba74e117273ba7e04838405cd7ed357bbb3209f8beb1.jpg",
+        "image_caption": [
+            "Fig. 20 a Transformer layer diagram; b TransUnet architecture [10] "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            188,
+            897,
+            575
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "Page 22 of 28 ",
+        "bbox": [
+            826,
+            40,
+            905,
+            53
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "A.4 Swin‑transUnet architecture diagram ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            107,
+            359,
+            122
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/9a53a4f73b5e3e905c90ad64aae0a930262dee0f60265067e476c706a2188d32.jpg",
+        "image_caption": [
+            "Fig. 21 Swin TransUn "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            211,
+            155,
+            786,
+            912
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "Page 23 of 28 ",
+        "bbox": [
+            826,
+            39,
+            905,
+            53
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "A.5 Example of global features importance rank (Fig. 22) ",
+        "text_level": 1,
+        "bbox": [
+            89,
+            107,
+            455,
+            121
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/1107b813de9c1d135bbabc12f58ae4b1e378c84536d61f2a0354c572c3345fe0.jpg",
+        "image_caption": [
+            "Fig. 22 Examples of global features that are used for mortality predictions are numbered from (112-139). The numbers in the table depicts the rank sore and each column represents a feature and its importance score by diferent methods on the horizontal line [109]. AutoInt [111], LSTM [112], TCN [113], Transformer [8], IMVLSTM [114] are the machine learning methodologies "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            184,
+            895,
+            402
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Abbreviations ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            529,
+            171,
+            539
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "3D Three-dimensional ",
+        "bbox": [
+            90,
+            541,
+            250,
+            551
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "AI Artifcial intelligence ",
+        "bbox": [
+            90,
+            551,
+            257,
+            563
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "BERT Bidirectional encoder representations from transformers ",
+        "bbox": [
+            90,
+            564,
+            435,
+            574
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CNN Convolutional neural networks ",
+        "bbox": [
+            90,
+            575,
+            310,
+            584
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "COVID-19 Coronavirus disease 2019 ",
+        "bbox": [
+            90,
+            586,
+            282,
+            596
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CT Computed tomography ",
+        "bbox": [
+            90,
+            597,
+            275,
+            608
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CL Contrastive learning ",
+        "bbox": [
+            90,
+            608,
+            257,
+            620
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CRC Colorectal cancer ",
+        "bbox": [
+            90,
+            621,
+            243,
+            630
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "COTR Convolutional transformer ",
+        "bbox": [
+            90,
+            631,
+            287,
+            641
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "DL Deep learning ",
+        "bbox": [
+            90,
+            641,
+            226,
+            654
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "EHR Electronic health record ",
+        "bbox": [
+            90,
+            655,
+            275,
+            664
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "FCN Fully convolutional network ",
+        "bbox": [
+            90,
+            665,
+            295,
+            675
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "GT Ground truth ",
+        "bbox": [
+            90,
+            677,
+            221,
+            687
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "GAN Generative adversarial network ",
+        "bbox": [
+            90,
+            688,
+            310,
+            700
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "HIS Hospital information system ",
+        "bbox": [
+            90,
+            700,
+            295,
+            711
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "HIPAA Health Insurance Portability and Accountability Act ",
+        "bbox": [
+            90,
+            712,
+            411,
+            722
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "K Key ",
+        "bbox": [
+            90,
+            722,
+            173,
+            732
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "LSTM Long short-term memory ",
+        "bbox": [
+            90,
+            734,
+            284,
+            745
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "MLP Multilayer perceptron ",
+        "bbox": [
+            90,
+            746,
+            263,
+            756
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "MSA Multihead self-attention ",
+        "bbox": [
+            90,
+            756,
+            275,
+            767
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "MRI Magnetic resonance imaging ",
+        "bbox": [
+            90,
+            769,
+            300,
+            779
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "NLP Natural language processing ",
+        "bbox": [
+            90,
+            779,
+            299,
+            791
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "PACS Picture archiving and communication system ",
+        "bbox": [
+            90,
+            792,
+            381,
+            802
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Q ",
+        "bbox": [
+            90,
+            803,
+            188,
+            813
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "RL Reinforcement learning ",
+        "bbox": [
+            90,
+            813,
+            273,
+            824
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "RNN Recurrent neural network ",
+        "bbox": [
+            90,
+            825,
+            282,
+            835
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "V ",
+        "bbox": [
+            90,
+            836,
+            181,
+            846
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "ViT Vision transformer ",
+        "bbox": [
+            90,
+            846,
+            245,
+            858
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "DETR Detection transformer ",
+        "bbox": [
+            90,
+            859,
+            265,
+            869
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SATr Slice attention transformer ",
+        "bbox": [
+            90,
+            870,
+            287,
+            881
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "UCLT Unsupervised contrastive learning-based transformer ",
+        "bbox": [
+            90,
+            882,
+            421,
+            893
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "IHD Intracranial hemorrhage detection ",
+        "bbox": [
+            507,
+            503,
+            744,
+            515
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SIGT Surgical Instruction Generation Transformer ",
+        "bbox": [
+            507,
+            516,
+            789,
+            526
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "RTMIC Real Time Measurement, Instrumentation & Control ",
+        "bbox": [
+            507,
+            527,
+            828,
+            537
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "IFCC International Federation of Clinical Chemistry ",
+        "bbox": [
+            507,
+            537,
+            800,
+            549
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "LDASR Learning Domain Adaption Surgical Robot ",
+        "bbox": [
+            507,
+            550,
+            784,
+            560
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgements ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            572,
+            620,
+            583
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Not applicable. ",
+        "bbox": [
+            507,
+            584,
+            586,
+            594
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Authors’ contributions ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            606,
+            633,
+            616
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "KA-h, FG and AK provided the conception; KA-h provided the methodology and investigation; KA-h and AK made the data analysis; KH prepared the origi‑ nal draft; FG, ITC, AK and KA-h reviewed and edited the manuscript; FG, AK and ITC provided the supervision; FG provided the funding acquisition. All authors have read and agreed to the published version of the manuscript. ",
+        "bbox": [
+            505,
+            617,
+            905,
+            675
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Funding ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            686,
+            557,
+            697
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "This research was supported by a grant from the National Research Council of Canada through the Collaborative Research and Development Initiative. ",
+        "bbox": [
+            505,
+            697,
+            902,
+            720
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Availability of data and materials ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            731,
+            690,
+            741
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The data underlying this manuscript is based on existing publications and is available in the referenced literature or from the corresponding authors upon reasonable request. ",
+        "bbox": [
+            505,
+            743,
+            897,
+            777
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Declarations ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            794,
+            596,
+            807
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Competing interests ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            818,
+            621,
+            830
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The authors declare no competing fnancial or non-fnancial interests. ",
+        "bbox": [
+            505,
+            830,
+            858,
+            841
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Received: 21 March 2023 Accepted: 30 May 2023 ",
+        "bbox": [
+            507,
+            864,
+            769,
+            875
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Published online: 10 July 2023 ",
+        "bbox": [
+            507,
+            875,
+            690,
+            888
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "Page 24 of 28 ",
+        "bbox": [
+            826,
+            40,
+            905,
+            53
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            107,
+            154,
+            118
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "1. Dosovitskiy A, Beyer L, Kolesnikov A, Weissenborn D, Zhai XH, Unterthiner T et al (2021) An image is worth 16x16 words: transformers for image recognition at scale. In: Proceedings of the 9th international conference on learning representations, OpenReview.net, Vienna, 3-7 May 2021 ",
+            "2. Zhang QM, Xu YF, Zhang J, Tao DC (2023) ViTAEv2: vision transformer advanced by exploring inductive bias for image recognition and beyond. Int J Comput Vis 131(5):1141-1162. https://doi.org/10.1007/ s11263-​022-​01739-w ",
+            "3. Han K, Wang YH, Chen HT, Chen XH, Guo JY, Liu ZH et al (2023) A survey on vision transformer. IEEE Trans Pattern Anal Mach Intell 45(1):87- 110. https://doi.org/10.1109/TPAMI.2022.3152247 ",
+            "4. Wang RS, Lei T, Cui RX, Zhang BT, Meng HY, Nandi AK (2022) Medical image segmentation using deep learning: a survey. IET Image Process 16(5):1243-1267. https://doi.org/10.1049/ipr2.12419 ",
+            "5. Bai WJ, Suzuki H, Qin C, Tarroni G, Oktay O, Matthews PM et al (2018) Recurrent neural networks for aortic image sequence segmenta‑ tion with sparse annotations. In: Frangi AF, Schnabel JA, Davatzikos C, Alberola-López C, Fichtinger G (eds) Medical image computing and computer assisted intervention. 21st international conference, Granada, September 2018. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 11073. Springer, Cham, pp 586-594. https://doi.org/10.1007/978-3-​030-​00937-3_67 ",
+            "6. Wang YX, Xie HT, Fang SC, Xing MT, Wang J, Zhu SG et al (2022) PETR: rethinking the capability of transformer-based language model in scene text recognition. IEEE Trans Image Process 31:5585-5598. https:// doi.org/10.1109/TIP.2022.3197981 ",
+            "7. Devlin J, Chang MW, Lee K, Toutanova K (2019) BERT: pre-training of deep bidirectional transformers for language understanding. In: Pro‑ ceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technolo‑ gies, volume 1 (long and short papers), Association for Computational Linguistics, Minneapolis, 2-7 June 2019 ",
+            "8. Vaswani A, Shazeer N, Parmar N, Uszkoreit J, Jones L, Gomez AN et al (2017) Attention is all you need. In: Proceedings of the 31st interna‑ tional conference on neural information processing systems, Curran Associates Inc., Long Beach, 4-9 December 2017 ",
+            "9. Gao Y, Phillips JM, Zheng Y, Min RQ, Fletcher PT, Gerig G (2018) Fully convolutional structured LSTM networks for joint 4D medical image segmentation. In: Proceedings of the 15th international symposium on biomedical imaging, IEEE, Washington, 4-7 April 2018. https://doi.org/ 10.1109/ISBI.2018.8363764 ",
+            "10. Chen JN, Lu YY, Yu QH, Luo XD, Adeli E, Wang Y et al (2021) TransUNet: transformers make strong encoders for medical image segmentation. arXiv preprint arXiv: 2102.04306 ",
+            "11. Lin AL, Chen BZ, Xu JY, Zhang Z, Lu GM, Zhang D (2022) DS-TransUNet: dual Swin transformer U-Net for medical image segmentation. IEEE Trans Instrum Meas 71:4005615. https://doi.org/10.1109/TIM.2022. 3178991 ",
+            "12. Mikolov T, Chen K, Corrado G, Dean J (2013) Efcient estimation of word representations in vector space. In: Proceedings of the 1st international conference on learning representations, ICLR, Scottsdale, 2-4 May 2013 ",
+            "13. Maeda Y, Fukushima N, Matsuo H (2018) Taxonomy of vectorization patterns of programming for fr image flters using kernel subsampling and new one. Appl Sci 8(8):1235. https://doi.org/10.3390/app8081235 ",
+            "14. Jain P, Vijayanarasimhan S, Grauman K (2010) Hashing hyperplane queries to near points with applications to large-scale active learn‑ ing. In: Proceedings of the 23rd international conference on neural information processing systems, Curran Associates Inc., Vancouver, 6-9 December 2010 ",
+            "15. Yu Y, Si XS, Hu CH, Zhang JX (2019) A review of recurrent neural networks: LSTM cells and network architectures. Neural Comput 31(7):1235-1270. https://doi.org/10.1162/neco_a_01199 ",
+            "16. Huang ZH, Xu W, Yu K (2015) Bidirectional LSTM-CRF models for sequence tagging. arXiv preprint arXiv: 1508.01991 ",
+            "17. Gehring J, Auli M, Grangier D, Yarats D, Dauphin YN (2017) Convolu‑ tional sequence to sequence learning. In: Proceedings of the 34th international conference on machine learning, PMLR, Sydney, 6-11 August 2017 "
+        ],
+        "bbox": [
+            102,
+            120,
+            485,
+            893
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "18. Takase S, Kiyono S, Kobayashi S, Suzuki J (2022) On layer normaliza‑ tions and residual connections in transformers. arXiv preprint arXiv: 2206.00330 ",
+            "19. Topal MO, Bas A, van Heerden I (2021) Exploring transformers in natural language generation: GPT, BERT, and XLNet. arXiv preprint arXiv: 2102.08036 ",
+            "20. Wang SL, Liu F, Liu B (2021) Escaping the gradient vanishing: periodic alternatives of softmax in attention mechanism. IEEE Access 9:168749- 168759. https://doi.org/10.1109/ACCESS.2021.3138201 ",
+            "21. Ba JL, Kiros JR, Hinton GE (2016) Layer normalization. arXiv preprint arXiv: 1607.06450 ",
+            "22. Taud H, Mas JF (2018) Multilayer perceptron (MLP). In: Camacho Olmedo M, Paegelow M, Mas JF, Escobar F (eds) Geomatic approaches for modeling land change scenarios. Lecture notes in geoinformation and cartography. Springer, Cham, pp 451-455. https://doi.org/10.1007/ 978-3-​319-​60801-3_27 ",
+            "23. Akinyelu AA, Zaccagna F, Grist JT, Castelli M, Rundo L (2022) Brain tumor diagnosis using machine learning, convolutional neural networks, cap‑ sule neural networks and vision transformers, applied to MRI: a survey. J Imaging 8(8):205. https://doi.org/10.3390/jimaging8080205 ",
+            "24. Mahoro E, Akhlouf MA (2022) Breast cancer classifcation on thermo‑ grams using deep CNN and transformers. Quant Infrared Thermogr J. https://doi.org/10.1080/17686733.2022.2129135 ",
+            "25. Shmatko A, Ghafari Laleh N, Gerstung M, Kather JN (2022) Artifcial intelligence in histopathology: enhancing cancer research and clini‑ cal oncology. Nat Cancer 3(9):1026-1038. https://doi.org/10.1038/ s43018-​022-​00436-4 ",
+            "26. Al-Hammuri K, Gebali F, Thirumarai Chelvan I, Kanan A (2022) Tongue contour tracking and segmentation in lingual ultrasound for speech recognition: a review. Diagnostics 12(11):2811. https://doi.org/10.3390/ diagnostics12112811 ",
+            "27. Al-Hammuri K (2019) Computer vision-based tracking and feature extraction for lingual ultrasound. Dissertation, University of Victoria ",
+            "28. McMaster C, Bird A, Liew DFL, Buchanan RR, Owen CE, Chapman WW et al (2022) Artifcial intelligence and deep learning for rheumatolo‑ gists. Arthritis Rheumatol 74(12):1893-1905. https://doi.org/10.1002/art. 42296 ",
+            "29. Beddiar DR, Oussalah M, Seppänen T (2023) Automatic captioning for medical imaging (MIC): a rapid review of literature. Artif Intell Rev 56(5):4019-4076. https://doi.org/10.1007/s10462-​022-​10270-w ",
+            "30. Renna F, Martins M, Neto A, Cunha A, Libânio D, Dinis-Ribeiro M et al (2022) Artifcial intelligence for upper gastrointestinal endoscopy: a roadmap from technology development to clinical practice. Diagnos‑ tics 12(5):1278. https://doi.org/10.3390/diagnostics12051278 ",
+            "31. Coan LJ, Williams BM, Adithya VK, Upadhyaya S, Alkafri A, Czanner S et al (2023) Automatic detection of glaucoma via fundus imaging and artifcial intelligence: a review. Surv Ophthal 68(1):17-41. https://doi. org/10.1016/j.survophthal.2022.08.005 ",
+            "32. Chang A (2020) The role of artifcial intelligence in digital health. In: Wulfovich S, Meyers A (eds) Digital health entrepreneurship. Health informatics. Springer, Cham, pp 71-81. https://doi.org/10.1007/ 978-3-​030-​12719-0_7 ",
+            "33. Shamshad F, Khan S, Zamir SW, Khan MH, Hayat M, Khan FS et al (2022) Transformers in medical imaging: a survey. arXiv preprint arXiv: 2201.09873. https://doi.org/10.1016/j.media.2023.102802 ",
+            "34. Ronneberger O, Fischer P, Brox T (2015) U-Net: convolutional networks for biomedical image segmentation. In: Navab N, Hornegger J, Wells W, Frangi A (eds) Medical image computing and computer-assisted intervention. 18th international conference, Munich, October 2015. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 9351. Springer, Cham, pp 234- 241. https://doi.org/10.1007/978-3-​319-​24574-4_28 ",
+            "35. Cao H, Wang YY, Chen J, Jiang DS, Zhang XP, Tian Q et al (2023) Swin-Unet: unet-like pure transformer for medical image segmentation. In: Karlinsky L, Michaeli T, Nishino K (eds) Computer vision. Tel Aviv, October 2022. Lecture notes in computer science, vol 13803. Springer, Cham, 205-218. https://doi.org/10.1007/978-3-​031-​25066-8_9 ",
+            "36. Dong H, Yang G, Liu FD, Mo YH, Guo YK (2017) Automatic brain tumor detection and segmentation using U-Net based fully convolutional "
+        ],
+        "bbox": [
+            519,
+            110,
+            904,
+            894
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            39,
+            559,
+            51
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "Page 25 of 28 ",
+        "bbox": [
+            826,
+            40,
+            905,
+            53
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "networks. In: Valdés Hernández M, González-Castro V (eds) Medical image understanding and analysis. 21st annual conference, Edinburgh, July 2017. Communications in computer and information science, vol 723. Springer, Cham, pp 506-517. https://doi.org/10.1007/978-3-​319-​60964-5_44 ",
+            "37. Liu Q, Xu ZL, Jiao YN, Niethammer M (2022) iSegFormer: interactive segmentation via transformers with application to 3D knee MR images. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer sci‑ ence, vol 13435. Springer, Cham, pp 464-474. https://doi.org/10.1007/ 978-3-​031-​16443-9_45 ",
+            "38. Lee HH, Bao SX, Huo YK, Landman BA (2022) 3D UX-Net: a large kernel volumetric convnet modernizing hierarchical transformer for medical image segmentation. arXiv preprint arXiv: 2209.15076 ",
+            "39. Yu X, Yang Q, Zhou YC, Cai LY, Gao RQ, Lee HH et al (2022) UNesT: local spatial representation learning with hierarchical transformer for efcient medical segmentation. arXiv preprint arXiv: 2209.14378 ",
+            "40. Xing ZH, Yu LQ, Wan L, Han T, Zhu L (2022) NestedFormer: nested modality-aware transformer for brain tumor segmentation. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13435. Springer, Cham, pp 140-150. https://doi.org/10.1007/978-3-​031-​ 16443-9_14 ",
+            "41. Tang YB, Zhang N, Wang YR, He SH, Han M, Xiao J et al (2022) Accurate and robust lesion RECIST diameter prediction and segmentation with transformers. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13434. Springer, Cham, pp 535-544. https://doi. org/10.1007/978-3-​031-​16440-8_51 ",
+            "42. Li YX, Wang S, Wang J, Zeng GD, Liu WJ, Zhang QN et al (2021) GT U-Net: a U-Net like group transformer network for tooth root segmentation. In: Lian CF, Cao XH, Rekik I, Xu XN, Yan PK (eds) Machine learning in medical imaging. 12th international workshop, Strasbourg, September 2021. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 12966. Springer, Cham, pp 386- 395. https://doi.org/10.1007/978-3-​030-​87589-3_40 ",
+            "43. Sanderson E, Matuszewski BJ (2022) FCN-transformer feature fusion for polyp segmentation. In: Yang G, Aviles-Rivero A, Roberts M, Schönlieb CB (eds) Medical image understanding and analysis. 26th annual conference, Cambridge, July 2022. Lecture notes in computer science, vol 13413. Springer, Cham, pp 892-907. https://doi.org/10.1007/978-3-​ 031-​12053-4_65 ",
+            "44. Zhao ZX, Jin YM, Heng PA (2022) TraSeTR: track-to-segment transformer with contrastive query for instance-level instrument segmentation in robotic surgery. In: Proceedings of the 2022 international confer‑ ence on robotics and automation, IEEE, Philadelphia, 23-27 May 2022. https://doi.org/10.1109/ICRA46639.2022.9811873 ",
+            "45. Codella N, Rotemberg V, Tschandl P, Celebi ME, Dusza S, Gutman D et al (2019) Skin lesion analysis toward melanoma detection 2018: a challenge hosted by the international skin imaging collaboration (ISIC). arXiv preprint arXiv: 1902.03368 ",
+            "46. Valanarasu JMJ, Sindagi VA, Hacihaliloglu I, Patel VM (2020) KiU-Net: towards accurate segmentation of biomedical images using over-com‑ plete representations. In: Martel AL, Abolmaesumi P, Stoyanov D, Mateus D, Zuluaga MA, Zhou SK et al (eds) Medical image computing and computer-assisted intervention. 23rd international conference, Lima, October 2020. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 12264. Springer, Cham, pp 363-373. https://doi.org/10.1007/978-3-​030-​59719-1_36 ",
+            "47. Caicedo JC, Goodman A, Karhohs KW, Cimini BA, Ackerman J, Haghighi M et al (2019) Nucleus segmentation across imaging experiments: the 2018 data science bowl. Nat Methods 16(12):1247-1253. https://doi. org/10.1038/s41592-​019-​0612-7 ",
+            "48. Mathai TS, Lee S, Elton DC, Shen TC, Peng YF, Lu ZY et al (2022) Lymph node detection in T2 MRI with transformers. In: Proceedings of the SPIE 12033, Medical imaging 2022: computer-aided diagnosis, SPIE, San Diego, 20 February-28 March 2022. https://doi.org/10.1117/12.2613273 ",
+            "49. Shen ZQ, Fu RD, Lin CN, Zheng SH (2021) COTR: convolution in trans‑ former network for end to end polyp detection. In: Proceedings of the "
+        ],
+        "bbox": [
+            102,
+            108,
+            487,
+            917
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "7th international conference on computer and communications, IEEE, Chengdu, 10-13 December 2021. https://doi.org/10.1109/ICCC54389. 2021.9674267 ",
+            "50. Li H, Chen L, Han H, Zhou SK (2022) SATr: slice attention with trans‑ former for universal lesion detection. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13433. Springer, Cham, pp 163-174. https://doi.org/10.1007/978-3-​031-​16437-8_16 ",
+            "51. Niu C, Wang G (2022) Unsupervised contrastive learning based trans‑ former for lung nodule detection. Phys Med Biol 67(20):204001. https:// doi.org/10.1088/1361-​6560/ac92ba ",
+            "52. Shang FX, Wang SQ, Wang XR, Yang YH (2022) An efective transformerbased solution for RSNA intracranial hemorrhage detection competi‑ tion. arXiv preprint arXiv: 2205.07556 ",
+            "53. Dai Y, Gao YF, Liu FY (2021) TransMed: transformers advance multimodal medical image classifcation. Diagnostics 11(8):1384. https://doi. org/10.3390/diagnostics11081384 ",
+            "54. Zhou M, Mo SL (2021) Shoulder implant X-ray manufacturer classifca‑ tion: exploring with vision transformer. arXiv preprint arXiv: 2104.07667 ",
+            "55. Chen HY, Li C, Wang G, Li XY, Rahaman M, Sun HZ et al (2022) GasHistransformer: a multi-scale visual transformer approach for gastric histo‑ pathological image detection. Pattern Recognit 130:108827.https://doi. org/10.1016/j.patcog.2022.108827 ",
+            "56. Liu WL, Li C, Rahaman MM, Jiang T, Sun HZ, Wu XC et al (2022) Is the aspect ratio of cells important in deep learning? A robust comparison of deep learning methods for multi-scale cytopathology cell image classifcation: from convolutional neural networks to visual transform‑ ers. Comput Biol Med 141:105026.https://doi.org/10.1016/j.compb iomed.2021.105026 ",
+            "57. Lyu Q, Namjoshi SV, McTyre E, Topaloglu U, Barcus R, Chan MD et al (2022) A transformer-based deep-learning approach for classifying brain metas‑ tases into primary organ sites using clinical whole-brain MRI images. Patterns 3(11):100613.https://doi.org/10.1016/j.patter.2022.100613 ",
+            "58. Stegmüller T, Bozorgtabar B, Spahr A, Thiran JP (2023) ScoreNet: learning non-uniform attention and augmentation for transformerbased histopathological image classifcation. In: Proceedings of the 2023 IEEE/CVF winter conference on applications of computer vision, IEEE, Waikoloa, 2-7 January 2023. https://doi.org/10.1109/WACV5 6688.2023.00611 ",
+            "59. Bhattacharya M, Jain S, Prasanna P (2022) RadioTransformer: a cascaded global-focal transformer for visual attention-guided dis‑ ease classification. In: Avidan S, Brostow G, Cissé M, Farinella GM, Hassner T (eds) Computer vision. 17th European conference, Tel Aviv, October 2022. Lecture notes in computer science, vol 13681. Springer, Cham, pp 679-698. https://doi.org/10.1007/978-3-​031-​ 19803-8_40 ",
+            "60. Zhang F, Xue TF, Cai WD, Rathi Y, Westin CF, O’Donnell LJ (2022) TractoFormer: a novel fber-level whole brain tractography analysis framework using spectral embedding and vision transformers. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13431. Springer, Cham, pp 196-206. https://doi.org/10. 1007/978-3-​031-​16431-6_19 ",
+            "61. Bertolini F, Spallanzani A, Fontana A, Depenni R, Luppi G (2015) Brain metastases: an overview. CNS Oncol 4(1):37-46. https://doi.org/10. 2217/cns.14.51 ",
+            "62. Zhang JL, Nie YY, Chang J, Zhang JJ (2021) Surgical instruction generation with transformers. In: de Bruijne M, Cattin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graph‑ ics), vol 12904. Springer, Cham, pp 290-299. https://doi.org/10.1007/ 978-3-​030-​87202-1_28 ",
+            "63. Zhang JL, Nie YY, Chang J, Zhang JJ (2022) SIG-Former: monocular surgical instruction generation with transformers. Int J Comput Assisted Radiol Surg 17(12):2203-2210. https://doi.org/10.1007/ s11548-​022-​02718-9 "
+        ],
+        "bbox": [
+            517,
+            108,
+            902,
+            905
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "Page 26 of 28 ",
+        "bbox": [
+            826,
+            40,
+            907,
+            53
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "64. Pang JY, Jiang C, Chen YH, Chang JB, Feng M, Wang RZ et al (2022) 3D shufe-mixer: an efcient context-aware vision learner of trans‑ former-MLP paradigm for dense prediction in medical volume. IEEE Trans Med Imaging. https://doi.org/10.1109/TMI.2022.3191974 ",
+            "65. Reisenbüchler D, Wagner SJ, Boxberg M, Peng TY (2022) Local atten‑ tion graph-based transformer for multi-target genetic alteration prediction. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13432. Springer, Cham, pp 377-386. https:// doi.org/10.1007/978-3-​031-​16434-7_37 ",
+            "66. Płotka S, Grzeszczyk MK, Brawura-Biskupski-Samaha R, Gutaj P, Lipa M, Trzciński T et al (2022) BabyNet: residual transformer module for birth weight prediction on fetal ultrasound video. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13434. Springer, Cham, pp 350-359. https://doi.org/10.1007/978-3-​ 031-​16440-8_34 ",
+            "67. Nguyen HH, Saarakkala S, Blaschko MB, Tiulpin A (2021) CLIMAT: clinically-inspired multi-agent transformers for knee osteoarthritis trajectory forecasting. arXiv preprint arXiv: 2104.03642. https://doi. org/10.1109/ISBI52829.2022.9761545 ",
+            "68. Xie YT, Li QZ (2022) A review of deep learning methods for com‑ pressed sensing image reconstruction and its medical applications. Electronics 11(4):586. https://doi.org/10.3390/electronics11040586 ",
+            "69. Korkmaz Y, Dar SUH, Yurt M, Özbey M, Çukur T (2022) Unsupervised MRI reconstruction via zero-shot learned adversarial transformers. IEEE Trans Med Imaging 41(7):1747-1763. https://doi.org/10.1109/ TMI.2022.3147426 ",
+            "70. Huang W, Hand P, Heckel R, Voroninski V (2021) A provably con‑ vergent scheme for compressive sensing under random genera‑ tive priors. J Fourier Anal Appl 27(2):19. https://doi.org/10.1007/ s00041-​021-​09830-5 ",
+            "71. Haldar JP, Zhuo JW (2016) P-LORAKS: low-rank modeling of local k-space neighborhoods with parallel imaging data. Magn Reson Med 75(4):1499-1514. https://doi.org/10.1002/mrm.25717 ",
+            "72. Haldar JP (2015) Low-rank modeling of local k-space neighborhoods: from phase and support constraints to structured sparsity. In: Proceed‑ ings of the SPIE Optical Engineering $^ +$ Applications, SPIE, San Diego, 2 September 2015. https://doi.org/10.1117/12.2186705 ",
+            "73. Dar SUH, Yurt M, Shahdloo M, Ildız ME, Tınaz B, Çukur T (2020) Priorguided image reconstruction for accelerated multi-contrast MRI via generative adversarial networks. IEEE J Sel Top Signal Process 14(6):1072-1087. https://doi.org/10.1109/JSTSP.2020.3001737 ",
+            "74. Yaman B, Hosseini SAH, Moeller S, Ellermann J, Uğurbil K, Akçakaya M (2020) Self-supervised learning of physics-guided reconstruction neural networks without fully sampled reference data. Magn Reson Med 84(6):3172-3191. https://doi.org/10.1002/mrm.28378 ",
+            "75. Narnhofer D, Hammernik K, Knoll F, Pock T (2019) Inverse GANs for accelerated MRI reconstruction. In: Proceedings of the SPIE 11138, wavelets and sparsity XVIII, SPIE, San Diego, 11-15 August 2019. https:// doi.org/10.1117/12.2527753 ",
+            "76. Karras T, Laine S, Aittala M, Hellsten J, Lehtinen J, Aila T (2020) Analyzing and improving the image quality of StyleGAN. In: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, IEEE, Seattle, 13-19 June 2020. https://doi.org/10.1109/CVPR42600.2020. 00813 ",
+            "77. Feng CM, Yan YL, Fu HZ, Chen L, Xu Y (2021) Task transformer network for joint MRI reconstruction and super-resolution. In: de Bruijne M, Cat‑ tin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer-assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol. 12906. Springer, Cham, pp 307-317. https://doi.org/10. 1007/978-3-​030-​87231-1_30 ",
+            "78. Guo PF, Mei YQ, Zhou JY, Jiang SS, Patel VM (2022) ReconFormer: accel‑ erated MRI reconstruction using recurrent transformer. arXiv preprint arXiv: 2201.09376 "
+        ],
+        "bbox": [
+            100,
+            108,
+            487,
+            894
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "79. Huang JH, Wu YZ, Wu HJ, Yang G (2022) Fast MRI reconstruction: how powerful transformers are? In: Proceedings of the 44th annual international conference of the IEEE engineering in medicine & biology society, IEEE, Glasgow, 11-15 July 2022. https://doi.org/10.1109/EMBC4 8229.2022.9871475 ",
+            "80. Long YH, Li ZS, Yee CH, Ng CF, Taylor RH, Unberath M et al (2021) E-DSSR: efcient dynamic surgical scene reconstruction with transformer-based stereoscopic depth perception. In: de Bruijne M, Cat‑ tin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September, 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol 12904. Springer, Cham, pp 415-425. https://doi.org/10. 1007/978-3-​030-​87202-1_40 ",
+            "81. Wang C, Shang K, Zhang HM, Li Q, Hui Y, Zhou SK (2021) DuDoTrans: dual-domain transformer provides more attention for sinogram restoration in sparse-view CT reconstruction. arXiv preprint arXiv: 2111.10790 ",
+            "82. Pan JY, Zhang HY, Wu WF, Gao ZF, Wu WW (2022) Multi-domain integra‑ tive Swin transformer network for sparse-view tomographic reconstruc‑ tion. Patterns 3(6):100498.https://doi.org/10.1016/j.patter.2022.100498 ",
+            "83. Razi T, Niknami M, Ghazani FA (2014) Relationship between Hounsfeld unit in CT scan and gray scale in CBCT. J Dent Res Dent Clin Dent Prospects 8(2):107-110 ",
+            "84. Duda SN, Kennedy N, Conway D, Cheng AC, Nguyen V, Zayas-Cabán T et al (2022) HL7 FHIR-based tools and initiatives to support clinical research: a scoping review. J Am Med Inf Assoc 29(9):1642-1653. https://doi.org/10.1093/jamia/ocac105 ",
+            "85. Auer F, Abdykalykova Z, Müller D, Kramer F (2022) Adaptation of HL7 FHIR for the Exchange of Patients’ Gene Expression Profles. Stud Health Technol Inform 295:332-335. https://doi.org/10.1101/2022.02.11.22270 850 ",
+            "86. Carter C, Veale B (2022) Digital radiography and PACS, 4th edn. Elsevier, Amsterdam ",
+            "87. Twa MD, Johnson CA (2022) Digital imaging and communication standards. Optom Vis Sci 99(5):423. https://doi.org/10.1097/OPX.00000 00000001909 ",
+            "88. Xiong YX, Du B, Yan PK (2019) Reinforced transformer for medi‑ cal image captioning. In: Suk HI, Liu M, Yan P, Lian C (eds) Machine learning in medical imaging. 10th international workshop, Shenzhen, October 2019. Lecture notes in computer science (Image process‑ ing, computer vision, pattern recognition, and graphics), vol 11861. Springer, Cham, pp 673-680. https://doi.org/10.1007/978-3-​030-​ 32692-0_77 ",
+            "89. Miura Y, Zhang YH, Tsai E, Langlotz C, Jurafsky D (2021) Improving factual completeness and consistency of image-to-text radiol‑ ogy report generation. In: Proceedings of the 2021 conference of the North American chapter of the association for computational linguistics: human language technologies, Association for Computa‑ tional Linguistics, Online, 6-11 June 2021. https://doi.org/10.18653/ v1/2021.naacl-​main.416 ",
+            "90. Rennie SJ, Marcheret E, Mroueh Y, Ross J, Goel V (2017) Self-critical sequence training for image captioning. In: Proceedings of the 2017 IEEE conference on computer vision and pattern recognition, IEEE, Honolulu, 21-26 July 2017. https://doi.org/10.1109/CVPR.2017.131 ",
+            "91. You D, Liu FL, Ge S, Xie XX, Zhang J, Wu X (2021) AlignTransformer: hier‑ archical alignment of visual regions and disease tags for medical report generation. In: de Bruijne M, Cattin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol 12903. Springer, Cham, pp 72-82. https://doi.org/10.1007/978-3-​030-​87199-4_7 ",
+            "92. Xu MY, Islam M, Lim CM, Ren HL (2021) Learning domain adaptation with model calibration for surgical report generation in robotic surgery. In: Proceedings of the 2021 IEEE international conference on robotics and automation, IEEE, Xi’an, 30 May-5 June 2021. https://doi.org/10. 1109/ICRA48506.2021.9561569 "
+        ],
+        "bbox": [
+            517,
+            108,
+            905,
+            882
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "Page 27 of 28 ",
+        "bbox": [
+            826,
+            40,
+            907,
+            53
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "93. Finlayson SG, Bowers JD, Ito J, Zittrain JL, Beam AL, Kohane IS (2019) Adversarial attacks on medical machine learning. Science 363(6433):1287-1289. https://doi.org/10.1126/science.aaw4399 ",
+            "94. Papangelou K, Sechidis K, Weatherall J, Brown G (2019) Toward an understanding of adversarial examples in clinical trials. In: Berlingerio M, Bonchi F, Gärtner T, Hurley N, Ifrim G (eds) Machine learning and knowledge discovery in databases. European conference, Dublin, September 2018. Lecture notes in computer science (Lecture notes in artifcial intelligence), vol 11051. Springer, Cham, pp 35-51. https://doi. org/10.1007/978-3-​030-​10925-7_3 ",
+            "95. Benz P, Ham S, Zhang CN, Karjauv A, Kweon IS (2021) Adversarial robust‑ ness comparison of vision transformer and MLP-mixer to CNNs. In: Proceedings of the 32nd british machine vision conference 2021, BMVA Press, Online, 22-25 November 2021 ",
+            "96. Chuman T, Kiya H (2022) Security evaluation of block-based image encryption for vision transformer against jigsaw puzzle solver attack. In: Proceedings of the 4th global conference on life sciences and technologies (LifeTech), IEEE, Osaka, 7-9 March 2022. https://doi.org/10. 1109/LifeTech53646.2022.9754937 ",
+            "97. Li M, Han DZ, Li D, Liu H, Chang CC (2022) MFVT: an anomaly trafc detection method merging feature fusion network and vision trans‑ former architecture. EURASIP J Wirel Commun Netw 2022(1):39. https:// doi.org/10.1186/s13638-​022-​02103-9 ",
+            "98. Ho CMK, Yow KC, Zhu ZW, Aravamuthan S (2022) Network intrusion detection via fow-to-image conversion and vision transformer clas‑ sifcation. IEEE Access 10:97780-97793. https://doi.org/10.1109/ACCESS. 2022.3200034 ",
+            "99. George A, Marcel S (2021) On the efectiveness of vision transform‑ ers for zero-shot face anti-spoofng. In: Proceedings of the 2021 IEEE international joint conference on biometrics, IEEE, Shenzhen, 4-7 August 2021. https://doi.org/10.1109/IJCB52358.2021.9484333 ",
+            "100. Doan KD, Lao YJ, Yang P, Li P (2022) Defending backdoor attacks on vision transformer via patch processing. arXiv preprint arXiv: 2206.12381 ",
+            "101. Riquelme C, Puigcerver J, Mustafa B, Neumann M, Jenatton R, Susano Pinto A et al (2021) Scaling vision with sparse mixture of experts. Advances in Neural Information Processing Systems 34: 8583-8595 ",
+            "102. Ridnik T, Ben-Baruch E, Noy A, Zelnik-Manor L (2021) ImageNet-21K pretraining for the masses. arXiv preprint arXiv: 2104.10972 ",
+            "103. Deng J, Dong W, Socher R, Li LJ, Li K, Fei-Fei L (2009) ImageNet: a largescale hierarchical image database. In: Proceedings of the 2009 IEEE con‑ ference on computer vision and pattern recognition, IEEE, Miami, 20-25 June 2009. https://doi.org/10.1109/CVPR.2009.5206848 ",
+            "104. Russakovsky O, Deng J, Su H, Krause J, Satheesh S, Ma SA et al (2015) ImageNet large scale visual recognition challenge. Int J Comput Vis 115(3):211-252. https://doi.org/10.1007/s11263-​015-​0816-y ",
+            "105. Chen XN, Hsieh CJ, Gong BQ (2022) When vision transformers outper‑ form ResNets without pre-training or strong data augmentations. In: Proceedings of the 10th international conference on learning represen‑ tations, OpenReview.net, 25-29 April 2022 ",
+            "106. Gani H, Naseer M, Yaqub M (2022) How to train vision transformer on small-scale datasets? arXiv preprint arXiv: 2210.07240 ",
+            "107. Chen T, Kornblith S, Norouzi M, Hinton G (2020) A simple framework for contrastive learning of visual representations. In: Proceedings of the 37th international conference on machine learning, PMLR, Online, 13-18 July 2020 ",
+            "108. Wang XY, Yang S, Zhang J, Wang MH, Zhang J, Yang W et al (2022) Transformer-based unsupervised contrastive learning for histopatho‑ logical image classifcation. Med Image Anal 81:102559.https://doi.org/ 10.1016/j.media.2022.102559 ",
+            "109. Meng CZ, Trinh L, Xu N, Liu Y (2021) MIMIC-IF: interpretability and fair‑ ness evaluation of deep learning models on MIMIC-IV dataset. https:// doi.org/10.21203/rs.3.rs-​402058/v1 ",
+            "110. Lu JH, Zhang XS, Zhao TL, He XY, Cheng J (2022) APRIL: fnding the Achilles’ heel on privacy for vision transformers. In: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, IEEE, New Orleans, 18-24 June 2022. https://doi.org/10.1109/CVPR52688. 2022.00981 ",
+            "111. Song WP, Shi CC, Xiao ZP, Duan ZJ, Xu YW, Zhang M et al (2019) AutoInt: automatic feature interaction learning via self-attentive neural networks. In: Proceedings of the 28th ACM international conference on "
+        ],
+        "bbox": [
+            99,
+            107,
+            487,
+            916
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "information and knowledge management, ACM, Beijing, 3-7 Novem‑ ber 2019. https://doi.org/10.1145/3357384.3357925 ",
+            "112. Yu K, Zhang MD, Cui TY, Hauskrecht M (2019) Monitoring ICU mortal‑ ity risk with a long short-term memory recurrent neural network. In: Proceedings of the pacifc symposium on Biocomputing 2020, World Scientifc, Kohala Coast, 3-7 January 2020. https://doi.org/10.1142/ 9789811215636_0010 ",
+            "113. Bai SJ, Kolter JZ, Koltun V (2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling. arXiv preprint arXiv: 1803.01271 ",
+            "114. Guo T, Lin T, Antulov-Fantulin N (2019) Exploring interpretable LSTM neural networks over multi-variable data. In: Proceedings of the 36th international conference on machine learning, PMLR, Long Beach, 9-15 June 2019 "
+        ],
+        "bbox": [
+            512,
+            107,
+            900,
+            267
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Publisher’s Note ",
+        "text_level": 1,
+        "bbox": [
+            507,
+            284,
+            636,
+            297
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Springer Nature remains neutral with regard to jurisdictional claims in pub‑ lished maps and institutional afliations. ",
+        "bbox": [
+            507,
+            298,
+            887,
+            321
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Submit your manuscript to a SpringerOpen journal and benefit from: ",
+        "text_level": 1,
+        "bbox": [
+            532,
+            739,
+            880,
+            770
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "Convenient online submission ",
+            "Rigorous peer review ",
+            "Open access: articles freely available online ",
+            "High visibility within the field ",
+            "Retaining the copyright to your article "
+        ],
+        "bbox": [
+            536,
+            781,
+            808,
+            860
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            546,
+            881,
+            858,
+            894
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Al‑hammuri et al. Visual Computing for Industry, Biomedicine, and Art (2023) 6:14 ",
+        "bbox": [
+            90,
+            37,
+            559,
+            51
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "Page 28 of 28 ",
+        "bbox": [
+            826,
+            40,
+            907,
+            53
+        ],
+        "page_idx": 27
+    }
+]
