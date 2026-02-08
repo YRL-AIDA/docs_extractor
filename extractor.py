@@ -145,7 +145,7 @@ class ArticleExtractor():
         tables = [block for block in data if block['type'] == 'table']
         for idx, block in enumerate(tables):
             caption = block['table_caption'] + block['table_footnote']
-            figure = {'id': f'Table {idx + 1}', 'type': block['type'], 'caption': caption, 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
+            figure = {'id': f'Table {idx + 1}', 'type': block['type'], 'caption': caption, 'table_body': block['table_body'], 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
             figures_list.append(figure)
         self.figures = figures_list
         
