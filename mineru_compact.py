@@ -51,7 +51,7 @@ def do_parse(
         for idx, model_list in enumerate(infer_results):
             model_json = copy.deepcopy(model_list)
             pdf_file_name = pdf_file_names[idx]
-            local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, parse_method)
+            local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, '')
             image_writer, md_writer = FileBasedDataWriter(local_image_dir), FileBasedDataWriter(local_md_dir)
 
             images_list = all_image_lists[idx]
@@ -83,7 +83,7 @@ def do_parse(
             for idx, pdf_bytes in enumerate(pdf_bytes_list):
                 pdf_file_name = pdf_file_names[idx]
                 pdf_bytes = convert_pdf_bytes_to_bytes_by_pypdfium2(pdf_bytes, start_page_id, end_page_id)
-                local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, parse_method)
+                local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, '')
                 image_writer, md_writer = FileBasedDataWriter(local_image_dir), FileBasedDataWriter(local_md_dir)
                 middle_json, infer_result = vlm_doc_analyze(pdf_bytes, image_writer=image_writer, backend=backend, server_url=server_url, model_path=model_path)
 
@@ -107,7 +107,7 @@ def do_parse(
             for idx, pdf_bytes in enumerate(pdf_bytes_list):
                 pdf_file_name = pdf_file_names[idx]
                 pdf_bytes = convert_pdf_bytes_to_bytes_by_pypdfium2(pdf_bytes, start_page_id, end_page_id)
-                local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, parse_method)
+                local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, '')
                 image_writer, md_writer = FileBasedDataWriter(local_image_dir), FileBasedDataWriter(local_md_dir)
                 middle_json, infer_result, _vlm_ocr_enable = hybrid_doc_analyze(
                     pdf_bytes,
