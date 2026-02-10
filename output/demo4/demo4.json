@@ -1,0 +1,385 @@
+{
+    "title": "Transformer for Graphs: An Overview from Architecture Perspective ",
+    "abstract": "Recently, Transformer model, which has achieved great success in many artificial intelligence fields, has demonstrated its great potential in modeling graph-structured data. Till now, a great variety of Transformers has been proposed to adapt to the graph-structured data. However, a comprehensive literature review and systematical evaluation of these Transformer variants for graphs are still unavailable. It’s imperative to sort out the existing Transformer models for graphs and systematically investigate their effectiveness on various graph tasks. In this survey, we provide a comprehensive review of various Graph Transformer models from the architectural design perspective. We first disassemble the existing models and conclude three typical ways to incorporate the graph information into the vanilla Transformer: 1) GNNs as Auxiliary Modules, 2) Improved Positional Embedding from Graphs, and 3) Improved Attention Matrix from Graphs. Furthermore, we implement the representative components in three groups and conduct a comprehensive comparison on various kinds of famous graph data benchmarks to investigate the real performance gain of each component. Our experiments confirm the benefits of current graph-specific modules on Transformer and reveal their advantages on different kinds of graph tasks. ",
+    "keywords": null,
+    "language": "en",
+    "sections": [
+        {
+            "title": "Abstract",
+            "text": "Recently, Transformer model, which has achieved great success in many artificial intelligence fields, has demonstrated its great potential in modeling graph-structured data. Till now, a great variety of Transformers has been proposed to adapt to the graph-structured data. However, a comprehensive literature review and systematical evaluation of these Transformer variants for graphs are still unavailable. It’s imperative to sort out the existing Transformer models for graphs and systematically investigate their effectiveness on various graph tasks. In this survey, we provide a comprehensive review of various Graph Transformer models from the architectural design perspective. We first disassemble the existing models and conclude three typical ways to incorporate the graph information into the vanilla Transformer: 1) GNNs as Auxiliary Modules, 2) Improved Positional Embedding from Graphs, and 3) Improved Attention Matrix from Graphs. Furthermore, we implement the representative components in three groups and conduct a comprehensive comparison on various kinds of famous graph data benchmarks to investigate the real performance gain of each component. Our experiments confirm the benefits of current graph-specific modules on Transformer and reveal their advantages on different kinds of graph tasks. ",
+            "type": "abstract",
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "1 Introduction ",
+            "text": "Graph is a kind of data structure that structurally depicts a set of objects (nodes) with their relationships (edges). As a unique non-Euclidean data structure, graph analysis focuses on tasks such as node classification [Yang et al., 2016], link prediction [Zhang and Chen, 2018], and clustering [Aggarwal, 2010]. Recent research on analyzing graphs using deep learning has attracted more and more attention due to the rich expressive power of deep learning models. Graph Neural Networks (GNNs) [Kipf and Welling, 2016], as a \nkind of deep learning-based method, are recently becoming a widely-used graph analysis tools due to their convincing performance. Most of the current GNNs are based on the Message Passing paradigm [Gilmer et al., 2017], the expressive power of which is bounded by the Weisfeiler-Lehamn isomorphism hierarchy [Maron et al., 2019; Xu et al., 2018a]. Worse still, as pointed out by [Kreuzer et al., 2021], GNNs suffer from the over-smoothing problem due to repeated local aggregation, and the over-squashing problem due to the exponential computation cost with the increase of model depth. Several studies [Zhao and Akoglu, 2019; Rong et al., 2019; Xu et al., 2018b] try to address such problems. Nevertheless, none of them seems to be able to eliminate these problems from the Message Passing paradigm. \nOn the other hand, Transformers and its variants, as a powerful class of models, are playing an important role in various areas including Natural Language Processing (NLP) [Vaswani et al., 2017], Computer Vision (CV) [Forsyth and Ponce, 2011], Time-series Analysis [Hamilton, 2020], Audio Processing [Purwins et al., 2019], etc. Moreover, recent years have witnessed many successful Transformer variants in modeling graphs. These models have achieved competitive or even superior performance against GNNs in many applications, such as Quantum Property Prediction [Hu et al., 2021], Catalysts Discovery [Chanussot* et al., 2021] and Recommendation Systems [Min et al., 2022]. The literature reviews and systematic evaluations for these Transformer variants are, however, lacking. \nThis survey gives an overview of the current research progress on incorporating Transformers in graph-structured data. Concretely, we provide a comprehensive review of over 20 Graph Transformer models from the architectural design perspective. We first dismantle the existing models and conclude three typical ways to incorporate the graph information into the vanilla Transformer: 1) GNNs as Auxiliary Modules, i.e., directly inject GNNs into Transformer architecture. Specifically, according to the relative position between GNN layers and Transformer layers, existing GNN-Transformer architectures can be categorized into three types: (a) build Transformer blocks on top of GNN blocks, (b) stack GNN blocks and Transformer blocks in each layer, (c) parallel GNN blocks and Transformer blocks in each layer. 2) Improved Positional Embedding from Graphs, i.e., compress the graph structure into positional embedding vectors and add \nthem to the input before it is fed to the vanilla Transformer model. This graph positional embedding can be derived from the structural information of graphs, such as degree and centrality. 3) Improved Attention Matrices from Graphs, i.e., inject graph priors into the attention computation via graph bias terms, or restrict a node only attending to local neighbours in the graph, which can be computationally formulated as an attention masking mechanism. \nAdditionally, in order to investigate the effectiveness of existing models in various kinds of graph tasks, we implement the representative components in three groups and conduct comprehensive ablation studies on six popular graph-based benchmarks to uniformly test the real performance gain of each component. Our experiments indicate that: 1). Current models incorporating the graph information can improve the performance of Transformer on both graph-level and nodelevel tasks. 2). Utilizing GNN as auxiliary modules and improving attention matrix from graphs generally contributes more performance gains than encoding graphs into positional embeddings. 3). The performance gain on graph-level tasks is more significant than that on node-level tasks. 4) Different kinds of graph tasks enjoy different group of models. \nThe rest of this survey is organized as follows. We first review the general vanilla Transformer Architecture in Section 2. Section 3 summarizes existing works about the Transformer variant on Graphs and systematically categorizes these methods into three groups. In Section 4, comprehensive ablation studies are conducted to verify the effectiveness and compatibility of these proposed models. In Section 5, we conclude this survey and discuss several future research directions. \n",
+            "type": null,
+            "page_start": 0,
+            "page_end": 1
+        },
+        {
+            "title": "2 Transformer Architecture ",
+            "text": "Transformer [Vaswani et al., 2017] architecture was first applied to machine translation. In the paper, Transformer is introduced as a novel encoder-decoder architecture built with multiple blocks of self-attention. Let $\\mathbf { X } \\in \\mathbb { R } ^ { n \\times d }$ to be the input of each Transformer layer, where $n$ is number of tokens, $d$ is the dimension of each token, then one block layer can be a function $f _ { \\theta } : \\mathbb { R } ^ { n \\times d }  \\mathbb { R } ^ { n \\times d }$ with $f _ { \\theta } ( \\mathbf { X } ) = : \\mathbf { Z }$ defined by: \n$$\n\\mathbf {A} = \\frac {1}{\\sqrt {d}} \\mathbf {X Q} (\\mathbf {X K}) ^ {\\top}, \\tag {1}\n$$\n$$\n\\widetilde {\\mathbf {X}} = \\operatorname {S o f t M a x} (\\mathbf {A}) (\\mathbf {X V}), \\tag {2}\n$$\n$$\n\\mathbf {M} = \\operatorname {L a y e r N o r m} _ {1} (\\widetilde {\\mathbf {X}} \\mathbf {O} + \\mathbf {X}), \\tag {3}\n$$\n$$\n\\mathbf {F} = \\sigma \\left(\\mathbf {M} \\mathbf {W} _ {1} + \\mathbf {b} _ {1}\\right) \\mathbf {W} _ {2} + \\mathbf {b} _ {2}, \\tag {4}\n$$\n$$\n\\mathbf {Z} = \\operatorname {L a y e r N o r m} _ {2} (\\mathbf {M} + \\mathbf {F}), \\tag {5}\n$$\nwhere Equation 1, Equation 2, and Equation 3 are the attention computation; while Equation 4 and Equation 5 are the position-wise feed-forward network (FFN) layers. Here, Softmax(·) refers to the row-wise softmax function, LayerNorm(·) refers to layer normalization function [Ba et al., 2016], and $\\sigma$ refers to the activation function. $\\mathbf { Q } , \\mathbf { K } , \\mathbf { V } , \\mathbf { O } \\in \\mathbb { R } ^ { d \\times d } , \\mathbf { W } _ { 1 } \\in \\mathbb { R } ^ { d \\times d _ { f } } , \\mathbf { b } _ { 1 } \\in \\mathbb { R } ^ { d _ { f } } , \\mathbf { W } _ { 2 } \\in \\mathbb { R } ^ { d _ { f } } .$ Rdf ×d, $, \\mathbf { b } _ { 2 } \\in \\mathbb { R } ^ { d }$ are trainable parameters in the layer. Furthermore, it is common to consider multiple attention heads to extend the self-attention to Multi-head Self-attention \n(MHSA). Specifically, $\\mathbf { Q } , \\mathbf { K } , \\mathbf { V }$ are decomposed into $H$ heads with ${ \\bf Q } ^ { ( h ) } , { \\bf K } ^ { ( h ) } , { \\bf V } ^ { ( h ) } \\in \\mathbb { R } ^ { d \\times d _ { h } }$ with $\\begin{array} { r } { \\bar { d } = \\sum _ { h = 1 } ^ { H } d _ { h } } \\end{array}$ , and the matrices $\\widetilde { \\mathbf { X } } ^ { ( h ) } \\in \\mathbb { R } ^ { n \\times d _ { h } }$ from attention heads are concatenated to obtain $\\widetilde { \\mathbf { X } }$ . In this case, Equation 1 and Equation 2 respectively become: \n$$\n\\mathbf {A} ^ {(h)} = \\frac {1}{\\sqrt {d}} \\mathbf {X Q} ^ {(h)} \\left(\\mathbf {X K} ^ {(h)}\\right) ^ {\\top}, \\tag {6}\n$$\n$$\n\\widetilde {\\mathbf {X}} = \\left\\| _ {h = 1} ^ {H} \\left(\\operatorname {S o f t M a x} \\left(\\mathbf {A} ^ {(h)}\\right) \\mathbf {X} \\mathbf {V} ^ {(h)}\\right). \\right. \\tag {7}\n$$\nThe multi-head mechanism enables the model to implicitly learn representation from different aspects. Apart from the attention mechanism, the paper uses sine and cosine functions with different frequencies as positional embedding to distinguish the position of each token in the sequence. \n",
+            "type": null,
+            "page_start": 1,
+            "page_end": 1
+        },
+        {
+            "title": "3 Transformer Architecture for Graphs ",
+            "text": "The self-attention mechanism in the standard Transformer actually considers the input tokens as a fully-connected graph, which is agnostic to the intrinsic graph structure among the data. Existing methods that enable Transformer to be aware of topological structures are generally categorized into three groups: 1) GNNs as auxiliary modules in Transformer (GA), 2) Improved positional embedding from graphs (PE), 3) Improved attention matrices from graphs (AT). We summarize relevant literature in terms of these three dimensions in Table 1. \n3.1 GNNs as Auxiliary Modules in Transformer \nThe most direct solution of involving structural knowledge to benefit from global relation modeling of self-attention is \nto combine graph neural networks with Transformer architecture. Generally, according to the relative postion between GNN layers and Transformer layers, existing Transformer architectures with GNNs are categorized into three types as illustrated in Figure 1: (1) building Transformer blocks on top of GNN blocks, (2) alternately stacking GNN blocks and Transformer blocks, (3) parallelizing GNN blocks and Transformer blocks. \nThe first architecture is most-frequently adopted among the three options. For example, GraphTrans [Jain et al., 2021] adds a Transformer subnetwork on top of a standard GNN layer. The GNN layer performs as a specialized architecture to learn local representations of the structure of a node’s immediate neighbourhood, while the Transformer subnetwork computes all pairwise node interactions in a position-agnostic fashion, empowering the model global reasoning capability. GraphTrans is evaluated on graph classification task from biology, computer programming and chemistry, and achieves consistent improvement over benchmarks. \nGrover [Rong et al., 2020] consists of two GTransformer modules to represent node-level features and edge-level features respectively. In each GTransformer, the inputs are first fed into a tailored GNNs named dyMPN to extract vectors as queries, keys and values from nodes of the graph, followed by standard multi-head attention blocks. This bi-level information extraction framework enables the model to capture the structural information in molecular data and make it possible to extract global relations between nodes, enhancing the representational power of Grover. \nGraphiT [Mialon et al., 2021] also falls in the first architecture, which adopts one Graph Convolutional Kernel Network (GCKN) [Chen et al., 2020] layer to produce a structureaware representation from original features, and concatenate them as the input of Transformer architecture. Here, GCKNs is a multi-layer model that produces a sequence of graph feature maps similar to a GNN. Different from GNNs, each layer of GCKNs enumerates local sub-structures at each node, encodes them using a kernel embedding, and aggregates the sub-structure representations as outputs. These representations in a feature map carry more structural information than traditional GNNs based on neighborhood aggregation. \nMesh Graphormer [Lin et al., 2021] follows the second \narchitecture by stacking a Graph Residual Block (GRB) on a multi-head self-attention layer as a Transformer block to model both local and global interactions among 3D mesh vertices and body joints. Specifically, given the contextualized features M generated by multi-head self-attentions (MHSA) in Equation 3, Mesh Graphormer improves the local interactions using a graph convolution in each Transformer block as: \n$$\n\\mathbf {M} ^ {\\prime} = \\operatorname {G r a p h C o n v} \\left(\\mathbf {A} ^ {G}, \\mathbf {M}; \\mathbf {W} ^ {G}\\right) = \\sigma \\left(\\mathbf {A} ^ {G} \\mathbf {X} \\mathbf {W} ^ {G}\\right). \\tag {8}\n$$\nwhere $\\mathbf { A } ^ { G } \\in \\mathbb { R } ^ { n \\times n }$ denotes the adjacency matrix of a graph and $\\mathbf { W } _ { G }$ denotes the trainable parameters. $\\sigma ( \\cdot )$ implies the non-linear activation function. Mesh Graphormer also implements another two variants: building GRB before MHSA and building those two blocks in parallel, but they perform worse than the proposed one. \nGraph-BERT [Zhang et al., 2020] adopts the third architecture by utilizing a graph residual term in each attention layer as follows: \n$$\n\\mathbf {M} ^ {\\prime} = \\mathbf {M} + \\mathbf {G} - \\operatorname {R e s} \\left(\\mathbf {X}, \\mathbf {X} _ {r}, \\mathbf {A} ^ {G}\\right), \\tag {9}\n$$\nwhere the notation G-Res $( \\mathbf { X } , \\mathbf { X } _ { r } , \\mathbf { A } ^ { G } )$ represents the graph residual term introduced in [Zhang and Meng, 2019] and ${ \\bf X } _ { r }$ is the raw features of all nodes in the graph. \n3.2 Improved Positional Embeddings from Graphs \nAlthough combining graph neural networks and Transformer has shown effectiveness in modeling graph-structured data, the best architecture to incorporate them remains an issue and requires heavy hype-parameter searching. Therefore, it is meaningful to explore a graph-encoding strategy without adjustment of the Transformer architecture. Similar to the positional encoding in Transformer for sequential data such as sentences, it is also possible to compress the graph structure into positional embedding (PE) vectors and add them to the input before it is fed to the actual Transformer model: \n$$\n\\tilde {\\mathbf {X}} = \\mathbf {X} + f _ {\\operatorname {m a p}} (\\mathbf {P}), \\tag {10}\n$$\nwhere $\\mathbf { X } \\in \\mathrm { { R } } ^ { n \\times d }$ is the matrix of input embeddings, $\\textbf { P } \\in$ ${ \\mathrm { R } } ^ { n \\times d _ { p } }$ represents the graph embedding vectors, and $f _ { \\mathrm { m a p } } :$ $\\mathrm { R } ^ { d _ { p } }  \\mathrm { R } ^ { d }$ is a transformation network to align the dimension of both vectors. The graph positional embedding $\\mathbf { P }$ is normally generated from the adjacent matrix $\\mathbf { A } ^ { G } \\in \\mathrm { R } ^ { \\bar { n } \\times n }$ . \n[Dwivedi and Bresson, 2020] adopt Laplacian eigenvectors as $\\mathbf { P }$ in Graph Transformer. For each graph in the dataset, they pre-compute the Laplacian eigenvectors , which are defined by the factorization of the graph Laplacian matrix: \n$$\n\\mathbf {U} ^ {T} \\boldsymbol {\\Lambda} \\mathbf {U} = \\mathbf {I} - \\mathbf {D} ^ {- 1 / 2} \\mathbf {A} ^ {G} \\mathbf {D} ^ {- 1 / 2}, \\tag {11}\n$$\nwhere D is the degree matrix, and $\\Lambda , { \\bf U }$ correspond to the eigenvalues and eigenvectors respectively. They use eigenvectors of the $k$ smallest non-trivial eigenvalues as the positional embedding, with $\\mathbf { P } \\in \\mathbb { R } ^ { n \\times k }$ in this case. Since these eigenvectors have multiplicity occurring due to the arbitrary sign of eigenvectors, they randomly flip the sign of the eigenvectors during training. \n[Hussain et al., 2021] employs pre-computed SVD vectors of the adjacent matrix as the positional embeddings P. They \nuse the largest $r$ singular values and corresponding left and right singular vectors to represent the positional encoding. \n$$\n\\mathbf {A} ^ {G} \\stackrel {\\text {S V D}} {\\approx} \\mathbf {U} \\boldsymbol {\\Sigma} \\mathbf {V} ^ {T} = \\left(\\mathbf {U} \\sqrt {\\boldsymbol {\\Sigma}}\\right) \\cdot \\left(\\mathbf {V} \\sqrt {\\boldsymbol {\\Sigma}}\\right) ^ {T} = \\hat {\\mathbf {U}} \\hat {\\mathbf {V}} ^ {T}, \\tag {12}\n$$\n$$\n\\mathbf {P} = \\hat {\\mathbf {U}} \\| \\hat {\\mathbf {V}}, \\tag {13}\n$$\nwhere U, ${ \\bf { V } } \\in \\mathrm { R } ^ { n \\times r }$ contain the $r$ left and right singular vectors corresponding to the top $r$ singular values in the diagonal matrix $\\Sigma \\in \\mathbb { R } ^ { r \\times r }$ , $\\parallel$ denotes concatenation operator along columns. They also randomly flip the signs during training as a form of data augmentation to avoid over-fitting, since similar to Laplacian eigenvectors, the signs of corresponding pairs of left and right singular vectors can be arbitrarily flipped. \nDifferent from Eigen PE and SVD PE, which attempt to compress the adjacent matrix into dense positional embeddings, there exist some heuristic methods that encode specific structural information from the extraction of the adjacent matrix. For example, Graphormer [Ying et al., 2021] uses the degree centrality as an additional signal to the neural network. To be specific, Graphformer assigns each node two real-valued embedding vectors according to its indegree and outdegree. For the $i$ -th node, the degree-aware representation is denoted as: \n$$\n\\tilde {\\mathbf {x}} = \\mathbf {x} + \\mathbf {z} _ {\\deg^ {-} \\left(v _ {i}\\right)} ^ {-} + \\mathbf {z} _ {\\deg^ {+} \\left(v _ {i}\\right)} ^ {+}, \\tag {14}\n$$\nwhere $\\mathbf { z } ^ { - } , \\mathbf { z } ^ { + } \\in \\mathbb { R } ^ { d }$ are learnable embedding vectors specified by the indegree $\\deg ^ { - } ( v _ { i } )$ and outdegree $\\deg ^ { + } ( v _ { i } )$ respectively. For undirected graphs, $\\deg ^ { - } ( v _ { i } )$ and $\\deg ^ { + } ( v _ { i } )$ could be unified to be $\\deg ( v _ { i } )$ . By using the centrality encoding in the input, the softmax attention will catch the node importance signal in queries and keys of the Transformer. \nGraph-BERT [Zhang et al., 2020] introduces three types of PE to embed the node position information, i.e., an absolute WL-PE which represents different codes labeled by the Weisfeiler-Lehman algorithm, an intimacy based PE and a hop based PE which are both variant to the sampled subgraphs. [Cai and Lam, 2020] applies graph transformer to tree-structured abstract meaning representation (AMR) graph. It adopts a distance embedding for each node by encoding the minimum distance from the root node as a flag of the importance of the corresponding concept in the wholesentence semantics. [Kreuzer et al., 2021] proposes a learned positional encoding that can utilize the full Laplacian spectrum to learn the position of each node in a given graph. \n3.3 Improved Attention Matrices from Graphs \nAlthough node positional embedding is a convenient practice to inject graph priors into Transformer architectures, the progress of compressing graph structure into fixed-sized vectors suffers from information loss, which might limit their effectiveness. For this sake, another group of works attempts to improve the attention matrix computation based on graph information: \n$$\n\\begin{array}{l} \\mathbf {A} = f _ {\\mathrm {G} \\cdot \\mathrm {a t t}} \\left(\\mathbf {X}, \\mathbf {A} ^ {G}, \\mathbf {E}; \\mathbf {Q}, \\mathbf {K}, \\mathbf {W} _ {1}\\right), \\\\ \\mathbf {M} = f _ {\\mathrm {G} \\cdot \\mathrm {a t t}} \\left(\\mathbf {X}, \\mathbf {A} ^ {G}, \\mathbf {E}, \\mathbf {W}, \\mathbf {W} _ {1}\\right) \\end{array} \\tag {15}\n$$\n$$\n\\mathbf {M} = f _ {\\mathrm {M}} (\\mathbf {X}, \\mathbf {A}, \\mathbf {A} ^ {G}, \\mathbf {E}; \\mathbf {V}, \\mathbf {W} _ {2}),\n$$\nwhere X is the input features, $\\mathbf { A } ^ { G }$ is the adjacent matrix of the graph, $\\textbf { E } \\in \\mathbb { R } ^ { n \\times n \\times d _ { e } }$ is the edge features if available, $\\mathbf { Q } , \\mathbf { K } , \\mathbf { V }$ are the attention parameters, $\\mathbf { W } _ { 1 } , \\mathbf { W } _ { 2 }$ are extra graph encoding parameters. \nOne line of models adapts self-attention mechanism to GNN-like architectures by restricting a node only attending to local node neighbours in the graph, which can be computationally formulated as an attention masking mechanism: \n$$\n\\mathbf {A} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {X Q} \\left(\\mathbf {X K}\\right) ^ {\\top}\\right) \\odot \\mathbf {A} ^ {G}, \\tag {16}\n$$\nwhere $\\mathbf { A } ^ { G } \\in \\mathbb { R } ^ { n \\times n }$ is the adjacent matrix of the graph. In [Dwivedi and Bresson, 2020], ${ \\bf \\dot { A } } _ { i j } ^ { G } = 1$ if there is an edge between $i$ -th node and $j$ -th node. Given the simple and generic nature of this architecture, they obtain competitive performance against standard GNNs on graph datasets. In order to encode edge features, they also extend Equation 16 as: \n$$\n\\mathbf {A} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {X Q} (\\mathbf {X K}) ^ {\\top}\\right) \\odot \\mathbf {A} ^ {G} \\odot \\mathbf {E} ^ {\\prime} \\mathbf {W} _ {E}, \\tag {17}\n$$\nwhere $\\mathbf { W } _ { E } \\in \\mathbb { R } ^ { d _ { e } \\times d }$ is the parameter matrix, $\\mathbf { E ^ { \\prime } }$ is the edge embedding matrix from the previous layer which is updated based on A, we do not elaborate these details for simplicity. \nOne possible extension of this practice is masking the attention matrices of different heads with different graph priors. In the original multi-head self-attention blocks, different attention heads implicitly attend to information from different representation subspaces of different nodes. While in this case, using the graph-masking mechanism to enforce the heads explicitly attend to different subspaces with graph priors further improves the model representative capability for graph data. For example, [Yao et al., 2020] computes the attention based on the extended Levi graph. Since Levi graph is a heterogeneous graph that contains different types of edges. They first group all edge types into a single one to get a homogeneous subgraph referred to as connected subgraph. The connected subgraph is actually an undirected graph that contains the complete connected information in the original graph. Then they split the input graph into multiple subgraphs according to the edge types. Besides learning the directly connected relations, they introduce a fully-connected subgraph to learn the implicit relationships between indirectly connected nodes. Multiple adjacent matrices are assigned to different attention heads to learn a better representation for AMR task. [Min et al., 2022] adopts a similar practice, which carefully designs four types of interaction graphs for modeling neighbourhood relations in CTR prediction task: induced subgraph, similarity graph, cross-neighbourhood graph, and complete graph. And they use the masking mechanism to encode these graph priors to improve neighbourhood representation. \nGraphiT [Mialon et al., 2021] extends the adjacent matrix to a kernel matrix, which is more flexible to encode various graph kernels. Besides, they use the same matrix for keys and queries following the recommendation of [Tsai et al., 2019] to reduce parameters without hurting the performance in practice, and adopt a degree matrix to reduce the overwhelming influence of highly connected graph components. The update equation can be formulated as: \n$$\n\\mathbf {A} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {X Q} (\\mathbf {X Q}) ^ {\\top}\\right) \\odot \\mathbf {K} _ {r},\n$$\n$$\n\\widetilde {\\mathbf {X}} = \\operatorname {S o f t M a x} (\\mathbf {A}) (\\mathbf {X V}), \\tag {18}\n$$\n$$\n\\mathbf {M} = \\operatorname {L a y e r N o r m} \\left(\\mathbf {D} ^ {- \\frac {1}{2}} \\widetilde {\\mathbf {X}} + \\mathbf {X}\\right),\n$$\nwhere $\\mathbf { D } \\in \\mathbb { R } ^ { n \\times n }$ is the diagonal matrix of node degrees, $\\mathbf { K } _ { r } \\in \\mathbb { R } ^ { n \\times n }$ is the kernel matrix on the graph, which is used as diffusion kernel and p-step random walk kernel. \nAnother line of models attempts to add soft graph bias to attention scores. Graphormer [Ying et al., 2021] proposes a novel Spatial Encoding mechanism. Concretely, they consider a distance function $\\phi ( v _ { i } , v _ { j } )$ , which measures the spatial relation between nodes $v _ { i }$ and $v _ { j }$ in the graph. They select $\\phi ( v _ { i } , v _ { j } )$ as the shortest path distance (SPD) between $v _ { i }$ and $v _ { j }$ . If they are not connected, the output of $\\phi$ is set as a special value, i.e., $- 1$ . They assign each feasible value of $\\phi$ a learnable scale parameter as a graph bias term. So the update rule is: \n$$\n\\mathbf {A} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {X Q} (\\mathbf {X K}) ^ {\\top}\\right) + \\mathbf {B} ^ {s}. \\tag {19}\n$$\n$\\mathbf { B } ^ { s }$ is the bias matrix, where $\\mathbf { B } _ { i j } ^ { s } = b _ { \\phi ( v _ { i } , v _ { k } ) }$ is the learnable scalar indexed by $\\phi ( v _ { i } , v _ { k } )$ , and shared across all layers. In order to handle graph structure with edge features, they also design an edge feature bias term. Specifically, for each ordered node pair $( v _ { i } , v _ { j } )$ , they search (one of) the shortest path $\\mathrm { S P } _ { i j } = ( e _ { 1 } , e _ { 2 } , \\dotsc , \\dotsc , { \\bar { e _ { N } } } )$ from $v _ { i }$ to $v _ { j }$ , and then compute an average of dot-products of the edge features and a learnable embedding along the path. Combined with the above spatial bias, the unnormalized attention score can be modified as: \n$$\n\\mathbf {A} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {X Q} \\left(\\mathbf {X K}\\right) ^ {\\top}\\right) + \\mathbf {B} ^ {s} + \\mathbf {B} ^ {c} \\tag {20}\n$$\nwhere $\\mathbf { B } ^ { c }$ is the edge feature bias matrix. $\\begin{array} { r l } { \\mathbf { B } _ { i j } ^ { c } } & { { } = } \\end{array}$ $\\begin{array} { r } { \\frac { 1 } { N } \\sum _ { n = 1 } ^ { N } x _ { e _ { n } } ( w _ { n } ^ { E } ) ^ { \\top } } \\end{array}$ , where $\\boldsymbol { x } _ { e _ { n } }$ ij is the feature of the $n$ -th edge $e _ { n }$ in $\\mathrm { S P } _ { i j } , w _ { n } ^ { E } \\in \\mathbb { R } ^ { d _ { e } }$ is the $n$ -th weight embedding, and $d _ { e }$ is the dimensionality of edge feature. \nGophormer [Zhao et al., 2021] proposes proximityenhanced multi-head attention (PE-MHA) to encode multihop graph information. Specifically, for a node pair $\\left. v _ { i } , v _ { j } \\right.$ , $M$ views of structural information is encoded as a proximity encoding vector, denoted as $\\phi _ { i j } \\in \\mathbb { R } ^ { M }$ , to enhance the attention mechanism. The proximity-enhanced attention score $\\mathbf { A } _ { i j }$ is defined as: \n$$\n\\mathbf {A} _ {i j} = \\left(\\frac {1}{\\sqrt {d}} \\mathbf {x} _ {i} \\mathbf {Q} \\left(\\mathbf {x} _ {j} \\mathbf {K}\\right) ^ {\\top}\\right) + \\phi^ {i j} \\mathbf {b} ^ {\\top}, \\tag {21}\n$$\nwhere $\\mathbf { b } \\in \\mathbb { R } ^ { M }$ is the learnable parameters that compute the bias of structural information. The proximity encoding is calculated by $M$ structural encoding functions defined as: \n$$\n\\phi_ {i j} = \\operatorname {C o n c a t} \\left(\\Phi_ {m} \\left(v _ {i}, v _ {j}\\right) \\mid m \\in 0, 1, \\dots , M - 1\\right), \\tag {22}\n$$\nwhere each structural encoding function $\\Phi _ { m } ( \\cdot )$ encodes a view of structural information. \nPLAN [Khoo et al., 2020] also proposes a structure aware self-attention to model the tree structure of rumour propagation in social media. The modified attention calculation can be defined as: \n$$\n\\mathbf {A} _ {i j} = \\frac {1}{\\sqrt {d}} \\left(\\mathbf {x} _ {i} \\mathbf {Q} \\left(\\mathbf {x} _ {j} \\mathbf {K}\\right) ^ {\\top}\\right) + a _ {i j} ^ {K} \\tag {23}\n$$\n$$\n\\mathbf {M} _ {i} = \\sum_ {j = 1} ^ {n} \\operatorname {S o f t M a x} \\left(\\mathbf {A} _ {i j}\\right) \\left(\\mathbf {x} _ {j} \\mathbf {V} + a _ {i j} ^ {V}\\right) \\tag {24}\n$$\nBoth $a _ { i j } ^ { V }$ and $a _ { i j } ^ { K }$ are learnable parameter vectors that represent one of the five possible structural relationships between the pair of the tweets (i.e. parent, child, before, after and self). \n",
+            "type": null,
+            "page_start": 1,
+            "page_end": 4
+        },
+        {
+            "title": "4 Experimental Evaluations ",
+            "text": "We conduct an extensive evaluation to study the effectiveness of different methods. On the basis of standard Transformer, methods in the three groups, auxiliary GNN modules (GA), positional embeddings (PE), and improved attention (AT) are compared. Since most methods are composed of more than one graph-specific module and are trained with various tricks, it is difficult to evaluate the effectiveness of each module in a fair and independent way. In our experiments, we extract the representative modules of existing models and evaluate their performance individually. For GA methods, we compare the three architectures described in Section 3.1. In both alternately and parallel settings, the GNNs and Transformer layers are combined before the FFN layers. PE methods include degree embedding [Ying et al., 2021], Laplacian Eigenvectors [Dwivedi and Bresson, 2020] and SVD vectors [Hussain et al., 2021]. AT methods contain spatial bias (SPB) [Ying et al., 2021], proximity-enhanced multi-head attention (PMA) [Zhao et al., 2021], attention masked with 1-hop adjacent matrix (Mask-1) [Dwivedi and Bresson, 2020]. We also mask attention with different hops of the adjacent matrix, denoted as (Mask-n), inspired by the multi-head masking mechanisms in [Yao et al., 2020; Min et al., 2022]. We evaluate the methods on both graphlevel tasks on small graphs and node-level tasks on a single large graph. The details of the tasks and datasets are listed in Table 2. \n4.1 Settings and Implementation Details \nTo ensure a consistent and fair evaluation, we fix the scale of the Transformer architecture in three levels: small, middle, and large, whose configurations are listed in Table 3. The remaining hyper-parameters are fixed to their empirical value as shown in Table 5. For node-level tasks in large-scale graphs, we adopt the shadow $k$ -hop sampling [Zeng et al., 2020] to generate a subgraph for a target node, to which the graphaware modules are applied. We calculate the required inputs of all modules based on the subgraph instead of the original graph because most of them are not computationally scalable to large graphs. We set the maximum sampling hop to be 2 and the maximum neighbourhood per node to be 10. For PE methods, we select the embedding size from $\\{ 3 , 4 , 5 \\}$ . For GA methods, we select the GNN type from GCN [Kipf and Welling, 2016], GAT [Velivckovic et al., 2017] and GIN [Xu \net al., 2018a]. Our learning framework is built on PyTorch 1.8, and PyTorch Geometric 2.0, and the code is public at https://github.com/qwerfdsaplking/Graph-Trans. \n4.2 Experimental Results \nTable 4 reports the performance of ten graph-specific modules from three categories on six datasets of graph-level and node-level tasks, respectively. We summarize the main observations as follows: \n- Not surprisingly, in most cases, the evaluated graphspecific modules of Transformer lead to to better performance. For example, on molpcba, we observe at most a $56 \\%$ performance improvement compared with the vanilla Transformer. This observation confirms the effectiveness of graph-specific modules on the various kinds of graph tasks. \n- The improvement on graph-level tasks is more significant than that on node-level tasks. This may be due to the graph sampling process when dealing with a single large graph. The sampled induced subgraphs fail to keep the original graph intact, incurring variance and information loss in the learning process. \n- GA and AT methods bring more benefits than PE methods. In conclusion, PE’s weaknesses are twofold. First, as introduced in Section 3.2, PE does not contain intact graph information. Second, since PE is only fed into the input layer of the network, the graph-structural information would decay layer by layer across the model, leading to a degeneration of the performance. \n- It seems that different kinds of graph tasks enjoy different group of models. GA methods achieve the best performance in more than half of the cases (5 out of 9 cases) of node-level tasks. More significantly, AT methods achieve the best performance in almost all the cases (8 out of 9 cases) of graph-level tasks. We conjecture that GA methods are able to better encode the local information of the \nsampled induced subgraphs in node-level tasks, while AT methods are suitable for modeling the global information of the single graphs in graph-level tasks. \nIn summary, our experiments confirm the value of the existing graph-specific module on Transformer and reveal their advantages for a variety of graph tasks. \n",
+            "type": null,
+            "page_start": 4,
+            "page_end": 5
+        },
+        {
+            "title": "5 Conclusion and Future Directions ",
+            "text": "In this survey, we present a comprehensive review of the current progress of applying Transformer model on graphs. Based on the injection part of graph data and graph model in Transformer, we classify the existing graph-specific modules into three typical groups: GNNs as auxiliary modules, improved positional embeddings from graphs, and improved attention matrices from graphs. To investigate the real performance gains under a fair setup, we implement the representative modules from three groups and compare them on six benchmarks with different tasks. We hope our systematic review and comparison will foster understanding and stimulate new ideas in this area. \nIn spite of the current successes, we believe several directions would be promising to investigate further and to start from in the future, including: \n- New paradigm of incorporating the graph and the Transformer. Most studies treat the graphs as strong prior to modifying the Transformer model. There is a great interest to develop the new paradigm that not just takes graphs as a prior, but also better reflects the properties of graphs. \n- Extending to other kinds of graphs. Existing Graph Transformer models mostly focus on homogeneous graphs, which consider the node type and edge type as the same. It is also important to explore their potential on other forms of graphs, such as heterogeneous graphs and hypergraphs. \n- Extending to large-scale graphs. Most existing methods are designed for small graphs, which might be computationally infeasible for large graphs. As illustrated in our experiments, directly applying them to the sampled subgraphs would impair performance. Therefore, designing salable Graph-Transformer architecture is essential. \n",
+            "type": null,
+            "page_start": 5,
+            "page_end": 5
+        }
+    ],
+    "references": [
+        {
+            "id": 1,
+            "text": "[Aggarwal, 2010] Charu C. Aggarwal. Graph Clustering, pages 459–467. Springer US, Boston, MA, 2010. ",
+            "authors": null,
+            "year": "2010"
+        },
+        {
+            "id": 2,
+            "text": "[Ba et al., 2016] Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016. ",
+            "authors": null,
+            "year": "2016"
+        },
+        {
+            "id": 3,
+            "text": "[Cai and Lam, 2020] Deng Cai and Wai Lam. Graph transformer for graph-to-sequence learning. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 7464–7471, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 4,
+            "text": "[Chanussot* et al., 2021] Lowik Chanussot*, Abhishek Das*, Siddharth Goyal*, Thibaut Lavril*, Muhammed Shuaibi*, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. Open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 5,
+            "text": "[Chen et al., 2020] Dexiong Chen, Laurent Jacob, and Julien Mairal. Convolutional kernel networks for graphstructured data. In International Conference on Machine Learning, pages 1576–1586. PMLR, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 6,
+            "text": "[Dwivedi and Bresson, 2020] Vijay Prakash Dwivedi and Xavier Bresson. A generalization of transformer networks to graphs. arXiv preprint arXiv:2012.09699, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 7,
+            "text": "[Forsyth and Ponce, 2011] David Forsyth and Jean Ponce. Computer vision: A modern approach. Prentice hall, 2011. ",
+            "authors": null,
+            "year": "2011"
+        },
+        {
+            "id": 8,
+            "text": "[Fuchs et al., 2020] Fabian Fuchs, Daniel Worrall, Volker Fischer, and Max Welling. Se (3)-transformers: 3d rototranslation equivariant attention networks. Advances in Neural Information Processing Systems, 33:1970–1981, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 9,
+            "text": "[Gilmer et al., 2017] Justin Gilmer, Samuel S Schoenholz, Patrick F Riley, Oriol Vinyals, and George E Dahl. Neural message passing for quantum chemistry. In International conference on machine learning, pages 1263–1272. PMLR, 2017. ",
+            "authors": null,
+            "year": "2017"
+        },
+        {
+            "id": 10,
+            "text": "[Hamilton, 2020] James Douglas Hamilton. Time series analysis. Princeton university press, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 11,
+            "text": "[Hu et al., 2021] Weihua Hu, Matthias Fey, Hongyu Ren, Maho Nakata, Yuxiao Dong, and Jure Leskovec. Ogb-lsc: A large-scale challenge for machine learning on graphs. arXiv preprint arXiv:2103.09430, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 12,
+            "text": "[Hussain et al., 2021] Md Shamim Hussain, Mohammed J Zaki, and Dharmashankar Subramanian. Edge-augmented graph transformers: Global self-attention is enough for graphs. arXiv preprint arXiv:2108.03348, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 13,
+            "text": "[Jain et al., 2021] Paras Jain, Zhanghao Wu, Matthew Wright, Azalia Mirhoseini, Joseph E Gonzalez, and Ion Stoica. Representing long-range context for graph neural networks with global attention. Advances in Neural Information Processing Systems, 34, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 14,
+            "text": "[Khoo et al., 2020] Ling Min Serena Khoo, Hai Leong Chieu, Zhong Qian, and Jing Jiang. Interpretable rumor ",
+            "authors": null,
+            "year": null
+        },
+        {
+            "id": 15,
+            "text": "detection in microblogs by attending to user interactions. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 8783–8790, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 16,
+            "text": "[Kipf and Welling, 2016] Thomas N Kipf and Max Welling. Semi-supervised classification with graph convolutional networks. arXiv preprint arXiv:1609.02907, 2016. ",
+            "authors": null,
+            "year": "2016"
+        },
+        {
+            "id": 17,
+            "text": "[Kreuzer et al., 2021] Devin Kreuzer, Dominique Beaini, William L Hamilton, Vincent Letourneau, and Prudencio ´ Tossou. Rethinking graph transformers with spectral attention. arXiv preprint arXiv:2106.03893, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 18,
+            "text": "[Lin et al., 2021] Kevin Lin, Lijuan Wang, and Zicheng Liu. Mesh graphormer. arXiv preprint arXiv:2104.00272, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 19,
+            "text": "[Maron et al., 2019] Haggai Maron, Heli Ben-Hamu, Hadar Serviansky, and Yaron Lipman. Provably powerful graph networks. Advances in neural information processing systems, 32, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 20,
+            "text": "[Mialon et al., 2021] Gregoire Mialon, Dexiong Chen, Mar- ´ got Selosse, and Julien Mairal. Graphit: Encoding graph structure in transformers. arXiv preprint arXiv:2106.05667, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 21,
+            "text": "[Min et al., 2022] Erxue Min, Yu Rong, Tingyang Xu, Yatao Bian, Peilin Zhao, Junzhou Huang, Da Luo, Kangyi Lin, and Sophia Ananiadou. Masked transformer for neighhourhood-aware click-through rate prediction. arXiv preprint arXiv:2201.13311, 2022. ",
+            "authors": null,
+            "year": "2022"
+        },
+        {
+            "id": 22,
+            "text": "[Nguyen et al., 2019] Dai Quoc Nguyen, Tu Dinh Nguyen, and Dinh Phung. Universal graph transformer selfattention networks. arXiv preprint arXiv:1909.11855, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 23,
+            "text": "[Purwins et al., 2019] Hendrik Purwins, Bo Li, Tuomas Virtanen, Jan Schlter, Shuo-Yiin Chang, and Tara Sainath. Deep learning for audio signal processing. IEEE Journal of Selected Topics in Signal Processing, 13(2):206–219, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 24,
+            "text": "[Rong et al., 2019] Yu Rong, Wenbing Huang, Tingyang Xu, and Junzhou Huang. Dropedge: Towards deep graph convolutional networks on node classification. arXiv preprint arXiv:1907.10903, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 25,
+            "text": "[Rong et al., 2020] Yu Rong, Yatao Bian, Tingyang Xu, Weiyang Xie, Ying Wei, Wenbing Huang, and Junzhou Huang. Self-supervised graph transformer on large-scale molecular data. arXiv preprint arXiv:2007.02835, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 26,
+            "text": "[Schmitt et al., 2020] Martin Schmitt, Leonardo FR Ribeiro, Philipp Dufter, Iryna Gurevych, and Hinrich Schutze. ¨ Modeling graph structure via relative position for text generation from knowledge graphs. arXiv preprint arXiv:2006.09242, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 27,
+            "text": "[Shi et al., 2020] Yunsheng Shi, Zhengjie Huang, Shikun Feng, Hui Zhong, Wenjin Wang, and Yu Sun. Masked label prediction: Unified message passing model for semi-supervised classification. arXiv preprint arXiv:2009.03509, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 28,
+            "text": "[Shiv and Quirk, 2019] Vighnesh Shiv and Chris Quirk. Novel positional encodings to enable tree-based transformers. Advances in Neural Information Processing Systems, 32, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 29,
+            "text": "[Tholke and de Fabritiis, 2022 ¨ ] Philipp Tholke and Gianni ¨ de Fabritiis. Equivariant transformers for neural network based molecular potentials. 2022. ",
+            "authors": null,
+            "year": "2022"
+        },
+        {
+            "id": 30,
+            "text": "[Tsai et al., 2019] Yao-Hung Hubert Tsai, Shaojie Bai, Makoto Yamada, Louis-Philippe Morency, and Ruslan Salakhutdinov. Transformer dissection: A unified understanding of transformer’s attention via the lens of kernel. arXiv preprint arXiv:1908.11775, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 31,
+            "text": "[Vaswani et al., 2017] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in neural information processing systems, pages 5998–6008, 2017. ",
+            "authors": null,
+            "year": "2017"
+        },
+        {
+            "id": 32,
+            "text": "[Velivckovic et al., 2017] Petar Velivckovic, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro Lio, and Yoshua Bengio. Graph attention networks. arXiv preprint arXiv:1710.10903, 2017. ",
+            "authors": null,
+            "year": "2017"
+        },
+        {
+            "id": 33,
+            "text": "[Wang et al., 2019] Xing Wang, Zhaopeng Tu, Longyue Wang, and Shuming Shi. Self-attention with structural position representations. arXiv preprint arXiv:1909.00383, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 34,
+            "text": "[Xu et al., 2018a] Keyulu Xu, Weihua Hu, Jure Leskovec, and Stefanie Jegelka. How powerful are graph neural networks? arXiv preprint arXiv:1810.00826, 2018. ",
+            "authors": null,
+            "year": "2018"
+        },
+        {
+            "id": 35,
+            "text": "[Xu et al., 2018b] Keyulu Xu, Chengtao Li, Yonglong Tian, Tomohiro Sonobe, Ken-ichi Kawarabayashi, and Stefanie Jegelka. Representation learning on graphs with jumping knowledge networks. In International Conference on Machine Learning, pages 5453–5462. PMLR, 2018. ",
+            "authors": null,
+            "year": "2018"
+        },
+        {
+            "id": 36,
+            "text": "[Yang et al., 2016] Zhilin Yang, William Cohen, and Ruslan Salakhudinov. Revisiting semi-supervised learning with graph embeddings. In International conference on machine learning, pages 40–48. PMLR, 2016. ",
+            "authors": null,
+            "year": "2016"
+        },
+        {
+            "id": 37,
+            "text": "[Yao et al., 2020] Shaowei Yao, Tianming Wang, and Xiaojun Wan. Heterogeneous graph transformer for graph-tosequence learning. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7145–7154, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 38,
+            "text": "[Ying et al., 2021] Chengxuan Ying, Tianle Cai, Shengjie Luo, Shuxin Zheng, Guolin Ke, Di He, Yanming Shen, and Tie-Yan Liu. Do transformers really perform bad for graph representation? arXiv preprint arXiv:2106.05234, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 39,
+            "text": "[Zeng et al., 2020] Hanqing Zeng, Muhan Zhang, Yinglong Xia, Ajitesh Srivastava, Andrey Malevich, Rajgopal Kannan, Viktor Prasanna, Long Jin, and Ren Chen. Deep graph neural networks with shallow subgraph samplers. arXiv preprint arXiv:2012.01380, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 40,
+            "text": "[Zhang and Chen, 2018] Muhan Zhang and Yixin Chen. Link prediction based on graph neural networks. Advances in neural information processing systems, 31, 2018. ",
+            "authors": null,
+            "year": "2018"
+        },
+        {
+            "id": 41,
+            "text": "[Zhang and Meng, 2019] Jiawei Zhang and Lin Meng. Gresnet: Graph residual network for reviving deep gnns from suspended animation. arXiv preprint arXiv:1909.05729, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 42,
+            "text": "[Zhang et al., 2020] Jiawei Zhang, Haopeng Zhang, Congying Xia, and Li Sun. Graph-bert: Only attention is needed for learning graph representations. arXiv preprint arXiv:2001.05140, 2020. ",
+            "authors": null,
+            "year": "2020"
+        },
+        {
+            "id": 43,
+            "text": "[Zhao and Akoglu, 2019] Lingxiao Zhao and Leman Akoglu. Pairnorm: Tackling oversmoothing in gnns. arXiv preprint arXiv:1909.12223, 2019. ",
+            "authors": null,
+            "year": "2019"
+        },
+        {
+            "id": 44,
+            "text": "[Zhao et al., 2021] Jianan Zhao, Chaozhuo Li, Qianlong Wen, Yiqi Wang, Yuming Liu, Hao Sun, Xing Xie, and Yanfang Ye. Gophormer: Ego-graph transformer for node classification. arXiv preprint arXiv:2110.13094, 2021. ",
+            "authors": null,
+            "year": "2021"
+        },
+        {
+            "id": 45,
+            "text": "[Zhu et al., 2019] Jie Zhu, Junhui Li, Muhua Zhu, Longhua Qian, Min Zhang, and Guodong Zhou. Modeling graph structure in transformer for better amr-to-text generation. arXiv preprint arXiv:1909.00136, 2019. ",
+            "authors": null,
+            "year": "2019"
+        }
+    ],
+    "figures": [
+        {
+            "id": "Figure 1",
+            "type": "image",
+            "caption": [
+                "Figure 1: Three types of GNN-as-Auxiliary-Modules architecture. "
+            ],
+            "img_path": [
+                "images/876e78e5eae692e81ef4fea8b965b89fd3e01b6b0ecd4ee873df4f7615e2c627.jpg"
+            ],
+            "page": 2
+        },
+        {
+            "id": "Table 1",
+            "type": "table",
+            "caption": [
+                "Table 1: A summary of papers that applied Transformers on graphstructured data. GA: GNNs as Auxiliary Modules; PE: Improved Positional Embedding from Graphs; AT: Improved Attention Matrix from Graphs. "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>GA</td><td>PE</td><td>AT</td><td>Code</td></tr><tr><td>[Zhu et al., 2019]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>[Shiv and Quirk, 2019]</td><td></td><td>✓</td><td></td><td></td></tr><tr><td>[Wang et al., 2019]</td><td></td><td>✓</td><td>✓</td><td></td></tr><tr><td>U2GNN [Nguyen et al., 2019]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>HeGT [Yao et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>Graformer [Schmitt et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>PLAN [Khoo et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>UniMP [Shi et al., 2020]</td><td></td><td></td><td>✓</td><td></td></tr><tr><td>GTOS [Cai and Lam, 2020]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Graph Trans [Dwivedi and Bresson, 2020]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Grover [Rong et al., 2020]</td><td>✓</td><td></td><td></td><td>✓</td></tr><tr><td>Graph-BERT [Zhang et al., 2020]</td><td>✓</td><td>✓</td><td></td><td>✓</td></tr><tr><td>SE(3)-Transformer [Fuchs et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>Mesh Graphormer [Lin et al., 2021]</td><td>✓</td><td>✓</td><td></td><td>✓</td></tr><tr><td>Gophormer [Zhao et al., 2021]</td><td></td><td></td><td>✓</td><td></td></tr><tr><td>EGT [Hussain et al., 2021]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>SAN [Kreuzer et al., 2021]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>GraphiT [Mialon et al., 2021]</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Graphormer [Ying et al., 2021]</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Mask-transformer [Min et al., 2022]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>TorchMD-NET [Thölke and de Fabritiis, 2022]</td><td></td><td></td><td>✓</td><td>✓</td></tr></table>",
+            "img_path": "output/images/faa56114152d54d47c7ec9f27c318df37c9a52f9a9359672fb580135adcb3a2e.jpg",
+            "page": 1
+        },
+        {
+            "id": "Table 2",
+            "type": "table",
+            "caption": [
+                "Table 2: Details of the datasets. "
+            ],
+            "table_body": "<table><tr><td>Dataset Type</td><td>Name</td><td>#Graph</td><td>#Nodes(Avg.)</td><td>#Edges(Avg.)</td><td>Task type</td><td>Metric</td></tr><tr><td rowspan=\"3\">Graph-level</td><td>ZINC</td><td>12,000</td><td>23.2</td><td>49.8</td><td>Regression</td><td>MAE</td></tr><tr><td>ogbg-molhiv</td><td>41,127</td><td>25.5</td><td>27.5</td><td>Binary cla.</td><td>ROC-AUC</td></tr><tr><td>ogbg-molpcba</td><td>437,929</td><td>26.0</td><td>28.1</td><td>Binary cla.</td><td>AP</td></tr><tr><td rowspan=\"3\">Node-level</td><td>Flickr</td><td>1</td><td>89,250</td><td>899,756</td><td>Multi-class cla.</td><td>Accuracy</td></tr><tr><td>ogbg-arxiv</td><td>1</td><td>169,343</td><td>1,166,243</td><td>Multi-class cla.</td><td>Accuracy</td></tr><tr><td>ogbg-product</td><td>1</td><td>2,449,029</td><td>61,859,140</td><td>Multi-class cla.</td><td>Accuracy</td></tr></table>",
+            "img_path": "output/images/1b415cdabf91a312d3eb803fdc4de65659a8cfab3eb98cdc0f86419956040a5e.jpg",
+            "page": 4
+        },
+        {
+            "id": "Table 3",
+            "type": "table",
+            "caption": [
+                "Table 3: Hyper-parameters of various Transformer sizes. "
+            ],
+            "table_body": "<table><tr><td></td><td colspan=\"3\">Transformer Size</td></tr><tr><td></td><td>Small</td><td>Middle</td><td>Large</td></tr><tr><td>#Layers</td><td>6</td><td>12</td><td>12</td></tr><tr><td>Hidden Dimension</td><td>80</td><td>80</td><td>512</td></tr><tr><td>FFN Inner Hidden Dimension</td><td>80</td><td>80</td><td>512</td></tr><tr><td>#Attention Heads</td><td>8</td><td>8</td><td>32</td></tr><tr><td>Hidden Dimension of Each Head</td><td>10</td><td>10</td><td>16</td></tr></table>",
+            "img_path": "output/images/93199bd829e489fbd92840f87e8a8604820a75a44e176c2a59179b3f08fbc4a7.jpg",
+            "page": 4
+        },
+        {
+            "id": "Table 4",
+            "type": "table",
+            "caption": [
+                "Table 4: Performance comparison on graph-level tasks. For each column, the values with underline are the best results in each group. The values in bold are the best results across the groups. "
+            ],
+            "table_body": "<table><tr><td rowspan=\"3\" colspan=\"2\"></td><td colspan=\"8\">graph-level tasks</td><td colspan=\"9\">node-level tasks</td><td></td></tr><tr><td colspan=\"3\">ZINC(MAE↓)</td><td colspan=\"3\">molhiv(ROC-AUC↑)</td><td colspan=\"2\">molpcba(AP↑)</td><td colspan=\"3\">Flickr(Acc↑)</td><td colspan=\"3\">arxiv(Acc↑)</td><td colspan=\"3\">product(Acc↑)</td><td></td></tr><tr><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td></tr><tr><td>TF</td><td>vanilla</td><td>0.6689</td><td>0.6700</td><td>0.6699</td><td>0.7466</td><td>0.7230</td><td>0.7269</td><td>0.1624</td><td>0.1673</td><td>0.1676</td><td>0.5270</td><td>0.5279</td><td>0.5214</td><td>0.5539</td><td>0.5571</td><td>0.5598</td><td>0.7887</td><td>0.7887</td><td>0.7956</td></tr><tr><td rowspan=\"3\">GA</td><td>before</td><td>0.4700</td><td>0.4809</td><td>0.5169</td><td>0.6758</td><td>0.7339</td><td>0.7182</td><td>0.2105</td><td>0.1989</td><td>0.2269</td><td>0.5352</td><td>0.5369</td><td>0.5272</td><td>0.5608</td><td>0.5590</td><td>0.5614</td><td>0.7953</td><td>0.7888</td><td>0.8012</td></tr><tr><td>alter</td><td>0.3771</td><td>0.3412</td><td>0.2956</td><td>0.7200</td><td>0.7086</td><td>0.7433</td><td>0.2474</td><td>0.2417</td><td>0.2244</td><td>0.5374</td><td>0.5357</td><td>0.5162</td><td>0.5599</td><td>0.5555</td><td>0.5592</td><td>0.7905</td><td>0.7915</td><td>0.8057</td></tr><tr><td>parallel</td><td>0.3803</td><td>0.2749</td><td>0.2984</td><td>0.7138</td><td>0.7750</td><td>0.7603</td><td>0.2345</td><td>0.2444</td><td>0.2205</td><td>0.5370</td><td>0.5379</td><td>0.5209</td><td>0.5647</td><td>0.5600</td><td>0.5529</td><td>0.7878</td><td>0.7896</td><td>0.7999</td></tr><tr><td rowspan=\"3\">PE</td><td>degree</td><td>0.5364</td><td>0.5364</td><td>0.5435</td><td>0.7506</td><td>0.6818</td><td>0.7357</td><td>0.1672</td><td>0.1646</td><td>0.1650</td><td>0.5291</td><td>0.5250</td><td>0.5133</td><td>0.5551</td><td>0.5618</td><td>0.5502</td><td>0.7920</td><td>0.7913</td><td>0.7947</td></tr><tr><td>eig</td><td>0.6031</td><td>0.6074</td><td>0.6166</td><td>0.7407</td><td>0.7279</td><td>0.7351</td><td>0.2194</td><td>0.2087</td><td>0.2131</td><td>0.5253</td><td>0.5278</td><td>0.5257</td><td>0.5575</td><td>0.5637</td><td>0.5658</td><td>0.7893</td><td>0.7887</td><td>0.8017</td></tr><tr><td>svd</td><td>0.5811</td><td>0.5462</td><td>0.5400</td><td>0.7350</td><td>0.7155</td><td>0.7275</td><td>0.1648</td><td>0.1663</td><td>0.1767</td><td>0.5281</td><td>0.5317</td><td>0.5203</td><td>0.5614</td><td>0.5663</td><td>0.5706</td><td>0.7856</td><td>0.7893</td><td>0.8007</td></tr><tr><td rowspan=\"4\">AT</td><td>SPB</td><td>0.5122</td><td>0.4878</td><td>0.6100</td><td>0.7065</td><td>0.7589</td><td>0.7255</td><td>0.2409</td><td>0.2524</td><td>0.2621</td><td>0.5368</td><td>0.5364</td><td>0.5234</td><td>0.5503</td><td>0.5605</td><td>0.5576</td><td>0.7921</td><td>0.7918</td><td>0.7984</td></tr><tr><td>PMA</td><td>0.6194</td><td>0.6057</td><td>0.5963</td><td>0.6902</td><td>0.7054</td><td>0.7314</td><td>0.2115</td><td>0.1956</td><td>0.2518</td><td>0.5240</td><td>0.5288</td><td>0.5204</td><td>0.5567</td><td>0.5571</td><td>0.5492</td><td>0.7877</td><td>0.7853</td><td>0.7945</td></tr><tr><td>Mask-1</td><td>0.2861</td><td>0.2772</td><td>0.2894</td><td>0.7610</td><td>0.7753</td><td>0.7960</td><td>0.2573</td><td>0.2662</td><td>0.1594</td><td>0.5295</td><td>0.5300</td><td>0.5236</td><td>0.5598</td><td>0.5559</td><td>0.5583</td><td>0.7923</td><td>0.7917</td><td>0.7963</td></tr><tr><td>Mask-n</td><td>0.3906</td><td>0.3596</td><td>0.4765</td><td>0.7286</td><td>0.7423</td><td>0.7128</td><td>0.2619</td><td>0.2577</td><td>0.2380</td><td>0.5359</td><td>0.5349</td><td>0.5348</td><td>0.5593</td><td>0.5603</td><td>0.5576</td><td>0.7935</td><td>0.7917</td><td>0.8016</td></tr></table>",
+            "img_path": "output/images/4902a7ccc5cc734af60e4ec013a10bf83ca4ea6649bc3dcc73d1ea4316aeed5d.jpg",
+            "page": 5
+        },
+        {
+            "id": "Table 5",
+            "type": "table",
+            "caption": [
+                "Table 5: The training hyper-parameters. "
+            ],
+            "table_body": "<table><tr><td>attention dropout</td><td>0.1</td><td>FFN dropout</td><td>0.1</td></tr><tr><td>maximum steps</td><td>1e+6</td><td>warm-up steps</td><td>4e+4</td></tr><tr><td>peak learning rate</td><td>2e-4</td><td>batch size</td><td>256</td></tr><tr><td>weight decay value</td><td>1e-3</td><td>lr decay</td><td>Linear</td></tr><tr><td>gradient clip norm</td><td>5.0</td><td>Adam ε, β1, β2</td><td>1e-8, 0.9, 0.99</td></tr></table>",
+            "img_path": "output/images/0725e2bd416ecaff3213cc3dd6876fe0f02f112a97240d49c0fa855da19b53d9.jpg",
+            "page": 5
+        }
+    ]
+}

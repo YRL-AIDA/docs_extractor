@@ -1,0 +1,1044 @@
+[
+    {
+        "type": "text",
+        "text": "Usage of Threat Modelling Tools for Implementation of ICT Security Standards in IoT Environments ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            86,
+            880,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Dalibor Dobrilovic 1, and Rade Dragović,2 ",
+        "bbox": [
+            114,
+            147,
+            461,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1 University of Novi Sad, Technical Faculty “Mihajlo Pupin” Đure Đakovića b.b., Zrenjanin, 23000, Serbia ",
+            "2 Institute for standards and technology, Resavska 28, Belgrade, 11000, Serbia "
+        ],
+        "bbox": [
+            114,
+            176,
+            846,
+            207
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract ",
+        "text_level": 1,
+        "bbox": [
+            210,
+            222,
+            282,
+            235
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The development of microcontrollers, communication, and sensor technologies resulted with the growing implementation of the Internet of Things (IoT) in various environments. The nature of IoT assumes the complexity of the system. The complexity of the system increases the number of system elements and therefore increases the system vulnerabilities. As a result, it is important to find an efficient and easy-to-use methodology for implementing security standards in newly designed IoT systems. This paper introduces the usage of threat modeling tools for modeling IoT systems and identifying the threats for the modeled systems. The identified threats are further embedded in the framework designed to define and enable the implementation of IoT security standards. The framework is demonstrated in the example of a simple IoT system designed for urban pollution, and noise monitoring. ",
+        "bbox": [
+            208,
+            237,
+            880,
+            381
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords ",
+        "text_level": 1,
+        "bbox": [
+            210,
+            396,
+            292,
+            410
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Threat modeling, threat modeling tools, Risk assessment, IoT security implementation framework, ISO security standards implementation, Internet of Things (IoT) ",
+        "bbox": [
+            210,
+            410,
+            880,
+            440
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            458,
+            274,
+            473
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The growing implementation of the Internet of Things (IoT) in various environments increases the general ICT security risks. The IoT environments being heavily involved in the life of users of its benefits greatly increase the security risks for the individuals using those systems or their services. The complexity of the system and the number of its components and devices give numerous possibilities of system misuse, data compression, and other forms of threats. Therefore, it is highly important to define an easy-to-use and efficient framework for identifying threats and defining the implementation of security standards within the process of designing the system. ",
+        "bbox": [
+            112,
+            492,
+            882,
+            598
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This paper introduces the framework based on the usage of threat modeling tools for modeling IoT systems and identifying the threats for the modeled systems. The identified threats are further analyzed to define the implementation of IoT security standards. The methodology is presented on the example of a simple IoT system designed for urban pollution, and noise monitoring. ",
+        "bbox": [
+            112,
+            598,
+            880,
+            657
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This paper is structured as follows. After the Introduction and Related Works sections, the modeled IoT system architecture is described, followed by threat modeling and threat analyses. The approach in risk assessment is then presented using the results and reports of threat modeling, thus explaining the proposed framework. At the end, the conclusions are given. ",
+        "bbox": [
+            112,
+            657,
+            880,
+            719
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2. Related Work ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            737,
+            287,
+            754
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "According to the Open Worldwide Application Security Project (OWASP) [1] the threat modelling is the process taken to identify, communicate, and understand threats and mitigations within the context of protecting something of value. A threat model is a structured representation of all the information ",
+        "bbox": [
+            112,
+            771,
+            880,
+            818
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$6 ^ { \\mathrm { { t h } } }$ International Workshop on Information, Computation, and Control Systems for Distributed Environments (ICCS-DE 2024), July 01–05, 2024, Irkutsk, Russia ",
+        "bbox": [
+            114,
+            831,
+            880,
+            853
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "EMAIL: dalibor.dobrilovic@tfzr.rs (A. 1); rade.dragovic@instate.biz (A. 2); ",
+        "bbox": [
+            114,
+            853,
+            533,
+            866
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "ORCID: 0000-0002-3083-5725 (A. 1); 0000-0002-0215-4076 (A. 2); ",
+        "bbox": [
+            114,
+            866,
+            494,
+            876
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "0 ",
+        "bbox": [
+            114,
+            876,
+            183,
+            891
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©️ 2024 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0). ",
+        "bbox": [
+            196,
+            878,
+            767,
+            889
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "ICCS-DE 2024 Workshop Proceedings ",
+        "bbox": [
+            196,
+            890,
+            412,
+            903
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "DOI: 10.47350/ICCS-DE.2024.06 ",
+        "bbox": [
+            196,
+            903,
+            385,
+            913
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "45 ",
+        "bbox": [
+            486,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "that affects the security of an application. There is a variety of threat modeling methods such as: STRIDE, Process for Attack Simulation and Threat Analysis (PASTA), Trike, Visual, Agile, and Simple Threat (VAST), Attack Trees, Common Vulnerability Scoring System (CVSS), Operationally Critical Threat, Asset, and Vulnerability Evaluation (OCTAVE), Quantitative Threat Modeling Method (QTTM), DREAD, MITRE, LINNDUN etc. [2] The STRIDE, a method named on six security threats categories (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privileges) is the most popular and widely supported by the modeling tools. ",
+        "bbox": [
+            112,
+            84,
+            880,
+            188
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In the following text will be presented several works in the area of IoT threat modeling. In [3] the authors utilize the STRIDE threat modeling methodology and the Microsoft Threat Modeling Tool to identify threats present in smart city infrastructure. Authors map offenses, possible evidence sources, and types of threats identified to help investigators understand what crimes could have been committed. ",
+        "bbox": [
+            112,
+            188,
+            880,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In [4] authors propose an approach aimed at supporting the security analysis of an IoT system with an almost completely automated process for threat modeling and risk assessment. The evaluation of its effectiveness is given for the application of a home automation system. The proposed methodology relies upon a modeling approach of both the architectural components of an IoT system and its security properties. ",
+        "bbox": [
+            112,
+            250,
+            880,
+            325
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The contribution presented in [5] identifies and describes current security threats in IoT based on a generic IoT architecture and the main communication protocols that are used in the application, transport, network, and physical layer. ",
+        "bbox": [
+            114,
+            325,
+            880,
+            370
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In the paper [6], a general-purpose methodology for assessing the risk is proposed for end-to-end systems. The approach covers static and dynamic features/components of an IoT system. The presented solution is evaluated within the real prototype implementation. ",
+        "bbox": [
+            114,
+            370,
+            880,
+            415
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "A similar approach for modeling IoT system threats is applied to the threat modeling on the container ecosystem. STRIDE is used as a threat modeling framework. [7] ",
+        "bbox": [
+            114,
+            415,
+            880,
+            447
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. IoT System Architecture ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            463,
+            387,
+            482
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this section, the general architecture of IoT systems will be described. IoT systems commonly can be presented as multi-layer systems, and the five-layer architecture of IoT systems is one of the most accepted [8]. The IoT system consists of the following layers. ",
+        "bbox": [
+            114,
+            500,
+            880,
+            543
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Perception Layer has the same functions as the Physical Layer of the OSI reference model. Sensor nodes or end devices are deployed on this layer. Sensors collect data, i.e. physical parameters of the environment. The Network Layer (or the Transport Layer) is designed to establish a connection to the core of the system and its components such as network devices and to transfer data collected by sensors. It is responsible for transferring sensor data from the perception layer to the Processing Layer and vice versa. For this purpose, mainly short and medium-range wireless technologies are used. ",
+        "bbox": [
+            114,
+            543,
+            880,
+            633
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Processing Layer or Middleware Layer is responsible for analyzing and processing collected data, storing it, and creating reports. This layer includes various technologies such as relational and non-relational databases, cloud computing, big data, etc. The application layer is responsible for delivering data to users and their visualization through user applications and devices. Finally, The Business Layer is on top of the system and provides the information needed for system management, business and profit model development, and data protection. ",
+        "bbox": [
+            112,
+            634,
+            880,
+            724
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "An urban IoT system designed as a sensor network for monitoring traffic noise and meteorological parameters in an urban environment [9] is presented in this section and used for further modeling and framework implementation. Figure 1 a) shows the devices of the first two layers of the IoT system. On the perception layer (I) there are sensor devices (1) for air pollution, weather conditions, and noise monitoring, Wi-Fi access point (AP) devices (2) for connecting sensor nodes with short-range Wi-Fi technology, and Wi-Fi Fi/LoRa gateway devices (3) for connecting (collecting) Wi-Fi APs in a wider area and connecting to the cloud part of the system using longer-range connection technology. Communication components use a combination of TCP/MQTT and LoRa protocols. ",
+        "bbox": [
+            112,
+            724,
+            880,
+            845
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "46 ",
+        "bbox": [
+            488,
+            956,
+            510,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/425b027767c4fb7f22610168a579c59a53d8abb0ecfe2b9413316f796026ba9e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            127,
+            84,
+            432,
+            247
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/10ff3d55fb6954ce5ed9cf2c109c7c6e2653f38e7e9486b33aef43f92436ba9b.jpg",
+        "image_caption": [
+            "Figure 1: a) the IoT urban monitor system peripheral elements; b) layers of IoT urban monitoring IoT system "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            501,
+            81,
+            863,
+            266
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The middleware layer (III) contains a server (4) that can be installed on several servers (e.g. Data Analyzes and Application Server) or in a simplified version on one computer and a database (5). The application layer contains APIs for user applications (6) for various devices (mobile phones, laptops, desktops, etc.). The whole system is shown in Figure 1 b). ",
+        "bbox": [
+            114,
+            314,
+            882,
+            377
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "4. IoT threat modeling ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            393,
+            346,
+            413
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Microsoft Threat Modeling Tool (MTMT) is used for described IoT threat modeling. The modeled system is shown in Fig. 2 a) in a simplified version. The elements of the system are labeled in the same way as in Fig. 1 b) with Roman (I, II, III, IV) and Arabic numerals (1, 2, 3, 4, 5, 6). ",
+        "bbox": [
+            114,
+            428,
+            883,
+            473
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/064383c0c6e4bbdf96b1e2106e91b015d6951b04e0e075ed61fe0035c66de614.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            124,
+            516,
+            429,
+            657
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/02a2457eb7a0359015cd0052d7afec1ffbb4c4094e8f29ecdde9e3571e2506a1.jpg",
+        "image_caption": [
+            "Figure 2: a) Modeled IoT system; b) Model of the system in threat modeling tool. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            464,
+            486,
+            870,
+            687
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To model the sensor nodes (1), the Generic External Interactor is used in MTMT from the Stencils palette. Parameters can be set in the Element Properties palette as is shown in Fig. 3. If other devices in the External Interactor list correspond to the system being modeled, e.g. mobile phone (Smart Phone) or Browser, these devices can also be selected from the same stencil. ",
+        "bbox": [
+            114,
+            725,
+            883,
+            786
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            488,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c7f4e28fbefac7397746f32c3ef61612f144e8f4544b5283f00dadfcc601938.jpg",
+        "image_caption": [
+            "Figure 3. Use of the Interactor object "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            117,
+            81,
+            883,
+            223
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To model the Wi-Fi AP (2) and the Wi-Fi/LoRa Gateway device (3) the Generic Process is used (Fig. 4.). The Generic Process is also used to model the server (4), while the Generic Data Store is used to model the Database (5). ",
+        "bbox": [
+            114,
+            244,
+            882,
+            290
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/07c9c8aee6b540227c2f5ff73509e345b093af09b3fc7fdec616272b7f9f9d6c.jpg",
+        "image_caption": [
+            "Figure 4. Use of the Process object "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            117,
+            295,
+            846,
+            459
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To model the data flow, a Generic Data Flow is used. An example of the HTTP protocol is shown in Fig. 5. The same element can be used for MQTT or another protocol and to model the data flow between the sensor and the MCU (microcontroller). Since the sensors are directly connected to the MCU there is no issue of insecure transmission, so the data flow can be checked as Out of Scope in the Element Properties palette. ",
+        "bbox": [
+            114,
+            480,
+            883,
+            555
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/4268076918258673318ae76b7bd63ba9d0fa0706043eb0ee85f4f7cb59b4df25.jpg",
+        "image_caption": [
+            "Figure 5. Using the Data Flow object for the HTTP protocol "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            117,
+            560,
+            883,
+            761
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Finally, modeling confidence limits, i.e. of separate system elements in which data is protected more than the external space, is done with the Generic Trust Boundary object in the Stencils palette, and it is represented in figures with dashed red lines. ",
+        "bbox": [
+            114,
+            789,
+            883,
+            836
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "48 ",
+        "bbox": [
+            488,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4.1. Threat analysis ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            87,
+            329,
+            104
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Threat analysis is performed by clicking on the menu option Reports $>$ Create Full Report. To create a report, it is necessary to activate the Generate Report option, after which a report with the extension .htm will be created. The part of the report is the threat list, which can be exported to CSV format using the Switch To Analysis View option (Table 1). ",
+        "bbox": [
+            114,
+            121,
+            882,
+            182
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/5b6c37dfbabfc666c96ccfed8f706a4c377bed3c2553ced8ea8158f82980c25f.jpg",
+        "table_caption": [
+            "Table 1 Partial view on exported threat list "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Id</td><td>Title</td><td>Category</td><td>Interaction</td><td>Priority</td><td>Description</td></tr><tr><td>47</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IGFN_to_IFG</td><td>High</td><td>IoT Field Gateway (IFG) may be able to impersonate the context of IoT Gateway/Fog Node (IGFN) in order to gain additional privilege.</td></tr><tr><td>46</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IFG_to_IGFN</td><td>High</td><td>IoT Gateway/Fog Node (IGFN) may be able to impersonate the context of IoT Field Gateway (IFG) in order to gain additional privilege.</td></tr><tr><td>45</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>Cloud_to_IGFN</td><td>High</td><td>IoT Gateway/Fog Node (IGFN) may be able to impersonate the context of Cloud in order to gain additional privilege.</td></tr><tr><td>44</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IGFN_to_Cloud</td><td>High</td><td>Cloud may be able to impersonate the context of IoT Gateway/Fog Node (IGFN) in order to gain additional privilege.</td></tr><tr><td>16</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>MQTT_FGTW_to_Node</td><td>High</td><td>IoT Field Gateway (IFG) may be able to impersonate the context of IoT Node (IN) (Sensor Config., GPS) in order to gain additional privilege.</td></tr></table>",
+        "bbox": [
+            116,
+            219,
+            888,
+            425
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Threat analysis for the modeled generic IoT system gives the following identified threats classified into six categories (Table 2). ",
+        "bbox": [
+            114,
+            429,
+            883,
+            461
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/3bb24a9e249efed88ad25ae22d61c15e80998ad8528b83f8ddca169d401c45f0.jpg",
+        "table_caption": [
+            "Table 2 The number of threats by category "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>No.</td><td>Threat</td><td>Count</td></tr><tr><td>1</td><td>Spoofing</td><td>7</td></tr><tr><td>2</td><td>Tampering</td><td>6</td></tr><tr><td>3</td><td>Repudiation</td><td>8</td></tr><tr><td>4</td><td>Information Disclosure</td><td>6</td></tr><tr><td>5</td><td>Denial Of Service</td><td>6</td></tr><tr><td>6</td><td>Elevation Of Privilege</td><td>12</td></tr><tr><td></td><td>Total</td><td>45</td></tr></table>",
+        "bbox": [
+            117,
+            497,
+            484,
+            603
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "5. Risk assessment ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            619,
+            311,
+            636
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In this section, we will describe the basics of risk assessment. The basic steps are to identify Score, Context, and Criteria as a basis for establishing a framework for the information security management system. A system of early identification of threats and vulnerabilities must be established, and it must react predictively and not preventively. All the time, it is necessary to follow all identified interested parties, both those who have good intentions for the organization's system and those who have different intentions and initiatives. ",
+        "bbox": [
+            114,
+            654,
+            882,
+            744
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Risk assessment is the next phase which must consist of risk identification, risk analysis, and risk evaluation. Risk identification is a detailed and long-term job that must identify each and every individual risk, regardless of whether it represents a higher or lower level of risk at the time of identification. This step uses the input from threat modeling explained in the previous section. ",
+        "bbox": [
+            114,
+            745,
+            880,
+            805
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The professional framework for risk analysis is represented by the following standards: ",
+        "bbox": [
+            139,
+            805,
+            792,
+            820
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "ISO/IEC 27005 - Information security, cybersecurity, and privacy protection - Guidance on managing information security risks and ",
+            " ISO 31000 - Risk management - Guidelines. "
+        ],
+        "bbox": [
+            168,
+            821,
+            878,
+            866
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Risk analysis must consider all identified risks from the aspect of likelihood, and consequences and calculate risk levels. All three mentioned criteria must be set in such a way that the analysis observes and projects in real-time with a large knowledge base that is the basis for calculating parameter values. ",
+        "bbox": [
+            114,
+            866,
+            880,
+            914
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "49 ",
+        "bbox": [
+            486,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A risk evaluation must provide a clear answer to a question that is not just a simple number but a multidimensional framework that shows trends and every single evaluation parameter in real-time. ",
+        "bbox": [
+            114,
+            85,
+            880,
+            115
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/264871e4c4deee70c7982866464f59f789cb8c98c7d1f1564dffae5f4976d21e.jpg",
+        "image_caption": [
+            "Figure 6: RISK assessment (based on ISO 27005) extended with STRIDE cycle and ISO requirements "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            119,
+            116,
+            498,
+            394
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "STRIDE is a threat modeling methodology used to identify potential security threats in a system and develop appropriate countermeasures. It is an acronym for six types of threats: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. STRIDE threat modeling is connected to the stages of Risk assessment. ",
+        "bbox": [
+            114,
+            423,
+            880,
+            484
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Risk treatment as the next phase is mainly oriented towards acting according to each individually identified requirement of the ISO standard within the matrix. The knowledge acquired in the process of treating risks during the management of the information security system is a significant source for further analysis using the principles of machine learning and artificial intelligence. ",
+        "bbox": [
+            114,
+            484,
+            880,
+            545
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "STRIDE, threat modeling methodology cannot be established by simply adopting a good methodology, but it needs to be placed alongside existing risk treatment methodologies and in a specific environment that is analyzed by defining the requirements by adopting the requirements of certain specific standards for each specific environment. There is no magic wand that will solve the problems of information security, On the contrary, a complex, multi-layered, and multi-dimensional framework must be established that will require a complete and detailed analysis of the system using a process approach and a complete analysis of threats, vulnerabilities, and risks. The mentioned activity is not a one-time activity but represents a cyclical repetition of the identified elements in each subsequent time parameter that is partially (and in some elements completely) different from the previous one. There are two basic misconceptions that need to be removed from the thinking of the multidisciplinary team: the input parameters for the risk treatment are immutable, and the risk treatment model is immutable. The presented model RISK assessment (based on ISO 27005) extended with STRIDE cycle and ISO requirements is an example of a basic layer developed on many years of experience in the field of information security. ",
+        "bbox": [
+            114,
+            545,
+            882,
+            755
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "5.1. Identification of ISO requirements for information security and IoT ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            773,
+            831,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The initial framework for action in the domain of information security is defined within the requirements of the following standards: ",
+        "bbox": [
+            114,
+            808,
+            880,
+            838
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "ISO/IEC 27001: Information security, cybersecurity and privacy protection - Information security management systems - Requirements, ",
+            "ISO/IEC 27701: Security techniques - Extension to ISO/IEC 27001 and ISO /IEC 27002 for privacy information management - Requirements and guidelines, "
+        ],
+        "bbox": [
+            168,
+            839,
+            878,
+            901
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            488,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "ISO/IEC 27011: Information security, cybersecurity and privacy protection - Information security controls based on ISO/IEC 27002 for telecommunications organizations, ",
+            " ISO/IEC 27032: Cybersecurity - Guidelines for Internet security, ",
+            "ISO/IEC 22301: Security and resilience - Business continuity management systems - Requirements and ",
+            "ISO/IEC 20000-1: information technology - Service management - Service management system requirements "
+        ],
+        "bbox": [
+            168,
+            85,
+            880,
+            193
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Within enlisted requirements of the standard, it is certainly and inevitably necessary to treat the requirements of the ISO 9001: Quality management systems - Requirements standard in the domain of detailed and complete analysis of opportunities and risks as part of a complete and detailed analysis of the organization's processes. ",
+        "bbox": [
+            114,
+            194,
+            880,
+            254
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A detailed risk analysis of the process is the place where threats, vulnerabilities, and risks must be fully defined, with a clear and complete connection to the parameters of the information system. It is especially important to respect the dynamism of changes in the initially identified parameters, connections, importance, and influence within the previously defined frameworks. A complete analysis of the process through the implementation of ISO 9001 requirements is the first and basic phase of the successful design of an information system that bases information security on risk management [10]. ",
+        "bbox": [
+            114,
+            254,
+            880,
+            344
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "From this initial phase, must be established a clear risk matrix that is related to specific process entities and risks at the base level. The implementation of the requirements of the ISO/IEC 27032 standard through the formation of a Cyber Security Program must be carried out for the entire organization, including all components of information systems through business and IT functions, given the fact that attacks and threats to the information security system can appear from every side and in every moment. It is necessary to implement the requirements of the standards ISO/IEC 27001, ISO/IEC 27701, ISO/IEC 27032, ISO/IEC 20000-1, and ISO/IEC 22301 in areas that include security in the intranet/internet space, i.e. intranet/internet security issues that focus on bridging the results of risk analysis between different domains of information security in the intranet/internet space. ",
+        "bbox": [
+            114,
+            345,
+            882,
+            479
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "According to the stated standards, it is necessary to implement technical guidelines for solving intranet/internet security risks, including social engineering attacks, hacking, spyware, and attacks using potentially malicious malware software. These technical guidelines should provide controls for the treatment of all identified risks, including controls for preparing responses to attacks from malicious software (malware), reactions to detected unusual events related to information security and monitoring the attack architecture. It is necessary to create a framework for efficient and effective information exchange, coordination, and incident management among related stakeholders in the predictively defined cyberspace of the organization. Interested parties that may be involved are employees, customers, and third parties, which may be different types of organizations or individuals, as well as providers, which include service providers as well as all those identified by the risk matrix. ",
+        "bbox": [
+            114,
+            479,
+            880,
+            629
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The analysis of interested parties should not be limited only to cyberspace but should perform a complete analysis of the technological, procedural, and organizational framework, not neglecting the social and other specific general security aspects of the organization. ",
+        "bbox": [
+            114,
+            629,
+            880,
+            674
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The corrective reaction is not a satisfactory achievement. The preventive reaction is satisfactory only in the process of implementation of the system. Predictive response is a target function that must be established in the system. ",
+        "bbox": [
+            114,
+            674,
+            880,
+            719
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "On the example of the identification of threats, vulnerabilities, and risks within the requirements of the ISO/IEC 27001 standard, the same methodological basis should be established for the requirements of the ISO/IEC 27701, ISO/IEC 27032, and ISO/IEC 27011 standards, as well as for the requirements of the ISO/IEC 20000-1 and ISO 22301. ",
+        "bbox": [
+            114,
+            719,
+            880,
+            779
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Special attention should be directed to the identification of IoT needs. The initial framework for IoT identification is covered by the following standards: ",
+        "bbox": [
+            114,
+            779,
+            880,
+            809
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            " ISO/IEC 27402: Cybersecurity - IoT security and privacy - Device baseline requirements, ",
+            "ISO/IEC 30161-1: Internet of Things (IoT) - Data exchange platform for IoT services - Part 1: General requirements and architecture, ",
+            "ISO/IEC 30161-2: Internet of Things (IoT) - Data exchange platform for IoT services Part 2: Transport interoperability between nodal points, "
+        ],
+        "bbox": [
+            168,
+            809,
+            880,
+            888
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            488,
+            956,
+            506,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "ISO/IEC 30179:2023: Internet of Things (IoT) - Overview and general requirements of IoT system for ecological environment monitoring, but also other specifically identified for individual system. ",
+        "bbox": [
+            168,
+            85,
+            880,
+            131
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "6. Conclusion ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            149,
+            260,
+            166
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The framework for the implementation of ISO ICT security standards in IoT systems is presented in this paper. Along with the set of standards that should be implemented to achieve security in IoT environments, the recommendations for their implementation are given. Also, the usage of threat modeling tools for modeling IoT systems and identifying the threats for the modeled systems is presented. The reports of the IoT systems threat modeling are used as input values for a given framework. The proposed methodology is illustrated on the example of a simple IoT system designed for urban pollution, and noise monitoring. ",
+        "bbox": [
+            112,
+            184,
+            882,
+            292
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "7. References ",
+        "text_level": 1,
+        "bbox": [
+            114,
+            308,
+            260,
+            324
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "[1] V. Drake, OWASP, Threat Modeling, Retrieved May 2024. URL: https://owasp.org/wwwcommunity/Threat_Modeling. ",
+            "[2] A. Konev, A. Shelupanov, M. Kataev, V. Ageeva, A. Nabieva, A Survey on Threat-Modeling Techniques: Protected Objects and Classification of Threats. Symmetry. 2022; Vol. 14(3):549. https://doi.org/10.3390/sym14030549 ",
+            "[3] Y. C. Tok, S. Chattopadhyay, Identifying threats, cybercrime and digital forensic opportunities in Smart City Infrastructure via threat modeling, Forensic Science International: Digital Investigation, Vol. 45, 2023, 301540, https://doi.org/10.1016/j.fsidi.2023.301540. ",
+            "[4] V. Casola, A. De Benedictis, M. Rak, U. Villano, Toward the automation of threat modeling and risk assessment in IoT systems, Internet of Things, Vol. 7, 2019, 100056,https://doi.org/10.1016/j.iot.2019.100056. ",
+            "[5] A. Gerodimos, L. Maglaras, M. A. Ferrag, N. Ayres, I. Kantzavelou, IoT: Communication protocols and security threats, Internet of Things and Cyber-Physical Systems, Vol. 3, 2023, pp 1- 13, https://doi.org/10.1016/j.iotcps.2022.12.003. ",
+            "[6] S. Sicari, A. Rizzardi, D. Miorandi, A. Coen-Porisini, A risk assessment methodology for the Internet of Things, Computer Communications, Vol. 129, 2018, pp 67-79, https://doi.org/10.1016/j.comcom.2018.07.024. ",
+            "[7] A. Y. Wong, E. G. Chekole, M. Ochoa, J. Zhou, On the Security of Containers: Threat Modeling, Attack Analysis, and Mitigation Strategies, Computers & Security, Vol. 128, 2023, 103140, https://doi.org/10.1016/j.cose.2023.103140. ",
+            "[8] P. Sethi and S. R. Sarangi, “Internet of Things: Architectures, Protocols, and Applications”, Journal of Electrical and Computer Engineering, Vol. 2017, 25 pages, https://doi.org/10.1155/2017/9324035 ",
+            "[9] D. Dobrilović, V. Brtka, G. Jotanović, et al. The urban traffic noise monitoring system based on LoRaWAN technology. Wireless Networks, Vol. 28, pp 441–458, 2022, https://doi.org/10.1007/s11276-021-02586-2 ",
+            "[10] R. Dragović, D. Dobrilovic, D. Dragović (2022, September). Recommendations for the Creation of Usable Critical Infrastructure for the Delivery of Priority Services of State Bodies. In IFIP International Conference on Human Choice and Computers (pp. 161-171). Cham: Springer Nature Switzerland. DOI:10.1007/978-3-031-47990-8_15 "
+        ],
+        "bbox": [
+            117,
+            340,
+            882,
+            795
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            488,
+            956,
+            508,
+            967
+        ],
+        "page_idx": 7
+    }
+]

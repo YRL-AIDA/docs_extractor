@@ -1,0 +1,1211 @@
+[
+    {
+        "type": "text",
+        "text": "Comparison of Table Type Taxonomies ",
+        "text_level": 1,
+        "bbox": [
+            144,
+            96,
+            660,
+            118
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A. Shigarov1,2, V. Paramonov1,2 ",
+        "bbox": [
+            144,
+            130,
+            406,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1Matrosov Institute for System Dynamics and Control Theory, Siberian Branch of Russian Academy of Sciences, 134 Lermontov str., Irkutsk, Russia ",
+            "2Institute of Mathematics and Information Technologies, Irkutsk State University, 20 Gagarina ave., Irkutsk, Russia "
+        ],
+        "bbox": [
+            144,
+            160,
+            835,
+            203
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract ",
+        "text_level": 1,
+        "bbox": [
+            213,
+            224,
+            282,
+            237
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tables are widely used to present related data in various formats and media. In particular, an immense number of HTML tables can be found on web pages. These tables serve as a valuable source of data for applications such as web mining, question-answering systems, and knowledge base development. However, not all HTML tables contain actual relational data. Many of them are used primarily for layout and navigation purposes. On the other hand, genuine tables may have different layouts, formatting, and content. One of the challenges in extracting data from web tables is to identify the main functional and layout types and properties of the tables that are commonly found on the internet. Currently, we have a wide range of taxonomies that classify table types and their properties. These taxonomies can be used to categorize tables and select the appropriate method for processing tabular data based on their specific type. Although the existing taxonomies provide a variety of table types, they often use confusing terminology. This paper aims to provide an overview of these taxonomies by aligning their terminology and comparing them in a qualitative manner. ",
+        "bbox": [
+            213,
+            237,
+            850,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords ",
+        "text_level": 1,
+        "bbox": [
+            213,
+            401,
+            304,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "table understanding, table extraction, type classification, table layout ",
+        "bbox": [
+            213,
+            417,
+            642,
+            430
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction ",
+        "text_level": 1,
+        "bbox": [
+            144,
+            470,
+            319,
+            488
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tables are a one way to organise and present multiple sets data efficiently. They are widely used on the web and often embedded in HTML pages. These tables can contain various types of data, including unstructured, semi-structured, and relational data. Approachers to automated tables processing depend on their type and the way of data organisation. ",
+        "bbox": [
+            142,
+            502,
+            852,
+            565
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "According to one of the first studies on table classification, presented by Wang et al. [1], all tables are divided into two categories: genuine and non-genuine. A genuine table includes relational data, where the table structure helps convey the relationships between the data in the cells. In contrast, non-genuine tables are used for layout purposes. ",
+        "bbox": [
+            142,
+            567,
+            852,
+            631
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Extracting, integrating, and analysing information from genuine tables can help uncover new knowledges [2, 3]. All genuine tables can be classified into different types based on how the data is organized. Understanding these types can improve the quality of data processing. Currently, there are some studies discussing table taxonomies [4, 5, 6, 7, 8, 9, 10, 11, 12]. Exploring these taxonomies can lead to better data extraction from HTML tables and understanding them. ",
+        "bbox": [
+            142,
+            631,
+            852,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$6 ^ { t h }$ International Workshop on Information, Computation, and Control Systems for Distributed Environments (ICCS-DE 2024), July 01–05, 2024, Irkutsk, Russia ",
+        "bbox": [
+            144,
+            727,
+            828,
+            755
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$ shigarov@icc.ru (A. Shigarov); slv@icc.ru (V. Paramonov) ",
+        "bbox": [
+            144,
+            755,
+            527,
+            768
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\u001a 0000-0001-5572-5349 (A. Shigarov); 0000-0002-4662-3612 (V. Paramonov) ",
+        "bbox": [
+            144,
+            768,
+            616,
+            781
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "© 2024 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0). ",
+        "bbox": [
+            144,
+            781,
+            773,
+            793
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CEUR Workshop Proceedings http://ceur-ws.org ISSN 1613-0073 ICCS-DE 2024 Workshop Proceedings (iccs-de.icc.ru) ",
+        "bbox": [
+            144,
+            794,
+            527,
+            807
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DOI: 10.47350/ICCS-DE.2024.08 ",
+        "bbox": [
+            196,
+            807,
+            384,
+            819
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "65 ",
+        "bbox": [
+            487,
+            956,
+            507,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "HTML tables are commonly classified on their layout. Defining the type of a table can simplify data extraction and analysis [1, 13, 4]. In this analysis, we aim to establish which cells contain meta-data or semantic hints that help understand the meaning of the data, and which cells hold actual data. Further, in all figures 1, 2, 3, 4, 5, 6 cells with meta-data have a blue background, and cells with data have a white background. ",
+        "bbox": [
+            142,
+            99,
+            853,
+            180
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This paper focuses on analysing existing taxonomies for web tables in HTML. The main goal is to identify relationships between these taxonomies and understand how they can be applied to improve data extraction and analysis from HTML tables. ",
+        "bbox": [
+            142,
+            181,
+            853,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. Existing Table Type Taxonomies ",
+        "text_level": 1,
+        "bbox": [
+            144,
+            250,
+            532,
+            271
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In the study [13] the goal of Cafarella et al. research is to extract a set of high-quality relations [13] from HTML documents. In the research, authors present the fundamental division of whole tables into two types: relational and non-relational, which in the other classification [1] are designated as genuine and non-genuine. The results of Crestan’s research, which became a basis of further research, presented in the paper [4]. During the analysis of these tables, a broad classification and set of problems in extracting tables of certain types were established. This study divides the entire set of tables into relational knowledge tables and layout tables, which are equivalent to genuine and non-genuine accordingly in [1]. Layout tables are further divided into navigational and formatting. However, these table types are not relevant in our study. Below we consider different types of tables according to the Crestan’s taxonomy [4] and give examples to illustrate table reliability to a certain type. ",
+        "bbox": [
+            142,
+            282,
+            853,
+            460
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• Vertical listings. A table that lists the attributes of several entities that are similar in meaning (Fig. 1, a). ",
+            "• Horizontal listings. Tables are similar to a vertical listings, but with a different orientation. This type of tables often is used for comparison (Fig. 1, b). ",
+            "• Attribute/value. A special case of vertical and horizontal listings, that does not contain a subject (Fig. 1, c). ",
+            "• Matrix. Tables that have values at the junctions of rows and columns, while having headers on the left and top of the table (Fig. 1, d). ",
+            "• Calendar. A special case of matrix tables in which the subject is a date and the predicate is some kind of event (Fig. 1, e). ",
+            "• Enumeration. The tables list a number of objects that have a similar meaning (Fig. $1 , f .$ ",
+            "• Form. Tables consist of input fields that the user can fill in or select (Fig. 1, g). ",
+            "• Other. This type includes tables that cannot be attributed to the types listed above. "
+        ],
+        "bbox": [
+            174,
+            470,
+            850,
+            690
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In 2013, Lautert [5] presents a classification of 631K tables which were extracted from Wikipedia, news sites, etc. All amount of tables were divided into two classes – main and secondary. The main classification includes horizontal web table (Fig. 2, a), vertical web table (Fig. 2, b) and matrix web table (Fig. 2, c). The secondary classification is represented by following types (generally, tables can belong to several types at the same time): ",
+        "bbox": [
+            142,
+            701,
+            853,
+            783
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• Concise web table contains merged cells (Fig. 2, d). ",
+        "bbox": [
+            174,
+            791,
+            568,
+            808
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "66 ",
+        "bbox": [
+            487,
+            956,
+            510,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/c4e1fccc03fd92faac7f834e3fb0316095dfb46f3e36b116e1f9a1756528fd8e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Country</td><td>Capital</td><td>Population</td></tr><tr><td>Russian</td><td>Moscow</td><td>144.1 million</td></tr><tr><td>Japan</td><td>Tokyo</td><td>125.8 million</td></tr><tr><td>Germany</td><td>Berlin</td><td>83.24 million</td></tr></table>",
+        "bbox": [
+            339,
+            98,
+            487,
+            145
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/20336a7d8ae7181170dcfaf2a6840189fdaf7f4ab8dd03bb0f1ac9184bccc87f.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Car</td><td>Honda Fit</td><td>Kia Rio</td></tr><tr><td>Year</td><td>2009</td><td>2013</td></tr><tr><td>Mileage</td><td>215 000</td><td>114 000</td></tr><tr><td>Price</td><td>560 000</td><td>700 000</td></tr></table>",
+        "bbox": [
+            495,
+            98,
+            655,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/e71847d8475ae1fcda24eb765ad5a4d839726b263cf1439713828aa3da33047b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Studio album</td></tr><tr><td>Released</td><td>13 July 1973</td></tr><tr><td>Studio</td><td>De Lane Lea</td></tr><tr><td>Genre</td><td>Hard rock</td></tr></table>",
+        "bbox": [
+            341,
+            154,
+            487,
+            199
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/f818663a61114a11250243938ca92ee08cec5e05d871d372446ae14600fba9bd.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Troop strength</td><td>1871</td><td>1904</td></tr><tr><td>Russian</td><td>700 000</td><td>900 000</td></tr><tr><td>Italy</td><td>334 000</td><td>278 000</td></tr></table>",
+        "bbox": [
+            497,
+            154,
+            655,
+            191
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/884ec5efd2ed1890506cd19d53ccfbd4f780e16a32b3f48725dd213f06034b8b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Events</td><td>Monday</td><td>Tuesday</td></tr><tr><td>May</td><td>Trip</td><td>Job</td></tr><tr><td>June</td><td>Learn</td><td>Job</td></tr></table>",
+        "bbox": [
+            341,
+            209,
+            487,
+            246
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/f8c7717f848def6a138e51899403f05b88c4434c646074ce0369492d6f1ec7d5.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>A a</td><td>B b</td><td>C c</td><td>D d</td><td>E e</td><td>F f</td></tr><tr><td colspan=\"6\">f</td></tr><tr><td colspan=\"3\">Login</td><td colspan=\"3\"></td></tr><tr><td colspan=\"3\">Password</td><td colspan=\"3\"></td></tr><tr><td colspan=\"6\">g</td></tr></table>",
+        "bbox": [
+            497,
+            199,
+            655,
+            255
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 1: Examples of tables layout according Crestan classification: vertical listing (a); horizontal listing (b); attribute/value (c); matrix (d); calendar (e); enumeration $\\mathcal { O } \\mathcal { I }$ ; form (g) ",
+        "bbox": [
+            142,
+            263,
+            850,
+            293
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• Splitted web table has sequential ordered repeating labels (Fig. 2, e). ",
+            "• A table is classified as nested web table if it forms a part of another table (Fig. $2 , f )$ . ",
+            "• Multivalued web table. Table in which cells have multiple values. ",
+            "• Simple multivalued web table has multivalued data related to one specific type (Fig. 2, g). ",
+            "• Composed multivalued web table contains multivalued data related to different types (Fig. 2, h). "
+        ],
+        "bbox": [
+            174,
+            338,
+            850,
+            439
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In the paper [6] the classifying on six types for tables — layout (non-genuine), genuine which are divided into vertical listings, horizontal listings, matrix, others (all tables that do not belong to the above types) — was suggested. This classifier was tested on a July 2014 version of the Common Crawl. ",
+        "bbox": [
+            142,
+            451,
+            850,
+            514
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In 2015, Braunschweig [7] presented several types of tables based on the study of taxonomies in [4, 5], such as vertical listing (Fig. 1, a), horizontal listing (Fig. 1, b), matrix (Fig. 1, d), and special case including attribute/value (Fig. 1, c) and nested (Fig. $2 , f .$ ). In turn, Lehmberg et al. using the WebDataCommons framework [8] extracted and classified tables from the July 2015 version of the Common Crawl based on [7]. As a result, relational tables (Fig. 3, a) that contain a certain number of entities were extracted. In turn, these entities can be described by attributes, which are represented by rows or columns. Another version of tables in which a certain set of attributes describes one entity only (Fig. 3, b) is named entity tables. There are also matrix tables (Fig. 3, c). ",
+        "bbox": [
+            142,
+            516,
+            850,
+            659
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The approach of Nishida [9] uses on combines recurrent neural network (RNN) and convolutional neural network (CNN) for table extraction from a subset of the April 2016 Common Crawl. The extracted tables were classified as: relational tables (Fig. 4, a), entity tables (Fig. 4, b), matrix tables (Fig. 4, c) and other tables. Tables are represented by semantic triples: subject, property, and object. It is noteworthy that in this taxonomy, matrix tables do not contain properties in their structure. ",
+        "bbox": [
+            142,
+            661,
+            850,
+            756
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Gasemi-Gol and Szekely presented TabVec [10] — an unsupervised method of embedding tables into a vector space in order to perform classification of tables into categories. Its taxonomy includes relational (Fig. 5, a), entity (Fig. 5, b), matrix (Fig. 5, d) tables. List (fig. 5, c) and non-data. ",
+        "bbox": [
+            142,
+            757,
+            853,
+            806
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            487,
+            956,
+            507,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/49d6fb6530a957f54870af2551ec550c411c9629220e31e7569301f724c90480.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Year</td><td>Title</td></tr><tr><td>1869</td><td>War and Peace</td></tr><tr><td>1878</td><td>Anna Karenina</td></tr><tr><td>1884</td><td>The Decembrists</td></tr></table>",
+        "bbox": [
+            341,
+            98,
+            480,
+            146
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/f73563b652ead5443d6af5a92dd07b3292005a8f3d329e0b5bec07d4de338129.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Leo Tolstoy</td></tr><tr><td>Born</td><td>9 September 1828</td></tr><tr><td>Died</td><td>20 November 1910</td></tr><tr><td>Language</td><td>Russian</td></tr></table>",
+        "bbox": [
+            502,
+            98,
+            655,
+            147
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/34412b1ef0fcb22ceccf2d8ef0b9d8a1756f1be985b38a72f6f85136e6f164a8.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Oncology</td><td>2020</td><td>2021</td></tr><tr><td>Breast</td><td>2.3 M</td><td>2.4 M</td></tr><tr><td>Stomach</td><td>1.1 M</td><td>1.1 M</td></tr></table>",
+        "bbox": [
+            421,
+            155,
+            561,
+            195
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/3a3858a45917f88f502d358f70dc6367724dad6069053c950c8f92a8cec6fe3e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Plant</td><td>Color</td><td>Height</td></tr><tr><td colspan=\"3\">Shrubs</td></tr><tr><td>Azalea</td><td>Variable</td><td>Shrub</td></tr><tr><td>Buddleia</td><td>Blue, pink</td><td>Shrub</td></tr></table>",
+        "bbox": [
+            368,
+            203,
+            534,
+            246
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/4947eda8b5566ed2ca199c4d5f12539dbc0f5fc40b7e57d2dd9226890582189f.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Year</td><td>Title</td></tr><tr><td rowspan=\"3\">2010</td><td>Tron</td></tr><tr><td>Trust</td></tr><tr><td>Tangled</td></tr></table>",
+        "bbox": [
+            559,
+            203,
+            642,
+            244
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/fcd8a4b49ecce77eaf61876eed5047ae1b33e087d3f5b30c9724efa49afba5cb.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Rank</td><td>Country</td><td>Pop</td><td>Rank</td><td>Country</td><td>Pop</td></tr><tr><td>1</td><td>China</td><td>1.5 B</td><td>3</td><td>USA</td><td>333 M</td></tr><tr><td>2</td><td>India</td><td>1.4 B</td><td>4</td><td>Indonesia</td><td>271 M</td></tr></table>",
+        "bbox": [
+            381,
+            261,
+            628,
+            293
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "е ",
+        "bbox": [
+            497,
+            293,
+            507,
+            299
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/f743e1a6b7741707059ce8543eca515c05d31a9aa9490425070a3924b6d3ab5d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">General information</td></tr><tr><td>Title</td><td>Inception</td></tr><tr><td>Developed by</td><td>Christofer Nolan</td></tr><tr><td>Year</td><td>2010</td></tr><tr><td colspan=\"2\">Broadcast</td></tr><tr><td>Language</td><td>English</td></tr><tr><td>Budget</td><td>160 M</td></tr></table>",
+        "bbox": [
+            341,
+            307,
+            480,
+            443
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/d5ae11b25b1f5aaa52c226fdfb0e1bd7c2747af18674353134134a155cd4c8f9.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Publisher</td><td>Marvel \nComics</td></tr><tr><td>Title</td><td>The Amazing \nSpider-Man</td></tr><tr><td>Main \ncharather(s)</td><td>Spider-Man, \nHarry Osborn</td></tr><tr><td colspan=\"2\">Albert Einstein</td></tr><tr><td>Born</td><td>14.03.1879 \nGerman Empire</td></tr><tr><td>Doctoral \nadvisor</td><td>Alfred Kleiner</td></tr></table>",
+        "bbox": [
+            502,
+            307,
+            655,
+            443
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 2: Examples of tables layout according Lautert classification: horizontal web table (a); vertical web table (b); matrix web table (c); concise web table (d); splitted web table (e); nested web table $\\mathit { \\Omega } ( f ) ;$ simple multivalued web table (g); composed multivalued web table (h) ",
+        "bbox": [
+            142,
+            454,
+            853,
+            497
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/a38d5403d7070ba298e28a4ef40042261bd5b8e991f96b6e7923663775eefc61.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Index</td><td>Weight</td><td>Height</td></tr><tr><td>21</td><td>50</td><td>153</td></tr><tr><td>19</td><td>45</td><td>155</td></tr></table>",
+        "bbox": [
+            357,
+            530,
+            519,
+            579
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/eca2ac818a6d0c2f0d2128a5a4a6bbc2e126d580c6f04081a8b617f0781d85d8.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">21</td></tr><tr><td>Weight</td><td>50</td></tr><tr><td>Height</td><td>153</td></tr></table>",
+        "bbox": [
+            529,
+            530,
+            638,
+            579
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/482df9b1a68047badd5baeee227828e7f5797859749c72e3aa455b19a9d1c5b1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Body mass index</td><td>45</td><td>57</td></tr><tr><td>160</td><td>Low weight</td><td>Normal weight</td></tr><tr><td>174</td><td>Low weight</td><td>Low weight</td></tr></table>",
+        "bbox": [
+            341,
+            592,
+            655,
+            633
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "с ",
+        "bbox": [
+            485,
+            633,
+            494,
+            640
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 3: Examples of tables layout according Lehmberg classification: relational tables (a); entity tables (b); matrix tables (c) ",
+        "bbox": [
+            142,
+            652,
+            852,
+            682
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The classifier was evaluated on a July 2015 version of the Common Crawl. The same types of tables are also used in the paper [12]. ",
+        "bbox": [
+            142,
+            726,
+            853,
+            758
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In the [14] Roldan introduced classification of tables types as the following: horizontal listings (Fig. 6, a), vertical listings (Fig. 6, b), form (Fig. 6, c), matrix (Fig. 6, d). The sources of the tables were Wikipedia (1496 tables) and Dresden Web Table Corpus (1513 tables). ",
+        "bbox": [
+            142,
+            759,
+            853,
+            806
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "68 ",
+        "bbox": [
+            487,
+            956,
+            509,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/e1e8f0a72c7fa39db213bfbdc2d275b6aa55bf0a5195bc059dd65ff8bf602d5a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            341,
+            98,
+            521,
+            153
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/d86d6bba10cd1db972910ba77f2360a982f8c5ccc4b5ac78637535d1c6106575.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            534,
+            98,
+            657,
+            153
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/99248e3ed6361e3c7116e55836f3afa14b810d23e434edd174e780479439db11.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Weight</td></tr><tr><td></td><td>2020</td><td>2021</td></tr><tr><td>Anna</td><td>57</td><td>60</td></tr><tr><td>Mike</td><td>75</td><td>75</td></tr></table>",
+        "bbox": [
+            418,
+            156,
+            598,
+            222
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/8cf8ab0d06d93a3c84bcdda89f09c03d481a16001b61d3e440721caf9ca23c59.jpg",
+        "image_caption": [
+            "Figure 4: Examples of tables layout according Nishida classification: relational tables (a): contain complete semantic triples (may contain multiple subjects). Anna, Mike – subject, Age, Sex – properties, other – objects; entity tables (b): describe the properties of one specific subject only (Anna - subject); matrix tables (c): have the same property for each cell object at the junction of a row and a column. Anna, Mike, 2020,2021 – subject, Weight - properties, other – objects "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            341,
+            342,
+            450,
+            391
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/78760660be0a32da5822c1b9ca6007f18f8a2e1b497275544e21c9855103d328.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            460,
+            342,
+            552,
+            391
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/f86551cb39b2ebff7fc106b711705c9e11b99bac0ee19a5491d20bdfb4e82a87.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            564,
+            342,
+            638,
+            391
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/320d688c92844bde1602b9ae9113bd5574c0c0adbade3390ccb1a0cc5bd5c4a7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dish</td><td>Soup</td><td>Steak</td></tr><tr><td>Price</td><td>200</td><td>400</td></tr><tr><td>Weight</td><td>400</td><td>500</td></tr></table>",
+        "bbox": [
+            410,
+            403,
+            579,
+            453
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/1a30d170c1c593a60e83f4f2494cde55952353063a8d4a368ee5abc2ceb99678.jpg",
+        "image_caption": [
+            "Figure 5: Examples of tables layout according Gasemi-Gol classification: relational tables (a); entity tables (b); list tables (c); matrix tables (d) "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            341,
+            526,
+            494,
+            598
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/557e2677941d4419f657bb38a91546eed2e56b0cf8eb9f5aeba69cdd04e532ca.jpg",
+        "image_caption": [
+            "Figure 6: Examples of tables layout according Roldan classification: horizontal listing (a); vertical listing (b); vertical form (c); matrix (d) "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            505,
+            526,
+            657,
+            596
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/6215824d0d1236370bb295a5847ed54e3837820a1aeaf05eae668ebb70ea223f.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Name</td><td>Pedro</td></tr><tr><td>Surname</td><td>Lopez</td></tr><tr><td>Age</td><td>47</td></tr><tr><td>Birthplace</td><td>Spain</td></tr></table>",
+        "bbox": [
+            357,
+            607,
+            475,
+            665
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/588ac017a935e80a8938246a0ddc7c624882c67c71830f10c01f444eb938cc71.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>2018</td><td>2019</td></tr><tr><td>DINER</td><td>95B</td><td>100B</td></tr><tr><td>CHASE</td><td>98B</td><td>103B</td></tr><tr><td>VISA</td><td>78B</td><td>82B</td></tr><tr><td colspan=\"3\">d</td></tr></table>",
+        "bbox": [
+            487,
+            607,
+            640,
+            665
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "69 ",
+        "bbox": [
+            487,
+            956,
+            509,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/52fbfd670c8e350efa77b7e3d9e287b13b2b2013b6f2ffd7d6a91b4a9d546c01.jpg",
+        "table_caption": [
+            "Table 1 Matching Terminology of Table Type Taxonomies "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Crestan</td><td>Lautert</td><td>Eberius</td><td>Braunschweig</td><td>Lehmberg</td><td>Nishida</td><td>Gasemi-Gol</td><td>Wang</td><td>Roldan</td></tr><tr><td>Vertical listing</td><td>Horizontal web table</td><td>Vertical listing</td><td>Vertical listing</td><td>(Horizontal) Relational</td><td>(Horizontal) Relational</td><td>Relational</td><td>(Horizontal) Relational</td><td>Horizontal listing</td></tr><tr><td>Horizontal listing</td><td>Vertical web table</td><td>Horizontal listing</td><td>Horizontal listing</td><td>(Horizontal) Relational</td><td>(Horizontal) Relational</td><td>-</td><td>(Horizontal) Relational</td><td>Vertical listing</td></tr><tr><td>Matrix</td><td>Matrix web table</td><td>Matrix</td><td>Matrix</td><td>Matrix</td><td>Matrix</td><td>Matrix</td><td>Matrix</td><td>Matrix</td></tr><tr><td>Attribute/ value</td><td>Vertical web table</td><td>-</td><td>Attribute/value</td><td>Entity</td><td>Entity</td><td>Entity</td><td>Entity</td><td>Form</td></tr><tr><td>Enumeration</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>List</td><td>List</td><td>-</td></tr></table>",
+        "bbox": [
+            174,
+            136,
+            820,
+            225
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/14c6527d1f56142f4531e7f4c3f18846c6fd4f5c80740e2d9bc8883a45896848.jpg",
+        "table_caption": [
+            "Table 2 Comparison of Table Type Taxonomies "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Taxonomy of</td><td>Number of types</td><td>Levels</td><td>Classifier</td><td>Classifier availability</td><td>Corpora</td><td>Corpora availability</td></tr><tr><td>Crestan</td><td>13</td><td>Multi</td><td>TabEx (ML-based)</td><td>-</td><td>(8.2B tables from high quality English pages on the Web - Proprietary crawl)</td><td>-</td></tr><tr><td>Lautert (main)</td><td>7</td><td>Multi</td><td>WTCclassifier (DL-based)</td><td>-</td><td>(0.6M HTML tables extracted from Wikipedia, e-commerce, news and university sites)</td><td>-</td></tr><tr><td>Lautert (secondary)</td><td>6</td><td>Multi</td><td>see above</td><td>-</td><td>see above</td><td>-</td></tr><tr><td>Eberius</td><td>6</td><td>Multi</td><td>DWTC-Tools1 (ML-based)</td><td>+</td><td>Dresden Web Table Corpus (DWTC)1 (125M tables from July 2014 version of the Common Craw2)</td><td>+</td></tr><tr><td>Lehmberg</td><td>4</td><td>Multi</td><td>WDC Extraction Framework3 (ML-based)</td><td>+</td><td>Web Data Commons - Web Table Corpora4 (233M tables from July 2015 version of the Common Craw2)</td><td>+</td></tr><tr><td>Nishida</td><td>5</td><td>Single</td><td>TabNet5 (DL-based)</td><td>+</td><td>(0.19M tables from Top 500 websites from April 2016 version of the Common Craw2)</td><td>-</td></tr><tr><td>Gasemi-Gol</td><td>5</td><td>Single</td><td>TabVec6 (DL-based)</td><td>+</td><td>(Web pages from unusual domains: human tracking advertisements, fire arms trading, microcap stock market; Random samples from July 2015 Common Craw2)</td><td>-</td></tr><tr><td>Roldan</td><td>4</td><td>Single</td><td>TOMATE7 (cluster analysis)</td><td>+</td><td>Wikipedia, DWTC1</td><td>+</td></tr><tr><td>Wang</td><td>5</td><td>Single</td><td>TUTA8 (DL-based)</td><td>+</td><td>(tablees extracted from July 2015 version of the Common Craw2)</td><td>-</td></tr></table>",
+        "bbox": [
+            178,
+            274,
+            818,
+            487
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3. Results of the Comparison ",
+        "text_level": 1,
+        "bbox": [
+            144,
+            508,
+            470,
+            527
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "As can be seen, some of the taxonomies considered above are similar but have different names. It should be noted that there is no any agreement in the literature regarding the types of webtables. The comparison of web table types of different authors is presented in table 1. Each row of the table contains names for one type of table (if one is presented by the researcher). ",
+        "bbox": [
+            142,
+            539,
+            853,
+            602
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The characteristics of the taxonomy kinds and classifiers, such as the number of types, the presence of a hierarchy, the classifier the data set on which the experiments were conducted and their availability are shown in table 2. The column “Number of Types” contains information about the quantity of genuine web-table types proposed by the author. The “Taxonomy levels” column indicates the way for table types definition. Two cases are possible: ",
+        "bbox": [
+            142,
+            604,
+            853,
+            684
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "1https://wwwdb.inf.tu-dresden.de/research-projects/dresden-web-table-corpus/ ",
+        "bbox": [
+            171,
+            702,
+            668,
+            715
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "2https://commoncrawl.org/ ",
+        "bbox": [
+            171,
+            715,
+            344,
+            728
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "3http://webdatacommons.org/framework/ ",
+        "bbox": [
+            173,
+            728,
+            433,
+            741
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "4http://webdatacommons.org/webtables/#results-2015 ",
+        "bbox": [
+            173,
+            741,
+            507,
+            755
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "5https://github.com/dreamquark-ai/tabnet ",
+        "bbox": [
+            173,
+            755,
+            435,
+            768
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "6https://github.com/majidghgol/tabvec ",
+        "bbox": [
+            173,
+            768,
+            415,
+            781
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "7https://data.mendeley.com/datasets/zcn6h2fvz7/2 ",
+        "bbox": [
+            173,
+            781,
+            484,
+            794
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "8https://github.com/microsoft/TUTA_table_understanding ",
+        "bbox": [
+            173,
+            794,
+            537,
+            808
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "70 ",
+        "bbox": [
+            487,
+            954,
+            509,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• Multi-Level — table types are defined hierarchically. Firstly, the set of tables divides into genuine and non-genuine. Next, the genuine tables divide into some types. The obtained types can be divided into other types and so on; ",
+            "• Single-Level — table types are represented a plain structure. Each table type has no further splitting on other types. "
+        ],
+        "bbox": [
+            174,
+            99,
+            847,
+            179
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The “Classifier” column shows what classifier and what kind of model are used for types classification. The general, method of classification (ML — “traditional” Machine Learning; DL — Deep Learning; cluster analysis) is given in parentheses. The availability of the classifier is specified in the corresponding column. “Corpora” column contains data about corpora where the tables were extracted from. Information about corpora availability is given in the rightmost column. ",
+        "bbox": [
+            146,
+            192,
+            850,
+            287
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4. Summary ",
+        "text_level": 1,
+        "bbox": [
+            147,
+            312,
+            285,
+            331
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In this paper, we explored the various taxonomies of table types that have been proposed in studies of web tables since the groundbreaking work by Cafarella in 2008. Building upon this work, several other research have been conducted, offering different classifications of tables found in HTML documents. ",
+        "bbox": [
+            147,
+            342,
+            850,
+            405
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The most comprehensive taxonomy, which includes 12 types, was suggested by Crestan. All other taxonomies we found are based on this one. These taxonomies usually focus on the most common types, such as listing, matrix, and attribute/value. Taking Crestan’s taxonomy as a foundation, Lautert proposed two classes — the main one (containing the basic types of table layouts) and the secondary one (more complex cases of layouts). However, a single table may relate to types in both classes. ",
+        "bbox": [
+            147,
+            407,
+            850,
+            502
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Crestan’s primary taxonomy was based on a large corpus of 15 billion HTML tables. The other taxonomies were studied on open corpora with smaller tables amount. Other researchers proposed classifiers based on supervised learning methods. ",
+        "bbox": [
+            147,
+            504,
+            850,
+            552
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We have noticed that some of the existing taxonomies are similar but have different terminology. In this study, we have made an attempt to unify the existing terminology by matching different names for common types. Also, the analysis of the taxonomies by comparing their key features was made. ",
+        "bbox": [
+            147,
+            552,
+            850,
+            615
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgment ",
+        "text_level": 1,
+        "bbox": [
+            147,
+            639,
+            342,
+            658
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The research was supported by the Program of the Fundamental Research of the Siberian Branch of the Russian Academy of Sciences, project no. 121030500071-2 ",
+        "bbox": [
+            147,
+            670,
+            850,
+            701
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            147,
+            724,
+            268,
+            741
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] Y. Wang, J. Hu, Detecting tables in html documents, in: International Workshop on Document Analysis Systems, Springer, 2002, pp. 249–260. ",
+        "bbox": [
+            157,
+            755,
+            850,
+            788
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "",
+        "bbox": [
+            489,
+            956,
+            505,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "ref_text",
+        "list_items": [
+            "[2] D. Ritze, O. Lehmberg, C. Bizer, Matching html tables to dbpedia, in: Proceedings of the 5th International Conference on Web Intelligence, Mining and Semantics, 2015, pp. 1–6. ",
+            "[3] M. Yakout, K. Ganjam, K. Chakrabarti, S. Chaudhuri, Infogather: entity augmentation and attribute discovery by holistic matching with web tables, in: Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data, 2012, pp. 97–108. ",
+            "[4] E. Crestan, P. Pantel, Web-scale table census and classification, in: Proceedings of the fourth ACM international conference on Web search and data mining, 2011, pp. 545–554. ",
+            "[5] L. R. Lautert, M. M. Scheidt, C. F. Dorneles, Web table taxonomy and formalization, ACM SIGMOD Record 42 (2013) 28–33. ",
+            "[6] J. Eberius, K. Braunschweig, M. Hentsch, M. Thiele, A. Ahmadov, W. Lehner, Building the dresden web table corpus: A classification approach, in: 2015 IEEE/ACM 2nd International Symposium on Big Data Computing (BDC), IEEE, 2015. URL: https://doi.org/10.1109/bdc. 2015.30. doi:10.1109/bdc.2015.30. ",
+            "[7] K. Braunschweig, Recovering the semantics of tabular web data, Ph.D. thesis, Saechsische Landesbibliothek-Staats-und Universitaetsbibliothek Dresden, 2015. ",
+            "[8] O. Lehmberg, D. Ritze, R. Meusel, C. Bizer, A large public corpus of web tables containing time and context metadata, in: Proceedings of the 25th International Conference Companion on World Wide Web, 2016, pp. 75–76. ",
+            "[9] K. Nishida, K. Sadamitsu, R. Higashinaka, Y. Matsuo, Understanding the semantic structures of tables with a hybrid deep neural network architecture, in: Thirty-First AAAI Conference on Artificial Intelligence, 2017. ",
+            "[10] M. Ghasemi-Gol, P. Szekely, Tabvec: Table vectors for classification of web tables, arXiv preprint arXiv:1802.06290 (2018). ",
+            "[11] J. C. Roldán, P. Jiménez, P. Szekely, R. Corchuelo, Tomate: A heuristic-based approach to extract data from html tables, Information Sciences 577 (2021) 49–68. ",
+            "[12] Z. Wang, H. Dong, R. Jia, J. Li, Z. Fu, S. Han, D. Zhang, Tuta: Tree-based transformers for generally structured table pre-training, in: Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining, 2021, pp. 1780–1790. ",
+            "[13] M. J. Cafarella, A. Halevy, D. Z. Wang, E. Wu, Y. Zhang, Webtables: exploring the power of tables on the web, Proceedings of the VLDB Endowment 1 (2008) 538–549. ",
+            "[14] J. C. Roldán Salvador, Enterprise Data Integration: On Extracting Data from HTML Tables, Ph.D. thesis, 2020. "
+        ],
+        "bbox": [
+            147,
+            99,
+            852,
+            613
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "72 ",
+        "bbox": [
+            489,
+            954,
+            509,
+            967
+        ],
+        "page_idx": 7
+    }
+]

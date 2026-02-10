@@ -1,0 +1,717 @@
+{
+    "title": "REVIEW ",
+    "abstract": "Abstract ",
+    "keywords": null,
+    "language": "pl",
+    "sections": [
+        {
+            "title": "Abstract",
+            "text": "Abstract ",
+            "type": "abstract",
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "Open Access ",
+            "text": "",
+            "type": null,
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "Vision transformer architecture and applications in digital health: a tutorial and survey ",
+            "text": "Khalid Al‑hammuri1* , Fayez Gebali1 , Awos Kanan2 and Ilamparithi Thirumarai Chelvan1 \n",
+            "type": null,
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "Abstract ",
+            "text": "The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for $9 0 \\%$ of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classifcation, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges. \nKeywords Vision transformer, Digital health, Telehealth, Artifcial intelligence, Medical imaging \n",
+            "type": null,
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "Introduction ",
+            "text": "Te coronavirus disease 2019 (COVID-19) pandemic demonstrated how artifcial intelligence (AI) can help scale a system during emergencies with limited medical staf or existing safety concerns. AI algorithms are widely used in digital medicine solutions, mainly in image and text recognition tasks, to analyze medical data stored in clinical information systems and generate medical reports, and to assist in other technical operations such as robotic surgery. Among the various AI-assisted tools for analyzing medical images, the vision transformer (ViT) has emerged as a state-of-the-art algorithm that replaces or combines traditional techniques such as convolutional neural networks (CNNs). Tis article discusses the foundations and applications of the ViT in digital health. \nTe ViT [1, 2] is a type of neural network for image processing in computer vision tasks [3]. Te backbone of the ViT is a self-attention mechanism typically used in natural language processing (NLP). Te ViT was introduced to deal with the image processing limitations of common machine learning architectures such as CNNs [4], recurrent neural networks (RNNs) [5], and even the traditional transformers for language models [1, 6]. Te ViT provides a strong representation of image features and trains data using fewer computational resources compared with CNNs [1]. \nCNNs are widely used in the machine learning feld and are suitable for feature extraction in specifc local regions. However, they are unable to capture the contextual relationship between image features in the global context. In contrast, the ViT applies an attention mechanism to understand the global relationships among features. \nRNNs are used to obtain inferences about sequenceto-sequence relationships and memorizes some past data. However, they require a large memory and are unsuitable for extracting image features compared with the ViT or CNNs. Bidirectional encoder representations from transformers (BERT) was developed by \nGoogle to process language models [7] based on attention mechanisms [8]. BERT can efficiently process sequence-to-sequence models but requires a larger memory compared with an RNN or a long short-term memory (LSTM) [9]. \nBERT has limitations in processing imaging data and is effective only for flattened data in a sequential shape. To deal with this issue, the ViT splits images into patches then and fattens them for analysis as linear sequences [1] in a parallel processing mechanism. \nThe applications of the ViT in medical imaging include segmentation, classification, reconstruction, prognosis prediction, and telehealth (e.g., report generation and security). \nThe remainder of this paper is organized as follows. ViT architecture section describes the foundations of the ViT architecture. Applications of the ViT in digital health section presents an overview of the important applications of the ViT in medical imaging. Roadmap for implementing ViT section presents a roadmap for the end-to-end implementation of the ViT. Limitations and challenges of ViT in digital health section discusses the limitations and challenges of using the ViT, and Conclusions section concludes the paper. \n",
+            "type": null,
+            "page_start": 0,
+            "page_end": 1
+        },
+        {
+            "title": "ViT architecture ",
+            "text": "Tis section discusses the core principles and foundations of the ViT based on the attention mechanism. Te ViT architecture consists of a hierarchy of diferent functional blocks, which will be explained in the following subsections. Figure  1 shows the typical transformer architecture proposed by ref. [8] based on the attention mechanism. \nResearchers have proposed various modifcations for typical transformer designs [8] (Fig. 18 for a typical transformer architecture in Appendix) for applications other than NLP tasks. Te changes focus on the design framework of encoder-decoder blocks in the transformer architecture. In vision tasks, the transformer splits the image into patches and fattens them into sequential forms to be processed like time-series data, which is more suited to the nature of transformers (Fig.  19 in Appendix). To ensure that an image can be reconstructed without any data loss, positional encoding was utilized for the embedded features in a vector shape. Te embedded features were fed into the encoder for image classifcation and then classifed by multilayer perception [1]. However, in the segmentation task, the transformer is combined with the CNN either in the encoder stage, similar to the TransUNet architecture (Fig. 20 in Appendix) [10], or in both \nthe encoder and decoder stages, such as the Ds-TransU-Net [11] (Fig. 21 in Appendix). \n",
+            "type": null,
+            "page_start": 1,
+            "page_end": 2
+        },
+        {
+            "title": "Encoder architecture ",
+            "text": "Figure  2 shows a typical encoder architecture [8] that consists of a stack of $N$ identical layers, with each layer containing two sublayers. Te frst sublayer performs the multihead self-attention (MSA), while the second sublayer normalizes the output of the frst sublayer and feeds it into the multilayer perceptron (MLP), which is a type of feedforward network. See Appendix A.1 for an example of the transformer architecture in ref. [1]. \n",
+            "type": null,
+            "page_start": 2,
+            "page_end": 2
+        },
+        {
+            "title": "Image patches embedding ",
+            "text": "Owing to computer memory limitations, the simultaneous processing of an entire image is difcult. Terefore, the image is divided into diferent patches and processed sequentially. To conduct a detailed analysis of each image patch, each one was embedded into a set of feature values in the form of a vector. \nTe concept of image patch embedding in the ViT was inspired by the term ‘embedding’ in ref. [12]. Te feature vectors were then graphically visualized in an embedding space. Visualizing the features in the embedding space is benefcial to identify the image patches with similar features [13]. Te distance between each feature can be measured in the features map to determine the degree of similarity [14]. \nFigure  3 shows the feature embedding process, which begins by creating an embedding layer from the embedding vectors of each input feature. Random embedding values are initially assigned and updated during training inside the embedding layer. During training, similar features become closer to each other in the embedding or \nlatent space. Tis is important to classify or extract similar features. However, not knowing the position of each feature makes it difcult to determine the relationship between them. In medical imaging applications, positional encoding and feature embedding enable accurate feature selection in a specifc-use case. \n",
+            "type": null,
+            "page_start": 2,
+            "page_end": 2
+        },
+        {
+            "title": "Positional encoding ",
+            "text": "Te transformer model has the advantage of simultaneously processing inputs in parallel, unlike the well-known LSTM algorithm [15, 16]. However, parallel processing is difcult because of the risk of information loss due to the inability to reconstruct the processed sequences in their original positions. \nFigure 4 shows the positional encoding process for feature representation. Positional encoding was proposed to solve this problem and encode each feature vector to its accurate position [8, 17]. Te feature vector and positional encoding values were added to form a new vector in the embedding space. In this study, sine and cosine functions were used as examples to derive the positional encoding values at diferent frequencies, expressed as Eqs.(1) and (2) [8], respectively. \n$$\nP (x, 2 i) = \\sin \\left(\\frac {x}{1 0 0 0 0 ^ {\\frac {2 i}{d}}}\\right) \\tag {1}\n$$\n$$\nP (x, 2 i + 1) = \\cos \\left(\\frac {x}{1 0 0 0 0 ^ {\\frac {2 i}{d}}}\\right) \\tag {2}\n$$\nwhere $P$ is the positional encoding, $d$ is the vector dimension, $_ x$ is the position, and $i$ is the index dimension. Te sinusoidal function is benefcial for encoding the feature \n",
+            "type": null,
+            "page_start": 2,
+            "page_end": 2
+        },
+        {
+            "title": "Symbols ",
+            "text": "position in the embedding space using frequencies ranging from $2 \\pi$ to 10000. In Eqs. (1) and (2), the frequencies resembled the index dimension i [8]. \n",
+            "type": null,
+            "page_start": 2,
+            "page_end": 3
+        },
+        {
+            "title": "MSA ",
+            "text": "Figure 5 shows the MSA process, which calculates the weighted average of feature representations based on the similarity scores between pairs of representations. Given the input sequence $X$ of $L$ tokens or entries with the dimension d, $X \\in R ^ { L \\times d }$ was projected using three matrices: $W _ { K } \\in R ^ { d \\times d k }$ , $W _ { Q } \\in R ^ { d \\times d q }$ , and $W _ { V } \\in R ^ { d \\times } { d \\nu }$ with the same dimensions to derive the representation of the features. Equation (3) presents the formulas used to derive the Key $( K )$ , Query $( Q )$ , and Value $( V )$ . \n$$\nK = X W _ {K}, Q = X W _ {Q}, V = X W _ {V} \\tag {3}\n$$\nTe fnal embedding layer that includes the position encoding was copied into the three linear layers $K , Q ,$ , and V. To derive the similarity between the input features, matrix multiplication between $K$ and $Q$ was performed using self-attention. Te output was then scaled and normalized using SoftMax. Te self-attention [3] process is explained in the following steps: \n1. Calculate the score from the input of Q and $K .$ . \n$$\nS = Q K ^ {T} \\tag {4}\n$$\n2. Normalize the score to stabilize the training. \n$$\nN _ {s} = S \\sqrt {d} \\tag {5}\n$$\n3. Calculate the probabilities of the normalized score using SoftMax. \n$$\nP = \\text {S o f t M a x} (N s) \\tag {6}\n$$\n4. Compute the self-attention flter by multiplying P and V. \n$$\n\\text {S e l f} - \\text {a t t e n t i o n} = P V \\tag {7}\n$$\nTe multiplication of the outputs of $K$ and $Q$ were scaled by the square root of the input vector dimension, and then normalized by the SoftMax function to generate the probabilities. Equation (8) presents the SoftMax function, where $_ x$ is the input data point. Equation (9) computes the attention flter. \n$$\n\\operatorname {S o f t M a x} \\left(x _ {i}\\right) = \\frac {\\exp \\left(x _ {i}\\right)}{\\sum_ {j} \\exp \\left(x _ {j}\\right)} \\tag {8}\n$$\n$$\n\\text {S e l f} = \\text {a t t e n t i o n} (Q, K, V) = \\text {S o f t M a x} \\left(\\frac {Q \\cdot K ^ {T}}{\\sqrt {d}}\\right). V \\tag {9}\n$$\nTe output probabilities from SoftMax and the value layer were multiplied to obtain the desired output with emphasis on the desired features to flter out unnecessary data. Te principle behind a multihead is to concatenate the results of diferent attention flters, with each one focusing on the desired features. Te selfattention process is repeated multiple times to form the MSA. Te fnal output of the concatenated MSA was passed through a linear layer and resized to a single head. Equation (10) presents the MSA formula. \n$$\nM S A (Q, K, V) = C \\left(h _ {1}, \\dots , h _ {n}\\right) W _ {0} \\tag {10}\n$$\nwhere $C$ is the concatenation of the multiheads; $W _ { 0 }$ is the projection weight; $Q , K$ and $V$ denote the Query, Key and Value, respectively; and $h$ resembles each head in the self-attention process and was replicated $_ n$ times. Te number of replications was dependent on the amount of attention or the desired features needed to extract the required information. Figure 5 shows the MSA process in \nthe ViT architecture. Detailed information on the scaled dot products between K, Q, and $V$ are also presented. \n",
+            "type": null,
+            "page_start": 3,
+            "page_end": 4
+        },
+        {
+            "title": "Layer normalization and residual connections ",
+            "text": "A residual connection is required to directly feed the output from the position encoding layer into the normalization layer by bypassing the MSA layer [18]. Te residual connection is essential for knowledge preservation and to avoid vanishing gradient problems [19, 20]. Te MSA layer is vital for extracting useful features from the input. However, it could also lead to the disregard of helpful information of lesser weight in the attention flter. Minimizing the value of the feature weight may cause a vanishing gradient during the model training stage. A vanishing gradient occurs when the gradient of the loss function is depleted and becomes almost or equal to zero while optimizing the weight in the backpropagation algorithm. Te residual connection directly feeds information from the initial layers into the \nlayers at the end of the neural network to preserve features and retain important information. \nTe add and normalize layer [21] combine the input from the position encoding and MSA layers, and then normalize them. Te normalization layer is essential during training to speed up and stabilize the loss convergence. Normalization can be achieved by standardizing the activation of neurons along the axis of the features. Equations  (11) and (12) are the statistical components of layer normalization over all the hidden units in the same layer [21]. \n$$\n\\mu^ {l} = \\frac {1}{H} \\left(\\sum_ {i = 1} ^ {H} a _ {i} ^ {l}\\right) \\tag {11}\n$$\n$$\n\\sigma^ {l} = \\sqrt {\\frac {1}{H} \\sum_ {i = 1} ^ {H} \\left(a _ {i} ^ {l} - \\mu^ {l}\\right) ^ {2}} \\tag {12}\n$$\nwhere $a _ { i } ^ { l }$ is the normalized value of the sum of the input features along the $i ^ { t h }$ hidden units in the $l ^ { t h }$ layers. $H$ is the total number of hidden units in the layer. $\\mu$ is the mean or average values of features along the axis in the normalization layer, $\\sigma$ is the standard deviation of the values of the features along the axis. \n",
+            "type": null,
+            "page_start": 4,
+            "page_end": 5
+        },
+        {
+            "title": "MLP ",
+            "text": "Figure  6 shows the MLP diagram, which is part of the ViT architecture. Te MLP is a feedforward artifcial \nneural network that combines a series of fully connected layers including the input, one or more hidden layers in the middle, and the output [22]. \nFully connected layers are a type of layer in which the output of each neuron is connected to all the neurons in the next hidden layer. Te diagram shows that each neuron from the layer in the feedforward neural network is connected to all the neurons in the next layer through an activation function. Te residual connection preserves the knowledge from the initial layers and minimizes the vanishing gradient problem. Typical MLP layers include the input, output, and hidden layers. \n",
+            "type": null,
+            "page_start": 5,
+            "page_end": 5
+        },
+        {
+            "title": "Decoder and mask MSA ",
+            "text": "Figure  7 shows the decoder and mask MSA in the ViT architecture used to extract the fnal image. Te decoder was stacked for $N$ layers, the same as the number of encoder layers. Te decoder includes the same sublayers as the encoder and mask MSA stacked on them. Te mask MSA works similarly as the MSA, but focuses on the desired features in position i and ignores the undesirable features from the embedding layer by using the mask-only features before i. Tis is important to obtain an inference from the relationship between diferent features in the embedding space and a prediction from the features relevant to the desired position. \nThe decoder obtains the $V , Q$ , and $K$ as inputs. The $V$ was obtained from the previous embedding space, while $Q$ and $K$ were obtained from the encoder output. There are other MSA and normalization layers inside the decoder, which is common in ViT designs. Despite modifications to the decoder-encoder design, the core principle remains the same. The different architectures for different applications are \nexplained in Applications of the ViT in digital health section. \nIn the image recognition task, the decoder output was fattened as a linear or dense layer. Ten, SoftMax was used to derive the probability of the weight of each neuron in the dense layer. Te fnal probability was used to classify or segment the features based on the training data to detect the fnal object or image. \n",
+            "type": null,
+            "page_start": 5,
+            "page_end": 6
+        },
+        {
+            "title": "Applications of the ViT in digital health ",
+            "text": "Computer vision and machine learning algorithms have been employed in recent medical studies on brain and breast tumors [23, 24], histopathology [25], speech recognition [26, 27], rheumatology [28], automatic captioning [29], endoscopy [30], fundus imaging [31], and telemedicine [32]. Te ViT has emerged as the state-ofthe-art in AI-based algorithms that use computer vision and machine learning for digital health solutions. \nFigure  8 shows the distribution of ViT applications in the medical feld. Tese include medical segmentation, detection, classifcation, report generation, registration, prognosis prediction, and telehealth. \n",
+            "type": null,
+            "page_start": 7,
+            "page_end": 7
+        },
+        {
+            "title": "Applications of ViT in medical image segmentation ",
+            "text": "TransUNet [10] is one of the earliest attempts to apply the ViT in medical imaging segmentation by combining it with the UNet [34] architecture. UNet is well known in the area of biomedical image segmentation. It is efcient in object segmentation tasks and can preserve the quality of fne image details after reconstruction. Te UNet inherited the localization ability of a CNN for feature extraction. Although localization is essential in a segmentation task, it has limitations in processing sequence-to-sequence image frames or extracting global features within the same image outside a specifc region. In contrast, the ViT has the advantages of processing sequence-to-sequence features and extracting the global relationships between them. However, the ViT has limitations in feature localization compared with \nCNNs. TransUNet proposed a robust architecture that combined the capabilities of the ViT and UNet in a single model. \nTransUNet is a powerful tool for multiorgan segmentation. Segmenting diferent objects is essential to analyze complex structures in magnetic resonance imaging (MRI) and computed tomography (CT) images. Figure 9 shows an example of image segmentation of the abdomen in a CT scan using TransUNet, which was compared with ground truth (GT) images to validate the results. \nTo further improve the TransUNet architecture, a Dual-TransUNet was implemented in ref. [11]. Te main diference is that the Dual-TransUNet used the transformer in the encoder to extract features and the decoder to reconstruct the desired image, while the TransUNet only used the transformer in the encoder stage. Te Swin transformer [35] is another architecture for implementing the ViT in combination with Unet [34, 36] in medical imaging. \nTe ViT was also used in iSegFormer [37], which was proposed for the interactive segmentation of threedimensional (3D) MRI images of the knee. Te 3D UXnet [38] could segment brain tissues from the entire body in an MRI scan. UNesT [39] developed a hierarchical transformer using local spatial representation for brain, kidney, and abdominal multiorgan image segmentation. Similarly, the NestedFormer [40] was proposed to segment brain tumors in MRI images. \nRECIST [41] used the ViT to automatically segment brain tumors to measure the size of the lesions in CT \nimages. GT U-Net [42] was used for tooth therapy by segmenting the root canal in X-ray images. Colorectal cancer (CRC) images were segmented by the fully convolutional network (FCN) transformer [43] during a colonoscopy. Te ViT was also used in the TraSeTR [44] to assist in robotic surgery by segmenting the image and generating instructions based on previous knowledge. Table  1 lists examples of ViT applications in medical image segmentation. \n",
+            "type": null,
+            "page_start": 7,
+            "page_end": 8
+        },
+        {
+            "title": "Applications of ViT in medical image detection ",
+            "text": "Image detection plays a key role in digital health and imaging analysis to identify objects in complex structures and share that information within the healthcare information system for further analysis. Tis is important to \nmeasure the cell size and count the number of suspicious objects or malignant tissues. \nObject detection is essential in cancer screening when cell labeling or classifcation is difcult, and a careful analysis is required to identify cancers. Te detection transformer (DETR) was proposed to detect lymphoproliferative diseases in MRI T2 images [48]. In MRI scans, the metastatic lymph nodes are small and difcult to identify. Te application of the DETR can reduce false positives as well as improve the precision and sensitivity by $6 5 . 4 1 \\%$ and $9 1 . 6 6 \\%$ , respectively. \nTe convolutional transformer (COTR) [49] detects polyp lesions in colonoscopy images to diagnose CRC, which has the second highest cancer-related mortality risk worldwide. Te COTR architecture employs a CNN \nfor feature extraction and convergence acceleration. A transformer encoder is used to encode and recalibrate the features, a transformer decoder for object querying, and a feedforward network for object detection. \nGlobal lesion detection in CT scans was performed using a slice attention transformer (SATr) [50]. Te backbone of the SATr is a combination of convolution and transformer attention that detects log-distance feature dependencies while preserving the local features. \nLung nodule detection was investigated using an unsupervised contrastive learning-based transformer (UCLT) [51]. Lung nodules are small cancerous masses that are difficult to detect in complex lung structures because of their size. This study harnessed contrastive learning (CL) and the ViT to break down the volume of CT images into small patches of nonoverlapping cubes, and extract the embedded features for processing using the transformer attention mechanism. \nTo predict the hemorrhage category of brain injuries in CT scans, a transformer-based architecture was used for intracranial hemorrhage detection (IHD) [52]. Table  2 lists examples of ViT applications in image classifcation. \n",
+            "type": null,
+            "page_start": 8,
+            "page_end": 9
+        },
+        {
+            "title": "Applications of ViT in medical image classifcation",
+            "text": "Classifcation is an important digital health solution in medical imaging analysis that helps medical practitioners identify objects within a complex structure to immediately categorize medical cases. Utilizing AI while working in remote areas and using telehealth systems with limited medical resources ensures the accuracy of fnal clinical decisions. Te importance of AI emerged during the pandemic when the pressure on healthcare systems exceeded the capacity of the healthcare infrastructure. Te ViT has diferent applications in medical imaging classifcation. \nTransMed [53] uses a combination of the ViT and a CNN to classify multimodal data for medical analysis. Te classifcation system includes disease and lesion identifcation. Figure 10 shows an example of the application of TransMed in image classifcation. \nShoulder implant manufacturers [54] use a transformer in orthopedic applications to assist in shoulder replacement surgery with artifcial implants and joints. Before surgery, shoulder X-ray images were used to detect and classify the shoulder implant manufacturer vendor to determine the required accessories. Te GasHistransformer [55] is a multiscale visual transformer for detecting and classifying gastric cancer images using histopathological images of hematoxylin and eosin obtained by a microscope. Table  3 lists examples of ViT applications in image classifcation. \nA comparative analysis of cervical cancer classifcations using various deep learning (DL) algorithms, including the ViT, was conducted using cytopathological images [56]. A transformer-based model was used in brain metastases classifcation [57] from an MRI of the brain. Brain metastases are among the main causes of malignant tumors in the central nervous system [61]. ScoreNet [58] \nis a transformer-based model that classifes breast cancer using histopathology images. RadioTransformer [59] classifes COVID-19 cases based on chest X-rays. TractoFormer [60] classifes brain images based on tractography, which is a 3D model of the brain nerve tracts using difusion MRI. TractoFormer discriminates between 3D fber spatial relationships. It has proven to be accurate in classifying patients with schizophrenia vs controls. \n",
+            "type": null,
+            "page_start": 9,
+            "page_end": 10
+        },
+        {
+            "title": "Applications of ViT in medical imaging prognosis predication ",
+            "text": "Te ability of the ViT to analyze time-series sequence data and obtain insights from previous data allows the prediction of future behaviors or patterns. In medical imaging, it is important to help healthcare practitioners predict the efects of diseases or cancers to treat them before they spread. Figure 11 shows the use of the \ntransformer for surgical instructions, which are also implemented in Surgical Instruction Generation Transformer (SIGT) algorithm for surgical robots [62]. Te algorithm used the ViT to analyze the visual scene during surgery and update the reinforcement learning (RL), reward, and status to predict the instructions for the robot. \nTe Sig-Former [63] can predict surgical instructions during an operation using the transformer attention mechanism to analyze the input image. Te dataset includes images acquired during surgeries such as laparoscopic sleeve gastrectomy and laparoscopic ventral hernia repair. \nTe 3D Shufe Mixer [64] analyzes 3D volumetric images from CT and MRI using context-aware dense predictions for diferent diseases, such as hemorrhagic stroke, abdominal CT images, and brain tumors. \nGraph-based transformer models [65] predict genetic alteration. Ultrasound recordings are used for fetal weight prediction by the residual transformer model [66]. CLIMAT [67] forecasts the trajectory of knee osteoarthritis based on X-ray images from specialized radiologists. Table  4 lists examples of ViT applications in medical image prediction. \n",
+            "type": null,
+            "page_start": 10,
+            "page_end": 11
+        },
+        {
+            "title": "Applications of ViT in image reconstruction and synthesis ",
+            "text": "After acquiring data from medical imaging modalities such as MRI, CT, and digital X-ray, the images are stored as raw data in an unstructured format. To make this raw data readable, a reconstruction process is applied to retrieve images without any loss. However, this process is computationally expensive because of the size and complexity of reconstruction algorithms. Te use of DL signifcantly improves the reconstruction performance by enhancing the preservation of fne image details within a reconstruction time of a few seconds. In contrast, traditional techniques such as image reconstruction using compressed sensing require more time [68]. \nReconstructing magnetic resonance images is a challenge because of the size, complexity, and sparsity of the K-space matrix, in which the raw images are stored in the frequency domain. \nSLATER [69] is a zero-shot adversarial transformer that performs the unsupervised reconstruction MRI images. SLATER maps the noise and latent representation to the MR coil-combined images. To maximize the consistency of the images, the operator input and maximum optimized prior information were combined using a zero-shot reconstruction algorithm. Figure  12 shows diferent methods for reconstructing fast MRI and the reconstruction error map using SLATER (ViTbased method) from $T _ { 1 }$ weighted images. Tese were then compared with other techniques based on non-ViT methods. \nTe Task Transformer $\\left( T ^ { 2 } N e t \\right)$ [77] proposed an architecture to simultaneously reconstruct and enhance images using a super-resolution method for MRI. Te $T ^ { \\ 2 } N e t$ process can be divided into two parts. First, two CNN subtasks were used to extract \ndomain-specifc features. Second, $T ~ ^ { 2 } N e t$ was embedded and the relationship between the two subtasks was synthesized. ReconFormer addresses the problem of under sampled K-space data by utilizing recurrent pyramid transformer layers to rapidly and efciently retrieve the data [78]. Transformer-based methods for fast MRI reconstruction were evaluated in ref. [79]. Te results showed that the combination of GANs and ViT achieved the best performance, i.e., a $3 0 \\%$ improvement over standard methods such as the Swin transformer. Table  5 lists examples of ViT applications in image reconstruction. \nA ViT-based (stereo transformer) was utilized in efcient dynamic surgical scene reconstruction [80] to reconstruct a robotic surgery scene acquired by an endoscope. Tis application is essential for surgical education, robotic guidance, and context-aware representation. \nDuTrans adopted a Swin transformer as the core of their architectural design to reconstruct the sinograms of CT scans from the attenuation coefcient of the Hounsfeld unit [81, 83]. Te accurate reconstruction of CT scans is essential to obtain high-quality images, reduce radiation doses, and distinguish fne details to facilitate the early detection of cancers. \nMIST-net proposed a multidomain transformer model to reconstruct CT scans [82]. MIST-net can reduce radiation doses without compromising image quality. MIST-net incorporates the Swin transformer architecture, residual features, and an edge enhancement flter to reconstruct the desired CT image. \n",
+            "type": null,
+            "page_start": 11,
+            "page_end": 12
+        },
+        {
+            "title": "Applications of ViT in telehealth ",
+            "text": "Tere is an increasing need for efcient techniques to process all medical information within the healthcare ecosystem. Tis is because of the complex nature of the unstructured format of medical data, such as images, clinical reports, and laboratory results. Te ViT provides a comprehensive solution as it can process medical data in diferent formats and automatically generate reports or instructions. Figure 13 shows the main components of a \ntelehealth ecosystem: the data source, ingestion, machine learning, and data analysis. \nTe hospital information system (HIS) and radiology information system register the patient and store data in electronic health records (EHRs) and picture archiving and communication systems (PACS) to be shared within the telehealth ecosystem. Te HIS relies on standards such as Health Level 7 and Fast Healthcare Interoperability Resources for the exchange of patient metadata or EHRs [84, 85]. PACS is used to store and transfer medical images, mainly in the Digital Imaging [86] and Communications in Medicine [87] format, which are available to medical staf for further clinical analysis. \nPatient data are shared in a cloud or server, either in real-time streaming or in batches from a data storage warehouse or data lake. Te ViT or any other machine learning model is used to train the system on the ingested data. Once the model has been deployed, the ViT can be used to analyze medical data, approximately $9 0 \\%$ of which are in an image format. Once the data have been analyzed, the results are sent to update patient records in the EHR or other storage systems. \n",
+            "type": null,
+            "page_start": 12,
+            "page_end": 12
+        },
+        {
+            "title": "Applications of ViT in report generation ",
+            "text": "Te ViT provides a unifed solution that processes text along with unstructured data, such as images. Te advantage of using the ViT is that it can process and generate radiology reports, surgical instructions, and other clinical reports in a global context by retrieving huge amounts of information stored in health information systems. \nFigure 14 shows the image capture, report consistency, completeness, and report generation by the Real Time Measurement, Instrumentation & Control (RTMIC) [88] and International Federation of Clinical Chemistry (IFCC) algorithms [89] from an input of medical images. Te RTMIC is a ViT-based algorithm used for medical image captioning [88]. Te GT is a manual reference written by an expert. Att2in is an attention-based method used for comparison [90]. Te quality standards for health information systems state that the transferred data \nshould be consistent and complete. Te IFCC algorithm [89] improves the factual completeness and consistency in image-to-text radiology report generation. Te algorithm uses a combination of transformers to extract features and RL to optimize the results. \nTe transformer efciently addresses the challenges of handling biased medical data and long and inconsistent paragraphs. Te AlignTransformer can produce a long descriptive and coherent paragraph based on the analysis \nof medical images [91]. It mainly operates in two stages. First, it aligns the medical tags with the related medical images to extract the features. Second, the extracted features are used to generate a long report based on the training data for each medical tag. \nTe transformer is also used to generate surgical reports during robot-assisted surgery by learning domain adaptation in the Learning Domain Adaption Surgical Robot (LDASR) [92]. Te LDASR uses a \ntransformer to learn the relationships between the desired region of interest, surgical instruments, and images to generate image captions and reports during surgery. Table  6 lists examples of ViT applications in image generation. \n",
+            "type": null,
+            "page_start": 12,
+            "page_end": 14
+        },
+        {
+            "title": "Applications of ViT in telehealth security ",
+            "text": "Telehealth security is receiving significant attention from healthcare providers owing to the emerging risks associated with leveraging advanced technologies such as machine learning. In healthcare, there is a serious risk of misdiagnosing a patient with the wrong disease or even diagnosing a healthy person with a disease. \nAn adversarial attack refers to a malicious attack against the machine learning algorithm or data vulnerability. Tese attacks may include modifying the data or algorithm code, resulting in incorrect outputs [93, 94]. Te accuracy of the algorithm may also be afected by the manipulation of the code or labeled data. Cybercriminals attempt to extort money from healthcare providers by threatening to publish patient information and encrypt the database. Figure  15 shows the efects of data poisoning by adversarial attacks on medical images that attempt to disrupt the behavior of the trained machine learning model. \nResearchers have developed the following countermeasures against cybercrime: \n1. Implement a context-aware system to ensure that the code is safe and not jeopardized. \n2. Store data in an encrypted cloud environment and ensure that these are backed up. \n3. Federated learning is another measure that uses a distributed computing engine to process data in geographically distributed environments that maintain data in diferent locations, making them difcult to hack. \n4. Embrace a zero-trust policy when managing access control systems in digital health applications. Tis provides an additional authentication measure by considering diferent attributes before granting access instead of just relying on a role-based access system. \nUnlike the ViT, traditional CNN-based algorithms are not robust against adversarial attacks because of the simplicity of their architecture [95]. Te complexity of the ViT algorithm and its ability to extract features in a global context are solid grounds for detecting irregularities in data entry. Te ViT has been used for data encryption [96], anomaly detection [97], network intrusion system detection [98], anti-spoofng [99], and patch processing [100]. Table  7 lists examples of the applications use of ViT in information system security. \n",
+            "type": null,
+            "page_start": 14,
+            "page_end": 15
+        },
+        {
+            "title": "Roadmap for implementing ViT ",
+            "text": "Figure 16 shows the four stages in the end-to-end implementation of the ViT model pipeline. Tese are problem formulation, data processing; model implementation, training, and validation; and model deployment and quality assurance, respectively. \n",
+            "type": null,
+            "page_start": 15,
+            "page_end": 15
+        },
+        {
+            "title": "Problem formulation ",
+            "text": "Before implementing a machine learning model, the problem must be understood and formulated to ft the context of the desired product-use case. \n",
+            "type": null,
+            "page_start": 15,
+            "page_end": 15
+        },
+        {
+            "title": "Data preparation ",
+            "text": "Once the problem is understood, high-quality data must be prepared for the AI algorithm. Te data must be relevant, accurate, statistically balanced, and sufcient for \ntraining. Te data should also be verifed by diferent qualitative and qualitative measures to ensure their validity. Tis helps stabilize the model during training and speeds up convergence to obtain the optimal solution. \n",
+            "type": null,
+            "page_start": 15,
+            "page_end": 16
+        },
+        {
+            "title": "Model and code implementation",
+            "text": "Tere is no master algorithm that fts everything; each has its own advantages and disadvantages. Te suitable ViT model or architecture is selected based on the available data and application to achieve the desired success metrics. Te model hyperparameters are fne-tuned during the training stage to achieve the desired accuracy and prevent overftting or underftting. Te model should also be validated and tested on datasets other than those used for training. \n",
+            "type": null,
+            "page_start": 16,
+            "page_end": 16
+        },
+        {
+            "title": "Model deployment and testing ",
+            "text": "Finally, once the model passes all the end-to-end testing and verifcation processes, it should be ready for deployment. Diferent environments can be used to deploy the fnal product in diferent cloud or on-premise applications. Te recommended environment is a cloud-based system because it can automatically generate a model on a scale that fits the computational resources for different applications. Te deployed model should undergo diferent quality assurance and monitoring processes to ensure that the target performance of the system is met during tests outside the laboratory or development environment. Any bugs found in the code should be fxed. If the performance of the trained model is insuffcient, then a new dataset should be used for training. \n",
+            "type": null,
+            "page_start": 16,
+            "page_end": 16
+        },
+        {
+            "title": "Limitations and challenges of ViT in digital health ",
+            "text": "Transformer-based algorithms are emerging as the state-of-art in vision tasks to replace traditional standalone CNN architectures. However, transformerbased models have disadvantages in terms of technical or regulatory compliance requirements. Tese include data size and labeling, the need for a hybrid model, data bias and model fairness, and ethical and privacy challenges. \n",
+            "type": null,
+            "page_start": 16,
+            "page_end": 16
+        },
+        {
+            "title": "Dataset size and labeling challenges ",
+            "text": "Similar to other attention-based mechanisms, transformers inherently require a huge amount of data to train the model. Te transformer achieved the best performance compared with the well-known ResNet architecture when trained on the JFT dataset [101], which contains 300 million images and 18000 classes. However, when trained on the ImageNet-21  k dataset [102], which contains approximately 14 million images and 21000 classes, the transformer performance did not surpass that of the ResNet architecture trained on the same dataset ImageNet-1 k [103, 104] with 1.28 million images and 1000 classes. Figure  17 shows the performance of the ViT and ResNet architectures with respect to the data size. \nThe results show that ResNet performed better when the dataset was small. ResNet and ViT exhibited almost the same performance when the trained on approximately 100 million samples. However, the ViT achieved superior performance compared with \nResNet when the dataset size was larger than 100 million images [1]. \nTe limited dataset size is challenging in medical applications because it is difcult to obtain a clean and high-quality dataset that is feasible for clinical application standards. Moreover, fnding qualifed specialists to annotate millions of images is difcult, expensive, and time-consuming. \nTransfer learning, data augmentation, adversarial imaging synthesis, and automatic data labeling are among the best practices to deal with the problem of insufficient dataset size. The researchers in ref. [105] suggested that the ViT model outperformed ResNet when trained from scratch on the large ImageNet dataset without using data augmentation or a large pretrained model. Thus, there is a tradeoff between dataset size limitations and performance because having a large dataset but sufficient computational resources for training remains a challenge. The use of cloud-based data training could be a solution to limited resources. However, this is an expensive option for academia and more suitable for industrial applications. Similarly, ref. [106] proposed an effective weight initialization scheme to fine-tune the ViT using self-supervised inductive biases learned directly from small-scale datasets. This reduced the need for huge datasets for training, and hence required less computational resources. \nCL is benefcial in medical image applications because it can minimize the diference between similar object representations in the latent space, while maximizing the \ndiference between dissimilar objects [107]. CL has been used with ViT in medical histopathology to classify large images (in gigapixels) and obtain inferences to distinguish between multilabel cancer cells for classifcation [108]. \n",
+            "type": null,
+            "page_start": 16,
+            "page_end": 17
+        },
+        {
+            "title": "The need for hybrid model with transformer ",
+            "text": "The transformer was initially designed to process language models in a sequential format. Since then, it has been modified to process vision tasks by splitting the image into small patches and processing them sequentially as a text-like model. The transformer can obtain inferences about the information in a global context to capture a wide range of dependencies between objects; however, it has a limited feature localization capacity. While the standalone transformer model is sufficient for most classification tasks, in the case of image segmentation for critical medical applications that require a high-quality image, the transformer performance is insufficient and must be combined with a hybrid model. \nUnet or ResNet architectures are widely used as standard models for medical image segmentation that can preserve image details owing to the nature of the encoder-decoder architecture with residual connections. However, Unet and ResNet have inherited the limitation of CNNs in failing to capture a wide range of dependencies by having only local feature extraction capabilities. TransUNet was the frst architecture proposed for medical imaging segmentation that combined the transformer \n[10] and Unet architectures for local and global feature extraction. \nTe transformer was also combined with RL to generate instructions for surgical robots [62, 63]. Te transformer can capture features to update the state-reward status in the RL to automate robot tasks. Te RL-transformer combination has also been used in medical image captioning [88] to automatically generate medical reports within the hospital system. \n",
+            "type": null,
+            "page_start": 17,
+            "page_end": 18
+        },
+        {
+            "title": "Data bias and fairness ",
+            "text": "Training machine learning models using huge datasets (in millions or billions of examples) requires resources with sufcient computational power and storage. Terefore, many algorithms tend to apply dimensionality reduction to minimize model parameters, which reduces the extracted features. Tis allows model training with reduced computational and memory requirements. However, there is a possibility of losing information with less representation in the feature map or dataset. Consequently, the model may be biased toward labels or classes with the largest amount of training data. Te bias in the results could be signifcant, particularly when label balancing was not performed before training. In medical applications, rare diseases and outliers could be disregarded from the model prediction. \nIn ref. [109], the fairness and interpretability of DL models were evaluated using the largest publicly available dataset, the Medical Information Mart for Intensive Care, version IV. Te study found that some DL models lacked fairness when relying on demographics and ethnicity to predict mortality rates. In contrast, DL models that used proper and balanced critical features for training were not biased and tended to be fair. In many models, racial attributes were used unequally across subgroups. Tis resulted in inconsistent recommendations on the use of mechanical ventilators for treatments or in intensive care units when relying on demographic and racial categories such as gender, marital status, age, insurance type, and ethnicity. Figure  22 in Appendix A.5 shows examples of the global features importance scores used to predict mortality rates using diferent machine learning methods. Te fgure shows the bias of the importance score toward certain features when machine learning algorithms were changed. \n",
+            "type": null,
+            "page_start": 18,
+            "page_end": 18
+        },
+        {
+            "title": "Ethical and privacy challenges ",
+            "text": "Information-sharing in healthcare information systems is regulated, although privacy and ethical regulations \nmay difer across jurisdictions. For example, the Health Insurance Portability and Accountability Act (HIPAA) of the United States regulates healthcare information systems to protect sensitive patient information. Te HIPAA states that such information cannot be disclosed without patient consent. Patients also have the right to access their data, ask for modifcations, and know who accesses them. While such regulations help preserve patient privacy, collecting health-related datasets or making them available to the public is a challenge. Tis is a critical issue in the case of the ViT as millions of examples are required to train the model and obtain accurate results. Using the ViT or any other machine learning model trained on a large dataset has a higher risk of errors, and the results are subject to ethical concerns. Many large datasets are obtained from the Internet; hence, the sources may be unknown or untrustworthy, and there is no previous consent to collect these data. Training the ViT from untrusted sources could generate false results, which could lead to errors or ofensive content in generated patient reports. Te consequences may be worse in the case of data breaches or cyberattacks on the healthcare information system as these could alter patient records, images, or the data streaming performance of the telehealth system. Although the ViT is more robust against adversarial attacks, there is no guarantee that the ViTbased model will not generate inappropriate content. Tis raises concerns regarding the need to regulate the current AI industry as well as applications in healthcare to ensure that the input and output of the systems are clean and valid for clinical applications. Federated learning from diferent healthcare facilities and edge devices or servers can help maintain a high level of data privacy. However, the research in ref. [110] reported vulnerabilities in retrieving original data from the shared model weights. \n",
+            "type": null,
+            "page_start": 18,
+            "page_end": 18
+        },
+        {
+            "title": "Conclusions ",
+            "text": "Te ViT has emerged as the state-of-the-art in image recognition tasks, replacing traditional standalone machine learning algorithms such as CNN-based models. Te ViT can extract information in a global context using an attention-based mechanism and analyze images, texts, patterns, and instructions. \nThe superior performance of the ViT makes it practical for various digital medicine applications such as segmentation, classifcation, image reconstruction, image enhancement, data prognosis prediction, and telehealth security. \n",
+            "type": null,
+            "page_start": 18,
+            "page_end": 18
+        },
+        {
+            "title": "Appendix ",
+            "text": "ViT common architectures \nA.1 Typical transformer architecture \n",
+            "type": null,
+            "page_start": 19,
+            "page_end": 19
+        },
+        {
+            "title": "A.2 Architecture example of using transformer in image recognition ",
+            "text": "",
+            "type": null,
+            "page_start": 20,
+            "page_end": 20
+        },
+        {
+            "title": "A.3 TransUnet architecture diagram ",
+            "text": "",
+            "type": null,
+            "page_start": 21,
+            "page_end": 21
+        },
+        {
+            "title": "A.4 Swin‑transUnet architecture diagram ",
+            "text": "",
+            "type": null,
+            "page_start": 22,
+            "page_end": 22
+        },
+        {
+            "title": "A.5 Example of global features importance rank (Fig. 22) ",
+            "text": "",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Abbreviations ",
+            "text": "3D Three-dimensional \nAI Artifcial intelligence \nBERT Bidirectional encoder representations from transformers \nCNN Convolutional neural networks \nCOVID-19 Coronavirus disease 2019 \nCT Computed tomography \nCL Contrastive learning \nCRC Colorectal cancer \nCOTR Convolutional transformer \nDL Deep learning \nEHR Electronic health record \nFCN Fully convolutional network \nGT Ground truth \nGAN Generative adversarial network \nHIS Hospital information system \nHIPAA Health Insurance Portability and Accountability Act \nK Key \nLSTM Long short-term memory \nMLP Multilayer perceptron \nMSA Multihead self-attention \nMRI Magnetic resonance imaging \nNLP Natural language processing \nPACS Picture archiving and communication system \nQ \nRL Reinforcement learning \nRNN Recurrent neural network \nV \nViT Vision transformer \nDETR Detection transformer \nSATr Slice attention transformer \nUCLT Unsupervised contrastive learning-based transformer \nIHD Intracranial hemorrhage detection \nSIGT Surgical Instruction Generation Transformer \nRTMIC Real Time Measurement, Instrumentation & Control \nIFCC International Federation of Clinical Chemistry \nLDASR Learning Domain Adaption Surgical Robot \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Acknowledgements ",
+            "text": "Not applicable. \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Authors’ contributions ",
+            "text": "KA-h, FG and AK provided the conception; KA-h provided the methodology and investigation; KA-h and AK made the data analysis; KH prepared the origi‑ nal draft; FG, ITC, AK and KA-h reviewed and edited the manuscript; FG, AK and ITC provided the supervision; FG provided the funding acquisition. All authors have read and agreed to the published version of the manuscript. \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Funding ",
+            "text": "This research was supported by a grant from the National Research Council of Canada through the Collaborative Research and Development Initiative. \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Availability of data and materials ",
+            "text": "The data underlying this manuscript is based on existing publications and is available in the referenced literature or from the corresponding authors upon reasonable request. \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Declarations ",
+            "text": "",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "Competing interests ",
+            "text": "The authors declare no competing fnancial or non-fnancial interests. \nReceived: 21 March 2023 Accepted: 30 May 2023 \nPublished online: 10 July 2023 \n",
+            "type": null,
+            "page_start": 23,
+            "page_end": 23
+        },
+        {
+            "title": "References ",
+            "text": "",
+            "type": null,
+            "page_start": 24,
+            "page_end": 27
+        },
+        {
+            "title": "Publisher’s Note ",
+            "text": "Springer Nature remains neutral with regard to jurisdictional claims in pub‑ lished maps and institutional afliations. \n",
+            "type": null,
+            "page_start": 27,
+            "page_end": 27
+        }
+    ],
+    "references": [],
+    "figures": [
+        {
+            "id": "Figure 1",
+            "type": "image",
+            "caption": null,
+            "img_path": [
+                "images/3761dceec3be13c1a6214fbc20dd84b0f913035f3c8c601382ae0ec8d0fc524e.jpg"
+            ],
+            "page": 0
+        },
+        {
+            "id": "Figure 2",
+            "type": "image",
+            "caption": [
+                "Fig. 1 Transformer architecture [1] "
+            ],
+            "img_path": [
+                "images/8f1062e03e943e78de76ef064eede5a1e4a23d863de468982f1b4d38b5c61e13.jpg"
+            ],
+            "page": 1
+        },
+        {
+            "id": "Figure 3",
+            "type": "image",
+            "caption": [
+                "Fig. 2 Encoder block in the transformer architecture [1] "
+            ],
+            "img_path": [
+                "images/dbf345b64db533c83b980298d86ba7878cf61709a51890693ab60b2507627588.jpg"
+            ],
+            "page": 2
+        },
+        {
+            "id": "Figure 4",
+            "type": "image",
+            "caption": [
+                "(a) "
+            ],
+            "img_path": [
+                "images/7299bcfad522008a1290d9b5362045966de24b62246ecbf209ca18dc7a4807e3.jpg",
+                "images/df57790b831619c96402f99ce767eba434fb8bd2b930cf5bc37e7639f46bb982.jpg"
+            ],
+            "page": 3
+        },
+        {
+            "id": "Figure 5",
+            "type": "image",
+            "caption": [
+                "(b) "
+            ],
+            "img_path": [
+                "images/311aaacb97f88f51986ddb777841c750e39635511ed952b9d22f25388a47b2e8.jpg"
+            ],
+            "page": 3
+        },
+        {
+            "id": "Figure 6",
+            "type": "image",
+            "caption": [
+                "(c) ",
+                "Fig. 3 a Illustration of splitting ultrasound images into patches and fattening them in a linear sequence; b Image patch vectorization and linear projection; c Patch embedding in multidimensional space "
+            ],
+            "img_path": [
+                "images/843a122ca34e1f2d4520a27162560bca4f268be21bd5f54e7d7f0bbbd24855c5.jpg"
+            ],
+            "page": 3
+        },
+        {
+            "id": "Figure 7",
+            "type": "image",
+            "caption": [
+                "Fig. 4 Positional encoding for the feature representations. Top: Sinusoidal representation for the positional encoding (P0-P3) at diferent indices and dimensions. Bottom: Vector representation for the positional encoding and feature embedding; P is the position encoding and E is the embedding vector "
+            ],
+            "img_path": [
+                "images/8569bf9314ce31cc394b361d914801bf569407361323092c87ab051317dadb66.jpg",
+                "images/89b00bce80581209d01e8b535e4d49b33d4ab5501131a15de9a288628a1ce4a9.jpg"
+            ],
+            "page": 4
+        },
+        {
+            "id": "Figure 8",
+            "type": "image",
+            "caption": [
+                "(B) ",
+                "Fig. 5 MSA process. a MSA process with several attention layers in parallel; b Scaled dot product [8]. The diagram fows upwards from the bottom according to the direction of the arrow "
+            ],
+            "img_path": [
+                "images/16f5698074151af7cf11366d5b55ae5b929a1c61578e3dd75dee034aedb54e05.jpg",
+                "images/8aada2287143d94bb6690607b993db87be1c0162dc9cd3536e2272f5d868e531.jpg"
+            ],
+            "page": 5
+        },
+        {
+            "id": "Figure 9",
+            "type": "image",
+            "caption": [
+                "Fig. 6 MLP ",
+                "Fig. 7 Decoder and mask multihead attention block to produce the fnal image "
+            ],
+            "img_path": [
+                "images/417f13b19f4bb34b3939d18440d419adfd13f412eaf4081a0cd067b455852bc2.jpg",
+                "images/074fe15da70ff369cc6c4b8fbd30f2c568a6bb1f53ec1ff2e4ee5ed0845d20b6.jpg"
+            ],
+            "page": 6
+        },
+        {
+            "id": "Figure 10",
+            "type": "image",
+            "caption": [
+                "Fig. 8 Distribution of medical imaging applications of the ViT according to the survey [33] "
+            ],
+            "img_path": [
+                "images/73847c34080268243a27c2358436798e3931d1e9aa8c9244a90603052d42311d.jpg"
+            ],
+            "page": 7
+        },
+        {
+            "id": "Figure 11",
+            "type": "image",
+            "caption": [
+                "(a) ",
+                "Fig. 9 Comparison of TransUNet and GT using output segmentation results of diferent organs: a GT (expert reference) and b TransUNet [10] "
+            ],
+            "img_path": [
+                "images/22e7835bb9c88996c95861f6b21354ee7ebf37bea0c232d335fef3146a40539f.jpg"
+            ],
+            "page": 8
+        },
+        {
+            "id": "Figure 12",
+            "type": "image",
+            "caption": [
+                "Fig. 10 Example of using the ViT for tumor classifcation in MRI images using TransMed [53]. The tumor is enclosed by the dashed circle indicated by the yellow arrow "
+            ],
+            "img_path": [
+                "images/86906be63a758b938e4ea87a544d40dbae232d09276620f1abbcf97b942ea643.jpg",
+                "images/f42be55a3d896ac44dd3bd57d1b78a19f68d1fc779e49df35b33f4804196886f.jpg"
+            ],
+            "page": 9
+        },
+        {
+            "id": "Figure 13",
+            "type": "image",
+            "caption": [
+                "Transformer Prediction: Retract peritoneum incise with scissors and electrocautery. "
+            ],
+            "img_path": [
+                "images/f4c682f1b4350c18f4727e667fef3b273808e8ce796e9a7986c18cee82346713.jpg"
+            ],
+            "page": 10
+        },
+        {
+            "id": "Figure 14",
+            "type": "image",
+            "caption": [
+                "Transformer Prediction: Continue tying. "
+            ],
+            "img_path": [
+                "images/78c25c9476bc1fd3d035821d6b94f29c89888aaf2fd10e3fdb432723a2f08ba3.jpg"
+            ],
+            "page": 10
+        },
+        {
+            "id": "Figure 15",
+            "type": "image",
+            "caption": [
+                "Transformer Prediction: Process completed at first horizontal axis position. ",
+                "Ground Truth: While retracting peritoneum, identify correct plane by thin areolar. ",
+                "Ground Truth: Tie knots in each suture with tails. ",
+                "Ground Truth: Repeat process at horizontal axis positions. ",
+                "Fig. 11 Examples of using ViT for surgical instruction prediction. Transformer prediction is based on the SIGT method [62]. GT is used as a reference for comparison and validation "
+            ],
+            "img_path": [
+                "images/0c8678098022cd95268747d0f207c640f1a53589b00fddd95f691754ad96bf62.jpg"
+            ],
+            "page": 10
+        },
+        {
+            "id": "Figure 16",
+            "type": "image",
+            "caption": [
+                "Fig. 12 Top: Diferent reconstruction methods from $T _ { \\tau }$ weighted acquisition of the fast MRI using diferent methods. ZF is a traditional Fourier method [70]. LORKAS [71, 72], $\\mathsf { G A N } _ { s u b }$ [73], SSDU [74], $\\mathsf { G A N } _ { p r i o r }$ [75], and SAGAN [76] are generative adversarial network (GAN) reconstruction-based methods. SLATER is a ViT-based method [69]. Bottom: Reconstruction error map [69] "
+            ],
+            "img_path": [
+                "images/2ebb859a23e307e159831ed704682d87305e1108c6839f11bc16037ac18942b8.jpg"
+            ],
+            "page": 11
+        },
+        {
+            "id": "Figure 17",
+            "type": "image",
+            "caption": [
+                "Fig. 13 Schematic of the components of the ViT in a telehealth ecosystem "
+            ],
+            "img_path": [
+                "images/b8e8f879ba1c7ff86c6c6cd3d2afa14a30fc2b9f1a0d68e4aa7c7f0dcb9a81a1.jpg"
+            ],
+            "page": 13
+        },
+        {
+            "id": "Figure 18",
+            "type": "image",
+            "caption": [
+                "(B) ",
+                "Fig. 14 Examples of report generation from the input image using the ViT. a Sample of results by the IFCC algorithm [89] for report completeness and consistency; b Example of report generation results by the RTMIC algorithm [88] "
+            ],
+            "img_path": [
+                "images/802cb5ff46e995b345c29c19788a65222e504bdf7d2ffe33432d52c9a37d1aaa.jpg",
+                "images/aa95c978940d3f34bfb5f3f72d8a7f1c61cd2a5ea76944f4b7200e6a7947aedd.jpg"
+            ],
+            "page": 14
+        },
+        {
+            "id": "Figure 19",
+            "type": "image",
+            "caption": [
+                "Fig. 15 Illustration of data poisoning by an adversarial attack that fools learning-based models trained on medical image datasets "
+            ],
+            "img_path": [
+                "images/5b70d585cba65c0f63173dd16441f4fbe576fe129ec3fce16b272d5014718c00.jpg"
+            ],
+            "page": 15
+        },
+        {
+            "id": "Figure 20",
+            "type": "image",
+            "caption": [
+                "Fig. 16 Roadmap for ViT implementation "
+            ],
+            "img_path": [
+                "images/bce9f16c8c6565cd896d035c9512bb1c5d538c903b113b991fa4014e1b939032.jpg"
+            ],
+            "page": 16
+        },
+        {
+            "id": "Figure 21",
+            "type": "image",
+            "caption": [
+                "Fig. 17 Comparison between ViT and ResNet (BiT) architecture accuracies on diferent sizes of training data. The y-axis is the size of pretraining data in the ImageNet dataset. The x-axis is the accuracy selected from the top $1 \\%$ of the selected fve-shots of ImageNet. Results according to the study in ref. [1] "
+            ],
+            "img_path": [
+                "images/d37b0b949e4a6613aa2f948398a3474b533bf1e07cc8d612632ad6c452475e1a.jpg"
+            ],
+            "page": 17
+        },
+        {
+            "id": "Figure 22",
+            "type": "image",
+            "caption": [
+                "Fig. 18 Transformer typical "
+            ],
+            "img_path": [
+                "images/4bf45c0d3b7a9e3746511313ce3a06d595d98aa6e768cdec5d2df6bdf5d8d849.jpg"
+            ],
+            "page": 19
+        },
+        {
+            "id": "Figure 23",
+            "type": "image",
+            "caption": [
+                "Fig. 19 Example of using Transformer architecture for image recognition [1] "
+            ],
+            "img_path": [
+                "images/e432c8f6bd917e9d25e9b2ee9e8627e06ab241344e356e67d13a6e9125e0b145.jpg",
+                "images/f7fec3b745c093b7fb784a250d3661a4d2361929f3d91be9fc1163482e6d8f6e.jpg"
+            ],
+            "page": 20
+        },
+        {
+            "id": "Figure 24",
+            "type": "image",
+            "caption": [
+                "Fig. 20 a Transformer layer diagram; b TransUnet architecture [10] "
+            ],
+            "img_path": [
+                "images/d7e9142e2fd11e440901ba74e117273ba7e04838405cd7ed357bbb3209f8beb1.jpg"
+            ],
+            "page": 21
+        },
+        {
+            "id": "Figure 25",
+            "type": "image",
+            "caption": [
+                "Fig. 21 Swin TransUn "
+            ],
+            "img_path": [
+                "images/9a53a4f73b5e3e905c90ad64aae0a930262dee0f60265067e476c706a2188d32.jpg"
+            ],
+            "page": 22
+        },
+        {
+            "id": "Figure 26",
+            "type": "image",
+            "caption": [
+                "Fig. 22 Examples of global features that are used for mortality predictions are numbered from (112-139). The numbers in the table depicts the rank sore and each column represents a feature and its importance score by diferent methods on the horizontal line [109]. AutoInt [111], LSTM [112], TCN [113], Transformer [8], IMVLSTM [114] are the machine learning methodologies "
+            ],
+            "img_path": [
+                "images/1107b813de9c1d135bbabc12f58ae4b1e378c84536d61f2a0354c572c3345fe0.jpg"
+            ],
+            "page": 23
+        },
+        {
+            "id": "Table 1",
+            "type": "table",
+            "caption": [
+                "Table 1 Examples of ViT applications in medical image segmentation "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransUnet [10]</td><td>MRI, CT</td><td>CT and MRI cardiac segmentation</td></tr><tr><td>Dual-TransUnet [11]</td><td>Microscopy</td><td>Skin lesion analysis [45]; gland segmentation in histology [46]; nuclei in divergent images [47]</td></tr><tr><td>Swin-Unet [35]</td><td>CT</td><td>Abdominal multiorgan segmentation</td></tr><tr><td>iSegFormer [37]</td><td>3D MRI</td><td>Knee image segmentation</td></tr><tr><td>3D UX-net [38]</td><td>3D MRI</td><td>Brain tissue segmentation</td></tr><tr><td>UNesT [39]</td><td>MRI, CT</td><td>Abdominal multiorgan segmentation + kidney segmenta-tion + whole brain segmentation</td></tr><tr><td>NestedFormer [40]</td><td>MRI</td><td>Brain tumor segmentation</td></tr><tr><td>RECIST [41]</td><td>CT</td><td>Automatic tumor segmentation and diameter size prediction</td></tr><tr><td>GT U-Net [42]</td><td>X-ray</td><td>Tooth therapy: root canal segmentation</td></tr><tr><td>FCN-transformer [43]</td><td>Colonoscopy</td><td>CRC segmentation</td></tr><tr><td>TraSeTR [44]</td><td>Endoscopy</td><td>Robot-assisted surgery</td></tr></table>",
+            "img_path": "output/images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
+            "page": 8
+        },
+        {
+            "id": "Table 2",
+            "type": "table",
+            "caption": [
+                "Table 2 Examples of ViT applications in medical image detection "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>DETR [48]</td><td>MRI</td><td>Lymphoproliferative diseases detection</td></tr><tr><td>COTR [49]</td><td>Colonoscopy</td><td>CRC detection</td></tr><tr><td>SATr [50]</td><td>CT</td><td>Universal lesion detection</td></tr><tr><td>UCLT [51]</td><td>CT</td><td>Lung nodule detection</td></tr><tr><td>IHD [52]</td><td>CT</td><td>Brain injury hemorrhage detection</td></tr></table>",
+            "img_path": "output/images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
+            "page": 9
+        },
+        {
+            "id": "Table 3",
+            "type": "table",
+            "caption": [
+                "Table 3 Examples of ViT applications in medical image classifcation "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransMed [53]</td><td>MRI</td><td>Multi-modal classification: disease classification, lesion identification</td></tr><tr><td>Shoulder implant manufacture [54]</td><td>X-ray</td><td>Orthopedics: Shoulder implant manufacture classification</td></tr><tr><td>GasHis-transformer [55]</td><td>Histopathology microscopic images</td><td>Gastric cancer classification and detection</td></tr><tr><td>Multi-scale cytopathology [56]</td><td>Cytopathological images</td><td>Cervical cancer classification</td></tr><tr><td>Brain metastases classification [57]</td><td>MRI</td><td>Classification of the brain tumor of central nervous system</td></tr><tr><td>ScoreNet [58]</td><td>Histology Datasets of haematoxylin +eosin</td><td>Breast cancer classification</td></tr><tr><td>RadioTransformer [59]</td><td>X-ray</td><td>COVID-19 classification using chest X-ray images</td></tr><tr><td>TractoFormer [60]</td><td>Diffusion MRI</td><td>Nerve tracts modelling and 3D fiber representation</td></tr></table>",
+            "img_path": "output/images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
+            "page": 10
+        },
+        {
+            "id": "Table 4",
+            "type": "table",
+            "caption": [
+                "Table 4 Examples of ViT applications in medical image prediction "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>3D-SMx [64]</td><td>3D (MRI, CT)</td><td>Context-aware dense prediction for different diseases that includes hemorrhagic stroke, abdominal CT images, brain tumor</td></tr><tr><td>GBT [65]</td><td>Cancer genome (TCGA)</td><td>Computation pathology: genetic alteration</td></tr><tr><td>RTM [66]</td><td>Ultrasound</td><td>Fetal weigh at birth prediction</td></tr><tr><td>CLIMAT [67]</td><td>X-ray</td><td>Forecasts knee osteoarthritis trajectory</td></tr><tr><td>Sig-Former [63]</td><td>Laparoscopy</td><td>Surgical instructions prediction</td></tr><tr><td>SIGT [62]</td><td>Robot camera</td><td>Surgical instruction prediction and image captioning</td></tr></table>",
+            "img_path": "output/images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
+            "page": 11
+        },
+        {
+            "id": "Table 5",
+            "type": "table",
+            "caption": [
+                "Table 5 Examples of ViT applications in medical image reconstruction "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>SLATER [69]</td><td>MRI</td><td>MRI unsupervised reconstruction</td></tr><tr><td>T2Net [77]</td><td>MRI</td><td>Image reconstruction and super-resolution enhancement</td></tr><tr><td>ReconFormer[78], FastMRIRecon [79]</td><td>MRI</td><td>Accelerated MRI reconstruction</td></tr><tr><td>E-DSSR [80]</td><td>Endoscopy</td><td>Surgical robot scene reconstruction</td></tr><tr><td>DuTrans [81], MIST-net [82]</td><td>CT</td><td>CT sinograms reconstruction</td></tr></table>",
+            "img_path": "output/images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
+            "page": 12
+        },
+        {
+            "id": "Table 6",
+            "type": "table",
+            "caption": [
+                "Table 6 Examples of ViT applications in medical report generation "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>RTMIC [88]</td><td>Medical images general</td><td>Report generation from medical images (e.g., MRI, CT, PET and X-ray)</td></tr><tr><td>IFCC [89]</td><td>Medical images general</td><td>Medical report completeness and consistency</td></tr><tr><td>AlignTransformer [91]</td><td>Medical images general</td><td>Long report generation from medical images tags</td></tr><tr><td>LDASR [92]</td><td>Surgical robot camera</td><td>Surgical report generation</td></tr></table>",
+            "img_path": "output/images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
+            "page": 14
+        },
+        {
+            "id": "Table 7",
+            "type": "table",
+            "caption": [
+                "Table 7 Examples of ViT applications in security "
+            ],
+            "table_body": "<table><tr><td>Method</td><td>Application</td></tr><tr><td>Jigsaw block-based encryption [96]</td><td>Data encryption</td></tr><tr><td>MFVT [97]</td><td>Anomaly detection</td></tr><tr><td>Image conversion from network data-flow [98]</td><td>Network intrusion system detection</td></tr><tr><td>Zero-shot face [99]</td><td>Anti-spoofing</td></tr><tr><td>Backdoor defender [100]</td><td>Patch processing</td></tr></table>",
+            "img_path": "output/images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
+            "page": 15
+        }
+    ]
+}
