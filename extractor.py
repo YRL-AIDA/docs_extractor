@@ -2,6 +2,7 @@ import os
 import re
 import json
 import enum
+from langdetect import detect
 
 from mineru_compact import parse_doc
 
@@ -19,6 +20,7 @@ class ArticleExtractor():
         self.title = None
         self.abstract = None
         self.keywords = None
+        self.language = None
         self.sections = None
         self.references = None
         self.figures = None
@@ -43,6 +45,7 @@ class ArticleExtractor():
         
         titles = [(idx, block['text']) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
         self.title = titles[0][1]
+        self.language = detect(titles[0][1])
 
         start_section_idx = 1 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи (и аннотацию, если она не выделена как глава)
         sections_list = []
@@ -121,25 +124,37 @@ class ArticleExtractor():
         figures_list = []
 
         ## иллюстрации
-        images = [block for block in data if block['type'] == 'image']
-        same_fig_id = False
-        fig_id = 0
-        for idx, block in enumerate(images):
-            if not same_fig_id:
-                fig_id += 1
-            caption = block['image_caption']
-            if len(caption) == 0:
-                same_fig_id = True
-                for jdx in range(idx + 1, len(images)):
-                    next_caption = images[jdx]['image_caption']
-                    if len(next_caption) > 0:
-                        caption = next_caption
-                        break
-            else:
-                same_fig_id = False
+        idx = 0
+        img_counter = 0
+        while idx < len(data):
+            if data[idx]['type'] == 'image':
+                img_counter += 1
+                figure = {
+                    'id': f'Figure {img_counter}',
+                    'type': data[idx]['type'],
+                    'caption': None,
+                    'img_path': None,
+                    'page': data[idx]['page_idx'],
+                }
 
-            figure = {'id': f'Figure {fig_id}', 'type': block['type'], 'caption': caption, 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
-            figures_list.append(figure)
+                img_path = []
+                img_path.append(data[idx]['img_path'])
+                if len(data[idx]['image_caption']) == 0:
+                    for jdx in range(idx + 1, len(data)):
+                        idx = jdx
+                        if data[jdx]['type'] == 'image':
+                            img_path.append(data[jdx]['img_path'])
+                            if len(data[jdx]['image_caption']) != 0:
+                                figure['caption'] = data[jdx]['image_caption']
+                                break
+                        else:
+                            break
+                else:
+                    figure['caption'] = data[idx]['image_caption']
+
+                figure['img_path'] = img_path
+                figures_list.append(figure)
+            idx += 1
 
         ## таблицы
         tables = [block for block in data if block['type'] == 'table']
@@ -156,6 +171,7 @@ class ArticleExtractor():
             'title': self.title,
             'abstract': self.abstract,
             'keywords': self.keywords,
+            'language': self.language,
             'sections': self.sections,
             'references': self.references,
             'figures': self.figures
