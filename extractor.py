@@ -31,10 +31,13 @@ class ArticleExtractor():
 
         # поиск ключевых слов
         kwords_pattern = re.compile(r'keywords:|ключевые слова:', flags=re.I)
-        for block in data:
+        for idx, block in enumerate(data):
             text = block.get('text', '')
             if re.search(kwords_pattern, text):
-                temp_kwords = re.sub(kwords_pattern, '', text).strip(' .')
+                if block.get('text_level', -1) > 0:
+                    temp_kwords = data[idx + 1].get('text', '').strip(' .')
+                else:
+                    temp_kwords = re.sub(kwords_pattern, '', text).strip(' .')
                 self.keywords = re.split(r'[,;]', temp_kwords)
                 break
 
@@ -86,7 +89,7 @@ class ArticleExtractor():
             elif data[idx]['type'] == 'ref_text':
                 ref_list.append(data[idx]['text'])
 
-        year_pattern = re.compile(r'(//|\s)(\d{4})[\.,]')
+        year_pattern = re.compile(r'(//|\s)(\d{4})[\.,;)]')
         for idx, ref in enumerate(ref_list):
             match = re.search(year_pattern, ref)
             if match:
