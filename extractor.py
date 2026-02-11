@@ -24,13 +24,14 @@ class ArticleExtractor():
         self.sections = None
         self.references = None
         self.figures = None
+        self.tables = None
 
     def extract_from_article(self, file_path, output_path, model_path):
         self.file, _ext = os.path.splitext(os.path.basename(file_path))
         data = parse_doc([file_path], output_path, backend='hybrid-auto-engine', model_path=model_path)
 
         # поиск ключевых слов
-        kwords_pattern = re.compile(r'keywords:|ключевые слова:', flags=re.I)
+        kwords_pattern = re.compile(r'(keywords|ключевые слова)', flags=re.I)
         for idx, block in enumerate(data):
             text = block.get('text', '')
             if re.search(kwords_pattern, text):
@@ -38,7 +39,8 @@ class ArticleExtractor():
                     temp_kwords = data[idx + 1].get('text', '').strip(' .')
                 else:
                     temp_kwords = re.sub(kwords_pattern, '', text).strip(' .')
-                self.keywords = re.split(r'[,;]', temp_kwords)
+                temp_kwords = re.split(r'[,;]', temp_kwords)
+                self.keywords = [kword.strip() for kword in temp_kwords]
                 break
 
         # исправление уровня подзаголовков: с основного (1) на нижний уровень (2)
@@ -89,11 +91,11 @@ class ArticleExtractor():
             elif data[idx]['type'] == 'ref_text':
                 ref_list.append(data[idx]['text'])
 
-        year_pattern = re.compile(r'(//|\s)(\d{4})[\.,;)]')
+        year_pattern = re.compile(r'[//\s\(](\d{4})[\.,;)\s]')
         for idx, ref in enumerate(ref_list):
             match = re.search(year_pattern, ref)
             if match:
-                year_ref = match.group(2)
+                year_ref = match.group(1)
             else:
                 year_ref = None
 
@@ -133,7 +135,7 @@ class ArticleExtractor():
             if data[idx]['type'] == 'image':
                 img_counter += 1
                 figure = {
-                    'id': f'Figure {img_counter}',
+                    'id': img_counter,
                     'type': data[idx]['type'],
                     'caption': None,
                     'img_path': None,
@@ -158,14 +160,16 @@ class ArticleExtractor():
                 figure['img_path'] = img_path
                 figures_list.append(figure)
             idx += 1
+        self.figures = figures_list
 
         ## таблицы
+        tables_list = []
         tables = [block for block in data if block['type'] == 'table']
         for idx, block in enumerate(tables):
             caption = block['table_caption'] + block['table_footnote']
-            figure = {'id': f'Table {idx + 1}', 'type': block['type'], 'caption': caption, 'table_body': block['table_body'], 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
-            figures_list.append(figure)
-        self.figures = figures_list
+            table = {'id': idx + 1, 'type': block['type'], 'caption': caption, 'table_body': block['table_body'], 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
+            tables_list.append(table)
+        self.tables = tables_list
         
         print('Done!')
 
@@ -177,7 +181,8 @@ class ArticleExtractor():
             'language': self.language,
             'sections': self.sections,
             'references': self.references,
-            'figures': self.figures
+            'figures': self.figures,
+            'tables': self.tables,
         }
         with open(os.path.join(output, f'{self.file}.json'), 'w', encoding='utf-8') as f:
             json.dump(article, f, ensure_ascii=False, indent=4)
