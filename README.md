@@ -5,14 +5,16 @@
 pip install --upgrade pip
 pip install uv
 uv pip install -U "mineru[all]"
+pip install langdetect
 ````
 или
 ````commandline
 git clone https://github.com/opendatalab/MinerU.git
 cd MinerU
 uv pip install -e .[all]
+pip install langdetect
 ````
-Скачать модель для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке`model`
+Скачать модель для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке `model`
 
 ### Работа с системой
 
@@ -23,18 +25,25 @@ uv pip install -e .[all]
 `demo.py` -- пример работы (см. ниже):
 
 ````python
+import os
+
 from extractor import ArticleExtractor
+from mineru_compact import parse_doc
 
-path_to_file = 'articles/demo1.pdf' # путь к pdf-файлу (статье)
+path_to_file = 'articles/demo1.pdf'  # путь к pdf-файлу (статье)
 output_dir = 'output/' # директория для сохранения результатов
-path_to_model = 'model/MinerU2.5-2509-1.2B' # путь к локально установленной модели 
+path_to_model = 'model/MinerU2.5-2509-1.2B' # путь к локально установленной модели
+backend = 'hybrid-auto-engine' # [hybrid-auto-engine, pipeline, vlm-auto-engine]
 
-extractor = ArticleExtractor() 
-extractor.extract_from_article(path_to_file, output_dir, path_to_model) # извлечение данных из документа и создание структуры
+file_name, _ext = os.path.splitext(os.path.basename(path_to_file))
+content_list = parse_doc([path_to_file], output_dir, backend=backend, model_path=path_to_model)
+
+extractor = ArticleExtractor()
+extractor.extract_from_article(content_list, output_dir, file_name) # извлечение данных из документа и создание структуры
 extractor.dump_to_json(output_dir) # сохранение результатов в формате json
 ````
 Выходной файл имеет следующую структуру (**output/demo1.json**):
-````javascript
+````json
 {
 	title : str,
 	authors: [
@@ -65,16 +74,25 @@ extractor.dump_to_json(output_dir) # сохранение результатов
 			page_end : int
 		},
 	],
-	figures: [ # визуальные элементы (иллюстрации, таблицы)
+	figures: [
 		{
 			id : str,
 			type : str,
 			caption : [str,],
 			img_path : [str,],
-			page : int,
-			table_body: str # для таблиц
+			page : int
 		},
 	],
+	tables: [
+		{
+			id : str,
+			type : str,
+			caption : [str,],
+			table_body : str,
+			img_path : str,
+			page : int
+		}
+	]
 }
 ````
 
