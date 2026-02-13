@@ -4,8 +4,6 @@ import json
 import enum
 from langdetect import detect
 
-from mineru_compact import parse_doc
-
 class sectionType(str, enum.Enum):
     abstract = 'abstract'
     introduction = 'introduction'
@@ -16,7 +14,7 @@ class sectionType(str, enum.Enum):
 
 class ArticleExtractor():
     def __init__(self):
-        self.file = None
+        self.file_name = None
         self.title = None
         self.abstract = None
         self.keywords = None
@@ -26,9 +24,8 @@ class ArticleExtractor():
         self.figures = None
         self.tables = None
 
-    def extract_from_article(self, file_path, output_path, model_path):
-        self.file, _ext = os.path.splitext(os.path.basename(file_path))
-        data = parse_doc([file_path], output_path, backend='hybrid-auto-engine', model_path=model_path)
+    def extract_from_article(self, data, output_path, file_name):
+        self.file_name = file_name
 
         # поиск ключевых слов
         kwords_pattern = re.compile(r'(keywords|ключевые слова)', flags=re.I)
@@ -184,5 +181,5 @@ class ArticleExtractor():
             'figures': self.figures,
             'tables': self.tables,
         }
-        with open(os.path.join(output, f'{self.file}.json'), 'w', encoding='utf-8') as f:
+        with open(os.path.join(output, f'extract_{self.file_name}.json'), 'w', encoding='utf-8') as f:
             json.dump(article, f, ensure_ascii=False, indent=4)
