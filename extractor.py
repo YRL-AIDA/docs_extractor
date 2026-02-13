@@ -45,7 +45,7 @@ class ArticleExtractor():
             if block.get('text_level', None) == 1 and re.match(r'\d+\.\d+', block.get('text', '')):
                 block['text_level'] = 2
         
-        titles = [(idx, block['text']) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
+        titles = [(idx, block.get('text', '')) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
         self.title = titles[0][1]
         self.language = detect(titles[0][1])
 
@@ -60,7 +60,7 @@ class ArticleExtractor():
                         'page_start': 0,
                         'page_end': 0
                     }
-        abs_pattern = re.compile(r'Аннотация|Abstract', flags=re.I)
+        abs_pattern = re.compile(r'аннотация|abstract', flags=re.I)
         if not re.search(abs_pattern, titles[1][1]): # если аннотация не выделена как глава
             for idx, block in enumerate(data):
                 match = re.search(abs_pattern, block.get('text', ''))
@@ -84,9 +84,9 @@ class ArticleExtractor():
         ref_list = []
         for idx in range(titles[-1][0], len(data)):
             if data[idx].get('sub_type', None) == 'ref_text':
-                ref_list += data[idx]['list_items']
+                ref_list += data[idx].get('list_items', [])
             elif data[idx]['type'] == 'ref_text':
-                ref_list.append(data[idx]['text'])
+                ref_list.append(data[idx].get('text', ''))
 
         year_pattern = re.compile(r'[//\s\(](\d{4})[\.,;)\s]')
         for idx, ref in enumerate(ref_list):
@@ -111,21 +111,20 @@ class ArticleExtractor():
 
             for jdx in range(titles[idx][0] + 1, titles[idx + 1][0]):
                 if data[jdx]['type'] in ['text', 'equation']:
-                    section['text'] += data[jdx]['text'] + '\n'
+                    section['text'] += data[jdx].get('text', '') + '\n'
                 elif data[jdx].get('sub_type', None) == 'text':
-                    for item in data[jdx]['list_items']:
+                    for item in data[jdx].get('list_items', []):
                         section['text'] += item + '\n'
                 elif data[jdx]['type'] == 'code':
-                    section['text'] += data[jdx]['code_body'] + '\n'
+                    section['text'] += data[jdx].get('code_body', '') + '\n'
 
             section['page_end'] = data[titles[idx + 1][0] - 1]['page_idx']
             sections_list.append(section)
         self.sections = sections_list
 
         # обработка визуальных элементов
-        figures_list = []
-
         ## иллюстрации
+        figures_list = []
         idx = 0
         img_counter = 0
         while idx < len(data):
@@ -141,18 +140,18 @@ class ArticleExtractor():
 
                 img_path = []
                 img_path.append(data[idx]['img_path'])
-                if len(data[idx]['image_caption']) == 0:
+                if len(data[idx].get('image_caption', '')) == 0:
                     for jdx in range(idx + 1, len(data)):
                         idx = jdx
                         if data[jdx]['type'] == 'image':
-                            img_path.append(data[jdx]['img_path'])
-                            if len(data[jdx]['image_caption']) != 0:
-                                figure['caption'] = data[jdx]['image_caption']
+                            img_path.append(data[jdx].get('img_path', ''))
+                            if len(data[jdx].get('image_caption', '')) != 0:
+                                figure['caption'] = data[jdx].get('image_caption', None)
                                 break
                         else:
                             break
                 else:
-                    figure['caption'] = data[idx]['image_caption']
+                    figure['caption'] = data[idx].get('image_caption', None)
 
                 figure['img_path'] = img_path
                 figures_list.append(figure)
@@ -163,8 +162,15 @@ class ArticleExtractor():
         tables_list = []
         tables = [block for block in data if block['type'] == 'table']
         for idx, block in enumerate(tables):
-            caption = block['table_caption'] + block['table_footnote']
-            table = {'id': idx + 1, 'type': block['type'], 'caption': caption, 'table_body': block['table_body'], 'img_path': os.path.join(output_path, block['img_path']), 'page': block['page_idx']}
+            caption = block.get('table_caption', []) + block.get('table_footnote', [])
+            table = {
+                'id': idx + 1, 
+                'type': block['type'], 
+                'caption': caption, 
+                'table_body': block.get('table_body', None), 
+                'img_path': os.path.join(output_path, block.get('img_path', None)), 
+                'page': block['page_idx']
+            }
             tables_list.append(table)
         self.tables = tables_list
         
