@@ -43,7 +43,7 @@ extractor.extract_from_article(content_list, output_dir, file_name) # извле
 extractor.dump_to_json(output_dir) # сохранение результатов в формате json
 ````
 Выходной файл имеет следующую структуру (**output/demo1.json**):
-````json
+````javascript
 {
 	title : str,
 	authors: [
