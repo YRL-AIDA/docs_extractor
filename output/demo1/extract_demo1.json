@@ -1,11 +1,12 @@
 {
     "title": "The response of flow duration curves to afforestation ",
+    "authors": [],
     "abstract": "The hydrologic effect of replacing pasture or other short crops with trees is reasonably well understood on a mean annual basis. The impact on flow regime, as described by the annual flow duration curve (FDC) is less certain. A method to assess the impact of plantation establishment on FDCs was developed. The starting point for the analyses was the assumption that rainfall and vegetation age are the principal drivers of evapotranspiration. A key objective was to remove the variability in the rainfall signal, leaving changes in streamflow solely attributable to the evapotranspiration of the plantation. A method was developed to (1) fit a model to the observed annual time series of FDC percentiles; i.e. 10th percentile for each year of record with annual rainfall and plantation age as parameters, (2) replace the annual rainfall variation with the long term mean to obtain climate adjusted FDCs, and (3) quantify changes in FDC percentiles as plantations age. Data from 10 catchments from Australia, South Africa and New Zealand were used. The model was able to represent flow variation for the majority of percentiles at eight of the 10 catchments, particularly for the 10–50th percentiles. The adjusted FDCs revealed variable patterns in flow reductions with two types of responses (groups) being identified. Group 1 catchments show a substantial increase in the number of zero flow days, with low flows being more affected than high flows. Group 2 catchments show a more uniform reduction in flows across all percentiles. The differences may be partly explained by storage characteristics. The modelled flow reductions were in accord with published results of paired catchment experiments. An additional analysis was performed to characterise the impact of afforestation on the number of zero flow days $( N _ { \\mathrm { z e r o } } )$ for the catchments in group 1. This model performed particularly well, and when adjusted for climate, indicated a significant increase in $N _ { \\mathrm { z e r o } }$ . The zero flow day method could be used to determine change in the occurrence of any given flow in response to afforestation. The methods used in this study proved satisfactory in removing the rainfall variability, and have added useful insight into the hydrologic impacts of plantation establishment. This approach provides a methodology for understanding catchment response to afforestation, where paired catchment data is not available. $©$ 2005 Elsevier B.V. All rights reserved. ",
     "keywords": [
-        "Afforestation",
-        " Flow duration curves",
-        " Flow reduction",
-        " Paired catchments"
+        ": Afforestation",
+        "Flow duration curves",
+        "Flow reduction",
+        "Paired catchments"
     ],
     "language": "en",
     "sections": [
@@ -70,169 +71,264 @@
         {
             "id": 1,
             "text": "Bosch, J.M., 1979. Treatment effects on annual and dry period streamflow at Cathedral Peak. South African Forestry Journal 108, 29–37. ",
-            "authors": null,
+            "authors": [
+                "Bosch"
+            ],
             "year": "1979"
         },
         {
             "id": 2,
             "text": "Bosch, J.M., Von Gadow, K., 1990. Regulating afforestation for water conservation in South Africa. Suid-Afrikaanse Bosboutydskrif 153, 41–54. ",
-            "authors": null,
+            "authors": [
+                "Bosch",
+                "Von Gadow"
+            ],
             "year": "1990"
         },
         {
             "id": 3,
             "text": "Chiew, F.H.S., McMahon, T.A., 1993. Assessing the adequacy of catchment streamflow yield estimates. Australian Journal of Soil Research 31, 665–680. ",
-            "authors": null,
+            "authors": [
+                "Chiew",
+                "McMahon",
+                "T.A."
+            ],
             "year": "1993"
         },
         {
             "id": 4,
             "text": "Cornish, P.M., Vertessy, R.A., 2001. Forest age-induced changes in evapotranspiration and water yield in a eucalypt forest. Journal of Hydrology 242, 43–63. ",
-            "authors": null,
+            "authors": [
+                "Cornish",
+                "P.M.",
+                "R.A."
+            ],
             "year": "2001"
         },
         {
             "id": 5,
             "text": "Fahey, B., Jackson, R., 1997. Hydrological impacts of converting native forests and grasslands to pine plantations, South Island, New Zealand. Agricultural and Forest Meteorology 84, 69–82. ",
-            "authors": null,
+            "authors": [
+                "Fahey",
+                "Jackson"
+            ],
             "year": "1997"
         },
         {
             "id": 6,
             "text": "Hickel, K., 2001. The effect of pine afforestation on flow regime in small upland catchments. Masters Thesis, University of Stuttgart, p. 134. ",
-            "authors": null,
+            "authors": [
+                "Hickel"
+            ],
             "year": "2001"
         },
         {
             "id": 7,
             "text": "Holmes, J.W., Sinclair, J.A., 1986. Water yield from some afforested catchments in Victoria. In Hydrology and Water Resources Symposium, Griffith University, Brisbane 25–27 November 1986, pp. 214–218. ",
-            "authors": null,
+            "authors": [
+                "Holmes",
+                "J.W.",
+                "Sinclair"
+            ],
             "year": "1986"
         },
         {
             "id": 8,
             "text": "Lane, P.N.J., Best, A.E., Hickel, K., Zhang, L., 2003. The effect of afforestation on flow duration curves. Cooperative Research Centre for Catchment Hydrology Technical Report 03/13, p. 25. ",
-            "authors": null,
+            "authors": [
+                "Lane",
+                "P.N.J.",
+                "Best",
+                "A.E.",
+                "Hickel",
+                "Zhang"
+            ],
             "year": "2003"
         },
         {
             "id": 9,
             "text": "Legates, D.R., McCabe, G.J., 1999. Evaluating the use of ‘goodnessof-fit’ measures in hydrologic and hydroclimatic model validation. Water Resources Research 35, 233–241. ",
-            "authors": null,
+            "authors": [
+                "Legates",
+                "McCabe",
+                "G.J."
+            ],
             "year": "1999"
         },
         {
             "id": 10,
             "text": "Lyne, V.D., Hollick, M., 1979. Stochastic time-varying rainfall–runoff modelling. Hydrology and Water Resources Symposium, Perth. Institution of Engineers, Australia, pp. 89–92. ",
-            "authors": null,
+            "authors": [
+                "Lyne",
+                "Hollick"
+            ],
             "year": "1979"
         },
         {
             "id": 11,
             "text": "Nandakumar, N., Mein, R.G., 1993. Analysis of paired catchment data to determine the hydrologic effects of changes in vegetative cover on yield. Technical Report for Project UM010, Monash University Dept. of Civil Engineering, $2 1 9 \\ \\mathrm { p }$ . ",
-            "authors": null,
+            "authors": [
+                "Nandakumar",
+                "Mein"
+            ],
             "year": "1993"
         },
         {
             "id": 12,
             "text": "Nash, J.E., Sutcliffe, J.V., 1970. River flow forecasting through conceptual models, I, A discussion of principals. Journal of Hydrology 10, 282–290. ",
-            "authors": null,
+            "authors": [
+                "Nash",
+                "Sutcliffe"
+            ],
             "year": "1970"
         },
         {
             "id": 13,
             "text": "Putahena, W.M., Cordery, I., 2000. Some hydrological effects of changing forest cover from eucalyptus to Pinus radiata. Agricultural and Forest Meteorology 100, 59–72. ",
-            "authors": null,
+            "authors": [
+                "Putahena",
+                "W.M."
+            ],
             "year": "2000"
         },
         {
             "id": 14,
             "text": "Roberts, S., Vertessy, R.A., Grayson, R.G., 2001. Transpiration from Eucalyptus sieberi (L. Johnson) forests of different age. Forest Ecology and Management 143, 153–161. ",
-            "authors": null,
+            "authors": [
+                "Roberts",
+                "Vertessy",
+                "R.A.",
+                "Grayson"
+            ],
             "year": "2001"
         },
         {
             "id": 15,
             "text": "Scott, D.F., Smith, R.E., 1997. Preliminary empirical models to predict reductions in total and low flows resulting from afforestation. Water S.A. 23, 135–140. ",
-            "authors": null,
+            "authors": [
+                "Scott",
+                "Smith"
+            ],
             "year": "1997"
         },
         {
             "id": 16,
             "text": "Scott, D.F., Prinsloo, F.W., Moses, G., Mehlomakulu, M., Simmers, A.D.A., 2000. Area-analysis of the South African catchment afforestation experimental data. WRC Report No. 810/1/00. ",
-            "authors": null,
+            "authors": [
+                "Scott",
+                "D.F.",
+                "Simmers"
+            ],
             "year": "2000"
         },
         {
             "id": 17,
             "text": "Sikka, A.K., Samra, J.S., Sharda, V.N., Samraj, P., Lakshmanan, V., 2003. Low flow and high responses to converting natural grassland into bluegum (Eucalyptus globulus) in Ningiris watersheds of South India. Journal of Hydrology 270, 12–26. ",
-            "authors": null,
+            "authors": [
+                "Sikka",
+                "A.K.",
+                "Samra, J.S.",
+                "Sharda, V.N.",
+                "Samraj"
+            ],
             "year": "2003"
         },
         {
             "id": 18,
             "text": "Smakhtin, V.U., 1999. A concept of pragmatic hydrological time series modelling and its application in South African context. In Ninth South African National Hydrology Symposium, 29–30 November 1999, pp. 1–11. ",
-            "authors": null,
+            "authors": [
+                "Smakhtin"
+            ],
             "year": "1999"
         },
         {
             "id": 19,
             "text": "Smakhtin, V.U., 2001. Low flow hydrology: a review. Journal of Hydrology 240, 147–186. ",
-            "authors": null,
+            "authors": [
+                "Smakhtin",
+                "V.U."
+            ],
             "year": "2001"
         },
         {
             "id": 20,
             "text": "Van Lill, W.S., Kruger, F.J., Van Wyk, D.B., 1980. The effect of afforestation with Eucalyptus grandis Hill ex Maiden and Pinus ",
-            "authors": null,
+            "authors": [
+                "Van Lill, W.S.",
+                "F.J."
+            ],
             "year": "1980"
         },
         {
             "id": 21,
             "text": "patula Schlect. et Cham. on streamflow from experimental catchments at Mokubulaan, Transvaal. Journal of Hydrology 48, 107–118. ",
-            "authors": null,
+            "authors": [
+                "patula Schlect. et Cham."
+            ],
             "year": null
         },
         {
             "id": 22,
             "text": "Van Wyk, D.B., 1987. Some effects of afforestation on streamflow in the Western Cape Province, South Africa. Water S.A. 13, 31–36. ",
-            "authors": null,
+            "authors": [
+                "Van Wyk",
+                "D.B."
+            ],
             "year": "1987"
         },
         {
             "id": 23,
             "text": "Vertessy, R.A., Bessard, Y., 1999. Anticipating the negative hydrologic effects of plantation expansion: results from a GIS-based analysis on the Murrumbidgee Basin, in: Croke, J., Lane, P.N.J. (Eds.), Forest Management for Water Quality and Quantity: Proceedings of the 2nd Erosion in Forests Meeting Cooperative Research Centre for Catchment Hydrology, Report 99/6, pp. 69–73. ",
-            "authors": null,
+            "authors": [
+                "Vertessy, R.A.",
+                "Bessard",
+                "Croke, J.",
+                "Lane"
+            ],
             "year": "1999"
         },
         {
             "id": 24,
             "text": "Vogel, R.M., Fennessey, N.M., 1994. Flow duration curves. 1. New interpretation and confidence intervals. Journal of Water Planning and Management 120 (4), 485–504. ",
-            "authors": null,
+            "authors": [
+                "Vogel",
+                "R.M."
+            ],
             "year": "1994"
         },
         {
             "id": 25,
             "text": "Whitehead, D., Beadle C.L., 2004. Physiological regulation of productivity and water use in Eucalyptus: a review. Forest Ecology and Management, 193, 113–140. ",
-            "authors": null,
+            "authors": [
+                "Whitehead",
+                "Beadle C.L."
+            ],
             "year": "2004"
         },
         {
             "id": 26,
             "text": "Zhang, L., Dawes, W.R., Walker, G.R., 1999. Predicting the effect of vegetation changes on catchment average water balance. Cooperative Research Centre for Catchment Hydrology Technical Report 99/12, p. 35. ",
-            "authors": null,
+            "authors": [
+                "Zhang, L.",
+                "Dawes, W.R.",
+                "Walker, G.R."
+            ],
             "year": "1999"
         },
         {
             "id": 27,
             "text": "Zhang, L., Dawes, W.R., Walker, G.R., 2001. Response of mean annual evapotranspiration to vegetation changes at catchment scale. Water Resources Research 37, 701–708. ",
-            "authors": null,
+            "authors": [
+                "Zhang, L.",
+                "Dawes, W.R.",
+                "Walker, G.R."
+            ],
             "year": "2001"
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Fig. 1. Annual flow duration curves of daily flows from Pine Creek, Australia, 1989–2000. "
@@ -243,7 +339,7 @@
             "page": 1
         },
         {
-            "id": "Figure 2",
+            "id": 2,
             "type": "image",
             "caption": [
                 "Fig. 2. (a) Schematic of the change in the FDC over time, and (b) definition of model parameters. "
@@ -255,7 +351,7 @@
             "page": 3
         },
         {
-            "id": "Figure 3",
+            "id": 3,
             "type": "image",
             "caption": [
                 "Fig. 3. Examples of observed and flow duration curves adjusted for average rainfall following afforestation for Stewarts Creek 5, Australia. "
@@ -266,7 +362,7 @@
             "page": 6
         },
         {
-            "id": "Figure 4",
+            "id": 4,
             "type": "image",
             "caption": [
                 "Fig. 4. Net flow reductions $Y / ( Y + a )$ for all catchments. "
@@ -277,7 +373,7 @@
             "page": 7
         },
         {
-            "id": "Figure 5",
+            "id": 5,
             "type": "image",
             "caption": [
                 "Fig. 5. Number of zero flow days for average rainfall following afforestation for Stewarts Creek 5, Redhill and Pine Creek, Australia. "
@@ -288,9 +384,11 @@
                 "images/99652c913d8e7f99c883381a79a6bc80d7b37553a7d047936f332670388efca8.jpg"
             ],
             "page": 9
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "Table 1 ",
@@ -298,44 +396,44 @@
                 "For *rainfall distribution, U, uniform; W, winter dominated; S, summer dominated. BFI, baseflow index. "
             ],
             "table_body": "<table><tr><td></td><td>Area (ha)</td><td>Species</td><td>% Area planted</td><td>Mean annual rainfall (mm)</td><td>*Rain distrib.</td><td>Pre-treatment (years)</td><td>Forest age (years)</td><td>Mean soil depth (m)</td><td>BFI</td><td>Key references</td></tr><tr><td>Traralgon Ck (Vic)</td><td>8700</td><td>Eucalypt</td><td>~70</td><td>1472</td><td>U</td><td>22</td><td>19</td><td>2.0</td><td>0.37</td><td></td></tr><tr><td>Redhill (NSW)</td><td>195</td><td>P. radiata</td><td>78</td><td>866</td><td>W</td><td>0</td><td>9</td><td>1.0</td><td>0.39</td><td>Hickel, 2001</td></tr><tr><td>Pine Ck (Vic)</td><td>320</td><td>P. radiata</td><td>100</td><td>775</td><td>W</td><td>0</td><td>11</td><td>&lt;1.0</td><td>0.26</td><td></td></tr><tr><td>Stewarts Ck 5 (Vic)</td><td>18</td><td>P. radiata</td><td>100</td><td>1156</td><td>W</td><td>9</td><td>20</td><td>&lt;1.0</td><td>0.28</td><td>Nandakumar and Mein, 1993</td></tr><tr><td>Glendhu 2 (NZ)</td><td>310</td><td>P. radiata</td><td>67</td><td>1282</td><td>U</td><td>3</td><td>17</td><td>1.0</td><td>0.64</td><td>Fahey and Jackson, 1997</td></tr><tr><td>Cathedral Peak 2 (SA)</td><td>190</td><td>P. patula</td><td>75</td><td>1436</td><td>S</td><td>2</td><td>20</td><td>1.5–2.0</td><td>0.66</td><td>Scott et al., 2000</td></tr><tr><td>Cathedral Peak 3 (SA)</td><td>139</td><td>P. patula</td><td>86</td><td>1504</td><td>S</td><td>6</td><td>17</td><td>1.5–2.0</td><td>0.75</td><td>Scott et al., 2000</td></tr><tr><td>Lambrechtbos A (SA)</td><td>31</td><td>P. radiata</td><td>82</td><td>1134</td><td>W</td><td>30</td><td>19</td><td>1.5–2.0</td><td>0.78</td><td>Scott et al., 2000</td></tr><tr><td>Lambrechtbos B (SA)</td><td>66</td><td>P. radiata</td><td>89</td><td>1088</td><td>W</td><td>17</td><td>20</td><td>1.5–2.0</td><td>0.87</td><td>Scott et al., 2000</td></tr><tr><td>Biesievlei (SA)</td><td>27</td><td>P. radiata</td><td>98</td><td>1332</td><td>W</td><td>10</td><td>20</td><td>1.5–2.0</td><td>0.72</td><td>Scott et al., 2000</td></tr></table>",
-            "img_path": "output/images/a7ced540dc14839259d8a77615fb5a4df5d9cb7b414e4977495bb748788ae284.jpg",
+            "img_path": "output/demo1/images/a7ced540dc14839259d8a77615fb5a4df5d9cb7b414e4977495bb748788ae284.jpg",
             "page": 4
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [
                 "Table 2 Significance of the rainfall and time terms ",
                 "$P$ indicates that the rainfall term was significant at the $5 \\%$ level, T indicates that the time term was significant at the $5 \\%$ level, * represents significance at the $10 \\%$ level, and na denotes too few data points for meaningful analysis. "
             ],
             "table_body": "<table><tr><td rowspan=\"2\">Site</td><td colspan=\"10\">Percentile</td></tr><tr><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Traralgon Ck</td><td>P</td><td>P,*</td><td>P</td><td>P</td><td>P,</td><td>P,</td><td>P,</td><td>P,</td><td>P</td><td>P</td></tr><tr><td>Redhill</td><td>P,T</td><td>P,T</td><td>*,</td><td>*,*</td><td>P,T</td><td>P,*</td><td>P,*</td><td>P,*</td><td>*,</td><td>*,</td></tr><tr><td>Pine Ck</td><td></td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>T</td><td>T</td><td>T</td><td>na</td><td>na</td></tr><tr><td>Stewarts Ck 5</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>na</td><td>na</td><td>na</td></tr><tr><td>Glendhu 2</td><td>P</td><td>P,T</td><td>P,*</td><td>P,T</td><td>P,T</td><td>P,ns</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td></tr><tr><td>Cathedral Peak 2</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>*,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>T</td></tr><tr><td>Cathedral Peak 3</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>T</td></tr><tr><td>Lambrechtsbos A</td><td>P,T</td><td>P</td><td>P</td><td>P,T</td><td>*,T</td><td>*,T</td><td>*,T</td><td>*,T</td><td>*,T</td><td>T</td></tr><tr><td>Lambrechtsbos B</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>T</td><td>T</td></tr><tr><td>Biesievlei</td><td>P,T</td><td>P,T</td><td>P,T</td><td>P,T</td><td>*,T</td><td>*,T</td><td>T</td><td>T</td><td>P,T</td><td>P,T</td></tr></table>",
-            "img_path": "output/images/9679ea716634937380d433ae2dbaf1eb155062483ddf46d99a4555ea91cf0aa8.jpg",
+            "img_path": "output/demo1/images/9679ea716634937380d433ae2dbaf1eb155062483ddf46d99a4555ea91cf0aa8.jpg",
             "page": 5
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [
                 "Table 3 Coefficient of efficiency, E ",
                 "ns Indicates that no solution was found, and na denotes deciles with too few data points for analysis. "
             ],
             "table_body": "<table><tr><td rowspan=\"2\">Site</td><td colspan=\"10\">Percentile</td></tr><tr><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Traralgon Ck</td><td>0.82</td><td>0.85</td><td>0.81</td><td>0.81</td><td>0.83</td><td>0.78</td><td>0.80</td><td>0.77</td><td>0.65</td><td>0.56</td></tr><tr><td>Redhill</td><td>0.90</td><td>0.95</td><td>0.82</td><td>0.80</td><td>0.92</td><td>0.88</td><td>0.89</td><td>0.77</td><td>0.65</td><td>0.42</td></tr><tr><td>Pine Ck</td><td>0.56</td><td>0.76</td><td>0.88</td><td>0.99</td><td>0.99</td><td>0.99</td><td>0.71</td><td>0.99</td><td>na</td><td>na</td></tr><tr><td>Stewarts Ck 5</td><td>0.82</td><td>0.85</td><td>0.81</td><td>0.88</td><td>0.87</td><td>0.88</td><td>0.88</td><td>na</td><td>na</td><td>na</td></tr><tr><td>Glendhu 2</td><td>0.76</td><td>0.77</td><td>0.82</td><td>0.84</td><td>ns</td><td>0.87</td><td>0.89</td><td>0.90</td><td>0.86</td><td>0.76</td></tr><tr><td>Cathedral Peak 2</td><td>0.83</td><td>0.91</td><td>0.93</td><td>0.92</td><td>0.81</td><td>0.73</td><td>0.89</td><td>0.95</td><td>0.96</td><td>0.95</td></tr><tr><td>Cathedral Peak 3</td><td>0.68</td><td>0.75</td><td>0.78</td><td>0.91</td><td>0.96</td><td>0.95</td><td>0.94</td><td>0.81</td><td>0.84</td><td>0.79</td></tr><tr><td>Lambrechtsbos A</td><td>0.71</td><td>0.60</td><td>0.57</td><td>0.47</td><td>0.47</td><td>0.47</td><td>0.47</td><td>0.50</td><td>0.49</td><td>0.51</td></tr><tr><td>Lambrechtsbos B</td><td>0.82</td><td>0.76</td><td>0.70</td><td>0.66</td><td>0.65</td><td>0.65</td><td>0.62</td><td>0.59</td><td>0.58</td><td>0.58</td></tr><tr><td>Biesievlei</td><td>0.96</td><td>0.96</td><td>0.90</td><td>0.82</td><td>0.81</td><td>0.88</td><td>0.92</td><td>0.94</td><td>0.91</td><td>0.81</td></tr></table>",
-            "img_path": "output/images/9771ce49be30d62dded021d1fd406125a6b5470b9238c0b5d20add7f88391a1a.jpg",
+            "img_path": "output/demo1/images/9771ce49be30d62dded021d1fd406125a6b5470b9238c0b5d20add7f88391a1a.jpg",
             "page": 5
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "Table 4 $T _ { \\mathrm { h a l f } }$ (years) for all catchments ",
                 "Note that no solution could be found for the 50 percentile for Glendhu indicted by the ns. "
             ],
             "table_body": "<table><tr><td rowspan=\"2\">Site</td><td colspan=\"10\">Percentile</td></tr><tr><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Traralgon Ck</td><td>9.68</td><td>9.59</td><td>9.99</td><td>10.02</td><td>4.92</td><td>7.59</td><td>4.92</td><td>3.97</td><td>4.39</td><td>5.97</td></tr><tr><td>Redhill</td><td>6.13</td><td>6.07</td><td>5.99</td><td>5.99</td><td>6.07</td><td>6.04</td><td>6.79</td><td>6.81</td><td>6.02</td><td>6.00</td></tr><tr><td>Pine Ck</td><td>9.87</td><td>5.52</td><td>5.45</td><td>5.22</td><td>5.69</td><td>5.86</td><td>0.64</td><td>1.25</td><td>na</td><td>na</td></tr><tr><td>Stewarts Ck 5</td><td>6.49</td><td>6.41</td><td>6.09</td><td>5.96</td><td>3.89</td><td>3.03</td><td>2.31</td><td>na</td><td>na</td><td>na</td></tr><tr><td>Glendhu 2</td><td>19.59</td><td>2.67</td><td>2.24</td><td>2.08</td><td>ns</td><td>2.06</td><td>2.07</td><td>1.62</td><td>6.63</td><td>2.02</td></tr><tr><td>Cathedral Peak 2</td><td>4.96</td><td>3.92</td><td>5.78</td><td>7.68</td><td>8.64</td><td>8.95</td><td>9.26</td><td>9.08</td><td>8.93</td><td>9.47</td></tr><tr><td>Cathedral Peak 3</td><td>14.13</td><td>13.20</td><td>7.02</td><td>7.44</td><td>9.01</td><td>8.68</td><td>8.87</td><td>9.46</td><td>8.16</td><td>6.98</td></tr><tr><td>Lambrechtsbos A</td><td>6.89</td><td>6.87</td><td>6.93</td><td>6.89</td><td>6.88</td><td>6.97</td><td>6.94</td><td>6.93</td><td>6.94</td><td>6.97</td></tr><tr><td>Lambrechtsbos B</td><td>14.52</td><td>14.84</td><td>14.89</td><td>10.98</td><td>6.89</td><td>5.69</td><td>5.55</td><td>6.01</td><td>6.23</td><td>6.29</td></tr><tr><td>Biesievlei</td><td>9.36</td><td>9.17</td><td>9.59</td><td>10.32</td><td>10.78</td><td>10.46</td><td>10.06</td><td>10.08</td><td>10</td><td>10.10</td></tr></table>",
-            "img_path": "output/images/bc2eba51f1f067b3c0a7e612776965ea2a244b6b5859ea2dff5245a30c58b3fe.jpg",
+            "img_path": "output/demo1/images/bc2eba51f1f067b3c0a7e612776965ea2a244b6b5859ea2dff5245a30c58b3fe.jpg",
             "page": 7
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "Table 5 Published flow reductions from paired catchment analyses, after Scott et al. (2000), Hickel (2001), Nandakumar and Mein (1993) and Fahey and Jackson (1997) compared to estimated reductions in this study ",
@@ -345,7 +443,7 @@
                 "d For Cathedral Peak 3 the $a$ and $Y$ values for the 10 and 20th percentiles were excluded as the values of $a$ were lower then the values of the 30–100th percentiles. "
             ],
             "table_body": "<table><tr><td rowspan=\"2\">Catchment</td><td rowspan=\"2\">Year</td><td rowspan=\"2\">Rainfalla(mm)</td><td rowspan=\"2\">Total flow reduction (%)</td><td rowspan=\"2\">Low flow reduction (%)</td><td colspan=\"2\">Estimated from Fig. 4</td></tr><tr><td>Total flow reduction (%)b</td><td>Low flow reduction (%)c</td></tr><tr><td>Cathedral Peak 2</td><td>21</td><td>1516 (+80)</td><td>50</td><td>48</td><td>57</td><td>54</td></tr><tr><td>Cathedral Peak 3</td><td>18</td><td>1556 (+52)</td><td>60</td><td>53</td><td>62d</td><td>53</td></tr><tr><td>Lambrechtsbos A</td><td>13</td><td>1111 (-23)</td><td>41</td><td>34</td><td>41</td><td>38</td></tr><tr><td>Lambrechtsbos B</td><td>18</td><td>1079 (-9)</td><td>69</td><td>78</td><td>58</td><td>63</td></tr><tr><td>Biesievlei</td><td>20</td><td>1388 (+6)</td><td>52</td><td>62</td><td>52</td><td>60</td></tr><tr><td>Redhill</td><td>9</td><td>783 (-93)</td><td>66</td><td>100</td><td>75</td><td>100</td></tr><tr><td>Stewarts Ck 5</td><td>20</td><td>1249 (+93)</td><td>69</td><td></td><td>64</td><td></td></tr><tr><td>Glendhu</td><td colspan=\"2\">Average reduction</td><td>27</td><td>&lt;20</td><td>32</td><td>35</td></tr></table>",
-            "img_path": "output/images/213cfd7547b74f1a2de0e69af67f6c85c0b6c751ebb9e2e2714fb908c7ed3456.jpg",
+            "img_path": "output/demo1/images/213cfd7547b74f1a2de0e69af67f6c85c0b6c751ebb9e2e2714fb908c7ed3456.jpg",
             "page": 8
         }
     ]

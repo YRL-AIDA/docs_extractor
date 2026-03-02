@@ -2,7 +2,9 @@ import os
 import re
 import json
 import enum
+import spacy
 from langdetect import detect
+from gliner import GLiNER
 
 class sectionType(str, enum.Enum):
     abstract = 'abstract'
@@ -16,6 +18,7 @@ class ArticleExtractor():
     def __init__(self):
         self.file_name = None
         self.title = None
+        self.authors = None
         self.abstract = None
         self.keywords = None
         self.language = None
@@ -23,6 +26,8 @@ class ArticleExtractor():
         self.references = None
         self.figures = None
         self.tables = None
+
+        self.ner = GLiNER.from_pretrained('model/gliner-pii', map_location='cuda')
 
     def extract_from_article(self, data, output_path, file_name):
         self.file_name = file_name
@@ -65,11 +70,13 @@ class ArticleExtractor():
             for idx, block in enumerate(data):
                 match = re.search(abs_pattern, block.get('text', ''))
                 if match:
+                    abstract_idx = idx
                     abstract['text'] = block['text']
                     abstract['page_start'] = block['page_idx']
                     abstract['page_end'] = block['page_idx']
                     break
         else:
+            abstract_idx = titles[1][0]
             start_section_idx = 2
             abstract['text'] = data[titles[1][0] + 1].get('text', '')
             abstract['page_start'] = data[titles[1][0] + 1]['page_idx']
@@ -78,6 +85,16 @@ class ArticleExtractor():
         self.abstract = abstract['text']
         sections_list.append(abstract)
 
+        # поиск авторов статьи
+        labels = ['authors']
+        authors = []
+        authors_text = [block.get('text', '') for block in data[titles[0][0]+1:abstract_idx]]
+        authors_ents = self.ner.inference(authors_text, labels, threshold=0.15, batch_size=16)
+        for ents in authors_ents:
+            if len(ents) > 0:
+                authors += [a['text'] for a in ents]
+        self.authors = authors
+                
         # обработка списка литературы
         references_list = []
 
@@ -96,13 +113,21 @@ class ArticleExtractor():
             else:
                 year_ref = None
 
+            authors = None
+            lang = detect(ref)
+
             reference = {
                 'id': idx + 1,
                 'text': ref,
-                'authors': None,
+                'authors': authors,
                 'year': year_ref
             }
             references_list.append(reference)
+        labels = ['author']
+        refs_authors = self.ner.inference([ref['text'] for ref in references_list], labels, threshold=0.15, batch_size=16)
+        for idx, ref in enumerate(refs_authors):
+            if len(ref) > 0:
+                references_list[idx]['authors'] = [author['text'] for author in ref]
         self.references = references_list
 
         # обработка секций
@@ -179,6 +204,7 @@ class ArticleExtractor():
     def dump_to_json(self, output):
         article = {
             'title': self.title,
+            'authors': self.authors,
             'abstract': self.abstract,
             'keywords': self.keywords,
             'language': self.language,

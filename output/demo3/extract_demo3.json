@@ -1,5 +1,6 @@
 {
     "title": "TABLEFORMER: Robust Transformer Modeling for Table-Text Encoding ",
+    "authors": [],
     "abstract": "Understanding tables is an important aspect of natural language understanding. Existing models for table understanding require linearization of the table structure, where row or column order is encoded as an unwanted bias. Such spurious biases make the model vulnerable to row and column order perturbations. Additionally, prior work has not thoroughly modeled the table structures or table-text alignments, hindering the table-text understanding ability. In this work, we propose a robust and structurally aware table-text encoding architecture TABLEFORMER, where tabular structural biases are incorporated completely through learnable attention biases. TABLEFORMER is (1) strictly invariant to row and column orders, and, (2) could understand tables better due to its tabular inductive biases. Our evaluations showed that TABLEFORMER outperforms strong baselines in all settings on SQA, WTQ and TABFACT table reasoning datasets, and achieves state-of-the-art performance on SQA, especially when facing answer-invariant row and column order perturbations $6 \\%$ improvement over the best baseline), because previous SOTA models’ performance drops by $4 \\% - 6 \\%$ when facing such perturbations while TABLEFORMER is not affected.1 ",
     "keywords": null,
     "language": "en",
@@ -79,79 +80,155 @@
         {
             "id": 1,
             "text": "Joshua Ainslie, Santiago Ontanon, Chris Alberti, Vaclav Cvicek, Zachary Fisher, Philip Pham, Anirudh Ravula, Sumit Sanghai, Qifan Wang, and Li Yang. 2020. ETC: Encoding long and structured inputs in transformers. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 268–284, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Joshua Ainslie",
+                "Santiago Ontanon",
+                "Chris Alberti",
+                "Vaclav Cvicek",
+                "Zachary Fisher",
+                "Philip Pham",
+                "Anirudh Ravula",
+                "Sumit Sanghai",
+                "Qifan Wang",
+                "Li Yang"
+            ],
             "year": "2020"
         },
         {
             "id": 2,
             "text": "Iz Beltagy, Matthew E. Peters, and Arman Cohan. 2020. Longformer: The long-document transformer. arXiv:2004.05150. ",
-            "authors": null,
+            "authors": [
+                "Iz Beltagy",
+                "Matthew E. Peters",
+                "Arman Cohan"
+            ],
             "year": "2020"
         },
         {
             "id": 3,
             "text": "Wenhu Chen, Hongmin Wang, Jianshu Chen, Yunkai Zhang, Hong Wang, Shiyang Li, Xiyou Zhou, and William Yang Wang. 2020. Tabfact : A large-scale dataset for table-based fact verification. In International Conference on Learning Representations (ICLR), Addis Ababa, Ethiopia. ",
-            "authors": null,
+            "authors": [
+                "Wenhu Chen",
+                "Hongmin Wang",
+                "Jianshu Chen",
+                "Yunkai Zhang",
+                "Hong Wang",
+                "Shiyang Li",
+                "Xiyou Zhou",
+                "William Yang Wang"
+            ],
             "year": "2020"
         },
         {
             "id": 4,
             "text": "Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc Le, and Ruslan Salakhutdinov. 2019. Transformer-XL: Attentive language models beyond a fixed-length context. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 2978–2988, Florence, Italy. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Zihang Dai",
+                "Zhilin Yang",
+                "Yiming Yang",
+                "Jaime Carbonell",
+                "Quoc Le",
+                "Ruslan Salakhutdinov"
+            ],
             "year": "2019"
         },
         {
             "id": 5,
             "text": "Xiang Deng, Huan Sun, Alyssa Lees, You Wu, and Cong Yu. 2021. TURL: Table Understanding through Representation Learning. In VLDB. ",
-            "authors": null,
+            "authors": [
+                "Xiang Deng",
+                "Huan Sun",
+                "Alyssa Lees",
+                "You Wu",
+                "Cong Yu"
+            ],
             "year": "2021"
         },
         {
             "id": 6,
             "text": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171–4186, Minneapolis, Minnesota. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Jacob Devlin",
+                "Ming-Wei Chang",
+                "Kenton Lee",
+                "Kristina Toutanova"
+            ],
             "year": "2019"
         },
         {
             "id": 7,
             "text": "Julian Eisenschlos, Maharshi Gor, Thomas Müller, and William Cohen. 2021. MATE: Multi-view attention for table transformer efficiency. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 7606–7619, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Julian Eisenschlos",
+                "Maharshi Gor",
+                "Thomas Müller",
+                "William Cohen"
+            ],
             "year": "2021"
         },
         {
             "id": 8,
             "text": "Julian Eisenschlos, Syrine Krichene, and Thomas Müller. 2020. Understanding tables with intermediate pre-training. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 281–296, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Julian Eisenschlos",
+                "Syrine Krichene",
+                "Thomas Müller"
+            ],
             "year": "2020"
         },
         {
             "id": 9,
             "text": "Jonathan Herzig, Pawel Krzysztof Nowak, Thomas Müller, Francesco Piccinno, and Julian Eisenschlos. 2020. TaPas: Weakly supervised table parsing via pre-training. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4320–4333, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Jonathan Herzig",
+                "Pawel Krzysztof Nowak",
+                "Thomas Müller",
+                "Francesco Piccinno",
+                "Julian Eisenschlos"
+            ],
             "year": "2020"
         },
         {
             "id": 10,
             "text": "Mohit Iyyer, Wen-tau Yih, and Ming-Wei Chang. 2017. Search-based neural structured learning for sequential question answering. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1821–1831, Vancouver, Canada. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Mohit Iyyer",
+                "Wen-tau Yih",
+                "Ming-Wei Chang"
+            ],
             "year": "2017"
         },
         {
             "id": 11,
             "text": "Qian Liu, Bei Chen, Jiaqi Guo, Zeqi Lin, and Jianguang Lou. 2021. Tapex: Table pre-training via learning a neural sql executor. arXiv preprint arXiv:2107.07653. ",
-            "authors": null,
+            "authors": [
+                "Qian Liu",
+                "Bei Chen",
+                "Jiaqi Guo",
+                "Zeqi Lin",
+                "Jianguang Lou"
+            ],
             "year": "2021"
         },
         {
             "id": 12,
             "text": "Thomas Mueller, Francesco Piccinno, Peter Shaw, Massimo Nicosia, and Yasemin Altun. 2019. Answering conversational questions on structured data without logical forms. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5902–5910, Hong Kong, China. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Thomas Mueller",
+                "Francesco Piccinno",
+                "Peter Shaw",
+                "Massimo Nicosia",
+                "Yasemin Altun"
+            ],
             "year": "2019"
         },
         {
             "id": 13,
             "text": "Panupong Pasupat and Percy Liang. 2015. Compositional semantic parsing on semi-structured tables. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages ",
-            "authors": null,
+            "authors": [
+                "Panupong Pasupat",
+                "Percy Liang"
+            ],
             "year": "2015"
         },
         {
@@ -163,55 +240,113 @@
         {
             "id": 15,
             "text": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. 2018. Self-attention with relative position representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 464–468, New Orleans, Louisiana. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Peter Shaw",
+                "Jakob Uszkoreit",
+                "Ashish Vaswani"
+            ],
             "year": "2018"
         },
         {
             "id": 16,
             "text": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in neural information processing systems, pages 5998–6008. ",
-            "authors": null,
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "Łukasz Kaiser",
+                "Illia Polosukhin"
+            ],
             "year": "2017"
         },
         {
             "id": 17,
             "text": "Bailin Wang, Richard Shin, Xiaodong Liu, Oleksandr Polozov, and Matthew Richardson. 2020. RAT-SQL: Relation-aware schema encoding and linking for text-to-SQL parsers. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7567–7578, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Bailin Wang",
+                "Richard Shin",
+                "Xiaodong Liu",
+                "Oleksandr Polozov",
+                "Matthew Richardson"
+            ],
             "year": "2020"
         },
         {
             "id": 18,
             "text": "Zhiruo Wang, Haoyu Dong, Ran Jia, Jia Li, Zhiyi Fu, Shi Han, and Dongmei Zhang. 2021. TUTA: Tree-based Transformers for Generally Structured Table Pre-training. In Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining, pages 1780–1790. ",
-            "authors": null,
+            "authors": [
+                "Zhiruo Wang",
+                "Haoyu Dong",
+                "Ran Jia",
+                "Jia Li",
+                "Zhiyi Fu",
+                "Shi Han",
+                "Dongmei Zhang"
+            ],
             "year": "2021"
         },
         {
             "id": 19,
             "text": "Pengcheng Yin, Graham Neubig, Wen-tau Yih, and Sebastian Riedel. 2020. TaBERT: Pretraining for joint understanding of textual and tabular data. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 8413– 8426, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Pengcheng Yin",
+                "Graham Neubig",
+                "Wen-tau Yih",
+                "Sebastian Riedel"
+            ],
             "year": "2020"
         },
         {
             "id": 20,
             "text": "Chengxuan Ying, Tianle Cai, Shengjie Luo, Shuxin Zheng, Guolin Ke, Di He, Yanming Shen, and Tie-Yan Liu. 2021. Do Transformers Really Perform Bad for Graph Representation? arXiv preprint arXiv:2106.05234. ",
-            "authors": null,
+            "authors": [
+                "Chengxuan Ying",
+                "Tianle Cai",
+                "Shengjie Luo",
+                "Shuxin Zheng",
+                "Guolin Ke",
+                "Di He",
+                "Yanming Shen",
+                "Tie-Yan Liu"
+            ],
             "year": "2021"
         },
         {
             "id": 21,
             "text": "Tao Yu, Chien-Sheng Wu, Xi Victoria Lin, Bailin Wang, Yi Chern Tan, Xinyi Yang, Dragomir Radev, Richard Socher, and Caiming Xiong. 2020. GraPPa: Grammar-Augmented Pre-Training for Table Semantic Parsing. arXiv preprint arXiv:2009.13845. ",
-            "authors": null,
+            "authors": [
+                "Tao Yu",
+                "Chien-Sheng Wu",
+                "Xi Victoria Lin",
+                "Bailin Wang",
+                "Yi Chern Tan",
+                "Xinyi Yang",
+                "Dragomir Radev",
+                "Richard Socher",
+                "Caiming Xiong"
+            ],
             "year": "2020"
         },
         {
             "id": 22,
             "text": "Hongzhi Zhang, Yingyao Wang, Sirui Wang, Xuezhi Cao, Fuzheng Zhang, and Zhongyuan Wang. 2020. Table fact verification with structure-aware transformer. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1624–1629, Online. Association for Computational Linguistics. ",
-            "authors": null,
+            "authors": [
+                "Hongzhi Zhang",
+                "Yingyao Wang",
+                "Sirui Wang",
+                "Xuezhi Cao",
+                "Fuzheng Zhang",
+                "Zhongyuan Wang"
+            ],
             "year": "2020"
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Figure 2: TABLEFORMER input and attention biases in the self attention module. This example corresponds to table (a) in Figure 1 and its paired question “query”. Different colors in the attention bias matrix denote different types of task independent biases derived based on the table structure and the associated text. "
@@ -220,91 +355,93 @@
                 "images/f2ff00cb4b14a43f48dad0fb91c34973ff5722d8b99785700129d1049568cad0.jpg"
             ],
             "page": 2
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [],
             "table_body": "<table><tr><td>Title</td><td>Length</td></tr><tr><td>Screwed Up</td><td>5:02</td></tr><tr><td>Ghetto Queen</td><td>5:00</td></tr></table>",
-            "img_path": "output/images/7f38fd3fb798f5ca69db21316368a447a37bf3ea53c7624c734319fec5cdc849.jpg",
+            "img_path": "output/demo3/images/7f38fd3fb798f5ca69db21316368a447a37bf3ea53c7624c734319fec5cdc849.jpg",
             "page": 0
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [],
             "table_body": "<table><tr><td>Nation</td><td>Gold</td><td>Silver</td><td>Bronze</td></tr><tr><td>Great Britain</td><td>2</td><td>1</td><td>2</td></tr><tr><td>Spain</td><td>1</td><td>2</td><td>0</td></tr><tr><td>Ukraine</td><td>0</td><td>2</td><td>0</td></tr></table>",
-            "img_path": "output/images/b598039c7fc82805d945aa92f5703da8e7b253279cb5812dce55e5609ddbec2c.jpg",
+            "img_path": "output/demo3/images/b598039c7fc82805d945aa92f5703da8e7b253279cb5812dce55e5609ddbec2c.jpg",
             "page": 0
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [
                 "Table 1: Results on SQA test set before and after perturbation during inference (median of 5 runs). ALL is cell selection accuracy, SEQ is cell selection accuracy for all question sequences, $\\mathrm { { A L L } _ { d } }$ is denotation accuracy for all questions (reported to compare with Liu et al. (2021)). $V P$ is model prediction variation percentage after perturbation. Missing values are those not reported in the original paper. "
             ],
             "table_body": "<table><tr><td></td><td colspan=\"3\">Before Perturb</td><td colspan=\"2\">After Perturb</td></tr><tr><td></td><td>ALL</td><td>SEQ</td><td>ALLd</td><td>ALL</td><td>VP</td></tr><tr><td>Herzig et al. (2020)</td><td>67.2</td><td>40.4</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Eisenschlos et al. (2020)</td><td>71.0</td><td>44.8</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Eisenschlos et al. (2021)</td><td>71.7</td><td>46.1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Liu et al. (2021)</td><td>-</td><td>-</td><td>74.5</td><td>-</td><td>-</td></tr><tr><td>TAPASBASE</td><td>61.1</td><td>31.3</td><td>-</td><td>57.4</td><td>14.0%</td></tr><tr><td>TABLEFORMERBASE</td><td>66.7</td><td>39.7</td><td>-</td><td>66.7</td><td>0.2%</td></tr><tr><td>TAPASLARGE</td><td>66.8</td><td>39.9</td><td>-</td><td>60.5</td><td>15.1%</td></tr><tr><td>TABLEFORMERLARGE</td><td>70.3</td><td>44.8</td><td>-</td><td>70.3</td><td>0.1%</td></tr><tr><td>TAPASBASE inter</td><td>67.5</td><td>38.8</td><td>-</td><td>61.0</td><td>14.3%</td></tr><tr><td>TABLEFORMERBASE inter</td><td>69.4</td><td>43.5</td><td>-</td><td>69.3</td><td>0.1%</td></tr><tr><td>TAPASLARGE inter</td><td>70.6</td><td>43.9</td><td>-</td><td>66.1</td><td>10.8%</td></tr><tr><td>TABLEFORMERLARGE inter</td><td>72.4</td><td>47.5</td><td>75.9</td><td>72.3</td><td>0.1%</td></tr></table>",
-            "img_path": "output/images/4985e5cf6fc288f425e015516669840f1f0c144176ab9de92f5b6c93f736bc08.jpg",
+            "img_path": "output/demo3/images/4985e5cf6fc288f425e015516669840f1f0c144176ab9de92f5b6c93f736bc08.jpg",
             "page": 4
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "Table 2: Binary classification accuracy on TABFACT development and 4 splits of test set, as well as performance on test sets with our perturbation evaluation. Median of 5 independent runs are reported. Missing values are those not reported in the original paper. "
             ],
             "table_body": "<table><tr><td></td><td colspan=\"5\">Before Perturb</td><td colspan=\"4\">After Perturb</td></tr><tr><td></td><td>dev</td><td>test</td><td>testsimple</td><td>testcomplex</td><td>testsmall</td><td>test</td><td>testsimple</td><td>testcomplex</td><td>testsmall</td></tr><tr><td>Eisenschlos et al. (2020)</td><td>81.0</td><td>81.0</td><td>92.3</td><td>75.6</td><td>83.9</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Eisenschlos et al. (2021)</td><td>-</td><td>81.4</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>\\(TAPAS_{BASE}\\)</td><td>72.8</td><td>72.3</td><td>84.8</td><td>66.2</td><td>74.4</td><td>71.2</td><td>83.4</td><td>65.2</td><td>72.5</td></tr><tr><td>\\(TABLEFORMER_{BASE}\\)</td><td>75.1</td><td>75.0</td><td>88.2</td><td>68.5</td><td>77.1</td><td>75.0</td><td>88.2</td><td>68.5</td><td>77.1</td></tr><tr><td>\\(TAPAS_{LARGE}\\)</td><td>74.7</td><td>74.5</td><td>86.6</td><td>68.6</td><td>76.8</td><td>73.7</td><td>86.0</td><td>67.7</td><td>76.1</td></tr><tr><td>\\(TABLEFORMER_{LARGE}\\)</td><td>77.2</td><td>77.0</td><td>90.2</td><td>70.5</td><td>80.3</td><td>77.0</td><td>90.2</td><td>70.5</td><td>80.3</td></tr><tr><td>\\(TAPAS_{BASE}\\) inter</td><td>78.4</td><td>77.9</td><td>90.1</td><td>71.9</td><td>80.5</td><td>76.8</td><td>89.5</td><td>70.5</td><td>79.7</td></tr><tr><td>\\(TABLEFORMER_{BASE}\\) inter</td><td>79.7</td><td>79.2</td><td>91.6</td><td>73.1</td><td>81.7</td><td>79.2</td><td>91.6</td><td>73.1</td><td>81.7</td></tr><tr><td>\\(TAPAS_{LARGE}\\) inter</td><td>80.6</td><td>80.6</td><td>92.0</td><td>74.9</td><td>83.1</td><td>79.2</td><td>91.7</td><td>73.0</td><td>83.0</td></tr><tr><td>\\(TABLEFORMER_{LARGE}\\) inter</td><td>82.0</td><td>81.6</td><td>93.3</td><td>75.9</td><td>84.6</td><td>81.6</td><td>93.3</td><td>75.9</td><td>84.6</td></tr></table>",
-            "img_path": "output/images/f19aa6471026b7569a170aafb0532ea994a8b1e7050bbd7163fac01197e60ad2.jpg",
+            "img_path": "output/demo3/images/f19aa6471026b7569a170aafb0532ea994a8b1e7050bbd7163fac01197e60ad2.jpg",
             "page": 5
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "Table 3: Denotation accuracy on WTQ development and test set. Median of 5 independent runs are reported. "
             ],
             "table_body": "<table><tr><td>Model</td><td>dev</td><td>test</td></tr><tr><td>Herzig et al. (2020)</td><td>-</td><td>48.8</td></tr><tr><td>Eisenschlos et al. (2021)</td><td>-</td><td>51.5</td></tr><tr><td>\\( TAPAS_{BASE} \\)</td><td>23.6</td><td>24.1</td></tr><tr><td>\\( TABLEFORMER_{BASE} \\)</td><td>34.4</td><td>34.8</td></tr><tr><td>\\( TAPAS_{LARGE} \\)</td><td>40.8</td><td>41.7</td></tr><tr><td>\\( TABLEFORMER_{LARGE} \\)</td><td>42.5</td><td>43.9</td></tr><tr><td>\\( TAPAS_{BASE} \\) inter-sqa</td><td>44.8</td><td>45.1</td></tr><tr><td>\\( TABLEFORMER_{BASE} \\) inter-sqa</td><td>46.7</td><td>46.5</td></tr><tr><td>\\( TAPAS_{LARGE} \\) inter-sqa</td><td>49.9</td><td>50.4</td></tr><tr><td>\\( TABLEFORMER_{LARGE} \\) inter-sqa</td><td>51.3</td><td>52.6</td></tr></table>",
-            "img_path": "output/images/8f9a9623fe9d710c34dead174758726c749a2c73b586f035eb89a54a6a95bc34.jpg",
+            "img_path": "output/demo3/images/8f9a9623fe9d710c34dead174758726c749a2c73b586f035eb89a54a6a95bc34.jpg",
             "page": 5
         },
         {
-            "id": "Table 6",
+            "id": 6,
             "type": "table",
             "caption": [
                 "Table 4: Model size comparison. "
             ],
             "table_body": "<table><tr><td>Model</td><td>Number of parameters</td></tr><tr><td>TAPASBASE</td><td>110 M</td></tr><tr><td>TABLEFORMERBASE</td><td>110 M - 2*512*768 + 12*12*13 = 110 M - 0.8 M + 0.002 M</td></tr><tr><td>TAPASLARGE</td><td>340 M</td></tr><tr><td>TABLEFORMERLARGE</td><td>340 M - 2*512*1024 + 24*16*13 = 340 M - 1.0 M + 0.005M</td></tr></table>",
-            "img_path": "output/images/da70ceace6832948f00cc13b8c7bc40ee7e63f35dad961a1f34770e4ecea9a74.jpg",
+            "img_path": "output/demo3/images/da70ceace6832948f00cc13b8c7bc40ee7e63f35dad961a1f34770e4ecea9a74.jpg",
             "page": 6
         },
         {
-            "id": "Table 7",
+            "id": 7,
             "type": "table",
             "caption": [
                 "Table 5: ALL questions’ cell selection accuracy of TABLEFORMER variants on SQA development set. rc-$g p$ represents the setting including row ids, column ids and global positional ids, c-gp represents column ids and global positional ids, $g p$ represents global positional ids, and pcp represents per-cell positional ids. “SAT” represents masking out some attention scores. “SO” represents adding attention bias before scaling. "
             ],
             "table_body": "<table><tr><td></td><td>rc-gp</td><td>c-gp</td><td>gp</td><td>pcp</td></tr><tr><td>TAPASBASE</td><td>57.6</td><td>47.4</td><td>46.4</td><td>29.1</td></tr><tr><td>TAPASBASE-SAT</td><td>45.2</td><td>-</td><td>-</td><td>-</td></tr><tr><td>TABLEFORMERBASE-SO</td><td>60.0</td><td>60.2</td><td>59.8</td><td>60.7</td></tr><tr><td>TABLEFORMERBASE</td><td>62.2</td><td>61.5</td><td>61.7</td><td>61.9</td></tr></table>",
-            "img_path": "output/images/61310378aff8ffe373f2b42351cb0efa8369a23dbe88ea42df8a4ed4b209b6a4.jpg",
+            "img_path": "output/demo3/images/61310378aff8ffe373f2b42351cb0efa8369a23dbe88ea42df8a4ed4b209b6a4.jpg",
             "page": 6
         },
         {
-            "id": "Table 8",
+            "id": 8,
             "type": "table",
             "caption": [
                 "Table 6: Comparison of TABLEFORMER and perturbed data augmentation on SQA test set, where $V P$ represents model prediction variation percentage after perturbation. Median of 5 independent runs are reported. "
             ],
             "table_body": "<table><tr><td></td><td colspan=\"2\">Befor Perturb</td><td colspan=\"2\">After Perturb</td></tr><tr><td></td><td>ALL</td><td>SEQ</td><td>ALL</td><td>VP</td></tr><tr><td>TAPASBASE</td><td>61.1</td><td>31.3</td><td>57.4</td><td>14.0%</td></tr><tr><td>TAPASBASE 1p</td><td>63.4</td><td>34.6</td><td>63.4</td><td>9.9%</td></tr><tr><td>TAPASBASE 2p</td><td>64.6</td><td>35.6</td><td>64.5</td><td>8.4%</td></tr><tr><td>TAPASBASE 4p</td><td>65.1</td><td>37.0</td><td>65.0</td><td>8.1%</td></tr><tr><td>TAPASBASE 8p</td><td>65.1</td><td>37.3</td><td>64.3</td><td>7.2%</td></tr><tr><td>TAPASBASE 16p</td><td>62.4</td><td>33.6</td><td>62.2</td><td>7.0%</td></tr><tr><td>TABLEFORMERBASE</td><td>66.7</td><td>39.7</td><td>66.7</td><td>0.1%</td></tr></table>",
-            "img_path": "output/images/55bc43bd24a57add146b8855141836e75a71741fc503d17f24218cd2be653beb.jpg",
+            "img_path": "output/demo3/images/55bc43bd24a57add146b8855141836e75a71741fc503d17f24218cd2be653beb.jpg",
             "page": 7
         },
         {
-            "id": "Table 9",
+            "id": 9,
             "type": "table",
             "caption": [
                 "Table 7: Ablation study of proposed attention biases. "
             ],
             "table_body": "<table><tr><td></td><td>ALL</td><td>SEQ</td></tr><tr><td>TABLEFORMERBASE</td><td>62.1</td><td>38.4</td></tr><tr><td>- Same Row</td><td>32.1</td><td>2.8</td></tr><tr><td>- Same Column</td><td>62.1</td><td>37.7</td></tr><tr><td>- Same Cell</td><td>61.8</td><td>38.4</td></tr><tr><td>- Cell to Column Header</td><td>60.7</td><td>36.6</td></tr><tr><td>- Cell to Sentence</td><td>60.5</td><td>36.4</td></tr><tr><td>- Header to Column Cell</td><td>60.5</td><td>35.8</td></tr><tr><td>- Header to Other Header</td><td>60.6</td><td>35.8</td></tr><tr><td>- Header to Same Header</td><td>61.0</td><td>36.9</td></tr><tr><td>- Header to Sentence</td><td>61.1</td><td>36.3</td></tr><tr><td>- Sentence to Cell</td><td>60.8</td><td>36.2</td></tr><tr><td>- Sentence to Header</td><td>61.0</td><td>37.3</td></tr><tr><td>- Sentence to Sentence</td><td>60.0</td><td>35.3</td></tr><tr><td>- All Column Related (# 2, 4, 6)</td><td>54.5</td><td>29.3</td></tr></table>",
-            "img_path": "output/images/06fb724d1c3918460860822b4a1a8d5e20c7e2613dcc9d52542f9517d45052e3.jpg",
+            "img_path": "output/demo3/images/06fb724d1c3918460860822b4a1a8d5e20c7e2613dcc9d52542f9517d45052e3.jpg",
             "page": 7
         }
     ]

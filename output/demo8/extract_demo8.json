@@ -1,5 +1,9 @@
 {
     "title": "CNN Is All You Need ",
+    "authors": [
+        "Qiming Chen",
+        "Ren Wu"
+    ],
     "abstract": "The Convolution Neural Network (CNN) has demonstrated the unique advantage in audio, image and text learning; recently it has also challenged Recurrent Neural Networks (RNNs) with long short-term memory cells (LSTM) in sequence-tosequence learning, since the computations involved in CNN are easily parallelizable whereas those involved in RNN are mostly sequential, leading to a performance bottleneck. However, unlike RNN, the native CNN lacks the history sensitivity required for sequence transformation; therefore enhancing the sequential order awareness, or position-sensitivity, becomes the key to make CNN the general deep learning model. In this work we introduce an extended CNN model with strengthen position-sensitivity, called PoseNet. A notable feature of PoseNet is the asymmetric treatment of position information in the encoder and the decoder. Experiments shows that PoseNet allows us to improve the accuracy of CNN based sequence-to-sequence learning significantly, achieving around 33-36 BLEU scores on the WMT 2014 English-to-German translation task, and around 44-46 BLEU scores on the English-to-French translation task. ",
     "keywords": null,
     "language": "en",
@@ -113,7 +117,7 @@
     "references": [],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Figure 1: The encoder (left) and decoder (right) stacks and stacks: "
@@ -122,16 +126,18 @@
                 "images/f8b80ee8a1d800f5f7bd20617cd7703bd66c8dd461ff839554d49707164a42bb.jpg"
             ],
             "page": 5
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "WMT 2014 En-De Translation Task ",
                 "Table 1: Performance of our models in EN-DE and EN-FR translation tasks with benchmark data translate_ende_wmt $3 2 k$ and translate_enfr_wmt $3 2 k$ compared to the latest published results; the “avg BLEU” averages the scores measured at the last 10 checkpoints "
             ],
             "table_body": "<table><tr><td>Model</td><td>EN-DE</td><td>BLEU</td><td>EN-FR</td><td>BLEU</td></tr><tr><td>Bytenet [12]</td><td>23.75</td><td></td><td></td><td></td></tr><tr><td>GNMT + RL [20]</td><td>24.6</td><td></td><td>39.92</td><td></td></tr><tr><td>ConvS2S [7]</td><td>25.16</td><td></td><td>40.46</td><td></td></tr><tr><td>MoE [14]</td><td>26.03</td><td></td><td>40.56</td><td></td></tr><tr><td>GNMT + RL Ensemble [22]</td><td>26.30</td><td></td><td>41.16</td><td></td></tr><tr><td>ConvS2S Ensemble [7]</td><td>26.36</td><td></td><td>41.29</td><td></td></tr><tr><td>Transformer (base) [19]</td><td>27.3</td><td></td><td>38.1</td><td></td></tr><tr><td>Transformer (big) [19]</td><td>28.4</td><td></td><td>41.0</td><td></td></tr><tr><td>SliceNet (Full, 2048) [11]</td><td>25.5</td><td></td><td></td><td></td></tr><tr><td>SliceNet (Super 2/3, 3072) [11]</td><td>26.1</td><td></td><td></td><td></td></tr><tr><td>PoseNet (2048)</td><td colspan=\"2\">33-36 (avg 34.92)</td><td colspan=\"2\">44-46 (avg 45.54)</td></tr><tr><td></td><td colspan=\"2\">(250K-500K steps)</td><td colspan=\"2\">(1000K steps)</td></tr></table>",
-            "img_path": "output/images/2b9d189f7c029c0e47649251d3e0fa9748ff841f60fce539133130f73109d24a.jpg",
+            "img_path": "output/demo8/images/2b9d189f7c029c0e47649251d3e0fa9748ff841f60fce539133130f73109d24a.jpg",
             "page": 7
         }
     ]

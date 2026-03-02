@@ -1,7 +1,19 @@
 {
     "title": "REVIEW ",
+    "authors": [
+        "Khalid Al‑hammuri1",
+        "Fayez Gebali1",
+        "Awos Kanan2",
+        "Ilamparithi Thirumarai Chelvan1"
+    ],
     "abstract": "Abstract ",
-    "keywords": null,
+    "keywords": [
+        "Vision transformer",
+        "Digital health",
+        "Telehealth",
+        "Artifcial intelligence",
+        "Medical imaging"
+    ],
     "language": "pl",
     "sections": [
         {
@@ -344,7 +356,7 @@
     "references": [],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": null,
             "img_path": [
@@ -353,7 +365,7 @@
             "page": 0
         },
         {
-            "id": "Figure 2",
+            "id": 2,
             "type": "image",
             "caption": [
                 "Fig. 1 Transformer architecture [1] "
@@ -364,7 +376,7 @@
             "page": 1
         },
         {
-            "id": "Figure 3",
+            "id": 3,
             "type": "image",
             "caption": [
                 "Fig. 2 Encoder block in the transformer architecture [1] "
@@ -375,7 +387,7 @@
             "page": 2
         },
         {
-            "id": "Figure 4",
+            "id": 4,
             "type": "image",
             "caption": [
                 "(a) "
@@ -387,7 +399,7 @@
             "page": 3
         },
         {
-            "id": "Figure 5",
+            "id": 5,
             "type": "image",
             "caption": [
                 "(b) "
@@ -398,7 +410,7 @@
             "page": 3
         },
         {
-            "id": "Figure 6",
+            "id": 6,
             "type": "image",
             "caption": [
                 "(c) ",
@@ -410,7 +422,7 @@
             "page": 3
         },
         {
-            "id": "Figure 7",
+            "id": 7,
             "type": "image",
             "caption": [
                 "Fig. 4 Positional encoding for the feature representations. Top: Sinusoidal representation for the positional encoding (P0-P3) at diferent indices and dimensions. Bottom: Vector representation for the positional encoding and feature embedding; P is the position encoding and E is the embedding vector "
@@ -422,7 +434,7 @@
             "page": 4
         },
         {
-            "id": "Figure 8",
+            "id": 8,
             "type": "image",
             "caption": [
                 "(B) ",
@@ -435,7 +447,7 @@
             "page": 5
         },
         {
-            "id": "Figure 9",
+            "id": 9,
             "type": "image",
             "caption": [
                 "Fig. 6 MLP ",
@@ -448,7 +460,7 @@
             "page": 6
         },
         {
-            "id": "Figure 10",
+            "id": 10,
             "type": "image",
             "caption": [
                 "Fig. 8 Distribution of medical imaging applications of the ViT according to the survey [33] "
@@ -459,7 +471,7 @@
             "page": 7
         },
         {
-            "id": "Figure 11",
+            "id": 11,
             "type": "image",
             "caption": [
                 "(a) ",
@@ -471,7 +483,7 @@
             "page": 8
         },
         {
-            "id": "Figure 12",
+            "id": 12,
             "type": "image",
             "caption": [
                 "Fig. 10 Example of using the ViT for tumor classifcation in MRI images using TransMed [53]. The tumor is enclosed by the dashed circle indicated by the yellow arrow "
@@ -483,7 +495,7 @@
             "page": 9
         },
         {
-            "id": "Figure 13",
+            "id": 13,
             "type": "image",
             "caption": [
                 "Transformer Prediction: Retract peritoneum incise with scissors and electrocautery. "
@@ -494,7 +506,7 @@
             "page": 10
         },
         {
-            "id": "Figure 14",
+            "id": 14,
             "type": "image",
             "caption": [
                 "Transformer Prediction: Continue tying. "
@@ -505,7 +517,7 @@
             "page": 10
         },
         {
-            "id": "Figure 15",
+            "id": 15,
             "type": "image",
             "caption": [
                 "Transformer Prediction: Process completed at first horizontal axis position. ",
@@ -520,7 +532,7 @@
             "page": 10
         },
         {
-            "id": "Figure 16",
+            "id": 16,
             "type": "image",
             "caption": [
                 "Fig. 12 Top: Diferent reconstruction methods from $T _ { \\tau }$ weighted acquisition of the fast MRI using diferent methods. ZF is a traditional Fourier method [70]. LORKAS [71, 72], $\\mathsf { G A N } _ { s u b }$ [73], SSDU [74], $\\mathsf { G A N } _ { p r i o r }$ [75], and SAGAN [76] are generative adversarial network (GAN) reconstruction-based methods. SLATER is a ViT-based method [69]. Bottom: Reconstruction error map [69] "
@@ -531,7 +543,7 @@
             "page": 11
         },
         {
-            "id": "Figure 17",
+            "id": 17,
             "type": "image",
             "caption": [
                 "Fig. 13 Schematic of the components of the ViT in a telehealth ecosystem "
@@ -542,7 +554,7 @@
             "page": 13
         },
         {
-            "id": "Figure 18",
+            "id": 18,
             "type": "image",
             "caption": [
                 "(B) ",
@@ -555,7 +567,7 @@
             "page": 14
         },
         {
-            "id": "Figure 19",
+            "id": 19,
             "type": "image",
             "caption": [
                 "Fig. 15 Illustration of data poisoning by an adversarial attack that fools learning-based models trained on medical image datasets "
@@ -566,7 +578,7 @@
             "page": 15
         },
         {
-            "id": "Figure 20",
+            "id": 20,
             "type": "image",
             "caption": [
                 "Fig. 16 Roadmap for ViT implementation "
@@ -577,7 +589,7 @@
             "page": 16
         },
         {
-            "id": "Figure 21",
+            "id": 21,
             "type": "image",
             "caption": [
                 "Fig. 17 Comparison between ViT and ResNet (BiT) architecture accuracies on diferent sizes of training data. The y-axis is the size of pretraining data in the ImageNet dataset. The x-axis is the accuracy selected from the top $1 \\%$ of the selected fve-shots of ImageNet. Results according to the study in ref. [1] "
@@ -588,7 +600,7 @@
             "page": 17
         },
         {
-            "id": "Figure 22",
+            "id": 22,
             "type": "image",
             "caption": [
                 "Fig. 18 Transformer typical "
@@ -599,7 +611,7 @@
             "page": 19
         },
         {
-            "id": "Figure 23",
+            "id": 23,
             "type": "image",
             "caption": [
                 "Fig. 19 Example of using Transformer architecture for image recognition [1] "
@@ -611,7 +623,7 @@
             "page": 20
         },
         {
-            "id": "Figure 24",
+            "id": 24,
             "type": "image",
             "caption": [
                 "Fig. 20 a Transformer layer diagram; b TransUnet architecture [10] "
@@ -622,7 +634,7 @@
             "page": 21
         },
         {
-            "id": "Figure 25",
+            "id": 25,
             "type": "image",
             "caption": [
                 "Fig. 21 Swin TransUn "
@@ -633,7 +645,7 @@
             "page": 22
         },
         {
-            "id": "Figure 26",
+            "id": 26,
             "type": "image",
             "caption": [
                 "Fig. 22 Examples of global features that are used for mortality predictions are numbered from (112-139). The numbers in the table depicts the rank sore and each column represents a feature and its importance score by diferent methods on the horizontal line [109]. AutoInt [111], LSTM [112], TCN [113], Transformer [8], IMVLSTM [114] are the machine learning methodologies "
@@ -642,75 +654,77 @@
                 "images/1107b813de9c1d135bbabc12f58ae4b1e378c84536d61f2a0354c572c3345fe0.jpg"
             ],
             "page": 23
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "Table 1 Examples of ViT applications in medical image segmentation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransUnet [10]</td><td>MRI, CT</td><td>CT and MRI cardiac segmentation</td></tr><tr><td>Dual-TransUnet [11]</td><td>Microscopy</td><td>Skin lesion analysis [45]; gland segmentation in histology [46]; nuclei in divergent images [47]</td></tr><tr><td>Swin-Unet [35]</td><td>CT</td><td>Abdominal multiorgan segmentation</td></tr><tr><td>iSegFormer [37]</td><td>3D MRI</td><td>Knee image segmentation</td></tr><tr><td>3D UX-net [38]</td><td>3D MRI</td><td>Brain tissue segmentation</td></tr><tr><td>UNesT [39]</td><td>MRI, CT</td><td>Abdominal multiorgan segmentation + kidney segmenta-tion + whole brain segmentation</td></tr><tr><td>NestedFormer [40]</td><td>MRI</td><td>Brain tumor segmentation</td></tr><tr><td>RECIST [41]</td><td>CT</td><td>Automatic tumor segmentation and diameter size prediction</td></tr><tr><td>GT U-Net [42]</td><td>X-ray</td><td>Tooth therapy: root canal segmentation</td></tr><tr><td>FCN-transformer [43]</td><td>Colonoscopy</td><td>CRC segmentation</td></tr><tr><td>TraSeTR [44]</td><td>Endoscopy</td><td>Robot-assisted surgery</td></tr></table>",
-            "img_path": "output/images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
+            "img_path": "output/demo9/images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
             "page": 8
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [
                 "Table 2 Examples of ViT applications in medical image detection "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>DETR [48]</td><td>MRI</td><td>Lymphoproliferative diseases detection</td></tr><tr><td>COTR [49]</td><td>Colonoscopy</td><td>CRC detection</td></tr><tr><td>SATr [50]</td><td>CT</td><td>Universal lesion detection</td></tr><tr><td>UCLT [51]</td><td>CT</td><td>Lung nodule detection</td></tr><tr><td>IHD [52]</td><td>CT</td><td>Brain injury hemorrhage detection</td></tr></table>",
-            "img_path": "output/images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
+            "img_path": "output/demo9/images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
             "page": 9
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [
                 "Table 3 Examples of ViT applications in medical image classifcation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransMed [53]</td><td>MRI</td><td>Multi-modal classification: disease classification, lesion identification</td></tr><tr><td>Shoulder implant manufacture [54]</td><td>X-ray</td><td>Orthopedics: Shoulder implant manufacture classification</td></tr><tr><td>GasHis-transformer [55]</td><td>Histopathology microscopic images</td><td>Gastric cancer classification and detection</td></tr><tr><td>Multi-scale cytopathology [56]</td><td>Cytopathological images</td><td>Cervical cancer classification</td></tr><tr><td>Brain metastases classification [57]</td><td>MRI</td><td>Classification of the brain tumor of central nervous system</td></tr><tr><td>ScoreNet [58]</td><td>Histology Datasets of haematoxylin +eosin</td><td>Breast cancer classification</td></tr><tr><td>RadioTransformer [59]</td><td>X-ray</td><td>COVID-19 classification using chest X-ray images</td></tr><tr><td>TractoFormer [60]</td><td>Diffusion MRI</td><td>Nerve tracts modelling and 3D fiber representation</td></tr></table>",
-            "img_path": "output/images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
+            "img_path": "output/demo9/images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
             "page": 10
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "Table 4 Examples of ViT applications in medical image prediction "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>3D-SMx [64]</td><td>3D (MRI, CT)</td><td>Context-aware dense prediction for different diseases that includes hemorrhagic stroke, abdominal CT images, brain tumor</td></tr><tr><td>GBT [65]</td><td>Cancer genome (TCGA)</td><td>Computation pathology: genetic alteration</td></tr><tr><td>RTM [66]</td><td>Ultrasound</td><td>Fetal weigh at birth prediction</td></tr><tr><td>CLIMAT [67]</td><td>X-ray</td><td>Forecasts knee osteoarthritis trajectory</td></tr><tr><td>Sig-Former [63]</td><td>Laparoscopy</td><td>Surgical instructions prediction</td></tr><tr><td>SIGT [62]</td><td>Robot camera</td><td>Surgical instruction prediction and image captioning</td></tr></table>",
-            "img_path": "output/images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
+            "img_path": "output/demo9/images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
             "page": 11
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "Table 5 Examples of ViT applications in medical image reconstruction "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>SLATER [69]</td><td>MRI</td><td>MRI unsupervised reconstruction</td></tr><tr><td>T2Net [77]</td><td>MRI</td><td>Image reconstruction and super-resolution enhancement</td></tr><tr><td>ReconFormer[78], FastMRIRecon [79]</td><td>MRI</td><td>Accelerated MRI reconstruction</td></tr><tr><td>E-DSSR [80]</td><td>Endoscopy</td><td>Surgical robot scene reconstruction</td></tr><tr><td>DuTrans [81], MIST-net [82]</td><td>CT</td><td>CT sinograms reconstruction</td></tr></table>",
-            "img_path": "output/images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
+            "img_path": "output/demo9/images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
             "page": 12
         },
         {
-            "id": "Table 6",
+            "id": 6,
             "type": "table",
             "caption": [
                 "Table 6 Examples of ViT applications in medical report generation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>RTMIC [88]</td><td>Medical images general</td><td>Report generation from medical images (e.g., MRI, CT, PET and X-ray)</td></tr><tr><td>IFCC [89]</td><td>Medical images general</td><td>Medical report completeness and consistency</td></tr><tr><td>AlignTransformer [91]</td><td>Medical images general</td><td>Long report generation from medical images tags</td></tr><tr><td>LDASR [92]</td><td>Surgical robot camera</td><td>Surgical report generation</td></tr></table>",
-            "img_path": "output/images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
+            "img_path": "output/demo9/images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
             "page": 14
         },
         {
-            "id": "Table 7",
+            "id": 7,
             "type": "table",
             "caption": [
                 "Table 7 Examples of ViT applications in security "
             ],
             "table_body": "<table><tr><td>Method</td><td>Application</td></tr><tr><td>Jigsaw block-based encryption [96]</td><td>Data encryption</td></tr><tr><td>MFVT [97]</td><td>Anomaly detection</td></tr><tr><td>Image conversion from network data-flow [98]</td><td>Network intrusion system detection</td></tr><tr><td>Zero-shot face [99]</td><td>Anti-spoofing</td></tr><tr><td>Backdoor defender [100]</td><td>Patch processing</td></tr></table>",
-            "img_path": "output/images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
+            "img_path": "output/demo9/images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
             "page": 15
         }
     ]

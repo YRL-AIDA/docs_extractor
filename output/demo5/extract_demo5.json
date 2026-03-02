@@ -1,5 +1,8 @@
 {
     "title": "Deep Learning applied to NLP ",
+    "authors": [
+        "Jugal Kalita"
+    ],
     "abstract": "Abstract—Convolutional Neural Network (CNNs) are typically associated with Computer Vision. CNNs are responsible for major breakthroughs in Image Classification and are the core of most Computer Vision systems today. More recently CNNs have been applied to problems in Natural Language Processing and gotten some interesting results. In this paper, we will try to explain the basics of CNNs, its different variations and how they have been applied to NLP. ",
     "keywords": null,
     "language": "en",
@@ -163,175 +166,304 @@
         {
             "id": 1,
             "text": "[1] J. Zhang and C. Zong, Deep Neural Networks in Machine Translation: An Overview, IEEE Intell. Syst., 2015. ",
-            "authors": null,
+            "authors": [
+                "J. Zhang",
+                "C. Zong"
+            ],
             "year": "2015"
         },
         {
             "id": 2,
             "text": "[2] C. Zhu, X. Qiu, X. Chen, and X. Huang, A Re-ranking Model for Dependency Parser with Recursive Convolutional Neural Network, Proc. 53rd Annu. Meet. Assoc. Comput. Linguist. 7th Int. Jt. Conf. Nat. Lang. Process. Volume 1 Long Pap., pp. 1159?1168, 2015. ",
-            "authors": null,
+            "authors": [
+                "C. Zhu",
+                "X. Qiu",
+                "X. Chen",
+                "X. Huang"
+            ],
             "year": "2015"
         },
         {
             "id": 3,
             "text": "[3] P. Wang, J. Xu, B. Xu, C. Liu, H. Zhang, F. Wang, and H. Hao, Semantic Clustering and Convolutional Neural Network for Short Text Categorization, Proc. ACL 2015, pp. 352?357, 2015. ",
-            "authors": null,
+            "authors": [
+                "P. Wang",
+                "J. Xu",
+                "B. Xu",
+                "C. Liu",
+                "H. Zhang",
+                "F. Wang",
+                "H. Hao"
+            ],
             "year": "2015"
         },
         {
             "id": 4,
             "text": "[4] M. Francis-Landau, G. Durrett, and D. Klein, Capturing Semantic Similarity for Entity Linking with Convolutional Neural Networks, pp. 1256?1261, 2016. ",
-            "authors": null,
+            "authors": [
+                "M. Francis-Landau",
+                "G. Durrett",
+                "D. Klein"
+            ],
             "year": "2016"
         },
         {
             "id": 5,
             "text": "[5] R. Zhang, H. Lee, and D. Radev, Dependency Sensitive Convolutional Neural Networks for Modeling Sentences and Documents, Naacl-Hlt-2016, pp. 1512?1521, 2016. ",
-            "authors": null,
+            "authors": [
+                "R. Zhang",
+                "H. Lee",
+                "D. Radev"
+            ],
             "year": "2016"
         },
         {
             "id": 6,
             "text": "[6] Y. Chen, L. Xu, K. Liu, D. Zeng, and J. Zhao, Event Extraction via Dynamic Multi-Pooling Convolutional Neural Networks, Proc. ACL 2015, pp. 167?176, 2015. ",
-            "authors": null,
+            "authors": [
+                "Y. Chen",
+                "L. Xu",
+                "K. Liu",
+                "D. Zeng",
+                "J. Zhao"
+            ],
             "year": "2015"
         },
         {
             "id": 7,
             "text": "[7] T. H. Nguyen and R. Grishman, Event Detection and Domain Adaptation with Convolutional Neural Networks, Proc. 53rd Annu. Meet. Assoc. Comput. Linguist. 7th Int. Jt. Conf. Nat. Lang. Process. (Volume 2 Short Pap., pp. 365?371, 2015. ",
-            "authors": null,
+            "authors": [
+                "T. H. Nguyen",
+                "R. Grishman"
+            ],
             "year": "2015"
         },
         {
             "id": 8,
             "text": "[8] N. T. Vu, H. Adel, P. Gupta, and H. Schutze, Combining Recurrent and Convolutional Neural Networks for Relation Classification, pp. 534?539, 2016. ",
-            "authors": null,
+            "authors": [
+                "N. T. Vu",
+                "H. Adel",
+                "P. Gupta",
+                "H. Schutze"
+            ],
             "year": "2016"
         },
         {
             "id": 9,
             "text": "[9] A. Naacl, Comparing Convolutional Neural Networks to Traditional Models for Slot Filling pp. 1?9, 2016. ",
-            "authors": null,
+            "authors": [
+                "A. Naacl"
+            ],
             "year": "2016"
         },
         {
             "id": 10,
             "text": "[10] M. Denil, A. Demiraj, N. Kalchbrenner, P. Blunsom, and N. de Freitas, Modelling, Visualising and Summarising Documents with a Single Convolutional Neural Network, arXiv Prepr. arXiv1406.3830, pp. 1?10, 2014. ",
-            "authors": null,
+            "authors": [
+                "M. Denil",
+                "A. Demiraj",
+                "N. Kalchbrenner",
+                "P. Blunsom",
+                "N. de Freitas"
+            ],
             "year": "2014"
         },
         {
             "id": 11,
             "text": "[11] B. Hu, Z. Tu, Z. Lu, and Q. Chen, Context-Dependent Translation Selection Using Convolutional Neural Network, Proc. 53rd Annu. Meet. Assoc. Comput. Linguist. 7th Int. Jt. Conf. Nat. Lang. Process. (Volume 1 Long Pap., no. Section 3, pp. 536?541, 2015. ",
-            "authors": null,
+            "authors": [
+                "B. Hu",
+                "Z. Tu",
+                "Z. Lu",
+                "Q. Chen"
+            ],
             "year": "2015"
         },
         {
             "id": 12,
             "text": "[12] F. Meng, Z. Lu, M. Wang, H. Li, W. Jiang, and Q. Liu, Encoding Source Language with Convolutional Neural Network for Machine Translation, Proc. 53rd Annu. Meet. Assoc. Comput. Linguist. 7th Int. Jt. Conf. Nat. Lang. Process. (Volume 1 Long Pap., pp. 20?30, 2015. ",
-            "authors": null,
+            "authors": [
+                "F. Meng",
+                "Z. Lu",
+                "M. Wang",
+                "H. Li",
+                "W. Jiang",
+                "Q. Liu"
+            ],
             "year": "2015"
         },
         {
             "id": 13,
             "text": "[13] L. Dong, F. Wei, M. Zhou, and K. Xu, Question Answering over Freebase with Multi-Column Convolutional Neural Networks, Proc. ACL 2015, pp. 260?269, 2015. ",
-            "authors": null,
+            "authors": [
+                "L. Dong",
+                "F. Wei",
+                "M. Zhou",
+                "K. Xu"
+            ],
             "year": "2015"
         },
         {
             "id": 14,
             "text": "[14] A. Severyn and A. Moschitti, Modeling Relational Information in Question-Answer Pairs with Convolutional Neural Networks, Arxiv, 2016. ",
-            "authors": null,
+            "authors": [
+                "A. Severyn",
+                "A. Moschitti"
+            ],
             "year": "2016"
         },
         {
             "id": 15,
             "text": "[15] D. Palaz, M. Magimai-Doss, and R. Collobert, Analysis of CNN-based speech recognition system using raw speech as input, Proc. Annu. Conf. Int. Speech Commun. Assoc. INTERSPEECH, vol. 2015-Janua, pp. 11?15, 2015. ",
-            "authors": null,
+            "authors": [
+                "D. Palaz",
+                "M. Magimai-Doss",
+                "R. Collobert"
+            ],
             "year": "2015"
         },
         {
             "id": 16,
             "text": "[16] W. Song and J. Cai, End-to-End Deep Neural Network for Automatic Speech Recognition, pp. 1?8, 2015. ",
-            "authors": null,
+            "authors": [
+                "W. Song",
+                "J. Cai"
+            ],
             "year": "2015"
         },
         {
             "id": 17,
             "text": "[17] O. Abdel-hamid, H. Jiang, and G. Penn Applying convolutional neural networks concepts to hybrid NN-HMM model for speech recognition, Department of Computer Science and Engineering, York University, Toronto, Canada Department of Computer Science, University of Toronto, Toronto, Canada, Acoust. Speech Signal Process. (ICASSP), 2012 IEEE Int. Conf., pp. 4277?4280, 2012. ",
-            "authors": null,
+            "authors": [
+                "O. Abdel-hamid",
+                "H. Jiang",
+                "G. Penn"
+            ],
             "year": "2012"
         },
         {
             "id": 18,
             "text": "[18] C. N. dos Santos, B. Xiang, and B. Zhou, Classifying Relations by Ranking with Convolutional Neural Networks, Acl-2015, no. 3, pp. 626?634, 2015. ",
-            "authors": null,
+            "authors": [
+                "C. N. dos Santos",
+                "B. Xiang",
+                "B. Zhou"
+            ],
             "year": "2015"
         },
         {
             "id": 19,
             "text": "[19] M. Wang, Z. Lu, H. Li, W. Jiang, and Q. Liu, A Convolutional Architecture for Word Sequence Prediction, Acl-2015, pp. 1567?1576, 2015. ",
-            "authors": null,
+            "authors": [
+                "M. Wang",
+                "Z. Lu",
+                "H. Li",
+                "W. Jiang",
+                "Q. Liu"
+            ],
             "year": "2015"
         },
         {
             "id": 20,
             "text": "[20] N. Kalchbrenner, E. Grefenstette, and P. Blunsom, A Convolutional Neural Network for Modelling Sentences, Proc. 52nd Annu. Meet. Assoc. Comput. Linguist. (ACL 2014), pp. 655?665, 2014. ",
-            "authors": null,
+            "authors": [
+                "N. Kalchbrenner",
+                "E. Grefenstette",
+                "P. Blunsom"
+            ],
             "year": "2014"
         },
         {
             "id": 21,
             "text": "[21] J. Y. Lee and F. Dernoncourt, Sequential Short-Text Classification with Recurrent and Convolutional Neural Networks, Naacl, pp. 515?520, 2016. ",
-            "authors": null,
+            "authors": [
+                "J. Y. Lee",
+                "F. Dernoncourt"
+            ],
             "year": "2016"
         },
         {
             "id": 22,
             "text": "[22] Z. Bitvai and T. Cohn, ?Non-Linear Text Regression with a Deep Convolutional Neural Network,? Proc. ACL 2015, pp. 180?185, 2015. ",
-            "authors": null,
+            "authors": [
+                "Z. Bitvai",
+                "T. Cohn"
+            ],
             "year": "2015"
         },
         {
             "id": 23,
             "text": "[23] Z. Cao, F. Wei, S. Li, W. Li, M. Zhou, and H. Wang, ?Learning Summary Prior Representation for Extractive Summarization,? Proc. ACL 2015, pp. 829?833, 2015. ",
-            "authors": null,
+            "authors": [
+                "Z. Cao",
+                "F. Wei",
+                "S. Li",
+                "W. Li",
+                "M. Zhou",
+                "H. Wang"
+            ],
             "year": "2015"
         },
         {
             "id": 24,
             "text": "[24] P. Golik, Z. Tuske, R. Schuler, and H. Ney, Convolutional neural networks for acoustic modeling of raw time signal in LVCSR, Proc. Annu. Conf. Int. Speech Commun. Assoc. INTERSPEECH, vol. 2015- Janua, pp. 26-30, 2015. ",
-            "authors": null,
+            "authors": [
+                "P. Golik",
+                "Z. Tuske",
+                "R. Schuler",
+                "H. Ney"
+            ],
             "year": "2015"
         },
         {
             "id": 25,
             "text": "[25] B. King, R. Jha, T. Johnson, and V. Sundararajan, ?Experiments in Automatic Text Summarization Using Deep Neural Networks, March. , 2011. ",
-            "authors": null,
+            "authors": [
+                "B. King",
+                "R. Jha",
+                "T. Johnson",
+                "V. Sundararajan"
+            ],
             "year": "2011"
         },
         {
             "id": 26,
             "text": "[26] M. Ma, L. Huang, B. Xiang, and B. Zhou, ?Dependency-based Convolutional Neural Networks for Sentence Embedding,? Acl-2015, no. 1995, pp. 174?179, 2015. ",
-            "authors": null,
+            "authors": [
+                "M. Ma",
+                "L. Huang",
+                "B. Xiang",
+                "B. Zhou"
+            ],
             "year": "1995"
         },
         {
             "id": 27,
             "text": "[27] T. N. Sainath, A. R. Mohamed, B. Kingsbury, and B. Ramabhadran, ?Deep convolutional neural networks for LVCSR,? ICASSP, IEEE Int. Conf. Acoust. Speech Signal Process. - Proc., pp. 8614?8618, 2013. ",
-            "authors": null,
+            "authors": [
+                "T. N. Sainath",
+                "A. R. Mohamed",
+                "B. Kingsbury",
+                "B. Ramabhadran"
+            ],
             "year": "2013"
         },
         {
             "id": 28,
             "text": "[28] S. Thomas, S. Ganapathy, G. Saon, and H. Soltau, ?Analyzing convolutional neural networks for speech activity detection in mismatched acoustic conditions,? ICASSP, IEEE Int. Conf. Acoust. Speech Signal Process. - Proc., pp. 2519?2523, 2014. ",
-            "authors": null,
+            "authors": [
+                "S. Thomas",
+                "S. Ganapathy",
+                "G. Saon",
+                "H. Soltau"
+            ],
             "year": "2014"
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Fig. 1. Basic structure of an ANN "
@@ -342,7 +474,7 @@
             "page": 0
         },
         {
-            "id": "Figure 2",
+            "id": 2,
             "type": "image",
             "caption": [
                 "Fig. 2. Basic structure of a CNN "
@@ -353,7 +485,7 @@
             "page": 1
         },
         {
-            "id": "Figure 3",
+            "id": 3,
             "type": "image",
             "caption": [
                 "Fig. 3. How the CNN works "
@@ -364,7 +496,7 @@
             "page": 2
         },
         {
-            "id": "Figure 4",
+            "id": 4,
             "type": "image",
             "caption": [
                 "Fig. 4. Recurrent Network "
@@ -375,7 +507,7 @@
             "page": 2
         },
         {
-            "id": "Figure 5",
+            "id": 5,
             "type": "image",
             "caption": [
                 "Fig. 5. Structure of a bidirectional RNN ",
@@ -388,7 +520,7 @@
             "page": 3
         },
         {
-            "id": "Figure 6",
+            "id": 6,
             "type": "image",
             "caption": [
                 "Fig. 7. Structure of a LSTM "
@@ -399,7 +531,7 @@
             "page": 3
         },
         {
-            "id": "Figure 7",
+            "id": 7,
             "type": "image",
             "caption": [
                 "Fig. 8. Recursive Network "
@@ -411,7 +543,7 @@
             "page": 4
         },
         {
-            "id": "Figure 8",
+            "id": 8,
             "type": "image",
             "caption": [
                 "Fig. 9. Dependency Network "
@@ -422,7 +554,7 @@
             "page": 5
         },
         {
-            "id": "Figure 9",
+            "id": 9,
             "type": "image",
             "caption": [
                 "Fig. 10. Dynamic Multi-pooling Network "
@@ -433,7 +565,7 @@
             "page": 5
         },
         {
-            "id": "Figure 10",
+            "id": 10,
             "type": "image",
             "caption": [
                 "Fig. 11. Multi-column Network "
@@ -444,7 +576,7 @@
             "page": 6
         },
         {
-            "id": "Figure 11",
+            "id": 11,
             "type": "image",
             "caption": [
                 "Fig. 12. Ranking Network "
@@ -455,7 +587,7 @@
             "page": 7
         },
         {
-            "id": "Figure 12",
+            "id": 12,
             "type": "image",
             "caption": [
                 "Fig. 13. Context dependent Network "
@@ -464,145 +596,147 @@
                 "images/c888c8a57ac12a8fee2cdf591d7cd251e44a9fb0c7a8f41b57e4b84643ab76f4.jpg"
             ],
             "page": 8
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "TABLE I RESULTS "
             ],
             "table_body": "<table><tr><td></td><td>UAS</td></tr><tr><td colspan=\"2\">Traditional Methods</td></tr><tr><td>Zhang and Clark (2008)</td><td>91.4</td></tr><tr><td>Huang and Sagae (2010)</td><td>92.1</td></tr><tr><td colspan=\"2\">Distributed Representations</td></tr><tr><td>Stenetorp (2013)</td><td>86.25</td></tr><tr><td>Chen et al. (2014)</td><td>93.74</td></tr><tr><td>Chen and Manning (2014)</td><td>92.0</td></tr><tr><td colspan=\"2\">Re-rankers</td></tr><tr><td>Hayashi et al. (2013)</td><td>93.12</td></tr><tr><td>Le and Zuidema (2014)</td><td>93.12</td></tr><tr><td>Our baseline</td><td>92.35</td></tr><tr><td>Our re-ranker</td><td>93.83(+1.48)</td></tr><tr><td>Our re-ranker (with oracle)</td><td>94.16</td></tr></table>",
-            "img_path": "output/images/60754226116ebc3b0f976eb625c682fcaef5183d57fd97b6b888309ad2a3ebdd.jpg",
+            "img_path": "output/demo5/images/60754226116ebc3b0f976eb625c682fcaef5183d57fd97b6b888309ad2a3ebdd.jpg",
             "page": 6
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [
                 "TABLE II RESULTS "
             ],
             "table_body": "<table><tr><td></td><td>ACE</td><td>CoNLL</td><td>WP</td></tr><tr><td>Google News</td><td>87.5</td><td>89.6</td><td>83.8</td></tr><tr><td>Wikipedia</td><td>89.5</td><td>90.6</td><td>85.5</td></tr></table>",
-            "img_path": "output/images/3ac87cb9a5c58e1a808f56ac87482366e7c50bd6b3c368ec7a5cc490a51d80d1.jpg",
+            "img_path": "output/demo5/images/3ac87cb9a5c58e1a808f56ac87482366e7c50bd6b3c368ec7a5cc490a51d80d1.jpg",
             "page": 7
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [
                 "TABLE III RESULTS "
             ],
             "table_body": "<table><tr><td>Classifier</td><td>F1</td></tr><tr><td>SVM (Rink and Harabagiu, 2010b)</td><td>82.2</td></tr><tr><td>RNN (Socher et al., 2012)</td><td>77.6</td></tr><tr><td>MVRNN (Socher et al., 2012)</td><td>82.4</td></tr><tr><td>CNN (Zeng et al., 2014)</td><td>82.7</td></tr><tr><td>FCM (Yu et al., 2014)</td><td>83.0</td></tr><tr><td>bi-RNN (Zhang and Wang, 2015)</td><td>82.5</td></tr><tr><td>CR-CNN (Dos Santos et al., 2015)</td><td>84.1</td></tr><tr><td>R-CNN</td><td>83.4</td></tr><tr><td>ER-CNN</td><td>84.2</td></tr><tr><td>ER-CNN+R-RNN</td><td>84.9</td></tr></table>",
-            "img_path": "output/images/2b0739cf5b5bc64b83ac4c3b154d704431dac443befc866791bc796575093152.jpg",
+            "img_path": "output/demo5/images/2b0739cf5b5bc64b83ac4c3b154d704431dac443befc866791bc796575093152.jpg",
             "page": 8
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "TABLE IV RESULTS "
             ],
             "table_body": "<table><tr><td>Model</td><td>Accuracy</td></tr><tr><td>BoW</td><td>88.23</td></tr><tr><td>Full+BoW</td><td>88.33</td></tr><tr><td>Full+Unlabelled+BoW</td><td>88.89</td></tr><tr><td>WRRBM</td><td>87.42</td></tr><tr><td>WRRBM+BoW (bnc)</td><td>89.23</td></tr><tr><td>SVM-bi</td><td>86.95</td></tr><tr><td>NBSVM-uni</td><td>88.29</td></tr><tr><td>NBSVM-bi</td><td>91.22</td></tr><tr><td>Paragraph Vector</td><td>92.58</td></tr><tr><td>Their model</td><td>89.38</td></tr></table>",
-            "img_path": "output/images/5970a7d9a05a5b76c5eb3fe8900db0a94ce170ebb793ccb778c4c5638e5260f5.jpg",
+            "img_path": "output/demo5/images/5970a7d9a05a5b76c5eb3fe8900db0a94ce170ebb793ccb778c4c5638e5260f5.jpg",
             "page": 9
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "TABLE V RESULTS "
             ],
             "table_body": "<table><tr><td>Systems</td><td>MT04</td><td>MT05</td><td>Average</td></tr><tr><td>Deep2str</td><td>34.89</td><td>32.24</td><td>33.57</td></tr><tr><td>tagCNN</td><td>36.33</td><td>33.37</td><td>34.85</td></tr><tr><td>tagCNN-dep</td><td>36.53</td><td>33.61</td><td>35.08</td></tr></table>",
-            "img_path": "output/images/769a906eaea7789d9c549499d8e946b0339610e4d9e623a78ea863deb46c495e.jpg",
+            "img_path": "output/demo5/images/769a906eaea7789d9c549499d8e946b0339610e4d9e623a78ea863deb46c495e.jpg",
             "page": 9
         },
         {
-            "id": "Table 6",
+            "id": 6,
             "type": "table",
             "caption": [
                 "TABLE VI RESULTS "
             ],
             "table_body": "<table><tr><td>Systems</td><td>MT04</td><td>MT05</td><td>Average</td></tr><tr><td>Deep2str</td><td>34.89</td><td>32.24</td><td>33.57</td></tr><tr><td>inCNN</td><td>36.92</td><td>33.72</td><td>35.32</td></tr><tr><td>inCNN-2pooling</td><td>36.33</td><td>32.88</td><td>34.61</td></tr><tr><td>inCNN-4pooling</td><td>36.46</td><td>33.01</td><td>34.74</td></tr><tr><td>inCNN-8pooling</td><td>36.57</td><td>33.39</td><td>34.98</td></tr></table>",
-            "img_path": "output/images/5c53fb6c96387d0f9168adb4055c1f073d279e13c73864749c18fbc09c8bbb91.jpg",
+            "img_path": "output/demo5/images/5c53fb6c96387d0f9168adb4055c1f073d279e13c73864749c18fbc09c8bbb91.jpg",
             "page": 9
         },
         {
-            "id": "Table 7",
+            "id": 7,
             "type": "table",
             "caption": [
                 "TABLE VII RESULTS "
             ],
             "table_body": "<table><tr><td>Method</td><td>F1</td><td>P@1</td></tr><tr><td>(Berant et al., 2013)</td><td>31.4</td><td>-</td></tr><tr><td>(Berant and Liang, 2014)</td><td>39.9</td><td>-</td></tr><tr><td>(Bao et al., 2014)</td><td>37.5</td><td>-</td></tr><tr><td>(Yao and Van Durme, 2014)</td><td>33.0</td><td>-</td></tr><tr><td>(Bordes et al., 2014a)</td><td>39.2</td><td>40.4</td></tr><tr><td>(Bordes et al., 2014b)</td><td>28.7</td><td>31.3</td></tr><tr><td>MCCNN (theirs)</td><td>40.8</td><td>45.1</td></tr></table>",
-            "img_path": "output/images/378270c963609625cf4a806ecf2a6d75aa94a2e3307ce6854f4827c99da5fac5.jpg",
+            "img_path": "output/demo5/images/378270c963609625cf4a806ecf2a6d75aa94a2e3307ce6854f4827c99da5fac5.jpg",
             "page": 10
         },
         {
-            "id": "Table 8",
+            "id": 8,
             "type": "table",
             "caption": [
                 "TABLE VIII RESULTS "
             ],
             "table_body": "<table><tr><td>Model</td><td>MAP</td><td>MRR</td></tr><tr><td>Wang et al. (2007)</td><td>.6029</td><td>.6852</td></tr><tr><td>Heilman and Smith (2010)</td><td>.6091</td><td>.6917</td></tr><tr><td>Wang and Manning (2010)</td><td>.5951</td><td>.6951</td></tr><tr><td>Yao et al. (2013)</td><td>.6307</td><td>.7477</td></tr><tr><td>Severyn and Moschitti (2013)</td><td>.6781</td><td>.7358</td></tr><tr><td>Yih et al. (2013)</td><td>.7092</td><td>.7700</td></tr><tr><td>Yu et al. (2014)</td><td>.7113</td><td>.7846</td></tr><tr><td>Wang and Ittycheriah (2015)</td><td>.7063</td><td>.7740</td></tr><tr><td>Yin et al. (2015)</td><td>.6951</td><td>.7633</td></tr><tr><td>Miao et al. (2015)</td><td>.7339</td><td>.8117</td></tr><tr><td>CNNR on (TRAIN)</td><td>.6857</td><td>.7660</td></tr><tr><td>CNNR on (TRAIN-ALL)</td><td>.7186</td><td>.7828</td></tr></table>",
-            "img_path": "output/images/12b6fb6252f2254420f7ddcf15667672021095120dd8a17ed3ff8983d254b5c9.jpg",
+            "img_path": "output/demo5/images/12b6fb6252f2254420f7ddcf15667672021095120dd8a17ed3ff8983d254b5c9.jpg",
             "page": 10
         },
         {
-            "id": "Table 9",
+            "id": 9,
             "type": "table",
             "caption": [
                 "TABLE IX RESULTS "
             ],
             "table_body": "<table><tr><td>ID</td><td>Network structure</td><td>Average PER</td><td>min-max PER</td><td>params</td><td>ops</td></tr><tr><td>1</td><td>DNN 2000 + 2x1000</td><td>22.02</td><td>21.86-22.11</td><td>6.9M</td><td>6.9M</td></tr><tr><td>2</td><td>DNN 2000 + 4x1000</td><td>21.87</td><td>21.68-21.98</td><td>8.9M</td><td>8.9M</td></tr><tr><td>3</td><td>CNN LWS + 2x1000</td><td>20.17</td><td>19.92-20.41</td><td>5.4M</td><td>10.7M</td></tr><tr><td>4</td><td>CNN FWS + 2x1000</td><td>20.31</td><td>20.16-20.58</td><td>8.5M</td><td>13.6M</td></tr><tr><td>5</td><td>CNN FWS + FWS + 2x1000</td><td>20.23</td><td>20.11-20.29</td><td>4.5M</td><td>11.7M</td></tr><tr><td>6</td><td>CNN FWS + LWS + 2x1000</td><td>20.36</td><td>19.91-20.61</td><td>4.1M</td><td>7.5M</td></tr></table>",
-            "img_path": "output/images/e24e4b08581b3bc2f87bb2c6168bf9ec14d6c66eb02ddf6bccbfa80e25f8fb48.jpg",
+            "img_path": "output/demo5/images/e24e4b08581b3bc2f87bb2c6168bf9ec14d6c66eb02ddf6bccbfa80e25f8fb48.jpg",
             "page": 11
         },
         {
-            "id": "Table 10",
+            "id": 10,
             "type": "table",
             "caption": [
                 "TABLE X RESULTS "
             ],
             "table_body": "<table><tr><td>SNR [dB]</td><td>ANN</td><td>ANN</td><td>CNN</td><td>CNN</td></tr><tr><td>Training</td><td>clean</td><td>multi</td><td>clean</td><td>multi</td></tr><tr><td>2</td><td>52.5</td><td>54.3</td><td>65.5</td><td>66.8</td></tr><tr><td>3</td><td>46.7</td><td>50.8</td><td>59.7</td><td>64.8</td></tr><tr><td>4</td><td>40.3</td><td>46.6</td><td>50.5</td><td>60.8</td></tr><tr><td>5</td><td>32.7</td><td>41.1</td><td>39.1</td><td>53.5</td></tr><tr><td>5</td><td>26.1</td><td>34.2</td><td>27.8</td><td>42.8</td></tr><tr><td>5</td><td>21.2</td><td>26.4</td><td>18.3</td><td>30.8</td></tr><tr><td>6</td><td>17.4</td><td>20.2</td><td>9.9</td><td>21.4</td></tr></table>",
-            "img_path": "output/images/cdd4d2e62c919dc3a6d15bf6cf6f346135b83ade25da9aa98a1b39b97021ebe4.jpg",
+            "img_path": "output/demo5/images/cdd4d2e62c919dc3a6d15bf6cf6f346135b83ade25da9aa98a1b39b97021ebe4.jpg",
             "page": 11
         },
         {
-            "id": "Table 11",
+            "id": 11,
             "type": "table",
             "caption": [
                 "TABLE XI RESULTS "
             ],
             "table_body": "<table><tr><td>Method</td><td>PER</td></tr><tr><td>NN with 3 hidden layers of 1000 nodes</td><td>22.95</td></tr><tr><td>CNN with no pre-training (their work)</td><td>20.07</td></tr><tr><td>NN with DBN pre-training</td><td>20.70</td></tr><tr><td>NN with DBN pre-training and mcRBM features extraction</td><td>20.50</td></tr></table>",
-            "img_path": "output/images/2fe65506a4d381849b55ad6cacd1257c4a41719f49e317fd3c70ba994918a92d.jpg",
+            "img_path": "output/demo5/images/2fe65506a4d381849b55ad6cacd1257c4a41719f49e317fd3c70ba994918a92d.jpg",
             "page": 11
         },
         {
-            "id": "Table 12",
+            "id": 12,
             "type": "table",
             "caption": [
                 "TABLE XII RESULTS "
             ],
             "table_body": "<table><tr><td>Classifier</td><td>Feature Set</td><td>F1</td></tr><tr><td>SVM (Rink and Harabagiu, 2010)</td><td>POS, prefixes, morphological, WordNet, dependency parse, Levin classes, ProBank, FrameNet, NomLex-Plus,Google n-gram, paraphrases, TextRunner</td><td>82.2</td></tr><tr><td>RNN (Socher et al., 2012)</td><td>word embeddings</td><td>74.8</td></tr><tr><td>RNN (Socher et al., 2012)</td><td>word embeddings, POS, NER, WordNet</td><td>77.6</td></tr><tr><td>MVRNN (Socher et al., 2012)</td><td>word embeddings</td><td>79.1</td></tr><tr><td>MVRNN (Socher et al., 2012)</td><td>word embeddings, POS, NER, WordNet</td><td>82.4</td></tr><tr><td>CNN+Softmax (Zeng et al., 2014)</td><td>word embeddings</td><td>69.7</td></tr><tr><td>CNN+Softmax (Zeng et al., 2014)</td><td>word embeddings, word position embeddings, word pair, words around word pair, WordNet</td><td>82.7</td></tr><tr><td>FCM (Yu et al., 2014)</td><td>word embeddings</td><td>80.6</td></tr><tr><td>FCM (Yu et al., 2014)</td><td>word embeddings, dependency parse, NER</td><td>83.0</td></tr><tr><td>CR-CNN</td><td>word embeddings</td><td>32.8</td></tr><tr><td>CR-CNN</td><td>word embeddings, word position embeddings</td><td>84.1</td></tr></table>",
-            "img_path": "output/images/1811db767c171c14bedcb2c07e8b81c330d26d733f1c92dddfa97e94e076c67c.jpg",
+            "img_path": "output/demo5/images/1811db767c171c14bedcb2c07e8b81c330d26d733f1c92dddfa97e94e076c67c.jpg",
             "page": 13
         },
         {
-            "id": "Table 13",
+            "id": 13,
             "type": "table",
             "caption": [
                 "TABLE XIII RESULTS "
             ],
             "table_body": "<table><tr><td>Models</td><td>MT06</td><td>MT08</td><td>Average</td></tr><tr><td>Baseline</td><td>38.63</td><td>31.11</td><td>34.87</td></tr><tr><td>RNN rerank</td><td>39.03</td><td>31.50</td><td>35.26</td></tr><tr><td>LSTM rerank</td><td>39.20</td><td>31.90</td><td>35.55</td></tr><tr><td>FFN-LM rerank</td><td>38.93</td><td>31.41</td><td>35.14</td></tr><tr><td>genCNN rerank</td><td>39.90</td><td>32.50</td><td>36.20</td></tr><tr><td>Base+FFN-LM</td><td>39.08</td><td>31.60</td><td>35.34</td></tr><tr><td>genCNN rerank</td><td>40.4</td><td>32.85</td><td>36.63</td></tr></table>",
-            "img_path": "output/images/2da107b768177510441d0d3452e21ddbefc610cbe0148479f37a79fe99ea659f.jpg",
+            "img_path": "output/demo5/images/2da107b768177510441d0d3452e21ddbefc610cbe0148479f37a79fe99ea659f.jpg",
             "page": 13
         },
         {
-            "id": "Table 14",
+            "id": 14,
             "type": "table",
             "caption": [
                 "TABLE XIV RESULTS "
             ],
             "table_body": "<table><tr><td>Models</td><td>DSTC 4</td><td>MRDA</td><td>SwDA</td></tr><tr><td>CNN</td><td>65.5</td><td>84.6</td><td>73.1</td></tr><tr><td>LSTM</td><td>66.2</td><td>84.3</td><td>69.6</td></tr><tr><td>Majority class</td><td>25.8</td><td>59.1</td><td>33.7</td></tr><tr><td>SVM</td><td>57.0</td><td>-</td><td>-</td></tr><tr><td>Graphical model</td><td>-</td><td>81.3</td><td>-</td></tr><tr><td>Naive Bayes</td><td>-</td><td>82.0</td><td>-</td></tr><tr><td>HMM</td><td>-</td><td>-</td><td>71.0</td></tr><tr><td>Memory-based Learning</td><td>-</td><td>-</td><td>72.3</td></tr><tr><td>Interlabeler agreement</td><td>-</td><td>-</td><td>84.0</td></tr></table>",
-            "img_path": "output/images/22bf771c60897c297276077faff2a3f8f8cbc2a4aae059e6d0b06ca43d9463df.jpg",
+            "img_path": "output/demo5/images/22bf771c60897c297276077faff2a3f8f8cbc2a4aae059e6d0b06ca43d9463df.jpg",
             "page": 13
         }
     ]

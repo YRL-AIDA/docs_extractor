@@ -1,10 +1,20 @@
 {
     "title": "Deep Learning vs. Traditional Computer Vision ",
+    "authors": [
+        "Niall O’ Mahony",
+        "Sean Campbell",
+        "Anderson Carvalho",
+        "Suman Harapanahalli",
+        "Gustavo Velasco Hernandez",
+        "Lenka Krpalkova",
+        "Daniel Riordan",
+        "Joseph Walsh"
+    ],
     "abstract": "Abstract. Deep Learning has pushed the limits of what was possible in the domain of Digital Image Processing. However, that is not to say that the traditional computer vision techniques which had been undergoing progressive development in years prior to the rise of DL have become obsolete. This paper will analyse the benefits and drawbacks of each approach. The aim of this paper is to promote a discussion on whether knowledge of classical computer vision techniques should be maintained. The paper will also explore how the two sides of computer vision can be combined. Several recent hybrid methodologies are reviewed which have demonstrated the ability to improve computer vision performance and to tackle problems not suited to Deep Learning. For example, combining traditional computer vision techniques with Deep Learning has been popular in emerging domains such as Panoramic Vision and 3D vision for which Deep Learning models have not yet been fully optimised. ",
     "keywords": [
-        "Computer Vision",
-        " Deep Learning",
-        " Hybrid techniques"
+        ": Computer Vision",
+        "Deep Learning",
+        "Hybrid techniques"
     ],
     "language": "en",
     "sections": [
@@ -48,164 +58,265 @@
         {
             "id": 1,
             "text": "1. Krizhevsky A, Sutskever I, Hinton GE (2012) ImageNet Classification with Deep Convolutional Neural Networks. NIPS’12 Proc 25th Int Conf Neural Inf Process Syst 1:1097–1105 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Krizhevsky A",
+                "Sutskever I",
+                "Hinton GE"
+            ],
+            "year": "2012"
         },
         {
             "id": 2,
             "text": "2. Nash W, Drummond T, Birbilis N (2018) A Review of Deep Learning in the Study of Materials Degradation. npj Mater Degrad 2:37. https://doi.org/10.1038/s41529-018- 0058-x ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Nash W",
+                "Drummond T",
+                "Birbilis N"
+            ],
+            "year": "2018"
         },
         {
             "id": 3,
             "text": "3. Bonaccorso G (2018) Machine Learning Algorithms Popular Algorithms for Data Science and Machine Learning, 2nd Edition. Packt Publishing Ltd ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Bonaccorso"
+            ],
+            "year": "2018"
         },
         {
             "id": 4,
             "text": "4. Mahony NO, Murphy T, Panduru K, et al (2017) Improving controller performance in a powder blending process using predictive control. In: 2017 28th Irish Signals and Systems Conference (ISSC). IEEE, pp 1–6 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Mahony NO",
+                "Murphy T",
+                "Panduru K"
+            ],
+            "year": "2017"
         },
         {
             "id": 5,
             "text": "5. O’Mahony N, Murphy T, Panduru K, et al (2017) Real-time monitoring of powder blend composition using near infrared spectroscopy. In: 2017 Eleventh International Conference on Sensing Technology (ICST). IEEE, pp 1–6 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "O’Mahony",
+                "Murphy T",
+                "Panduru K"
+            ],
+            "year": "2017"
         },
         {
             "id": 6,
             "text": "6. O’ Mahony N, Murphy T, Panduru K, et al (2016) Adaptive process control and sensor fusion for process analytical technology. In: 2016 27th Irish Signals and Systems Conference (ISSC). IEEE, pp 1–6 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "O’ Mahony N",
+                "Murphy T",
+                "Panduru K"
+            ],
+            "year": "2016"
         },
         {
             "id": 7,
             "text": "7. Koehn P, Koehn P (1994) Combining Genetic Algorithms and Neural Networks: The Encoding Problem ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Koehn P",
+                "Koehn P"
+            ],
+            "year": "1994"
         },
         {
             "id": 8,
             "text": "8. Wang J, Ma Y, Zhang L, Gao RX (2018) Deep learning for smart manufacturing: Methods and applications. J Manuf Syst 48:144–156. https://doi.org/10.1016/J.JMSY.2018.01.003 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Wang J",
+                "Ma Y",
+                "Zhang L",
+                "Gao RX"
+            ],
+            "year": "2018"
         },
         {
             "id": 9,
             "text": "9. Voulodimos A, Doulamis N, Doulamis A, Protopapadakis E (2018) Deep Learning for Computer Vision: A Brief Review. Comput Intell Neurosci 2018:1–13. https://doi.org/10.1155/2018/7068349 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Voulodimos A",
+                "Doulamis N",
+                "Doulamis A",
+                "Protopapadakis E"
+            ],
+            "year": "2018"
         },
         {
             "id": 10,
             "text": "10. Dumoulin V, Visin F, Box GEP (2018) A guide to convolution arithmetic for deep learning. arXiv Prepr arXiv arXiv160307285v2 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Dumoulin V",
+                "Visin F"
+            ],
+            "year": "2018"
         },
         {
             "id": 11,
             "text": "11. Hayou S, Doucet A, Rousseau J (2018) On The Selection of Initialization and Activation Function for Deep Neural Networks. arXiv Prepr arXiv 180508266v2 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Hayou S",
+                "Doucet A",
+                "Rousseau J"
+            ],
+            "year": "2018"
         },
         {
             "id": 12,
             "text": "12. Horiguchi S, Ikami D, Aizawa K (2017) Significance of Softmax-based Features in Comparison to Distance Metric Learning-based Features ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Horiguchi S",
+                "Ikami D",
+                "Aizawa K"
+            ],
+            "year": "2017"
         },
         {
             "id": 13,
             "text": "13. Adit Deshpande A Beginner’s Guide To Understanding Convolutional Neural Networks – Adit Deshpande – CS Undergrad at UCLA ('19). https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/. Accessed 19 Jul 2018 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Adit Deshpande",
+                "Adit Deshpande"
+            ],
+            "year": "2018"
         },
         {
             "id": 14,
             "text": "14. Karami E, Shehata M, Smith A (2017) Image Identification Using SIFT Algorithm: Performance Analysis against Different Image Deformations ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Karami E",
+                "Shehata M",
+                "Smith A"
+            ],
+            "year": "2017"
         },
         {
             "id": 15,
             "text": "15. Bay H, Tuytelaars T, Van Gool L (2006) SURF: Speeded Up Robust Features. Springer, Berlin, Heidelberg, pp 404–417 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Bay H",
+                "Tuytelaars T",
+                "Van Gool L"
+            ],
+            "year": "2006"
         },
         {
             "id": 16,
             "text": "16. Rosten E, Drummond T (2006) Machine Learning for High-Speed Corner Detection. Springer, Berlin, Heidelberg, pp 430–443 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Rosten E",
+                "Drummond T"
+            ],
+            "year": "2006"
         },
         {
             "id": 17,
             "text": "17. Goldenshluger A, Zeevi A (2004) The Hough Transform Estimator. 32:. https://doi.org/10.1214/009053604000000760 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Goldenshluger",
+                "Zeevi"
+            ],
+            "year": "2004"
         },
         {
             "id": 18,
             "text": "18. Tsai FCD (1994) Geometric hashing with line features. Pattern Recognit 27:377–389. https://doi.org/10.1016/0031-3203(94)90115-5 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Tsai"
+            ],
+            "year": "1994"
         },
         {
             "id": 19,
             "text": "19. Wang J, Perez L The Effectiveness of Data Augmentation in Image Classification using Deep Learning ",
-            "authors": null,
+            "authors": [
+                "Wang J",
+                "Perez L"
+            ],
             "year": null
         },
         {
             "id": 20,
             "text": "20. Schöning J, Faion P, Heidemann G (2016) Pixel-wise Ground Truth Annotation in Videos - An Semi-automatic Approach for Pixel-wise and Semantic Object Annotation. In: Proceedings of the 5th International Conference on Pattern Recognition Applications and Methods. SCITEPRESS - Science and and Technology Publications, pp 690–697 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Schöning J",
+                "Faion P",
+                "Heidemann G"
+            ],
+            "year": "2016"
         },
         {
             "id": 21,
             "text": "21. Zhang X, Lee J-Y, Sunkavalli K, Wang Z (2017) Photometric Stabilization for Fastforward Videos ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Zhang X",
+                "Lee J-Y",
+                "Sunkavalli K",
+                "Wang Z"
+            ],
+            "year": "2017"
         },
         {
             "id": 22,
             "text": "22. Alhaija HA, Mustikovela SK, Mescheder L, et al (2017) Augmented Reality Meets Computer Vision : Efficient Data Generation for Urban Driving Scenes ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Alhaija HA",
+                "Mescheder"
+            ],
+            "year": "2017"
         },
         {
             "id": 23,
             "text": "23. Meneghetti G, Danelljan M, Felsberg M, Nordberg K (2015) Image Alignment for Panorama Stitching in Sparsely Structured Environments. Springer, Cham, pp 428–439 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Meneghetti G",
+                "Danelljan M",
+                "Felsberg M",
+                "Nordberg K"
+            ],
+            "year": "2015"
         },
         {
             "id": 24,
             "text": "24. Alldieck T, Kassubeck M, Magnor M (2017) Optical Flow-based 3D Human Motion Estimation from Monocular Video ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Alldieck T",
+                "Kassubeck M",
+                "Magnor"
+            ],
+            "year": "2017"
         },
         {
             "id": 25,
             "text": "25. Zheng B, Zhao Y, Yu J, et al (2015) Scene Understanding by Reasoning Stability and Safety. Int J Comput Vis 112:221–238. https://doi.org/10.1007/s11263-014-0795-4 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Zheng B",
+                "Zhao Y",
+                "Yu J"
+            ],
+            "year": "2015"
         },
         {
             "id": 26,
             "text": "26. Zheng L, Yang Y, Tian Q SIFT Meets CNN: A Decade Survey of Instance Retrieval ",
-            "authors": null,
+            "authors": [
+                "Zheng L",
+                "Yang Y",
+                "Tian Q"
+            ],
             "year": null
         },
         {
             "id": 27,
             "text": "27. AlDahoul N, Md Sabri AQ, Mansoor AM (2018) Real-Time Human Detection for Aerial Captured Video Sequences via Deep Models. Comput Intell Neurosci 2018:1– 14. https://doi.org/10.1155/2018/1639561 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "AlDahoul N",
+                "Md Sabri AQ",
+                "Mansoor AM"
+            ],
+            "year": "2018"
         },
         {
             "id": 28,
@@ -217,240 +328,376 @@
             "id": 29,
             "text": "World. https://www.networkworld.com/article/3239146/internet-ofthings/conventional-computer-vision-coupled-with-deep-learning-makes-aibetter.html. Accessed 12 Sep 2018 ",
             "authors": null,
-            "year": null
+            "year": "2018"
         },
         {
             "id": 30,
             "text": "29. Bahrampour S, Ramakrishnan N, Schott L, Shah M (2015) Comparative Study of Deep Learning Software Frameworks ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Bahrampour S",
+                "Ramakrishnan N",
+                "Schott L",
+                "Shah M"
+            ],
+            "year": "2015"
         },
         {
             "id": 31,
             "text": "30. (2017) An in-depth look at Google’s first Tensor Processing Unit (TPU) | Google Cloud Big Data and Machine Learning Blog | Google Cloud Platform. https://cloud.google.com/blog/big-data/2017/05/an-in-depth-look-at-googles-firsttensor-processing-unit-tpu. Accessed 11 Jan 2018 ",
             "authors": null,
-            "year": null
+            "year": "2017"
         },
         {
             "id": 32,
             "text": "31. Vision Processing Unit | Machine Vision Technology | Movidius. https://www.movidius.com/solutions/vision-processing-unit. Accessed 11 Jan 2018 ",
             "authors": null,
-            "year": null
+            "year": "2018"
         },
         {
             "id": 33,
             "text": "32. Ng H-W, Nguyen D, Vonikakis V, Winkler S Deep Learning for Emotion Recognition on Small Datasets Using Transfer Learning. https://doi.org/10.1145/2818346.2830593 ",
-            "authors": null,
+            "authors": [
+                "Ng H-W",
+                "Nguyen D",
+                "Vonikakis V",
+                "Winkler"
+            ],
             "year": null
         },
         {
             "id": 34,
             "text": "33. Pepik B, Stark M, Gehler P, Schiele B (2012) Teaching 3D geometry to deformable part models. In: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Pepik B",
+                "Stark M",
+                "Gehler P",
+                "Schiele"
+            ],
+            "year": "2012"
         },
         {
             "id": 35,
             "text": "34. Russakovsky O, Deng J, Su H, et al (2015) ImageNet Large Scale Visual Recognition Challenge. Int J Comput Vis 115:211–252. https://doi.org/10.1007/s11263-015-0816-y ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Russakovsky O",
+                "Deng J",
+                "Su H"
+            ],
+            "year": "2015"
         },
         {
             "id": 36,
             "text": "35. Lin T-Y, Maire M, Belongie S, et al (2014) Microsoft COCO: Common Objects in Context ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Lin T-Y",
+                "Maire M",
+                "Belongie S"
+            ],
+            "year": "2014"
         },
         {
             "id": 37,
             "text": "36. CS231n Convolutional Neural Networks for Visual Recognition. http://cs231n.github.io/transfer-learning/. Accessed 9 Mar 2018 ",
             "authors": null,
-            "year": null
+            "year": "2018"
         },
         {
             "id": 38,
             "text": "37. Highlander TC Efficient Training of Small Kernel Convolutional Neural Networks using Fast Fourier Transform ",
-            "authors": null,
+            "authors": [
+                "Highlander TC"
+            ],
             "year": null
         },
         {
             "id": 39,
             "text": "38. Highlander T, Rodriguez A (2016) Very Efficient Training of Convolutional Neural Networks using Fast Fourier Transform and Overlap-and-Add ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Highlander T",
+                "Rodriguez A"
+            ],
+            "year": "2016"
         },
         {
             "id": 40,
             "text": "39. Li F, Wang C, Liu X, et al (2018) A Composite Model of Wound Segmentation Based on Traditional Methods and Deep Neural Networks. Comput Intell Neurosci 2018:1– 12. https://doi.org/10.1155/2018/4149103 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Li F",
+                "Wang C",
+                "Liu X"
+            ],
+            "year": "2018"
         },
         {
             "id": 41,
             "text": "40. Nijhawan R, Das J, Raman B (2018) A hybrid of deep learning and hand-crafted features based approach for snow cover mapping. Int J Remote Sens 1–15. https://doi.org/10.1080/01431161.2018.1519277 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Nijhawan R",
+                "Das J",
+                "Raman B"
+            ],
+            "year": "2018"
         },
         {
             "id": 42,
             "text": "41. Zeng G, Zhou J, Jia X, et al (2018) Hand-Crafted Feature Guided Deep Learning for Facial Expression Recognition. In: 2018 13th IEEE International Conference on Automatic Face & Gesture Recognition (FG 2018). IEEE, pp 423–430 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Zeng G",
+                "Zhou J",
+                "Jia X"
+            ],
+            "year": "2018"
         },
         {
             "id": 43,
             "text": "42. Burchfiel B, Konidaris G Hybrid Bayesian Eigenobjects: Combining Linear Subspace and Deep Network Methods for 3D Robot Vision ",
-            "authors": null,
+            "authors": [
+                "Burchfiel",
+                "Konidaris"
+            ],
             "year": null
         },
         {
             "id": 44,
             "text": "43. Marcus G, thank Christina I, Chollet F, et al Deep Learning: A Critical Appraisal ",
-            "authors": null,
+            "authors": [
+                "Marcus G",
+                "Christina I",
+                "Chollet F"
+            ],
             "year": null
         },
         {
             "id": 45,
             "text": "44. Nalisnick E, Smyth P (2018) Learning Priors for Invariance. 366–375 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Nalisnick E",
+                "Smyth"
+            ],
+            "year": "2018"
         },
         {
             "id": 46,
             "text": "45. Diligenti M, Roychowdhury S, Gori M (2017) Integrating Prior Knowledge into Deep Learning. In: 2017 16th IEEE International Conference on Machine Learning and Applications (ICMLA). IEEE, pp 920–923 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Diligenti M",
+                "Roychowdhury S",
+                "Gori M"
+            ],
+            "year": "2017"
         },
         {
             "id": 47,
             "text": "46. Zhu H, Nie Y, Yue T, Cao X (2017) The role of prior in image based 3D modeling: a survey. Front Comput Sci 11:175–191. https://doi.org/10.1007/s11704-016-5520-8 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Zhu H",
+                "Nie Y",
+                "Yue T",
+                "Cao X"
+            ],
+            "year": "2017"
         },
         {
             "id": 48,
             "text": "47. Tran D, Bourdev L, Fergus R, et al (2015) Learning Spatiotemporal Features with 3D Convolutional Networks. arXiv Prepr arXiv 14120767 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Tran D",
+                "Bourdev L",
+                "Fergus R"
+            ],
+            "year": "2015"
         },
         {
             "id": 49,
             "text": "48. Pang G, Neumann U (2016) 3D point cloud object detection with multi-view convolutional neural network. In: 2016 23rd International Conference on Pattern Recognition (ICPR). IEEE, pp 585–590 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Pang",
+                "Neumann U"
+            ],
+            "year": "2016"
         },
         {
             "id": 50,
             "text": "49. Lan Q, Wang Z, Wen M, et al (2017) High Performance Implementation of 3D Convolutional Neural Networks on a GPU. Comput Intell Neurosci 2017:1–8. https://doi.org/10.1155/2017/8348671 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Lan Q",
+                "Wang Z",
+                "Wen M"
+            ],
+            "year": "2017"
         },
         {
             "id": 51,
             "text": "50. Ahmed E, Saint A, Shabayek AER, et al (2018) Deep Learning Advances on Different 3D Data Representations: A Survey. arXiv Prepr arXiv 180801462 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Ahmed E",
+                "Saint A",
+                "Shabayek AER"
+            ],
+            "year": "2018"
         },
         {
             "id": 52,
             "text": "51. Zhou Y, Tuzel O (2017) VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection. arXiv Prepr arXiv 171106396 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Zhou Y",
+                "Tuzel O"
+            ],
+            "year": "2017"
         },
         {
             "id": 53,
             "text": "52. Qi CR, Yi L, Su H, Guibas LJ (2017) PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space. arXiv Prepr arXiv170602413v1 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Qi CR",
+                "Yi L",
+                "Su H",
+                "Guibas LJ"
+            ],
+            "year": "2017"
         },
         {
             "id": 54,
             "text": "53. Braeger S, Foroosh H (2018) Curvature Augmented Deep Learning for 3D Object Recognition. In: 2018 25th IEEE International Conference on Image Processing (ICIP). IEEE, pp 3648–3652 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Braeger S",
+                "Foroosh H"
+            ],
+            "year": "2018"
         },
         {
             "id": 55,
             "text": "54. Niall O’ Mahony (Institute of Technology Tralee), Sean Campbell (Institute of Technology Tralee), Lenka Krpalkova (Institute of Technology Tralee), et al (2018) Deep Learning for Visual Navigation of Unmanned Ground Vehicles; A review ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Niall O’ Mahony",
+                "Sean Campbell",
+                "Lenka Krpalkova"
+            ],
+            "year": "2018"
         },
         {
             "id": 56,
             "text": "55. Karami E, Prasad S, Shehata M Image Matching Using SIFT, SURF, BRIEF and ORB: Performance Comparison for Distorted Images ",
-            "authors": null,
+            "authors": [
+                "Karami",
+                "Prasad",
+                "Shehata"
+            ],
             "year": null
         },
         {
             "id": 57,
             "text": "56. Angelina M, Gim U, Lee H PointNetVLAD: Deep Point Cloud Based Retrieval for Large-Scale Place Recognition ",
-            "authors": null,
+            "authors": [
+                "Angelina M",
+                "Gim U",
+                "Lee H"
+            ],
             "year": null
         },
         {
             "id": 58,
             "text": "57. Camposeco F, Cohen A, Pollefeys M, Sattler T Hybrid scene Compression for Visual Localization ",
-            "authors": null,
+            "authors": [
+                "Camposeco",
+                "Cohen",
+                "Sattler"
+            ],
             "year": null
         },
         {
             "id": 59,
             "text": "58. Loghmani MR, Planamente M, Caputo B, Vincze M Recurrent Convolutional Fusion for RGB-D Object Recognition ",
-            "authors": null,
+            "authors": [
+                "Loghmani MR",
+                "Caputo",
+                "Vincze"
+            ],
             "year": null
         },
         {
             "id": 60,
             "text": "59. Clément M, Kurtz C, Wendling L (2018) Learning spatial relations and shapes for structural object description and scene recognition. Pattern Recognit 84:197–210. https://doi.org/10.1016/J.PATCOG.2018.06.017 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Clément M",
+                "Kurtz C",
+                "Wendling L"
+            ],
+            "year": "2018"
         },
         {
             "id": 61,
             "text": "60. Ran L, Zhang Y, Zhang Q, et al (2017) Convolutional Neural Network-Based Robot Navigation Using Uncalibrated Spherical Images. Sensors 17:1341. https://doi.org/10.3390/s17061341 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Ran L",
+                "Zhang Y",
+                "Zhang Q"
+            ],
+            "year": "2017"
         },
         {
             "id": 62,
             "text": "61. Silva RMA, Feijó B, Gomes PB, et al (2016) Real time $3 6 0 ^ { \\circ }$ video stitching and streaming. In: ACM SIGGRAPH 2016 Posters on - SIGGRAPH ’16. ACM Press, New York, New York, USA, pp 1–2 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Silva RMA",
+                "Feijó B",
+                "Gomes PB"
+            ],
+            "year": "2016"
         },
         {
             "id": 63,
             "text": "62. Fernandez-Labrador C, Perez-Yus A, Lopez-Nicolas G, Guerrero JJ Layouts from Panoramic Images with Geometry and Deep Learning ",
-            "authors": null,
+            "authors": [
+                "Fernandez-Labrador",
+                "Guerrero JJ"
+            ],
             "year": null
         },
         {
             "id": 64,
             "text": "63. Schöning J, Faion P, Heidemann G (2016) Pixel-wise Ground Truth Annotation in Videos - An Semi-automatic Approach for Pixel-wise and Semantic Object Annotation. In: Proceedings of the 5th International Conference on Pattern Recognition Applications and Methods. SCITEPRESS - Science and and Technology Publications, pp 690–697 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Schöning J",
+                "Faion P",
+                "Heidemann G"
+            ],
+            "year": "2016"
         },
         {
             "id": 65,
             "text": "64. Ioannidou A, Chatzilari E, Nikolopoulos S, Kompatsiaris I (2017) Deep Learning Advances in Computer Vision with 3D Data. ACM Comput Surv 50:1–38. https://doi.org/10.1145/3042064 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Ioannidou A",
+                "Chatzilari E",
+                "Nikolopoulos",
+                "Kompatsiaris I"
+            ],
+            "year": "2017"
         },
         {
             "id": 66,
             "text": "65. Devries T, Taylor GW (2017) Dataset Augmentation in Feature Space. arXiv Prepr arXiv 170205538v1 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Devries",
+                "Taylor"
+            ],
+            "year": "2017"
         },
         {
             "id": 67,
             "text": "66. Dvornik N, Mairal J, Schmid C Modeling Visual Context is Key to Augmenting Object Detection Datasets ",
-            "authors": null,
+            "authors": [
+                "Dvornik N",
+                "Mairal J",
+                "Schmid"
+            ],
             "year": null
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Fig. 1. (a) Traditional Computer Vision workflow vs. (b) Deep Learning workflow. Figure from [8]. "
@@ -462,7 +709,7 @@
             "page": 3
         },
         {
-            "id": "Figure 2",
+            "id": 2,
             "type": "image",
             "caption": [
                 "Fig. 2. Building blocks of a CNN. Figure from [13] "
@@ -473,7 +720,7 @@
             "page": 4
         },
         {
-            "id": "Figure 3",
+            "id": 3,
             "type": "image",
             "caption": [
                 "Fig. 3. 2DCNN vs. 3D CNN [47] "
@@ -484,7 +731,7 @@
             "page": 9
         },
         {
-            "id": "Figure 4",
+            "id": 4,
             "type": "image",
             "caption": [
                 "Fig. 4. 3D object detection in point clouds is a challenging problem due to discrete sampling, noisy scans, occlusions and cluttered scenes. Figure from [48]. "
@@ -494,5 +741,6 @@
             ],
             "page": 9
         }
-    ]
+    ],
+    "tables": []
 }

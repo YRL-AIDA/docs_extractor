@@ -1,5 +1,12 @@
 {
     "title": "STRUCTURED NEURAL SUMMARIZATION ",
+    "authors": [
+        "Patrick Fernandes",
+        "Miltiadis Allamanis",
+        "Marc Brockschmidt",
+        "miallama",
+        "mabrocks"
+    ],
     "abstract": "Summarization of long sequences into a concise statement is a core problem in natural language processing, requiring non-trivial understanding of the input. Based on the promising results of graph neural networks on highly structured data, we develop a framework to extend existing sequence encoders with a graph component that can reason about long-distance relationships in weakly structured data such as text. In an extensive evaluation, we show that the resulting hybrid sequence-graph models outperform both pure sequence models as well as pure graph models on a range of summarization tasks. ",
     "keywords": null,
     "language": "de",
@@ -211,7 +218,7 @@
     "references": [],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Figure 2: (Partial) graph of an example input from the CNN/DM corpus. "
@@ -220,63 +227,65 @@
                 "images/3e3da587bc37e6c4439d300522ec1a50d0f118387c55d8464938255a30840303.jpg"
             ],
             "page": 4
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "Table 1: Evaluation results for all models and tasks. "
             ],
             "table_body": "<table><tr><td>METHODNAMING</td><td>F1</td><td>ROUGE-2</td><td>ROUGE-L</td><td></td></tr><tr><td>Java</td><td></td><td></td><td></td><td></td></tr><tr><td>Alon et al. (2019)</td><td>43.0</td><td>-</td><td>-</td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>24.9</td><td>8.3</td><td>27.4</td><td></td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>44.5</td><td>20.9</td><td>43.4</td><td></td></tr><tr><td>BILSTM → LSTM</td><td>35.8</td><td>17.9</td><td>39.7</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>44.7</td><td>21.1</td><td>43.1</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>42.5</td><td>22.4</td><td>45.6</td><td></td></tr><tr><td>GNN → LSTM+Pointer</td><td>50.5</td><td>24.8</td><td>48.9</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>51.4</td><td>25.0</td><td>50.0</td><td></td></tr><tr><td>C#</td><td></td><td></td><td></td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>41.3</td><td>25.2</td><td>43.2</td><td></td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>62.1</td><td>31.0</td><td>61.1</td><td></td></tr><tr><td>BILSTM → LSTM</td><td>48.8</td><td>32.8</td><td>51.8</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>62.6</td><td>31.0</td><td>61.3</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>57.2</td><td>29.7</td><td>60.4</td><td></td></tr><tr><td>GNN → LSTM+Pointer</td><td>63.0</td><td>31.5</td><td>61.3</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>63.4</td><td>31.9</td><td>62.4</td><td></td></tr><tr><td>METHODDOC</td><td>F1</td><td>ROUGE-2</td><td>ROUGE-L</td><td>BLEU</td></tr><tr><td>C#</td><td></td><td></td><td></td><td></td></tr><tr><td>SELFATT → SELFATT</td><td>40.0</td><td>27.8</td><td>41.1</td><td>13.9</td></tr><tr><td>SELFATT+GNN → SELFATT</td><td>37.6</td><td>25.6</td><td>37.9</td><td>21.4</td></tr><tr><td>BILSTM → LSTM</td><td>35.2</td><td>15.3</td><td>30.8</td><td>10.0</td></tr><tr><td>BILSTM+GNN → LSTM</td><td>41.1</td><td>28.9</td><td>41.0</td><td>22.5</td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>35.2</td><td>20.8</td><td>36.7</td><td>14.7</td></tr><tr><td>GNN → LSTM+Pointer</td><td>38.9</td><td>25.6</td><td>37.1</td><td>17.7</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer (average pooling)</td><td>43.2</td><td>29.0</td><td>41.0</td><td>21.3</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>45.4</td><td>28.3</td><td>41.1</td><td>22.2</td></tr><tr><td>NLSUMMARIZATION</td><td>ROUGE-1</td><td>ROUGE-2</td><td>ROUGE-L</td><td></td></tr><tr><td>CNN/DM</td><td></td><td></td><td></td><td></td></tr><tr><td>BILSTM → LSTM</td><td>33.6</td><td>11.4</td><td>27.9</td><td></td></tr><tr><td>BILSTM+GNN → LSTM</td><td>33.0</td><td>13.3</td><td>28.3</td><td></td></tr><tr><td>See et al. (2017) (+ Pointer)</td><td>36.4</td><td>15.7</td><td>33.4</td><td></td></tr><tr><td>BILSTM → LSTM+Pointer</td><td>35.9</td><td>13.9</td><td>30.3</td><td></td></tr><tr><td>BILSTM+GNN → LSTM+Pointer</td><td>38.1</td><td>16.1</td><td>33.2</td><td></td></tr><tr><td>See et al. (2017) (+ Pointer + Coverage)</td><td>39.5</td><td>17.3</td><td>36.4</td><td></td></tr></table>",
-            "img_path": "output/images/ca6f8251c14aa6e6e9962644ac1f23c32b4d3993eb68019b6822922a22a88730.jpg",
+            "img_path": "output/demo6/images/ca6f8251c14aa6e6e9962644ac1f23c32b4d3993eb68019b6822922a22a88730.jpg",
             "page": 5
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [
                 "Table 2: Ablations on CNN/DM Corpus "
             ],
             "table_body": "<table><tr><td colspan=\"2\">NLSUMMARIZATION (CNN/DM)</td><td>ROUGE-1</td><td>ROUGE-2</td><td>ROUGE-L</td></tr><tr><td colspan=\"2\">See et al. (2017) (base)</td><td>31.3</td><td>11.8</td><td>28.8</td></tr><tr><td colspan=\"2\">See et al. (2017) (+ Pointer)</td><td>36.4</td><td>15.7</td><td>33.4</td></tr><tr><td colspan=\"2\">See et al. (2017) (+ Pointer + Coverage)</td><td>39.5</td><td>17.3</td><td>36.4</td></tr><tr><td>BILSTM</td><td>→ LSTM</td><td>33.6</td><td>11.4</td><td>27.9</td></tr><tr><td>BILSTM</td><td>→ LSTM+Pointer</td><td>35.9</td><td>13.9</td><td>30.3</td></tr><tr><td>BILSTM</td><td>→ LSTM+Pointer (+ coref/entity annotations)</td><td>36.2</td><td>14.2</td><td>30.5</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM</td><td>33.0</td><td>13.3</td><td>28.3</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer (only sentence nodes)</td><td>36.0</td><td>15.2</td><td>29.6</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer (sentence nodes + eq edges)</td><td>36.1</td><td>15.4</td><td>30.3</td></tr><tr><td>BILSTM+GNN</td><td>→ LSTM+Pointer</td><td>38.1</td><td>16.1</td><td>33.2</td></tr></table>",
-            "img_path": "output/images/dcb8aead1b59ac4bd0b0107574b293b3e8aa510abab0c751fe1390219159d585.jpg",
+            "img_path": "output/demo6/images/dcb8aead1b59ac4bd0b0107574b293b3e8aa510abab0c751fe1390219159d585.jpg",
             "page": 6
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [],
             "table_body": "<table><tr><td>Input: Arsenal, Newcastle United and Southampton have checked on Caen midfielder N’golo Kante. Paris-born Kante is a defensive minded player who has impressed for Caen this season and they are willing to sell for around £ 5million. Marseille have been in constant contact with Caen over signing the 24-year-old who has similarities with Lassana Diarra and Claude Makelele in terms of stature and style. N’Golo Kante is attracting interest from a host of Premier League clubs including Arsenal. Caen would be willing to sell Kante for around £ 5million.</td></tr><tr><td>Reference: n’golo kante is wanted by arsenal, newcastle and southampton. marseille are also keen on the £ 5m rated midfielder. kante has been compared to lassana diarra and claude makelele. click here for the latest premier league news.</td></tr><tr><td>See et al. (2017) (+ Pointer): arsenal, newcastle united and southampton have checked on caen midfielder n’golo kante. paris-born kante is attracting interest from a host of premier league clubs including arsenal. paris-born kante is attracting interest from a host of premier league clubs including arsenal</td></tr><tr><td>See et al. (2017) (+ Pointer + Coverage): arsenal, newcastle united and southampton have checked on caen midfielder n’golo kante. paris-born kante is a defensive minded player who has impressed for caen this season. marseille have been in constant contact with caen over signing the 24-year-old.</td></tr><tr><td>BILSTM+GNN → LSTM: marseille have been linked with caen midfielder %UNK% %UNK%. marseille have been interested from a host of premier league clubs including arsenal. caen have been interested from a host of premier league clubs including arsenal.</td></tr><tr><td>BILSTM+GNN → LSTM+Pointer n’golo kante is attracting interest from a host of premier league clubs. marseille have been in constant contact with caen over signing the 24-year-old. the 24-year-old has similarities with lassana diarra and claude makelele in terms of stature.</td></tr></table>",
-            "img_path": "output/images/e5ce698356b910cf932077b962a606e2691c078e104ea53349b78faddb785376.jpg",
+            "img_path": "output/demo6/images/e5ce698356b910cf932077b962a606e2691c078e104ea53349b78faddb785376.jpg",
             "page": 7
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "Table 3: Projects in our C# dataset. Ordered alphabetically. "
             ],
             "table_body": "<table><tr><td>Name</td><td>Git SHA</td><td>Description</td></tr><tr><td>Akka.NET</td><td>6f32f6a7</td><td>Actor-based Concurrent &amp; Distributed Framework</td></tr><tr><td>AutoMapper</td><td>19d6f7fc</td><td>Object-to-Object Mapping Library</td></tr><tr><td>BenchmarkDotNet</td><td>57005f05</td><td>Benchmarking Library</td></tr><tr><td>CommonMark.NET</td><td>f3d54530</td><td>Markdown Parser</td></tr><tr><td>CoreCLR</td><td>cc5dcbd6</td><td>.NET Core Runtime</td></tr><tr><td>CoreFx</td><td>ec1671fd</td><td>.NET Foundational Libraries</td></tr><tr><td>Dapper</td><td>3c7cde28</td><td>Object Mapper Library</td></tr><tr><td>EntityFramework</td><td>c4d9a269</td><td>Object-Relational Mapper</td></tr><tr><td>Humanizer</td><td>2b1c94c4</td><td>String Manipulation and Formatting</td></tr><tr><td>Lean</td><td>90ee6aaae</td><td>Algorithms Trading Engine</td></tr><tr><td>Mono</td><td>9b9e4f4b</td><td>.NET Implementation</td></tr><tr><td>MsBuild</td><td>7f95dc15</td><td>Build Engine</td></tr><tr><td>Nancy</td><td>de458a9b</td><td>HTTP Service Framework</td></tr><tr><td>NLog</td><td>49fdd08e</td><td>Logging Library</td></tr><tr><td>Opserver</td><td>9e4d3a40</td><td>Monitoring System</td></tr><tr><td>orleans</td><td>f89c5866</td><td>Distributed Virtual Actor Model</td></tr><tr><td>Polly</td><td>f3d2973d</td><td>Resilience &amp; Transient Fault Handling Library</td></tr><tr><td>Powershell</td><td>9ac701db</td><td>Command-line Shell</td></tr><tr><td>ravendb</td><td>6437de30</td><td>Document Database</td></tr><tr><td>roslyn</td><td>8ca0a542</td><td>Compiler &amp; Code Analysis &amp; Compilation</td></tr><tr><td>ServiceStack</td><td>17f081b9</td><td>Real-time web library</td></tr><tr><td>SignalR</td><td>9b05bcb0</td><td>Push Notification Framework</td></tr><tr><td>Wox</td><td>13e6c5ee</td><td>Application Launcher</td></tr></table>",
-            "img_path": "output/images/97212ffd45c47389899b16e875d51f6d4934234e6361a696c55a6d42f48c7dca.jpg",
+            "img_path": "output/demo6/images/97212ffd45c47389899b16e875d51f6d4934234e6361a696c55a6d42f48c7dca.jpg",
             "page": 16
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "Table 4: The statistics of the extracted graphs from the Java method naming dataset of Alon et al. (2019). "
             ],
             "table_body": "<table><tr><td>Dataset</td><td>Train Size</td><td>Valid Size</td><td>Test Size</td></tr><tr><td>Java – Small</td><td>691,505</td><td>23,837</td><td>56,952</td></tr></table>",
-            "img_path": "output/images/e9efcf7faf2760fc56146a69b0da4a5a1502edde1b1326f165f62475b9534919.jpg",
+            "img_path": "output/demo6/images/e9efcf7faf2760fc56146a69b0da4a5a1502edde1b1326f165f62475b9534919.jpg",
             "page": 16
         },
         {
-            "id": "Table 6",
+            "id": 6,
             "type": "table",
             "caption": [
                 "Table 5: Graph Statistics For Datasets. "
             ],
             "table_body": "<table><tr><td>Dataset</td><td>Avg Num Nodes</td><td>Avg Num Edges</td></tr><tr><td>CNN/DM</td><td>903.2</td><td>2532.9</td></tr><tr><td>C# Method Names</td><td>125.2</td><td>239.3</td></tr><tr><td>C# Documentation</td><td>133.5</td><td>265.9</td></tr><tr><td>Java-Small Method Names</td><td>144.4</td><td>251.6</td></tr></table>",
-            "img_path": "output/images/a8c7c58fe23c5fce051cc8a542e363b13732ee78d1c025fd2843ed8b6b3938d8.jpg",
+            "img_path": "output/demo6/images/a8c7c58fe23c5fce051cc8a542e363b13732ee78d1c025fd2843ed8b6b3938d8.jpg",
             "page": 17
         }
     ]

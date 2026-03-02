@@ -1,7 +1,14 @@
 {
     "title": "Разработка генератора платформенно-зависимой модели для системы проектирования виртуальных помощников ",
+    "authors": [],
     "abstract": "В данной статье будет рассмотрена разработка генератора платформенно-зависимой модели для системы проектирования виртуальных помощников на базе JUST AI c использованием платформы JAICP с помощью MDA подхода. ",
-    "keywords": null,
+    "keywords": [
+        "MDA",
+        "виртуальный помощник",
+        "чат-бот",
+        "JAICP",
+        "искусственный интеллект"
+    ],
     "language": "ru",
     "sections": [
         {
@@ -51,19 +58,34 @@
         {
             "id": 1,
             "text": "[1] А.Б. Столбов, Н.О. Дородных, О.А. Николайчук, А.Ю. Юрин, Н.В. Допиро. Генерация и трансформация специализированных моделей для проблемно-ориентированного интеллектуального помощника //Материалы конференции «Ляпуновские чтения 2023». – Иркутск: ИДСТУ СО РАН, 2023. – 184 с. ",
-            "authors": null,
+            "authors": [
+                "А.Б. Столбов",
+                "Н.О. Дородных",
+                "О.А. Николайчук",
+                "А.Ю. Юрин",
+                "Н.В. Допиро"
+            ],
             "year": "2023"
         },
         {
             "id": 2,
             "text": "[2] A. Yurin, O. Nikolaychuk, N. Dorodnykh, A. Stolbov Towards knowledge-based virtual assistant development with the aid of ontology // International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON). – 2022. – 830-834 pp. ",
-            "authors": null,
+            "authors": [
+                "A. Yurin",
+                "O. Nikolaychuk",
+                "N. Dorodnykh",
+                "A. Stolbov"
+            ],
             "year": "2022"
         },
         {
             "id": 3,
             "text": "[3] Pérez-Soler S., Guerra E., de Lara J. Model-Driven Chatbot Development.Lecture Notes in Computer Science. – 2020. Vol. 12400, pp. 207–222. ",
-            "authors": null,
+            "authors": [
+                "Pérez-Soler S.",
+                "Guerra E.",
+                "de Lara J."
+            ],
             "year": "2020"
         },
         {
@@ -75,7 +97,7 @@
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Рисунок 1: Концепция средства: модели MDA и их трансформации "
@@ -86,7 +108,7 @@
             "page": 1
         },
         {
-            "id": "Figure 2",
+            "id": 2,
             "type": "image",
             "caption": [
                 "Рисунок 2: Диаграмма классов основных элементов JAICP "
@@ -97,7 +119,7 @@
             "page": 2
         },
         {
-            "id": "Figure 3",
+            "id": 3,
             "type": "image",
             "caption": [
                 "Рисунок 3: Диаграмма классов, описывающая взаимосвязь переходов и состояний "
@@ -108,7 +130,7 @@
             "page": 2
         },
         {
-            "id": "Figure 4",
+            "id": 4,
             "type": "image",
             "caption": [
                 "Рисунок 4.Классы для хранения информации о намерениях и сущностей с заполнением слотов, и их компонентов "
@@ -119,7 +141,7 @@
             "page": 3
         },
         {
-            "id": "Figure 5",
+            "id": 5,
             "type": "image",
             "caption": [
                 "Рисунок 5: Фрагмент входных и выходных данных работы генератора "
@@ -130,5 +152,6 @@
             ],
             "page": 4
         }
-    ]
+    ],
+    "tables": []
 }

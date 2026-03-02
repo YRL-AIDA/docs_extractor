@@ -1,5 +1,16 @@
 {
     "title": "Transformer for Graphs: An Overview from Architecture Perspective ",
+    "authors": [
+        "Erxue",
+        "Runfa Chen3",
+        "Yatao Bian2",
+        "Kangfei Zhao2",
+        "Wenbing Huang4",
+        "Peilin Zhao2",
+        "Junzhou Huang5",
+        "Sophia Ananiadou1",
+        "Yu Rong2"
+    ],
     "abstract": "Recently, Transformer model, which has achieved great success in many artificial intelligence fields, has demonstrated its great potential in modeling graph-structured data. Till now, a great variety of Transformers has been proposed to adapt to the graph-structured data. However, a comprehensive literature review and systematical evaluation of these Transformer variants for graphs are still unavailable. It’s imperative to sort out the existing Transformer models for graphs and systematically investigate their effectiveness on various graph tasks. In this survey, we provide a comprehensive review of various Graph Transformer models from the architectural design perspective. We first disassemble the existing models and conclude three typical ways to incorporate the graph information into the vanilla Transformer: 1) GNNs as Auxiliary Modules, 2) Improved Positional Embedding from Graphs, and 3) Improved Attention Matrix from Graphs. Furthermore, we implement the representative components in three groups and conduct a comprehensive comparison on various kinds of famous graph data benchmarks to investigate the real performance gain of each component. Our experiments confirm the benefits of current graph-specific modules on Transformer and reveal their advantages on different kinds of graph tasks. ",
     "keywords": null,
     "language": "en",
@@ -51,85 +62,165 @@
         {
             "id": 1,
             "text": "[Aggarwal, 2010] Charu C. Aggarwal. Graph Clustering, pages 459–467. Springer US, Boston, MA, 2010. ",
-            "authors": null,
+            "authors": [
+                "Aggarwal",
+                "Aggarwal"
+            ],
             "year": "2010"
         },
         {
             "id": 2,
             "text": "[Ba et al., 2016] Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016. ",
-            "authors": null,
+            "authors": [
+                "Ba",
+                "Jimmy Lei Ba",
+                "Jamie Ryan Kiros",
+                "Geoffrey E Hinton"
+            ],
             "year": "2016"
         },
         {
             "id": 3,
             "text": "[Cai and Lam, 2020] Deng Cai and Wai Lam. Graph transformer for graph-to-sequence learning. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 34, pages 7464–7471, 2020. ",
-            "authors": null,
+            "authors": [
+                "Cai",
+                "Lam",
+                "Deng Cai",
+                "Wai Lam"
+            ],
             "year": "2020"
         },
         {
             "id": 4,
             "text": "[Chanussot* et al., 2021] Lowik Chanussot*, Abhishek Das*, Siddharth Goyal*, Thibaut Lavril*, Muhammed Shuaibi*, Morgane Riviere, Kevin Tran, Javier Heras-Domingo, Caleb Ho, Weihua Hu, Aini Palizhati, Anuroop Sriram, Brandon Wood, Junwoong Yoon, Devi Parikh, C. Lawrence Zitnick, and Zachary Ulissi. Open catalyst 2020 (oc20) dataset and community challenges. ACS Catalysis, 2021. ",
-            "authors": null,
-            "year": "2021"
+            "authors": [
+                "Lowik Chanussot",
+                "Abhishek Das",
+                "Siddharth Goyal",
+                "Thibaut Lavril",
+                "Muhammed Shuaibi",
+                "Morgane Riviere",
+                "Kevin Tran",
+                "Javier Heras-Domingo",
+                "Caleb Ho",
+                "Weihua Hu",
+                "Aini Palizhati",
+                "Anuroop Sriram",
+                "Brandon Wood",
+                "Junwoong Yoon",
+                "Devi Parikh",
+                "C. Lawrence Zitnick",
+                "Zachary Ulissi"
+            ],
+            "year": "2020"
         },
         {
             "id": 5,
             "text": "[Chen et al., 2020] Dexiong Chen, Laurent Jacob, and Julien Mairal. Convolutional kernel networks for graphstructured data. In International Conference on Machine Learning, pages 1576–1586. PMLR, 2020. ",
-            "authors": null,
+            "authors": [
+                "Dexiong Chen",
+                "Laurent Jacob",
+                "Julien Mairal"
+            ],
             "year": "2020"
         },
         {
             "id": 6,
             "text": "[Dwivedi and Bresson, 2020] Vijay Prakash Dwivedi and Xavier Bresson. A generalization of transformer networks to graphs. arXiv preprint arXiv:2012.09699, 2020. ",
-            "authors": null,
+            "authors": [
+                "Dwivedi",
+                "Vijay Prakash Dwivedi",
+                "Xavier Bresson"
+            ],
             "year": "2020"
         },
         {
             "id": 7,
             "text": "[Forsyth and Ponce, 2011] David Forsyth and Jean Ponce. Computer vision: A modern approach. Prentice hall, 2011. ",
-            "authors": null,
+            "authors": [
+                "David Forsyth",
+                "Jean Ponce"
+            ],
             "year": "2011"
         },
         {
             "id": 8,
             "text": "[Fuchs et al., 2020] Fabian Fuchs, Daniel Worrall, Volker Fischer, and Max Welling. Se (3)-transformers: 3d rototranslation equivariant attention networks. Advances in Neural Information Processing Systems, 33:1970–1981, 2020. ",
-            "authors": null,
+            "authors": [
+                "Fabian Fuchs",
+                "Daniel Worrall",
+                "Volker Fischer",
+                "Max Welling"
+            ],
             "year": "2020"
         },
         {
             "id": 9,
             "text": "[Gilmer et al., 2017] Justin Gilmer, Samuel S Schoenholz, Patrick F Riley, Oriol Vinyals, and George E Dahl. Neural message passing for quantum chemistry. In International conference on machine learning, pages 1263–1272. PMLR, 2017. ",
-            "authors": null,
+            "authors": [
+                "Justin Gilmer",
+                "Samuel S Schoenholz",
+                "Patrick F Riley",
+                "Oriol Vinyals",
+                "George E Dahl"
+            ],
             "year": "2017"
         },
         {
             "id": 10,
             "text": "[Hamilton, 2020] James Douglas Hamilton. Time series analysis. Princeton university press, 2020. ",
-            "authors": null,
+            "authors": [
+                "Hamilton",
+                "James Douglas",
+                "Hamilton"
+            ],
             "year": "2020"
         },
         {
             "id": 11,
             "text": "[Hu et al., 2021] Weihua Hu, Matthias Fey, Hongyu Ren, Maho Nakata, Yuxiao Dong, and Jure Leskovec. Ogb-lsc: A large-scale challenge for machine learning on graphs. arXiv preprint arXiv:2103.09430, 2021. ",
-            "authors": null,
+            "authors": [
+                "Weihua Hu",
+                "Matthias Fey",
+                "Hongyu Ren",
+                "Maho Nakata",
+                "Yuxiao Dong",
+                "Jure Leskovec"
+            ],
             "year": "2021"
         },
         {
             "id": 12,
             "text": "[Hussain et al., 2021] Md Shamim Hussain, Mohammed J Zaki, and Dharmashankar Subramanian. Edge-augmented graph transformers: Global self-attention is enough for graphs. arXiv preprint arXiv:2108.03348, 2021. ",
-            "authors": null,
+            "authors": [
+                "Md Shamim Hussain",
+                "Mohammed J Zaki",
+                "Dharmashankar Subramanian"
+            ],
             "year": "2021"
         },
         {
             "id": 13,
             "text": "[Jain et al., 2021] Paras Jain, Zhanghao Wu, Matthew Wright, Azalia Mirhoseini, Joseph E Gonzalez, and Ion Stoica. Representing long-range context for graph neural networks with global attention. Advances in Neural Information Processing Systems, 34, 2021. ",
-            "authors": null,
+            "authors": [
+                "Paras Jain",
+                "Zhanghao Wu",
+                "Matthew Wright",
+                "Azalia Mirhoseini",
+                "Joseph E Gonzalez",
+                "Ion Stoica"
+            ],
             "year": "2021"
         },
         {
             "id": 14,
             "text": "[Khoo et al., 2020] Ling Min Serena Khoo, Hai Leong Chieu, Zhong Qian, and Jing Jiang. Interpretable rumor ",
-            "authors": null,
+            "authors": [
+                "Ling Min Serena Khoo",
+                "Hai Leong Chieu",
+                "Zhong Qian",
+                "Jing Jiang"
+            ],
             "year": null
         },
         {
@@ -141,187 +232,365 @@
         {
             "id": 16,
             "text": "[Kipf and Welling, 2016] Thomas N Kipf and Max Welling. Semi-supervised classification with graph convolutional networks. arXiv preprint arXiv:1609.02907, 2016. ",
-            "authors": null,
+            "authors": [
+                "Welling",
+                "Thomas N Kipf",
+                "Max Welling"
+            ],
             "year": "2016"
         },
         {
             "id": 17,
             "text": "[Kreuzer et al., 2021] Devin Kreuzer, Dominique Beaini, William L Hamilton, Vincent Letourneau, and Prudencio ´ Tossou. Rethinking graph transformers with spectral attention. arXiv preprint arXiv:2106.03893, 2021. ",
-            "authors": null,
+            "authors": [
+                "Devin Kreuzer",
+                "Dominique Beaini",
+                "William L Hamilton",
+                "Vincent Letourneau",
+                "Prudencio ´ Tossou"
+            ],
             "year": "2021"
         },
         {
             "id": 18,
             "text": "[Lin et al., 2021] Kevin Lin, Lijuan Wang, and Zicheng Liu. Mesh graphormer. arXiv preprint arXiv:2104.00272, 2021. ",
-            "authors": null,
+            "authors": [
+                "Kevin Lin",
+                "Lijuan Wang",
+                "Zicheng Liu"
+            ],
             "year": "2021"
         },
         {
             "id": 19,
             "text": "[Maron et al., 2019] Haggai Maron, Heli Ben-Hamu, Hadar Serviansky, and Yaron Lipman. Provably powerful graph networks. Advances in neural information processing systems, 32, 2019. ",
-            "authors": null,
+            "authors": [
+                "Haggai Maron",
+                "Heli Ben-Hamu",
+                "Hadar Serviansky",
+                "Yaron Lipman"
+            ],
             "year": "2019"
         },
         {
             "id": 20,
             "text": "[Mialon et al., 2021] Gregoire Mialon, Dexiong Chen, Mar- ´ got Selosse, and Julien Mairal. Graphit: Encoding graph structure in transformers. arXiv preprint arXiv:2106.05667, 2021. ",
-            "authors": null,
+            "authors": [
+                "Gregoire Mialon",
+                "Dexiong Chen",
+                "Mar- ´ got Selosse",
+                "Julien Mairal"
+            ],
             "year": "2021"
         },
         {
             "id": 21,
             "text": "[Min et al., 2022] Erxue Min, Yu Rong, Tingyang Xu, Yatao Bian, Peilin Zhao, Junzhou Huang, Da Luo, Kangyi Lin, and Sophia Ananiadou. Masked transformer for neighhourhood-aware click-through rate prediction. arXiv preprint arXiv:2201.13311, 2022. ",
-            "authors": null,
+            "authors": [
+                "Erxue Min",
+                "Yu Rong",
+                "Tingyang Xu",
+                "Yatao Bian",
+                "Peilin Zhao",
+                "Junzhou Huang",
+                "Da Luo",
+                "Kangyi Lin",
+                "Sophia Ananiadou"
+            ],
             "year": "2022"
         },
         {
             "id": 22,
             "text": "[Nguyen et al., 2019] Dai Quoc Nguyen, Tu Dinh Nguyen, and Dinh Phung. Universal graph transformer selfattention networks. arXiv preprint arXiv:1909.11855, 2019. ",
-            "authors": null,
+            "authors": [
+                "Nguyen",
+                "Dai Quoc Nguyen",
+                "Tu Dinh Nguyen",
+                "Dinh Phung"
+            ],
             "year": "2019"
         },
         {
             "id": 23,
             "text": "[Purwins et al., 2019] Hendrik Purwins, Bo Li, Tuomas Virtanen, Jan Schlter, Shuo-Yiin Chang, and Tara Sainath. Deep learning for audio signal processing. IEEE Journal of Selected Topics in Signal Processing, 13(2):206–219, 2019. ",
-            "authors": null,
+            "authors": [
+                "Hendrik Purwins",
+                "Bo Li",
+                "Tuomas Virtanen",
+                "Jan Schlter",
+                "Shuo-Yiin Chang",
+                "Tara Sainath"
+            ],
             "year": "2019"
         },
         {
             "id": 24,
             "text": "[Rong et al., 2019] Yu Rong, Wenbing Huang, Tingyang Xu, and Junzhou Huang. Dropedge: Towards deep graph convolutional networks on node classification. arXiv preprint arXiv:1907.10903, 2019. ",
-            "authors": null,
+            "authors": [
+                "Yu Rong",
+                "Wenbing Huang",
+                "Tingyang Xu",
+                "Junzhou Huang"
+            ],
             "year": "2019"
         },
         {
             "id": 25,
             "text": "[Rong et al., 2020] Yu Rong, Yatao Bian, Tingyang Xu, Weiyang Xie, Ying Wei, Wenbing Huang, and Junzhou Huang. Self-supervised graph transformer on large-scale molecular data. arXiv preprint arXiv:2007.02835, 2020. ",
-            "authors": null,
+            "authors": [
+                "Yu Rong",
+                "Yatao Bian",
+                "Tingyang Xu",
+                "Weiyang Xie",
+                "Ying Wei",
+                "Wenbing Huang",
+                "Junzhou Huang"
+            ],
             "year": "2020"
         },
         {
             "id": 26,
             "text": "[Schmitt et al., 2020] Martin Schmitt, Leonardo FR Ribeiro, Philipp Dufter, Iryna Gurevych, and Hinrich Schutze. ¨ Modeling graph structure via relative position for text generation from knowledge graphs. arXiv preprint arXiv:2006.09242, 2020. ",
-            "authors": null,
+            "authors": [
+                "Martin Schmitt",
+                "Leonardo FR Ribeiro",
+                "Philipp Dufter",
+                "Iryna Gurevych",
+                "Hinrich Schutze"
+            ],
             "year": "2020"
         },
         {
             "id": 27,
             "text": "[Shi et al., 2020] Yunsheng Shi, Zhengjie Huang, Shikun Feng, Hui Zhong, Wenjin Wang, and Yu Sun. Masked label prediction: Unified message passing model for semi-supervised classification. arXiv preprint arXiv:2009.03509, 2020. ",
-            "authors": null,
+            "authors": [
+                "Yunsheng Shi",
+                "Zhengjie Huang",
+                "Shikun Feng",
+                "Hui Zhong",
+                "Wenjin Wang",
+                "Yu Sun"
+            ],
             "year": "2020"
         },
         {
             "id": 28,
             "text": "[Shiv and Quirk, 2019] Vighnesh Shiv and Chris Quirk. Novel positional encodings to enable tree-based transformers. Advances in Neural Information Processing Systems, 32, 2019. ",
-            "authors": null,
+            "authors": [
+                "Shiv",
+                "Quirk",
+                "Vighnesh Shiv",
+                "Chris Quirk"
+            ],
             "year": "2019"
         },
         {
             "id": 29,
             "text": "[Tholke and de Fabritiis, 2022 ¨ ] Philipp Tholke and Gianni ¨ de Fabritiis. Equivariant transformers for neural network based molecular potentials. 2022. ",
-            "authors": null,
+            "authors": [
+                "Tholke",
+                "Philipp Tholke",
+                "Gianni ¨ de Fabritiis"
+            ],
             "year": "2022"
         },
         {
             "id": 30,
             "text": "[Tsai et al., 2019] Yao-Hung Hubert Tsai, Shaojie Bai, Makoto Yamada, Louis-Philippe Morency, and Ruslan Salakhutdinov. Transformer dissection: A unified understanding of transformer’s attention via the lens of kernel. arXiv preprint arXiv:1908.11775, 2019. ",
-            "authors": null,
+            "authors": [
+                "Yao-Hung Hubert Tsai",
+                "Shaojie Bai",
+                "Makoto Yamada",
+                "Louis-Philippe Morency",
+                "Ruslan Salakhutdinov"
+            ],
             "year": "2019"
         },
         {
             "id": 31,
             "text": "[Vaswani et al., 2017] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in neural information processing systems, pages 5998–6008, 2017. ",
-            "authors": null,
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "Lukasz Kaiser",
+                "Illia Polosukhin"
+            ],
             "year": "2017"
         },
         {
             "id": 32,
             "text": "[Velivckovic et al., 2017] Petar Velivckovic, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro Lio, and Yoshua Bengio. Graph attention networks. arXiv preprint arXiv:1710.10903, 2017. ",
-            "authors": null,
+            "authors": [
+                "Petar Velivckovic",
+                "Guillem Cucurull",
+                "Arantxa Casanova",
+                "Adriana Romero",
+                "Pietro Lio",
+                "Yoshua Bengio"
+            ],
             "year": "2017"
         },
         {
             "id": 33,
             "text": "[Wang et al., 2019] Xing Wang, Zhaopeng Tu, Longyue Wang, and Shuming Shi. Self-attention with structural position representations. arXiv preprint arXiv:1909.00383, 2019. ",
-            "authors": null,
+            "authors": [
+                "Xing Wang",
+                "Zhaopeng Tu",
+                "Longyue Wang",
+                "Shuming Shi"
+            ],
             "year": "2019"
         },
         {
             "id": 34,
             "text": "[Xu et al., 2018a] Keyulu Xu, Weihua Hu, Jure Leskovec, and Stefanie Jegelka. How powerful are graph neural networks? arXiv preprint arXiv:1810.00826, 2018. ",
-            "authors": null,
+            "authors": [
+                "Keyulu Xu",
+                "Weihua Hu",
+                "Jure Leskovec",
+                "Stefanie Jegelka"
+            ],
             "year": "2018"
         },
         {
             "id": 35,
             "text": "[Xu et al., 2018b] Keyulu Xu, Chengtao Li, Yonglong Tian, Tomohiro Sonobe, Ken-ichi Kawarabayashi, and Stefanie Jegelka. Representation learning on graphs with jumping knowledge networks. In International Conference on Machine Learning, pages 5453–5462. PMLR, 2018. ",
-            "authors": null,
+            "authors": [
+                "Keyulu Xu",
+                "Chengtao Li",
+                "Yonglong Tian",
+                "Tomohiro Sonobe",
+                "Ken-ichi Kawarabayashi",
+                "Stefanie Jegelka"
+            ],
             "year": "2018"
         },
         {
             "id": 36,
             "text": "[Yang et al., 2016] Zhilin Yang, William Cohen, and Ruslan Salakhudinov. Revisiting semi-supervised learning with graph embeddings. In International conference on machine learning, pages 40–48. PMLR, 2016. ",
-            "authors": null,
+            "authors": [
+                "Yang",
+                "Zhilin Yang",
+                "William Cohen",
+                "Ruslan Salakhudinov"
+            ],
             "year": "2016"
         },
         {
             "id": 37,
             "text": "[Yao et al., 2020] Shaowei Yao, Tianming Wang, and Xiaojun Wan. Heterogeneous graph transformer for graph-tosequence learning. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7145–7154, 2020. ",
-            "authors": null,
+            "authors": [
+                "Shaowei Yao",
+                "Tianming Wang",
+                "Xiaojun Wan"
+            ],
             "year": "2020"
         },
         {
             "id": 38,
             "text": "[Ying et al., 2021] Chengxuan Ying, Tianle Cai, Shengjie Luo, Shuxin Zheng, Guolin Ke, Di He, Yanming Shen, and Tie-Yan Liu. Do transformers really perform bad for graph representation? arXiv preprint arXiv:2106.05234, 2021. ",
-            "authors": null,
+            "authors": [
+                "Chengxuan Ying",
+                "Tianle Cai",
+                "Shengjie Luo",
+                "Shuxin Zheng",
+                "Guolin Ke",
+                "Di He",
+                "Yanming Shen",
+                "Tie-Yan Liu"
+            ],
             "year": "2021"
         },
         {
             "id": 39,
             "text": "[Zeng et al., 2020] Hanqing Zeng, Muhan Zhang, Yinglong Xia, Ajitesh Srivastava, Andrey Malevich, Rajgopal Kannan, Viktor Prasanna, Long Jin, and Ren Chen. Deep graph neural networks with shallow subgraph samplers. arXiv preprint arXiv:2012.01380, 2020. ",
-            "authors": null,
+            "authors": [
+                "Hanqing Zeng",
+                "Muhan Zhang",
+                "Yinglong Xia",
+                "Ajitesh Srivastava",
+                "Andrey Malevich",
+                "Rajgopal Kannan",
+                "Viktor Prasanna",
+                "Long Jin",
+                "Ren Chen"
+            ],
             "year": "2020"
         },
         {
             "id": 40,
             "text": "[Zhang and Chen, 2018] Muhan Zhang and Yixin Chen. Link prediction based on graph neural networks. Advances in neural information processing systems, 31, 2018. ",
-            "authors": null,
+            "authors": [
+                "Muhan Zhang",
+                "Yixin Chen"
+            ],
             "year": "2018"
         },
         {
             "id": 41,
             "text": "[Zhang and Meng, 2019] Jiawei Zhang and Lin Meng. Gresnet: Graph residual network for reviving deep gnns from suspended animation. arXiv preprint arXiv:1909.05729, 2019. ",
-            "authors": null,
+            "authors": [
+                "Jiawei Zhang",
+                "Lin Meng"
+            ],
             "year": "2019"
         },
         {
             "id": 42,
             "text": "[Zhang et al., 2020] Jiawei Zhang, Haopeng Zhang, Congying Xia, and Li Sun. Graph-bert: Only attention is needed for learning graph representations. arXiv preprint arXiv:2001.05140, 2020. ",
-            "authors": null,
+            "authors": [
+                "Jiawei Zhang",
+                "Haopeng Zhang",
+                "Congying Xia",
+                "Li Sun"
+            ],
             "year": "2020"
         },
         {
             "id": 43,
             "text": "[Zhao and Akoglu, 2019] Lingxiao Zhao and Leman Akoglu. Pairnorm: Tackling oversmoothing in gnns. arXiv preprint arXiv:1909.12223, 2019. ",
-            "authors": null,
+            "authors": [
+                "Lingxiao Zhao",
+                "Leman Akoglu"
+            ],
             "year": "2019"
         },
         {
             "id": 44,
             "text": "[Zhao et al., 2021] Jianan Zhao, Chaozhuo Li, Qianlong Wen, Yiqi Wang, Yuming Liu, Hao Sun, Xing Xie, and Yanfang Ye. Gophormer: Ego-graph transformer for node classification. arXiv preprint arXiv:2110.13094, 2021. ",
-            "authors": null,
+            "authors": [
+                "Jianan Zhao",
+                "Chaozhuo Li",
+                "Qianlong Wen",
+                "Yiqi Wang",
+                "Yuming Liu",
+                "Hao Sun",
+                "Xing Xie",
+                "Yanfang Ye"
+            ],
             "year": "2021"
         },
         {
             "id": 45,
             "text": "[Zhu et al., 2019] Jie Zhu, Junhui Li, Muhua Zhu, Longhua Qian, Min Zhang, and Guodong Zhou. Modeling graph structure in transformer for better amr-to-text generation. arXiv preprint arXiv:1909.00136, 2019. ",
-            "authors": null,
+            "authors": [
+                "Jie Zhu",
+                "Junhui Li",
+                "Muhua Zhu",
+                "Longhua Qian",
+                "Min Zhang",
+                "Guodong Zhou"
+            ],
             "year": "2019"
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": [
                 "Figure 1: Three types of GNN-as-Auxiliary-Modules architecture. "
@@ -330,55 +599,57 @@
                 "images/876e78e5eae692e81ef4fea8b965b89fd3e01b6b0ecd4ee873df4f7615e2c627.jpg"
             ],
             "page": 2
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "Table 1: A summary of papers that applied Transformers on graphstructured data. GA: GNNs as Auxiliary Modules; PE: Improved Positional Embedding from Graphs; AT: Improved Attention Matrix from Graphs. "
             ],
             "table_body": "<table><tr><td>Method</td><td>GA</td><td>PE</td><td>AT</td><td>Code</td></tr><tr><td>[Zhu et al., 2019]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>[Shiv and Quirk, 2019]</td><td></td><td>✓</td><td></td><td></td></tr><tr><td>[Wang et al., 2019]</td><td></td><td>✓</td><td>✓</td><td></td></tr><tr><td>U2GNN [Nguyen et al., 2019]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>HeGT [Yao et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>Graformer [Schmitt et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>PLAN [Khoo et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>UniMP [Shi et al., 2020]</td><td></td><td></td><td>✓</td><td></td></tr><tr><td>GTOS [Cai and Lam, 2020]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Graph Trans [Dwivedi and Bresson, 2020]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Grover [Rong et al., 2020]</td><td>✓</td><td></td><td></td><td>✓</td></tr><tr><td>Graph-BERT [Zhang et al., 2020]</td><td>✓</td><td>✓</td><td></td><td>✓</td></tr><tr><td>SE(3)-Transformer [Fuchs et al., 2020]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>Mesh Graphormer [Lin et al., 2021]</td><td>✓</td><td>✓</td><td></td><td>✓</td></tr><tr><td>Gophormer [Zhao et al., 2021]</td><td></td><td></td><td>✓</td><td></td></tr><tr><td>EGT [Hussain et al., 2021]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>SAN [Kreuzer et al., 2021]</td><td></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>GraphiT [Mialon et al., 2021]</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Graphormer [Ying et al., 2021]</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Mask-transformer [Min et al., 2022]</td><td></td><td></td><td>✓</td><td>✓</td></tr><tr><td>TorchMD-NET [Thölke and de Fabritiis, 2022]</td><td></td><td></td><td>✓</td><td>✓</td></tr></table>",
-            "img_path": "output/images/faa56114152d54d47c7ec9f27c318df37c9a52f9a9359672fb580135adcb3a2e.jpg",
+            "img_path": "output/demo4/images/faa56114152d54d47c7ec9f27c318df37c9a52f9a9359672fb580135adcb3a2e.jpg",
             "page": 1
         },
         {
-            "id": "Table 2",
+            "id": 2,
             "type": "table",
             "caption": [
                 "Table 2: Details of the datasets. "
             ],
             "table_body": "<table><tr><td>Dataset Type</td><td>Name</td><td>#Graph</td><td>#Nodes(Avg.)</td><td>#Edges(Avg.)</td><td>Task type</td><td>Metric</td></tr><tr><td rowspan=\"3\">Graph-level</td><td>ZINC</td><td>12,000</td><td>23.2</td><td>49.8</td><td>Regression</td><td>MAE</td></tr><tr><td>ogbg-molhiv</td><td>41,127</td><td>25.5</td><td>27.5</td><td>Binary cla.</td><td>ROC-AUC</td></tr><tr><td>ogbg-molpcba</td><td>437,929</td><td>26.0</td><td>28.1</td><td>Binary cla.</td><td>AP</td></tr><tr><td rowspan=\"3\">Node-level</td><td>Flickr</td><td>1</td><td>89,250</td><td>899,756</td><td>Multi-class cla.</td><td>Accuracy</td></tr><tr><td>ogbg-arxiv</td><td>1</td><td>169,343</td><td>1,166,243</td><td>Multi-class cla.</td><td>Accuracy</td></tr><tr><td>ogbg-product</td><td>1</td><td>2,449,029</td><td>61,859,140</td><td>Multi-class cla.</td><td>Accuracy</td></tr></table>",
-            "img_path": "output/images/1b415cdabf91a312d3eb803fdc4de65659a8cfab3eb98cdc0f86419956040a5e.jpg",
+            "img_path": "output/demo4/images/1b415cdabf91a312d3eb803fdc4de65659a8cfab3eb98cdc0f86419956040a5e.jpg",
             "page": 4
         },
         {
-            "id": "Table 3",
+            "id": 3,
             "type": "table",
             "caption": [
                 "Table 3: Hyper-parameters of various Transformer sizes. "
             ],
             "table_body": "<table><tr><td></td><td colspan=\"3\">Transformer Size</td></tr><tr><td></td><td>Small</td><td>Middle</td><td>Large</td></tr><tr><td>#Layers</td><td>6</td><td>12</td><td>12</td></tr><tr><td>Hidden Dimension</td><td>80</td><td>80</td><td>512</td></tr><tr><td>FFN Inner Hidden Dimension</td><td>80</td><td>80</td><td>512</td></tr><tr><td>#Attention Heads</td><td>8</td><td>8</td><td>32</td></tr><tr><td>Hidden Dimension of Each Head</td><td>10</td><td>10</td><td>16</td></tr></table>",
-            "img_path": "output/images/93199bd829e489fbd92840f87e8a8604820a75a44e176c2a59179b3f08fbc4a7.jpg",
+            "img_path": "output/demo4/images/93199bd829e489fbd92840f87e8a8604820a75a44e176c2a59179b3f08fbc4a7.jpg",
             "page": 4
         },
         {
-            "id": "Table 4",
+            "id": 4,
             "type": "table",
             "caption": [
                 "Table 4: Performance comparison on graph-level tasks. For each column, the values with underline are the best results in each group. The values in bold are the best results across the groups. "
             ],
             "table_body": "<table><tr><td rowspan=\"3\" colspan=\"2\"></td><td colspan=\"8\">graph-level tasks</td><td colspan=\"9\">node-level tasks</td><td></td></tr><tr><td colspan=\"3\">ZINC(MAE↓)</td><td colspan=\"3\">molhiv(ROC-AUC↑)</td><td colspan=\"2\">molpcba(AP↑)</td><td colspan=\"3\">Flickr(Acc↑)</td><td colspan=\"3\">arxiv(Acc↑)</td><td colspan=\"3\">product(Acc↑)</td><td></td></tr><tr><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td><td>Small</td><td>Middle</td><td>Large</td></tr><tr><td>TF</td><td>vanilla</td><td>0.6689</td><td>0.6700</td><td>0.6699</td><td>0.7466</td><td>0.7230</td><td>0.7269</td><td>0.1624</td><td>0.1673</td><td>0.1676</td><td>0.5270</td><td>0.5279</td><td>0.5214</td><td>0.5539</td><td>0.5571</td><td>0.5598</td><td>0.7887</td><td>0.7887</td><td>0.7956</td></tr><tr><td rowspan=\"3\">GA</td><td>before</td><td>0.4700</td><td>0.4809</td><td>0.5169</td><td>0.6758</td><td>0.7339</td><td>0.7182</td><td>0.2105</td><td>0.1989</td><td>0.2269</td><td>0.5352</td><td>0.5369</td><td>0.5272</td><td>0.5608</td><td>0.5590</td><td>0.5614</td><td>0.7953</td><td>0.7888</td><td>0.8012</td></tr><tr><td>alter</td><td>0.3771</td><td>0.3412</td><td>0.2956</td><td>0.7200</td><td>0.7086</td><td>0.7433</td><td>0.2474</td><td>0.2417</td><td>0.2244</td><td>0.5374</td><td>0.5357</td><td>0.5162</td><td>0.5599</td><td>0.5555</td><td>0.5592</td><td>0.7905</td><td>0.7915</td><td>0.8057</td></tr><tr><td>parallel</td><td>0.3803</td><td>0.2749</td><td>0.2984</td><td>0.7138</td><td>0.7750</td><td>0.7603</td><td>0.2345</td><td>0.2444</td><td>0.2205</td><td>0.5370</td><td>0.5379</td><td>0.5209</td><td>0.5647</td><td>0.5600</td><td>0.5529</td><td>0.7878</td><td>0.7896</td><td>0.7999</td></tr><tr><td rowspan=\"3\">PE</td><td>degree</td><td>0.5364</td><td>0.5364</td><td>0.5435</td><td>0.7506</td><td>0.6818</td><td>0.7357</td><td>0.1672</td><td>0.1646</td><td>0.1650</td><td>0.5291</td><td>0.5250</td><td>0.5133</td><td>0.5551</td><td>0.5618</td><td>0.5502</td><td>0.7920</td><td>0.7913</td><td>0.7947</td></tr><tr><td>eig</td><td>0.6031</td><td>0.6074</td><td>0.6166</td><td>0.7407</td><td>0.7279</td><td>0.7351</td><td>0.2194</td><td>0.2087</td><td>0.2131</td><td>0.5253</td><td>0.5278</td><td>0.5257</td><td>0.5575</td><td>0.5637</td><td>0.5658</td><td>0.7893</td><td>0.7887</td><td>0.8017</td></tr><tr><td>svd</td><td>0.5811</td><td>0.5462</td><td>0.5400</td><td>0.7350</td><td>0.7155</td><td>0.7275</td><td>0.1648</td><td>0.1663</td><td>0.1767</td><td>0.5281</td><td>0.5317</td><td>0.5203</td><td>0.5614</td><td>0.5663</td><td>0.5706</td><td>0.7856</td><td>0.7893</td><td>0.8007</td></tr><tr><td rowspan=\"4\">AT</td><td>SPB</td><td>0.5122</td><td>0.4878</td><td>0.6100</td><td>0.7065</td><td>0.7589</td><td>0.7255</td><td>0.2409</td><td>0.2524</td><td>0.2621</td><td>0.5368</td><td>0.5364</td><td>0.5234</td><td>0.5503</td><td>0.5605</td><td>0.5576</td><td>0.7921</td><td>0.7918</td><td>0.7984</td></tr><tr><td>PMA</td><td>0.6194</td><td>0.6057</td><td>0.5963</td><td>0.6902</td><td>0.7054</td><td>0.7314</td><td>0.2115</td><td>0.1956</td><td>0.2518</td><td>0.5240</td><td>0.5288</td><td>0.5204</td><td>0.5567</td><td>0.5571</td><td>0.5492</td><td>0.7877</td><td>0.7853</td><td>0.7945</td></tr><tr><td>Mask-1</td><td>0.2861</td><td>0.2772</td><td>0.2894</td><td>0.7610</td><td>0.7753</td><td>0.7960</td><td>0.2573</td><td>0.2662</td><td>0.1594</td><td>0.5295</td><td>0.5300</td><td>0.5236</td><td>0.5598</td><td>0.5559</td><td>0.5583</td><td>0.7923</td><td>0.7917</td><td>0.7963</td></tr><tr><td>Mask-n</td><td>0.3906</td><td>0.3596</td><td>0.4765</td><td>0.7286</td><td>0.7423</td><td>0.7128</td><td>0.2619</td><td>0.2577</td><td>0.2380</td><td>0.5359</td><td>0.5349</td><td>0.5348</td><td>0.5593</td><td>0.5603</td><td>0.5576</td><td>0.7935</td><td>0.7917</td><td>0.8016</td></tr></table>",
-            "img_path": "output/images/4902a7ccc5cc734af60e4ec013a10bf83ca4ea6649bc3dcc73d1ea4316aeed5d.jpg",
+            "img_path": "output/demo4/images/4902a7ccc5cc734af60e4ec013a10bf83ca4ea6649bc3dcc73d1ea4316aeed5d.jpg",
             "page": 5
         },
         {
-            "id": "Table 5",
+            "id": 5,
             "type": "table",
             "caption": [
                 "Table 5: The training hyper-parameters. "
             ],
             "table_body": "<table><tr><td>attention dropout</td><td>0.1</td><td>FFN dropout</td><td>0.1</td></tr><tr><td>maximum steps</td><td>1e+6</td><td>warm-up steps</td><td>4e+4</td></tr><tr><td>peak learning rate</td><td>2e-4</td><td>batch size</td><td>256</td></tr><tr><td>weight decay value</td><td>1e-3</td><td>lr decay</td><td>Linear</td></tr><tr><td>gradient clip norm</td><td>5.0</td><td>Adam ε, β1, β2</td><td>1e-8, 0.9, 0.99</td></tr></table>",
-            "img_path": "output/images/0725e2bd416ecaff3213cc3dd6876fe0f02f112a97240d49c0fa855da19b53d9.jpg",
+            "img_path": "output/demo4/images/0725e2bd416ecaff3213cc3dd6876fe0f02f112a97240d49c0fa855da19b53d9.jpg",
             "page": 5
         }
     ]

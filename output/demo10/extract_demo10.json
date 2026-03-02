@@ -1,5 +1,15 @@
 {
     "title": "The Effects of Nicotine on Development ",
+    "authors": [
+        "Sharon A. McGrath-Morrow",
+        "Julie Gorzkowski",
+        "Judith A. Groner",
+        "Ana M. Rule",
+        "Karen Wilson",
+        "Susanne E. Tanski",
+        "Joseph M. Collaco",
+        "Jonathan D. Klein"
+    ],
     "abstract": "In recent years, new nicotine-delivery systems and other noncombustible nicotine–containing products have become increasingly available for recreational purposes and for smoking cessation. Currently, nicotinecontaining electronic cigarettes (e-cigarettes), smokeless tobacco (Swedish snuff, pituri, or mishri), and nicotine-replacement therapies (NRTs), such as transdermal patches or chewing gum, are commonly being used by the public.1–4 ",
     "keywords": null,
     "language": "en",
@@ -142,13 +152,19 @@
         {
             "id": 1,
             "text": "1. Slotkin TA. If nicotine is a developmental neurotoxicant in animal studies, dare we recommend nicotine replacement therapy in pregnant women and adolescents? Neurotoxicol Teratol. 2008;30(1):1–19 ",
-            "authors": null,
+            "authors": [
+                "Slotkin TA"
+            ],
             "year": "2008"
         },
         {
             "id": 2,
             "text": "2. Ganganahalli P, Pratinidhi A, Patil J, Kakade SV. Correlation of cotinine levels with use of smokeless tobacco ",
-            "authors": null,
+            "authors": [
+                "Ganganahalli P",
+                "Pratinidhi A",
+                "Kakade SV"
+            ],
             "year": null
         },
         {
@@ -160,19 +176,35 @@
         {
             "id": 4,
             "text": "3. Gunnerbeck A, Raaschou P, Cnattingius S, Edstedt Bonamy AK, Wickström R. Maternal snuff use and cotinine in late pregnancy-a validation study. Acta Obstet Gynecol Scand. 2018;97(11): 1373–1380 ",
-            "authors": null,
+            "authors": [
+                "Gunnerbeck A",
+                "Raaschou P",
+                "Cnattingius S",
+                "Edstedt Bonamy AK",
+                "Wickström R"
+            ],
             "year": "2018"
         },
         {
             "id": 5,
             "text": "4. Ratsch A, Steadman KJ, Bogossian F. The pituri story: a review of the historical literature surrounding traditional Australian Aboriginal use of nicotine in Central Australia. J Ethnobiol Ethnomed. 2010;6:26 ",
-            "authors": null,
+            "authors": [
+                "Ratsch A",
+                "Steadman KJ",
+                "Bogossian F"
+            ],
             "year": "2010"
         },
         {
             "id": 6,
             "text": "5. Vogel EA, Prochaska JJ, Ramo DE, Andres J, Rubinstein ML. Adolescents’ e-cigarette use: increases in ",
-            "authors": null,
+            "authors": [
+                "Vogel EA",
+                "Prochaska JJ",
+                "Ramo DE",
+                "Andres J",
+                "Rubinstein ML"
+            ],
             "year": null
         },
         {
@@ -184,61 +216,99 @@
         {
             "id": 8,
             "text": "6. McKelvey K, Baiocchi M, Halpern-Felsher B. Adolescents’ and young adults’ use and perceptions of podbased electronic cigarettes. JAMA Netw Open. 2018;1(6):e183535 ",
-            "authors": null,
+            "authors": [
+                "McKelvey K",
+                "Baiocchi M",
+                "Halpern-Felsher B"
+            ],
             "year": "2018"
         },
         {
             "id": 9,
             "text": "7. Boykan R, Goniewicz ML, Messina CR. Evidence of nicotine dependence in adolescents who use Juul and similar pod devices. Int J Environ Res Public Health. 2019;16(12):E2135 ",
-            "authors": null,
+            "authors": [
+                "Boykan R",
+                "Goniewicz ML",
+                "Messina CR"
+            ],
             "year": "2019"
         },
         {
             "id": 10,
             "text": "8. Logue JM, Sleiman M, Montesinos VN, et al. Emissions from electronic cigarettes: assessing vapers’ intake of toxic compounds, secondhand exposures, and the associated health impacts. Environ Sci Technol. 2017; 51(16):9271–9279 ",
-            "authors": null,
+            "authors": [
+                "Logue JM",
+                "Sleiman M",
+                "Montesinos VN"
+            ],
             "year": "2017"
         },
         {
             "id": 11,
             "text": "9. Hurt RD, Renner CC, Patten CA, et al. Iqmik–a form of smokeless tobacco used by pregnant Alaska natives: nicotine exposure in their neonates. J Matern Fetal Neonatal Med. 2005; 17(4):281–289 ",
-            "authors": null,
+            "authors": [
+                "Hurt RD",
+                "Renner CC",
+                "Patten CA"
+            ],
             "year": "2005"
         },
         {
             "id": 12,
             "text": "10. Quintana PJE, Hoh E, Dodder NG, et al. Nicotine levels in silicone wristband samplers worn by children exposed to secondhand smoke and electronic cigarette vapor are highly correlated with child’s urinary cotinine. J Expo Sci Environ Epidemiol. 2019;29(6):733–741 ",
-            "authors": null,
+            "authors": [
+                "Quintana PJE",
+                "Hoh E",
+                "Dodder NG"
+            ],
             "year": "2019"
         },
         {
             "id": 13,
             "text": "11. Nordenstam F, Lundell B, Edstedt Bonamy AK, Raaschou P, Wickström R. Snus users had high levels of nicotine, cotinine and 3-hydroxycotinine in their breastmilk, and the clearance was slower than in smoking mothers. Acta Paediatr. 2019;108(7):1250–1255 ",
-            "authors": null,
+            "authors": [
+                "Nordenstam",
+                "Lundell B",
+                "Raaschou P",
+                "Wickström R"
+            ],
             "year": "2019"
         },
         {
             "id": 14,
             "text": "12. Nicotine. In: Drugs and Lactation Database (LactMed). Bethesda, MD: National Library of Medicine (US); 2006 ",
             "authors": null,
-            "year": null
+            "year": "2006"
         },
         {
             "id": 15,
             "text": "13. Johnson JM, Naeher LP, Yu X, Rathbun SL, Muilenburg JL, Wang JS. Air monitoring at large public electronic cigarette events. Int J Hyg Environ Health. 2018;221(3):541–547 ",
-            "authors": null,
+            "authors": [
+                "Johnson JM",
+                "Naeher LP",
+                "Yu X",
+                "Rathbun SL",
+                "Muilenburg JL",
+                "Wang JS"
+            ],
             "year": "2018"
         },
         {
             "id": 16,
             "text": "14. Johnson JM, Naeher LP, Yu X, et al. A biomonitoring assessment of secondhand exposures to electronic cigarette emissions. Int J Hyg Environ Health. 2019;222(5):816–823 ",
-            "authors": null,
+            "authors": [
+                "Johnson JM",
+                "Naeher LP",
+                "Yu X"
+            ],
             "year": "2019"
         },
         {
             "id": 17,
             "text": "15. Khachatoorian C, Jacob Iii P, Benowitz NL, Talbot P. Electronic cigarette chemicals transfer from a vape shop to ",
-            "authors": null,
+            "authors": [
+                "Khachatoorian"
+            ],
             "year": null
         },
         {
@@ -250,43 +320,72 @@
         {
             "id": 19,
             "text": "16. Khachatoorian C, Jacob P III, Sen A, Zhu Y, Benowitz NL, Talbot P. Identification and quantification of electronic cigarette exhaled aerosol residue chemicals in field sites. Environ Res. 2019;170:351–358 ",
-            "authors": null,
+            "authors": [
+                "Khachatoorian C",
+                "Jacob P III",
+                "Sen",
+                "Zhu",
+                "Benowitz NL",
+                "Talbot P"
+            ],
             "year": "2019"
         },
         {
             "id": 20,
             "text": "17. Vizi ES, Lendvai B. Modulatory role of presynaptic nicotinic receptors in synaptic and non-synaptic chemical communication in the central nervous system. Brain Res Brain Res Rev. 1999; 30(3):219–235 ",
-            "authors": null,
+            "authors": [
+                "Vizi ES",
+                "Lendvai B"
+            ],
             "year": "1999"
         },
         {
             "id": 21,
             "text": "18. Raghuveer G, White DA, Hayman LL, et al; American Heart Association Committee on Atherosclerosis, Hypertension, and Obesity in the Young of the Council on Cardiovascular Disease in the Young; Behavior Change for Improving Health Factors Committee of the Council on Lifestyle and Cardiometabolic Health and Council on Epidemiology and Prevention; and Stroke Council. Cardiovascular consequences of childhood secondhand tobacco smoke exposure: prevailing evidence, burden, and racial and socioeconomic disparities: a scientific statement from the American Heart Association [published correction appears in Circulation. 2016;134(16): e366]. Circulation. 2016;134(16): e336–e359 ",
-            "authors": null,
+            "authors": [
+                "Raghuveer G",
+                "White DA",
+                "Hayman LL"
+            ],
             "year": "2016"
         },
         {
             "id": 22,
             "text": "19. National Academies of Sciences, Engineering, and Medicine; Health and Medicine Division; Board on Population Health and Public Health Practice; Committee on the Review of the Health Effects of Electronic Nicotine Delivery Systems. In: Eaton DL, Kwan LY, Stratton K, eds. Public Health Consequences of E-Cigarettes. Washington, DC: National Academies Press (US); 2018 ",
-            "authors": null,
-            "year": null
+            "authors": [
+                "Eaton DL",
+                "Kwan LY",
+                "Stratton K"
+            ],
+            "year": "2018"
         },
         {
             "id": 23,
             "text": "20. Rubinstein ML, Delucchi K, Benowitz NL, Ramo DE. Adolescent exposure to toxic volatile organic chemicals from e-cigarettes. Pediatrics. 2018;141(4): e20173557 ",
-            "authors": null,
+            "authors": [
+                "Rubinstein ML",
+                "Delucchi K",
+                "Benowitz NL",
+                "Ramo DE"
+            ],
             "year": "2018"
         },
         {
             "id": 24,
             "text": "21. Olmedo P, Goessler W, Tanda S, et al. Metal concentrations in e-cigarette liquid and aerosol samples: the contribution of metallic coils. Environ Health Perspect. 2018;126(2):27010 ",
-            "authors": null,
+            "authors": [
+                "Olmedo P",
+                "Goessler W",
+                "Tanda S"
+            ],
             "year": "2018"
         },
         {
             "id": 25,
             "text": "22. Karlin A, Akabas MH. Toward a structural basis for the function of ",
-            "authors": null,
+            "authors": [
+                "Karlin"
+            ],
             "year": null
         },
         {
@@ -298,73 +397,119 @@
         {
             "id": 27,
             "text": "23. Brunzell DH, Stafford AM, Dixon CI. Nicotinic receptor contributions to smoking: insights from human studies and animal models. Curr Addict Rep. 2015;2(1):33–46 ",
-            "authors": null,
+            "authors": [
+                "Brunzell DH",
+                "Stafford AM",
+                "Dixon CI"
+            ],
             "year": "2015"
         },
         {
             "id": 28,
             "text": "24. Gotti C, Clementi F. Neuronal nicotinic receptors: from structure to pathology. Prog Neurobiol. 2004;74(6):363–396 ",
-            "authors": null,
+            "authors": [
+                "Gotti C",
+                "Clementi F"
+            ],
             "year": "2004"
         },
         {
             "id": 29,
             "text": "25. Dwyer JB, Broide RS, Leslie FM. Nicotine and brain development. Birth Defects Res C Embryo Today. 2008;84(1):30–44 ",
-            "authors": null,
+            "authors": [
+                "Dwyer JB",
+                "Broide RS",
+                "Leslie FM"
+            ],
             "year": "2008"
         },
         {
             "id": 30,
             "text": "26. Govind AP, Vezina P, Green WN. Nicotineinduced upregulation of nicotinic receptors: underlying mechanisms and relevance to nicotine addiction. Biochem Pharmacol. 2009;78(7): 756–765 ",
-            "authors": null,
+            "authors": [
+                "Govind AP",
+                "Vezina P",
+                "Green WN"
+            ],
             "year": "2009"
         },
         {
             "id": 31,
             "text": "27. Faure P, Tolu S, Valverde S, Naudé J. Role of nicotinic acetylcholine receptors in regulating dopamine neuron activity. Neuroscience. 2014;282: 86–100 ",
-            "authors": null,
+            "authors": [
+                "Faure P",
+                "Tolu S",
+                "Valverde",
+                "Naudé J"
+            ],
             "year": "2014"
         },
         {
             "id": 32,
             "text": "28. Gueorguiev VD, Zeman RJ, Meyer EM, Sabban EL. Involvement of alpha7 nicotinic acetylcholine receptors in activation of tyrosine hydroxylase and dopamine beta-hydroxylase gene expression in PC12 cells. J Neurochem. 2000;75(5):1997–2005 ",
-            "authors": null,
+            "authors": [
+                "Gueorguiev VD",
+                "Zeman RJ",
+                "Meyer EM",
+                "Sabban EL"
+            ],
             "year": "2000"
         },
         {
             "id": 33,
             "text": "29. Wei C, Han X, Weng D, et al. Response dynamics of midbrain dopamine neurons and serotonin neurons to heroin, nicotine, cocaine, and MDMA. Cell Discov. 2018;4:60 ",
-            "authors": null,
+            "authors": [
+                "Wei C",
+                "Han X",
+                "Weng D"
+            ],
             "year": "2018"
         },
         {
             "id": 34,
             "text": "30. DiFranza JR. A 2015 update on the natural history and diagnosis of nicotine addiction. Curr Pediatr Rev. 2015;11(1):43–55 ",
-            "authors": null,
+            "authors": [
+                "DiFranza JR"
+            ],
             "year": "2015"
         },
         {
             "id": 35,
             "text": "31. Benowitz NL. Nicotine addiction. N Engl J Med. 2010;362(24):2295–2303 ",
-            "authors": null,
+            "authors": [
+                "Benowitz NL"
+            ],
             "year": "2010"
         },
         {
             "id": 36,
             "text": "32. Kishioka S, Kiguchi N, Kobayashi Y, Saika F. Nicotine effects and the endogenous opioid system. J Pharmacol Sci. 2014; 125(2):117–124 ",
-            "authors": null,
+            "authors": [
+                "Kishioka S",
+                "Kiguchi N",
+                "Kobayashi Y",
+                "Saika F"
+            ],
             "year": "2014"
         },
         {
             "id": 37,
             "text": "33. Benowitz NL, Hukkanen J, Jacob P III. Nicotine chemistry, metabolism, kinetics and biomarkers. Handb Exp Pharmacol. 2009;(192):29–60 ",
-            "authors": null,
+            "authors": [
+                "Benowitz NL",
+                "Hukkanen J",
+                "Jacob P III"
+            ],
             "year": "2009"
         },
         {
             "id": 38,
             "text": "34. Liakoni E, Edwards KC, St Helen G, et al. Effects of nicotine metabolic rate on withdrawal symptoms and response to ",
-            "authors": null,
+            "authors": [
+                "Liakoni E",
+                "Edwards KC",
+                "St Helen G"
+            ],
             "year": null
         },
         {
@@ -376,55 +521,97 @@
         {
             "id": 40,
             "text": "35. Claw KG, Beans JA, Lee SB, et al. Pharmacogenomics of nicotine metabolism: novel CYP2A6 and CYP2B6 genetic variation patterns in Alaska Native and American Indian populations [published online ahead of print June 25, 2019]. Nicotine Tob Res. 2019. doi: 10.1093/ntr/ntz105 ",
-            "authors": null,
+            "authors": [
+                "Claw KG",
+                "Beans JA",
+                "Lee SB"
+            ],
             "year": "2019"
         },
         {
             "id": 41,
             "text": "36. López-Flores LA, Pérez-Rubio G, Falfán-Valencia R. Distribution of polymorphic variants of CYP2A6 and their involvement in nicotine addiction. EXCLI J. 2017;16:174–196 ",
-            "authors": null,
+            "authors": [
+                "López-Flores LA",
+                "Pérez-Rubio G",
+                "Falfán-Valencia R"
+            ],
             "year": "2017"
         },
         {
             "id": 42,
             "text": "37. Dempsey D, Jacob P III, Benowitz NL. Nicotine metabolism and elimination kinetics in newborns. Clin Pharmacol Ther. 2000;67(5):458–465 ",
-            "authors": null,
+            "authors": [
+                "Dempsey D",
+                "Jacob P III",
+                "Benowitz NL"
+            ],
             "year": "2000"
         },
         {
             "id": 43,
             "text": "38. Abdel Magid HS, Bradshaw PT, Ling PM, Halpern-Felsher B. Association of alternative tobacco product initiation with ownership of tobacco promotional materials among adolescents and young adults. JAMA Netw Open. 2019; 2(5):e194006 ",
-            "authors": null,
+            "authors": [
+                "Abdel Magid",
+                "Bradshaw",
+                "Ling",
+                "Halpern-Felsher"
+            ],
             "year": "2019"
         },
         {
             "id": 44,
             "text": "39. Pérez-Rubio G, López-Flores LA, Ramírez-Venegas A, et al. Genetic polymorphisms in CYP2A6 are associated with a risk of cigarette smoking and predispose to smoking at younger ages. Gene. 2017;628:205–210 ",
-            "authors": null,
+            "authors": [
+                "Pérez-Rubio G",
+                "López-Flores LA",
+                "Ramírez-Venegas A"
+            ],
             "year": "2017"
         },
         {
             "id": 45,
             "text": "40. Rubinstein ML, Benowitz NL, Auerback GM, Moscicki AB. Rate of nicotine metabolism and withdrawal symptoms in adolescent light smokers. Pediatrics. 2008;122(3). Available at: www. pediatrics.org/cgi/content/full/122/3/ e643 ",
-            "authors": null,
+            "authors": [
+                "Rubinstein ML",
+                "Benowitz NL",
+                "Auerback GM",
+                "Moscicki AB"
+            ],
             "year": "2008"
         },
         {
             "id": 46,
             "text": "41. Digard H, Proctor C, Kulasekaran A, Malmqvist U, Richter A. Determination of nicotine absorption from multiple tobacco products and nicotine gum. Nicotine Tob Res. 2013;15(1):255–261 ",
-            "authors": null,
+            "authors": [
+                "Digard H",
+                "Proctor",
+                "Kulasekaran A",
+                "Malmqvist",
+                "Richter"
+            ],
             "year": "2013"
         },
         {
             "id": 47,
             "text": "42. Lopez AA, Hiler MM, Soule EK, et al. Effects of electronic cigarette liquid nicotine concentration on plasma nicotine and puff topography in tobacco cigarette smokers: a preliminary report. Nicotine Tob Res. 2016;18(5): 720–723 ",
-            "authors": null,
+            "authors": [
+                "Lopez AA",
+                "Hiler MM",
+                "Soule EK"
+            ],
             "year": "2016"
         },
         {
             "id": 48,
             "text": "43. Dawkins LE, Kimber CF, Doig M, Feyerabend C, Corcoran O. Self-titration by experienced e-cigarette users: blood nicotine delivery and subjective effects. ",
-            "authors": null,
+            "authors": [
+                "Dawkins LE",
+                "Kimber",
+                "Doig M",
+                "Feyerabend",
+                "Corcoran"
+            ],
             "year": null
         },
         {
@@ -436,121 +623,219 @@
         {
             "id": 50,
             "text": "44. Yang BC, Wang F, Yang X, et al. Medical swab touch spray-mass spectrometry for newborn screening of nicotine and cotinine in meconium. J Mass Spectrom. 2016;51(12):1237–1242 ",
-            "authors": null,
+            "authors": [
+                "Yang BC",
+                "Wang F",
+                "Yang X"
+            ],
             "year": "2016"
         },
         {
             "id": 51,
             "text": "45. Spector LG, Murphy SE, Wickham KM, Lindgren B, Joseph AM. Prenatal tobacco exposure and cotinine in newborn dried blood spots. Pediatrics. 2014;133(6). Available at: www. pediatrics.org/cgi/content/full/133/6/ e1632 ",
-            "authors": null,
+            "authors": [
+                "Spector LG",
+                "Murphy SE",
+                "Wickham KM",
+                "Lindgren B",
+                "Joseph AM"
+            ],
             "year": "2014"
         },
         {
             "id": 52,
             "text": "46. Perry MF, Mulcahy H, DeFranco EA. Influence of periconception smoking behavior on birth defect risk. Am J Obstet Gynecol. 2019;220(6):588.e1- 588.e7 ",
-            "authors": null,
+            "authors": [
+                "Perry MF",
+                "Mulcahy H",
+                "DeFranco EA"
+            ],
             "year": "2019"
         },
         {
             "id": 53,
             "text": "47. Rodgman A, Smith CJ, Perfetti TA. The composition of cigarette smoke: a retrospective, with emphasis on polycyclic components. Hum Exp Toxicol. 2000;19(10):573–595 ",
-            "authors": null,
+            "authors": [
+                "Rodgman A",
+                "Smith CJ",
+                "Perfetti TA"
+            ],
             "year": "2000"
         },
         {
             "id": 54,
             "text": "48. Faber T, Kumar A, Mackenbach JP, et al. Effect of tobacco control policies on perinatal and child health: a systematic review and meta-analysis. Lancet Public Health. 2017;2(9):e420–e437 ",
-            "authors": null,
+            "authors": [
+                "Faber T",
+                "Kumar A",
+                "Mackenbach JP"
+            ],
             "year": "2017"
         },
         {
             "id": 55,
             "text": "49. Vanker A, Gie RP, Zar HJ. The association between environmental tobacco smoke exposure and childhood respiratory disease: a review. Expert Rev Respir Med. 2017;11(8):661–673 ",
-            "authors": null,
+            "authors": [
+                "Vanker A",
+                "Gie RP",
+                "Zar HJ"
+            ],
             "year": "2017"
         },
         {
             "id": 56,
             "text": "50. Cohen G, Roux JC, Grailhe R, Malcolm G, Changeux JP, Lagercrantz H. Perinatal exposure to nicotine causes deficits associated with a loss of nicotinic receptor function. Proc Natl Acad Sci U S A. 2005;102(10):3817–3821 ",
-            "authors": null,
+            "authors": [
+                "Cohen G",
+                "Roux JC",
+                "Grailhe R",
+                "Malcolm G",
+                "Changeux JP",
+                "Lagercrantz H"
+            ],
             "year": "2005"
         },
         {
             "id": 57,
             "text": "51. Shao XM, López-Valdés HE, Liang J, Feldman JL. Inhaled nicotine equivalent to cigarette smoking disrupts systemic and uterine hemodynamics and induces cardiac arrhythmia in pregnant rats. Sci Rep. 2017;7(1):16974 ",
-            "authors": null,
+            "authors": [
+                "Shao XM",
+                "López-Valdés HE",
+                "Liang J",
+                "Feldman JL"
+            ],
             "year": "2017"
         },
         {
             "id": 58,
             "text": "52. Whittington JR, Simmons PM, Phillips AM, et al. The use of electronic cigarettes in pregnancy: a review of the literature. Obstet Gynecol Surv. 2018; 73(9):544–549 ",
-            "authors": null,
+            "authors": [
+                "Whittington JR",
+                "Simmons PM",
+                "Phillips AM"
+            ],
             "year": "2018"
         },
         {
             "id": 59,
             "text": "53. Dhalwani NN, Szatkowski L, Coleman T, Fiaschi L, Tata LJ. Nicotine replacement therapy in pregnancy and major congenital anomalies in offspring. Pediatrics. 2015;135(5):859–867 ",
-            "authors": null,
+            "authors": [
+                "Dhalwani NN",
+                "Szatkowski",
+                "Coleman",
+                "Fiaschi",
+                "Tata LJ"
+            ],
             "year": "2015"
         },
         {
             "id": 60,
             "text": "54. Cnattingius S. The epidemiology of smoking during pregnancy: smoking prevalence, maternal characteristics, and pregnancy outcomes. Nicotine Tob Res. 2004;6(suppl 2):S125–S140 ",
-            "authors": null,
+            "authors": [
+                "Cnattingius"
+            ],
             "year": "2004"
         },
         {
             "id": 61,
             "text": "55. Meyer KA, Williams P, Hernandez-Diaz S, Cnattingius S. Smoking and the risk of oral clefts: exploring the impact of study designs. Epidemiology. 2004;15(6): 671–678 ",
-            "authors": null,
+            "authors": [
+                "Meyer KA",
+                "Williams P",
+                "Hernandez-Diaz S",
+                "Cnattingius S"
+            ],
             "year": "2004"
         },
         {
             "id": 62,
             "text": "56. Khoury MJ, Gomez-Farias M, Mulinare J. Does maternal cigarette smoking during pregnancy cause cleft lip and palate in offspring? Am J Dis Child. 1989;143(3):333–337 ",
-            "authors": null,
+            "authors": [
+                "Khoury MJ",
+                "Gomez-Farias M",
+                "Mulinare J"
+            ],
             "year": "1989"
         },
         {
             "id": 63,
             "text": "57. Ozturk F, Sheldon E, Sharma J, Canturk KM, Otu HH, Nawshad A. Nicotine exposure during pregnancy results in persistent midline epithelial seam with improper palatal fusion. Nicotine Tob Res. 2016;18(5):604–612 ",
-            "authors": null,
+            "authors": [
+                "Ozturk F",
+                "Sheldon",
+                "Sharma",
+                "Canturk KM",
+                "Otu",
+                "Nawshad A"
+            ],
             "year": "2016"
         },
         {
             "id": 64,
             "text": "58. Gunnerbeck A, Edstedt Bonamy AK, Wikström AK, Granath F, Wickström R, Cnattingius S. Maternal snuff use and smoking and the risk of oral cleft malformations–a population-based cohort study. PLoS One. 2014;9(1): e84715 ",
-            "authors": null,
+            "authors": [
+                "Gunnerbeck A",
+                "Edstedt Bonamy AK",
+                "Wikström AK",
+                "Granath F",
+                "Wickström R",
+                "Cnattingius S"
+            ],
             "year": "2014"
         },
         {
             "id": 65,
             "text": "59. Kyrklund-Blomberg NB, Granath F, Cnattingius S. Maternal smoking and causes of very preterm birth. Acta Obstet Gynecol Scand. 2005;84(6): 572–577 ",
-            "authors": null,
+            "authors": [
+                "Kyrklund-Blomberg NB",
+                "Granath F",
+                "Cnattingius S"
+            ],
             "year": "2005"
         },
         {
             "id": 66,
             "text": "60. Dahlin S, Gunnerbeck A, Wikström AK, Cnattingius S, Edstedt Bonamy AK. Maternal tobacco use and extremely premature birth - a population-based cohort study. BJOG. 2016;123(12): 1938–1946 ",
-            "authors": null,
+            "authors": [
+                "Dahlin",
+                "Gunnerbeck",
+                "Wikström AK",
+                "Cnattingius",
+                "Edstedt Bonamy AK"
+            ],
             "year": "2016"
         },
         {
             "id": 67,
             "text": "61. Paulson R, Shanfeld J, Sachs L, Price T, Paulson J. Effect of smokeless tobacco on the development of the CD-1 mouse fetus. Teratology. 1989;40(5):483–494 ",
-            "authors": null,
+            "authors": [
+                "Paulson R",
+                "Shanfeld J",
+                "Sachs L",
+                "Price T",
+                "Paulson J"
+            ],
             "year": "1989"
         },
         {
             "id": 68,
             "text": "62. Wikström AK, Cnattingius S, Stephansson O. Maternal use of Swedish snuff (snus) and risk of stillbirth. Epidemiology. 2010;21(6): 772–778 ",
-            "authors": null,
+            "authors": [
+                "Wikström AK",
+                "Cnattingius S",
+                "Stephansson O"
+            ],
             "year": "2010"
         },
         {
             "id": 69,
             "text": "63. Baba S, Wikstrom AK, Stephansson O, Cnattingius S. Influence of snuff and smoking habits in early pregnancy on risks for stillbirth and early neonatal mortality. Nicotine Tob Res. 2014;16(1): 78–83 ",
-            "authors": null,
+            "authors": [
+                "Baba",
+                "Wikstrom AK",
+                "Stephansson O",
+                "Cnattingius S"
+            ],
             "year": "2014"
         },
         {
@@ -568,241 +853,417 @@
         {
             "id": 72,
             "text": "65. Bernstein IM, Mongeon JA, Badger GJ, Solomon L, Heil SH, Higgins ST. Maternal smoking and its association with birth weight. Obstet Gynecol. 2005;106(5, pt 1):986–991 ",
-            "authors": null,
+            "authors": [
+                "Bernstein IM",
+                "Mongeon JA",
+                "Badger GJ",
+                "Solomon L",
+                "Heil SH",
+                "Higgins ST"
+            ],
             "year": "2005"
         },
         {
             "id": 73,
             "text": "66. Birnbaum SC, Kien N, Martucci RW, et al. Nicotine- or epinephrine-induced uteroplacental vasoconstriction and fetal growth in the rat. Toxicology. 1994; 94(1–3):69–80 ",
-            "authors": null,
+            "authors": [
+                "Birnbaum SC",
+                "Kien N",
+                "Martucci RW"
+            ],
             "year": "1994"
         },
         {
             "id": 74,
             "text": "67. Rowell PP, Clark MJ. The effect of chronic oral nicotine administration on fetal weight and placental amino acid accumulation in mice. Toxicol Appl Pharmacol. 1982;66(1):30–38 ",
-            "authors": null,
+            "authors": [
+                "Rowell PP",
+                "Clark MJ"
+            ],
             "year": "1982"
         },
         {
             "id": 75,
             "text": "68. Baba S, Wikström AK, Stephansson O, Cnattingius S. Changes in snuff and smoking habits in Swedish pregnant women and risk for small for gestational age births. BJOG. 2013; 120(4):456–462 ",
-            "authors": null,
+            "authors": [
+                "Baba S",
+                "Wikström AK",
+                "Stephansson O",
+                "Cnattingius S"
+            ],
             "year": "2013"
         },
         {
             "id": 76,
             "text": "69. Anderson TM, Lavista Ferres JM, Ren SY, et al. Maternal smoking before and during pregnancy and the risk of sudden unexpected infant death. Pediatrics. 2019;143(4):e20183325 ",
-            "authors": null,
+            "authors": [
+                "Anderson TM",
+                "Lavista Ferres JM",
+                "Ren SY"
+            ],
             "year": "2019"
         },
         {
             "id": 77,
             "text": "70. Mitchell EA, Ford RP, Stewart AW, et al. Smoking and the sudden infant death syndrome. Pediatrics. 1993;91(5): 893–896 ",
-            "authors": null,
+            "authors": [
+                "Mitchell EA",
+                "Ford RP",
+                "Stewart AW"
+            ],
             "year": "1993"
         },
         {
             "id": 78,
             "text": "71. Ton AT, Biet M, Delabre JF, Morin N, Dumaine R. In-utero exposure to nicotine alters the development of the rabbit cardiac conduction system and provides a potential mechanism for sudden infant death syndrome. Arch Toxicol. 2017;91(12):3947–3960 ",
-            "authors": null,
+            "authors": [
+                "Ton AT",
+                "Biet M",
+                "Delabre JF",
+                "Morin N",
+                "Dumaine R"
+            ],
             "year": "2017"
         },
         {
             "id": 79,
             "text": "72. Slotkin TA, Lappi SE, McCook EC, Lorber BA, Seidler FJ. Loss of neonatal hypoxia tolerance after prenatal nicotine exposure: implications for sudden infant death syndrome. Brain Res Bull. 1995;38(1):69–75 ",
-            "authors": null,
+            "authors": [
+                "Slotkin TA",
+                "Lappi SE",
+                "McCook EC",
+                "Lorber BA",
+                "Seidler FJ"
+            ],
             "year": "1995"
         },
         {
             "id": 80,
             "text": "73. Duncan JR, Garland M, Myers MM, et al. Prenatal nicotine-exposure alters fetal autonomic activity and medullary neurotransmitter receptors: implications for sudden infant death syndrome. J Appl Physiol (1985). 2009; 107(5):1579–1590 ",
-            "authors": null,
-            "year": "2009"
+            "authors": [
+                "Duncan JR",
+                "Garland M",
+                "Myers MM"
+            ],
+            "year": "1985"
         },
         {
             "id": 81,
             "text": "74. Nordenstam F, Lundell B, Cohen G, Tessma MK, Raaschou P, Wickstrom R. Prenatal exposure to snus alters heart rate variability in the infant. Nicotine Tob Res. 2017;19(7):797–803 ",
-            "authors": null,
+            "authors": [
+                "Nordenstam F",
+                "Lundell B",
+                "Cohen G",
+                "Tessma MK",
+                "Raaschou P",
+                "Wickstrom R"
+            ],
             "year": "2017"
         },
         {
             "id": 82,
             "text": "75. Smith D, Aherrera A, Lopez A, et al. Adult behavior in male mice exposed to e-cigarette nicotine vapors during late prenatal and early postnatal life. PLoS One. 2015;10(9):e0137953 ",
-            "authors": null,
+            "authors": [
+                "Smith D",
+                "Aherrera A",
+                "Lopez A"
+            ],
             "year": "2015"
         },
         {
             "id": 83,
             "text": "76. Santiago SE, Huffman KJ. Prenatal nicotine exposure increases anxiety and modifies sensorimotor integration behaviors in adult female mice. Neurosci Res. 2014;79:41–51 ",
-            "authors": null,
+            "authors": [
+                "Santiago SE",
+                "Huffman KJ"
+            ],
             "year": "2014"
         },
         {
             "id": 84,
             "text": "77. Zhang L, Spencer TJ, Biederman J, Bhide PG. Attention and working memory deficits in a perinatal nicotine exposure mouse model. PLoS One. 2018; 13(5):e0198064 ",
-            "authors": null,
+            "authors": [
+                "Zhang L",
+                "Spencer TJ",
+                "Biederman J",
+                "Bhide PG"
+            ],
             "year": "2018"
         },
         {
             "id": 85,
             "text": "78. Goriounova NA, Mansvelder HD. Shortand long-term consequences of nicotine exposure during adolescence for prefrontal cortex neuronal network function. Cold Spring Harb Perspect Med. 2012;2(12):a012120 ",
-            "authors": null,
+            "authors": [
+                "Goriounova NA",
+                "Mansvelder HD"
+            ],
             "year": "2012"
         },
         {
             "id": 86,
             "text": "79. Meyer HC, Chodakewitz MI, Bucci DJ. Nicotine administration enhances negative occasion setting in adolescent rats. Behav Brain Res. 2016;302:69–72 ",
-            "authors": null,
+            "authors": [
+                "Meyer HC",
+                "Bucci DJ"
+            ],
             "year": "2016"
         },
         {
             "id": 87,
             "text": "80. Rose-Jacobs R, Richardson MA, Buchanan-Howland K, et al. Intrauterine exposure to tobacco and executive functioning in high school. Drug Alcohol Depend. 2017;176:169–175 ",
-            "authors": null,
+            "authors": [
+                "Rose-Jacobs R",
+                "Richardson MA",
+                "Buchanan-Howland K"
+            ],
             "year": "2017"
         },
         {
             "id": 88,
             "text": "81. Fried PA, Watkinson B, Gray R. Differential effects on cognitive functioning in 13- to 16-year-olds prenatally exposed to cigarettes and marihuana. Neurotoxicol Teratol. 2003; 25(4):427–436 ",
-            "authors": null,
+            "authors": [
+                "Fried PA",
+                "Watkinson B",
+                "Gray R"
+            ],
             "year": "2003"
         },
         {
             "id": 89,
             "text": "82. Tiesler CM, Heinrich J. Prenatal nicotine exposure and child behavioural problems. Eur Child Adolesc Psychiatry. 2014;23(10):913–929 ",
-            "authors": null,
+            "authors": [
+                "Tiesler CM",
+                "Heinrich J"
+            ],
             "year": "2014"
         },
         {
             "id": 90,
             "text": "83. Dong T, Hu W, Zhou X, et al. Prenatal exposure to maternal smoking during pregnancy and attention-deficit/ hyperactivity disorder in offspring: a meta-analysis. Reprod Toxicol. 2018; 76:63–70 ",
-            "authors": null,
+            "authors": [
+                "Dong T",
+                "Hu W",
+                "Zhou X"
+            ],
             "year": "2018"
         },
         {
             "id": 91,
             "text": "84. Ekblad M, Gissler M, Lehtonen L, Korkeila J. Prenatal smoking exposure and the risk of psychiatric morbidity into young adulthood. Arch Gen Psychiatry. 2010;67(8):841–849 ",
-            "authors": null,
+            "authors": [
+                "Ekblad M",
+                "Gissler M",
+                "Lehtonen L",
+                "Korkeila J"
+            ],
             "year": "2010"
         },
         {
             "id": 92,
             "text": "85. Holliday E, Gould TJ. Nicotine, adolescence, and stress: a review of how stress can modulate the negative consequences of adolescent nicotine abuse. Neurosci Biobehav Rev. 2016;65: 173–184 ",
-            "authors": null,
+            "authors": [
+                "Holliday E",
+                "Gould TJ"
+            ],
             "year": "2016"
         },
         {
             "id": 93,
             "text": "86. Kinnunen JM, Ollila H, Minkkinen J, Lindfors PL, Timberlake DS, Rimpelä AH. Nicotine matters in predicting subsequent smoking after e-cigarette experimentation: a longitudinal study among Finnish adolescents. Drug Alcohol Depend. 2019;201:182–187 ",
-            "authors": null,
+            "authors": [
+                "Kinnunen JM",
+                "Ollila H",
+                "Minkkinen J",
+                "Lindfors PL",
+                "Timberlake DS",
+                "Rimpelä AH"
+            ],
             "year": "2019"
         },
         {
             "id": 94,
             "text": "87. Krishnan-Sarin S, Jackson A, Morean M, et al. E-cigarette devices used by highschool youth. Drug Alcohol Depend. 2019;194:395–400 ",
-            "authors": null,
+            "authors": [
+                "Krishnan-Sarin",
+                "Jackson",
+                "Morean"
+            ],
             "year": "2019"
         },
         {
             "id": 95,
             "text": "88. Vogel EA, Prochaska JJ, Rubinstein ML. Measuring e-cigarette addiction among adolescents [published online ahead of print May 11, 2019]. Tob Control. 2019. doi:10.1136/tobaccocontrol-2018-054900 ",
-            "authors": null,
+            "authors": [
+                "Vogel EA",
+                "Prochaska JJ",
+                "Rubinstein ML"
+            ],
             "year": "2019"
         },
         {
             "id": 96,
             "text": "89. Morean ME, Krishnan-Sarin S, S O’Malley S. Assessing nicotine dependence in adolescent e-cigarette users: the 4-item Patient-Reported Outcomes Measurement Information System (PROMIS) nicotine dependence item bank for electronic cigarettes. Drug Alcohol Depend. 2018;188:60–63 ",
-            "authors": null,
+            "authors": [
+                "Morean ME",
+                "Krishnan-Sarin",
+                "S O’Malley S"
+            ],
             "year": "2018"
         },
         {
             "id": 97,
             "text": "90. Leybovitz-Haleluya N, Wainstock T, Landau D, Sheiner E. Maternal smoking during pregnancy and the risk of pediatric cardiovascular diseases of the offspring: a population-based cohort study with up to 18-years of follow up. Reprod Toxicol. 2018;78:69–74 ",
-            "authors": null,
+            "authors": [
+                "Leybovitz-Haleluya N",
+                "Wainstock T",
+                "Landau",
+                "Sheiner E"
+            ],
             "year": "2018"
         },
         {
             "id": 98,
             "text": "91. Chaumont M, de Becker B, Zaher W, et al. Differential effects of e-cigarette on microvascular endothelial function, arterial stiffness and oxidative stress: a randomized crossover trial. Sci Rep. 2018;8(1):10378 ",
-            "authors": null,
+            "authors": [
+                "Chaumont M",
+                "de Becker B",
+                "Zaher W"
+            ],
             "year": "2018"
         },
         {
             "id": 99,
             "text": "92. Franzen KF, Willig J, Cayo Talavera S, et al. E-cigarettes and cigarettes worsen peripheral and central hemodynamics as well as arterial stiffness: a randomized, double-blinded pilot study. Vasc Med. 2018;23(5): 419–425 ",
-            "authors": null,
+            "authors": [
+                "Franzen KF",
+                "Willig J",
+                "Cayo Talavera S"
+            ],
             "year": "2018"
         },
         {
             "id": 100,
             "text": "93. Espinoza-Derout J, Hasan KM, Shao XM, et al. Chronic intermittent electronic cigarette exposure induces cardiac dysfunction and atherosclerosis in apolipoprotein-E knockout mice. Am J Physiol Heart Circ Physiol. 2019; 317(2):H445–H459 ",
-            "authors": null,
+            "authors": [
+                "Espinoza-Derout J",
+                "Hasan KM",
+                "Shao XM"
+            ],
             "year": "2019"
         },
         {
             "id": 101,
             "text": "94. Wang Z, Liu B, Zhu J, Wang D, Wang Y. Nicotine-mediated autophagy of vascular smooth muscle cell accelerates atherosclerosis via nAChRs/ROS/NF- B signaling pathway. kAtherosclerosis. 2019;284:1–10 ",
-            "authors": null,
+            "authors": [
+                "Wang Z",
+                "Liu B",
+                "Zhu J",
+                "Wang D",
+                "Wang Y"
+            ],
             "year": "2019"
         },
         {
             "id": 102,
             "text": "95. Yoshiyama S, Chen Z, Okagaki T, et al. Nicotine exposure alters human vascular smooth muscle cell phenotype from a contractile to a synthetic type. Atherosclerosis. 2014;237(2):464–470 ",
-            "authors": null,
+            "authors": [
+                "Yoshiyama S",
+                "Chen Z",
+                "Okagaki T"
+            ],
             "year": "2014"
         },
         {
             "id": 103,
             "text": "96. Thurlbeck WM. Postnatal human lung growth. Thorax. 1982;37(8):564–571 ",
-            "authors": null,
+            "authors": [
+                "Thurlbeck WM"
+            ],
             "year": "1982"
         },
         {
             "id": 104,
             "text": "97. Herring MJ, Putney LF, Wyatt G, Finkbeiner WE, Hyde DM. Growth of alveoli during postnatal development in humans based on stereological estimation. Am J Physiol Lung Cell Mol Physiol. 2014;307(4):L338–L344 ",
-            "authors": null,
+            "authors": [
+                "Herring MJ",
+                "Putney LF",
+                "Wyatt G",
+                "Finkbeiner WE",
+                "Hyde DM"
+            ],
             "year": "2014"
         },
         {
             "id": 105,
             "text": "98. Maritz GS. Perinatal exposure to nicotine and implications for subsequent obstructive lung disease. Paediatr Respir Rev. 2013;14(1):3–8 ",
-            "authors": null,
+            "authors": [
+                "Maritz GS"
+            ],
             "year": "2013"
         },
         {
             "id": 106,
             "text": "99. Zaken V, Kohen R, Ornoy A. Vitamins C and E improve rat embryonic antioxidant defense mechanism in diabetic culture medium. Teratology. 2001;64(1):33–44 ",
-            "authors": null,
+            "authors": [
+                "Zaken V",
+                "Kohen R",
+                "Ornoy A"
+            ],
             "year": "2001"
         },
         {
             "id": 107,
             "text": "100. Sekhon HS, Jia Y, Raab R, et al. Prenatal nicotine increases pulmonary alpha7 nicotinic receptor expression and alters fetal lung development in monkeys. J Clin Invest. 1999;103(5): 637–647 ",
-            "authors": null,
+            "authors": [
+                "Sekhon HS",
+                "Jia Y",
+                "Raab R"
+            ],
             "year": "1999"
         },
         {
             "id": 108,
             "text": "101. Wongtrakool C, Wang N, Hyde DM, Roman J, Spindel ER. Prenatal nicotine exposure alters lung function and airway geometry through 7 nicotinic areceptors. Am J Respir Cell Mol Biol. 2012;46(5):695–702 ",
-            "authors": null,
+            "authors": [
+                "Wongtrakool C",
+                "Wang N",
+                "Hyde DM",
+                "Roman J",
+                "Spindel ER"
+            ],
             "year": "2012"
         },
         {
             "id": 109,
             "text": "102. Proskocil BJ, Sekhon HS, Clark JA, et al. Vitamin C prevents the effects of prenatal nicotine on pulmonary function in newborn monkeys. Am J Respir Crit Care Med. 2005;171(9): 1032–1039 ",
-            "authors": null,
+            "authors": [
+                "Proskocil BJ",
+                "Sekhon HS",
+                "Clark JA"
+            ],
             "year": "2005"
         },
         {
             "id": 110,
             "text": "103. Yildiz A, Vardi N, Karaaslan MG, Ates B, Taslidere E, Esrefoglu M. The protective effect of melatonin in lungs of newborn rats exposed to maternal nicotine. Biotech Histochem. 2018;93(6):442–452 ",
-            "authors": null,
+            "authors": [
+                "Yildiz A",
+                "Vardi N",
+                "Karaaslan MG",
+                "Ates B",
+                "Taslidere E",
+                "Esrefoglu M"
+            ],
             "year": "2018"
         },
         {
             "id": 111,
             "text": "104. Chao MR, Cooke MS, Kuo CY, et al. Children are particularly vulnerable to environmental tobacco smoke exposure: evidence from biomarkers of tobacco-specific nitrosamines, and ",
-            "authors": null,
+            "authors": [
+                "Chao MR",
+                "Cooke MS",
+                "Kuo CY"
+            ],
             "year": null
         },
         {
@@ -814,163 +1275,275 @@
         {
             "id": 113,
             "text": "105. Moritsugu KP. The 2006 report of the Surgeon General: the health consequences of involuntary exposure to tobacco smoke. Am J Prev Med. 2007; 32(6):542–543 ",
-            "authors": null,
-            "year": "2007"
+            "authors": [
+                "Moritsugu KP"
+            ],
+            "year": "2006"
         },
         {
             "id": 114,
             "text": "106. McConnell R, Barrington-Trimis JL, Wang K, et al. Electronic cigarette use and respiratory symptoms in adolescents. Am J Respir Crit Care Med. 2017;195(8):1043–1049 ",
-            "authors": null,
+            "authors": [
+                "McConnell R",
+                "Barrington-Trimis JL",
+                "Wang K"
+            ],
             "year": "2017"
         },
         {
             "id": 115,
             "text": "107. Cho JH, Paik SY. Association between electronic cigarette use and asthma among high school students in South Korea. PLoS One. 2016;11(3):e0151022 ",
-            "authors": null,
+            "authors": [
+                "Cho JH",
+                "Paik SY"
+            ],
             "year": "2016"
         },
         {
             "id": 116,
             "text": "108. Wang MP, Ho SY, Leung LT, Lam TH. Electronic cigarette use and respiratory symptoms in Chinese adolescents in Hong Kong. JAMA Pediatr. 2016;170(1): 89–91 ",
-            "authors": null,
+            "authors": [
+                "Wang MP",
+                "Ho SY",
+                "Leung LT",
+                "Lam TH"
+            ],
             "year": "2016"
         },
         {
             "id": 117,
             "text": "109. Choi K, Bernat D. E-cigarette use among Florida youth with and without asthma. Am J Prev Med. 2016;51(4):446–453 ",
-            "authors": null,
+            "authors": [
+                "Choi K",
+                "Bernat D"
+            ],
             "year": "2016"
         },
         {
             "id": 118,
             "text": "110. Chung S, Baumlin N, Dennis JS, et al. Electronic cigarette vapor with nicotine causes airway mucociliary dysfunction preferentially via TRPA1 receptors. Am J Respir Crit Care Med. 2019;200(9): 1134–1145 ",
-            "authors": null,
+            "authors": [
+                "Chung S",
+                "Baumlin N",
+                "Dennis JS"
+            ],
             "year": "2019"
         },
         {
             "id": 119,
             "text": "111. Laube BL, Afshar-Mohajer N, Koehler K, et al. Acute and chronic in vivo effects of exposure to nicotine and propylene glycol from an e-cigarette on mucociliary clearance in a murine model. Inhal Toxicol. 2017;29(5):197–205 ",
-            "authors": null,
+            "authors": [
+                "Laube BL",
+                "Afshar-Mohajer N",
+                "Koehler K"
+            ],
             "year": "2017"
         },
         {
             "id": 120,
             "text": "112. Rehan VK, Liu J, Naeem E, et al. Perinatal nicotine exposure induces asthma in second generation offspring. BMC Med. 2012;10:129 ",
-            "authors": null,
+            "authors": [
+                "Rehan VK",
+                "Liu J",
+                "Naeem E"
+            ],
             "year": "2012"
         },
         {
             "id": 121,
             "text": "113. Klingbeil EC, Hew KM, Nygaard UC, Nadeau KC. Polycyclic aromatic hydrocarbons, tobacco smoke, and epigenetic remodeling in asthma. Immunol Res. 2014;58(2–3):369–373 ",
-            "authors": null,
+            "authors": [
+                "Klingbeil EC",
+                "Hew KM",
+                "Nygaard UC",
+                "Nadeau KC"
+            ],
             "year": "2014"
         },
         {
             "id": 122,
             "text": "114. Wilson KM, Wesgate SC, Pier J, et al. Secondhand smoke exposure and serum cytokine levels in healthy children. Cytokine. 2012;60(1):34–37 ",
-            "authors": null,
+            "authors": [
+                "Wilson KM",
+                "Wesgate SC",
+                "Pier J"
+            ],
             "year": "2012"
         },
         {
             "id": 123,
             "text": "115. Tebow G, Sherrill DL, Lohman IC, et al. Effects of parental smoking on interferon gamma production in children. Pediatrics. 2008;121(6). Available at: www.pediatrics.org/cgi/ content/full/121/6/e1563 ",
-            "authors": null,
+            "authors": [
+                "Tebow G",
+                "Sherrill DL",
+                "Lohman IC"
+            ],
             "year": "2008"
         },
         {
             "id": 124,
             "text": "116. le Roux DM, Nicol MP, Myer L, et al. Lower respiratory tract infections in children in a well-vaccinated South African birth cohort: spectrum of disease and risk factors. Clin Infect Dis. 2019;69(9):1588–1596 ",
-            "authors": null,
+            "authors": [
+                "le Roux DM",
+                "Nicol MP",
+                "Myer L"
+            ],
             "year": "2019"
         },
         {
             "id": 125,
             "text": "117. Snodgrass AM, Tan PT, Soh SE, et al; GUSTO Study Group. Tobacco smoke exposure and respiratory morbidity in young children. Tob Control. 2016; 25(e2):e75–e82 ",
-            "authors": null,
+            "authors": [
+                "Snodgrass AM",
+                "Tan PT",
+                "Soh SE"
+            ],
             "year": "2016"
         },
         {
             "id": 126,
             "text": "118. DiFranza JR, Masaquel A, Barrett AM, Colosia AD, Mahadevia PJ. Systematic literature review assessing tobacco smoke exposure as a risk factor for serious respiratory syncytial virus disease among infants and young children. BMC Pediatr. 2012;12:81 ",
-            "authors": null,
+            "authors": [
+                "DiFranza JR",
+                "Masaquel A",
+                "Barrett AM",
+                "Colosia AD",
+                "Mahadevia PJ"
+            ],
             "year": "2012"
         },
         {
             "id": 127,
             "text": "119. Ma\u0001sli\u0001nski W. Cholinergic receptors of lymphocytes. Brain Behav Immun. 1989; 3(1):1–14 ",
-            "authors": null,
+            "authors": [
+                "Ma\u0001sli"
+            ],
             "year": "1989"
         },
         {
             "id": 128,
             "text": "120. Fuxe K, Andersson K, Eneroth P, Härfstrand A, Agnati LF. Neuroendocrine actions of nicotine and of exposure to cigarette smoke: medical implications. Psychoneuroendocrinology. 1989; 14(1–2):19–41 ",
-            "authors": null,
+            "authors": [
+                "Fuxe K",
+                "Andersson K",
+                "Eneroth P",
+                "Härfstrand A",
+                "Agnati LF"
+            ],
             "year": "1989"
         },
         {
             "id": 129,
             "text": "121. Sussan TE, Gajghate S, Thimmulappa RK, et al. Exposure to electronic cigarettes impairs pulmonary antibacterial and anti-viral defenses in a mouse model. PLoS One. 2015;10(2): e0116861 ",
-            "authors": null,
+            "authors": [
+                "Sussan TE",
+                "Gajghate S",
+                "Thimmulappa RK"
+            ],
             "year": "2015"
         },
         {
             "id": 130,
             "text": "122. Gomes JP, Watad A, Shoenfeld Y. Nicotine and autoimmunity: the lotus’ flower in tobacco. Pharmacol Res. 2018; 128:101–109 ",
-            "authors": null,
+            "authors": [
+                "Gomes JP",
+                "Watad A",
+                "Shoenfeld Y"
+            ],
             "year": "2018"
         },
         {
             "id": 131,
             "text": "123. Hao J, Simard AR, Turner GH, et al. Attenuation of CNS inflammatory responses by nicotine involves 7 and anon- 7 nicotinic receptors. Exp Neurol. a2011;227(1):110–119 ",
-            "authors": null,
+            "authors": [
+                "Hao J",
+                "Simard AR",
+                "Turner GH"
+            ],
             "year": null
         },
         {
             "id": 132,
             "text": "124. Chen EY, Sun A, Chen CS, Mintz AJ, Chin WC. Nicotine alters mucin rheological properties. Am J Physiol Lung Cell Mol Physiol. 2014;307(2):L149–L157 ",
-            "authors": null,
+            "authors": [
+                "Chen EY",
+                "Sun A",
+                "Chen CS",
+                "Mintz AJ",
+                "Chin WC"
+            ],
             "year": "2014"
         },
         {
             "id": 133,
             "text": "125. Maouche K, Medjber K, Zahm JM, et al. Contribution of 7 nicotinic receptor to aairway epithelium dysfunction under nicotine exposure. Proc Natl Acad Sci U S A. 2013;110(10):4099–4104 ",
-            "authors": null,
+            "authors": [
+                "Maouche K",
+                "Medjber K",
+                "Zahm JM"
+            ],
             "year": "2013"
         },
         {
             "id": 134,
             "text": "126. McConnell DD, Carr SB, Litofsky NS. Potential effects of nicotine on glioblastoma and chemoradiotherapy: a review. Expert Rev Neurother. 2019; 19(6):545–555 ",
-            "authors": null,
+            "authors": [
+                "McConnell DD",
+                "Carr SB",
+                "Litofsky NS"
+            ],
             "year": "2019"
         },
         {
             "id": 135,
             "text": "127. Li H, Ma N, Wang J, et al. Nicotine induces progressive properties of lung adenocarcinoma A549 cells by inhibiting cystic fibrosis transmembrane conductance regulator (CFTR) expression and plasma membrane localization. Technol Cancer Res Treat. 2018;17:1533033818809984 ",
-            "authors": null,
+            "authors": [
+                "Li H",
+                "Ma N",
+                "Wang J"
+            ],
             "year": "2018"
         },
         {
             "id": 136,
             "text": "128. Li T, Zhang J, Zhang J, et al. Nicotineenhanced stemness and epithelialmesenchymal transition of human umbilical cord mesenchymal stem cells promote tumor formation and growth in nude mice. Oncotarget. 2017;9(1): 591–606 ",
-            "authors": null,
+            "authors": [
+                "Li T",
+                "Zhang J",
+                "Zhang J"
+            ],
             "year": "2017"
         },
         {
             "id": 137,
             "text": "129. Chen PC, Lee WY, Ling HH, Cheng CH, Chen KC, Lin CW. Activation of fibroblasts by nicotine promotes the epithelial-mesenchymal transition and motility of breast cancer cells. J Cell Physiol. 2018;233(6):4972–4980 ",
-            "authors": null,
+            "authors": [
+                "Chen PC",
+                "Lee WY",
+                "Ling HH",
+                "Cheng CH",
+                "Chen KC",
+                "Lin CW"
+            ],
             "year": "2018"
         },
         {
             "id": 138,
             "text": "130. Zhang C, Ding XP, Zhao QN, et al. Role of 7-nicotinic acetylcholine receptor in anicotine-induced invasion and epithelial-to-mesenchymal transition in human non-small cell lung cancer cells. Oncotarget. 2016;7(37):59199–59208 ",
-            "authors": null,
+            "authors": [
+                "Zhang C",
+                "Ding XP",
+                "Zhao QN"
+            ],
             "year": "2016"
         },
         {
             "id": 139,
             "text": "131. Alkam T, Nabeshima T. Molecular mechanisms for nicotine intoxication. Neurochem Int. 2019;125:117–126 ",
-            "authors": null,
+            "authors": [
+                "Alkam T",
+                "Nabeshima T"
+            ],
             "year": "2019"
         },
         {
@@ -994,95 +1567,150 @@
         {
             "id": 143,
             "text": "134. Chen BC, Bright SB, Trivedi AR, Valento M. Death following intentional ingestion of e-liquid. Clin Toxicol (Phila). 2015; 53(9):914–916 ",
-            "authors": null,
+            "authors": [
+                "Chen BC",
+                "Bright SB",
+                "Trivedi AR",
+                "Valento M"
+            ],
             "year": "2015"
         },
         {
             "id": 144,
             "text": "135. Eggleston W, Nacca N, Stork CM, Marraffa JM. Pediatric death after unintentional exposure to liquid nicotine for an electronic cigarette. Clin Toxicol (Phila). 2016;54(9):890–891 ",
-            "authors": null,
+            "authors": [
+                "Eggleston W",
+                "Nacca N",
+                "Stork CM",
+                "Marraffa JM"
+            ],
             "year": "2016"
         },
         {
             "id": 145,
             "text": "136. Seo AD, Kim DC, Yu HJ, Kang MJ. Accidental ingestion of e-cigarette liquid nicotine in a 15-month-old child: an infant mortality case of nicotine intoxication. Korean J Pediatr. 2016; 59(12):490–493 ",
-            "authors": null,
+            "authors": [
+                "Seo AD",
+                "Kim DC",
+                "Yu HJ",
+                "Kang MJ"
+            ],
             "year": "2016"
         },
         {
             "id": 146,
             "text": "137. Govindarajan P, Spiller HA, Casavant MJ, Chounthirath T, Smith GA. E-cigarette and liquid nicotine exposures among young children. Pediatrics. 2018;141(5): e20173361 ",
-            "authors": null,
+            "authors": [
+                "Govindarajan P",
+                "Spiller HA",
+                "Casavant MJ",
+                "Chounthirath T",
+                "Smith GA"
+            ],
             "year": "2018"
         },
         {
             "id": 147,
             "text": "138. Miron O, Yu KH, Wilf-Miron R, Kohane IS. Suicide rates among adolescents and young adults in the United States, 2000- 2017. JAMA. 2019;321(23):2362–2364 ",
-            "authors": null,
+            "authors": [
+                "Miron O",
+                "Yu KH",
+                "Wilf-Miron R",
+                "Kohane IS"
+            ],
             "year": "2017"
         },
         {
             "id": 148,
             "text": "139. Riehm KE, Young AS, Feder KA, et al. Mental health problems and initiation of e-cigarette and combustible cigarette use. Pediatrics. 2019;144(1): e20182935 ",
-            "authors": null,
+            "authors": [
+                "Riehm KE",
+                "Young AS",
+                "Feder KA"
+            ],
             "year": "2019"
         },
         {
             "id": 149,
             "text": "140. Lee Y, Lee KS. Association of depression and suicidality with electronic and conventional cigarette use in South Korean adolescents. Subst Use Misuse. 2019;54(6):934–943 ",
-            "authors": null,
+            "authors": [
+                "Lee Y",
+                "Lee KS"
+            ],
             "year": "2019"
         },
         {
             "id": 150,
             "text": "141. Park EJ, Min YG. The emerging method of suicide by electronic cigarette liquid: a case report. J Korean Med Sci. 2018; 33(11):e52 ",
-            "authors": null,
+            "authors": [
+                "Park EJ",
+                "Min YG"
+            ],
             "year": "2018"
         },
         {
             "id": 151,
             "text": "142. Jalkanen V, Värelä V, Kalliomäki J. Case report: two severe cases of suicide attempts using nicotine containing e-cigarette liquid. Duodecim. 2016; 132(16):1480–1483 ",
-            "authors": null,
+            "authors": [
+                "Jalkanen",
+                "Värelä",
+                "Kalliomäki"
+            ],
             "year": "2016"
         },
         {
             "id": 152,
             "text": "143. Fadus MC, Smith TT, Squeglia LM. The rise of e-cigarettes, pod mod devices, and JUUL among youth: factors influencing use, health implications, and downstream effects. Drug Alcohol Depend. 2019;201:85–93 ",
-            "authors": null,
+            "authors": [
+                "Fadus MC",
+                "Smith TT",
+                "Squeglia LM"
+            ],
             "year": "2019"
         },
         {
             "id": 153,
             "text": "144. Leavens ELS, Stevens EM, Brett EI, et al. JUUL electronic cigarette use patterns, other tobacco product use, and reasons for use among ever users: results from a convenience sample. Addict Behav. 2019;95:178–183 ",
-            "authors": null,
+            "authors": [
+                "Leavens ELS",
+                "Stevens",
+                "Brett"
+            ],
             "year": "2019"
         },
         {
             "id": 154,
             "text": "145. Hammond D, Wackowski OA, Reid JL, O’Connor RJ; International Tobacco Control Policy Evaluation Project (ITC) Team. Use of Juul e-cigarettes among youth in the United States [published online ahead of print October 27, 2018]. Nicotine Tob Res. 2018. doi:10.1093/ntr/ nty237 ",
-            "authors": null,
+            "authors": [
+                "Hammond D",
+                "Wackowski OA",
+                "Reid JL",
+                "O’Connor RJ"
+            ],
             "year": "2018"
         }
     ],
     "figures": [
         {
-            "id": "Figure 1",
+            "id": 1,
             "type": "image",
             "caption": null,
             "img_path": [
                 "images/0ec6ecf74cb3c2a8922acc7a60b32a8909c5b0885b73aeb2fa77d81351d8a195.jpg"
             ],
             "page": 0
-        },
+        }
+    ],
+    "tables": [
         {
-            "id": "Table 1",
+            "id": 1,
             "type": "table",
             "caption": [
                 "TABLE 1 Influences of Nicotine Exposure on Health Outcomes During Development ",
                 "—, not applicable. "
             ],
             "table_body": "<table><tr><td></td><td colspan=\"4\">Age of Nicotine Exposure</td></tr><tr><td></td><td>Fetal Life</td><td>Infancy</td><td>Childhood</td><td>Adolescence</td></tr><tr><td>Gestational</td><td></td><td></td><td></td><td></td></tr><tr><td>Orofacial clefts</td><td>X</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Preterm birth</td><td>X</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Stillbirth</td><td>X</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Intrauterine growth restriction</td><td>X</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Central nervous system</td><td></td><td></td><td></td><td></td></tr><tr><td>SIDS</td><td>—</td><td>X</td><td>—</td><td>—</td></tr><tr><td>Neurocognitive and behavior</td><td>X</td><td>X</td><td>X</td><td>—</td></tr><tr><td>Addiction</td><td>—</td><td>—</td><td>—</td><td>X</td></tr><tr><td>Cardiovascular</td><td></td><td></td><td></td><td></td></tr><tr><td>Cardiovascular changes</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>Respiratory</td><td></td><td></td><td></td><td></td></tr><tr><td>Wheezing and airflow obstruction</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>Lung growth</td><td>X</td><td>X</td><td>X</td><td>—</td></tr><tr><td>Immune or malignancy</td><td>—</td><td>X</td><td>X</td><td>X</td></tr></table>",
-            "img_path": "output/images/7f5ad07ab3a51220ad4512603f682de7fdac7f79a3d87b389a09061730080e70.jpg",
+            "img_path": "output/demo10/images/7f5ad07ab3a51220ad4512603f682de7fdac7f79a3d87b389a09061730080e70.jpg",
             "page": 5
         }
     ]
