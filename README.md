@@ -6,6 +6,7 @@ pip install --upgrade pip
 pip install uv
 uv pip install -U "mineru[all]"
 pip install langdetect
+pip install gliner
 ````
 или
 ````commandline
@@ -13,8 +14,9 @@ git clone https://github.com/opendatalab/MinerU.git
 cd MinerU
 uv pip install -e .[all]
 pip install langdetect
+pip install gliner
 ````
-Скачать модель для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface"), разместить ее в папке `model`
+Скачать MinerU для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface MinerU"), разместить ее в папке `model`, туда же потребуется скачать [GLiNER-PII](https://huggingface.co/nvidia/gliner-PII "huggingface GLiNER-PII") для извлеченения авторов.
 
 ### Работа с системой
 
