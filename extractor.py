@@ -2,7 +2,6 @@ import os
 import re
 import json
 import enum
-import spacy
 from langdetect import detect
 from gliner import GLiNER
 
@@ -14,8 +13,8 @@ class sectionType(str, enum.Enum):
     discussion = 'discussion'
     colclusion = 'conclusion'
 
-class ArticleExtractor():
-    def __init__(self):
+class ArticleExtractor:
+    def __init__(self, ner_path = 'nvidia/gliner-pii', device = 'cpu', ner_batch_size = 8):
         self.file_name = None
         self.title = None
         self.authors = None
@@ -27,7 +26,8 @@ class ArticleExtractor():
         self.figures = None
         self.tables = None
 
-        self.ner = GLiNER.from_pretrained('model/gliner-pii', map_location='cuda')
+        self.ner = GLiNER.from_pretrained(ner_path, map_location=device)
+        self.ner_batch_size = ner_batch_size
 
     def extract_from_article(self, data, output_path, file_name):
         self.file_name = file_name
@@ -89,7 +89,7 @@ class ArticleExtractor():
         labels = ['authors']
         authors = []
         authors_text = [block.get('text', '') for block in data[titles[0][0]+1:abstract_idx]]
-        authors_ents = self.ner.inference(authors_text, labels, threshold=0.15, batch_size=16)
+        authors_ents = self.ner.inference(authors_text, labels, threshold=0.15, batch_size=self.ner_batch_size)
         for ents in authors_ents:
             if len(ents) > 0:
                 authors += [a['text'] for a in ents]
@@ -124,7 +124,7 @@ class ArticleExtractor():
             }
             references_list.append(reference)
         labels = ['author']
-        refs_authors = self.ner.inference([ref['text'] for ref in references_list], labels, threshold=0.15, batch_size=16)
+        refs_authors = self.ner.inference([ref['text'] for ref in references_list], labels, threshold=0.15, batch_size=self.ner_batch_size)
         for idx, ref in enumerate(refs_authors):
             if len(ref) > 0:
                 references_list[idx]['authors'] = [author['text'] for author in ref]
