@@ -28,22 +28,33 @@ pip install gliner
 
 ````python
 import os
+import torch
 
 from extractor import ArticleExtractor
 from mineru_compact import parse_doc
 
+# данные заполнены для примера
 path_to_file = 'articles/demo1.pdf'  # путь к pdf-файлу (статье)
 output_dir = 'output/' # директория для сохранения результатов
 path_to_model = 'model/MinerU2.5-2509-1.2B' # путь к локально установленной модели
 backend = 'hybrid-auto-engine' # [hybrid-auto-engine, pipeline, vlm-auto-engine]
+ner_path = 'nvidia/gliner-pii' # path to gliner-pii (ner) for author`s extraction [default: 'nvidia/gliner-pii' from hf]
+ner_device = 'cuda' if torch.cuda.is_available() else 'cpu' # for ner model
+print(f'Device: {ner_device}')
+ner_batch_size = 16
 
 file_name, _ext = os.path.splitext(os.path.basename(path_to_file))
 content_list = parse_doc([path_to_file], output_dir, backend=backend, model_path=path_to_model)
 
-extractor = ArticleExtractor()
+extractor = ArticleExtractor(ner_path = ner_path, device = ner_device, ner_batch_size = ner_batch_size)
 extractor.extract_from_article(content_list, output_dir, file_name) # извлечение данных из документа и создание структуры
 extractor.dump_to_json(output_dir) # сохранение результатов в формате json
 ````
+Для извлечения данных необходимо запустить demo.py (со всеми аргументами можно ознакомиться с помощью `--help`):
+````commandline
+python demo.py -i path_to_file.pdf -o output_dir/
+````
+
 Выходной файл имеет следующую структуру (**output/demo1.json**):
 ````javascript
 {
