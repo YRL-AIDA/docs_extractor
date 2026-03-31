@@ -1,22 +1,12 @@
 # Система извлечения данных из научных документов
 ### Установка
-Чтобы начать работу после клонирования репозитория, нужно установить необходимые зависимости (желательно в виртуальном окружении, с версией **python 3.10-3.12**)
+Чтобы начать работу, после клонирования репозитория нужно установить необходимые зависимости (используемые версии **python 3.10-3.12, cuda 12.8** => в requirements ставится **torch+cu128**)
 ````commandline
 pip install --upgrade pip
-pip install uv
-uv pip install -U "mineru[all]"
-pip install langdetect
-pip install gliner
+pip install -r requirements.txt
 ````
-или
-````commandline
-git clone https://github.com/opendatalab/MinerU.git
-cd MinerU
-uv pip install -e .[all]
-pip install langdetect
-pip install gliner
-````
-Скачать MinerU для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface MinerU"), разместить ее в папке `model`, туда же потребуется скачать [GLiNER-PII](https://huggingface.co/nvidia/gliner-PII "huggingface GLiNER-PII") для извлеченения авторов.
+
+Скачать **MinerU** для локального запуска можно по [ссылке](https://huggingface.co/opendatalab/MinerU2.5-2509-1.2B "huggingface MinerU"), разместить ее в папке `model`, туда же потребуется скачать [GLiNER-PII](https://huggingface.co/nvidia/gliner-PII "huggingface GLiNER-PII") для извлеченения авторов.
 
 ### Работа с системой
 
@@ -50,7 +40,7 @@ extractor = ArticleExtractor(ner_path = ner_path, device = ner_device, ner_batch
 extractor.extract_from_article(content_list, output_dir, file_name) # извлечение данных из документа и создание структуры
 extractor.dump_to_json(output_dir) # сохранение результатов в формате json
 ````
-Для извлечения данных необходимо запустить demo.py (со всеми аргументами можно ознакомиться с помощью `--help`):
+Для извлечения данных необходимо запустить `demo.py` (со всеми аргументами можно ознакомиться с помощью `--help`):
 ````commandline
 python demo.py -i path_to_file.pdf -o output_dir/
 ````
