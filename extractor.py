@@ -32,30 +32,29 @@ class ArticleExtractor:
     def extract_from_article(self, data, output_path, file_name):
         self.file_name = file_name
 
-        # поиск ключевых слов
-        kwords_pattern = re.compile(r'(keywords|ключевые слова)', flags=re.I)
-        for idx, block in enumerate(data):
-            text = block.get('text', '')
-            if re.search(kwords_pattern, text):
-                if block.get('text_level', -1) > 0:
-                    temp_kwords = data[idx + 1].get('text', '').strip(' .')
-                else:
-                    temp_kwords = re.sub(kwords_pattern, '', text).strip(' .')
-                temp_kwords = re.split(r'[,;]', temp_kwords)
-                self.keywords = [kword.strip() for kword in temp_kwords]
-                break
-
         # исправление уровня подзаголовков: с основного (1) на нижний уровень (2)
         for block in data:
             if block.get('text_level', None) == 1 and re.match(r'\d+\.\d+', block.get('text', '')):
                 block['text_level'] = 2
         
         titles = [(idx, block.get('text', '')) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
-        self.title = titles[0][1]
-        self.language = detect(titles[0][1])
+        self.title = titles[0][1].strip()
 
-        start_section_idx = 1 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи (и аннотацию, если она не выделена как глава)
+        start_section_idx = 2 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи и аннотацию
         sections_list = []
+
+        # поиск ключевых слов
+        kwords_pattern = re.compile(r'(keywords|index terms|ключевые слова)', flags=re.I)
+        for idx, block in enumerate(data):
+            text = block.get('text', '')
+            if re.search(kwords_pattern, text):
+                if block.get('text_level', -1) > 0:
+                    temp_kwords = data[idx + 1].get('text', '').strip(' .:-—')
+                else:
+                    temp_kwords = re.sub(kwords_pattern, '', text).strip(' .:-—')
+                temp_kwords = re.split(r'[,;]', temp_kwords)
+                self.keywords = [kword.strip() for kword in temp_kwords]
+                break
         
         # поиск аннотации
         abstract = {
@@ -66,24 +65,29 @@ class ArticleExtractor:
                         'page_end': 0
                     }
         abs_pattern = re.compile(r'аннотация|abstract', flags=re.I)
-        if not re.search(abs_pattern, titles[1][1]): # если аннотация не выделена как глава
-            for idx, block in enumerate(data):
-                match = re.search(abs_pattern, block.get('text', ''))
-                if match:
-                    abstract_idx = idx
-                    abstract['text'] = block['text']
-                    abstract['page_start'] = block['page_idx']
-                    abstract['page_end'] = block['page_idx']
-                    break
-        else:
-            abstract_idx = titles[1][0]
-            start_section_idx = 2
-            abstract['text'] = data[titles[1][0] + 1].get('text', '')
-            abstract['page_start'] = data[titles[1][0] + 1]['page_idx']
-            abstract['page_end'] = data[titles[1][0] + 1]['page_idx']
+        for idx, block in enumerate(data):
+            match = re.search(abs_pattern, block.get('text', ''))
+            if match:
+                abstract_idx = idx
+                if block.get('text_level', -1) > 0:
+                    start_abs_idx = idx + 1
+                else:
+                    start_abs_idx = idx
+
+                abstract['text'] = ''
+                abstract['page_start'] = block['page_idx']
+                for i in range(start_abs_idx, len(data)):
+                    if data[i].get('text_level', -1) > 0 or re.search(kwords_pattern, data[i].get('text', '')):
+                        break
+                    else:
+                        abstract['text'] += data[i].get('text', '')
+                        abstract['page_end'] = data[i]['page_idx']
         
         self.abstract = abstract['text']
         sections_list.append(abstract)
+        self.language = detect(abstract['text'].split('.')[0])
+
+        start_section_idx = max([idx for idx, title in enumerate(titles) if title[0] < start_abs_idx]) + 1
 
         # поиск авторов статьи
         labels = ['authors']
@@ -99,7 +103,15 @@ class ArticleExtractor:
         references_list = []
 
         ref_list = []
-        for idx in range(titles[-1][0], len(data)):
+        ref_pattern = re.compile(r'references|список литературы|список источников|литература', flags=re.I)
+        ref_idx = (-1, titles[-1][0])
+        for idx in range(len(titles) - 1, 0, -1):
+            if re.search(ref_pattern, titles[idx][1]):
+                ref_idx = (idx, titles[idx][0])
+                break
+
+        end_idx = titles[ref_idx[0] + 1][0] if titles[-1][0] > ref_idx[1] else len(data)
+        for idx in range(ref_idx[1], end_idx):
             if data[idx].get('sub_type', None) == 'ref_text':
                 ref_list += data[idx].get('list_items', [])
             elif data[idx]['type'] == 'ref_text':
@@ -114,7 +126,6 @@ class ArticleExtractor:
                 year_ref = None
 
             authors = None
-            lang = detect(ref)
 
             reference = {
                 'id': idx + 1,
@@ -127,12 +138,17 @@ class ArticleExtractor:
         refs_authors = self.ner.inference([ref['text'] for ref in references_list], labels, threshold=0.15, batch_size=self.ner_batch_size)
         for idx, ref in enumerate(refs_authors):
             if len(ref) > 0:
-                references_list[idx]['authors'] = [author['text'] for author in ref]
+                references_list[idx]['authors'] = list(dict.fromkeys([author['text'] for author in ref])) # авторы без дубликатов
         self.references = references_list
 
         # обработка секций
         for idx in range(start_section_idx, len(titles) - 1):
-            section = {'title': titles[idx][1], 'text': '', 'type': None, 'page_start': data[titles[idx][0]]['page_idx']}
+            section = {
+                'title': titles[idx][1],
+                'text': '',
+                'type': None,
+                'page_start': data[titles[idx][0]]['page_idx']
+            }
 
             for jdx in range(titles[idx][0] + 1, titles[idx + 1][0]):
                 if data[jdx]['type'] in ['text', 'equation']:
