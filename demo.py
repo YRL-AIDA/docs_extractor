@@ -36,11 +36,11 @@ def parse_args(desc=''):
         help='Backend of the model (MinerU)'
     )
     parser.add_argument(
-        '-n',
-        '--ner_path',
+        '-g',
+        '--grobid_url',
         type=str,
-        default='model/gliner-pii',
-        help='Path to the NER model (gliner-pii)'
+        default='http://localhost:8070',
+        help='Grobid URL'
     )
     return parser.parse_args()
 
@@ -51,14 +51,11 @@ if __name__ == "__main__":
     output_dir = args.output_path
     path_to_model = args.model_path
     backend = args.backend
-    ner_path = args.ner_path
-    ner_device = 'cuda' if torch.cuda.is_available() else 'cpu' # for ner model
-    print(f'Device: {ner_device}')
-    ner_batch_size = 16
+    grobid_url = args.grobid_url
 
     file_name, _ext = os.path.splitext(os.path.basename(path_to_file))
-    content_list = parse_doc([path_to_file], output_dir, backend=backend, model_path=path_to_model)
 
-    extractor = ArticleExtractor(ner_path = ner_path, device = ner_device, ner_batch_size = ner_batch_size)
+    content_list = parse_doc([path_to_file], output_dir, backend=backend, model_path=path_to_model)
+    extractor = ArticleExtractor(pdf_path=path_to_file, grobid_url=grobid_url)
     extractor.extract_from_article(content_list, output_dir, file_name)
     extractor.dump_to_json(output_dir)

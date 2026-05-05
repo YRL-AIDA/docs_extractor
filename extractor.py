@@ -5,6 +5,8 @@ import enum
 from langdetect import detect
 from gliner import GLiNER
 
+from grobid_extractor import GrobidClient
+
 class sectionType(str, enum.Enum):
     abstract = 'abstract'
     introduction = 'introduction'
@@ -14,7 +16,8 @@ class sectionType(str, enum.Enum):
     colclusion = 'conclusion'
 
 class ArticleExtractor:
-    def __init__(self, ner_path = 'nvidia/gliner-pii', device = 'cpu', ner_batch_size = 8):
+    def __init__(self, pdf_path, grobid_url = 'http://localhost:8070'):
+        self.pdf_path = pdf_path
         self.file_name = None
         self.title = None
         self.authors = None
@@ -26,8 +29,7 @@ class ArticleExtractor:
         self.figures = None
         self.tables = None
 
-        self.ner = GLiNER.from_pretrained(ner_path, map_location=device)
-        self.ner_batch_size = ner_batch_size
+        self.grobid = GrobidClient(grobid_url=grobid_url)
 
     def extract_from_article(self, data, output_path, file_name):
         self.file_name = file_name
@@ -89,57 +91,8 @@ class ArticleExtractor:
 
         start_section_idx = max([idx for idx, title in enumerate(titles) if title[0] < start_abs_idx]) + 1
 
-        # поиск авторов статьи
-        labels = ['authors']
-        authors = []
-        authors_text = [block.get('text', '') for block in data[titles[0][0]+1:abstract_idx]]
-        authors_ents = self.ner.inference(authors_text, labels, threshold=0.15, batch_size=self.ner_batch_size)
-        for ents in authors_ents:
-            if len(ents) > 0:
-                authors += [a['text'] for a in ents]
-        self.authors = authors
-                
-        # обработка списка литературы
-        references_list = []
-
-        ref_list = []
-        ref_pattern = re.compile(r'references|список литературы|список источников|литература', flags=re.I)
-        ref_idx = (-1, titles[-1][0])
-        for idx in range(len(titles) - 1, 0, -1):
-            if re.search(ref_pattern, titles[idx][1]):
-                ref_idx = (idx, titles[idx][0])
-                break
-
-        end_idx = titles[ref_idx[0] + 1][0] if titles[-1][0] > ref_idx[1] else len(data)
-        for idx in range(ref_idx[1], end_idx):
-            if data[idx].get('sub_type', None) == 'ref_text':
-                ref_list += data[idx].get('list_items', [])
-            elif data[idx]['type'] == 'ref_text':
-                ref_list.append(data[idx].get('text', ''))
-
-        year_pattern = re.compile(r'[//\s\(](\d{4})[\.,;)\s]')
-        for idx, ref in enumerate(ref_list):
-            match = re.search(year_pattern, ref)
-            if match:
-                year_ref = match.group(1)
-            else:
-                year_ref = None
-
-            authors = None
-
-            reference = {
-                'id': idx + 1,
-                'text': ref,
-                'authors': authors,
-                'year': year_ref
-            }
-            references_list.append(reference)
-        labels = ['author']
-        refs_authors = self.ner.inference([ref['text'] for ref in references_list], labels, threshold=0.15, batch_size=self.ner_batch_size)
-        for idx, ref in enumerate(refs_authors):
-            if len(ref) > 0:
-                references_list[idx]['authors'] = list(dict.fromkeys([author['text'] for author in ref])) # авторы без дубликатов
-        self.references = references_list
+        # grobid: авторы и список литературы
+        self.authors, self.references = self.grobid.process_pdf(pdf_path=self.pdf_path)
 
         # обработка секций
         for idx in range(start_section_idx, len(titles) - 1):
