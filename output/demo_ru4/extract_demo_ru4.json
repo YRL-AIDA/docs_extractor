@@ -1,9 +1,24 @@
 {
-    "title": "Методы и средства разработки и применения испытательного стенда сервис-ориентированных приложений ",
+    "title": "Методы и средства разработки и применения испытательного стенда сервис-ориентированных приложений",
     "authors": [
-        "Александр Феоктистов",
-        "Михаил Воскобойников",
-        "Алексей Еделев"
+        {
+            "name": "Александр Феоктистов",
+            "affiliation": [
+                "1  Институт динамики систем"
+            ]
+        },
+        {
+            "name": "Михаил Воскобойников",
+            "affiliation": [
+                "1  Институт динамики систем"
+            ]
+        },
+        {
+            "name": "Алексей Еделев",
+            "affiliation": [
+                "1  Институт динамики систем"
+            ]
+        }
     ],
     "abstract": "Рассматривается подход к разработке и применению испытательного стенда сервис- ориентированных приложений в гетерогенной распределенной вычислительной среде. Целью испытательного стенда является обеспечение разработчиков средствами проведения экспериментов по оценке качества данных, работы алгоритмов, анализа результатов вычислений и других аспектов реализации сервис-ориентированных приложений. Сервис-ориентированное приложение создается на основе рабочих процессов, представляемых в виде композиции веб-сервисов. Веб-сервисы реализуют выполнение прикладного и системного программного обеспечения. Прикладное программное обеспечение поддерживает выполнение операций предметной области приложения. Суть и новизна подхода заключается в использовании в рамках испытательного стенда системного программного обеспечения, предоставляющего дополнительные функции обработки и анализа данных, получения информации с контрольно-измерительного оборудования и многокритериального выбора оптимальных результатов вычислений. Рабочие процессы могут быть представлены в стандартной форме на декларативном языке Business Process Execution Language для использования во внешних системах управления рабочими процессами. ",
     "keywords": [
@@ -67,125 +82,134 @@
     "references": [
         {
             "id": 1,
-            "text": "[1] С. В. Исаев, Концепция природно-технических систем и ее использование при изучении антропогенной трансформации природной среды, Географический вестник, 2016, № 3 (38), c. 105–113. doi:10.17072/2079-7877-2016-3-105-113. ",
-            "authors": [
-                "С. В. Исаев"
-            ],
-            "year": "2016"
+            "text": "Благодарности Работа выполнена в рамках гранта № 075-15-2024-533 Министерства науки и высшего образования РФ на выполнение крупного научного проекта по приоритетным направлениям научно-технологического развития (проект «Фундаментальные исследования Байкальской природной территории на основе системы взаимосвязанных базовых методов, моделей, нейронных сетей и цифровой платформы экологического мониторинга окружающей среды», рег. № 124052100088-3).",
+            "authors": [],
+            "year": null
         },
         {
             "id": 2,
-            "text": "[2] А. Л. Ревзон, Картография состояния природно-технических систем, М., Недра, 1992. ",
-            "authors": [
-                "А. Л. Ревзон"
-            ],
-            "year": "1992"
+            "text": "Список литературы",
+            "authors": [],
+            "year": null
         },
         {
             "id": 3,
-            "text": "[3] Т. К. Салина, Концептуальный подход к управлению устойчивым развитием ТЭК Северо- Западного федерального округа, Журнал экономической теории, 2016, № 4, с. 80–91. ",
+            "text": "С. В. Исаев, Концепция природно-технических систем и ее использование при изучении антропогенной трансформации природной среды, Географический вестник, 2016, № 3 (38), c. 105-113. doi:10.17072/2079-7877-2016-3-105-113.",
             "authors": [
-                "Т. К. Салина"
+                "С В Исаев"
             ],
             "year": "2016"
         },
         {
             "id": 4,
-            "text": "[4] Цифровой мониторинг Байкальской природной территории. URL: https://baikalproject.icc.ru/. ",
-            "authors": null,
-            "year": null
+            "text": "А. Л. Ревзон, Картография состояния природно-технических систем, М., Недра, 1992.",
+            "authors": [
+                "А Л Ревзон"
+            ],
+            "year": "1992"
         },
         {
             "id": 5,
-            "text": "[5] A. Feoktistov, A. Edelev, A. Tchernykh, S. Gorsky, O. Basharina, and E. Fereferov, An Approach to Implementing High-Performance Computing for Problem Solving in Workflow-based Energy Infrastructure Resilience Studies, Computation, 2023, vol. 11, no. 12, pp. 243. doi: 10.3390/computation11120243. ",
+            "text": "Т. К. Салина, Концептуальный подход к управлению устойчивым развитием ТЭК Северо- Западного федерального округа, Журнал экономической теории, 2016, № 4, с. 80-91.",
             "authors": [
-                "A. Feoktistov",
-                "A. Edelev",
-                "A. Tchernykh",
-                "S. Gorsky",
-                "O. Basharina",
-                "E. Fereferov"
-            ],
-            "year": "2023"
-        },
-        {
-            "id": 6,
-            "text": "[6] J. Goecks, A. Nekrutenko, J. Taylor, and Galaxy Team, Galaxy: a comprehensive approach for supporting accessible, reproducible, and transparent computational research in the life sciences, Genome boil, 2010, vol. 11, pp. 1–13. doi:10.1186/gb-2010-11-8-r86. ",
-            "authors": [
-                "J. Goecks",
-                "A. Nekrutenko",
-                "J. Taylor"
-            ],
-            "year": "2010"
-        },
-        {
-            "id": 7,
-            "text": "[7] B. Balis, HyperFlow: A model of computation, programming approach and enactment engine for complex distributed workflows, Future Generation Computer Systems, 2016, vol. 55, pp. 147– 162. doi:10.1016/j.future.2015.08.015. ",
-            "authors": [
-                "B. Balis"
+                "Т К Салина"
             ],
             "year": "2016"
         },
         {
-            "id": 8,
-            "text": "[8] M. H. Hilman, M. A. Rodriguez, and R. Buyya, Workflow-as-a-service cloud platform and deployment of bioinformatics workflow applications, in: Knowledge Management in the Development of Data-Intensive Systems, I. Mistrik, M. Galster, B. Maxim, B. Tekinerdogan (Eds.), CRC Press, Boca Raton, Florida, US, 2021, pp. 205–226. ",
+            "id": 6,
+            "text": "Цифровой мониторинг Байкальской природной территории. URL: https://baikal- project.icc.ru/.",
+            "authors": [],
+            "year": null
+        },
+        {
+            "id": 7,
+            "text": "A. Feoktistov, A. Edelev, A. Tchernykh, S. Gorsky, O. Basharina, and E. Fereferov, An Approach to Implementing High-Performance Computing for Problem Solving in Workflow-based Energy Infrastructure Resilience Studies, Computation, 2023, vol. 11, no. 12, pp. 243. doi: 10.3390/computation11120243.",
             "authors": [
-                "M. H. Hilman",
-                "M. A. Rodriguez",
-                "R. Buyya",
-                "I. Mistrik",
-                "M. Galster",
-                "B. Maxim",
-                "B. Tekinerdogan"
+                "A Feoktistov",
+                "A Edelev",
+                "A Tchernykh",
+                "S Gorsky",
+                "O Basharina",
+                "E Fereferov"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 8,
+            "text": "J. Goecks, A. Nekrutenko, J. Taylor, and Galaxy Team, Galaxy: a comprehensive approach for supporting accessible, reproducible, and transparent computational research in the life sciences, Genome boil, 2010, vol. 11, pp. 1-13. doi:10.1186/gb-2010-11-8-r86.",
+            "authors": [
+                "J Goecks",
+                "A Nekrutenko",
+                "J Taylor",
+                "Galaxy Team"
+            ],
+            "year": "2010"
+        },
+        {
+            "id": 9,
+            "text": "B. Balis, HyperFlow: A model of computation, programming approach and enactment engine for complex distributed workflows, Future Generation Computer Systems, 2016, vol. 55, pp. 147- 162. doi:10.1016/j.future.2015.08.015.",
+            "authors": [
+                "B Balis"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 10,
+            "text": "M. H. Hilman, M. A. Rodriguez, and R. Buyya, Workflow-as-a-service cloud platform and deployment of bioinformatics workflow applications, in: Knowledge Management in the Development of Data-Intensive Systems, I. Mistrik, M. Galster, B. Maxim, B. Tekinerdogan (Eds.), CRC Press, Boca Raton, Florida, US, 2021, pp. 205-226.",
+            "authors": [
+                "M H Hilman",
+                "M A Rodriguez",
+                "R Buyya"
             ],
             "year": "2021"
         },
         {
-            "id": 9,
-            "text": "[9] Г. И. Радченко, Распределенные виртуальные испытательные стенды: использование систем инженерного проектирования и анализа в распределенных вычислительных средах, Вестник Южно-Уральского государственного университета. Серия: Математическое моделирование и программирование, 2011, № 37 (254), с. 108–121. ",
+            "id": 11,
+            "text": "Г. И. Радченко, Распределенные виртуальные испытательные стенды: использование систем инженерного проектирования и анализа в распределенных вычислительных средах, Вестник Южно-Уральского государственного университета. Серия: Математическое моделирование и программирование, 2011, № 37 (254), с. 108-121.",
             "authors": [
-                "Г. И. Радченко"
+                "Г И Радченко"
             ],
             "year": "2011"
         },
         {
-            "id": 10,
-            "text": "[10] G. Danilov and M. Voskoboinikov, Testbed-based approach to testing a library for evaluating network reliability algorithms, Proceedings of the International Workshop on Critical Infrastructures in the Digital Worl (IWCI-2024), March 14-20, 2024, Bolshoe Goloustno, Russia, Irkutsk, ESI SB RAS, 2024, pp. 3-4. ",
+            "id": 12,
+            "text": "G. Danilov and M. Voskoboinikov, Testbed-based approach to testing a library for evaluating network reliability algorithms, Proceedings of the International Workshop on Critical Infrastructures in the Digital Worl (IWCI-2024), March 14-20, 2024, Bolshoe Goloustno, Russia, Irkutsk, ESI SB RAS, 2024, pp. 3-4.",
             "authors": [
-                "G. Danilov",
-                "M. Voskoboinikov"
+                "G Danilov",
+                "M Voskoboinikov"
             ],
             "year": "2024"
         },
         {
-            "id": 11,
-            "text": "[11] A. Feoktistov, S. Gorsky, I. Sidorov, I. Bychkov, A. Tchernykh, and A. Edelev Collaborative Development and Use of Scientific Applications in Orlando Tools: Integration, Delivery, and Deployment, Communications in Computer and Information Science, 2020, vol. 1087, pp. 18–32. doi:10.1007/978-3-030-41005-6_2. ",
+            "id": 13,
+            "text": "A. Feoktistov, S. Gorsky, I. Sidorov, I. Bychkov, A. Tchernykh, and A. Edelev Collaborative Development and Use of Scientific Applications in Orlando Tools: Integration, Delivery, and Deployment, Communications in Computer and Information Science, 2020, vol. 1087, pp. 18-32. doi:10.1007/978-3-030-41005-6_2.",
             "authors": [
-                "A. Feoktistov",
-                "S. Gorsky",
-                "I. Sidorov",
-                "I. Bychkov",
-                "A. Tchernykh",
-                "A. Edelev"
+                "A Feoktistov",
+                "S Gorsky",
+                "I Sidorov",
+                "I Bychkov",
+                "A Tchernykh",
+                "A"
             ],
             "year": "2020"
         },
         {
-            "id": 12,
-            "text": "[12] M. B. Juric, B. Mathew, and P.G. Sarang, Business process execution language for web services: an architect and developer's guide to orchestrating web services using BPEL4WS,Packt Publishing Ltd, 2006. ",
+            "id": 14,
+            "text": "M. B. Juric, B. Mathew, and P.G. Sarang, Business process execution language for web services: an architect and developer's guide to orchestrating web services using BPEL4WS,Packt Publishing Ltd, 2006.",
             "authors": [
-                "M. B. Juric",
-                "B. Mathew",
-                "P.G. Sarang"
+                "M B Juric",
+                "B Mathew",
+                "P G Sarang"
             ],
             "year": "2006"
         },
         {
-            "id": 13,
-            "text": "[13] F. Biscani and D. Izzo, A parallel global multiobjective framework for optimization: pagmo, Journal of Open Source Software, 2020, vol. 5, no. 53, pp. 2338. doi:10.21105/joss.02338. ",
+            "id": 15,
+            "text": "F. Biscani and D. Izzo, A parallel global multiobjective framework for optimization: pagmo, Journal of Open Source Software, 2020, vol. 5, no. 53, pp. 2338. doi:10.21105/joss.02338.",
             "authors": [
-                "F. Biscani",
-                "D. Izzo"
+                "F Biscani",
+                "D Izzo"
             ],
             "year": "2020"
         }

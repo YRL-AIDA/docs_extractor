@@ -1,8 +1,14 @@
 {
-    "title": "CNN Is All You Need ",
+    "title": "CNN Is All You Need",
     "authors": [
-        "Qiming Chen",
-        "Ren Wu"
+        {
+            "name": "Qiming Chen",
+            "affiliation": []
+        },
+        {
+            "name": "Ren Wu",
+            "affiliation": []
+        }
     ],
     "abstract": "The Convolution Neural Network (CNN) has demonstrated the unique advantage in audio, image and text learning; recently it has also challenged Recurrent Neural Networks (RNNs) with long short-term memory cells (LSTM) in sequence-tosequence learning, since the computations involved in CNN are easily parallelizable whereas those involved in RNN are mostly sequential, leading to a performance bottleneck. However, unlike RNN, the native CNN lacks the history sensitivity required for sequence transformation; therefore enhancing the sequential order awareness, or position-sensitivity, becomes the key to make CNN the general deep learning model. In this work we introduce an extended CNN model with strengthen position-sensitivity, called PoseNet. A notable feature of PoseNet is the asymmetric treatment of position information in the encoder and the decoder. Experiments shows that PoseNet allows us to improve the accuracy of CNN based sequence-to-sequence learning significantly, achieving around 33-36 BLEU scores on the WMT 2014 English-to-German translation task, and around 44-46 BLEU scores on the English-to-French translation task. ",
     "keywords": null,
@@ -114,7 +120,300 @@
             "page_end": 8
         }
     ],
-    "references": [],
+    "references": [
+        {
+            "id": 1,
+            "text": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016.",
+            "authors": [
+                "Jimmy Lei Ba",
+                "Jamie Ryan Kiros",
+                "Geoffrey E Hinton"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 2,
+            "text": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473, 2014. URL http://arxiv.org/abs/1409.0473.",
+            "authors": [
+                "Dzmitry Bahdanau",
+                "Kyunghyun Cho",
+                "Yoshua Bengio"
+            ],
+            "year": "1409"
+        },
+        {
+            "id": 3,
+            "text": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using rnn encoder-decoder for statistical machine translation. CoRR, abs/1406.1078, 2014.",
+            "authors": [
+                "Kyunghyun Cho",
+                "Bart Van Merrienboer",
+                "Caglar Gulcehre",
+                "Fethi Bougares",
+                "Holger Schwenk",
+                "Yoshua Bengio"
+            ],
+            "year": "1406"
+        },
+        {
+            "id": 4,
+            "text": "François Chollet. Xception: Deep learning with depthwise separable convolutions. arXiv preprint arXiv:1610.02357, 2016.",
+            "authors": [
+                "François Chollet"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 5,
+            "text": "Junyoung Chung, Çaglar Gülçehre, Kyunghyun Cho, and Yoshua Bengio. Empirical evaluation of gated recurrent neural networks on sequence modeling. CoRR, abs/1412.3555, 2014.",
+            "authors": [
+                "Junyoung Chung",
+                "Çaglar Gülçehre",
+                "Kyunghyun Cho",
+                "Yoshua Bengio"
+            ],
+            "year": "1412"
+        },
+        {
+            "id": 6,
+            "text": "Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith. Recurrent neural network grammars. In Proc. of NAACL, 2016.",
+            "authors": [
+                "Chris Dyer",
+                "Adhiguna Kuncoro",
+                "Miguel Ballesteros",
+                "Noah A Smith"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 7,
+            "text": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. Convolutional sequence to sequence learning. arXiv preprint arXiv:1705.03122, 2017.",
+            "authors": [
+                "Jonas Gehring",
+                "Michael Auli",
+                "David Grangier",
+                "Denis Yarats",
+                "Yann N Dauphin"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 8,
+            "text": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 770-778, 2016.",
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 9,
+            "text": "Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. Neural computation, 9(8): 1735- 1780, 1997.",
+            "authors": [
+                "Sepp Hochreiter",
+                "Jürgen Schmidhuber"
+            ],
+            "year": "1780"
+        },
+        {
+            "id": 10,
+            "text": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. Exploring the limits of language modeling. arXiv preprint arXiv:1602.02410, 2016.",
+            "authors": [
+                "Rafal Jozefowicz",
+                "Oriol Vinyals",
+                "Mike Schuster",
+                "Noam Shazeer",
+                "Yonghui Wu"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 11,
+            "text": "Lukasz Kaiser, N. Gomez, François Cholle, \"Depthwise Separable Convolutions for Neural Machine Translation \", https://arxiv.org/pdf/1706.03059, 2017.",
+            "authors": [
+                "Lukasz Kaiser",
+                "N Gomez",
+                "François Cholle"
+            ],
+            "year": "1706"
+        },
+        {
+            "id": 12,
+            "text": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu. Neural machine translation in linear time. arXiv preprint arXiv:1610.10099, 2016.",
+            "authors": [
+                "Nal Kalchbrenner",
+                "Lasse Espeholt",
+                "Karen Simonyan",
+                "Aaron Van Den Oord",
+                "Alex Graves",
+                "Koray Kavukcuoglu"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 13,
+            "text": "Minh-Thang Luong, Hieu Pham, and Christopher D Manning. Effective approaches to attention based neural machine translation. arXiv preprint arXiv:1508.04025, 2015.",
+            "authors": [
+                "Minh-Thang Luong",
+                "Hieu Pham",
+                "Christopher D Manning"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 14,
+            "text": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton and Jeff Dean. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint arXiv:1701.06538, 2017.",
+            "authors": [
+                "Noam Shazeer",
+                "Azalia Mirhoseini",
+                "Krzysztof Maziarz",
+                "Andy Davis",
+                "Quoc Le",
+                "Geoffrey Hinton",
+                "Jeff Dean"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 15,
+            "text": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104-3112, 2014.",
+            "authors": [
+                "Ilya Sutskever",
+                "Oriol Vinyals",
+                "Quoc Vv Le"
+            ],
+            "year": "2014"
+        },
+        {
+            "id": 16,
+            "text": "Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and Zbigniew Wojna. Rethinking the inception architecture for computer vision. CoRR, abs/1512.00567, 2015..",
+            "authors": [
+                "Christian Szegedy",
+                "Vincent Vanhoucke",
+                "Sergey Ioffe",
+                "Jonathon Shlens",
+                "Zbigniew Wojna"
+            ],
+            "year": "1512"
+        },
+        {
+            "id": 17,
+            "text": "Aäron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, and Koray Kavukcuoglu. Wavenet: A generative model for raw audio. CoRR abs/1609.03499, 2016.",
+            "authors": [
+                "Aäron Van Den Oord",
+                "Sander Dieleman",
+                "Heiga Zen",
+                "Karen Simonyan",
+                "Oriol Vinyals",
+                "Alex Graves",
+                "Nal Kalchbrenner",
+                "Andrew Senior",
+                "Koray Kavukcuoglu"
+            ],
+            "year": "1609"
+        },
+        {
+            "id": 18,
+            "text": "Aaron van den Oord, Nal Kalchbrenner, Lasse Espeholt, Oriol Vinyals, Alex Graves, et al. Conditional image generation with pixelcnn decoders. In Advances in Neural Information Processing Systems, pages 4790-4798, 2016.",
+            "authors": [
+                "Aaron Van Den Oord",
+                "Nal Kalchbrenner"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 19,
+            "text": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit,Llio Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin, \"Attention Is All You Need\", https://arxiv.org/pdf/1706.03762.pdf, 2017,",
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llio Jones",
+                "Aidan N Gomez",
+                "Lukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "year": "1706"
+        },
+        {
+            "id": 20,
+            "text": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser, Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean. Google's neural machine translation system: Bridging the gap between human and machine translation. CoRR, abs/1609.08144, 2016.",
+            "authors": [
+                "Yonghui Wu",
+                "Mike Schuster",
+                "Zhifeng Chen",
+                "Quoc V Le",
+                "Mohammad Norouzi",
+                "Wolfgang Macherey",
+                "Maxim Krikun",
+                "Yuan Cao",
+                "Qin Gao",
+                "Klaus Macherey",
+                "Jeff Klingner",
+                "Apurva Shah",
+                "Melvin Johnson",
+                "Xiaobing Liu",
+                "Lukasz Kaiser",
+                "Stephan Gouws",
+                "Yoshikiyo Kato",
+                "Taku Kudo",
+                "Hideto Kazawa",
+                "Keith Stevens",
+                "George Kurian",
+                "Nishant Patil",
+                "Wei Wang",
+                "Cliff Young",
+                "Jason Smith",
+                "Jason Riesa",
+                "Alex Rudnick",
+                "Oriol Vinyals",
+                "Greg Corrado",
+                "Macduff Hughes",
+                "Jeffrey Dean"
+            ],
+            "year": "1609"
+        },
+        {
+            "id": 21,
+            "text": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. Google's neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144, 2016.",
+            "authors": [
+                "Yonghui Wu",
+                "Mike Schuster",
+                "Zhifeng Chen",
+                "V Quoc",
+                "Mohammad Le",
+                "Wolfgang Norouzi",
+                "Maxim Macherey",
+                "Yuan Krikun",
+                "Qin Cao",
+                "Klaus Gao",
+                "Macherey"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 22,
+            "text": "Jie Zhou, Ying Cao, Xuguang Wang, Peng Li, and Wei Xu. Deep recurrent models with fast-forward connections for neural machine translation. CoRR, abs/1606.04199, 2016.",
+            "authors": [
+                "Jie Zhou",
+                "Ying Cao",
+                "Xuguang Wang",
+                "Peng Li",
+                "Wei Xu"
+            ],
+            "year": "1606"
+        },
+        {
+            "id": 23,
+            "text": "T2T: Tensor2Tensor Transformers, https://github.com/tensorflow/tensor2tensor",
+            "authors": [
+                "T2t"
+            ],
+            "year": null
+        }
+    ],
     "figures": [
         {
             "id": 1,
@@ -137,7 +436,7 @@
                 "Table 1: Performance of our models in EN-DE and EN-FR translation tasks with benchmark data translate_ende_wmt $3 2 k$ and translate_enfr_wmt $3 2 k$ compared to the latest published results; the “avg BLEU” averages the scores measured at the last 10 checkpoints "
             ],
             "table_body": "<table><tr><td>Model</td><td>EN-DE</td><td>BLEU</td><td>EN-FR</td><td>BLEU</td></tr><tr><td>Bytenet [12]</td><td>23.75</td><td></td><td></td><td></td></tr><tr><td>GNMT + RL [20]</td><td>24.6</td><td></td><td>39.92</td><td></td></tr><tr><td>ConvS2S [7]</td><td>25.16</td><td></td><td>40.46</td><td></td></tr><tr><td>MoE [14]</td><td>26.03</td><td></td><td>40.56</td><td></td></tr><tr><td>GNMT + RL Ensemble [22]</td><td>26.30</td><td></td><td>41.16</td><td></td></tr><tr><td>ConvS2S Ensemble [7]</td><td>26.36</td><td></td><td>41.29</td><td></td></tr><tr><td>Transformer (base) [19]</td><td>27.3</td><td></td><td>38.1</td><td></td></tr><tr><td>Transformer (big) [19]</td><td>28.4</td><td></td><td>41.0</td><td></td></tr><tr><td>SliceNet (Full, 2048) [11]</td><td>25.5</td><td></td><td></td><td></td></tr><tr><td>SliceNet (Super 2/3, 3072) [11]</td><td>26.1</td><td></td><td></td><td></td></tr><tr><td>PoseNet (2048)</td><td colspan=\"2\">33-36 (avg 34.92)</td><td colspan=\"2\">44-46 (avg 45.54)</td></tr><tr><td></td><td colspan=\"2\">(250K-500K steps)</td><td colspan=\"2\">(1000K steps)</td></tr></table>",
-            "img_path": "output/demo8/images/2b9d189f7c029c0e47649251d3e0fa9748ff841f60fce539133130f73109d24a.jpg",
+            "img_path": "output\\images/2b9d189f7c029c0e47649251d3e0fa9748ff841f60fce539133130f73109d24a.jpg",
             "page": 7
         }
     ]

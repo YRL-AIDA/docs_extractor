@@ -1,6 +1,13 @@
 {
-    "title": "Разработка генератора платформенно-зависимой модели для системы проектирования виртуальных помощников ",
-    "authors": [],
+    "title": "Разработка генератора платформенно-зависимой модели для системы проектирования виртуальных помощников",
+    "authors": [
+        {
+            "name": "Никита Допиро",
+            "affiliation": [
+                "1  Иркутский национальный исследовательский технический университет, ул. Лермонтова 83, г. Иркутск, 664033, Россия"
+            ]
+        }
+    ],
     "abstract": "В данной статье будет рассмотрена разработка генератора платформенно-зависимой модели для системы проектирования виртуальных помощников на базе JUST AI c использованием платформы JAICP с помощью MDA подхода. ",
     "keywords": [
         "MDA",
@@ -57,41 +64,41 @@
     "references": [
         {
             "id": 1,
-            "text": "[1] А.Б. Столбов, Н.О. Дородных, О.А. Николайчук, А.Ю. Юрин, Н.В. Допиро. Генерация и трансформация специализированных моделей для проблемно-ориентированного интеллектуального помощника //Материалы конференции «Ляпуновские чтения 2023». – Иркутск: ИДСТУ СО РАН, 2023. – 184 с. ",
+            "text": "А.Б. Столбов, Н.О. Дородных, О.А. Николайчук, А.Ю. Юрин, Н.В. Допиро. Генерация и трансформация специализированных моделей для проблемно-ориентированного интеллектуального помощника //Материалы конференции «Ляпуновские чтения 2023». - Иркутск: ИДСТУ СО РАН, 2023. -184 с.",
             "authors": [
-                "А.Б. Столбов",
-                "Н.О. Дородных",
-                "О.А. Николайчук",
-                "А.Ю. Юрин",
-                "Н.В. Допиро"
+                "А Б Столбов",
+                "Н О Дородных",
+                "О А Николайчук",
+                "А Ю Юрин",
+                "Н В Допиро"
             ],
             "year": "2023"
         },
         {
             "id": 2,
-            "text": "[2] A. Yurin, O. Nikolaychuk, N. Dorodnykh, A. Stolbov Towards knowledge-based virtual assistant development with the aid of ontology // International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON). – 2022. – 830-834 pp. ",
+            "text": "A. Yurin, O. Nikolaychuk, N. Dorodnykh, A. Stolbov Towards knowledge-based virtual assistant development with the aid of ontology // International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON). -2022. -830-834 pp.",
             "authors": [
-                "A. Yurin",
-                "O. Nikolaychuk",
-                "N. Dorodnykh",
-                "A. Stolbov"
+                "A Yurin",
+                "O Nikolaychuk",
+                "N Dorodnykh",
+                "A"
             ],
             "year": "2022"
         },
         {
             "id": 3,
-            "text": "[3] Pérez-Soler S., Guerra E., de Lara J. Model-Driven Chatbot Development.Lecture Notes in Computer Science. – 2020. Vol. 12400, pp. 207–222. ",
+            "text": "Pérez-Soler S., Guerra E., de Lara J. Model-Driven Chatbot Development.Lecture Notes in Computer Science. -2020. Vol. 12400, pp. 207-222.",
             "authors": [
-                "Pérez-Soler S.",
-                "Guerra E.",
-                "de Lara J."
+                "S Pérez-Soler",
+                "E Guerra",
+                "J De Lara"
             ],
             "year": "2020"
         },
         {
             "id": 4,
-            "text": "[4] Руководство по работе со стиральными машинами Samsung, 2024. URL: https://www.samsung.com/ru/support/category/home-appliances/laundry/ ",
-            "authors": null,
+            "text": "Руководство по работе со стиральными машинами Samsung, 2024. URL: https://www.samsung.com/ru/support/category/home-appliances/laundry/",
+            "authors": [],
             "year": "2024"
         }
     ],

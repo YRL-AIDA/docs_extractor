@@ -1,8 +1,18 @@
 {
-    "title": "Usage of Threat Modelling Tools for Implementation of ICT Security Standards in IoT Environments ",
+    "title": "Usage of Threat Modelling Tools for Implementation of ICT Security Standards in IoT Environments",
     "authors": [
-        "Dalibor Dobrilovic",
-        "Rade Dragović"
+        {
+            "name": "Dalibor Dobrilovic",
+            "affiliation": [
+                "1  University of Novi Sad, Technical Faculty \"Mihajlo Pupin\" Đure Đakovića b.b., Zrenjanin, 23000, Serbia"
+            ]
+        },
+        {
+            "name": "Rade Dragović",
+            "affiliation": [
+                "2  Institute for standards and technology, Resavska 28, Belgrade, 11000, Serbia"
+            ]
+        }
     ],
     "abstract": "The development of microcontrollers, communication, and sensor technologies resulted with the growing implementation of the Internet of Things (IoT) in various environments. The nature of IoT assumes the complexity of the system. The complexity of the system increases the number of system elements and therefore increases the system vulnerabilities. As a result, it is important to find an efficient and easy-to-use methodology for implementing security standards in newly designed IoT systems. This paper introduces the usage of threat modeling tools for modeling IoT systems and identifying the threats for the modeled systems. The identified threats are further embedded in the framework designed to define and enable the implementation of IoT security standards. The framework is demonstrated in the example of a simple IoT system designed for urban pollution, and noise monitoring. ",
     "keywords": [
@@ -75,104 +85,114 @@
     "references": [
         {
             "id": 1,
-            "text": "[1] V. Drake, OWASP, Threat Modeling, Retrieved May 2024. URL: https://owasp.org/wwwcommunity/Threat_Modeling. ",
+            "text": "References",
             "authors": [
-                "V. Drake"
+                "References"
+            ],
+            "year": null
+        },
+        {
+            "id": 2,
+            "text": "V. Drake, OWASP, Threat Modeling, Retrieved May 2024. URL: https://owasp.org/www- community/Threat_Modeling.",
+            "authors": [
+                "V Drake",
+                "Owasp",
+                "Threat Modeling"
             ],
             "year": "2024"
         },
         {
-            "id": 2,
-            "text": "[2] A. Konev, A. Shelupanov, M. Kataev, V. Ageeva, A. Nabieva, A Survey on Threat-Modeling Techniques: Protected Objects and Classification of Threats. Symmetry. 2022; Vol. 14(3):549. https://doi.org/10.3390/sym14030549 ",
+            "id": 3,
+            "text": "A. Konev, A. Shelupanov, M. Kataev, V. Ageeva, A. Nabieva, A Survey on Threat-Modeling Techniques: Protected Objects and Classification of Threats. Symmetry. 2022; Vol. 14(3):549. https://doi.org/10.3390/sym14030549",
             "authors": [
-                "A. Konev",
-                "A. Shelupanov",
-                "M. Kataev",
-                "V. Ageeva",
-                "A. Nabieva"
+                "A Konev",
+                "A Shelupanov",
+                "M Kataev",
+                "V Ageeva",
+                "A Nabieva"
             ],
             "year": "2022"
         },
         {
-            "id": 3,
-            "text": "[3] Y. C. Tok, S. Chattopadhyay, Identifying threats, cybercrime and digital forensic opportunities in Smart City Infrastructure via threat modeling, Forensic Science International: Digital Investigation, Vol. 45, 2023, 301540, https://doi.org/10.1016/j.fsidi.2023.301540. ",
+            "id": 4,
+            "text": "Y. C. Tok, S. Chattopadhyay, Identifying threats, cybercrime and digital forensic opportunities in Smart City Infrastructure via threat modeling, Forensic Science International: Digital Investigation, Vol. 45, 2023, 301540, https://doi.org/10.1016/j.fsidi.2023.301540.",
             "authors": [
-                "Y. C. Tok",
-                "S. Chattopadhyay"
+                "Y C Tok",
+                "S Chattopadhyay"
             ],
             "year": "2023"
         },
         {
-            "id": 4,
-            "text": "[4] V. Casola, A. De Benedictis, M. Rak, U. Villano, Toward the automation of threat modeling and risk assessment in IoT systems, Internet of Things, Vol. 7, 2019, 100056,https://doi.org/10.1016/j.iot.2019.100056. ",
+            "id": 5,
+            "text": "V. Casola, A. De Benedictis, M. Rak, U. Villano, Toward the automation of threat modeling and risk assessment in IoT systems, Internet of Things, Vol. 7, 2019, 100056,https://doi.org/10.1016/j.iot.2019.100056.",
             "authors": [
-                "V. Casola",
-                "A. De Benedictis",
-                "M. Rak",
-                "U. Villano"
+                "V Casola",
+                "A De Benedictis",
+                "M Rak",
+                "U Villano"
             ],
             "year": "2019"
         },
         {
-            "id": 5,
-            "text": "[5] A. Gerodimos, L. Maglaras, M. A. Ferrag, N. Ayres, I. Kantzavelou, IoT: Communication protocols and security threats, Internet of Things and Cyber-Physical Systems, Vol. 3, 2023, pp 1- 13, https://doi.org/10.1016/j.iotcps.2022.12.003. ",
+            "id": 6,
+            "text": "A. Gerodimos, L. Maglaras, M. A. Ferrag, N. Ayres, I. Kantzavelou, IoT: Communication protocols and security threats, Internet of Things and Cyber-Physical Systems, Vol. 3, 2023, pp 1- 13, https://doi.org/10.1016/j.iotcps.2022.12.003.",
             "authors": [
-                "A. Gerodimos",
-                "L. Maglaras",
-                "M. A. Ferrag",
-                "N. Ayres",
-                "I. Kantzavelou"
+                "A Gerodimos",
+                "L Maglaras",
+                "M A Ferrag",
+                "N Ayres",
+                "I Kantzavelou"
             ],
             "year": "2023"
         },
         {
-            "id": 6,
-            "text": "[6] S. Sicari, A. Rizzardi, D. Miorandi, A. Coen-Porisini, A risk assessment methodology for the Internet of Things, Computer Communications, Vol. 129, 2018, pp 67-79, https://doi.org/10.1016/j.comcom.2018.07.024. ",
+            "id": 7,
+            "text": "S. Sicari, A. Rizzardi, D. Miorandi, A. Coen-Porisini, A risk assessment methodology for the Internet of Things, Computer Communications, Vol. 129, 2018, pp 67-79, https://doi.org/10.1016/j.comcom.2018.07.024.",
             "authors": [
-                "S. Sicari",
-                "A. Rizzardi",
-                "D. Miorandi",
-                "A. Coen-Porisini"
+                "S Sicari",
+                "A Rizzardi",
+                "D Miorandi",
+                "A Coen-Porisini"
             ],
             "year": "2018"
         },
         {
-            "id": 7,
-            "text": "[7] A. Y. Wong, E. G. Chekole, M. Ochoa, J. Zhou, On the Security of Containers: Threat Modeling, Attack Analysis, and Mitigation Strategies, Computers & Security, Vol. 128, 2023, 103140, https://doi.org/10.1016/j.cose.2023.103140. ",
+            "id": 8,
+            "text": "A. Y. Wong, E. G. Chekole, M. Ochoa, J. Zhou, On the Security of Containers: Threat Modeling, Attack Analysis, and Mitigation Strategies, Computers & Security, Vol. 128, 2023, 103140, https://doi.org/10.1016/j.cose.2023.103140.",
             "authors": [
-                "A. Y. Wong",
-                "E. G. Chekole",
-                "M. Ochoa",
-                "J. Zhou"
+                "A Y Wong",
+                "E G Chekole",
+                "M Ochoa",
+                "J Zhou"
             ],
             "year": "2023"
         },
         {
-            "id": 8,
-            "text": "[8] P. Sethi and S. R. Sarangi, “Internet of Things: Architectures, Protocols, and Applications”, Journal of Electrical and Computer Engineering, Vol. 2017, 25 pages, https://doi.org/10.1155/2017/9324035 ",
+            "id": 9,
+            "text": "P. Sethi and S. R. Sarangi, \"Internet of Things: Architectures, Protocols, and Applications\", Journal of Electrical and Computer Engineering, Vol. 2017, 25 pages, https://doi.org/10.1155/2017/9324035",
             "authors": [
-                "P. Sethi",
-                "S. R. Sarangi"
+                "P Sethi",
+                "S R Sarangi"
             ],
             "year": "2017"
         },
         {
-            "id": 9,
-            "text": "[9] D. Dobrilović, V. Brtka, G. Jotanović, et al. The urban traffic noise monitoring system based on LoRaWAN technology. Wireless Networks, Vol. 28, pp 441–458, 2022, https://doi.org/10.1007/s11276-021-02586-2 ",
+            "id": 10,
+            "text": "D. Dobrilović, V. Brtka, G. Jotanović, et al. The urban traffic noise monitoring system based on LoRaWAN technology. Wireless Networks, Vol. 28, pp 441-458, 2022, https://doi.org/10.1007/s11276-021-02586-2",
             "authors": [
-                "D. Dobrilović",
-                "V. Brtka",
-                "G. Jotanović"
+                "D Dobrilović",
+                "V Brtka",
+                "G Jotanović"
             ],
             "year": "2022"
         },
         {
-            "id": 10,
-            "text": "[10] R. Dragović, D. Dobrilovic, D. Dragović (2022, September). Recommendations for the Creation of Usable Critical Infrastructure for the Delivery of Priority Services of State Bodies. In IFIP International Conference on Human Choice and Computers (pp. 161-171). Cham: Springer Nature Switzerland. DOI:10.1007/978-3-031-47990-8_15 ",
+            "id": 11,
+            "text": "R. Dragović, D. Dobrilovic, D. Dragović (2022, September). Recommendations for the Creation of Usable Critical Infrastructure for the Delivery of Priority Services of State Bodies. In IFIP International Conference on Human Choice and Computers (pp. 161-171). Cham: Springer Nature Switzerland. DOI:10.1007/978-3-031-47990-8_15",
             "authors": [
-                "R. Dragović",
-                "D. Dobrilovic",
-                "D. Dragović"
+                "R Dragović",
+                "D Dobrilovic",
+                "D Dragović"
             ],
             "year": "2022"
         }
@@ -255,7 +275,7 @@
                 "Table 1 Partial view on exported threat list "
             ],
             "table_body": "<table><tr><td>Id</td><td>Title</td><td>Category</td><td>Interaction</td><td>Priority</td><td>Description</td></tr><tr><td>47</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IGFN_to_IFG</td><td>High</td><td>IoT Field Gateway (IFG) may be able to impersonate the context of IoT Gateway/Fog Node (IGFN) in order to gain additional privilege.</td></tr><tr><td>46</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IFG_to_IGFN</td><td>High</td><td>IoT Gateway/Fog Node (IGFN) may be able to impersonate the context of IoT Field Gateway (IFG) in order to gain additional privilege.</td></tr><tr><td>45</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>Cloud_to_IGFN</td><td>High</td><td>IoT Gateway/Fog Node (IGFN) may be able to impersonate the context of Cloud in order to gain additional privilege.</td></tr><tr><td>44</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>IGFN_to_Cloud</td><td>High</td><td>Cloud may be able to impersonate the context of IoT Gateway/Fog Node (IGFN) in order to gain additional privilege.</td></tr><tr><td>16</td><td>Elevation Using Impersonation</td><td>Elevation Of Privilege</td><td>MQTT_FGTW_to_Node</td><td>High</td><td>IoT Field Gateway (IFG) may be able to impersonate the context of IoT Node (IN) (Sensor Config., GPS) in order to gain additional privilege.</td></tr></table>",
-            "img_path": "output/demo11/images/5b6c37dfbabfc666c96ccfed8f706a4c377bed3c2553ced8ea8158f82980c25f.jpg",
+            "img_path": "output\\images/5b6c37dfbabfc666c96ccfed8f706a4c377bed3c2553ced8ea8158f82980c25f.jpg",
             "page": 4
         },
         {
@@ -265,7 +285,7 @@
                 "Table 2 The number of threats by category "
             ],
             "table_body": "<table><tr><td>No.</td><td>Threat</td><td>Count</td></tr><tr><td>1</td><td>Spoofing</td><td>7</td></tr><tr><td>2</td><td>Tampering</td><td>6</td></tr><tr><td>3</td><td>Repudiation</td><td>8</td></tr><tr><td>4</td><td>Information Disclosure</td><td>6</td></tr><tr><td>5</td><td>Denial Of Service</td><td>6</td></tr><tr><td>6</td><td>Elevation Of Privilege</td><td>12</td></tr><tr><td></td><td>Total</td><td>45</td></tr></table>",
-            "img_path": "output/demo11/images/3bb24a9e249efed88ad25ae22d61c15e80998ad8528b83f8ddca169d401c45f0.jpg",
+            "img_path": "output\\images/3bb24a9e249efed88ad25ae22d61c15e80998ad8528b83f8ddca169d401c45f0.jpg",
             "page": 4
         }
     ]

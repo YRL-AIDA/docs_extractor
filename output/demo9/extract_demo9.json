@@ -1,12 +1,24 @@
 {
-    "title": "REVIEW ",
+    "title": "REVIEW",
     "authors": [
-        "Khalid Al‑hammuri1",
-        "Fayez Gebali1",
-        "Awos Kanan2",
-        "Ilamparithi Thirumarai Chelvan1"
+        {
+            "name": "Khalid Al-Hammuri",
+            "affiliation": []
+        },
+        {
+            "name": "Fayez Gebali",
+            "affiliation": []
+        },
+        {
+            "name": "Awos Kanan",
+            "affiliation": []
+        },
+        {
+            "name": "Ilamparithi Thirumarai Chelvan",
+            "affiliation": []
+        }
     ],
-    "abstract": "Abstract ",
+    "abstract": "The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for $9 0 \\%$ of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classifcation, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges. ",
     "keywords": [
         "Vision transformer",
         "Digital health",
@@ -14,33 +26,12 @@
         "Artifcial intelligence",
         "Medical imaging"
     ],
-    "language": "pl",
+    "language": "en",
     "sections": [
         {
             "title": "Abstract",
-            "text": "Abstract ",
+            "text": "The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for $9 0 \\%$ of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classifcation, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges. ",
             "type": "abstract",
-            "page_start": 0,
-            "page_end": 0
-        },
-        {
-            "title": "Open Access ",
-            "text": "",
-            "type": null,
-            "page_start": 0,
-            "page_end": 0
-        },
-        {
-            "title": "Vision transformer architecture and applications in digital health: a tutorial and survey ",
-            "text": "Khalid Al‑hammuri1* , Fayez Gebali1 , Awos Kanan2 and Ilamparithi Thirumarai Chelvan1 \n",
-            "type": null,
-            "page_start": 0,
-            "page_end": 0
-        },
-        {
-            "title": "Abstract ",
-            "text": "The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for $9 0 \\%$ of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classifcation, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges. \nKeywords Vision transformer, Digital health, Telehealth, Artifcial intelligence, Medical imaging \n",
-            "type": null,
             "page_start": 0,
             "page_end": 0
         },
@@ -353,7 +344,1315 @@
             "page_end": 27
         }
     ],
-    "references": [],
+    "references": [
+        {
+            "id": 1,
+            "text": "Dosovitskiy A, Beyer L, Kolesnikov A, Weissenborn D, Zhai XH, Unterthiner T et al (2021) An image is worth 16x16 words: transformers for image recognition at scale. In: Proceedings of the 9th international conference on learning representations, OpenReview.net, Vienna, 3-7 May 2021",
+            "authors": [
+                "A Dosovitskiy",
+                "L Beyer",
+                "A Kolesnikov",
+                "D Weissenborn",
+                "X H Zhai",
+                "T Unterthiner"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 2,
+            "text": "Zhang QM, Xu YF, Zhang J, Tao DC (2023) ViTAEv2: vision transformer advanced by exploring inductive bias for image recognition and beyond. Int J Comput Vis 131(5):1141-1162. https:// doi. org/ 10. 1007/ s11263-022-01739-w",
+            "authors": [
+                "Q M Zhang",
+                "Y F Xu",
+                "J Zhang",
+                "D C Tao"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 3,
+            "text": "Han K, Wang YH, Chen HT, Chen XH, Guo JY, Liu ZH et al (2023) A survey on vision transformer. IEEE Trans Pattern Anal Mach Intell 45(1):87- 110. https:// doi. org/ 10. 1109/ TPAMI. 2022. 31522 47",
+            "authors": [
+                "K Han",
+                "Y H Wang",
+                "H T Chen",
+                "X H Chen",
+                "J Y Guo",
+                "Z H Liu"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 4,
+            "text": "Wang RS, Lei T, Cui RX, Zhang BT, Meng HY, Nandi AK (2022) Medical image segmentation using deep learning: a survey. IET Image Process 16(5):1243-1267. https:// doi. org/ 10. 1049/ ipr2. 12419",
+            "authors": [
+                "R S Wang",
+                "T Lei",
+                "R X Cui",
+                "B T Zhang",
+                "H Y Meng",
+                "A K Nandi"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 5,
+            "text": "Bai WJ, Suzuki H, Qin C, Tarroni G, Oktay O, Matthews PM et al (2018) Recurrent neural networks for aortic image sequence segmenta- tion with sparse annotations. In: Frangi AF, Schnabel JA, Davatzikos C, Alberola-López C, Fichtinger G (eds) Medical image computing and computer assisted intervention. 21st international conference, Granada, September 2018. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 11073. Springer, Cham, pp 586-594. https:// doi. org/ 10. 1007/ 978-3-030-00937-3_ 67",
+            "authors": [
+                "W J Bai",
+                "H Suzuki",
+                "C Qin",
+                "G Tarroni",
+                "O Oktay",
+                "P M Matthews"
+            ],
+            "year": "2018"
+        },
+        {
+            "id": 6,
+            "text": "Wang YX, Xie HT, Fang SC, Xing MT, Wang J, Zhu SG et al (2022) PETR: rethinking the capability of transformer-based language model in scene text recognition. IEEE Trans Image Process 31:5585-5598. https:// doi. org/ 10. 1109/ TIP. 2022. 31979 81",
+            "authors": [
+                "Y X Wang",
+                "H T Xie",
+                "S C Fang",
+                "M T Xing",
+                "J Wang",
+                "S G Zhu"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 7,
+            "text": "Devlin J, Chang MW, Lee K, Toutanova K (2019) BERT: pre-training of deep bidirectional transformers for language understanding. In: Pro- ceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technolo- gies, volume 1 (long and short papers), Association for Computational Linguistics, Minneapolis, 2-7 June 2019",
+            "authors": [
+                "J Devlin",
+                "M W Chang",
+                "K Lee",
+                "K Toutanova"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 8,
+            "text": "Vaswani A, Shazeer N, Parmar N, Uszkoreit J, Jones L, Gomez AN et al (2017) Attention is all you need. In: Proceedings of the 31st interna- tional conference on neural information processing systems, Curran Associates Inc., Long Beach, 4-9 December 2017",
+            "authors": [
+                "A Vaswani",
+                "N Shazeer",
+                "N Parmar",
+                "J Uszkoreit",
+                "L Jones",
+                "A N Gomez"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 9,
+            "text": "Gao Y, Phillips JM, Zheng Y, Min RQ, Fletcher PT, Gerig G (2018) Fully convolutional structured LSTM networks for joint 4D medical image segmentation. In: Proceedings of the 15th international symposium on biomedical imaging, IEEE, Washington, 4-7 April 2018. https:// doi. org/ 10. 1109/ ISBI. 2018. 83637 64",
+            "authors": [
+                "Y Gao",
+                "J M Phillips",
+                "Y Zheng",
+                "R Q Min",
+                "P T Fletcher",
+                "G Gerig"
+            ],
+            "year": "2018"
+        },
+        {
+            "id": 10,
+            "text": "Chen JN, Lu YY, Yu QH, Luo XD, Adeli E, Wang Y et al (2021) TransUNet: transformers make strong encoders for medical image segmentation. arXiv preprint arXiv: 2102.04306",
+            "authors": [
+                "J N Chen",
+                "Y Y Lu",
+                "Q H Yu",
+                "X D Luo",
+                "E Adeli",
+                "Y Wang"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 11,
+            "text": "Lin AL, Chen BZ, Xu JY, Zhang Z, Lu GM, Zhang D (2022) DS-TransUNet: dual Swin transformer U-Net for medical image segmentation. IEEE Trans Instrum Meas 71:4005615. https:// doi. org/ 10. 1109/ TIM. 2022. 31789 91",
+            "authors": [
+                "A L Lin",
+                "B Z Chen",
+                "J Y Xu",
+                "Z Zhang",
+                "G M Lu",
+                "D Zhang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 12,
+            "text": "Mikolov T, Chen K, Corrado G, Dean J (2013) Efficient estimation of word representations in vector space. In: Proceedings of the 1st international conference on learning representations, ICLR, Scottsdale, 2-4 May 2013",
+            "authors": [
+                "T Mikolov",
+                "K Chen",
+                "G Corrado",
+                "J Dean"
+            ],
+            "year": "2013"
+        },
+        {
+            "id": 13,
+            "text": "Maeda Y, Fukushima N, Matsuo H (2018) Taxonomy of vectorization patterns of programming for fir image filters using kernel subsampling and new one. Appl Sci 8(8):1235. https:// doi. org/ 10. 3390/ app80 81235",
+            "authors": [
+                "Y Maeda",
+                "N Fukushima",
+                "H Matsuo"
+            ],
+            "year": "2018"
+        },
+        {
+            "id": 14,
+            "text": "Jain P, Vijayanarasimhan S, Grauman K (2010) Hashing hyperplane queries to near points with applications to large-scale active learn- ing. In: Proceedings of the 23rd international conference on neural information processing systems, Curran Associates Inc., Vancouver, 6-9 December 2010",
+            "authors": [
+                "P Jain",
+                "S Vijayanarasimhan",
+                "K Grauman"
+            ],
+            "year": "2010"
+        },
+        {
+            "id": 15,
+            "text": "Yu Y, Si XS, Hu CH, Zhang JX (2019) A review of recurrent neural networks: LSTM cells and network architectures. Neural Comput 31(7):1235-1270. https:// doi. org/ 10. 1162/ neco_a_ 01199",
+            "authors": [
+                "Y Yu",
+                "X S Si",
+                "C H Hu",
+                "J X Zhang"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 16,
+            "text": "Huang ZH, Xu W, Yu K (2015) Bidirectional LSTM-CRF models for sequence tagging. arXiv preprint arXiv: 1508.01991",
+            "authors": [
+                "Z H Huang",
+                "W Xu",
+                "K Yu"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 17,
+            "text": "Gehring J, Auli M, Grangier D, Yarats D, Dauphin YN (2017) Convolu- tional sequence to sequence learning. In: Proceedings of the 34th international conference on machine learning, PMLR, Sydney, 6-11 August 2017",
+            "authors": [
+                "J Gehring",
+                "M Auli",
+                "D Grangier",
+                "D Yarats",
+                "Y N Dauphin"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 18,
+            "text": "Takase S, Kiyono S, Kobayashi S, Suzuki J (2022) On layer normaliza- tions and residual connections in transformers. arXiv preprint arXiv: 2206.00330",
+            "authors": [
+                "S Takase",
+                "S Kiyono",
+                "S Kobayashi",
+                "J Suzuki"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 19,
+            "text": "Topal MO, Bas A, van Heerden I (2021) Exploring transformers in natural language generation: GPT, BERT, and XLNet. arXiv preprint arXiv: 2102.08036",
+            "authors": [
+                "M O Topal",
+                "A Bas",
+                "I Van Heerden"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 20,
+            "text": "Wang SL, Liu F, Liu B (2021) Escaping the gradient vanishing: periodic alternatives of softmax in attention mechanism. IEEE Access 9:168749- 168759. https:// doi. org/ 10. 1109/ ACCESS. 2021. 31382 01",
+            "authors": [
+                "S L Wang",
+                "F Liu",
+                "B Liu"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 21,
+            "text": "Ba JL, Kiros JR, Hinton GE (2016) Layer normalization. arXiv preprint arXiv: 1607.06450",
+            "authors": [
+                "J L Ba",
+                "J R Kiros",
+                "G E Hinton"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 22,
+            "text": "Taud H, Mas JF (2018) Multilayer perceptron (MLP). In: Camacho Olmedo M, Paegelow M, Mas JF, Escobar F (eds) Geomatic approaches for modeling land change scenarios. Lecture notes in geoinformation and cartography. Springer, Cham, pp 451-455. https:// doi. org/ 10. 1007/ 978-3-319-60801-3_ 27",
+            "authors": [
+                "H Taud",
+                "J F Mas"
+            ],
+            "year": "2018"
+        },
+        {
+            "id": 23,
+            "text": "Akinyelu AA, Zaccagna F, Grist JT, Castelli M, Rundo L (2022) Brain tumor diagnosis using machine learning, convolutional neural networks, cap- sule neural networks and vision transformers, applied to MRI: a survey. J Imaging 8(8):205. https:// doi. org/ 10. 3390/ jimag ing80 80205",
+            "authors": [
+                "A A Akinyelu",
+                "F Zaccagna",
+                "J T Grist",
+                "M Castelli",
+                "L Rundo"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 24,
+            "text": "Mahoro E, Akhloufi MA (2022) Breast cancer classification on thermo- grams using deep CNN and transformers. Quant Infrared Thermogr J. https:// doi. org/ 10. 1080/ 17686 733. 2022. 21291 35",
+            "authors": [
+                "E Mahoro",
+                "M A Akhloufi"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 25,
+            "text": "Shmatko A, Ghaffari Laleh N, Gerstung M, Kather JN (2022) Artificial intelligence in histopathology: enhancing cancer research and clini- cal oncology. Nat Cancer 3(9):1026-1038. https:// doi. org/ 10. 1038/ s43018-022-00436-4",
+            "authors": [
+                "A Shmatko",
+                "Ghaffari Laleh",
+                "N Gerstung",
+                "M Kather",
+                "J N"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 26,
+            "text": "Al-Hammuri K, Gebali F, Thirumarai Chelvan I, Kanan A (2022) Tongue contour tracking and segmentation in lingual ultrasound for speech recognition: a review. Diagnostics 12(11):2811. https:// doi. org/ 10. 3390/ diagn ostic s1211 2811",
+            "authors": [
+                "K Al-Hammuri",
+                "F Gebali",
+                "Thirumarai Chelvan",
+                "I Kanan",
+                "A"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 27,
+            "text": "Al-Hammuri K (2019) Computer vision-based tracking and feature extraction for lingual ultrasound. Dissertation, University of Victoria",
+            "authors": [
+                "Al-Hammuri K"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 28,
+            "text": "McMaster C, Bird A, Liew DFL, Buchanan RR, Owen CE, Chapman WW et al (2022) Artificial intelligence and deep learning for rheumatolo- gists. Arthritis Rheumatol 74(12):1893-1905. https:// doi. org/ 10. 1002/ art. 42296",
+            "authors": [
+                "C Mcmaster",
+                "A Bird",
+                "Dfl Liew",
+                "R R Buchanan",
+                "C E Owen",
+                "W W Chapman"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 29,
+            "text": "Beddiar DR, Oussalah M, Seppänen T (2023) Automatic captioning for medical imaging (MIC): a rapid review of literature. Artif Intell Rev 56(5):4019-4076. https:// doi. org/ 10. 1007/ s10462-022-10270-w",
+            "authors": [
+                "D R Beddiar",
+                "M Oussalah",
+                "T Seppänen"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 30,
+            "text": "Renna F, Martins M, Neto A, Cunha A, Libânio D, Dinis-Ribeiro M et al (2022) Artificial intelligence for upper gastrointestinal endoscopy: a roadmap from technology development to clinical practice. Diagnos- tics 12(5):1278. https:// doi. org/ 10. 3390/ diagn ostic s1205 1278",
+            "authors": [
+                "F Renna",
+                "M Martins",
+                "A Neto",
+                "A Cunha",
+                "D Libânio",
+                "M Dinis-Ribeiro"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 31,
+            "text": "Coan LJ, Williams BM, Adithya VK, Upadhyaya S, Alkafri A, Czanner S et al (2023) Automatic detection of glaucoma via fundus imaging and artificial intelligence: a review. Surv Ophthal 68(1):17-41. https:// doi. org/ 10. 1016/j. survo phthal. 2022. 08. 005",
+            "authors": [
+                "L J Coan",
+                "B M Williams",
+                "V K Adithya",
+                "S Upadhyaya",
+                "A Alkafri",
+                "S Czanner"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 32,
+            "text": "Chang A (2020) The role of artificial intelligence in digital health. In: Wulfovich S, Meyers A (eds) Digital health entrepreneurship. Health informatics. Springer, Cham, pp 71-81. https:// doi. org/ 10. 1007/ 978-3-030-12719-0_7",
+            "authors": [
+                "A Chang"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 33,
+            "text": "Shamshad F, Khan S, Zamir SW, Khan MH, Hayat M, Khan FS et al (2022) Transformers in medical imaging: a survey. arXiv preprint arXiv: 2201.09873. https:// doi. org/ 10. 1016/j. media. 2023. 102802",
+            "authors": [
+                "F Shamshad",
+                "S Khan",
+                "S W Zamir",
+                "M H Khan",
+                "M Hayat",
+                "F S Khan"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 34,
+            "text": "Ronneberger O, Fischer P, Brox T (2015) U-Net: convolutional networks for biomedical image segmentation. In: Navab N, Hornegger J, Wells W, Frangi A (eds) Medical image computing and computer-assisted intervention. 18th international conference, Munich, October 2015. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 9351. Springer, Cham, pp 234- 241. https:// doi. org/ 10. 1007/ 978-3-319-24574-4_ 28",
+            "authors": [
+                "O Ronneberger",
+                "P Fischer",
+                "T Brox"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 35,
+            "text": "Cao H, Wang YY, Chen J, Jiang DS, Zhang XP, Tian Q et al (2023) Swin- Unet: unet-like pure transformer for medical image segmentation. In: Karlinsky L, Michaeli T, Nishino K (eds) Computer vision. Tel Aviv, October 2022. Lecture notes in computer science, vol 13803. Springer, Cham, 205-218. https:// doi. org/ 10. 1007/ 978-3-031-25066-8_9",
+            "authors": [
+                "H Cao",
+                "Y Y Wang",
+                "J Chen",
+                "D S Jiang",
+                "X P Zhang",
+                "Q Tian"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 36,
+            "text": "Dong H, Yang G, Liu FD, Mo YH, Guo YK (2017) Automatic brain tumor detection and segmentation using U-Net based fully convolutional networks. In: Valdés Hernández M, González-Castro V (eds) Medical image understanding and analysis. 21st annual conference, Edinburgh, July 2017. Communications in computer and information science, vol 723. Springer, Cham, pp 506-517. https:// doi. org/ 10. 1007/ 978-3-319-60964-5_ 44",
+            "authors": [
+                "H Dong",
+                "G Yang",
+                "F D Liu",
+                "Y H Mo",
+                "Y K Guo"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 37,
+            "text": "Liu Q, Xu ZL, Jiao YN, Niethammer M (2022) iSegFormer: interactive segmentation via transformers with application to 3D knee MR images. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer sci- ence, vol 13435. Springer, Cham, pp 464-474. https:// doi. org/ 10. 1007/ 978-3-031-16443-9_ 45",
+            "authors": [
+                "Q Liu",
+                "Z L Xu",
+                "Y N Jiao",
+                "M Niethammer"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 38,
+            "text": "Lee HH, Bao SX, Huo YK, Landman BA (2022) 3D UX-Net: a large kernel volumetric convnet modernizing hierarchical transformer for medical image segmentation. arXiv preprint arXiv: 2209.15076",
+            "authors": [
+                "H H Lee",
+                "S X Bao",
+                "Y K Huo",
+                "B A Landman"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 39,
+            "text": "Yu X, Yang Q, Zhou YC, Cai LY, Gao RQ, Lee HH et al (2022) UNesT: local spatial representation learning with hierarchical transformer for efficient medical segmentation. arXiv preprint arXiv: 2209.14378",
+            "authors": [
+                "X Yu",
+                "Q Yang",
+                "Y C Zhou",
+                "L Y Cai",
+                "R Q Gao",
+                "H H Lee"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 40,
+            "text": "Xing ZH, Yu LQ, Wan L, Han T, Zhu L (2022) NestedFormer: nested modality-aware transformer for brain tumor segmentation. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13435. Springer, Cham, pp 140-150. https:// doi. org/ 10. 1007/ 978-3-031- 16443-9_ 14",
+            "authors": [
+                "Z H Xing",
+                "L Q Yu",
+                "L Wan",
+                "T Han",
+                "L Zhu"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 41,
+            "text": "Tang YB, Zhang N, Wang YR, He SH, Han M, Xiao J et al (2022) Accurate and robust lesion RECIST diameter prediction and segmentation with transformers. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13434. Springer, Cham, pp 535-544. https:// doi. org/ 10. 1007/ 978-3-031-16440-8_ 51",
+            "authors": [
+                "Y B Tang",
+                "N Zhang",
+                "Y R Wang",
+                "S H He",
+                "M Han",
+                "Xiao J"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 42,
+            "text": "Li YX, Wang S, Wang J, Zeng GD, Liu WJ, Zhang QN et al (2021) GT U-Net: a U-Net like group transformer network for tooth root segmentation. In: Lian CF, Cao XH, Rekik I, Xu XN, Yan PK (eds) Machine learning in medical imaging. 12th international workshop, Strasbourg, September 2021. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 12966. Springer, Cham, pp 386- 395. https:// doi. org/ 10. 1007/ 978-3-030-87589-3_ 40",
+            "authors": [
+                "Y X Li",
+                "S Wang",
+                "J Wang",
+                "G D Zeng",
+                "W J Liu",
+                "Q N Zhang"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 43,
+            "text": "Sanderson E, Matuszewski BJ (2022) FCN-transformer feature fusion for polyp segmentation. In: Yang G, Aviles-Rivero A, Roberts M, Schönlieb CB (eds) Medical image understanding and analysis. 26th annual conference, Cambridge, July 2022. Lecture notes in computer science, vol 13413. Springer, Cham, pp 892-907. https:// doi. org/ 10. 1007/ 978-3- 031-12053-4_ 65",
+            "authors": [
+                "E Sanderson",
+                "B J Matuszewski"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 44,
+            "text": "Zhao ZX, Jin YM, Heng PA (2022) TraSeTR: track-to-segment transformer with contrastive query for instance-level instrument segmentation in robotic surgery. In: Proceedings of the 2022 international confer- ence on robotics and automation, IEEE, Philadelphia, 23-27 May 2022. https:// doi. org/ 10. 1109/ ICRA4 6639. 2022. 98118 73",
+            "authors": [
+                "Z X Zhao",
+                "Y M Jin",
+                "P A Heng"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 45,
+            "text": "Codella N, Rotemberg V, Tschandl P, Celebi ME, Dusza S, Gutman D et al (2019) Skin lesion analysis toward melanoma detection 2018: a challenge hosted by the international skin imaging collaboration (ISIC). arXiv preprint arXiv: 1902.03368",
+            "authors": [
+                "N Codella",
+                "V Rotemberg",
+                "P Tschandl",
+                "M E Celebi",
+                "S Dusza",
+                "D Gutman"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 46,
+            "text": "Valanarasu JMJ, Sindagi VA, Hacihaliloglu I, Patel VM (2020) KiU-Net: towards accurate segmentation of biomedical images using over-com- plete representations. In: Martel AL, Abolmaesumi P, Stoyanov D, Mateus D, Zuluaga MA, Zhou SK et al (eds) Medical image computing and computer-assisted intervention. 23rd international conference, Lima, October 2020. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graphics), vol 12264. Springer, Cham, pp 363-373. https:// doi. org/ 10. 1007/ 978-3-030-59719-1_ 36",
+            "authors": [
+                "Jmj Valanarasu",
+                "V A Sindagi",
+                "I Hacihaliloglu",
+                "Vm ; Patel",
+                "A L Martel",
+                "P Abolmaesumi",
+                "D Stoyanov",
+                "D Mateus",
+                "M A Zuluaga"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 47,
+            "text": "Caicedo JC, Goodman A, Karhohs KW, Cimini BA, Ackerman J, Haghighi M et al (2019) Nucleus segmentation across imaging experiments: the 2018 data science bowl. Nat Methods 16(12):1247-1253. https:// doi. org/ 10. 1038/ s41592-019-0612-7",
+            "authors": [
+                "J C Caicedo",
+                "A Goodman",
+                "K W Karhohs",
+                "B A Cimini",
+                "J Ackerman",
+                "M Haghighi"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 48,
+            "text": "Mathai TS, Lee S, Elton DC, Shen TC, Peng YF, Lu ZY et al (2022) Lymph node detection in T2 MRI with transformers. In: Proceedings of the SPIE 12033, Medical imaging 2022: computer-aided diagnosis, SPIE, San Diego, 20 February-28 March 2022. https:// doi. org/ 10. 1117/ 12. 26132 73",
+            "authors": [
+                "T S Mathai",
+                "S Lee",
+                "D C Elton",
+                "T C Shen",
+                "Y F Peng",
+                "Z Y Lu"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 49,
+            "text": "Shen ZQ, Fu RD, Lin CN, Zheng SH (2021) COTR: convolution in trans- former network for end to end polyp detection. In: Proceedings of the 7th international conference on computer and communications, IEEE, Chengdu, 10-13 December 2021. https:// doi. org/ 10. 1109/ ICCC5 4389. 2021. 96742 67",
+            "authors": [
+                "Z Q Shen",
+                "R D Fu",
+                "C N Lin",
+                "S H Zheng"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 50,
+            "text": "Li H, Chen L, Han H, Zhou SK (2022) SATr: slice attention with trans- former for universal lesion detection. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13433. Springer, Cham, pp 163-174. https:// doi. org/ 10. 1007/ 978-3-031-16437-8_ 16",
+            "authors": [
+                "H Li",
+                "L Chen",
+                "H Han",
+                "S K Zhou"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 51,
+            "text": "Niu C, Wang G (2022) Unsupervised contrastive learning based trans- former for lung nodule detection. Phys Med Biol 67(20):204001. https:// doi. org/ 10. 1088/ 1361-6560/ ac92ba",
+            "authors": [
+                "C Niu",
+                "G Wang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 52,
+            "text": "Shang FX, Wang SQ, Wang XR, Yang YH (2022) An effective transformer- based solution for RSNA intracranial hemorrhage detection competi- tion. arXiv preprint arXiv: 2205.07556",
+            "authors": [
+                "F X Shang",
+                "S Q Wang",
+                "X R Wang",
+                "Y H Yang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 53,
+            "text": "Dai Y, Gao YF, Liu FY (2021) TransMed: transformers advance multi- modal medical image classification. Diagnostics 11(8):1384. https:// doi. org/ 10. 3390/ diagn ostic s1108 1384",
+            "authors": [
+                "Y Dai",
+                "Y F Gao",
+                "F Y Liu"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 54,
+            "text": "Zhou M, Mo SL (2021) Shoulder implant X-ray manufacturer classifica- tion: exploring with vision transformer. arXiv preprint arXiv: 2104.07667",
+            "authors": [
+                "M Zhou",
+                "S L Mo"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 55,
+            "text": "Chen HY, Li C, Wang G, Li XY, Rahaman M, Sun HZ et al (2022) GasHis- transformer: a multi-scale visual transformer approach for gastric histo- pathological image detection. Pattern Recognit 130:108827.https:// doi. org/ 10. 1016/j. patcog. 2022. 108827",
+            "authors": [
+                "H Y Chen",
+                "C Li",
+                "G Wang",
+                "X Y Li",
+                "M Rahaman",
+                "H Z Sun"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 56,
+            "text": "Liu WL, Li C, Rahaman MM, Jiang T, Sun HZ, Wu XC et al (2022) Is the aspect ratio of cells important in deep learning? A robust comparison of deep learning methods for multi-scale cytopathology cell image classification: from convolutional neural networks to visual transform- ers. Comput Biol Med 141:105026.https:// doi. org/ 10. 1016/j. compb iomed. 2021. 105026",
+            "authors": [
+                "W L Liu",
+                "C Li",
+                "M M Rahaman",
+                "T Jiang",
+                "H Z Sun",
+                "X C Wu"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 57,
+            "text": "Lyu Q, Namjoshi SV, McTyre E, Topaloglu U, Barcus R, Chan MD et al (2022) A transformer-based deep-learning approach for classifying brain metas- tases into primary organ sites using clinical whole-brain MRI images. Patterns 3(11):100613.https:// doi. org/ 10. 1016/j. patter. 2022. 100613",
+            "authors": [
+                "Q Lyu",
+                "S V Namjoshi",
+                "E Mctyre",
+                "U Topaloglu",
+                "R Barcus",
+                "M D Chan"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 58,
+            "text": "Stegmüller T, Bozorgtabar B, Spahr A, Thiran JP (2023) ScoreNet: learning non-uniform attention and augmentation for transformer- based histopathological image classification. In: Proceedings of the 2023 IEEE/CVF winter conference on applications of computer vision, IEEE, Waikoloa, 2-7 January 2023. https:// doi. org/ 10. 1109/ WACV5 6688. 2023. 00611",
+            "authors": [
+                "T Stegmüller",
+                "B Bozorgtabar",
+                "A Spahr",
+                "J P Thiran"
+            ],
+            "year": "2023"
+        },
+        {
+            "id": 59,
+            "text": "Bhattacharya M, Jain S, Prasanna P (2022) RadioTransformer: a cascaded global-focal transformer for visual attention-guided dis- ease classification. In: Avidan S, Brostow G, Cissé M, Farinella GM, Hassner T (eds) Computer vision. 17th European conference, Tel Aviv, October 2022. Lecture notes in computer science, vol 13681. Springer, Cham, pp 679-698. https:// doi. org/ 10. 1007/ 978-3-031- 19803-8_ 40",
+            "authors": [
+                "M Bhattacharya",
+                "S Jain",
+                "P Prasanna"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 60,
+            "text": "Zhang F, Xue TF, Cai WD, Rathi Y, Westin CF, O'Donnell LJ (2022) TractoFormer: a novel fiber-level whole brain tractography analysis framework using spectral embedding and vision transformers. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13431. Springer, Cham, pp 196-206. https:// doi. org/ 10. 1007/ 978-3-031-16431-6_ 19",
+            "authors": [
+                "F Zhang",
+                "T F Xue",
+                "W D Cai",
+                "Y Rathi",
+                "C F Westin",
+                "O' Donnell",
+                "L J"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 61,
+            "text": "Bertolini F, Spallanzani A, Fontana A, Depenni R, Luppi G (2015) Brain metastases: an overview. CNS Oncol 4(1):37-46. https:// doi. org/ 10. 2217/ cns. 14. 51",
+            "authors": [
+                "F Bertolini",
+                "A Spallanzani",
+                "A Fontana",
+                "R Depenni",
+                "G Luppi"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 62,
+            "text": "Zhang JL, Nie YY, Chang J, Zhang JJ (2021) Surgical instruction generation with transformers. In: de Bruijne M, Cattin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science (Image processing, computer vision, pattern recognition, and graph- ics), vol 12904. Springer, Cham, pp 290-299. https:// doi. org/ 10. 1007/ 978-3-030-87202-1_ 28",
+            "authors": [
+                "J L Zhang",
+                "Y Y Nie",
+                "J Chang",
+                "J J Zhang"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 63,
+            "text": "Zhang JL, Nie YY, Chang J, Zhang JJ (2022) SIG-Former: monocular surgical instruction generation with transformers. Int J Comput Assisted Radiol Surg 17(12):2203-2210. https:// doi. org/ 10. 1007/ s11548-022-02718-9",
+            "authors": [
+                "J L Zhang",
+                "Y Y Nie",
+                "J Chang",
+                "J J Zhang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 64,
+            "text": "Pang JY, Jiang C, Chen YH, Chang JB, Feng M, Wang RZ et al (2022) 3D shuffle-mixer: an efficient context-aware vision learner of trans- former-MLP paradigm for dense prediction in medical volume. IEEE Trans Med Imaging. https:// doi. org/ 10. 1109/ TMI. 2022. 31919 74",
+            "authors": [
+                "J Y Pang",
+                "C Jiang",
+                "Y H Chen",
+                "J B Chang",
+                "M Feng",
+                "R Z Wang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 65,
+            "text": "Reisenbüchler D, Wagner SJ, Boxberg M, Peng TY (2022) Local atten- tion graph-based transformer for multi-target genetic alteration prediction. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13432. Springer, Cham, pp 377-386. https:// doi. org/ 10. 1007/ 978-3-031-16434-7_ 37",
+            "authors": [
+                "D Reisenbüchler",
+                "S J Wagner",
+                "M Boxberg",
+                "T Y Peng"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 66,
+            "text": "Płotka S, Grzeszczyk MK, Brawura-Biskupski-Samaha R, Gutaj P, Lipa M, Trzciński T et al (2022) BabyNet: residual transformer module for birth weight prediction on fetal ultrasound video. In: Wang LW, Dou Q, Fletcher PT, Speidel S, Li S (eds) Medical image computing and computer-assisted intervention. 25th international conference, Singapore, September 2022. Lecture notes in computer science, vol 13434. Springer, Cham, pp 350-359. https:// doi. org/ 10. 1007/ 978-3- 031-16440-8_ 34",
+            "authors": [
+                "S Płotka",
+                "M K Grzeszczyk",
+                "R Brawura-Biskupski-Samaha",
+                "P Gutaj",
+                "M Lipa",
+                "T Trzciński"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 67,
+            "text": "Nguyen HH, Saarakkala S, Blaschko MB, Tiulpin A (2021) CLIMAT: clinically-inspired multi-agent transformers for knee osteoarthritis trajectory forecasting. arXiv preprint arXiv: 2104.03642. https:// doi. org/ 10. 1109/ ISBI5 2829. 2022. 97615 45",
+            "authors": [
+                "H H Nguyen",
+                "S Saarakkala",
+                "M B Blaschko",
+                "A Tiulpin"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 68,
+            "text": "Xie YT, Li QZ (2022) A review of deep learning methods for com- pressed sensing image reconstruction and its medical applications. Electronics 11(4):586. https:// doi. org/ 10. 3390/ elect ronic s1104 0586",
+            "authors": [
+                "Y T Xie",
+                "Q Z Li"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 69,
+            "text": "Korkmaz Y, Dar SUH, Yurt M, Özbey M, Çukur T (2022) Unsupervised MRI reconstruction via zero-shot learned adversarial transformers. IEEE Trans Med Imaging 41(7):1747-1763. https:// doi. org/ 10. 1109/ TMI. 2022. 31474 26",
+            "authors": [
+                "Y Korkmaz",
+                "Suh Dar",
+                "M Yurt",
+                "M Özbey",
+                "T Çukur"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 70,
+            "text": "Huang W, Hand P, Heckel R, Voroninski V (2021) A provably con- vergent scheme for compressive sensing under random genera- tive priors. J Fourier Anal Appl 27(2):19. https:// doi. org/ 10. 1007/ s00041-021-09830-5",
+            "authors": [
+                "W Huang",
+                "P Hand",
+                "R Heckel",
+                "V Voroninski"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 71,
+            "text": "Haldar JP, Zhuo JW (2016) P-LORAKS: low-rank modeling of local k-space neighborhoods with parallel imaging data. Magn Reson Med 75(4):1499-1514. https:// doi. org/ 10. 1002/ mrm. 25717",
+            "authors": [
+                "J P Haldar",
+                "J W Zhuo"
+            ],
+            "year": "2016"
+        },
+        {
+            "id": 72,
+            "text": "Haldar JP (2015) Low-rank modeling of local k-space neighborhoods: from phase and support constraints to structured sparsity. In: Proceed- ings of the SPIE Optical Engineering + Applications, SPIE, San Diego, 2 September 2015. https:// doi. org/ 10. 1117/ 12. 21867 05",
+            "authors": [
+                "J P Haldar"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 73,
+            "text": "Dar SUH, Yurt M, Shahdloo M, Ildız ME, Tınaz B, Çukur T (2020) Prior- guided image reconstruction for accelerated multi-contrast MRI via generative adversarial networks. IEEE J Sel Top Signal Process 14(6):1072-1087. https:// doi. org/ 10. 1109/ JSTSP. 2020. 30017 37",
+            "authors": [
+                "Suh Dar",
+                "M Yurt",
+                "M Shahdloo",
+                "M E Ildız",
+                "B Tınaz",
+                "T Çukur"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 74,
+            "text": "Yaman B, Hosseini SAH, Moeller S, Ellermann J, Uğurbil K, Akçakaya M (2020) Self-supervised learning of physics-guided reconstruction neural networks without fully sampled reference data. Magn Reson Med 84(6):3172-3191. https:// doi. org/ 10. 1002/ mrm. 28378",
+            "authors": [
+                "B Yaman",
+                "Sah Hosseini",
+                "S Moeller",
+                "J Ellermann",
+                "K Uğurbil",
+                "M Akçakaya"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 75,
+            "text": "Narnhofer D, Hammernik K, Knoll F, Pock T (2019) Inverse GANs for accelerated MRI reconstruction. In: Proceedings of the SPIE 11138, wavelets and sparsity XVIII, SPIE, San Diego, 11-15 August 2019. https:// doi. org/ 10. 1117/ 12. 25277 53",
+            "authors": [
+                "D Narnhofer",
+                "K Hammernik",
+                "F Knoll",
+                "T Pock"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 76,
+            "text": "Karras T, Laine S, Aittala M, Hellsten J, Lehtinen J, Aila T (2020) Analyzing and improving the image quality of StyleGAN. In: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, IEEE, Seattle, 13-19 June 2020. https:// doi. org/ 10. 1109/ CVPR4 2600. 2020. 00813",
+            "authors": [
+                "T Karras",
+                "S Laine",
+                "M Aittala",
+                "J Hellsten",
+                "J Lehtinen",
+                "Aila T"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 77,
+            "text": "Feng CM, Yan YL, Fu HZ, Chen L, Xu Y (2021) Task transformer network for joint MRI reconstruction and super-resolution. In: de Bruijne M, Cat- tin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer-assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol. 12906. Springer, Cham, pp 307-317. https:// doi. org/ 10. 1007/ 978-3-030-87231-1_ 30",
+            "authors": [
+                "C M Feng",
+                "Y L Yan",
+                "H Z Fu",
+                "L Chen",
+                "Y Xu"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 78,
+            "text": "Guo PF, Mei YQ, Zhou JY, Jiang SS, Patel VM (2022) ReconFormer: accel- erated MRI reconstruction using recurrent transformer. arXiv preprint arXiv: 2201.09376",
+            "authors": [
+                "P F Guo",
+                "Y Q Mei",
+                "J Y Zhou",
+                "S S Jiang",
+                "V M Patel"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 79,
+            "text": "Huang JH, Wu YZ, Wu HJ, Yang G (2022) Fast MRI reconstruction: how powerful transformers are? In: Proceedings of the 44th annual international conference of the IEEE engineering in medicine & biology society, IEEE, Glasgow, 11-15 July 2022. https:// doi. org/ 10. 1109/ EMBC4 8229. 2022. 98714 75",
+            "authors": [
+                "J H Huang",
+                "Y Z Wu",
+                "H J Wu",
+                "G Yang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 80,
+            "text": "Long YH, Li ZS, Yee CH, Ng CF, Taylor RH, Unberath M et al (2021) E-DSSR: efficient dynamic surgical scene reconstruction with transformer-based stereoscopic depth perception. In: de Bruijne M, Cat- tin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September, 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol 12904. Springer, Cham, pp 415-425. https:// doi. org/ 10. 1007/ 978-3-030-87202-1_ 40",
+            "authors": [
+                "Y H Long",
+                "Z S Li",
+                "C H Yee",
+                "C F Ng",
+                "R H Taylor",
+                "M Unberath"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 81,
+            "text": "Wang C, Shang K, Zhang HM, Li Q, Hui Y, Zhou SK (2021) DuDoTrans: dual-domain transformer provides more attention for sinogram restoration in sparse-view CT reconstruction. arXiv preprint arXiv: 2111.10790",
+            "authors": [
+                "C Wang",
+                "K Shang",
+                "H M Zhang",
+                "Q Li",
+                "Y Hui",
+                "S K Zhou"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 82,
+            "text": "Pan JY, Zhang HY, Wu WF, Gao ZF, Wu WW (2022) Multi-domain integra- tive Swin transformer network for sparse-view tomographic reconstruc- tion. Patterns 3(6):100498.https:// doi. org/ 10. 1016/j. patter. 2022. 100498",
+            "authors": [
+                "J Y Pan",
+                "H Y Zhang",
+                "W F Wu",
+                "Z F Gao",
+                "W W Wu"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 83,
+            "text": "Razi T, Niknami M, Ghazani FA (2014) Relationship between Hounsfield unit in CT scan and gray scale in CBCT. J Dent Res Dent Clin Dent Prospects 8(2):107-110",
+            "authors": [
+                "T Razi",
+                "M Niknami",
+                "F A Ghazani"
+            ],
+            "year": "2014"
+        },
+        {
+            "id": 84,
+            "text": "Duda SN, Kennedy N, Conway D, Cheng AC, Nguyen V, Zayas-Cabán T et al (2022) HL7 FHIR-based tools and initiatives to support clinical research: a scoping review. J Am Med Inf Assoc 29(9):1642-1653. https:// doi. org/ 10. 1093/ jamia/ ocac1 05",
+            "authors": [
+                "S N Duda",
+                "N Kennedy",
+                "D Conway",
+                "A C Cheng",
+                "V Nguyen",
+                "T Zayas-Cabán"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 85,
+            "text": "Auer F, Abdykalykova Z, Müller D, Kramer F (2022) Adaptation of HL7 FHIR for the Exchange of Patients' Gene Expression Profiles. Stud Health Technol Inform 295:332-335. https:// doi. org/ 10. 1101/ 2022. 02. 11. 22270 850",
+            "authors": [
+                "F Auer",
+                "Z Abdykalykova",
+                "D Müller",
+                "F Kramer"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 86,
+            "text": "Carter C, Veale B (2022) Digital radiography and PACS, 4th edn. Elsevier, Amsterdam",
+            "authors": [
+                "C Carter",
+                "B Veale"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 87,
+            "text": "Twa MD, Johnson CA (2022) Digital imaging and communication standards. Optom Vis Sci 99(5):423. https:// doi. org/ 10. 1097/ OPX. 00000 00000 001909",
+            "authors": [
+                "M D Twa",
+                "C A Johnson"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 88,
+            "text": "Xiong YX, Du B, Yan PK (2019) Reinforced transformer for medi- cal image captioning. In: Suk HI, Liu M, Yan P, Lian C (eds) Machine learning in medical imaging. 10th international workshop, Shenzhen, October 2019. Lecture notes in computer science (Image process- ing, computer vision, pattern recognition, and graphics), vol 11861. Springer, Cham, pp 673-680. https:// doi. org/ 10. 1007/ 978-3-030- 32692-0_ 77",
+            "authors": [
+                "Y X Xiong",
+                "B Du",
+                "P K Yan"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 89,
+            "text": "Miura Y, Zhang YH, Tsai E, Langlotz C, Jurafsky D (2021) Improving factual completeness and consistency of image-to-text radiol- ogy report generation. In: Proceedings of the 2021 conference of the North American chapter of the association for computational linguistics: human language technologies, Association for Computa- tional Linguistics, Online, 6-11 June 2021. https:// doi. org/ 10. 18653/ v1/ 2021. naacl-main. 416",
+            "authors": [
+                "Y Miura",
+                "Y H Zhang",
+                "E Tsai",
+                "C Langlotz",
+                "D Jurafsky"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 90,
+            "text": "Rennie SJ, Marcheret E, Mroueh Y, Ross J, Goel V (2017) Self-critical sequence training for image captioning. In: Proceedings of the 2017 IEEE conference on computer vision and pattern recognition, IEEE, Honolulu, 21-26 July 2017. https:// doi. org/ 10. 1109/ CVPR. 2017. 131",
+            "authors": [
+                "S J Rennie",
+                "E Marcheret",
+                "Y Mroueh",
+                "J Ross",
+                "V Goel"
+            ],
+            "year": "2017"
+        },
+        {
+            "id": 91,
+            "text": "You D, Liu FL, Ge S, Xie XX, Zhang J, Wu X (2021) AlignTransformer: hier- archical alignment of visual regions and disease tags for medical report generation. In: de Bruijne M, Cattin PC, Cotin S, Padoy N, Speidel S, Zheng YF et al (eds) Medical image computing and computer assisted intervention. 24th international conference, Strasbourg, September 2021. Lecture notes in computer science, (Image processing, computer vision, pattern recognition, and graphics), vol 12903. Springer, Cham, pp 72-82. https:// doi. org/ 10. 1007/ 978-3-030-87199-4_7",
+            "authors": [
+                "D You",
+                "F L Liu",
+                "S Ge",
+                "X X Xie",
+                "J Zhang",
+                "X Wu"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 92,
+            "text": "Xu MY, Islam M, Lim CM, Ren HL (2021) Learning domain adaptation with model calibration for surgical report generation in robotic surgery. In: Proceedings of the 2021 IEEE international conference on robotics and automation, IEEE, Xi'an, 30 May-5 June 2021. https:// doi. org/ 10. 1109/ ICRA4 8506. 2021. 95615 69",
+            "authors": [
+                "M Y Xu",
+                "M Islam",
+                "C M Lim",
+                "H L Ren"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 93,
+            "text": "Finlayson SG, Bowers JD, Ito J, Zittrain JL, Beam AL, Kohane IS (2019) Adversarial attacks on medical machine learning. Science 363(6433):1287-1289. https:// doi. org/ 10. 1126/ scien ce. aaw43 99",
+            "authors": [
+                "S G Finlayson",
+                "J D Bowers",
+                "J Ito",
+                "J L Zittrain",
+                "A L Beam",
+                "I S Kohane"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 94,
+            "text": "Papangelou K, Sechidis K, Weatherall J, Brown G (2019) Toward an understanding of adversarial examples in clinical trials. In: Berlingerio M, Bonchi F, Gärtner T, Hurley N, Ifrim G (eds) Machine learning and knowledge discovery in databases. European conference, Dublin, September 2018. Lecture notes in computer science (Lecture notes in artificial intelligence), vol 11051. Springer, Cham, pp 35-51. https:// doi. org/ 10. 1007/ 978-3-030-10925-7_3",
+            "authors": [
+                "K Papangelou",
+                "K Sechidis",
+                "J Weatherall",
+                "G Brown"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 95,
+            "text": "Benz P, Ham S, Zhang CN, Karjauv A, Kweon IS (2021) Adversarial robust- ness comparison of vision transformer and MLP-mixer to CNNs. In: Proceedings of the 32nd british machine vision conference 2021, BMVA Press, Online, 22-25 November 2021",
+            "authors": [
+                "P Benz",
+                "S Ham",
+                "C N Zhang",
+                "A Karjauv",
+                "I S Kweon"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 96,
+            "text": "Chuman T, Kiya H (2022) Security evaluation of block-based image encryption for vision transformer against jigsaw puzzle solver attack. In: Proceedings of the 4th global conference on life sciences and technologies (LifeTech), IEEE, Osaka, 7-9 March 2022. https:// doi. org/ 10. 1109/ LifeT ech53 646. 2022. 97549 37",
+            "authors": [
+                "T Chuman",
+                "H Kiya"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 97,
+            "text": "Li M, Han DZ, Li D, Liu H, Chang CC (2022) MFVT: an anomaly traffic detection method merging feature fusion network and vision trans- former architecture. EURASIP J Wirel Commun Netw 2022(1):39. https:// doi. org/ 10. 1186/ s13638-022-02103-9",
+            "authors": [
+                "M Li",
+                "D Z Han",
+                "D Li",
+                "H Liu",
+                "C C Chang"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 98,
+            "text": "Ho CMK, Yow KC, Zhu ZW, Aravamuthan S (2022) Network intrusion detection via flow-to-image conversion and vision transformer clas- sification. IEEE Access 10:97780-97793. https:// doi. org/ 10. 1109/ ACCESS. 2022. 32000 34",
+            "authors": [
+                "Cmk Ho",
+                "K C Yow",
+                "Z W Zhu",
+                "S Aravamuthan"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 99,
+            "text": "George A, Marcel S (2021) On the effectiveness of vision transform- ers for zero-shot face anti-spoofing. In: Proceedings of the 2021 IEEE international joint conference on biometrics, IEEE, Shenzhen, 4-7 August 2021. https:// doi. org/ 10. 1109/ IJCB5 2358. 2021. 94843 33",
+            "authors": [
+                "A George",
+                "S Marcel"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 100,
+            "text": "Doan KD, Lao YJ, Yang P, Li P (2022) Defending backdoor attacks on vision transformer via patch processing. arXiv preprint arXiv: 2206.12381",
+            "authors": [
+                "K D Doan",
+                "Y J Lao",
+                "P Yang",
+                "P Li"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 101,
+            "text": "Riquelme C, Puigcerver J, Mustafa B, Neumann M, Jenatton R, Susano Pinto A et al (2021) Scaling vision with sparse mixture of experts. Advances in Neural Information Processing Systems 34: 8583-8595",
+            "authors": [
+                "C Riquelme",
+                "J Puigcerver",
+                "B Mustafa",
+                "M Neumann",
+                "R Jenatton",
+                "Susano Pinto",
+                "A"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 102,
+            "text": "Ridnik T, Ben-Baruch E, Noy A, Zelnik-Manor L (2021) ImageNet-21K pretraining for the masses. arXiv preprint arXiv: 2104.10972",
+            "authors": [
+                "T Ridnik",
+                "E Ben-Baruch",
+                "A Noy",
+                "L Zelnik-Manor"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 103,
+            "text": "Deng J, Dong W, Socher R, Li LJ, Li K, Fei-Fei L (2009) ImageNet: a large- scale hierarchical image database. In: Proceedings of the 2009 IEEE con- ference on computer vision and pattern recognition, IEEE, Miami, 20-25 June 2009. https:// doi. org/ 10. 1109/ CVPR. 2009. 52068 48",
+            "authors": [
+                "J Deng",
+                "W Dong",
+                "R Socher",
+                "L J Li",
+                "K Li",
+                "L Fei-Fei"
+            ],
+            "year": "2009"
+        },
+        {
+            "id": 104,
+            "text": "Russakovsky O, Deng J, Su H, Krause J, Satheesh S, Ma SA et al (2015) ImageNet large scale visual recognition challenge. Int J Comput Vis 115(3):211-252. https:// doi. org/ 10. 1007/ s11263-015-0816-y",
+            "authors": [
+                "O Russakovsky",
+                "J Deng",
+                "H Su",
+                "J Krause",
+                "S Satheesh",
+                "S A Ma"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 105,
+            "text": "Chen XN, Hsieh CJ, Gong BQ (2022) When vision transformers outper- form ResNets without pre-training or strong data augmentations. In: Proceedings of the 10th international conference on learning represen- tations, OpenReview.net, 25-29 April 2022",
+            "authors": [
+                "X N Chen",
+                "C J Hsieh",
+                "B Q Gong"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 106,
+            "text": "Gani H, Naseer M, Yaqub M (2022) How to train vision transformer on small-scale datasets? arXiv preprint arXiv: 2210.07240",
+            "authors": [
+                "H Gani",
+                "M Naseer",
+                "M Yaqub"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 107,
+            "text": "Chen T, Kornblith S, Norouzi M, Hinton G (2020) A simple framework for contrastive learning of visual representations. In: Proceedings of the 37th international conference on machine learning, PMLR, Online, 13-18 July 2020",
+            "authors": [
+                "T Chen",
+                "S Kornblith",
+                "M Norouzi",
+                "G Hinton"
+            ],
+            "year": "2020"
+        },
+        {
+            "id": 108,
+            "text": "Wang XY, Yang S, Zhang J, Wang MH, Zhang J, Yang W et al (2022) Transformer-based unsupervised contrastive learning for histopatho- logical image classification. Med Image Anal 81:102559.https:// doi. org/ 10. 1016/j. media. 2022. 102559",
+            "authors": [
+                "X Y Wang",
+                "S Yang",
+                "J Zhang",
+                "M H Wang",
+                "J Zhang",
+                "Yang W"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 109,
+            "text": "Meng CZ, Trinh L, Xu N, Liu Y (2021) MIMIC-IF: interpretability and fair- ness evaluation of deep learning models on MIMIC-IV dataset. https:// doi. org/ 10. 21203/ rs.3. rs-402058/ v1",
+            "authors": [
+                "C Z Meng",
+                "L Trinh",
+                "N Xu",
+                "Y Liu"
+            ],
+            "year": "2021"
+        },
+        {
+            "id": 110,
+            "text": "Lu JH, Zhang XS, Zhao TL, He XY, Cheng J (2022) APRIL: finding the Achilles' heel on privacy for vision transformers. In: Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, IEEE, New Orleans, 18-24 June 2022. https:// doi. org/ 10. 1109/ CVPR5 2688. 2022. 00981",
+            "authors": [
+                "J H Lu",
+                "X S Zhang",
+                "T L Zhao",
+                "X Y He",
+                "J Cheng"
+            ],
+            "year": "2022"
+        },
+        {
+            "id": 111,
+            "text": "Song WP, Shi CC, Xiao ZP, Duan ZJ, Xu YW, Zhang M et al (2019) AutoInt: automatic feature interaction learning via self-attentive neural networks. In: Proceedings of the 28th ACM international conference on information and knowledge management, ACM, Beijing, 3-7 Novem- ber 2019. https:// doi. org/ 10. 1145/ 33573 84. 33579 25",
+            "authors": [
+                "W P Song",
+                "C C Shi",
+                "Z P Xiao",
+                "Z J Duan",
+                "Y W Xu",
+                "M Zhang"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 112,
+            "text": "Yu K, Zhang MD, Cui TY, Hauskrecht M (2019) Monitoring ICU mortal- ity risk with a long short-term memory recurrent neural network. In: Proceedings of the pacific symposium on Biocomputing 2020, World Scientific, Kohala Coast, 3-7 January 2020. https:// doi. org/ 10. 1142/ 97898 11215 636_ 0010",
+            "authors": [
+                "K Yu",
+                "M D Zhang",
+                "T Y Cui",
+                "M Hauskrecht"
+            ],
+            "year": "2019"
+        },
+        {
+            "id": 113,
+            "text": "Bai SJ, Kolter JZ, Koltun V (2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling. arXiv preprint arXiv: 1803.01271",
+            "authors": [
+                "S J Bai",
+                "J Z Kolter",
+                "V Koltun"
+            ],
+            "year": "2018"
+        },
+        {
+            "id": 114,
+            "text": "Guo T, Lin T, Antulov-Fantulin N (2019) Exploring interpretable LSTM neural networks over multi-variable data. In: Proceedings of the 36th international conference on machine learning, PMLR, Long Beach, 9-15 June 2019",
+            "authors": [
+                "T Guo",
+                "T Lin",
+                "N Antulov-Fantulin"
+            ],
+            "year": "2019"
+        }
+    ],
     "figures": [
         {
             "id": 1,
@@ -664,7 +1963,7 @@
                 "Table 1 Examples of ViT applications in medical image segmentation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransUnet [10]</td><td>MRI, CT</td><td>CT and MRI cardiac segmentation</td></tr><tr><td>Dual-TransUnet [11]</td><td>Microscopy</td><td>Skin lesion analysis [45]; gland segmentation in histology [46]; nuclei in divergent images [47]</td></tr><tr><td>Swin-Unet [35]</td><td>CT</td><td>Abdominal multiorgan segmentation</td></tr><tr><td>iSegFormer [37]</td><td>3D MRI</td><td>Knee image segmentation</td></tr><tr><td>3D UX-net [38]</td><td>3D MRI</td><td>Brain tissue segmentation</td></tr><tr><td>UNesT [39]</td><td>MRI, CT</td><td>Abdominal multiorgan segmentation + kidney segmenta-tion + whole brain segmentation</td></tr><tr><td>NestedFormer [40]</td><td>MRI</td><td>Brain tumor segmentation</td></tr><tr><td>RECIST [41]</td><td>CT</td><td>Automatic tumor segmentation and diameter size prediction</td></tr><tr><td>GT U-Net [42]</td><td>X-ray</td><td>Tooth therapy: root canal segmentation</td></tr><tr><td>FCN-transformer [43]</td><td>Colonoscopy</td><td>CRC segmentation</td></tr><tr><td>TraSeTR [44]</td><td>Endoscopy</td><td>Robot-assisted surgery</td></tr></table>",
-            "img_path": "output/demo9/images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
+            "img_path": "output\\images/bc92290a4cb43ee0777fc05447bee24ec643b31cb9fe9124ce3a16c8b787af7a.jpg",
             "page": 8
         },
         {
@@ -674,7 +1973,7 @@
                 "Table 2 Examples of ViT applications in medical image detection "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>DETR [48]</td><td>MRI</td><td>Lymphoproliferative diseases detection</td></tr><tr><td>COTR [49]</td><td>Colonoscopy</td><td>CRC detection</td></tr><tr><td>SATr [50]</td><td>CT</td><td>Universal lesion detection</td></tr><tr><td>UCLT [51]</td><td>CT</td><td>Lung nodule detection</td></tr><tr><td>IHD [52]</td><td>CT</td><td>Brain injury hemorrhage detection</td></tr></table>",
-            "img_path": "output/demo9/images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
+            "img_path": "output\\images/cff2c19341701cdf52bb9677b17872984b9b032ebf6b12bd2f833ed9378d134e.jpg",
             "page": 9
         },
         {
@@ -684,7 +1983,7 @@
                 "Table 3 Examples of ViT applications in medical image classifcation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>TransMed [53]</td><td>MRI</td><td>Multi-modal classification: disease classification, lesion identification</td></tr><tr><td>Shoulder implant manufacture [54]</td><td>X-ray</td><td>Orthopedics: Shoulder implant manufacture classification</td></tr><tr><td>GasHis-transformer [55]</td><td>Histopathology microscopic images</td><td>Gastric cancer classification and detection</td></tr><tr><td>Multi-scale cytopathology [56]</td><td>Cytopathological images</td><td>Cervical cancer classification</td></tr><tr><td>Brain metastases classification [57]</td><td>MRI</td><td>Classification of the brain tumor of central nervous system</td></tr><tr><td>ScoreNet [58]</td><td>Histology Datasets of haematoxylin +eosin</td><td>Breast cancer classification</td></tr><tr><td>RadioTransformer [59]</td><td>X-ray</td><td>COVID-19 classification using chest X-ray images</td></tr><tr><td>TractoFormer [60]</td><td>Diffusion MRI</td><td>Nerve tracts modelling and 3D fiber representation</td></tr></table>",
-            "img_path": "output/demo9/images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
+            "img_path": "output\\images/34274909385bc96964a01467ee8718de642fd278bacf27b164f7b471f03a47bd.jpg",
             "page": 10
         },
         {
@@ -694,7 +1993,7 @@
                 "Table 4 Examples of ViT applications in medical image prediction "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>3D-SMx [64]</td><td>3D (MRI, CT)</td><td>Context-aware dense prediction for different diseases that includes hemorrhagic stroke, abdominal CT images, brain tumor</td></tr><tr><td>GBT [65]</td><td>Cancer genome (TCGA)</td><td>Computation pathology: genetic alteration</td></tr><tr><td>RTM [66]</td><td>Ultrasound</td><td>Fetal weigh at birth prediction</td></tr><tr><td>CLIMAT [67]</td><td>X-ray</td><td>Forecasts knee osteoarthritis trajectory</td></tr><tr><td>Sig-Former [63]</td><td>Laparoscopy</td><td>Surgical instructions prediction</td></tr><tr><td>SIGT [62]</td><td>Robot camera</td><td>Surgical instruction prediction and image captioning</td></tr></table>",
-            "img_path": "output/demo9/images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
+            "img_path": "output\\images/516d36821bdbc824429bfc5170f26be6f7d969a7b49accb49c409ca77696def5.jpg",
             "page": 11
         },
         {
@@ -704,7 +2003,7 @@
                 "Table 5 Examples of ViT applications in medical image reconstruction "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>SLATER [69]</td><td>MRI</td><td>MRI unsupervised reconstruction</td></tr><tr><td>T2Net [77]</td><td>MRI</td><td>Image reconstruction and super-resolution enhancement</td></tr><tr><td>ReconFormer[78], FastMRIRecon [79]</td><td>MRI</td><td>Accelerated MRI reconstruction</td></tr><tr><td>E-DSSR [80]</td><td>Endoscopy</td><td>Surgical robot scene reconstruction</td></tr><tr><td>DuTrans [81], MIST-net [82]</td><td>CT</td><td>CT sinograms reconstruction</td></tr></table>",
-            "img_path": "output/demo9/images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
+            "img_path": "output\\images/fd0e62c22cb82b533b04e8aba947b355e0c4b82cb7f3ff658ada73bb5ce105d6.jpg",
             "page": 12
         },
         {
@@ -714,7 +2013,7 @@
                 "Table 6 Examples of ViT applications in medical report generation "
             ],
             "table_body": "<table><tr><td>Method</td><td>Category</td><td>Medical application</td></tr><tr><td>RTMIC [88]</td><td>Medical images general</td><td>Report generation from medical images (e.g., MRI, CT, PET and X-ray)</td></tr><tr><td>IFCC [89]</td><td>Medical images general</td><td>Medical report completeness and consistency</td></tr><tr><td>AlignTransformer [91]</td><td>Medical images general</td><td>Long report generation from medical images tags</td></tr><tr><td>LDASR [92]</td><td>Surgical robot camera</td><td>Surgical report generation</td></tr></table>",
-            "img_path": "output/demo9/images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
+            "img_path": "output\\images/e765ca36283d8b7c089b4fc671cf6b9a85862dfe6d02d09c3b554fb02a6aa2b6.jpg",
             "page": 14
         },
         {
@@ -724,7 +2023,7 @@
                 "Table 7 Examples of ViT applications in security "
             ],
             "table_body": "<table><tr><td>Method</td><td>Application</td></tr><tr><td>Jigsaw block-based encryption [96]</td><td>Data encryption</td></tr><tr><td>MFVT [97]</td><td>Anomaly detection</td></tr><tr><td>Image conversion from network data-flow [98]</td><td>Network intrusion system detection</td></tr><tr><td>Zero-shot face [99]</td><td>Anti-spoofing</td></tr><tr><td>Backdoor defender [100]</td><td>Patch processing</td></tr></table>",
-            "img_path": "output/demo9/images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
+            "img_path": "output\\images/59857605356337359a8dde65d06669b80f11cea6cdf92ceea5cf11c30abf1e58.jpg",
             "page": 15
         }
     ]
