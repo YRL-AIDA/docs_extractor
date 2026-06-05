@@ -40,9 +40,8 @@ class ArticleExtractor:
                 block['text_level'] = 2
         
         titles = [(idx, block.get('text', '')) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
-        self.title = titles[0][1].strip()
 
-        start_section_idx = 2 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи и аннотацию
+        start_section_idx = 3 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи, аннотацию и ключевые слова (default)
         sections_list = []
 
         # поиск ключевых слов
@@ -56,6 +55,7 @@ class ArticleExtractor:
                     temp_kwords = re.sub(kwords_pattern, '', text).strip(' .:-—')
                 temp_kwords = re.split(r'[,;]', temp_kwords)
                 self.keywords = [kword.strip() for kword in temp_kwords]
+                end_kwords_idx = idx + 1
                 break
         
         # поиск аннотации
@@ -70,7 +70,7 @@ class ArticleExtractor:
         for idx, block in enumerate(data):
             match = re.search(abs_pattern, block.get('text', ''))
             if match:
-                abstract_idx = idx
+                end_title_idx = idx
                 if block.get('text_level', -1) > 0:
                     start_abs_idx = idx + 1
                 else:
@@ -89,7 +89,11 @@ class ArticleExtractor:
         sections_list.append(abstract)
         self.language = detect(abstract['text'].split('.')[0])
 
-        start_section_idx = max([idx for idx, title in enumerate(titles) if title[0] < start_abs_idx]) + 1
+        # извлечение заголовка (первый заголовок перед аннотацией)
+        self.title = data[max([idx for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
+        
+        # обработка секций с первого заголовка после ключевых слов
+        start_section_idx = max([idx for idx, title in enumerate(titles) if title[0] < end_kwords_idx]) + 1
 
         # grobid: авторы и список литературы
         self.authors, self.references = self.grobid.process_pdf(pdf_path=self.pdf_path)
