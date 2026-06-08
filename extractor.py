@@ -25,6 +25,8 @@ class ArticleExtractor:
         self.keywords = None
         self.language = None
         self.sections = None
+        self.acknowledgements = None
+        self.appendix = None
         self.references = None
         self.figures = None
         self.tables = None
@@ -41,24 +43,27 @@ class ArticleExtractor:
         
         titles = [(idx, block.get('text', '')) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
 
-        start_section_idx = 3 # начальный индекс цикла по секциям/главам, пропуская заголовок статьи, аннотацию и ключевые слова (default)
+        start_section_idx = 0
         sections_list = []
 
         # поиск ключевых слов
+        end_kwords_idx = 0
         kwords_pattern = re.compile(r'(keywords|index terms|ключевые слова)', flags=re.I)
         for idx, block in enumerate(data):
             text = block.get('text', '')
             if re.search(kwords_pattern, text):
                 if block.get('text_level', -1) > 0:
                     temp_kwords = data[idx + 1].get('text', '').strip(' .:-—')
+                    end_kwords_idx = idx + 1
                 else:
                     temp_kwords = re.sub(kwords_pattern, '', text).strip(' .:-—')
+                    end_kwords_idx = idx
                 temp_kwords = re.split(r'[,;]', temp_kwords)
                 self.keywords = [kword.strip() for kword in temp_kwords]
-                end_kwords_idx = idx + 1
                 break
         
         # поиск аннотации
+        end_abs_idx = 0
         abstract = {
                         'title': 'Abstract',
                         'text': None,
@@ -72,16 +77,17 @@ class ArticleExtractor:
             if match:
                 end_title_idx = idx
                 if block.get('text_level', -1) > 0:
-                    start_abs_idx = idx + 1
+                    end_abs_idx = idx + 1
                 else:
-                    start_abs_idx = idx
+                    end_abs_idx = idx
 
                 abstract['text'] = ''
                 abstract['page_start'] = block['page_idx']
-                for i in range(start_abs_idx, len(data)):
+                for i in range(end_abs_idx, len(data)):
                     if data[i].get('text_level', -1) > 0 or re.search(kwords_pattern, data[i].get('text', '')):
                         break
                     else:
+                        end_abs_idx = i
                         abstract['text'] += data[i].get('text', '')
                         abstract['page_end'] = data[i]['page_idx']
         
@@ -93,31 +99,67 @@ class ArticleExtractor:
         self.title = data[max([idx for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
         
         # обработка секций с первого заголовка после ключевых слов
-        start_section_idx = max([idx for idx, title in enumerate(titles) if title[0] < end_kwords_idx]) + 1
+        start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
 
         # grobid: авторы и список литературы
         self.authors, self.references = self.grobid.process_pdf(pdf_path=self.pdf_path)
 
+        # поиск индексов ключевых точек статьи: приложение, список источников и т.д.
+        end_section_idx = len(data) 
+
+        start_app_idx = 131313
+        app_pattern = re.compile(r'приложение|appendix', flags=re.I)
+        for idx, title in enumerate(titles):
+            match = re.search(app_pattern, title[1])
+            if match:
+                start_app_idx = title[0]
+        
+        start_ack_idx = 131313
+        ack_pattern = re.compile(r'благодарности|acknowledgements|acknowledgments', flags=re.I)
+        for idx, block in enumerate(data):
+            match = re.search(ack_pattern, block.get('text', ''))
+            if match:
+                if start_section_idx < idx:
+                    start_ack_idx = idx
+                if block.get('text_level', -1) > 0:
+                    self.acknowledgements = data[idx + 1].get('text', '')
+                else:
+                    self.acknowledgements = re.sub(ack_pattern, '', data[idx].get('text', '')).strip(' .:-—')
+
+        start_refs_idx = 131313
+        refs_pattern = re.compile(r'список источников|список литературы|references', flags=re.I)
+        for idx, title in enumerate(titles):
+            match = re.search(refs_pattern, title[1])
+            if match:
+                start_refs_idx = title[0]
+
+        end_section_idx = min(end_section_idx, start_ack_idx, start_app_idx, start_refs_idx)
+
         # обработка секций
-        for idx in range(start_section_idx, len(titles) - 1):
-            section = {
-                'title': titles[idx][1],
-                'text': '',
-                'type': None,
-                'page_start': data[titles[idx][0]]['page_idx']
-            }
-
-            for jdx in range(titles[idx][0] + 1, titles[idx + 1][0]):
-                if data[jdx]['type'] in ['text', 'equation']:
-                    section['text'] += data[jdx].get('text', '') + '\n'
-                elif data[jdx].get('sub_type', None) == 'text':
-                    for item in data[jdx].get('list_items', []):
+        section_flag = False
+        for idx in range(start_section_idx, end_section_idx):
+            if section_flag and data[idx].get('text_level', -1) != 1:
+                if data[idx]['type'] in ['text', 'equation']:
+                    section['text'] += data[idx].get('text', '') + '\n'
+                elif data[idx].get('sub_type', None) == 'text':
+                    for item in data[idx].get('list_items', []):
                         section['text'] += item + '\n'
-                elif data[jdx]['type'] == 'code':
-                    section['text'] += data[jdx].get('code_body', '') + '\n'
-
-            section['page_end'] = data[titles[idx + 1][0] - 1]['page_idx']
-            sections_list.append(section)
+                elif data[idx]['type'] == 'code':
+                    section['text'] += data[idx].get('code_body', '') + '\n'
+                section['page_end'] = data[idx]['page_idx']
+            
+            if data[idx].get('text_level', -1) == 1:
+                if section_flag:
+                    sections_list.append(section)
+                section = {
+                    'title': data[idx].get('text', ''),
+                    'text': '',
+                    'type': None,
+                    'page_start': data[idx]['page_idx'],
+                    'page_end': data[idx]['page_idx']
+                }
+                section_flag = True
+        sections_list.append(section)
         self.sections = sections_list
 
         # обработка визуальных элементов
@@ -172,7 +214,7 @@ class ArticleExtractor:
             tables_list.append(table)
         self.tables = tables_list
         
-        print('Done!')
+        print(f'-- {self.file_name} is done!')
 
     def dump_to_json(self, output):
         article = {
@@ -182,6 +224,8 @@ class ArticleExtractor:
             'keywords': self.keywords,
             'language': self.language,
             'sections': self.sections,
+            'acknowledgements': self.acknowledgements,
+            'appendix': self.appendix,
             'references': self.references,
             'figures': self.figures,
             'tables': self.tables,
