@@ -40,7 +40,7 @@ class ArticleExtractor:
         for block in data:
             if block.get('text_level', None) == 1 and re.match(r'\d+\.\d+', block.get('text', '')):
                 block['text_level'] = 2
-        
+
         titles = [(idx, block.get('text', '')) for idx, block in enumerate(data) if block.get('text_level', None) == 1]
 
         start_section_idx = 0
@@ -61,7 +61,7 @@ class ArticleExtractor:
                 temp_kwords = re.split(r'[,;]', temp_kwords)
                 self.keywords = [kword.strip() for kword in temp_kwords]
                 break
-        
+
         # поиск аннотации
         end_abs_idx = 0
         abstract = {
@@ -90,14 +90,14 @@ class ArticleExtractor:
                         end_abs_idx = i
                         abstract['text'] += data[i].get('text', '')
                         abstract['page_end'] = data[i]['page_idx']
-        
+
         self.abstract = abstract['text']
         sections_list.append(abstract)
         self.language = detect(abstract['text'].split('.')[0])
 
         # извлечение заголовка (первый заголовок перед аннотацией)
         self.title = data[max([idx for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
-        
+
         # обработка секций с первого заголовка после ключевых слов
         start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
 
@@ -105,7 +105,7 @@ class ArticleExtractor:
         self.authors, self.references = self.grobid.process_pdf(pdf_path=self.pdf_path)
 
         # поиск индексов ключевых точек статьи: приложение, список источников и т.д.
-        end_section_idx = len(data) 
+        end_section_idx = len(data)
 
         start_app_idx = 131313
         app_pattern = re.compile(r'приложение|appendix', flags=re.I)
@@ -113,7 +113,7 @@ class ArticleExtractor:
             match = re.search(app_pattern, title[1])
             if match:
                 start_app_idx = title[0]
-        
+
         start_ack_idx = 131313
         ack_pattern = re.compile(r'благодарности|acknowledgements|acknowledgments', flags=re.I)
         for idx, block in enumerate(data):
@@ -137,23 +137,29 @@ class ArticleExtractor:
 
         # обработка секций
         section_flag = False
+        section = {
+            'title': None,
+            'text': [],
+            'type': None,
+            'page_start': None,
+            'page_end': None
+        }
         for idx in range(start_section_idx, end_section_idx):
             if section_flag and data[idx].get('text_level', -1) != 1:
                 if data[idx]['type'] in ['text', 'equation']:
-                    section['text'] += data[idx].get('text', '') + '\n'
+                    section['text'].append(data[idx].get('text', ''))
                 elif data[idx].get('sub_type', None) == 'text':
-                    for item in data[idx].get('list_items', []):
-                        section['text'] += item + '\n'
+                    section['text'].append(data[idx].get('list_items', ''))
                 elif data[idx]['type'] == 'code':
-                    section['text'] += data[idx].get('code_body', '') + '\n'
+                    section['text'].append(data[idx].get('code_body', ''))
                 section['page_end'] = data[idx]['page_idx']
-            
+
             if data[idx].get('text_level', -1) == 1:
                 if section_flag:
                     sections_list.append(section)
                 section = {
                     'title': data[idx].get('text', ''),
-                    'text': '',
+                    'text': [],
                     'type': None,
                     'page_start': data[idx]['page_idx'],
                     'page_end': data[idx]['page_idx']
@@ -204,16 +210,16 @@ class ArticleExtractor:
         for idx, block in enumerate(tables):
             caption = block.get('table_caption', []) + block.get('table_footnote', [])
             table = {
-                'id': idx + 1, 
-                'type': block['type'], 
-                'caption': caption, 
-                'table_body': block.get('table_body', None), 
-                'img_path': os.path.join(output_path, block.get('img_path', None)), 
+                'id': idx + 1,
+                'type': block['type'],
+                'caption': caption,
+                'table_body': block.get('table_body', None),
+                'img_path': os.path.join(output_path, block.get('img_path', None)),
                 'page': block['page_idx']
             }
             tables_list.append(table)
         self.tables = tables_list
-        
+
         print(f'-- {self.file_name} is done!')
 
     def dump_to_json(self, output):
