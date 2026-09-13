@@ -6,7 +6,6 @@ from datetime import datetime
 import pandas as pd
 from Levenshtein import ratio
 
-
 def parse_args(desc=''):
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument(
@@ -279,7 +278,7 @@ def evaluate(y_true, y_pred, threshold=0.9):
 
             if ref_best_l_ratio >= threshold:
                 rtext_tp += 1
-                stext_matched.append(best_jdx)
+                rtext_matched.append(best_jdx)
                 # year
                 year_err_fl = None
                 if y_pred[idx]['references'][best_jdx]['year'] == r['year']:
