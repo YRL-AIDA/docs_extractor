@@ -36,11 +36,11 @@ def parse_args(desc=''):
         help='Backend of the model (MinerU)'
     )
     parser.add_argument(
-        '-g',
-        '--grobid_url',
+        '-l',
+        '--llm_url',
         type=str,
-        default='http://localhost:8070',
-        help='Grobid URL'
+        default='http://localhost:11434/api/generate',
+        help='LLM URL'
     )
     return parser.parse_args()
 
@@ -51,11 +51,12 @@ if __name__ == "__main__":
     output_dir = args.output_path
     path_to_model = args.model_path
     backend = args.backend
-    grobid_url = args.grobid_url
+    llm_url = args.llm_url
+    llm_model_name = "hf.co/ornith-ai/Ornith-1.5-9B-GGUF:Q5_K_M" # get name of model from ollama/api/tags
 
     file_name, _ext = os.path.splitext(os.path.basename(path_to_file))
 
     content_list = parse_doc([path_to_file], output_dir, backend=backend, model_path=path_to_model)
-    extractor = ArticleExtractor(pdf_path=path_to_file, grobid_url=grobid_url)
+    extractor = ArticleExtractor(pdf_path=path_to_file, model_name=llm_model_name, llm_url=llm_url)
     extractor.extract_from_article(content_list, output_dir, file_name)
     extractor.dump_to_json(output_dir)

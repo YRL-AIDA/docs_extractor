@@ -1,0 +1,164 @@
+header:
+  text: |
+    Извлеки из предложенного текста авторов, их аффилиации, email и ORCID, в формате json.
+    INPUT:
+      The response of flow duration curves to afforestation
+      Patrick N.J. Lanea,c,*, Alice E. Bestb,c,d, Klaus Hickelb,c, Lu Zhangb,c
+      aSchool of Forest and Ecosystem Studies, University of Melbourne, P.O. Box 137, Heidelberg, Victoria 3084, Australia
+      bCSIRO Division of Land and Water, Canberra, ACT, Australia
+      cCooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia
+      dDepartment of Civil and Environmental Engineering, University of Melbourne, Victoria, Australia
+      Received 1 October 2003; revised 22 December 2004; accepted 3 January 2005
+      * Corresponding author. Address: Forest Science Centre, Department of Sustainability and Environment, P.O. Box 137, Heidelberg, Vic.
+      3084, Australia. Tel.: C61 3 9450 8719; fax: C61 3 9450 8644.
+      E-mail address: patrickl@unimelb.edu.au (P.N.J. Lane).
+    OUTPUT:
+      [{
+      name: 'Patrick N.J. Lane',
+      affiliation: ['School of Forest and Ecosystem Studies, University of Melbourne, P.O. Box 137, Heidelberg, Victoria 3084, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia'],
+      email: 'patrickl@unimelb.edu.au',
+      ORCID: null
+      },
+      {
+      name: 'Alice E. Best',
+      affiliation: ['CSIRO Division of Land and Water, Canberra, ACT, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia', 'Department of Civil and Environmental Engineering, University of Melbourne, Victoria, Australia'],
+      email: null,
+      ORCID: null
+      },
+      {
+      name: 'Klaus Hickel',
+      affiliation: ['CSIRO Division of Land and Water, Canberra, ACT, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia'],
+      email: null,
+      ORCID: null
+      },
+      {
+      name: 'Lu Zhang',
+      affiliation: ['CSIRO Division of Land and Water, Canberra, ACT, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia'],
+      email: null,
+      ORCID: null
+      }
+      ]
+    INPUT:
+      STRUCTURED NEURAL SUMMARIZATION
+      Patrick Fernandes∗
+      Carnegie Mellon University & IT
+      Lisbon, Portugal
+      pfernand@cs.cmu.edu
+      Miltiadis Allamanis & Marc Brockschmidt
+      Microsoft Research
+      Cambridge, United Kingdom
+      {miallama,mabrocks}@microsoft.com
+      ∗Work done while working at Microsoft Research Cambridge
+    OUTPUT:
+      [{
+      name: 'Patrick Fernandes',
+      affiliation: ['Carnegie Mellon University & IT, Lisbon, Portugal'],
+      email: 'pfernand@cs.cmu.edu',
+      ORCID: null
+      },
+      {
+      name: 'Miltiadis Allamanis',
+      affiliation: ['Microsoft Research, Cambridge, United Kingdom'],
+      email: 'miallama@microsoft.com',
+      ORCID: null
+      },
+      {
+      name: 'Marc Brockschmidt',
+      affiliation: ['College of Engineering and Applied Sciences, University of Colorado, Colorado Springs'],
+      email: 'mabrocks@microsoft.com',
+      ORCID: null
+      }
+      ]
+    INPUT:
+      {{input_text}}
+    OUTPUT:
+references:
+  text: |
+    Извлеки из предложенного текста список литературы: разбей на отдельные источники, извлеки авторов, год, в формате JSON.
+    INPUT:
+    [1] Thomas B Afeni, Stephen K Osasan. Assessment of noise and ground vibration induced during
+    blasting operations in an open pit mine — A case study on Ewekoro limestone quarry, Nigeria.
+    Mining Science and Technology (China),
+    Volume 19, Issue 4, 2009, Pages 420-424, ISSN 1674-
+    5264. URL: https://doi.org/10.1016/S1674-5264(09)60078-8.
+    [2] Зыков В.С. Состояние вопроса по проблеме влияния промышленных взрывов при
+    открытой разработке угольных месторождений на охраняемые объекты и окружающую
+    среду. Вестник Научного центра ВостНИИ по промыш
+    ленной и эко-
+    логической безопасности, № 3, 2018. С. 51-56.
+    [3] Пименов И.К., Дементьев Н.А., Кузнецова А.Д. Оценка шума от взрывных работ в
+    карьере. // Защита от повышенного шума и вибрации. Сборник трудов Всероссийской
+    научно-практической конференции с международным участием. Под редакцией Н.И.
+    Иванова. Санкт-Петербург, 2021. С. 87–97.
+    [4] Карлтон П.Н., Фидлер Р.У. Определение положения источника сейсмических колебаний
+    методом пассивного эксперимента. В кн.
+    «Анализ и выделение сейсмических сигналов».
+    М.: «Мир». С.158-175.
+    [5] Странгуль О.Н., Тарасенко В.П. Корреляционно-экстремальные системы навигации и
+    локации подвижных объектов // Автоматика и телемеханика, № 7, 2001. С. 201–210
+    [6] W. Yu, T. Chen, F. Franchetti, and J. C. Hoe, “High performance stereo
+    vision designed for massively data parallel platforms,” Circuits and
+    Systems for Video Technology, IEEE Transactions on, vol. 20, pp. 1509
+    –1519, November 2010.
+    OUTPUT:
+    [
+      {
+          "id": 1,
+          "text": "Thomas B Afeni, Stephen K Osasan. Assessment of noise and ground vibration induced during blasting operations in an open pit mine -A case study on Ewekoro limestone quarry, Nigeria. Mining Science and Technology (China), Volume 19, Issue 4, 2009, Pages 420-424, ISSN 1674- 5264. URL: https://doi.org/10.1016/S1674-5264(09)60078-8.",
+          "authors": [
+              "Thomas B Afeni",
+              "Stephen K Osasan"
+          ],
+          "year": "2009"
+      },
+      {
+          "id": 2,
+          "text": "Зыков В.С. Состояние вопроса по проблеме влияния промышленных взрывов при открытой разработке угольных месторождений на охраняемые объекты и окружающую среду. Вестник Научного центра ВостНИИ по промышленной и экологической безопасности, № 3, 2018. С. 51-56.",
+          "authors": [
+              "Зыков В.С."
+          ],
+          "year": "2018"
+      },
+      {
+          "id": 3,
+          "text": "Пименов И.К., Дементьев Н.А., Кузнецова А.Д. Оценка шума от взрывных работ в карьере. // Защита от повышенного шума и вибрации. Сборник трудов Всероссийской научно-практической конференции с международным участием. Под редакцией Н.И. Иванова. Санкт-Петербург, 2021. С. 87-97.",
+          "authors": [
+              "Пименов И.К.",
+              "Дементьев Н.А.",
+              "Кузнецова А.Д."
+          ],
+          "year": "2021"
+      },
+      {
+          "id": 4,
+          "text": "Карлтон П.Н., Фидлер Р.У. Определение положения источника сейсмических колебаний методом пассивного эксперимента. В кн. «Анализ и выделение сейсмических сигналов». М.: «Мир». С.158-175.",
+          "authors": [
+              "Карлтон П.Н.",
+              "Фидлер Р.У."
+          ],
+          "year": null
+      },
+      {
+          "id": 5,
+          "text": "Странгуль О.Н., Тарасенко В.П. Корреляционно-экстремальные системы навигации и локации подвижных объектов // Автоматика и телемеханика, № 7, 2001. С. 201-210.",
+          "authors": [
+              "Странгуль О.Н.",
+              "Тарасенко В.П."
+          ],
+          "year": "2001"
+      },
+      {
+          "id": 6,
+          "text": "W. Yu, T. Chen, F. Franchetti, and J. C. Hoe, \\"High performance stereo vision designed for massively data parallel platforms,\\" Circuits and Systems for Video Technology, IEEE Transactions on, vol. 20, pp. 1509–1519, November 2010.",
+          "authors": [
+              "W. Yu",
+              "T. Chen",
+              "F. Franchetti",
+              "J. C. Hoe"
+          ],
+          "year": "2010"
+      }
+    ]
+    INPUT:
+      {{input_text}}
+    OUTPUT:

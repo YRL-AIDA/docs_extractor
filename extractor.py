@@ -6,17 +6,18 @@ from langdetect import detect
 from gliner import GLiNER
 
 from grobid_extractor import GrobidClient
+from llm_extractor import LLMExtractor, PromptType
 
-class sectionType(str, enum.Enum):
-    abstract = 'abstract'
-    introduction = 'introduction'
-    methods = 'methods'
-    results = 'results'
-    discussion = 'discussion'
-    colclusion = 'conclusion'
+class SectionType(str, enum.Enum):
+    ABSTRACT = 'abstract'
+    INTRODUCTION = 'introduction'
+    METHODS = 'methods'
+    RESULTS = 'results'
+    DISCUSSION = 'discussion'
+    CONCLUSION = 'conclusion'
 
 class ArticleExtractor:
-    def __init__(self, pdf_path, grobid_url = 'http://localhost:8070'):
+    def __init__(self, pdf_path, model_name, llm_url = 'http://localhost:11434/api/generate'):
         self.pdf_path = pdf_path
         self.file_name = None
         self.title = None
@@ -31,7 +32,10 @@ class ArticleExtractor:
         self.figures = None
         self.tables = None
 
-        self.grobid = GrobidClient(grobid_url=grobid_url)
+        self.llm_extractor = LLMExtractor(
+            url = llm_url,
+            model_name = model_name
+        )
 
     def extract_from_article(self, data, output_path, file_name):
         self.file_name = file_name
@@ -63,15 +67,17 @@ class ArticleExtractor:
                 break
 
         # поиск аннотации
-        end_abs_idx = 0
+        end_title_idx = 0
+        end_abs_idx = 1
         abstract = {
                         'title': 'Abstract',
                         'text': None,
-                        'type': sectionType.abstract,
+                        'type': SectionType.ABSTRACT,
                         'page_start': 0,
                         'page_end': 0
                     }
         abs_pattern = re.compile(r'аннотация|abstract', flags=re.I)
+        stop_fl = False
         for idx, block in enumerate(data):
             match = re.search(abs_pattern, block.get('text', ''))
             if match:
@@ -85,11 +91,14 @@ class ArticleExtractor:
                 abstract['page_start'] = block['page_idx']
                 for i in range(end_abs_idx, len(data)):
                     if data[i].get('text_level', -1) > 0 or re.search(kwords_pattern, data[i].get('text', '')):
+                        stop_fl = True
                         break
                     else:
                         end_abs_idx = i
                         abstract['text'] += data[i].get('text', '')
                         abstract['page_end'] = data[i]['page_idx']
+            if stop_fl:
+                break
 
         self.abstract = abstract['text']
         sections_list.append(abstract)
@@ -101,11 +110,24 @@ class ArticleExtractor:
         # обработка секций с первого заголовка после ключевых слов
         start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
 
-        # grobid: авторы и список литературы
-        self.authors, self.references = self.grobid.process_pdf(pdf_path=self.pdf_path)
+        header_text = ""
+        # от заголовка до начала аннотации
+        for idx in range(end_title_idx):
+            if data[idx]['type'] == 'list':
+                header_text += '\n'.join(data[idx]['list_items']) + '\n'
+            else:
+                header_text += data[idx].get('text', '') + '\n'
+        # footnote (может содержаться дополнительная информация по авторам)
+        for idx in range(end_abs_idx, len(data)):
+            if data[idx]['type'] == 'page_footnote':
+                header_text += data[idx].get('text', '')
+            if data[idx]['page_idx'] > 0:
+                break
+        self.authors = self.llm_extractor.extract(PromptType.HEADER, header_text)
 
         # поиск индексов ключевых точек статьи: приложение, список источников и т.д.
         end_section_idx = len(data)
+        end_refs_idx = len(data)
 
         start_app_idx = 131313
         app_pattern = re.compile(r'приложение|appendix', flags=re.I)
@@ -127,11 +149,22 @@ class ArticleExtractor:
                     self.acknowledgements = re.sub(ack_pattern, '', data[idx].get('text', '')).strip(' .:-—')
 
         start_refs_idx = 131313
-        refs_pattern = re.compile(r'список источников|список литературы|references', flags=re.I)
+        refs_pattern = re.compile(r'список источников|список литературы|литература|references', flags=re.I)
         for idx, title in enumerate(titles):
             match = re.search(refs_pattern, title[1])
             if match:
                 start_refs_idx = title[0]
+
+        # обработка списка литературы
+        references_text = ''
+        titles_idx = [x[0] for x in titles] + [start_app_idx, start_ack_idx, len(data)] # возможны заголовки, которые и закончат раздел
+        end_refs_idx = min([x for x in titles_idx if x > start_refs_idx])
+        for idx in range(start_refs_idx + 1, end_refs_idx):
+            if data[idx].get('sub_type', '') == 'ref_text':
+                references_text += '\n'.join(data[idx]['list_items']) + '\n'
+            elif data[idx]['type'] == 'ref_text':
+                references_text += data[idx].get('text', '')
+        self.references = self.llm_extractor.extract(PromptType.REFERENCES, references_text)
 
         end_section_idx = min(end_section_idx, start_ack_idx, start_app_idx, start_refs_idx)
 
