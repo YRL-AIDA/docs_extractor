@@ -6,3 +6,4 @@ model/gliner-pii
 output/*/images/
 json_processing.py
 .vscode/
+.ipynb_checkpoints/
