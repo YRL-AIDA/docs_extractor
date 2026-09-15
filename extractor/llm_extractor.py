@@ -10,7 +10,7 @@ class PromptType(str, enum.Enum):
     REFERENCES = 'references'
 
 class LLMExtractor:
-    def __init__(self, url, model_name, path_to_prompts = 'prompts.yaml'):
+    def __init__(self, url, model_name, path_to_prompts = 'data/prompts/prompts.yaml'):
         self.url = url
         self.model_name = model_name
         with open(path_to_prompts, 'r', encoding='utf-8') as f:

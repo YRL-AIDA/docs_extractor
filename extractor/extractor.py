@@ -5,8 +5,8 @@ import enum
 from langdetect import detect
 from gliner import GLiNER
 
-from grobid_extractor import GrobidClient
-from llm_extractor import LLMExtractor, PromptType
+from extractor.grobid_extractor import GrobidClient
+from extractor.llm_extractor import LLMExtractor, PromptType
 
 class SectionType(str, enum.Enum):
     ABSTRACT = 'abstract'

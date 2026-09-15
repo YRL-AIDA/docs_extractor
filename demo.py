@@ -2,8 +2,8 @@ import os
 import torch
 import argparse
 
-from extractor import ArticleExtractor
-from mineru_compact import parse_doc
+from extractor.extractor import ArticleExtractor
+from extractor.mineru_compact import parse_doc
 
 def parse_args(desc=''):
     parser = argparse.ArgumentParser(description=desc)
