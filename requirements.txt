@@ -1,5 +1,7 @@
 gliner
 langdetect
+json-repair
+pyyaml
 mineru[all]==2.7.3
 --extra-index-url https://download.pytorch.org/whl/cu128
 torch>=2.10.0
