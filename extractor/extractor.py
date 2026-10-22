@@ -51,11 +51,13 @@ class ArticleExtractor:
         sections_list = []
 
         # поиск ключевых слов
+        end_title_idx = 0
         end_kwords_idx = 0
         kwords_pattern = re.compile(r'(keywords|index terms|ключевые слова)', flags=re.I)
         for idx, block in enumerate(data):
             text = block.get('text', '')
             if re.search(kwords_pattern, text):
+                end_title_idx = idx
                 if block.get('text_level', -1) > 0:
                     temp_kwords = data[idx + 1].get('text', '').strip(' .:-—')
                     end_kwords_idx = idx + 1
@@ -67,7 +69,6 @@ class ArticleExtractor:
                 break
 
         # поиск аннотации
-        end_title_idx = 0
         end_abs_idx = 1
         abstract = {
                         'title': 'Abstract',
@@ -100,12 +101,35 @@ class ArticleExtractor:
             if stop_fl:
                 break
 
+        if abstract['text'] is None:
+            block_lst = []
+            end_abs_search_idx = 0
+            if end_kwords_idx != 0:
+                end_abs_search_idx = min([title[0] for idx, title in enumerate(titles) if title[0] > end_kwords_idx])
+            else:
+                for idx, block in enumerate(data):
+                    if block.get('page_idx', float('inf')) > 1:
+                        end_abs_search_idx = min(end_abs_search_idx, idx)
+            for idx in range(end_abs_search_idx):
+                    block_lst.append(data[idx])
+            abstract_text = json.dumps(block_lst, ensure_ascii=False, indent=4)
+            temp_abstract = self.llm_extractor.extract(PromptType.ABSTRACT, abstract_text)
+            abstract['text'] = temp_abstract['abstract']
+            if len(temp_abstract['index']) > 0:
+                start_abs_idx = temp_abstract['index'][0]
+                end_abs_idx = temp_abstract['index'][-1]
+            else:
+                start_abs_idx = None
+                end_abs_idx = None
+            abstract['page_start'] = data[start_abs_idx]['page_idx']
+            abstract['page_end'] = data[end_abs_idx]['page_idx']
+
         self.abstract = abstract['text']
         sections_list.append(abstract)
-        self.language = detect(abstract['text'].split('.')[0])
+        self.language = detect(abstract['text']) if abstract['text'] is not None else None
 
         # извлечение заголовка (первый заголовок перед аннотацией)
-        self.title = data[max([idx for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
+        self.title = data[max([title[0] for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
 
         # обработка секций с первого заголовка после ключевых слов
         start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
@@ -135,6 +159,7 @@ class ArticleExtractor:
             match = re.search(app_pattern, title[1])
             if match:
                 start_app_idx = title[0]
+                break
 
         start_ack_idx = 131313
         ack_pattern = re.compile(r'благодарности|acknowledgements|acknowledgments', flags=re.I)
@@ -147,13 +172,15 @@ class ArticleExtractor:
                     self.acknowledgements = data[idx + 1].get('text', '')
                 else:
                     self.acknowledgements = re.sub(ack_pattern, '', data[idx].get('text', '')).strip(' .:-—')
+                break
 
         start_refs_idx = 131313
-        refs_pattern = re.compile(r'список источников|список литературы|литература|references', flags=re.I)
+        refs_pattern = re.compile(r'список источников|список литературы|литература|список использованных источников|библиографический список|references', flags=re.I)
         for idx, title in enumerate(titles):
             match = re.search(refs_pattern, title[1])
             if match:
                 start_refs_idx = title[0]
+                break
 
         # обработка списка литературы
         references_text = ''
@@ -165,41 +192,6 @@ class ArticleExtractor:
             elif data[idx]['type'] == 'ref_text':
                 references_text += data[idx].get('text', '')
         self.references = self.llm_extractor.extract(PromptType.REFERENCES, references_text)
-
-        end_section_idx = min(end_section_idx, start_ack_idx, start_app_idx, start_refs_idx)
-
-        # обработка секций
-        section_flag = False
-        section = {
-            'title': None,
-            'text': [],
-            'type': None,
-            'page_start': None,
-            'page_end': None
-        }
-        for idx in range(start_section_idx, end_section_idx):
-            if section_flag and data[idx].get('text_level', -1) != 1:
-                if data[idx]['type'] in ['text', 'equation']:
-                    section['text'].append(data[idx].get('text', ''))
-                elif data[idx].get('sub_type', None) == 'text':
-                    section['text'].append(data[idx].get('list_items', ''))
-                elif data[idx]['type'] == 'code':
-                    section['text'].append(data[idx].get('code_body', ''))
-                section['page_end'] = data[idx]['page_idx']
-
-            if data[idx].get('text_level', -1) == 1:
-                if section_flag:
-                    sections_list.append(section)
-                section = {
-                    'title': data[idx].get('text', ''),
-                    'text': [],
-                    'type': None,
-                    'page_start': data[idx]['page_idx'],
-                    'page_end': data[idx]['page_idx']
-                }
-                section_flag = True
-        sections_list.append(section)
-        self.sections = sections_list
 
         # обработка визуальных элементов
         ## иллюстрации
@@ -219,10 +211,12 @@ class ArticleExtractor:
 
                 img_path = []
                 img_path.append(data[idx]['img_path'])
+                data[idx]['link'] = figure['id']
                 if len(data[idx].get('image_caption', '')) == 0:
                     for jdx in range(idx + 1, len(data)):
                         idx = jdx
                         if data[jdx]['type'] == 'image':
+                            data[jdx]['link'] = figure['id']
                             img_path.append(data[jdx].get('img_path', ''))
                             if len(data[jdx].get('image_caption', '')) != 0:
                                 figure['caption'] = data[jdx].get('image_caption', None)
@@ -252,6 +246,68 @@ class ArticleExtractor:
             }
             tables_list.append(table)
         self.tables = tables_list
+
+        end_section_idx = min(end_section_idx, start_ack_idx, start_app_idx, start_refs_idx)
+
+        # обработка секций
+        section_flag = False
+        section = {
+            'title': None,
+            'text': [],
+            'type': None,
+            'page_start': None,
+            'page_end': None
+        }
+        table_counter = 0
+        for idx in range(start_section_idx, end_section_idx):
+            if section_flag and data[idx].get('text_level', -1) != 1:
+                if data[idx]['type'] in ['text', 'equation']:
+                    paragraph = {
+                        'type': data[idx]['type'],
+                        'value': data[idx].get('text', '')
+                    }
+                    section['text'].append(paragraph)
+                elif data[idx].get('sub_type', None) == 'text':
+                    paragraph = {
+                        'type': 'list',
+                        'value': data[idx].get('list_items', '')
+                    }
+                    section['text'].append(paragraph)
+                elif data[idx]['type'] == 'code':
+                    paragraph = {
+                        'type': data[idx]['type'],
+                        'value': data[idx].get('code_body', '')
+                    }
+                    section['text'].append(paragraph)
+                elif data[idx]['type'] == 'image':
+                    paragraph = {
+                        'type': 'figure',
+                        'value': data[idx].get('link', None)
+                    }
+                    if paragraph not in section['text']:
+                        section['text'].append(paragraph)
+                elif data[idx]['type'] == 'table':
+                    table_counter += 1
+                    paragraph = {
+                        'type': 'table',
+                        'value': table_counter
+                    }
+                    section['text'].append(paragraph)
+                section['page_end'] = data[idx]['page_idx']
+
+            if data[idx].get('text_level', -1) == 1:
+                if section_flag:
+                    sections_list.append(section)
+                section = {
+                    'title': data[idx].get('text', ''),
+                    'text': [],
+                    'type': None,
+                    'page_start': data[idx]['page_idx'],
+                    'page_end': data[idx]['page_idx']
+                }
+                section_flag = True
+        sections_list.append(section)
+        self.sections = sections_list
 
         print(f'-- {self.file_name} is done!')
 

@@ -8,6 +8,7 @@ import yaml
 class PromptType(str, enum.Enum):
     HEADER = 'header'
     REFERENCES = 'references'
+    ABSTRACT = 'abstract'
 
 class LLMExtractor:
     def __init__(self, url, model_name, path_to_prompts = 'data/prompts/prompts.yaml'):
