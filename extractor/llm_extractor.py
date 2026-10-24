@@ -17,8 +17,8 @@ class LLMExtractor:
         with open(path_to_prompts, 'r', encoding='utf-8') as f:
             self.prompts = yaml.safe_load(f)
 
-    def extract(self, type, text):
-        prompt = self.prompts[type]['text'].replace('{{input_text}}', text)
+    def extract(self, type, text, language):
+        prompt = self.prompts[type]['text'].replace('{{input_text}}', text).replace('{{language}}', language)
         output = self._send_request(prompt)
         return output
 

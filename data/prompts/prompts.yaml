@@ -1,6 +1,7 @@
 header:
   text: |
-    Извлеки из предложенного текста авторов, их аффилиации, email и ORCID, в формате json.
+    Извлеки из предложенного текста названиеавторов (ФИО), их аффилиации (организации), email, ORCID и благодарности (информацию о поддержке, гранте, госзаказе: "Работа выполнена при поддержке...") в формате json.
+    Язык статьи: {{language}}
     INPUT:
       The response of flow duration curves to afforestation
       Patrick N.J. Lanea,c,*, Alice E. Bestb,c,d, Klaus Hickelb,c, Lu Zhangb,c
@@ -13,7 +14,9 @@ header:
       3084, Australia. Tel.: C61 3 9450 8719; fax: C61 3 9450 8644.
       E-mail address: patrickl@unimelb.edu.au (P.N.J. Lane).
     OUTPUT:
-      [{
+      {
+      title: 'The response of flow duration curves to afforestation',
+      authors: [{
       name: 'Patrick N.J. Lane',
       affiliation: ['School of Forest and Ecosystem Studies, University of Melbourne, P.O. Box 137, Heidelberg, Victoria 3084, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia'],
       email: 'patrickl@unimelb.edu.au',
@@ -36,8 +39,9 @@ header:
       affiliation: ['CSIRO Division of Land and Water, Canberra, ACT, Australia', 'Cooperative Research Centre for Catchment Hydrology, Canberra, ACT, Australia'],
       email: null,
       ORCID: null
+      }],
+      acknowledgements: None
       }
-      ]
     INPUT:
       STRUCTURED NEURAL SUMMARIZATION
       Patrick Fernandes∗
@@ -48,9 +52,12 @@ header:
       Microsoft Research
       Cambridge, United Kingdom
       {miallama,mabrocks}@microsoft.com
+      The paper was prepared with the support of the Russian Foundation for Basic Research (project 18-07-00567).
       ∗Work done while working at Microsoft Research Cambridge
     OUTPUT:
-      [{
+      {
+      title: 'STRUCTURED NEURAL SUMMARIZATION'
+      authors: [{
       name: 'Patrick Fernandes',
       affiliation: ['Carnegie Mellon University & IT, Lisbon, Portugal'],
       email: 'pfernand@cs.cmu.edu',
@@ -67,14 +74,16 @@ header:
       affiliation: ['College of Engineering and Applied Sciences, University of Colorado, Colorado Springs'],
       email: 'mabrocks@microsoft.com',
       ORCID: null
+      }],
+      acknowledgements: 'The paper was prepared with the support of the Russian Foundation for Basic Research (project 18-07-00567).'
       }
-      ]
     INPUT:
       {{input_text}}
     OUTPUT:
 references:
   text: |
     Извлеки из предложенного текста список литературы: разбей на отдельные источники, извлеки авторов, год, в формате JSON.
+    Язык статьи: {{language}}
     INPUT:
     [1] Thomas B Afeni, Stephen K Osasan. Assessment of noise and ground vibration induced during
     blasting operations in an open pit mine — A case study on Ewekoro limestone quarry, Nigeria.
@@ -173,7 +182,8 @@ abstract:
     - названия журналов, год, рубрику, УДК, DOI, номер страницы
     - ключевые слова
     - авторов и заголовок
-    Если аннотации нет, то вместо текста сделай None, а массив индексов оставь пустым.
+    Если аннотации нет, то вместо текста сделай null, а массив индексов оставь пустым.
+    Язык статьи: {{language}}
     OUTPUT:
     {
     "abstract": "*полный текст аннотации*",
