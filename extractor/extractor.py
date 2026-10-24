@@ -8,6 +8,40 @@ from gliner import GLiNER
 from extractor.grobid_extractor import GrobidClient
 from extractor.llm_extractor import LLMExtractor, PromptType
 
+
+pattern = {
+    'kword': {
+        'ru': r'ключевые слова',
+        'en': r'keywords|index terms',
+        None: r'ключевые слова|keywords|index terms'
+    },
+    'abs': {
+        'ru': r'аннотация',
+        'en': r'abstract',
+        None: r'аннотация|abstract'
+    },
+    'app': {
+        'ru': r'приложение',
+        'en': r'appendix',
+        None: r'приложение|appendix'
+    },
+    'ack': {
+        'ru': r'благодарности',
+        'en': r'acknowledgements|acknowledgments',
+        None: r'благодарности|acknowledgements|acknowledgments'
+    },
+    'refs': {
+        'ru': r'список источников|список литературы|литература|список использованных источников|библиографический список',
+        'en': r'references',
+        None: r'список источников|список литературы|литература|список использованных источников|библиографический список|references'
+    },
+    'authors': {
+        'ru': r'об авторах|сведения об авторах',
+        'en': r'about the authors|note on authors|contributors',
+        None: r'об авторах|сведения об авторах|about the authors|note on authors|contributors'
+    },
+}
+
 class SectionType(str, enum.Enum):
     ABSTRACT = 'abstract'
     INTRODUCTION = 'introduction'
@@ -17,6 +51,7 @@ class SectionType(str, enum.Enum):
     CONCLUSION = 'conclusion'
 
 class ArticleExtractor:
+
     def __init__(self, pdf_path, model_name, llm_url = 'http://localhost:11434/api/generate'):
         self.pdf_path = pdf_path
         self.file_name = None
@@ -53,7 +88,7 @@ class ArticleExtractor:
         # поиск ключевых слов
         end_title_idx = 0
         end_kwords_idx = 0
-        kwords_pattern = re.compile(r'(keywords|index terms|ключевые слова)', flags=re.I)
+        kwords_pattern = re.compile(pattern["kword"][self.language], flags=re.I)
         for idx, block in enumerate(data):
             text = block.get('text', '')
             if re.search(kwords_pattern, text):
@@ -71,13 +106,13 @@ class ArticleExtractor:
         # поиск аннотации
         end_abs_idx = 1
         abstract = {
-                        'title': 'Abstract',
-                        'text': None,
-                        'type': SectionType.ABSTRACT,
-                        'page_start': 0,
-                        'page_end': 0
-                    }
-        abs_pattern = re.compile(r'аннотация|abstract', flags=re.I)
+            'title': 'Abstract',
+            'text': None,
+            'type': SectionType.ABSTRACT,
+            'page_start': 0,
+            'page_end': 0
+        }
+        abs_pattern = re.compile(pattern["abs"][None], flags=re.I)
         stop_fl = False
         for idx, block in enumerate(data):
             match = re.search(abs_pattern, block.get('text', ''))
@@ -113,7 +148,7 @@ class ArticleExtractor:
             for idx in range(end_abs_search_idx):
                     block_lst.append(data[idx])
             abstract_text = json.dumps(block_lst, ensure_ascii=False, indent=4)
-            temp_abstract = self.llm_extractor.extract(PromptType.ABSTRACT, abstract_text)
+            temp_abstract = self.llm_extractor.extract(type=PromptType.ABSTRACT, text=abstract_text, language='None')
             abstract['text'] = temp_abstract['abstract']
             if len(temp_abstract['index']) > 0:
                 start_abs_idx = temp_abstract['index'][0]
@@ -126,35 +161,16 @@ class ArticleExtractor:
 
         self.abstract = abstract['text']
         sections_list.append(abstract)
-        self.language = detect(abstract['text']) if abstract['text'] is not None else None
-
-        # извлечение заголовка (первый заголовок перед аннотацией)
-        self.title = data[max([title[0] for idx, title in enumerate(titles) if title[0] < end_title_idx])].get('text', '')
-
-        # обработка секций с первого заголовка после ключевых слов
-        start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
-
-        header_text = ""
-        # от заголовка до начала аннотации
-        for idx in range(end_title_idx):
-            if data[idx]['type'] == 'list':
-                header_text += '\n'.join(data[idx]['list_items']) + '\n'
-            else:
-                header_text += data[idx].get('text', '') + '\n'
-        # footnote (может содержаться дополнительная информация по авторам)
-        for idx in range(end_abs_idx, len(data)):
-            if data[idx]['type'] == 'page_footnote':
-                header_text += data[idx].get('text', '')
-            if data[idx]['page_idx'] > 0:
-                break
-        self.authors = self.llm_extractor.extract(PromptType.HEADER, header_text)
+        if abstract['text'] is not None:
+            temp_lang = detect(abstract['text'])
+            self.language = temp_lang if temp_lang in ('ru', 'en') else None
 
         # поиск индексов ключевых точек статьи: приложение, список источников и т.д.
         end_section_idx = len(data)
         end_refs_idx = len(data)
 
         start_app_idx = 131313
-        app_pattern = re.compile(r'приложение|appendix', flags=re.I)
+        app_pattern = re.compile(pattern['app'][self.language], flags=re.I)
         for idx, title in enumerate(titles):
             match = re.search(app_pattern, title[1])
             if match:
@@ -162,7 +178,7 @@ class ArticleExtractor:
                 break
 
         start_ack_idx = 131313
-        ack_pattern = re.compile(r'благодарности|acknowledgements|acknowledgments', flags=re.I)
+        ack_pattern = re.compile(pattern['ack'][self.language], flags=re.I)
         for idx, block in enumerate(data):
             match = re.search(ack_pattern, block.get('text', ''))
             if match:
@@ -175,7 +191,7 @@ class ArticleExtractor:
                 break
 
         start_refs_idx = 131313
-        refs_pattern = re.compile(r'список источников|список литературы|литература|список использованных источников|библиографический список|references', flags=re.I)
+        refs_pattern = re.compile(pattern['refs'][self.language], flags=re.I)
         for idx, title in enumerate(titles):
             match = re.search(refs_pattern, title[1])
             if match:
@@ -186,12 +202,99 @@ class ArticleExtractor:
         references_text = ''
         titles_idx = [x[0] for x in titles] + [start_app_idx, start_ack_idx, len(data)] # возможны заголовки, которые и закончат раздел
         end_refs_idx = min([x for x in titles_idx if x > start_refs_idx])
+        temp_refs_idx = 0 # фактический конец списка источников (в цикле уточнится как последний добавленный элемент)
         for idx in range(start_refs_idx + 1, end_refs_idx):
             if data[idx].get('sub_type', '') == 'ref_text':
                 references_text += '\n'.join(data[idx]['list_items']) + '\n'
+                temp_refs_idx = idx
             elif data[idx]['type'] == 'ref_text':
                 references_text += data[idx].get('text', '')
-        self.references = self.llm_extractor.extract(PromptType.REFERENCES, references_text)
+                temp_refs_idx = idx
+        end_refs_idx = temp_refs_idx
+        self.references = self.llm_extractor.extract(type=PromptType.REFERENCES, text=references_text, language=self.language)
+
+        # маркировка блоков на иностранном для статьи языке
+        email_orcid_pattern = re.compile(r'([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,7}|\d{4}-\d{4}-\d{4}-\d{4})', flags=re.I) # дополнительная информация, которая нужна (независимо от языка)
+        if self.language is not None:
+            for block in data:
+                # обработка первых двух страниц (название, аннотация, ключевые слова)
+                if block['page_idx'] >= 2:
+                    break
+                temp_text = ''
+                block_lang = None
+                if block['type'] == 'text':
+                    temp_text += block.get('text', 'empty')
+                elif block.get('sub_type', '') == 'text':
+                    temp_text += ' '.join(block.get('list_items', []))
+                if len(temp_text) != 0 and not re.search(email_orcid_pattern, temp_text):
+                    try:
+                        block_lang = detect(temp_text)
+                        if block_lang != self.language and block_lang != 'bg': # иногда путает ru с bg
+                            block['skip'] = True
+                    except Exception as e:
+                        print('Ошибка перевода: ', e)
+
+            # все, что после списка источников
+            for idx in range(end_refs_idx, len(data)):
+                temp_text = ''
+                block_lang = None
+                if data[idx]['type'] in ('text', 'ref_text'):
+                    temp_text += data[idx].get('text', 'empty')
+                elif data[idx].get('sub_type', '') in ('text', 'ref_text'):
+                    temp_text += ' '.join(data[idx].get('list_items', []))
+                if len(temp_text) != 0 and not re.search(email_orcid_pattern, temp_text):
+                    try:
+                        block_lang = detect(temp_text)
+                        if block_lang != self.language and block_lang != 'bg':
+                            data[idx]['skip'] = True
+                    except Exception as e:
+                        print('Ошибка перевода: ', e)
+
+        # извлечение заголовка (первый заголовок перед аннотацией
+        temp_title = None
+        for idx in range(end_title_idx):
+            if not data[idx].get('skip', False) and data[idx].get('text_level', None) == 1:
+                temp_title = data[idx]['text']
+        self.title = temp_title
+
+
+        # обработка секций с первого заголовка после ключевых слов
+        start_section_idx = max(end_kwords_idx, end_abs_idx) + 1
+
+        header_text = ''
+        # от заголовка до начала аннотации
+        for idx in range(end_title_idx):
+            if data[idx]['type'] == 'list':
+                header_text += '\n'.join(data[idx]['list_items']) + '\n'
+            else:
+                header_text += data[idx].get('text', '') + '\n'
+        # footnote (может содержаться дополнительная информация по авторам)
+        for idx in range(end_abs_idx, len(data)):
+            if data[idx]['type'] == 'page_footnote':
+                header_text += data[idx].get('text', '')
+            if data[idx]['page_idx'] > 0:
+                break
+
+        # об авторах (дополнительный блок в конце статьи)
+        authors_pattern = re.compile(pattern["authors"][self.language], flags=re.I)
+        temp_authors_text = ''
+        if end_refs_idx + 1 != len(data): # если список литературы не является последним, что есть в статье
+            for idx in range(end_refs_idx + 1, len(data)):
+                if not data[idx].get('skip', False):
+                    if data[idx]['type'] == 'list':
+                        temp_authors_text += '\n'.join(data[idx]['list_items'])
+                    if data[idx]['type'] in ('text', 'ref_text'):
+                        temp_authors_text += data[idx]['text']
+                if data[idx].get('text_level', 0) == 1 and re.search(authors_pattern, data[idx].get('text', '')):
+                    temp_authors_text = ''
+        header_text += temp_authors_text
+
+        temp_header = self.llm_extractor.extract(type=PromptType.HEADER, text=header_text, language=self.language)
+        self.authors = temp_header['authors']
+        if temp_header['title'] is not None or temp_header['title'] != '':
+            self.title = temp_header['title']
+        if self.acknowledgements is None:
+            self.acknowledgements = temp_header['acknowledgements']
 
         # обработка визуальных элементов
         ## иллюстрации
@@ -260,7 +363,7 @@ class ArticleExtractor:
         }
         table_counter = 0
         for idx in range(start_section_idx, end_section_idx):
-            if section_flag and data[idx].get('text_level', -1) != 1:
+            if section_flag and data[idx].get('text_level', -1) != 1 and not data[idx].get('skip', False):
                 if data[idx]['type'] in ['text', 'equation']:
                     paragraph = {
                         'type': data[idx]['type'],
@@ -295,7 +398,7 @@ class ArticleExtractor:
                     section['text'].append(paragraph)
                 section['page_end'] = data[idx]['page_idx']
 
-            if data[idx].get('text_level', -1) == 1:
+            if data[idx].get('text_level', -1) == 1 and not data[idx].get('skip', False):
                 if section_flag:
                     sections_list.append(section)
                 section = {
