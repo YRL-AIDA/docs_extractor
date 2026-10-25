@@ -229,7 +229,7 @@ class ArticleExtractor:
                 if len(temp_text) != 0 and not re.search(email_orcid_pattern, temp_text):
                     try:
                         block_lang = detect(temp_text)
-                        if block_lang != self.language and block_lang != 'bg': # иногда путает ru с bg
+                        if block_lang != self.language and block_lang not in ('bg', 'mk'): # иногда путает ru с bg
                             block['skip'] = True
                     except Exception as e:
                         print('Ошибка перевода: ', e)
@@ -245,7 +245,7 @@ class ArticleExtractor:
                 if len(temp_text) != 0 and not re.search(email_orcid_pattern, temp_text):
                     try:
                         block_lang = detect(temp_text)
-                        if block_lang != self.language and block_lang != 'bg':
+                        if block_lang != self.language and block_lang not in ('bg', 'mk'):
                             data[idx]['skip'] = True
                     except Exception as e:
                         print('Ошибка перевода: ', e)
@@ -353,17 +353,16 @@ class ArticleExtractor:
         end_section_idx = min(end_section_idx, start_ack_idx, start_app_idx, start_refs_idx)
 
         # обработка секций
-        section_flag = False
         section = {
             'title': None,
             'text': [],
             'type': None,
-            'page_start': None,
+            'page_start': data[start_section_idx]['page_idx'],
             'page_end': None
         }
         table_counter = 0
         for idx in range(start_section_idx, end_section_idx):
-            if section_flag and data[idx].get('text_level', -1) != 1 and not data[idx].get('skip', False):
+            if data[idx].get('text_level', -1) != 1 and not data[idx].get('skip', False):
                 if data[idx]['type'] in ['text', 'equation']:
                     paragraph = {
                         'type': data[idx]['type'],
@@ -399,7 +398,8 @@ class ArticleExtractor:
                 section['page_end'] = data[idx]['page_idx']
 
             if data[idx].get('text_level', -1) == 1 and not data[idx].get('skip', False):
-                if section_flag:
+                print(data[idx].get('text', ''))
+                if len(section['text']) != 0:
                     sections_list.append(section)
                 section = {
                     'title': data[idx].get('text', ''),
@@ -408,7 +408,6 @@ class ArticleExtractor:
                     'page_start': data[idx]['page_idx'],
                     'page_end': data[idx]['page_idx']
                 }
-                section_flag = True
         sections_list.append(section)
         self.sections = sections_list
 
