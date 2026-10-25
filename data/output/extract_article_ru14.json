@@ -1,0 +1,692 @@
+{
+    "title": "Closures and generating sets related to combinations of structures",
+    "authors": [
+        {
+            "name": "S. V. Sudoplatov",
+            "affiliation": [
+                "Sobolev Institute of Mathematics, Novosibirsk State Technical University, Novosibirsk State University, Institute of Mathematics and Mathematical Modeling"
+            ],
+            "email": "sudoplat@math.nsc.ru",
+            "ORCID": null
+        }
+    ],
+    "abstract": "Abstract. We investigate closure operators and describe their properties for $E$ -combinations and $P$ -combinations of structures and their theories including the negation of finite character and the exchange property. It is shown that closure operators for $E$ -combinations correspond to the closures with respect to the ultraproduct operator forming Hausdorff topological spaces. It is also shown that closure operators for disjoint $P$ -combinations form topological $T _ { 0 }$ -spaces, which can be not Hausdorff. Thus topologies for $E$ -combinations and $P$ -combinations are rather different. We prove, for $E$ -combinations, that the existence of a minimal generating set of theories is equivalent to the existence of the least generating set, and characterize syntactically and semantically the property of the existence of the least generating set: it is shown that elements of the least generating set are isolated and dense in its $E$ -closure. Related properties for $P$ -combinations are considered: it is proved that again the existence of a minimal generating set of theories is equivalent to the existence of the least generating set but it is not equivalent to the isolation of elements in the generating set. It is shown that $P$ -closures with the least generating sets are connected with families which are not $\\omega$ -reconstructible, as well as with families having finite $e$ -spectra. Two questions on the least generating sets for $E$ -combinations and $P$ -combinations are formulated and partial answers are suggested. ",
+    "keywords": [
+        "$E$ -combination",
+        "$P$ -combination",
+        "closure operator",
+        "generating set"
+    ],
+    "language": "en",
+    "sections": [
+        {
+            "title": "Abstract",
+            "text": "Abstract. We investigate closure operators and describe their properties for $E$ -combinations and $P$ -combinations of structures and their theories including the negation of finite character and the exchange property. It is shown that closure operators for $E$ -combinations correspond to the closures with respect to the ultraproduct operator forming Hausdorff topological spaces. It is also shown that closure operators for disjoint $P$ -combinations form topological $T _ { 0 }$ -spaces, which can be not Hausdorff. Thus topologies for $E$ -combinations and $P$ -combinations are rather different. We prove, for $E$ -combinations, that the existence of a minimal generating set of theories is equivalent to the existence of the least generating set, and characterize syntactically and semantically the property of the existence of the least generating set: it is shown that elements of the least generating set are isolated and dense in its $E$ -closure. Related properties for $P$ -combinations are considered: it is proved that again the existence of a minimal generating set of theories is equivalent to the existence of the least generating set but it is not equivalent to the isolation of elements in the generating set. It is shown that $P$ -closures with the least generating sets are connected with families which are not $\\omega$ -reconstructible, as well as with families having finite $e$ -spectra. Two questions on the least generating sets for $E$ -combinations and $P$ -combinations are formulated and partial answers are suggested. ",
+            "type": "abstract",
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "1. Introduction and preliminaries ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Topological aspects related to model theoretic problems are investigated in a series of papers [1; 7; 8; 9; 10; 13; 14]. At present paper we study "
+                },
+                {
+                    "type": "text",
+                    "value": "structural properties of $E$ -combinations and $P$ -combinations of structures and their theories [15] from the topological viewpoint. "
+                },
+                {
+                    "type": "text",
+                    "value": "In Section 2, using the $E$ -operators and $P$ -operators we introduce topologies (related to topologies in [1]) and investigate their properties. "
+                },
+                {
+                    "type": "text",
+                    "value": "In Section 3, we prove, for $E$ -combinations, that the existence of a minimal generating set of theories is equivalent to the existence of the least generating set, and characterize syntactically and semantically the property of the existence of the least generating set. Related properties for $P$ -combinations are considered. "
+                },
+                {
+                    "type": "text",
+                    "value": "Throughout the paper we use the following terminology in [15]. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 1. Let $P = ( P _ { i } ) _ { i \\in I }$ , be a family of nonempty unary predicates, $( { \\mathcal { A } } _ { i } ) _ { i \\in I }$ be a family of structures such that $P _ { i }$ is the universe of $\\mathbf { \\mathcal { A } } _ { i }$ , $i \\in I$ , and the symbols $P _ { i }$ are disjoint with languages for the structures $A _ { j }$ , $j \\in I$ . The structure AP \u0005 - Ai expanded by the predicates $\\mathcal { A } _ { P }  \\bigcup _ { i \\in I } \\mathcal { A } _ { i }$ $P _ { i }$ is the $P$ -union of the structures $\\mathbf { \\mathcal { A } } _ { i }$ , and the operator mapping $( { \\mathcal { A } } _ { i } ) _ { i \\in I }$ to $A _ { P }$ is the $P$ - operator. The structure $\\mathcal { A } _ { P }$ is called the $P$ -combination of the structures $\\mathcal { A } _ { i }$ and denoted by $\\operatorname { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ if $\\mathcal { A } _ { i } = ( \\mathcal { A } _ { P } \\cap A _ { i } ) \\subset \\Sigma ( \\mathcal { A } _ { i } )$ , $i \\in I$ . Structures $\\mathcal { A } ^ { \\prime }$ , which are elementary equivalent to $\\operatorname { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , will be also considered as $P$ -combinations. "
+                },
+                {
+                    "type": "text",
+                    "value": "Clearly, all structures $\\mathcal { A } ^ { \\prime } \\equiv \\mathrm { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ are represented as unions of their restrictions $\\mathcal { A } _ { i } ^ { \\prime } = ( \\mathcal { A } ^ { \\prime } \\ \\backslash \\ P _ { i } ) \\ \\ u { \\mid } \\ \\Sigma ( \\mathcal { A } _ { i } )$ if and only if the set $p _ { \\infty } ( x ) =$ $\\{ \\neg P _ { i } ( x ) \\mid i \\in I \\}$ is inconsistent. If $\\mathcal { A } ^ { \\prime } \\not = \\mathrm { C o m b } _ { P } ( \\mathcal { A } _ { i } ^ { \\prime } ) _ { i \\in { I } }$ , we write $\\mathcal { A } ^ { \\prime } =$ $\\mathrm { C o m b } _ { P } ( \\mathcal { A } _ { i } ^ { \\prime } ) _ { i \\in I \\cup \\{ \\infty \\} }$ , where $\\mathcal { A } _ { \\infty } ^ { \\prime } = \\mathcal { A } ^ { \\prime } \\uparrow \\bigcap _ { i \\in I } \\overline { { P } } _ { i }$ , maybe applying Morleyzation. Moreover, we write $\\mathrm { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I \\cup \\{ \\infty \\} }$ for $\\operatorname { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ with the empty structure $A _ { \\infty }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Note that if all predicates $P _ { i }$ are disjoint, a structure $A _ { P }$ is a $P$ -combination and a disjoint union of structures $A _ { i }$ . In this case the $P$ -combination $\\mathcal { A } _ { P }$ is called disjoint. Clearly, for any disjoint $P$ -combination $\\mathcal { A } _ { P }$ , $\\mathrm { T h } ( \\mathcal { A } _ { P } ) =$ $\\mathrm { T h } ( { \\cal A } _ { P } ^ { \\prime } )$ , where $A _ { P } ^ { \\prime }$ is obtained from $\\mathcal { A } _ { P }$ replacing $\\mathcal { A } _ { i }$ by pairwise disjoint $\\mathcal { A } _ { i } ^ { \\prime } \\equiv \\mathcal { A } _ { i }$ , $i \\in I$ . Thus, in this case, similar to structures the $P$ -operator works for the theories $T _ { i } = \\mathrm { T h } ( \\mathcal { A } _ { i } )$ producing the theory $T _ { P } = \\mathrm { T h } ( \\mathcal { A } _ { P } )$ , which is denoted by $\\operatorname { C o m b } _ { P } ( T _ { i } ) _ { i \\in I }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 2. For an equivalence relation $E$ replacing disjoint predicates $P _ { i }$ by $E$ -classes we get the structure $\\boldsymbol { \\mathcal { A } } _ { E }$ being the $E$ -union of the structures $\\mathbf { \\mathcal { A } } _ { i }$ . In this case the operator mapping $( { \\mathcal { A } } _ { i } ) _ { i \\in I }$ to $\\boldsymbol { \\mathcal { A } } _ { E }$ is the $E$ -operator. The structure $\\boldsymbol { \\mathcal { A } } _ { E }$ is also called the $E$ -combination of the structures $\\mathbf { \\mathcal { A } } _ { i }$ and denoted by $\\operatorname { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ ; here $\\mathcal { A } _ { i } = ( \\mathcal { A } _ { E } \\ \\backslash \\ A _ { i } ) \\ \\ u { \\mid } \\ \\Sigma ( \\mathcal { A } _ { i } )$ , $i \\in I$ . Similar above, structures $\\mathcal { A } ^ { \\prime }$ , which are elementary equivalent to $\\boldsymbol { \\mathcal { A } } _ { E }$ , are denoted by $\\operatorname { C o m b } _ { E } ( \\mathcal { A } _ { j } ^ { \\prime } ) _ { j \\in J }$ , where $A _ { j } ^ { \\prime }$ are restrictions of $\\mathcal { A } ^ { \\prime }$ to its $E$ -classes. "
+                },
+                {
+                    "type": "text",
+                    "value": "Clearly, $\\mathcal { A } ^ { \\prime } \\equiv \\mathcal { A } _ { P }$ realizing $p _ { \\infty } ( x )$ is not elementary embeddable into $\\mathcal { A } _ { P }$ and can not be represented as a disjoint $P$ -combination of $A _ { i } ^ { \\prime } \\equiv A _ { i }$ , "
+                },
+                {
+                    "type": "text",
+                    "value": "$i \\in I$ . At the same time, there are $E$ -combinations such that all $\\mathcal { A } ^ { \\prime } \\equiv$ $\\boldsymbol { \\mathcal { A } } _ { E }$ can be represented as $E$ -combinations of some $A _ { j } ^ { \\prime } \\equiv A _ { i }$ . We call this representability of $\\mathcal { A } ^ { \\prime }$ to be the $E$ -representability. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 3. If there is $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { E }$ which is not $E$ -representable, we have the $E ^ { \\prime }$ -representability replacing $E$ by $E ^ { \\prime }$ such that $E ^ { \\prime }$ is obtained from $E$ adding equivalence classes with models for all theories $T$ , where $T$ is a theory of a restriction $\\boldsymbol { B }$ of a structure $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { E }$ to some $E$ -class and $\\boldsymbol { B }$ is not elementary equivalent to the structures $A _ { i }$ . The resulting structure $A _ { E ^ { \\prime } }$ (with the $E ^ { \\prime }$ -representability) is a $e$ -completion, or a e-saturation, of $\\mathcal { A } _ { E }$ . The structure $A _ { E ^ { \\prime } }$ itself is called $e$ -complete, or $e$ -saturated, or $e$ -universal, or $e$ -largest. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 4. For a structure $\\boldsymbol { \\mathcal { A } } _ { E }$ the number of new structures with respect to the structures $\\mathbf { \\mathcal { A } } _ { i }$ , i. e., of the structures $\\boldsymbol { B }$ which are pairwise elementary non-equivalent and elementary non-equivalent to the structures $\\mathbf { \\mathcal { A } } _ { i }$ , is called the $e$ -spectrum of $\\boldsymbol { \\mathcal { A } } _ { E }$ and denoted by $e$ -Sp(AE). The value $\\operatorname* { s u p } \\{ e { \\mathrm { - } } \\mathrm { S p } ( A ^ { \\prime } ) ) \\mid A ^ { \\prime } \\equiv A _ { E } \\}$ is called the $e$ -spectrum of the theory $\\mathrm { T h } ( \\var A _ { E } )$ and denoted by $e$ -Sp $( \\mathrm { T h } ( \\mathcal { A } _ { E } ) ,$ ). "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 5. If $\\boldsymbol { \\mathcal { A } } _ { E }$ does not have $E$ -classes $\\mathcal { A } _ { i }$ , which can be removed, with all $E$ -classes $\\mathcal { A } _ { j } \\equiv \\mathcal { A } _ { i }$ , preserving the theory $\\mathrm { T h } ( \\var A _ { E } )$ , then $\\mathcal { A } _ { E }$ is called $e$ -prime, or $e$ -minimal. "
+                },
+                {
+                    "type": "text",
+                    "value": "For a structure $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { E }$ we denote by $\\mathrm { T H } ( \\mathcal { A } ^ { \\prime } )$ the set of all theories $\\operatorname { T h } ( \\mathcal { A } _ { i } )$ of $E$ -classes $\\mathbf { \\mathcal { A } } _ { i }$ in $\\mathcal { A } ^ { \\prime }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "By the definition, an $e$ -minimal structure $\\mathcal { A } ^ { \\prime }$ consists of $E$ -classes with a minimal set $\\mathrm { T H } ( \\mathcal { A } ^ { \\prime } )$ . If $\\mathrm { T H } ( \\mathcal { A } ^ { \\prime } )$ is the least for models of $\\operatorname { T h } ( \\mathcal { A } ^ { \\prime } )$ then $\\mathcal { A } ^ { \\prime }$ is called $e$ -least. "
+                }
+            ],
+            "type": null,
+            "page_start": 0,
+            "page_end": 2
+        },
+        {
+            "title": "2. Closure operators ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Definition 6. Let $\\overline { { \\tau } }$ be the class of all complete elementary theories of relational languages. For a set $\\tau \\subset \\overline { { \\tau } }$ we denote by $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ the set of all theories $\\operatorname { T h } ( A )$ , where $\\mathcal { A }$ is a structure of some $E$ -class in $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { E }$ , $\\mathcal { A } _ { E } = \\mathrm { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , $\\operatorname { T h } ( \\mathcal { A } _ { i } ) \\in \\mathcal { T }$ . As usual, if $\\mathcal { T } = \\mathrm { C l } _ { E } ( \\mathcal { T } )$ then $\\tau$ is said to be $E$ -closed. "
+                },
+                {
+                    "type": "text",
+                    "value": "By the definition, "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\operatorname {C l} _ {E} (\\mathcal {T}) = \\operatorname {T H} \\left(\\mathcal {A} _ {E ^ {\\prime}} ^ {\\prime}\\right), \\tag {2.1}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "where $\\mathcal { A } _ { E ^ { \\prime } } ^ { \\prime }$ is an $e$ -largest model of $\\mathrm { T h } ( \\var A _ { E } )$ , $\\boldsymbol { \\mathcal { A } } _ { E }$ consists of $E$ -classes representing models of all theories in $\\tau$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Note that the equality (2.1) does not depend on the choice of $e$ -largest model of $\\mathrm { T h } ( \\var A _ { E } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "The following proposition is obvious. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 1. (1) If $\\mathcal { T } _ { 0 }$ , $\\mathcal { T } _ { 1 }$ are sets of theories, ${ \\mathcal { T } } _ { 0 } \\subseteq { \\mathcal { T } } _ { 1 } \\subset { \\overline { { \\mathcal { T } } } }$ , then ${ \\mathcal { T } } _ { 0 } \\subseteq \\operatorname { C l } _ { E } ( { \\mathcal { T } } _ { 0 } ) \\subseteq \\operatorname { C l } _ { E } ( { \\mathcal { T } } _ { 1 } )$ . "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(2) For any set $\\tau \\subset { \\overline { { \\tau } } }$ , $\\mathcal { T } \\subset \\mathrm { C l } _ { E } ( \\mathcal { T } )$ if and only if the structure composed by $E$ -classes of models of theories in $\\tau$ is not $e$ -largest. ",
+                        "(3) Every finite set $\\tau \\subset { \\overline { { \\tau } } }$ is $E$ -closed. ",
+                        "(4) (Negation of finite character) For any $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } ) \\setminus \\mathcal { T }$ there are no finite $\\mathcal { T } _ { 0 } \\subset \\mathcal { T }$ such that $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } )$ . ",
+                        "(5) Any intersection of $E$ -closed sets is $E$ -closed. "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "For a set $\\tau \\subset { \\overline { { \\tau } } }$ of theories in a language $\\Sigma$ and for a sentence $\\varphi$ with $\\Sigma ( \\varphi ) \\subseteq \\Sigma$ we denote by $\\tau _ { \\varphi }$ the set $\\{ T \\in { \\mathcal { T } } \\mid \\varphi \\in T \\}$ . Denote by $\\mathcal { T } _ { F }$ the family of all sets $\\tau _ { \\varphi }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Clearly, the partially ordered set $\\langle \\mathcal { T } _ { F } ; \\subseteq \\rangle$ forms a Boolean algebra with the least element $\\emptyset \\ = \\ T _ { \\neg ( x \\approx x ) }$ , the greatest element $\\tau ~ = ~ \\tau _ { ( x \\approx x ) }$ , and operations $\\wedge$ , ∨, $^ -$ satisfying the following equalities: $\\mathcal { T } _ { \\varphi } \\wedge \\mathcal { T } _ { \\psi } = \\mathcal { T } _ { ( \\varphi \\wedge \\psi ) }$ , $\\mathcal { T } _ { \\varphi } \\vee \\mathcal { T } _ { \\psi } = \\mathcal { T } _ { ( \\varphi \\vee \\psi ) }$ , $\\overline { { \\mathcal { T } _ { \\varphi } } } = \\mathcal { T } _ { \\neg \\varphi }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "By the definition, $\\mathcal { T } _ { \\varphi } \\subseteq \\mathcal { T } _ { \\psi }$ if and only if for any model $\\mathcal { M }$ of a theory in $\\tau$ satisfying $\\varphi$ we have $\\mathcal { M } \\models \\psi$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 2. If $\\tau \\subset { \\overline { { \\tau } } }$ is an infinite set and $T \\in { \\overline { { \\mathcal { T } } } } \\backslash { \\mathcal { T } }$ then $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } )$ (i.e., $T$ is an accumulation point for $\\tau$ with respect to $E$ -closure Cl $E$ ) if and only if for any formula $\\varphi \\in T$ the set $\\tau _ { \\varphi }$ is infinite. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. Assume that there is a formula $\\varphi \\in T$ such that only finitely many theories in $\\tau$ , say $T _ { 1 } ^ { \\prime } , \\ldots , T _ { n } ^ { \\prime }$ , satisfy $\\varphi$ . Since $T \\not \\in { \\mathcal { T } }$ then there is $\\psi \\in T$ such that $\\psi \\notin T _ { 1 } \\cup . . . \\cup T _ { n }$ . Then $( \\varphi \\land \\psi ) \\in T$ does not belong to all theories in $\\tau$ . Since $( \\varphi \\land \\psi )$ does not satisfy $E$ -classes in models of $T _ { E } = \\mathrm { C o m b } _ { E } ( T _ { i } ) _ { i \\in { I } }$ , where $\\mathcal { T } = \\{ T _ { i } \\ | \\ i \\in I \\}$ , we have $T \\notin \\mathrm { C l } _ { E } ( \\mathcal { T } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "If for any formula $\\varphi \\in T$ , $\\tau _ { \\varphi }$ is infinite then $\\{ \\varphi ^ { E } \\mid \\varphi \\in T \\} \\cup T _ { E }$ (where $\\varphi ^ { E }$ are $E$ -relativizations of the formulas $\\varphi$ ) is locally satisfied and so satisfied. Since $T _ { E }$ is a complete theory then $\\{ \\varphi ^ { E } \\ | \\ \\varphi \\in T \\} \\subset T _ { E }$ and hence $T \\in$ $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ . □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 2 shows that the closure Cl $E$ corresponds to the closure with respect to the ultraproduct operator [2; 3; 4; 6]. "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 1. For any sets $\\mathcal { T } _ { 0 } , \\mathcal { T } _ { 1 } \\subset \\overline { { \\mathcal { T } } }$ , $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 } ) = \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ) \\cup \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 1 } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. We have $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ) \\cup \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 1 } ) \\subseteq \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 } )$ by Proposition 1 (1). "
+                },
+                {
+                    "type": "text",
+                    "value": "Let $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 } )$ and we argue to show that $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ) \\cup \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 1 } )$ . Without loss of generality we assume that $T \\notin \\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 }$ and by Proposition 1, (3), $\\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 }$ is infinite. Define a function $f \\colon T \\to { \\mathcal { P } } ( \\{ 0 , 1 \\} )$ by the following rule: $f ( \\varphi )$ is the set of indexes $k \\in \\{ 0 , 1 \\}$ such that $\\varphi$ belongs "
+                },
+                {
+                    "type": "text",
+                    "value": "to infinitely many theories in $\\mathcal { T } _ { k }$ . Note that $f ( \\varphi )$ is always nonempty since by Proposition 2, $\\varphi$ belong to infinitely many theories in ${ \\mathcal { T } } _ { 0 } \\cup { \\mathcal { T } } _ { 1 }$ and so to infinitely many theories in $\\tau _ { 0 }$ or to infinitely many theories in $\\mathcal { T } _ { 1 }$ . Again by Proposition 2 we have to prove that $0 \\in f ( \\varphi )$ for each formula $\\varphi \\in { \\cal I } ^ { \\prime }$ or $1 \\in f ( \\varphi )$ for each formula $\\varphi \\in T$ . Assuming on contrary, there are formulas $\\varphi , \\psi \\in T$ such that $f ( \\varphi ) = \\{ 0 \\}$ and $f ( \\psi ) = \\{ 1 \\}$ . Since $( \\varphi \\land \\psi ) \\in T$ and $f ( \\varphi \\land \\psi )$ is nonempty we have $0 \\in f ( \\varphi \\land \\psi )$ or $1 \\in f ( \\varphi \\land \\psi )$ . In the first case, since $\\mathcal { T } _ { \\varphi \\wedge \\psi } \\subseteq \\mathcal { T } _ { \\psi }$ we get $0 \\in f ( \\psi )$ . In the second case, since $\\mathcal { T } _ { \\varphi \\wedge \\psi } \\subseteq \\mathcal { T } _ { \\varphi }$ we get $1 \\in f ( \\varphi )$ . Both cases contradict the assumption. Thus, $T \\in \\mathrm { C l } _ { E } ( \\mathcal T _ { 0 } ) \\cup \\mathrm { C l } _ { E } ( \\mathcal T _ { 1 } )$ . □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Corollary 1. (Exchange property) If $T _ { 1 } \\in \\operatorname { C l } _ { E } ( \\mathcal { T } \\cup \\{ T _ { 2 } \\} ) \\setminus \\operatorname { C l } _ { E } ( \\mathcal { T } )$ then $T _ { 2 } \\in \\mathrm { C l } _ { E } ( \\mathcal { T } \\cup \\{ T _ { 1 } \\} )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. Since $T _ { 1 } \\in \\mathrm { C l } _ { E } ( \\mathcal { T } \\cup \\{ T _ { 2 } \\} ) = \\mathrm { C l } _ { E } ( \\mathcal { T } ) \\cup \\{ T _ { 2 } \\}$ by Proposition 1, (3) and Theorem 1, and $T _ { 1 } \\notin \\mathrm { C l } _ { E } ( \\mathcal { T } )$ , then $T _ { 1 } = T _ { 2 }$ and $T _ { 2 } \\in \\mathrm { C l } _ { E } ( \\mathcal { T } \\cup \\{ T _ { 1 } \\} )$ in view of Proposition 1, (1). □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 7. [5]. A topological space is a pair $( X , { \\mathcal { O } } )$ consisting of a set $X$ and a family $\\mathcal { O }$ of open subsets of $X$ satisfying the following conditions: "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(O1) $\\emptyset \\in { \\mathcal { O } }$ and $X \\in \\mathcal { O }$ ",
+                        "(O2) If $U _ { 1 } \\in \\mathcal { O }$ and $U _ { 2 } \\in \\mathcal { O }$ then $U _ { 1 } \\cap U _ { 2 } \\in { \\mathcal { O } }$ ",
+                        "(O3) If $\\mathcal { O } ^ { \\prime } \\subseteq \\mathcal { O }$ then $\\cup { \\mathcal { O } } ^ { \\prime } \\in { \\mathcal { O } }$ "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 8. [5]. A topological space $( X , { \\mathcal { O } } )$ is a $T _ { 0 }$ -space if for any pair of distinct elements $x _ { 1 } , x _ { 2 } \\in X$ there is an open set $U \\in \\mathcal { O }$ containing exactly one of these elements. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 9. [5]. A topological space $( X , { \\mathcal { O } } )$ is Hausdorff if for any pair of distinct points $x _ { 1 } , x _ { 2 } \\in X$ there are open sets $U _ { 1 } , U _ { 2 } \\in { \\mathcal { O } }$ such that $x _ { 1 } \\in U _ { 1 }$ , $x _ { 2 } \\in U _ { 2 }$ , and $U _ { 1 } \\cap U _ { 2 } = \\emptyset$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Let $\\tau \\subset { \\overline { { \\tau } } }$ be a set, $\\mathcal { O } _ { E } ( \\mathcal { T } ) = \\{ \\mathcal { T } \\backslash \\mathrm { C l } _ { E } ( \\mathcal { T } ^ { \\prime } ) \\mid \\mathcal { T } ^ { \\prime } \\subseteq \\mathcal { T } \\}$ . Proposition 1 and Theorem 1 imply that the axioms (O1)–(O3) are satisfied. Moreover, since for any theory $T \\in { \\overline { { \\mathcal { T } } } }$ , $\\mathrm { C l } _ { E } ( \\{ T \\} ) = \\{ T \\}$ and hence, $\\mathcal { T } \\setminus \\mathrm { C l } _ { E } ( \\{ T \\} ) = \\mathcal { T } \\{ T \\}$ is an open set containing all theories in $\\tau$ , which are not equal to $T$ , then $( \\mathcal { T } , \\mathcal { O } _ { E } ( \\mathcal { T } ) )$ is a $T _ { 0 }$ -space. Moreover, it is Hausdorff. Indeed, taking two distinct theories $T _ { 1 } , T _ { 2 } \\in \\tau$ we have a formula $\\varphi$ such that $\\varphi \\in T _ { 1 }$ and $\\neg \\varphi \\in T _ { 2 }$ . By Proposition 2 we have that $\\tau _ { \\varphi }$ and $\\tau _ { \\neg \\varphi }$ are closed containing $T _ { 1 }$ and $T _ { 2 }$ respectively; at the same time $\\tau _ { \\varphi }$ and $\\tau _ { \\neg \\varphi }$ form a partition of $\\tau$ , so $\\tau _ { \\varphi }$ and $\\tau _ { \\neg \\varphi }$ are disjoint open sets. Thus we have "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 2. For any set $\\tau \\subset { \\overline { { \\tau } } }$ the pair $( \\mathcal { T } , \\mathcal { O } _ { E } ( \\mathcal { T } ) )$ is a Hausdorff topological space. "
+                },
+                {
+                    "type": "text",
+                    "value": "Similarly to the operator $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ we define the operator $\\mathrm { C l } _ { P } ( { \\mathcal { T } } )$ for families $P$ of predicates $P _ { i }$ as follows. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 10. For a set $\\tau \\subset { \\overline { { \\tau } } }$ we denote by $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ the set of all theories $\\operatorname { T h } ( A )$ such that $\\operatorname { T h } ( \\mathcal { A } ) \\in \\mathcal { T }$ or $\\mathcal { A }$ is a structure of type $p _ { \\infty } ( x )$ in $\\mathcal { A } ^ { \\prime } \\equiv \\mathcal { A } _ { P }$ , where $\\mathcal { A } _ { P } = \\mathrm { C o m b } _ { P } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ and $\\operatorname { T h } ( \\mathcal { A } _ { i } ) \\ \\in \\ \\mathcal { T }$ are pairwise distinct. As above, if $\\mathcal { T } = \\mathrm { C l } _ { P } ( \\mathcal { T } )$ then $\\tau$ is said to be $P$ -closed. "
+                },
+                {
+                    "type": "text",
+                    "value": "Using above only disjoint $P$ -combinations $A _ { P }$ we get the closure $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } )$ being a subset of $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "The following example illustrates the difference between $\\mathrm { C l } _ { P } ( { \\mathcal { T } } )$ and $\\mathrm { C l } _ { P } ^ { d } ( \\tau )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Example 1. Taking disjoint copies of predicates $P _ { i } = \\{ a \\in M _ { 0 } \\mid a < c _ { i } \\}$ with their $<$ <-structures as in [15, Example 4.8], $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } ) \\backslash \\mathcal { T }$ produces models of the Ehrenfeucht example and unboundedly many connected components each of which is a copy of a model of the Ehrenfeucht example. At the same time $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ produces two new structures: densely ordered structures with and without the least element. "
+                },
+                {
+                    "type": "text",
+                    "value": "The following proposition is obvious. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 3. (1) If $\\tau _ { 0 }$ , $\\mathcal { T } _ { 1 }$ are sets of theories, ${ \\mathcal { T } } _ { 0 } \\subseteq { \\mathcal { T } } _ { 1 } \\subset { \\overline { { \\mathcal { T } } } }$ , then ${ \\mathcal { T } } _ { 0 } \\subseteq \\operatorname { C l } _ { P } ( { \\mathcal { T } } _ { 0 } ) \\subseteq \\operatorname { C l } _ { P } ( { \\mathcal { T } } _ { 1 } )$ . "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(2) Every finite set $\\tau \\subset { \\overline { { \\tau } } }$ is $P$ -closed. ",
+                        "(3) (Negation of finite character) For any $T \\in \\mathrm { C l } _ { P } ( \\mathcal { T } ) \\setminus \\mathcal { T }$ there are no finite $\\mathcal { T } _ { 0 } \\subset \\mathcal { T }$ such that $T \\in \\mathrm { C l } _ { P } ( \\mathcal { T } _ { 0 } )$ . ",
+                        "(4) Any intersection of $P$ -closed sets is $P$ -closed. "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 1. Note that an analogue of Proposition 2 for $P$ -combinations fails. Indeed, taking disjoint predicates $P _ { i }$ , $i \\in \\omega$ , with $2 i + 1$ elements and with structures $\\mathbf { \\mathcal { A } } _ { i }$ of the empty language, we get, for the set $\\tau$ of theories $T _ { i } = \\mathrm { T h } ( \\mathcal { A } _ { i } )$ , that $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ consists of the theories whose models have cardinalities witnessing all ordinals in $\\omega { + 1 }$ . Thus, for instance, theories in $\\tau$ do not contain the formula "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\exists x, y (\\neg (x \\approx y) \\wedge \\forall z ((z \\approx x) \\vee (z \\approx y))) \\tag {2.2}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "whereas $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ (which is equal to $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } ) )$ contains a theory with the formula (2.2). "
+                },
+                {
+                    "type": "text",
+                    "value": "More generally, for $\\mathrm { C l } _ { P } ^ { d } ( \\tau )$ with infinite $\\tau$ , we have the following. "
+                },
+                {
+                    "type": "text",
+                    "value": "Since there are no links between distinct $P _ { i }$ , the structures of $p _ { \\infty } ( x )$ are defined as disjoint unions of connected components $C ( \\boldsymbol a )$ , for $a$ realizing $p _ { \\infty } ( x )$ , where each $C ( \\boldsymbol a )$ consists of a set of realizations of $p _ { \\infty }$ -preserving formulas $\\psi ( a , x )$ (i.e., of formulas $\\varphi ( a , x )$ with $\\psi ( a , x ) \\vdash p _ { \\infty } ( x ) )$ . Similar to Proposition 2 theories $T _ { \\infty , C ( a ) }$ of $C ( \\boldsymbol a )$ -restrictions of $A _ { \\infty }$ coincide and are characterized by the following property: $T _ { \\infty , C ( a ) } \\in \\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } )$ if and only if $T _ { \\infty , C ( a ) } \\in \\mathcal { T }$ or for any formula $\\varphi \\in T _ { \\infty , C ( a ) }$ , there are infinitely many "
+                },
+                {
+                    "type": "text",
+                    "value": "theories $T$ in $\\tau$ such that satisfies all structures approximating $C ( \\boldsymbol a )$ - $\\varphi$ restrictions of models of $T$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Thus similarly to Theorem 1, Corollary 1, and Theorem 2 we get the following three assertions for disjoint $P$ -combinations. "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 3. For any sets $\\mathcal { T } _ { 0 } , \\mathcal { T } _ { 1 } \\subset \\overline { { \\mathcal { T } } }$ , $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 1 } ) = \\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } _ { 0 } ) \\cup \\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } _ { 1 } )$ "
+                },
+                {
+                    "type": "text",
+                    "value": "Corollary 2. (Exchange property) If $T _ { 1 } \\in \\mathrm { C l } _ { P } ^ { d } ( { \\mathcal { T } } \\cup \\{ T _ { 2 } \\} ) \\setminus \\mathrm { C l } _ { P } ^ { d } ( { \\mathcal { T } } )$ then $T _ { 2 } \\in \\mathrm { C l } _ { P } ^ { d } ( { \\cal T } \\cup \\{ T _ { 1 } \\} )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Let $\\tau \\subset { \\overline { { \\tau } } }$ be a set, $\\mathcal { O } _ { P } ^ { d } ( \\mathcal { T } ) = \\{ \\mathcal { T } \\backslash \\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } ^ { \\prime } ) | \\mathcal { T } ^ { \\prime } \\subseteq \\mathcal { T } \\} .$ "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 4. For any set $\\tau \\subset { \\overline { { \\tau } } }$ the pair $( \\mathcal { T } , \\mathcal { O } _ { P } ^ { d } ( \\mathcal { T } ) )$ is a topological $T _ { 0 }$ -space. "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 2. By Proposition 3, (2), for any finite $\\tau$ the spaces $( \\mathcal { T } , \\mathcal { O } _ { P } ( \\mathcal { T } ) )$ and $( \\mathcal { T } , \\mathcal { O } _ { P } ^ { d } ( \\mathcal { T } ) )$ are Hausdorff, moreover, here $\\mathcal { O } _ { P } ( \\mathcal { T } ) = \\mathcal { O } _ { P } ^ { d } ( \\mathcal { T } )$ consisting of all subsets of $\\tau$ . However, in general, the spaces $( \\mathcal { T } , \\mathcal { O } _ { P } ( \\mathcal { T } ) )$ and $( \\mathcal { T } , \\mathcal { O } _ { P } ^ { d } ( \\mathcal { T } ) )$ are not Hausdorff. "
+                },
+                {
+                    "type": "text",
+                    "value": "Indeed, consider structures $\\mathbf { \\mathcal { A } } _ { i }$ , $i \\in I$ , where $I = ( \\omega { + } 1 ) \\backslash \\{ 0 \\}$ , of the empty language and such that $| { \\mathcal { A } } _ { i } | = i$ . Let $T _ { i } = \\mathrm { T h } ( \\mathcal { A } _ { i } )$ , $i \\in \\mathcal I$ , $\\mathcal { T } = \\{ T _ { i } \\ | \\ i \\in I \\}$ . Coding the theories $T _ { i }$ by their indexes we have the following. For any finite set $F \\subset I$ , $\\mathrm { C l } _ { P } ( F ) = \\mathrm { C l } _ { P } ^ { d } ( F ) = F$ , and for any infinite set INF $\\subseteq I$ , $\\mathrm { C l } _ { P } ( \\mathrm { I N F } ) = \\mathrm { C l } _ { P } ^ { d } ( \\mathrm { I N F } ) = I$ . So any open set $U$ is either cofinite or empty. Thus any two nonempty open sets are not disjoint. "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 3. If the closure operator $\\mathrm { C l } _ { P } ^ { d , r }$ is obtained from $\\mathrm { C l } _ { P } ^ { d }$ permitting repetitions of structures for predicates $P _ { i }$ , we can lose both the property of $T _ { 0 }$ -space and the identical closure for finite sets of theories. Indeed, for the example in Remark 2, $\\mathrm { C l } _ { P } ^ { d , r } ( \\mathcal { T } )$ is equal to the $\\mathrm { C l } _ { P } ^ { d , r }$ -closure of any singleton $\\{ T \\} \\in \\operatorname { C l } _ { P } ^ { d , r } ( { \\mathcal { T } } )$ since the type $p _ { \\infty } ( x )$ has arbitrarily many realizations producing models for each element in $\\tau$ . Thus there are only two possibilities for open sets $U$ : either $U = \\varnothing$ or $U = \\tau$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 4. Let $\\tau _ { \\mathrm { f i n } }$ be the class of all theories for finite structures. By compactness, for a set $\\tau \\subset \\tau _ { \\mathrm { f i n } }$ , $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ is a subset of ${ { T } _ { \\mathrm { { f i n } } } }$ if and only if models of $\\tau$ have bounded cardinalities, whereas $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ is a subset of ${ { T } _ { \\mathrm { { f i n } } } }$ if and only if $\\tau$ is finite. Proposition 2 and its $P$ -analogue allows to describe both $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ and $\\mathrm { C l } _ { P } ( \\mathcal { T } )$ , in particular, the sets $\\mathrm { C l } _ { E } ( \\mathcal { T } ) \\backslash \\mathcal { T } _ { \\mathrm { f i n } }$ and $\\mathrm { C l } _ { P } ( \\mathcal { T } ) \\setminus \\mathcal { T } _ { \\mathrm { f i n } }$ . Clearly, there is a broad class of theories in $\\overline { { \\tau } }$ which do not lay in "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\bigcup_ {\\mathcal {T} \\subset \\mathcal {T} _ {\\mathrm {f i n}}} \\operatorname {C l} _ {E} (\\mathcal {T}) \\cup \\bigcup_ {\\mathcal {T} \\subset \\mathcal {T} _ {\\mathrm {f i n}}} \\operatorname {C l} _ {P} ^ {d} (\\mathcal {T}).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "For instance, finitely axiomatizable theories with infinite models can not be approximated by theories in $\\tau _ { \\mathrm { f i n } }$ in such way. "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 5. Proposition 2 shows that if a set $\\tau$ has theories only with models in an axiomatizable class $K$ then theories in $\\mathrm { C l } _ { E } ( \\mathcal { T } )$ again have models only in $K$ . At the same time, by Remark 1, this assertion does not hold for $P$ -closures. "
+                }
+            ],
+            "type": null,
+            "page_start": 2,
+            "page_end": 7
+        },
+        {
+            "title": "3. Generating subsets of $E$ -closed sets ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Definition 11. Let $\\mathcal { T } _ { 0 }$ be a closed set in a topological space $( \\mathcal { T } , \\mathcal { O } _ { E } ( \\mathcal { T } ) )$ . A subset $\\mathcal { T } _ { 0 } ^ { \\prime } \\subseteq \\mathcal { T } _ { 0 }$ is said to be generating if $\\mathcal { T } _ { 0 } = \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime } )$ . The generating set $\\mathcal { T } _ { 0 } ^ { \\prime }$ (for $ { \\mathcal { T } } _ { 0 }$ ) is minimal if $\\mathcal { T } _ { 0 } ^ { \\prime }$ does not contain proper generating subsets. A minimal generating set $\\mathcal { T } _ { 0 } ^ { \\prime }$ is least if $\\mathcal { T } _ { 0 } ^ { \\prime }$ is contained in each generating set for $\\tau _ { 0 }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 6. Each set $\\tau _ { 0 }$ has a generating subset $\\mathcal { T } _ { 0 } ^ { \\prime }$ with a cardinality $\\leq \\operatorname* { m a x } \\{ | \\Sigma | , \\omega \\}$ , where $\\Sigma$ is the union of the languages for the theories in $\\tau _ { 0 }$ . Indeed, the theory $T = \\mathrm { T h } ( \\mathcal { A } _ { E } )$ , whose $E$ -classes are models for theories in $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } )$ , has a model $\\mathcal { M }$ with $| M | \\leq \\operatorname* { m a x } \\lbrace | \\Sigma | , \\omega \\rbrace$ . The $E$ -classes of $\\mathcal { M }$ are models of theories in $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } )$ and the set of these theories is the required generating set. "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 5. If $\\mathcal { T } _ { 0 } ^ { \\prime }$ is a generating set for a $E$ -closed set $\\tau _ { 0 }$ then the following conditions are equivalent: "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(1) $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\mathcal { T } _ { 0 }$ ",
+                        "(2) $\\mathcal { T } _ { 0 } ^ { \\prime }$ is a minimal generating set for $\\mathcal { T } _ { 0 }$ ; ",
+                        "(3) any theory in $\\mathcal { T } _ { 0 } ^ { \\prime }$ is isolated by some set $( T _ { 0 } ^ { \\prime } ) _ { \\varphi }$ , i.e., for any $T \\in \\mathcal { T } _ { 0 } ^ { \\prime }$ there is $\\varphi \\in T$ such that $( T _ { 0 } ^ { \\prime } ) _ { \\varphi } = \\{ T \\}$ ; ",
+                        "(4) any theory in $\\mathcal { T } _ { 0 } ^ { \\prime }$ is isolated by some set $( \\mathcal { T } _ { 0 } ) _ { \\varphi }$ , i.e., for any $T \\in \\mathcal { T } _ { 0 } ^ { \\prime }$ there is $\\varphi \\in T$ such that $( \\mathcal { T } _ { 0 } ) _ { \\varphi } = \\{ T \\}$ . "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. $( 1 ) \\Rightarrow ( 2 )$ and $( 4 ) \\Rightarrow ( 3 )$ are obvious. "
+                },
+                {
+                    "type": "text",
+                    "value": "(2) ⇒ (1). Assume that $\\mathcal { T } _ { 0 } ^ { \\prime }$ is minimal but not least. Then there is a generating set $\\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ such that ${ \\mathcal { T } } _ { 0 } ^ { \\prime } \\backslash { \\mathcal { T } } _ { 0 } ^ { \\prime \\prime } \\neq \\emptyset$ and $\\mathcal { T } _ { 0 } ^ { \\prime \\prime } \\backslash \\mathcal { T } _ { 0 } ^ { \\prime } \\neq \\emptyset$ . Take $T \\in \\mathcal { T } _ { 0 } ^ { \\prime } \\backslash \\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ "
+                },
+                {
+                    "type": "text",
+                    "value": "We assert that $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime } \\setminus \\{ T \\} )$ , i.e., $T$ is an accumulation point of ${ \\mathcal { T } } _ { 0 } ^ { \\prime } \\backslash \\{ T \\}$ . Indeed, since $\\mathcal { T } _ { 0 } ^ { \\prime \\prime } \\backslash \\mathcal { T } _ { 0 } ^ { \\prime } \\neq \\emptyset$ and ${ \\mathcal { T } } _ { 0 } ^ { \\prime \\prime } \\subset \\operatorname { C l } _ { E } ( { \\mathcal { T } } _ { 0 } ^ { \\prime } )$ , then by Proposition 1, (3), $\\mathcal { T } _ { 0 } ^ { \\prime }$ is infinite and by Proposition 2 it suffices to prove that for any $\\varphi \\in T$ , $( T _ { 0 } ^ { \\prime } \\setminus \\{ T \\} ) _ { \\varphi }$ is infinite. Assume on contrary that for some $\\varphi \\in T$ $( T _ { 0 } ^ { \\prime } \\setminus \\{ T \\} ) _ { \\varphi }$ is finite. Then $( T _ { 0 } ^ { \\prime } ) _ { \\varphi }$ is finite and, moreover, as $\\mathcal { T } _ { 0 } ^ { \\prime }$ is generating for $\\tau _ { 0 }$ , by Proposition 2, $( \\mathcal { T } _ { 0 } ) _ { \\varphi }$ is finite, too. So $( \\mathcal { T } _ { 0 } ^ { \\prime \\prime } ) _ { \\varphi }$ is finite and, again by Proposition 2, $T$ does not belong to $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime \\prime } )$ contradicting to $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime \\prime } ) =$ $\\tau _ { 0 }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Since $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime } \\setminus \\{ T \\} )$ and $\\mathcal { T } _ { 0 } ^ { \\prime }$ is generating for $\\tau _ { 0 }$ , then $\\mathcal { T } _ { 0 } ^ { \\prime } \\setminus \\{ T \\}$ is also generating for $\\tau _ { 0 }$ contradicting the minimality of $\\mathcal { T } _ { 0 } ^ { \\prime }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "$( 2 ) \\Rightarrow ( 3 )$ . If $\\mathcal { T } _ { 0 } ^ { \\prime }$ is finite then by Proposition 1, (3), $\\mathcal { T } _ { 0 } ^ { \\prime } = \\mathcal { T } _ { 0 }$ . Since $\\tau _ { 0 }$ is finite then for any $T \\in \\mathcal { T } _ { 0 }$ there is a formula $\\varphi \\in T$ negating all theories "
+                },
+                {
+                    "type": "text",
+                    "value": "in ${ \\mathcal { T } } _ { 0 } \\backslash \\{ T \\}$ . Therefore, $( \\mathcal { T } _ { 0 } ) _ { \\varphi } = ( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi }$ is a singleton containing $T$ and thus, $( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi }$ isolates $T$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Now let $\\mathcal { T } _ { 0 } ^ { \\prime }$ be infinite. Assume that some $T \\in \\mathcal { T } _ { 0 } ^ { \\prime }$ is not isolated by the sets $( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi }$ . It implies that for any $\\varphi \\in T$ , $( T _ { 0 } ^ { \\prime } \\setminus \\{ T \\} ) _ { \\varphi }$ is infinite. Using Proposition 2 we obtain $T \\in \\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime } \\setminus \\{ T \\} )$ contradicting the minimality of $\\mathcal { T } _ { 0 } ^ { \\prime }$ . "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "$( 3 ) \\Rightarrow ( 2 )$ . Assume that any theory $T$ in $\\mathcal { T } _ { 0 } ^ { \\prime }$ is isolated by some set $( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi }$ . By Proposition 2 it implies that $T \\not \\in \\mathrm { C l } _ { E } ( { \\cal T } _ { 0 } ^ { \\prime } \\backslash \\{ T \\} )$ . Thus, $\\mathcal { T } _ { 0 } ^ { \\prime }$ is a minimal generating set for $\\tau _ { 0 }$ . ",
+                        "$( 3 ) \\Rightarrow ( 4 )$ is obvious for finite $\\mathcal { T } _ { 0 } ^ { \\prime }$ . If $\\mathcal { T } _ { 0 } ^ { \\prime }$ is infinite and any theory $T$ in $\\mathcal { T } _ { 0 } ^ { \\prime }$ is isolated by some set $( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi }$ then $T$ is isolated by the set $( \\mathcal { T } _ { 0 } ) _ { \\varphi }$ , since otherwise using Proposition 2 and the property that $\\mathcal { T } _ { 0 } ^ { \\prime }$ generates $\\tau _ { 0 }$ , there are infinitely many theories in $\\mathcal { T } _ { 0 } ^ { \\prime }$ containing $\\varphi$ contradicting $| ( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi } | =$ 1. □ "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "The equivalences $( 2 ) \\Leftrightarrow ( 3 ) \\Leftrightarrow ( 4 )$ in Theorem 5 were noticed by E.A. Palyutin. "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 5 immediately implies "
+                },
+                {
+                    "type": "text",
+                    "value": "Corollary 3. For any structure $\\boldsymbol { \\mathcal { A } } _ { E }$ , $\\boldsymbol { \\mathcal { A } } _ { E }$ is $e$ -minimal if and only if $\\boldsymbol { \\mathcal { A } } _ { E }$ is $e$ -least. "
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 12. Let $T$ be the theory $\\mathrm { T h } ( \\var A _ { E } )$ , where $\\mathcal { A } _ { E } = \\mathrm { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , $\\{ \\mathrm { T h } ( \\mathcal { A } _ { i } ) \\mid i \\in I \\} = \\mathcal { T } _ { 0 }$ . We say that $T$ has a minimal/least generating set if $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } )$ has a minimal/least generating set. "
+                },
+                {
+                    "type": "text",
+                    "value": "Since by Theorem 5 the notions of minimality and to be least coincide in the context, below we shall consider least generating sets as well as $e$ -least structures in cases of minimal generating sets. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 4. For any closed nonempty set $\\mathcal { T } _ { 0 }$ in a topological space $( \\mathcal { T } , \\mathcal { O } _ { E } ( \\mathcal { T } ) )$ and for any $\\mathcal { T } _ { 0 } ^ { \\prime } \\subseteq \\mathcal { T } _ { 0 }$ , the following conditions are equivalent: "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(1) $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\tau _ { 0 }$ ",
+                        "(2) any/some structure $\\mathcal { A } _ { E } = \\mathrm { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , where $\\{ \\mathrm { T h } ( \\mathcal { A } _ { i } ) \\mid i \\in I \\} =$ $\\mathcal { T } _ { 0 } ^ { \\prime }$ , is an $e$ -least model of the theory $\\mathrm { T h } ( \\var A _ { E } )$ and $E$ -classes of each/some $e$ -largest model of $\\mathrm { T h } ( \\var A _ { E } )$ form models of all theories in $\\mathcal { T } _ { 0 }$ ; ",
+                        "(3) any/some structure $\\mathcal { A } _ { E } = \\mathrm { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , where $\\{ \\mathrm { T h } ( \\mathcal { A } _ { i } ) \\mid i \\in I \\} =$ $\\mathcal { T } _ { 0 } ^ { \\prime }$ , $\\mathcal { A } _ { i } \\not \\equiv \\mathcal { A } _ { j }$ for $i \\neq j$ , is an $e$ -least model of the theory $\\mathrm { T h } ( \\var A _ { E } )$ , where $E$ -classes of $\\boldsymbol { \\mathcal { A } } _ { E }$ form models of the least set of theories and $E$ -classes of each/some e-largest model of $\\mathrm { T h } ( \\var A _ { E } )$ form models of all theories in $\\mathcal { T } _ { 0 }$ . "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. $( 1 ) \\Rightarrow ( 2 )$ . Let $\\mathcal { T } _ { 0 } ^ { \\prime }$ be the least generating set for $\\tau _ { 0 }$ . Consider the structure $\\mathcal { A } _ { E } = \\mathrm { C o m b } _ { E } ( \\mathcal { A } _ { i } ) _ { i \\in I }$ , where $\\{ \\mathrm { T h } (  { \\mathcal { A } } _ { i } ) \\mid i \\in I \\} =  { \\mathcal { T } } _ { 0 } ^ { \\prime }$ . Since $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\tau _ { 0 }$ , then $\\boldsymbol { \\mathcal { A } } _ { E }$ is an $e$ -least model of the theory $\\mathrm { T h } ( \\var A _ { E } )$ . Moreover, by Proposition 2, $E$ -classes of models of $\\mathrm { T h } ( \\var A _ { E } )$ form "
+                },
+                {
+                    "type": "text",
+                    "value": "models of all theories in $\\tau _ { 0 }$ . Thus, $E$ -classes of $\\boldsymbol { \\mathcal { A } } _ { E }$ form models of the least set $\\mathcal { T } _ { 0 } ^ { \\prime }$ of theories such that $E$ -classes of each/some $e$ -largest model of $\\mathrm { T h } ( \\var A _ { E } )$ form models of all theories in $\\tau _ { 0 }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Similarly, constructing $\\boldsymbol { \\mathcal { A } } _ { E }$ with $\\mathcal { A } _ { i } \\not \\equiv \\mathcal { A } _ { j }$ for $i \\neq j$ , we obtain $( 1 ) \\Rightarrow ( 3 )$ "
+                },
+                {
+                    "type": "text",
+                    "value": "Since (3) is a particular case of (2), we have $( 2 ) \\Rightarrow ( 3 )$ "
+                },
+                {
+                    "type": "text",
+                    "value": "$( 3 ) \\Rightarrow ( 1 )$ . Let $\\mathcal { A } _ { E }$ be an $e$ -least model of the theory $\\mathrm { T h } ( \\var A _ { E } )$ and $E$ - classes of each/some $e$ -largest model of $\\mathrm { T h } ( \\var A _ { E } )$ form models of all theories in $\\tau _ { 0 }$ . Then by the definition of Cl $E ^ { \\prime }$ , $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\tau _ { 0 }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Note that any prime structure $\\boldsymbol { \\mathcal { A } } _ { E }$ (or a structure with finitely many $E$ -classes, or a prime structure extended by finitely many $E$ -classes), is $e$ - minimal forming, by its $E$ -classes, the least generating set $\\mathcal { T } _ { 0 } ^ { \\prime }$ of theories for the set $\\tau _ { 0 }$ of theories corresponding to $E$ -classes of $e$ -largest $\\mathcal { A } _ { E } ^ { \\prime } \\equiv \\mathcal { A } _ { E }$ . Indeed, if a set $\\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ is generating for $\\tau _ { 0 }$ then by Proposition 2 there is a model $\\mathcal { M }$ of $T$ consisting of $E$ -classes with the set of models such that their theories form the set $\\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ . Since $\\boldsymbol { \\mathcal { A } } _ { E }$ prime (or with finitely many $E$ - classes, or a prime structure extended by finitely many $E$ -classes), then $\\mathcal { A } _ { E }$ is elementary embeddable into $\\mathcal { M }$ (respectively, has $E$ -classes with theories forming $\\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ , or elementary embeddable to a restriction without finitely many $E$ -classes), then $\\mathcal { T } _ { 0 } ^ { \\prime } \\subseteq \\mathcal { T } _ { 0 } ^ { \\prime \\prime }$ , and so $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\tau _ { 0 }$ . Thus, Proposition 4 implies "
+                },
+                {
+                    "type": "text",
+                    "value": "Corollary 4. Any theory $\\mathrm { T h } ( \\var A _ { E } )$ with a prime model $\\mathcal { M }$ , or with a finite set $\\{ \\mathrm { T h } ( \\mathcal { A } _ { i } ) \\mid i \\in I \\}$ , or both with $E$ -classes for $\\mathcal { M }$ and $A _ { i }$ , has the least generating set. "
+                },
+                {
+                    "type": "text",
+                    "value": "Clearly, the converse for prime models does not hold, since finite sets $\\tau _ { 0 }$ are least generating whereas theories in $\\tau _ { 0 }$ can be arbitrary, in particular, without prime models. Again the converse for finite sets does not hold since there are prime models with infinite $\\tau _ { 0 }$ . Finally the general converse is not true since we can combine a theory $T$ having a prime model with infinite $\\tau _ { 0 }$ and a theory $T ^ { \\prime }$ with infinitely many $E$ -classes of disjoint languages and without prime models for these classes. Denoting by $\\mathcal { T } _ { 0 } ^ { \\prime }$ the set of theories for these $E$ -classes, we get the least infinite generating set $\\mathcal { T } _ { 0 } \\cup \\mathcal { T } _ { 0 } ^ { \\prime }$ for the combination of $T$ and $T ^ { \\prime }$ , which does not have a prime model. "
+                },
+                {
+                    "type": "text",
+                    "value": "Replacing $E$ -combinations by $P$ -combinations we obtain the notions of (minimal/least) generating set for $\\mathrm { C l } _ { P } ( \\mathcal { T } _ { 0 } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Example in Remark 2 shows that Corollary 4 does not hold even for disjoint $P$ -combinations. Indeed, take structures $\\mathbf { \\mathcal { A } } _ { i }$ , $i \\in ( \\omega + 1 ) \\setminus \\{ 0 \\}$ , in the remark and the theories $T _ { i } = \\mathrm { T h } ( \\mathcal { A } _ { i } )$ forming the $\\mathrm { C l } _ { P } ^ { d }$ -closed set $\\tau$ . Since $\\tau$ is generated by any its infinite subset, we get that having prime models of $\\operatorname { T h } ( A _ { P } )$ , the closure $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } )$ does not have minimal generating sets. "
+                },
+                {
+                    "type": "text",
+                    "value": "For the example above, with the empty language, $\\mathrm { C l } _ { P } ^ { d , r } ( \\mathcal { T } )$ is generated by any singleton $\\{ T \\} \\in \\mathrm { C l } _ { P } ^ { d , r } ( \\mathcal { T } )$ since the type $p _ { \\infty } ( x )$ has arbitrarily many "
+                },
+                {
+                    "type": "text",
+                    "value": "realizations producing models for each ${ \\boldsymbol { \\mathit { T } } } _ { i } ^ { \\prime }$ , $i \\in ( \\omega + 1 ) \\setminus \\{ 0 \\}$ . Thus, each element of $\\mathrm { C l } _ { P } ^ { d , r } ( \\tau )$ forms a minimal generating set. "
+                },
+                {
+                    "type": "text",
+                    "value": "Natural questions arise concerning minimal generating sets: "
+                },
+                {
+                    "type": "text",
+                    "value": "Question 1. What are characterizations for the existence of least generating sets? "
+                },
+                {
+                    "type": "text",
+                    "value": "Question 2. Is there exists a theory $\\mathrm { T h } ( \\var A _ { E } )$ (respectively $\\operatorname { T h } ( A _ { P } )$ ) without the least generating set? "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 7. Obviously, for $E$ -combinations, Question 1 has an answer in terms of Proposition 2 (clarified in Theorem 5) taking the least, under inclusion, set $\\mathcal { T } _ { 0 } ^ { \\prime }$ generating the set $\\mathrm { C l } _ { E } ( \\mathcal { T } _ { 0 } ^ { \\prime } )$ . It means that $\\mathcal { T } _ { 0 } ^ { \\prime }$ does not have accumulation points inside $\\mathcal { T } _ { 0 } ^ { \\prime }$ (with respect to the sets $( \\mathcal { T } _ { 0 } ^ { \\prime } ) _ { \\varphi } )$ , i.e., any element in $\\mathcal { T } _ { 0 } ^ { \\prime }$ is isolated by some formula, whereas each element $T$ in $\\mathrm { C l } _ { E } ( T _ { 0 } ^ { \\prime } ) \\setminus T _ { 0 } ^ { \\prime }$ is an accumulation point of $\\mathcal { T } _ { 0 } ^ { \\prime }$ (again with respect to $( T _ { 0 } ^ { \\prime } ) _ { \\varphi }$ ), i.e., $\\mathcal { T } _ { 0 } ^ { \\prime }$ is dense in its $E$ -closure. "
+                },
+                {
+                    "type": "text",
+                    "value": "A positive answer to Question 2 for C $P$ is obtained in Remark 2. Moreover, Theorem 5 does not hold with respect to the operator $\\mathrm { C l } _ { P } ^ { d } .$ Indeed, the theories $T _ { i }$ for the structures $\\mathbf { \\mathcal { A } } _ { i }$ , $i \\in ( \\omega + 1 ) \\setminus \\{ 0 \\}$ , form the C $\\ l _ { \\cdot } ^ { d }$ -closed set $\\tau _ { 0 }$ . Clearly, the theories $T _ { i }$ , for finite $i$ , are isolated by formulas describing cardinalities for $\\mathcal { A } _ { i }$ , whereas $\\tau _ { 0 }$ does not have minimal generating sets since it is generated by a subset $\\mathcal { T } _ { 0 } ^ { \\prime }$ if and only if $\\mathcal { T } _ { 0 } ^ { \\prime }$ is infinite. "
+                },
+                {
+                    "type": "text",
+                    "value": "More generally, if $A _ { i }$ consist of finitely many isomorphic definable equivalence classes and the number of these classes in unbounded varying the indexes $i$ (taking, for instance, models of cubic theories [11; 12] with a fixed finite diameter, or isomorphic trees with a fixed finite diameter), then, as above, the $P$ -closure $\\tau _ { 0 }$ of the set of theories $\\operatorname { T h } ( \\mathcal { A } _ { i } )$ does not have minimal generating sets. "
+                },
+                {
+                    "type": "text",
+                    "value": "Remark 7 shows that Theorem 5 fails for the operator $\\mathrm { C l } _ { P } ^ { d }$ . At the same time using approximations of $C ( \\boldsymbol a )$ -restrictions of $A _ { \\infty }$ in the arguments for $( 2 ) \\Rightarrow ( 1 )$ in Theorem 5 we get "
+                },
+                {
+                    "type": "text",
+                    "value": "Theorem 6. If $\\mathcal { T } _ { . 0 } ^ { \\prime }$ is a generating set for a $P$ -closed set $\\tau _ { 0 }$ with respect to the operator $\\mathrm { C l } _ { P } ^ { d }$ , then the following conditions are equivalent: "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(1) $\\mathcal { T } _ { 0 } ^ { \\prime }$ is the least generating set for $\\tau _ { 0 }$ , ",
+                        "(2) $\\mathcal { T } _ { 0 } ^ { \\prime }$ is a minimal generating set for $\\tau _ { 0 }$ "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Definition 13. An infinite $P$ -closed family $\\tau$ of theories is called $( P , \\omega )$ - reconstructible (respectively $( P , d , \\omega )$ -reconstructible) if $\\mathcal { T } = \\mathrm { C l } _ { P } ( \\mathcal { T } _ { 0 } )$ ( $\\mathcal { T } =$ $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } _ { 0 } ) )$ for any countable $\\mathcal { T } _ { 0 } \\subseteq \\mathcal { T }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Since $\\mathrm { C l } _ { P } ^ { d } ( \\mathcal { T } _ { 0 } ) \\subseteq \\mathrm { C l } _ { P } ( \\mathcal { T } _ { 0 } )$ for any family $\\tau _ { 0 }$ , each $( P , d , \\omega )$ -reconstructible family is $( P , \\omega )$ -reconstructible. "
+                },
+                {
+                    "type": "text",
+                    "value": "By the definition, the families of theories in Remark 7 are $( P , d , \\omega )$ - reconstructible and therefore $( P , \\omega )$ -reconstructible. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 5. If a $P$ -closed family $\\tau$ has a least generating set then $\\tau$ is not $( P , \\omega )$ -reconstructible. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. It suffices to note that if $\\tau$ is $( P , \\omega )$ -reconstructible then $\\tau$ has only infinite generating sets $\\mathcal { T } _ { 0 }$ and for any $T \\in \\tau _ { 0 }$ , $\\mathcal { T } _ { 0 } \\setminus \\{ T \\}$ , being infinite, is generating for $\\tau$ as well. □ "
+                },
+                {
+                    "type": "text",
+                    "value": "In contrast to Remark 7 we have "
+                },
+                {
+                    "type": "text",
+                    "value": "Proposition 6. If for a theory $T = \\mathrm { T h } ( \\mathcal { A } _ { P } )$ , $e$ -Sp(T ) is finite then the set $\\tau$ of theories for substructures $\\mathbf { \\mathcal { A } } _ { i }$ in $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { P }$ with respect to the predicates $P _ { i }$ and to the type $p _ { \\infty } ( x )$ has a least generating set. "
+                },
+                {
+                    "type": "text",
+                    "value": "Proof. If $e$ -Sp(T ) is finite then for any generating set $\\tau _ { 0 }$ for $\\tau$ we have $| \\mathcal { T } \\backslash \\mathcal { T } _ { 0 } | \\leq e { \\mathrm { - } } \\mathrm { S p } ( T )$ . Thus, removing at most $e$ -Sp(T ) theories in $\\tau$ we get a minimal generating set for $\\tau$ being the least by Theorem 6. □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Propositions 5 and 6 imply "
+                },
+                {
+                    "type": "text",
+                    "value": "Corollary 5. If for a theory $T = \\mathrm { T h } ( \\mathcal { A } _ { P } )$ , $e$ -Sp(T ) is finite then the set $^ { 7 }$ of theories for substructures $\\mathcal { A } _ { i }$ in $\\mathbf { \\mathcal { A } } ^ { \\prime } \\equiv \\mathbf { \\mathcal { A } } _ { P }$ with respect to the predicates $P _ { i }$ and to the type $p _ { \\infty } ( x )$ is not $( P , \\omega )$ -reconstructible. "
+                }
+            ],
+            "type": null,
+            "page_start": 7,
+            "page_end": 11
+        }
+    ],
+    "acknowledgements": "The research is partially supported by the Grants Council (under RF President) for State Aid of Leading Scientific Schools (Grant NSh-6848.2016.1) and by Committee of Science in Education and Science Ministry of the Republic of Kazakhstan (Grant No. 0830/GF4).",
+    "appendix": null,
+    "references": [
+        {
+            "id": 1,
+            "text": "Baldwin J. T. A topology for the space of countable models of a first order theory / J. T. Baldwin, J. M. Plotkin // Zeitshrift Math. Logik and Grundlagen der Math. — 1974. — Vol. 20, No. 8–12. — P. 173–178.",
+            "authors": [
+                "J. T. Baldwin",
+                "J. M. Plotkin"
+            ],
+            "year": "1974"
+        },
+        {
+            "id": 2,
+            "text": "Bankston P. Ulptraproducts in topology / P. Bankston // General Topology and its Applications. — 1977. — Vol. 7, No. 3. — P. 283–308.",
+            "authors": [
+                "P. Bankston"
+            ],
+            "year": "1977"
+        },
+        {
+            "id": 3,
+            "text": "Bankston P. A survey of ultraproduct constructions in general topology / P. Bankston // Topology Atlas Invited Contributions. — 2003. — Vol. 8, No. 2. — P. 1–32.",
+            "authors": [
+                "P. Bankston"
+            ],
+            "year": "2003"
+        },
+        {
+            "id": 4,
+            "text": "Chang C. C. Model theory / C. C. Chang, H. J. Keisler. — Amsterdam : Elsevier, 1990. — Studies in Logic and the Foundations of Mathematics. — Vol. 73. — 650 p.",
+            "authors": [
+                "C. C. Chang",
+                "H. J. Keisler"
+            ],
+            "year": "1990"
+        },
+        {
+            "id": 5,
+            "text": "Engelking R. General topology / R. Engelking. — Berlin : Heldermann Verlag, 1989. — 529 p.",
+            "authors": [
+                "R. Engelking"
+            ],
+            "year": "1989"
+        },
+        {
+            "id": 6,
+            "text": "Ershov Yu. L. Mathematical logic / Yu. L. Ershov, E. A. Palyutin. — Moscow : FIZMATLIT, 2011. — 356 p.",
+            "authors": [
+                "Yu. L. Ershov",
+                "E. A. Palyutin"
+            ],
+            "year": "2011"
+        },
+        {
+            "id": 7,
+            "text": "Gismatullin J. On compactifications and the topological dynamics of definable groups / J. Gismatullin, D. Penazzi, A. Pillay // Annals of Pure and Applied Logic. — 2014. Vol. 165, No. 2. — P. 552–562.",
+            "authors": [
+                "J. Gismatullin",
+                "D. Penazzi",
+                "A. Pillay"
+            ],
+            "year": "2014"
+        },
+        {
+            "id": 8,
+            "text": "Kechris A. S. Fra¨ıss´e limits, Ramsey theory, and topological dynamics of automorphism groups / A. S. Kechris, V. G. Pestov, S. Todorcevic // Geometric and Functional Analysis. — 2005. — Vol. 15, No. 1. — P. 106–189.",
+            "authors": [
+                "A. S. Kechris",
+                "V. G. Pestov",
+                "S. Todorcevic"
+            ],
+            "year": "2005"
+        },
+        {
+            "id": 9,
+            "text": "Newelski L. Topological dynamics of definable group actions / L. Newelski // J. Symbolic Logic. — 2009. — Vol. 74, No. 1. — P. 50–72.",
+            "authors": [
+                "L. Newelski"
+            ],
+            "year": "2009"
+        },
+        {
+            "id": 10,
+            "text": "Pillay A. Topological dynamics and definable groups / A. Pillay // J. Symbolic Logic. — 2013. — Vol. 78, No. 2. — P. 657–666.",
+            "authors": [
+                "A. Pillay"
+            ],
+            "year": "2013"
+        },
+        {
+            "id": 11,
+            "text": "Sudoplatov S. V. Group polygonometries / S. V. Sudoplatov. — Novosibirsk : NSTU, 2011, 2013. — 302 p. [in Russian]",
+            "authors": [
+                "S. V. Sudoplatov"
+            ],
+            "year": "2011"
+        },
+        {
+            "id": 12,
+            "text": "Sudoplatov S. V. Models of cubic theories / S. V. Sudoplatov // Bulletin of the Section of Logic. — 2014. — Vol. 43, No. 1–2. — P. 19–34.",
+            "authors": [
+                "S. V. Sudoplatov"
+            ],
+            "year": "2014"
+        },
+        {
+            "id": 13,
+            "text": "Sudoplatov S. V. Classes of structures and their generic limits / S. V. Sudoplatov // Lobachevskii J. Math. — 2015. — Vol. 36, No. 4. — P. 426–433.",
+            "authors": [
+                "S. V. Sudoplatov"
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 14,
+            "text": "Sudoplatov S. V. Semi-isolation and the strict order property / S. V. Sudoplatov, Tanovi´c P. // Notre Dame Journal of Formal Logic. — 2015. — Vol. 56, No. 4. — P. 555–572.",
+            "authors": [
+                "S. V. Sudoplatov",
+                "Tanovi´c P."
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 15,
+            "text": "Sudoplatov S. V. Combinations of structures / S. V. Sudoplatov. arXiv:1601.00041v1 [math.LO]. — 2016. — 19 p.",
+            "authors": [
+                "S. V. Sudoplatov"
+            ],
+            "year": "2016"
+        }
+    ],
+    "figures": [],
+    "tables": []
+}

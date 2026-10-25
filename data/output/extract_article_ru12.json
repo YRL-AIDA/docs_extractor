@@ -1,0 +1,615 @@
+{
+    "title": "Решения начально-краевых задач для некоторых вырожденных систем уравнений дробного порядка по времени",
+    "authors": [
+        {
+            "name": "Д. М. Гордиевских",
+            "affiliation": [
+                "Челябинский государственный университет"
+            ],
+            "email": "dmitriy_g90@mail.ru",
+            "ORCID": null
+        },
+        {
+            "name": "В. Е. Федоров",
+            "affiliation": [
+                "Челябинский государственный университет"
+            ],
+            "email": "kar@csu.ru",
+            "ORCID": null
+        }
+    ],
+    "abstract": "Аннотация. Теорема о разрешимости задачи Коши для вырожденного эволюци- онного уравнения дробного порядка в банаховом пространстве использована для установления необходимых и достаточных условий разрешимости начально-краевых задач для некоторых возникающих в гидродинамике систем уравнений дробного порядка по времени. С помощью функционального исчисления в банаховой алгебре линейных ограниченных операторов получен вид решения рассмотренных задач. ",
+    "keywords": [
+        "дифференциальное уравнение дробного порядка",
+        "система урав- нений Соболева",
+        "система уравнений Осколкова",
+        "начально-краевая задача"
+    ],
+    "language": "ru",
+    "sections": [
+        {
+            "title": "Abstract",
+            "text": "Аннотация. Теорема о разрешимости задачи Коши для вырожденного эволюци- онного уравнения дробного порядка в банаховом пространстве использована для установления необходимых и достаточных условий разрешимости начально-краевых задач для некоторых возникающих в гидродинамике систем уравнений дробного порядка по времени. С помощью функционального исчисления в банаховой алгебре линейных ограниченных операторов получен вид решения рассмотренных задач. ",
+            "type": "abstract",
+            "page_start": 0,
+            "page_end": 0
+        },
+        {
+            "title": "1. Введение ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Разрешимость задачи Коши "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nu ^ {(k)} (0) = u _ {k}, \\quad k = 0, 1, \\dots , m - 1, \\tag {1.1}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "для эволюционного уравнения "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nD ^ {\\alpha} L u (t) = M u (t) \\tag {1.2}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "ранее исследована в работе [7] в случае $( L , p )$ -ограниченности опера- тора $M$ [12]. Здесь $\\mathfrak { U } , \\mathfrak { V }$ — банаховы пространства, $L , M : \\mathfrak { U } \\to \\mathfrak { V } \\mathrm { ~ - ~ }$ линейные операторы, $D ^ { \\alpha }$ — дробная производная Капуто порядка $\\alpha >$ 0, m — наименьшее натуральное число, не превосходимое числом $\\alpha$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "При этом уравнение предполагается вырожденным, т. е. выполняется условие $\\ker L \\neq \\{ 0 \\}$ . Оно, в частности, выполняется при редукции к операторно-дифференциальному виду (1.2) систем уравнений в част- ных производных, возникающих в механике сплошных сред и содержа- щих уравнение несжимаемости $\\nabla \\cdot v ( x , t ) = 0$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "В данной работе этот факт продемонстрирован на примерах нача- льно-краевых задач для системы уравнений Соболева дробного порядка по времени и линеаризованной в нуле системы уравнений Осколкова дробного порядка по времени. Полученные в [7] необходимые и доста- точные условия на начальные данные для разрешимости задачи Коши используются в данной работе при исследовании начально-краевых за- дач для этих систем уравнений. При этом представлен вид решения начально-краевых задач, полученный с помощью формулы решения за- дачи (1.1), (1.2) [7] методами функционального исчисления в банаховой алгебре линейных ограниченных операторов. "
+                },
+                {
+                    "type": "text",
+                    "value": "Отметим, что несмотря на большой интерес исследователей к тема- тике дробных дифференциальных уравнений в последние десятилетия, работ о вырожденных дробных дифференциальных уравнениях вида (1.2) немного. В посвященных уравнению (1.2) работах [10; 11], на- пример на оператор $L$ накладывается условие непрерывной обратимо- сти. Случай вырожденного оператора $L$ и сильно $( L , p )$ -секториального оператора $M$ рассмотрен в [8]. "
+                }
+            ],
+            "type": null,
+            "page_start": 0,
+            "page_end": 1
+        },
+        {
+            "title": "2. Задача Коши для вырожденного уравнения дробного порядка в банаховом пространстве ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Для банаховых пространств $\\mathfrak { U } \\mathfrak { U } \\mathfrak { V }$ обозначим через $\\mathcal { L } ( \\mathfrak { U } ; \\mathfrak { V } )$ банахово пространство линейных непрерывных операторов, действующих из $\\mathfrak { U }$ в $\\mathfrak { V }$ . Множество линейных замкнутых операторов с областями определе- ния, плотными в пространстве $\\mathfrak { U }$ , действующих в $\\mathfrak { V }$ , будем обозначать $\\mathcal { C l } ( \\mathfrak { U } ; \\mathfrak { V } )$ . Кроме того, будем использовать обозначения $\\mathcal { L } ( \\mathfrak { U } ; \\mathfrak { U } ) \\equiv \\mathcal { L } ( \\mathfrak { U } )$ , $\\mathcal { C } l ( \\mathfrak { U } ; \\mathfrak { U } ) \\equiv \\mathcal { C } l ( \\mathfrak { U } )$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Пусть $L \\in \\mathcal { L } ( \\mathfrak { U } ; \\mathfrak { V } )$ , $\\boldsymbol { M } \\in \\mathcal { C l } ( \\mathfrak { U } ; \\mathfrak { V } )$ . Через $D _ { M }$ обозначим область опре- деления оператора $M$ , снабженную его нормой графика. Согласно [12, с. 89] оператор $M$ будем называть $( L , \\sigma )$ -ограниченным, если множество $\\rho ^ { L } ( M ) = \\{ \\mu \\in \\mathbb { C } : ( \\mu L - M ) ^ { - 1 } \\in \\mathcal { L } ( \\mathfrak { V } ; \\mathfrak { U } ) \\}$ ограничено в $\\mathbb { C }$ . При условии $( L , \\sigma )$ -ограниченности оператора $M$ обозначим $\\gamma = \\{ \\mu \\in \\mathbb { C } : | \\mu | = r >$ $a \\}$ , $R _ { \\mu } ^ { L } ( M ) = ( \\mu L - M ) ^ { - 1 } L$ , $L _ { \\mu } ^ { L } ( M ) = L ( \\mu L - M ) ^ { - 1 }$ , "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nP = \\frac {1}{2 \\pi i} \\int_ {\\gamma} R _ {\\mu} ^ {L} (M) d \\mu \\in \\mathcal {L} (\\mathfrak {U}), \\quad Q = \\frac {1}{2 \\pi i} \\int_ {\\gamma} L _ {\\mu} ^ {L} (M) d \\mu \\in \\mathcal {L} (\\mathfrak {V}). \\tag {2.1}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Опеpатоpы $P$ и $Q$ являются пpоектоpами, обозначим $\\mathfrak { U } ^ { 0 } = \\ker P$ , ${ \\mathfrak { V } } ^ { 0 } =$ ker Q, U1 = imP , $ \\mathfrak { V } ^ { 1 } = \\mathrm { i m } Q$ . Пусть $L _ { k }$ $\\mathbf { \\mathcal { M } } _ { k }$ ) — сужение опеpатоpа L (M) на ${ \\mathfrak { U } } ^ { k }$ ( $D _ { M _ { k } } = D _ { M } \\cap \\mathfrak { U } ^ { k } )$ ), $k = 0 , 1$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Теорема 1. [12, с. 90, 91]. Пусть опеpатоp $M \\ ( L , \\sigma )$ -огpаничен. Тогда "
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "(i) $L P = Q L$ , $M P u = Q M u$ при всех $u \\in D _ { M }$ ",
+                        "(ii) $M _ { 1 } \\in \\mathcal { L } \\big ( \\mathfrak { U } ^ { 1 } ; \\mathfrak { V } ^ { 1 } \\big )$ , $M _ { 0 } \\in \\mathcal { C l } \\big ( \\mathfrak { U } ^ { 0 } ; \\mathfrak { V } ^ { 0 } \\big )$ , $L _ { k } \\in \\mathcal { L } \\big ( \\{ \\mathfrak { x } ^ { k } ; \\mathfrak { V } ^ { k } \\}$ , k = 0, 1; ",
+                        "(iii) существуют опеpатоpы $M _ { 0 } ^ { - 1 } \\in \\mathcal { L } ( \\mathfrak { V } ^ { 0 } ; \\mathfrak { U } ^ { 0 } )$ , $L _ { 1 } ^ { - 1 } \\in \\mathcal { L } ( \\mathfrak { V } ^ { 1 } ; \\mathfrak { U } ^ { 1 } )$ . "
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Обозначим $ { \\mathbb { N } } _ { 0 } = \\{ 0 \\} \\cup  { \\mathbb { N } }$ , $H \\ = \\ M _ { 0 } ^ { - 1 } L _ { 0 }$ . При $p \\in  { \\mathbb { N } } _ { 0 }$ опеpатоp $M$ называется $( L , p )$ -ограниченным, если он $( L , \\sigma )$ -ограничен, $H ^ { p } \\neq \\mathbb { O }$ , $H ^ { p + 1 } = \\mathbb { O }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Положим $\\mathbb { R } _ { + } = \\left\\{ x \\in \\mathbb { R } : x > 0 \\right\\}$ , $\\overline { { \\mathbb { R } } } _ { + } = \\{ 0 \\} \\cup \\mathbb { R } _ { + }$ , при δ > 0 "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\ng _ {\\delta} (t) = \\left\\{ \\begin{array}{l l} t ^ {\\delta - 1} / \\Gamma (\\delta), & t > 0, \\\\ 0, & t \\leq 0, \\end{array} \\right.\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nJ _ {t} ^ {\\delta} h (t) = (g _ {\\delta} * h) (t) = \\int_ {0} ^ {t} g _ {\\delta} (t - s) h (s) d s = \\frac {1}{\\Gamma (\\delta)} \\int_ {0} ^ {t} (t - s) ^ {\\delta - 1} h (s) d s.\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Пусть $\\alpha \\ > \\ 0$ , $m$ — наименьшее натуральное число, не превосходи- мое числом $\\alpha$ , $D _ { t } ^ { m }$ — обычная производная порядка $m \\in \\mathbb { N }$ , $D _ { t } ^ { 0 } \\ -$ тождественный оператор, $D _ { t } ^ { \\alpha }$ — дробная производная Капуто, т. е. "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nD _ {t} ^ {\\alpha} f (t) = J _ {t} ^ {m - \\alpha} D _ {t} ^ {m} f (t)\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "в случае, когда выражение в правой части этого равенства имеет смысл. "
+                },
+                {
+                    "type": "text",
+                    "value": "Решением задачи Коши "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nu (0) = u _ {0}, u ^ {(k)} (0) = 0, k = 1, 2, \\dots , m - 1, \\tag {2.2}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "для уpавнения "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nD _ {t} ^ {\\alpha} L u (t) = M u (t) \\tag {2.3}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "называется такая вектоp-функция $u \\in C ^ { m - 1 } ( \\overline { { \\mathbb { R } } } _ { + } ; \\mathfrak { U } ) \\cap C ( \\mathbb { R } _ { + } ; D _ { M } )$ , что $L u \\in C ^ { m - 1 } ( \\overline { { \\mathbb { R } } } _ { + } ; \\mathfrak { V } )$ , $g _ { m - \\alpha } \\ast \\left( L u - \\sum _ { k = 0 } ^ { m - 1 } ( L u ) ^ { ( k ) } ( 0 ) g _ { k + 1 } \\right) \\in C ^ { m } ( \\mathbb { R } _ { + } ; \\mathfrak { V } )$ , при этом выполняются равенства (2.2) и для всех $t \\in \\mathbb { R } _ { + }$ — равенство (2.3). "
+                },
+                {
+                    "type": "text",
+                    "value": "Разрешимость задачи (2.2), (2.3) исследована в работе [7]. Теоремы $3 \\mathrm { ~ H ~ 4 ~ } \\mathrm { { u 3 } }$ [7] коротко переформулируем следующим образом. "
+                },
+                {
+                    "type": "text",
+                    "value": "Теорема 2. [7] Пусть опеpатоp $M$ $( L , p )$ -огpаничен, $\\gamma = \\{ \\mu \\in \\mathbb { C } :$ $| \\mu | = r > a \\}$ , "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nU (t) = \\frac {1}{2 \\pi i} \\int_ {\\gamma} R _ {\\mu} ^ {L} (M) E _ {\\alpha} \\left(\\mu t ^ {\\alpha}\\right) d \\mu , t \\in \\overline {{\\mathbb {R}}} _ {+}, \\tag {2.4}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "где Eα(z) = \n∞ zn/Γ(αn + 1) — функция Миттаг-Леффлера. Тогда пpи n=0 любых $u _ { k } \\in \\mathfrak { U } ^ { 1 }$ , $k = 0 , 1 , \\ldots , m - 1$ , существует единственное решение задачи (2.2), (2.3), при этом оно имеет вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nu (t) = \\sum_ {k = 0} ^ {m - 1} J _ {t} ^ {k} U (t) u _ {k}.\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Если при некотором $l \\in \\{ 0 , 1 , \\ldots , m - 1 \\} \\ u _ { l } \\notin \\mathfrak { U } ^ { 1 }$ , то задача (2.2), (2.3) не имеет решения. "
+                }
+            ],
+            "type": null,
+            "page_start": 1,
+            "page_end": 3
+        },
+        {
+            "title": "3. Система Соболева дробного порядка по времени ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Рассмотрим начально-краевую задачу "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\frac {\\partial^ {k} v}{\\partial t ^ {k}} (x, 0) = v _ {k} (x), \\quad x \\in \\Omega , \\quad k = 0, 1, \\dots , m - 1, \\tag {3.1}\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nv _ {n} (x, t) \\equiv \\sum_ {i = 1} ^ {3} v _ {i} (x, t) n _ {i} (x) = 0, \\quad (x, t) \\in \\partial \\Omega \\times \\mathbb {R} _ {+}, \\tag {3.2}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "для системы уравнений Соболева дробного порядка "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nD _ {t} ^ {\\alpha} v (x, t) = [ v (x, t), \\overline {{\\omega}} ] - r (x, t), \\quad (x, t) \\in \\Omega \\times \\mathbb {R} _ {+}, \\tag {3.3}\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\nabla \\cdot v (x, t) = 0, \\quad (x, t) \\in \\Omega \\times \\mathbb {R} _ {+}, \\tag {3.4}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "описывающей при $\\alpha = 1$ динамику малых внутренних движений стра- тифицированной жидкости в равновесном состоянии [5]. Здесь $m \\textrm { -- }$ наименьшее натуральное число, не превосходимое числом $\\alpha > 0$ , $\\Omega \\subset$ $\\mathbb { R } ^ { 3 }$ — ограниченная область с границей $\\partial \\Omega$ класса $C ^ { \\infty }$ , $n = ( n _ { 1 } , n _ { 2 } , n _ { 3 } ) -$ вектор внешней нормали к ее границе, $\\boldsymbol { v } = ( v _ { 1 } , v _ { 2 } , v _ { 3 } )$ — вектор скорости движения частиц жидкости, r — градиент нестационарного давления, $[ \\cdot , { \\overline { { \\omega } } } ]$ — векторное произведение на вектор $\\overline { { \\omega } } = ( 0 , 0 , \\omega ) \\in \\mathbb { R } ^ { 3 }$ , где $\\omega -$ удвоенная угловая скорость вращения, "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\nabla \\cdot \\boldsymbol {v} = \\frac {\\partial v _ {1}}{\\partial x _ {1}} + \\frac {\\partial v _ {2}}{\\partial x _ {2}} + \\frac {\\partial v _ {3}}{\\partial x _ {3}}.\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Неизвестными вектор-функциями являются $\\textit { v n r }$ "
+                },
+                {
+                    "type": "text",
+                    "value": "Обозначим $\\mathbb { L } _ { 2 } = ( L _ { 2 } ( \\Omega ) ) ^ { 3 }$ , $\\mathcal { L } = \\{ v \\in ( C _ { 0 } ^ { \\infty } ( \\Omega ) ) ^ { 3 } : \\nabla \\cdot v = 0 \\}$ . Замыкание линеала $\\mathcal { L }$ по норме пространства $\\mathbb { L } _ { 2 }$ обозначим через $\\mathbb { H } _ { \\sigma }$ . Это гиль- бертово пространство со скалярным произведением $\\langle \\cdot , \\cdot \\rangle$ пространства $\\mathbb { L } _ { 2 }$ . Существует представление $\\mathbb { L } _ { 2 } = \\mathbb { H } _ { \\sigma } \\oplus \\mathbb { H } _ { \\pi }$ , где $\\mathbb { H } _ { \\pi }$ — оpтогональное "
+                },
+                {
+                    "type": "text",
+                    "value": "дополнение к $\\mathbb { H } _ { \\sigma }$ . Обозначим чеpез $\\Pi : \\mathbb { L } _ { 2 }  \\mathbb { H } _ { \\pi }$ ассоциированный с этим pасщеплением оpтопpоектоp. "
+                },
+                {
+                    "type": "text",
+                    "value": "Следуя подходу С. Л. Соболева [5], используем обобщенную поста- новку задачи (3.1)–(3.4), заменив уравнение несжимаемости (3.4) и гра- ничное условие (3.2) на уравнение "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\Pi v (\\cdot , t) = 0, \\quad t \\in \\mathbb {R} _ {+}. \\tag {3.5}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Действительно, в силу плотности множества $\\{ \\nabla \\varphi : \\varphi \\in C ^ { \\infty } ( \\Omega ) \\}$ в подпространстве $\\mathbb { H } _ { \\pi }$ и в силу интегрального тождества "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\int_ {\\Omega} \\langle v, \\nabla \\varphi \\rangle_ {\\mathbb {R} ^ {3}} d x = \\int_ {\\partial \\Omega} v _ {n} \\varphi d s - \\int_ {\\Omega} (\\nabla \\cdot v) \\varphi d x,\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "справедливого при всех $\\varphi \\in C ^ { \\infty } ( \\Omega )$ , получим, что для функции $v \\in$ $\\mathbb { H } ^ { 1 } = ( H ^ { 1 } ( \\Omega ) ) ^ { \\mathfrak { Z } }$ выполнение условий (3.2) и (3.4) равносильно тому, что $v \\in \\mathbb { H } _ { \\sigma }$ или $\\Pi \\boldsymbol { v } = \\boldsymbol { 0 }$ . Отказавшись от ограничения $v \\in \\mathbb { H } ^ { 1 }$ , получим условие (3.5). "
+                },
+                {
+                    "type": "text",
+                    "value": "Очевидно, что оператор $B : v  [ v , \\overline { { \\omega } } ]$ , $\\overline { { \\omega } } = ( 0 , 0 , \\omega )$ , осуществляет линейное непpеpывное отображение из L2 в L2, при этом $\\| B \\| _ { \\mathcal { L } ( \\mathbb { L } _ { 2 } ) } =$ $| \\omega |$ . Нетрудно также показать, что имеет место действие оператора $B :$ $\\mathbb { H } _ { \\pi } \\to \\mathbb { H } _ { \\sigma }$ [6, лемма 2]. "
+                },
+                {
+                    "type": "text",
+                    "value": "Положим $\\Sigma = I - \\Pi$ , $\\mathfrak { U } = \\mathfrak { V } = \\mathbb { H } _ { \\sigma } \\times \\mathbb { H } _ { \\pi }$ , $B _ { \\sigma } = B | _ { \\mathbb { H } _ { \\sigma } }$ , тогда задачу (3.1), (3.3), (3.5) можно задать в виде (2.3), (2.2) с помощью операторов (подробнее см. в [9]) "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nL = \\left( \\begin{array}{c c} I & \\mathbb {O} \\\\ \\mathbb {O} & \\mathbb {O} \\end{array} \\right) \\in \\mathcal {L} (\\mathfrak {U}), \\quad M = \\left( \\begin{array}{c c} \\Sigma B _ {\\sigma} & \\mathbb {O} \\\\ \\Pi B _ {\\sigma} & - I \\end{array} \\right) \\in \\mathcal {L} (\\mathfrak {U}). \\tag {3.6}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Лемма 1. Оператор M $( L , 0 )$ -ограничен. "
+                },
+                {
+                    "type": "text",
+                    "value": "Доказательство. Нетрудно вычислить операторы "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n(\\mu L - M) ^ {- 1} = \\left( \\begin{array}{c c} (\\mu I - \\Sigma B _ {\\sigma}) ^ {- 1} & \\mathbb {O} \\\\ \\Pi B _ {\\sigma} (\\mu I - \\Sigma B _ {\\sigma}) ^ {- 1} & I \\end{array} \\right),   P = \\left( \\begin{array}{c c} I & \\mathbb {O} \\\\ \\Pi B _ {\\sigma} & \\mathbb {O} \\end{array} \\right),   Q = \\left( \\begin{array}{c c} I & \\mathbb {O} \\\\ \\mathbb {O} & \\mathbb {O} \\end{array} \\right).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Первый оператор существует и ограничен при $\\vert \\mu \\vert ~ > ~ a ~ = ~ \\vert \\omega \\vert$ в си- лу неравенства $| \\omega | = \\| B \\| _ { \\mathcal { L } ( \\mathbb { L } _ { 2 } ) } \\ge \\| \\Sigma B _ { \\sigma } \\| _ { \\mathcal { L } ( \\mathbb { H } _ { \\sigma } ) }$ . При этом учтено, что $\\| \\Sigma \\| _ { \\mathcal { L } ( \\mathbb { L } _ { 2 } ) } = 1$ , так как Σ — ортогональный проектор. "
+                },
+                {
+                    "type": "text",
+                    "value": "Из вида проекторов следует, что $\\mathfrak { U } ^ { 0 } = \\ker P = \\{ 0 \\} \\times \\mathbb { H } _ { \\pi }$ . Очевидно, что $L _ { 0 } = H = \\mathbb { O }$ , поэтому оператор $M \\ ( L , 0 )$ -ограничен. □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Теорема 3. Пpи любых $v _ { k } \\ \\in \\ \\mathbb { H } _ { \\sigma }$ , $k = 0 , 1 , \\ldots , m - 1$ , существует единственное решение задачи (3.1), (3.3), (3.5), при этом оно имеет вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nv (x, t) = \\sum_ {k = 0} ^ {m - 1} J _ {t} ^ {k} E _ {\\alpha} (t ^ {\\alpha} \\Sigma B _ {\\sigma}) v _ {k} (x), \\quad r (x, t) = \\Pi B \\sum_ {k = 0} ^ {m - 1} J _ {t} ^ {k} E _ {\\alpha} (t ^ {\\alpha} \\Sigma B _ {\\sigma}) v _ {k} (x).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Если при некотором $l \\in \\{ 0 , 1 , \\ldots , m - 1 \\} \\ v _ { l } \\notin \\mathbb { H } _ { \\sigma }$ , то задача (3.1), (3.3), (3.5) не имеет решения. "
+                },
+                {
+                    "type": "text",
+                    "value": "Доказательство. Заметим, что $\\mathfrak { U } ^ { 1 } = \\mathrm { i m } P = \\{ ( v , r ) \\in \\mathbb { H } _ { \\sigma } \\times \\mathbb { H } _ { \\pi } : r =$ $\\Pi B _ { \\sigma } v \\}$ . Поэтому условие (3.1) с функциями $v _ { k } \\in \\mathbb { H } _ { \\sigma }$ равносильно на- чальному условию Коши с данными из ${ \\mathfrak { U } } ^ { 1 }$ для уравнения (2.3) с опера- торами (3.6). "
+                },
+                {
+                    "type": "text",
+                    "value": "Применяя функциональное исчисление в банаховой алгебре ограни- ченных операторов $\\mathcal { L } ( \\mathfrak { U } )$ убедимся, что операторы (2.4) имеют вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nU (t) = \\left( \\begin{array}{c c} E _ {\\alpha} (t ^ {\\alpha} \\Sigma B _ {\\sigma}) & \\mathbb {O} \\\\ \\Pi B _ {\\sigma} E _ {\\alpha} (t ^ {\\alpha} \\Sigma B _ {\\sigma}) & \\mathbb {O} \\end{array} \\right) \\in \\mathcal {L} (\\mathfrak {U}).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Осталось сослаться на теорему 2. "
+                },
+                {
+                    "type": "figure",
+                    "value": 1
+                }
+            ],
+            "type": null,
+            "page_start": 3,
+            "page_end": 5
+        },
+        {
+            "title": "4. Линеаризованная система Осколкова дробного порядка по времени ",
+            "text": [
+                {
+                    "type": "text",
+                    "value": "Рассмотрим начально-краевую задачу для линеаризованной в нуле системы уравнений Осколкова дробного порядка по времени "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\frac {\\partial^ {k} v}{\\partial t ^ {k}} (x, 0) = v _ {k} (x), \\quad x \\in \\Omega , \\quad k = 0, 1, \\dots , m - 1, \\tag {4.1}\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nv (x, t) = 0, \\quad (x, t) \\in \\partial \\Omega \\times \\mathbb {R} _ {+}, \\tag {4.2}\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nD _ {t} ^ {\\alpha} (1 - \\chi \\Delta) v (x, t) = \\nu \\Delta v (x, t) - r (x, t), \\quad (x, t) \\in \\Omega \\times \\mathbb {R} _ {+}, \\tag {4.3}\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n\\nabla \\cdot v (x, t) = 0, \\quad (x, t) \\in \\Omega \\times \\mathbb {R} _ {+}. \\tag {4.4}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "В случае $\\alpha = 1$ она в линейном приближении моделирует динамику вязкоупругой жидкости Кельвина–Фойгта [4]. Здесь $\\Omega \\subset \\mathbb { R } ^ { n }$ — огpани- ченная область с гpаницей $\\partial \\Omega$ класса $C ^ { \\infty }$ . Параметр $\\chi \\in \\mathbb R$ , как правило, характеризует упругие свойства жидкости, а параметр $\\nu ~ \\in ~ \\mathbb { R } ^ { \\mathrm { ~ - ~ } \\mathrm { e } ^ { \\ddot { \\mathrm { e } } } }$ вязкие свойства. Вектор-функции $v = ( v _ { 1 } , v _ { 2 } , \\ldots , v _ { n } )$ (вектор скорости жидкости), $\\boldsymbol { r } ~ = ~ \\left( r _ { 1 } , r _ { 2 } , \\ldots , r _ { n } \\right)$ (градиент давления) неизвестны. Че- рез $m$ , как и прежде, обозначено наименьшее натуральное число, не превосходимое числом $\\alpha > 0$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Пусть $\\mathbb { L } _ { 2 } = ( L _ { 2 } ( \\Omega ) ) ^ { n }$ , $\\mathbb { H } ^ { 1 } = ( W _ { 2 } ^ { 1 } ( \\Omega ) ) ^ { n }$ , $\\mathbb { H } ^ { 2 } = ( W _ { 2 } ^ { 2 } ( \\Omega ) ) ^ { n }$ . Замыкание линеала $\\mathfrak { L } = \\{ v \\in ( C _ { 0 } ^ { \\infty } ( \\Omega ) ) ^ { n } : \\nabla \\cdot v = 0 \\}$ по ноpме $\\mathbb { L } _ { 2 }$ обозначим через $\\mathbb { H } _ { \\sigma }$ , а по норме $\\mathbb { H } ^ { 1 }$ — через $\\mathbb { H } _ { \\sigma } ^ { 1 }$ . Будем использовать также обозначения $\\mathbb { H } _ { \\sigma } ^ { 2 } = \\mathbb { H } _ { \\sigma } ^ { 1 } \\cap \\mathbb { H } ^ { 2 }$ , $\\mathbb { H } _ { \\pi }$ — оpтогональное дополнение к $\\mathbb { H } _ { \\sigma }$ в L2, $\\Sigma : \\mathbb { L } _ { 2 } \\to \\mathbb { H } _ { \\sigma }$ , $\\Pi = I - \\Sigma$ — соответствующие оpтопpоектоpы. "
+                },
+                {
+                    "type": "text",
+                    "value": "Оператор $A = \\Sigma \\Delta$ , продолженный до замкнутого оператора в про- странстве $\\mathbb { H } _ { \\sigma }$ с областью определения $\\mathbb { H } _ { \\sigma } ^ { 2 }$ , имеет вещественный, отри- цательный, дискретный, конечнократный спектр, сгущающийся только "
+                },
+                {
+                    "type": "text",
+                    "value": "на $- \\infty$ [3]. Обозначим через $\\left\\{ \\lambda _ { k } \\right\\}$ его собственные значения, занумеро- ванные по невозрастанию с учетом кратности, а через $\\{ \\varphi _ { k } \\}$ — ортонор- мированную систему соответствующих собственных функций, которая образует базис в $\\mathbb { H } _ { \\sigma }$ [3]. "
+                },
+                {
+                    "type": "text",
+                    "value": "Учитывая уравнение несжимаемости (4.4), положим $\\mathfrak { U } = \\mathbb { H } _ { \\sigma } ^ { 2 } \\times \\mathbb { H } _ { \\pi }$ , $\\mathfrak { V } = \\mathbb { L } _ { 2 } = \\mathbb { H } _ { \\sigma } \\times \\mathbb { H } _ { \\pi }$ , "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nL = \\left( \\begin{array}{c c} I - \\chi A & \\mathbb {O} \\\\ - \\chi \\Pi \\Delta & \\mathbb {O} \\end{array} \\right) \\in \\mathcal {L} (\\mathfrak {U}; \\mathfrak {V}), \\quad M = \\left( \\begin{array}{c c} \\nu A & \\mathbb {O} \\\\ \\nu \\Pi \\Delta & - I \\end{array} \\right) \\in \\mathcal {L} (\\mathfrak {U}; \\mathfrak {V}). \\quad (4. 5)\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Лемма 2. Пусть $\\chi , \\nu \\neq 0$ , $\\chi ^ { - 1 } \\notin \\sigma ( A )$ , операторы L и M заданы фор- мулами (4.5). Тогда оператор $M$ $( L , 0 )$ -ограничен, проекторы имеют вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nP = \\left( \\begin{array}{c c} I & \\mathbb {O} \\\\ \\nu \\Pi \\Delta (I - \\chi A) ^ {- 1} & \\mathbb {O} \\end{array} \\right), \\quad Q = \\left( \\begin{array}{c c} I & \\mathbb {O} \\\\ - \\chi \\Pi \\Delta (I - \\chi A) ^ {- 1} & \\mathbb {O} \\end{array} \\right).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Доказательство. Возьмем в используемом в работе [2] операторе $D w =$ $\\nu \\nabla ^ { 2 } w - ( \\tilde { v } \\cdot \\nabla ) w - ( w \\cdot \\nabla ) \\tilde { v }$ функцию $\\tilde { v } \\equiv 0$ и получим рассматриваемые операторы $L \\texttt { u } M$ . В [2, теорема 16] доказана $( L , \\sigma )$ -ограниченность оператора $M$ и установлено, что $M$ сильно $( L , 0 )$ -радиален. Поэтому $H = \\mathbb { O }$ и оператор M $( L , 0 )$ -ограничен. Там же найдены проекторы, в формулах для которых с учетом сказанного выше надо заменить $\\Sigma D$ на $\\nu A$ . □ "
+                },
+                {
+                    "type": "text",
+                    "value": "Так же, как для системы уравнений Соболева, с помощью теоремы 2 доказывается следующее утверждение. "
+                },
+                {
+                    "type": "text",
+                    "value": "Теорема 4. Пpи любых $v _ { k } \\ \\in \\ \\mathbb { H } _ { \\sigma } ^ { 2 }$ , $k = 0 , 1 , \\ldots , m - 1$ , существует единственное решение задачи (4.1)–(4.4), при этом оно имеет вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nv (x, t) = \\sum_ {k = 0} ^ {m - 1} J _ {t} ^ {k} E _ {\\alpha} (t ^ {\\alpha} \\nu (I - \\chi A) ^ {- 1} A) v _ {k} (x),\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nr (x, t) = \\nu \\Pi \\Delta (I - \\chi A) ^ {- 1} \\sum_ {k = 0} ^ {m - 1} J _ {t} ^ {k} E _ {\\alpha} (t ^ {\\alpha} \\nu (I - \\chi A) ^ {- 1} A) v _ {k} (x).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Если $v _ { l } \\notin \\mathbb { H } _ { \\sigma }$ при некотором $l \\in \\{ 0 , 1 , \\ldots , m - 1 \\}$ , то задача (4.1)–(4.4) не имеет решения. "
+                },
+                {
+                    "type": "text",
+                    "value": "Доказательство. Доказательство аналогично доказательству теоремы 3, при этом используется полученное в [2, теорема 16] выражение для оператора $R _ { \\mu } ^ { L } ( M )$ , которое в случае $\\tilde { v } \\equiv 0$ примет вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nR _ {\\mu} ^ {L} (M) = \\left( \\begin{array}{c c} (\\mu I - \\nu (I - \\chi A) ^ {- 1} A) ^ {- 1} & \\mathbb {O} \\\\ \\nu \\Pi \\Delta (I - \\chi A) ^ {- 1} (\\mu I - \\nu (I - \\chi A) ^ {- 1} A) ^ {- 1} & \\mathbb {O} \\end{array} \\right).\n$$"
+                },
+                {
+                    "type": "figure",
+                    "value": 2
+                },
+                {
+                    "type": "text",
+                    "value": "Рассмотрим теперь случай $\\chi ^ { - 1 } \\in \\sigma ( A )$ . Обозначим через M0 мно- жество тех индексов $k$ , для которых $\\lambda _ { k } = \\chi ^ { - 1 }$ , через M1 — множество $\\mathbb { N } \\setminus \\mathbb { M } _ { 0 }$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Лемма 3. [1] Пусть $\\chi , \\nu \\neq 0$ , $\\chi ^ { - 1 } \\in \\sigma ( A )$ , операторы L и M зада- ны формулами (4.5). Тогда оператор $M$ $( L , 1 )$ -ограничен, проекторы имеют вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nP = \\left( \\begin{array}{l l} \\sum_ {k \\in \\mathbb {M} _ {1}} \\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k} & \\mathbb {O} \\\\ \\Pi \\Delta \\sum_ {k \\in \\mathbb {M} _ {1}} \\frac {\\nu \\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k}}{1 - \\chi \\lambda_ {k}} & \\mathbb {O} \\end{array} \\right), \\quad Q = \\left( \\begin{array}{l l} \\sum_ {k \\in \\mathbb {M} _ {1}} \\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k} & \\mathbb {O} \\\\ - \\chi \\Pi \\Delta \\sum_ {k \\in \\mathbb {M} _ {1}} \\frac {\\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k}}{1 - \\chi \\lambda_ {k}} & \\mathbb {O} \\end{array} \\right).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "В соответствии с видом проектора $P$ вместо начальных условий (4.1) рассмотрим следующие условия "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\n(1 - \\chi \\Delta) \\left(\\frac {\\partial^ {k} v}{\\partial t ^ {k}} (x, 0) - v _ {k} (x)\\right) = 0, \\quad x \\in \\Omega , \\quad k = 0, 1, \\dots , m - 1. \\tag {4.6}\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Теорема 5. Пpи любых $v _ { k } \\ \\in \\ \\mathbb { H } _ { \\sigma } ^ { 2 }$ , $k = 0 , 1 , \\ldots , m - 1$ , существует единственное решение задачи (4.2)–(4.4), (4.6), при этом оно имеет вид "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nv (x, t) = \\sum_ {n = 0} ^ {m - 1} J _ {t} ^ {n} \\sum_ {k \\in \\mathbb {M} _ {1}} E _ {\\alpha} \\left(\\frac {t ^ {\\alpha} \\nu \\lambda_ {k}}{1 - \\chi \\lambda_ {k}}\\right) \\langle v _ {k}, \\varphi_ {k} \\rangle \\varphi_ {k} (x),\n$$"
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nr (x, t) = \\nu \\Pi \\Delta \\sum_ {n = 0} ^ {m - 1} J _ {t} ^ {n} \\sum_ {k \\in \\mathbb {M} _ {1}} \\frac {E _ {\\alpha} \\left(\\frac {t ^ {\\alpha} \\nu \\lambda_ {k}}{1 - \\chi \\lambda_ {k}}\\right)}{1 - \\chi \\lambda_ {k}} \\langle v _ {k}, \\varphi_ {k} \\rangle \\varphi_ {k} (x).\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "Если vl ∈/ Hσ при некотором $l \\in \\{ 0 , 1 , \\ldots , m - 1 \\}$ , то задача (4.2)–(4.4), (4.6) не имеет решения. "
+                },
+                {
+                    "type": "text",
+                    "value": "Доказательство. Условие (4.6) равносильно заданию начальных дан- ных для проекций вектора скорости на собственные функции $\\varphi _ { k }$ , не соответствующие собственному значению $\\chi ^ { - 1 }$ . Из вида проектора $P$ следует, что такое задание эквивалентно принадлежности начальных данных подпространству $\\mathfrak { U } ^ { 1 } = \\mathrm { i m } P$ . "
+                },
+                {
+                    "type": "text",
+                    "value": "Для получения вида решения воспользуемся полученной в работе [1, теорема 3] формулой "
+                },
+                {
+                    "type": "equation",
+                    "value": "$$\nR _ {\\mu} ^ {L} (M) = \\left( \\begin{array}{c c} \\sum_ {k \\in \\mathbb {M} _ {1}} \\frac {\\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k}}{\\left(\\mu - \\frac {\\nu \\lambda_ {k}}{1 - \\chi \\lambda_ {k}}\\right)} & \\mathbb {O} \\\\ \\Pi \\Delta \\left(\\sum_ {k \\in \\mathbb {M} _ {1}} \\frac {\\nu \\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k}}{(1 - \\chi \\lambda_ {k}) \\left(\\mu - \\frac {\\nu \\lambda_ {k}}{1 - \\chi \\lambda_ {k}}\\right)} - \\chi \\sum_ {k \\in \\mathbb {M} _ {0}} \\langle \\cdot , \\varphi_ {k} \\rangle \\varphi_ {k}\\right) & \\mathbb {O} \\end{array} \\right)\n$$"
+                },
+                {
+                    "type": "text",
+                    "value": "и теоремой 2. "
+                },
+                {
+                    "type": "figure",
+                    "value": 3
+                }
+            ],
+            "type": null,
+            "page_start": 5,
+            "page_end": 7
+        }
+    ],
+    "acknowledgements": "Работа выполнена при частичной поддержке Лаборатории квантовой топологии Челябинского госуниверситета (грант правительства РФ № 14.Z50.31.0020).",
+    "appendix": null,
+    "references": [
+        {
+            "id": 1,
+            "text": "Давыдов П. Н. Сильно вырожденная система уравнений Осколкова / П. Н. Давыдов, В. Е. Федоров // Науч. ведомости Белгород. гос. ун-та. Сер. Математика. Физика. – 2014. – Вып. 34, № 5 (176). – С. 5–11.",
+            "authors": [
+                "Давыдов П. Н.",
+                "Федоров В. Е."
+            ],
+            "year": "2014"
+        },
+        {
+            "id": 2,
+            "text": "Иванова Н. Д. Нелинейная обратная задача для системы Осколкова, линеаризованной в окрестности стационарного решения / Н. Д. Иванова, В. Е. Федоров, К. М. Комарова // Вестн. Челяб. гос. ун-та. Математика. Механика. Информатика. – 2012. – Вып. 13, № 26 (280). – С. 50–71.",
+            "authors": [
+                "Иванова Н. Д.",
+                "Федоров В. Е.",
+                "Комарова К. М."
+            ],
+            "year": "2012"
+        },
+        {
+            "id": 3,
+            "text": "Ладыженская О. А. Математические вопросы динамики вязкой несжимаемой жидкости / О. А. Ладыженская. – М.: Гос. изд-во физ.-мат. лит., 1961. – 204 с.",
+            "authors": [
+                "Ладыженская О. А."
+            ],
+            "year": "1961"
+        },
+        {
+            "id": 4,
+            "text": "Осколков А. П. Начально-краевые задачи для уравнений движения жидкостей Кельвина – Фойгта и жидкостей Олдройта / А. П. Осколков // Тр. Мат. ин-та АН СССР. – 1988. – Т. 179. – С. 126–164.",
+            "authors": [
+                "Осколков А. П."
+            ],
+            "year": "1988"
+        },
+        {
+            "id": 5,
+            "text": "Соболев С. Л. Об одной новой задаче математической физики / С. Л. Соболев // Изв. АН СССР. Сер. мат. – 1954. – Т. 18, № 1. – С. 3–50.",
+            "authors": [
+                "Соболев С. Л."
+            ],
+            "year": "1954"
+        },
+        {
+            "id": 6,
+            "text": "Уразаева А. В. Задачи прогноз-управления для некоторых систем уравнений гидродинамики / А. В. Уразаева, В. Е. Федоров // Дифференц. уравнения. — 2008. – Т. 44, № 8. – С. 1111–1119.",
+            "authors": [
+                "Уразаева А. В.",
+                "Федоров В. Е."
+            ],
+            "year": "2008"
+        },
+        {
+            "id": 7,
+            "text": "Федоров В. Е. Разрешающие операторы вырожденных эволюционных уравнений с дробной производной по времени / В. Е. Федоров, Д. М. Гордиевских // Изв. вузов. Математика. – 2015. – № 1. – С. 71–83.",
+            "authors": [
+                "Федоров В. Е.",
+                "Гордиевских Д. М."
+            ],
+            "year": "2015"
+        },
+        {
+            "id": 8,
+            "text": "Федоров В. Е. Один класс вырожденных дробных эволюционных систем в банаховых пространствах / В. Е. Федоров, А. Дебуш // Дифференц. уравнения. – 2013. – Т. 49, № 12. – С. 1616–1622.",
+            "authors": [
+                "Федоров В. Е.",
+                "Дебуш А."
+            ],
+            "year": "2013"
+        },
+        {
+            "id": 9,
+            "text": "Федоров В. Е. Нелинейная эволюционная обратная задача для некоторых уравнений соболевского типа / В. Е. Федоров, Н. Д. Иванова // Сиб. электрон. мат. изв. — 2011. – Т. 8. — Тр. второй междунар. шк.-конф. — Ч. I. Теория и численные методы решения обратных и некорректных задач. – С. 363–378 (http://semr.math.nsc.ru/v8/c182-410.pdf).",
+            "authors": [
+                "Федоров В. Е.",
+                "Иванова Н. Д."
+            ],
+            "year": "2011"
+        },
+        {
+            "id": 10,
+            "text": "Balachandran K. Existence of solutions of abstract fractional integrodifferential equations of Sobolev type / K. Balachandran, S. Kiruthika // Computers and Mathematics with Applications. – 2012. – Vol. 64. – P. 3406–3413.",
+            "authors": [
+                "Balachandran K.",
+                "Kiruthika S."
+            ],
+            "year": "2012"
+        },
+        {
+            "id": 11,
+            "text": "Li F. Existence of mild solutions for fractional integrodifferential equations of Sobolev type with nonlocal conditions / F. Li, J. Liang, H.-K. Xu // Journal of Mathematical Analysis and Applications. – 2012. – Vol. 391. – P. 510–525.",
+            "authors": [
+                "Li F.",
+                "Liang J.",
+                "Xu H.-K."
+            ],
+            "year": "2012"
+        },
+        {
+            "id": 12,
+            "text": "Sviridyuk G. A. Linear Sobolev Type Equations and Degenerate Semigroups of Operators / G. A. Sviridyuk, V. E. Fedorov. – Utrecht ; Boston : VSP, 2003. – 216+vii p.",
+            "authors": [
+                "Sviridyuk G. A.",
+                "Fedorov V. E."
+            ],
+            "year": "2003"
+        }
+    ],
+    "figures": [
+        {
+            "id": 1,
+            "type": "image",
+            "caption": null,
+            "img_path": [
+                "images/242e581570ff1327dfd8c82cce43e752f7180a8950f1685cd23c482a0dd1ec31.jpg"
+            ],
+            "page": 5
+        },
+        {
+            "id": 2,
+            "type": "image",
+            "caption": null,
+            "img_path": [
+                "images/75a4e0681c4bc26cb393a5198e0b9795e132b7b4e9c6317f05217f59db62330f.jpg"
+            ],
+            "page": 6
+        },
+        {
+            "id": 3,
+            "type": "image",
+            "caption": null,
+            "img_path": [
+                "images/64380c474251c38e1667c376050a88b74f05637d6ca70e3ee1e74261e88c56e7.jpg"
+            ],
+            "page": 7
+        }
+    ],
+    "tables": []
+}
